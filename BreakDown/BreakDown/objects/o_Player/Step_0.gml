@@ -9,15 +9,8 @@ vsp = vsp + grv
 if !place_meeting(x+hsp, y, obj_wall){
 	x+=hsp
 }
-if !place_meeting(x, y+vsp, obj_wall){
-	x+=hsp
-}
-if place_meeting(x, y + 5, obj_wall) and key_jump {
 
-vsp = -10
-
-
-}
+ 
 y+=vsp 
 
 
