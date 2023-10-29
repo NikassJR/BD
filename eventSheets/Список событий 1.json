@@ -1,0 +1,2109 @@
+{
+	"name": "Список событий 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "HpEnemy",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 260046341932255
+		},
+		{
+			"eventType": "variable",
+			"name": "HPplayer",
+			"type": "number",
+			"initialValue": "15",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 796398435717484
+		},
+		{
+			"eventType": "variable",
+			"name": "kick",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 399114704443128
+		},
+		{
+			"eventType": "variable",
+			"name": "Visible",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 164156619941737
+		},
+		{
+			"eventType": "variable",
+			"name": "weapon",
+			"type": "string",
+			"initialValue": "noWeapon",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 944365966079815
+		},
+		{
+			"eventType": "variable",
+			"name": "kickrun",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 867096927827003
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Enemy",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "DamageEnemy",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 128131929849279,
+									"parameters": {
+										"first-value": "distance(Enemy.X,Enemy.Y,Player.X,Player.Y)",
+										"comparison": 2,
+										"second-value": "45"
+									}
+								},
+								{
+									"id": "is-group-active",
+									"objectClass": "System",
+									"sid": 677138581376853,
+									"parameters": {
+										"group-name": "\"Player\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 800152833258343,
+									"parameters": {
+										"variable": "Visible",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Enemy",
+									"sid": 609832908194579,
+									"parameters": {
+										"animation": "\"Kick\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 360569030675574,
+									"parameters": {
+										"seconds": "0.7"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 487412720835833,
+									"parameters": {
+										"variable": "Visible",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 150212004127717
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Enemy",
+									"sid": 396727515823158,
+									"parameters": {
+										"animation": "\"Kick\""
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Enemy",
+									"sid": 412077191415393,
+									"parameters": {
+										"comparison": 5,
+										"number": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Enemy",
+									"sid": 749202918636359,
+									"parameters": {
+										"object": "HitBoxEnemy",
+										"layer": "0",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 634364481874894,
+									"parameters": {
+										"seconds": "0.01"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "HitBoxEnemy",
+									"sid": 648520081899563
+								}
+							],
+							"sid": 836674532228455
+						}
+					],
+					"sid": 713589955838123
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "HitBox",
+							"sid": 634203061686881,
+							"parameters": {
+								"object": "Enemy"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 399484077448737,
+							"parameters": {
+								"variable": "Visible",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 554167516992503,
+							"parameters": {
+								"group-name": "\"DamageEnemy\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 175941244002963,
+							"parameters": {
+								"variable": "HpEnemy",
+								"value": "5"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Enemy",
+							"sid": 562448326677738,
+							"behaviorType": "Платформер",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy",
+							"sid": 385401101082777,
+							"parameters": {
+								"animation": "\"Damage\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 117969416939470,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Enemy",
+							"sid": 141534719353187,
+							"behaviorType": "Платформер",
+							"parameters": {
+								"state": "enabled"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy",
+							"sid": 676532178050100,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 365634916328452,
+							"parameters": {
+								"group-name": "\"DamageEnemy\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 167430023762672,
+							"parameters": {
+								"variable": "Visible",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 112593113676072
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 989772887001609,
+							"parameters": {
+								"variable": "HpEnemy",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Enemy",
+							"sid": 624895053550334
+						}
+					],
+					"sid": 154515770299852,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-destroyed",
+									"objectClass": "Enemy",
+									"sid": 953091191051928
+								},
+								{
+									"id": "compare-x",
+									"objectClass": "Player",
+									"sid": 219826650003126,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "Enemy.X"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Enemy",
+									"sid": 636133297743132,
+									"parameters": {
+										"object": "EnemyDeath",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-vector-x",
+									"objectClass": "EnemyDeath",
+									"sid": 806523863436684,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"vector-x": "Self.X+100"
+									}
+								},
+								{
+									"id": "simulate-control",
+									"objectClass": "EnemyDeath",
+									"sid": 690098395315774,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"control": "jump"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "EnemyDeath",
+									"sid": 416175798793831,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 556516945585309
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Player",
+									"sid": 487234530270988,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "Enemy.X"
+									}
+								},
+								{
+									"id": "is-on-floor",
+									"objectClass": "EnemyDeath",
+									"sid": 999999779545338,
+									"behaviorType": "Платформер"
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "EnemyDeath",
+									"sid": 174938127922806,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"comparison": 0,
+										"speed": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyDeath",
+									"sid": 689726175811146,
+									"parameters": {
+										"animation": "\"Down\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 901302122066425
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-destroyed",
+									"objectClass": "Enemy",
+									"sid": 555914052210295
+								},
+								{
+									"id": "compare-x",
+									"objectClass": "Player",
+									"sid": 548550199803694,
+									"parameters": {
+										"comparison": 4,
+										"x-co-ordinate": "Enemy.X"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Enemy",
+									"sid": 335558602914169,
+									"parameters": {
+										"object": "EnemyDeath",
+										"layer": "0",
+										"image-point": "0",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-vector-x",
+									"objectClass": "EnemyDeath",
+									"sid": 192752265434563,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"vector-x": "Self.X-10000"
+									}
+								},
+								{
+									"id": "simulate-control",
+									"objectClass": "EnemyDeath",
+									"sid": 359762618460615,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"control": "jump"
+									}
+								}
+							],
+							"sid": 608152894452587
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Player",
+									"sid": 287872723584661,
+									"parameters": {
+										"comparison": 4,
+										"x-co-ordinate": "Enemy.X"
+									}
+								},
+								{
+									"id": "is-on-floor",
+									"objectClass": "EnemyDeath",
+									"sid": 202250210013218,
+									"behaviorType": "Платформер"
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "EnemyDeath",
+									"sid": 972937439940466,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"comparison": 0,
+										"speed": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyDeath",
+									"sid": 340678834753227,
+									"parameters": {
+										"animation": "\"Down\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 574694491111185
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "Enemy",
+							"sid": 112321303262015,
+							"parameters": {
+								"animation": "\"Kick\""
+							}
+						},
+						{
+							"id": "compare-speed",
+							"objectClass": "Enemy",
+							"sid": 503343811601865,
+							"behaviorType": "Платформер",
+							"parameters": {
+								"comparison": 0,
+								"speed": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy",
+							"sid": 592951993628421,
+							"parameters": {
+								"animation": "\"Idle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 856423426253454
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 460177197745899,
+							"parameters": {
+								"first-value": "Player.X",
+								"comparison": 4,
+								"second-value": "Enemy.X"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 498527564858759,
+							"parameters": {
+								"variable": "Visible",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "simulate-control",
+							"objectClass": "Enemy",
+							"sid": 589328570591438,
+							"behaviorType": "Платформер",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy",
+							"sid": 376955388514347,
+							"parameters": {
+								"animation": "\"Run\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Enemy",
+							"sid": 827251207006163,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						}
+					],
+					"sid": 443193222563702
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 972957144723700,
+							"parameters": {
+								"first-value": "Player.X",
+								"comparison": 2,
+								"second-value": "Enemy.X"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 732144697031524,
+							"parameters": {
+								"variable": "Visible",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 808586407013461
+						},
+						{
+							"id": "simulate-control",
+							"objectClass": "Enemy",
+							"sid": 355344999501364,
+							"behaviorType": "Платформер",
+							"parameters": {
+								"control": "left"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy",
+							"sid": 961070881318133,
+							"parameters": {
+								"animation": "\"Run\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Enemy",
+							"sid": 869859207414923,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 927533160456043
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Visible",
+							"sid": 865799571513096,
+							"parameters": {
+								"object": "Player"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 765316094220823,
+							"parameters": {
+								"variable": "Visible",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 883459200391736
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 240602621090915,
+							"parameters": {
+								"variable": "HPplayer",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 148142481951357,
+							"parameters": {
+								"variable": "Visible",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Enemy",
+							"sid": 160949826600444,
+							"parameters": {
+								"animation": "\"idle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 593432237020801,
+							"parameters": {
+								"group-name": "\"Enemy\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 820476178377354
+				}
+			],
+			"sid": 547193106012625
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Player",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Move",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Клавиатура",
+									"sid": 823623780852151,
+									"parameters": {
+										"key": 65
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Player",
+									"sid": 530022716254987,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 733630699665738
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Клавиатура",
+									"sid": 270083236534382,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "Player",
+									"sid": 248327712527458,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 470811057274698
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Клавиатура",
+									"sid": 170628429915325,
+									"parameters": {
+										"key": 68
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player",
+									"sid": 602264168366440,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 945195157255247
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Клавиатура",
+									"sid": 631178203494784,
+									"parameters": {
+										"key": 65
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player",
+									"sid": 761704997432184,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 874279936175410
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Клавиатура",
+									"sid": 792201406829216,
+									"parameters": {
+										"key": 87
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Player",
+									"sid": 383007122465942,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"control": "jump"
+									}
+								}
+							],
+							"sid": 353991681792054
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-jumping",
+									"objectClass": "Player",
+									"sid": 809202401416220,
+									"behaviorType": "Платформер"
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 938027488893203,
+									"parameters": {
+										"variable": "weapon",
+										"comparison": 0,
+										"value": "\"noWeapon\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 740875297053109,
+									"parameters": {
+										"animation": "\"Jump\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 666551885429491
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 255396571979249,
+									"parameters": {
+										"variable": "kickrun"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 329434107238187,
+									"parameters": {
+										"variable": "weapon",
+										"comparison": 0,
+										"value": "\"noWeapon\""
+									}
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "Player",
+									"sid": 738020034577524,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"comparison": 0,
+										"speed": "Player.speedRun"
+									}
+								},
+								{
+									"id": "is-on-floor",
+									"objectClass": "Player",
+									"sid": 702305725610812,
+									"behaviorType": "Платформер"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 908163852388978,
+									"parameters": {
+										"animation": "\"Run\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 377757860264214
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 435372129078449,
+									"parameters": {
+										"variable": "kick"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "Player",
+									"sid": 209090687099397,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"comparison": 0,
+										"speed": "0"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 516409286100229,
+									"parameters": {
+										"variable": "weapon",
+										"comparison": 0,
+										"value": "\"noWeapon\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 608960214792186,
+									"parameters": {
+										"animation": "\"Animation 1\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 633095817014314
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-landed",
+									"objectClass": "Player",
+									"sid": 413804616562409,
+									"behaviorType": "Платформер"
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 512554085527492,
+									"parameters": {
+										"variable": "weapon",
+										"comparison": 0,
+										"value": "\"noWeapon\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 438960483739570,
+									"parameters": {
+										"animation": "\"Animation 1\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 388287910834575
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-falling",
+									"objectClass": "Player",
+									"sid": 806959371344598,
+									"behaviorType": "Платформер"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 381351574489677,
+									"parameters": {
+										"animation": "\"Fall\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 525207901724852
+						}
+					],
+					"sid": 190946237949967
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Dash",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Клавиатура",
+									"sid": 447055177981517,
+									"parameters": {
+										"key": 16
+									}
+								},
+								{
+									"id": "is-on-floor",
+									"objectClass": "Player",
+									"sid": 137581965650258,
+									"behaviorType": "Платформер"
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 126517006905973,
+									"parameters": {
+										"variable": "weapon",
+										"comparison": 0,
+										"value": "\"noWeapon\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 218810826831635,
+									"parameters": {
+										"group-name": "\"Damage\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 514226795726609,
+									"parameters": {
+										"animation": "\"Tackle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "Player",
+									"sid": 121306844344480,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"max-speed": "Player.speedTackel"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 578293415381032,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "Player",
+									"sid": 618443700082287,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"max-speed": "Player.speedRun"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 100485672712892,
+									"parameters": {
+										"group-name": "\"Damage\"",
+										"state": "activated"
+									}
+								}
+							],
+							"sid": 702690537283852
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Клавиатура",
+									"sid": 769691652407015,
+									"parameters": {
+										"key": 81
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 979051906081830,
+									"parameters": {
+										"variable": "weapon",
+										"comparison": 0,
+										"value": "\"noWeapon\""
+									}
+								},
+								{
+									"id": "is-on-floor",
+									"objectClass": "Player",
+									"sid": 361273760461178,
+									"behaviorType": "Платформер"
+								},
+								{
+									"id": "is-mirrored",
+									"objectClass": "Player",
+									"sid": 912133051640538,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 731335408000570,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 154901231527244,
+									"parameters": {
+										"animation": "\"Dash\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Player",
+									"sid": 493877516801705,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "Player.speedDash"
+									}
+								},
+								{
+									"id": "reverse",
+									"objectClass": "Player",
+									"sid": 172356168480873,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"axes": "both"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 315917488706672,
+									"parameters": {
+										"seconds": "0.4"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Player",
+									"sid": 303035170750451,
+									"behaviorType": "НастраиваемоеДвижение"
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 600298321691639,
+									"parameters": {
+										"animation": "\"Animation 1\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 556964579001057,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "activated"
+									}
+								}
+							],
+							"sid": 934195875398253
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Клавиатура",
+									"sid": 253413662674653,
+									"parameters": {
+										"key": 81
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 998784992015142,
+									"parameters": {
+										"variable": "weapon",
+										"comparison": 0,
+										"value": "\"noWeapon\""
+									}
+								},
+								{
+									"id": "is-on-floor",
+									"objectClass": "Player",
+									"sid": 115743534609950,
+									"behaviorType": "Платформер"
+								},
+								{
+									"id": "is-mirrored",
+									"objectClass": "Player",
+									"sid": 422241787199206
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 979317332370809,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 506582976369204,
+									"parameters": {
+										"animation": "\"Dash\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Player",
+									"sid": 305849707511665,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "-Player.speedDash"
+									}
+								},
+								{
+									"id": "reverse",
+									"objectClass": "Player",
+									"sid": 987206771771947,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"axes": "both"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 183775832454715,
+									"parameters": {
+										"seconds": "0.4"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Player",
+									"sid": 883950307142323,
+									"behaviorType": "НастраиваемоеДвижение"
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 905139020280075,
+									"parameters": {
+										"animation": "\"Animation 1\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 677747047190674,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "activated"
+									}
+								}
+							],
+							"sid": 103021372149701
+						}
+					],
+					"sid": 481823489186172
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Damage",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Player",
+									"sid": 988434913061967,
+									"parameters": {
+										"object": "HitBoxEnemy"
+									}
+								},
+								{
+									"id": "compare-x",
+									"objectClass": "Enemy",
+									"sid": 990398454533291,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "Player.X"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 720476998871601,
+									"parameters": {
+										"group-name": "\"Kick\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 151027076962685,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 295496297322413,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 799312303473798,
+									"parameters": {
+										"animation": "\"Damage\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Player",
+									"sid": 679071466238485,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "-300"
+									}
+								},
+								{
+									"id": "reverse",
+									"objectClass": "Player",
+									"sid": 960972847021041,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"axes": "both"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 119899816119189,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 937379429548561,
+									"parameters": {
+										"variable": "HPplayer",
+										"value": "5"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Player",
+									"sid": 354857565984837,
+									"behaviorType": "НастраиваемоеДвижение"
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 507454987798235,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 604350429308066,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 539103496952177,
+									"parameters": {
+										"group-name": "\"Kick\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 784711079570039,
+									"parameters": {
+										"animation": "\"Animation 1\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 439738468434538
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Player",
+									"sid": 918236724046251,
+									"parameters": {
+										"object": "HitBoxEnemy"
+									}
+								},
+								{
+									"id": "compare-x",
+									"objectClass": "Enemy",
+									"sid": 946943273683272,
+									"parameters": {
+										"comparison": 4,
+										"x-co-ordinate": "Player.X"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 789415608921244,
+									"parameters": {
+										"group-name": "\"Kick\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 631370912481944,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 766511122591547,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 379152578598980,
+									"parameters": {
+										"animation": "\"Damage\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Player",
+									"sid": 400004613377886,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "300"
+									}
+								},
+								{
+									"id": "reverse",
+									"objectClass": "Player",
+									"sid": 714382379018362,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"axes": "both"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 650184279403123,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 688503338739911,
+									"parameters": {
+										"variable": "HPplayer",
+										"value": "5"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Player",
+									"sid": 570750335219949,
+									"behaviorType": "НастраиваемоеДвижение"
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 893990688620375,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 676136132914443,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 100206710588304,
+									"parameters": {
+										"group-name": "\"Kick\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 609223448883141,
+									"parameters": {
+										"animation": "\"Animation 1\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 214489885578045
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 669573896524451,
+									"parameters": {
+										"variable": "HPplayer",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 476818918518722,
+									"parameters": {
+										"animation": "\"Damage\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Player",
+									"sid": 922761176172183,
+									"parameters": {
+										"frame-number": "2"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 227768493089045,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 964887881045051,
+									"disabled": true,
+									"parameters": {
+										"animation": "\"Damage\"",
+										"from": "current-frame"
+									}
+								}
+							],
+							"sid": 586189283052680
+						}
+					],
+					"sid": 988502865168468
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Kick",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Мышь",
+									"sid": 320943273397259,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked"
+									}
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "Player",
+									"sid": 953055956968728,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"comparison": 0,
+										"speed": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "toggle-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 357031370911835,
+									"parameters": {
+										"variable": "kick"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 136481957225866,
+									"parameters": {
+										"animation": "\"Attack\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Player",
+									"sid": 433951403504972,
+									"parameters": {
+										"object": "HitBox",
+										"layer": "0",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 796323073506131,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "toggle-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 254763163236337,
+									"parameters": {
+										"variable": "kick"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "HitBox",
+									"sid": 215792277354398
+								}
+							],
+							"sid": 427921174617170
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 672124090837611,
+									"parameters": {
+										"variable": "kick"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 834562340022482,
+									"parameters": {
+										"animation": "\"Attack\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 889360697445606
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "KickRun",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-click",
+											"objectClass": "Мышь",
+											"sid": 868312084534901,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked"
+											}
+										},
+										{
+											"id": "is-moving",
+											"objectClass": "Player",
+											"sid": 151286016858231,
+											"behaviorType": "Платформер"
+										}
+									],
+									"actions": [
+										{
+											"id": "toggle-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 384004332822107,
+											"parameters": {
+												"variable": "kickrun"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "Player",
+											"sid": 346694972312215,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"max-speed": "400"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 497776849458862,
+											"parameters": {
+												"object": "HitBox",
+												"layer": "0",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 549450240524387,
+											"parameters": {
+												"seconds": "0.3"
+											}
+										},
+										{
+											"id": "toggle-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 526211479958637,
+											"parameters": {
+												"variable": "kickrun"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "Player",
+											"sid": 608377848568316,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"max-speed": "285"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "HitBox",
+											"sid": 792387643795667
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 511603821929305,
+											"parameters": {
+												"group-name": "\"KickRun\"",
+												"state": "deactivated"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 986637307558929,
+											"parameters": {
+												"seconds": "0.5"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 497164974513069,
+											"parameters": {
+												"group-name": "\"KickRun\"",
+												"state": "activated"
+											}
+										}
+									],
+									"sid": 906765447159963
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 296781509093448,
+											"parameters": {
+												"variable": "kickrun"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Player",
+											"sid": 602469164034262,
+											"parameters": {
+												"animation": "\"RunKick\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 757427002020858
+								}
+							],
+							"sid": 225406546692554
+						}
+					],
+					"sid": 240300643548855
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Weapon",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 415055054227657,
+									"parameters": {
+										"variable": "weapon",
+										"comparison": 0,
+										"value": "\"baseball\""
+									}
+								},
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 272360752303474
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position-to-another-object",
+									"objectClass": "Baseball",
+									"sid": 494495795750208,
+									"parameters": {
+										"object": "Player",
+										"image-point-optional": "0"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Baseball",
+									"sid": 701277938773907,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 219759865495932
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Мышь",
+									"sid": 536666286158155,
+									"parameters": {
+										"mouse-button": "right",
+										"click-type": "clicked"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player",
+									"sid": 315936079849848,
+									"parameters": {
+										"object": "Baseball"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 162016020281690,
+									"parameters": {
+										"variable": "weapon",
+										"value": "\"baseball\""
+									}
+								}
+							],
+							"sid": 489348945275891
+						}
+					],
+					"sid": 858942155910918
+				}
+			],
+			"sid": 380267052609625
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 617605400582943
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 137876286923793,
+					"parameters": {
+						"variable": "HPplayer",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "Camera",
+					"sid": 267008967832847,
+					"parameters": {
+						"x": "lerp(Self.X,Player.X,0.05)",
+						"y": "lerp(Self.Y,Player.Y,0.05)"
+					}
+				}
+			],
+			"sid": 221697258644148
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Клавиатура",
+					"sid": 275920732447649,
+					"parameters": {
+						"key": 82
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 260450528743031
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 279446734008862
+				}
+			],
+			"sid": 866192994578044
+		}
+	],
+	"sid": 854480572310818
+}
