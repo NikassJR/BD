@@ -719,6 +719,15 @@
 									}
 								},
 								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 808015598878798,
+									"parameters": {
+										"group-name": "\"EnemyMove\"",
+										"state": "deactivated"
+									}
+								},
+								{
 									"id": "wait",
 									"objectClass": "System",
 									"sid": 295296726676872,
@@ -791,6 +800,15 @@
 									"sid": 208932390846839,
 									"parameters": {
 										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 472141684929396,
+									"parameters": {
+										"group-name": "\"EnemyMove\"",
+										"state": "activated"
 									}
 								},
 								{
@@ -1291,7 +1309,7 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 759397669112300,
+									"sid": 430591638443384,
 									"parameters": {
 										"seconds": "0.7"
 									}
@@ -1303,6 +1321,15 @@
 									"parameters": {
 										"instance-variable": "Visible",
 										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Enemy",
+									"sid": 628033185442599,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
 									}
 								}
 							],
@@ -1370,598 +1397,608 @@
 					"sid": 647339657152041
 				},
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "HitBox",
-							"sid": 169014704653270,
-							"parameters": {
-								"object": "Enemy"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Enemy",
-							"sid": 306969437929802,
-							"parameters": {
-								"instance-variable": "Visible",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 772181608984900,
-							"parameters": {
-								"group-name": "\"DamageEnemy\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 985891427582075,
-							"parameters": {
-								"variable": "HpEnemy",
-								"value": "5"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "Enemy",
-							"sid": 888722392667663,
-							"behaviorType": "Платформер",
-							"parameters": {
-								"state": "disabled"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "Enemy",
-							"sid": 475217004408452,
-							"parameters": {
-								"animation": "\"Damage\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 811727379975498,
-							"parameters": {
-								"seconds": "0.5"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "Enemy",
-							"sid": 536656903351483,
-							"behaviorType": "Платформер",
-							"parameters": {
-								"state": "enabled"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "Enemy",
-							"sid": 800215084598480,
-							"parameters": {
-								"animation": "\"Idle\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 961435145756598,
-							"parameters": {
-								"group-name": "\"DamageEnemy\"",
-								"state": "activated"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Enemy",
-							"sid": 970360808902638,
-							"parameters": {
-								"instance-variable": "Visible",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 285476802173126
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 319605989715314,
-							"parameters": {
-								"variable": "HpEnemy",
-								"comparison": 3,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Enemy",
-							"sid": 245448327497317
-						}
-					],
-					"sid": 397370909531319,
+					"eventType": "group",
+					"disabled": false,
+					"title": "EnemyMove",
+					"description": "",
+					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-destroyed",
-									"objectClass": "Enemy",
-									"sid": 132825483670513
-								},
-								{
-									"id": "compare-x",
-									"objectClass": "Player",
-									"sid": 380079509026446,
+									"id": "on-collision-with-another-object",
+									"objectClass": "HitBox",
+									"sid": 790333866990185,
 									"parameters": {
-										"comparison": 2,
-										"x-co-ordinate": "Enemy.X"
+										"object": "Enemy"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "spawn-another-object",
+									"id": "set-instvar-value",
 									"objectClass": "Enemy",
-									"sid": 235754214325952,
+									"sid": 361022792991421,
 									"parameters": {
-										"object": "EnemyDeath",
-										"layer": "0",
-										"image-point": "0",
-										"create-hierarchy": false
+										"instance-variable": "Visible",
+										"value": "0"
 									}
 								},
 								{
-									"id": "set-vector-x",
-									"objectClass": "EnemyDeath",
-									"sid": 683507832131581,
-									"behaviorType": "Платформер",
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 714858551348678,
 									"parameters": {
-										"vector-x": "Self.X+100"
+										"group-name": "\"DamageEnemy\"",
+										"state": "deactivated"
 									}
 								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 172545253209839,
+									"parameters": {
+										"variable": "HpEnemy",
+										"value": "5"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Enemy",
+									"sid": 129536064552590,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Enemy",
+									"sid": 338247788227521,
+									"parameters": {
+										"animation": "\"Damage\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 187278568991517,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Enemy",
+									"sid": 312269202553757,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Enemy",
+									"sid": 881932092873453,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 163379467974079,
+									"parameters": {
+										"group-name": "\"DamageEnemy\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 203239725284970,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 134771252657353
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 417855000427677,
+									"parameters": {
+										"variable": "HpEnemy",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Enemy",
+									"sid": 807999931282704
+								}
+							],
+							"sid": 594295203266134,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-destroyed",
+											"objectClass": "Enemy",
+											"sid": 316390621689780
+										},
+										{
+											"id": "compare-x",
+											"objectClass": "Player",
+											"sid": 554612982404756,
+											"parameters": {
+												"comparison": 2,
+												"x-co-ordinate": "Enemy.X"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Enemy",
+											"sid": 725249502643403,
+											"parameters": {
+												"object": "EnemyDeath",
+												"layer": "0",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-vector-x",
+											"objectClass": "EnemyDeath",
+											"sid": 807536952957256,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"vector-x": "Self.X+100"
+											}
+										},
+										{
+											"id": "simulate-control",
+											"objectClass": "EnemyDeath",
+											"sid": 113083159436671,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"control": "jump"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "EnemyDeath",
+											"sid": 940586495815443,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 566218492101601
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-x",
+											"objectClass": "Player",
+											"sid": 473999376334319,
+											"parameters": {
+												"comparison": 2,
+												"x-co-ordinate": "Enemy.X"
+											}
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "EnemyDeath",
+											"sid": 925502071493199,
+											"behaviorType": "Платформер"
+										},
+										{
+											"id": "compare-speed",
+											"objectClass": "EnemyDeath",
+											"sid": 600647527709825,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"comparison": 0,
+												"speed": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "EnemyDeath",
+											"sid": 532329661327536,
+											"parameters": {
+												"animation": "\"Down\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 832685559841309
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-destroyed",
+											"objectClass": "Enemy",
+											"sid": 870955125838233
+										},
+										{
+											"id": "compare-x",
+											"objectClass": "Player",
+											"sid": 717887679975361,
+											"parameters": {
+												"comparison": 4,
+												"x-co-ordinate": "Enemy.X"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Enemy",
+											"sid": 934733057589628,
+											"parameters": {
+												"object": "EnemyDeath",
+												"layer": "0",
+												"image-point": "0",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "set-vector-x",
+											"objectClass": "EnemyDeath",
+											"sid": 459850738839347,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"vector-x": "Self.X-10000"
+											}
+										},
+										{
+											"id": "simulate-control",
+											"objectClass": "EnemyDeath",
+											"sid": 159242722753829,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"control": "jump"
+											}
+										}
+									],
+									"sid": 930805455941113
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-x",
+											"objectClass": "Player",
+											"sid": 109799206229835,
+											"parameters": {
+												"comparison": 4,
+												"x-co-ordinate": "Enemy.X"
+											}
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "EnemyDeath",
+											"sid": 859736323332748,
+											"behaviorType": "Платформер"
+										},
+										{
+											"id": "compare-speed",
+											"objectClass": "EnemyDeath",
+											"sid": 555099125753398,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"comparison": 0,
+												"speed": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "EnemyDeath",
+											"sid": 624047727043874,
+											"parameters": {
+												"animation": "\"Down\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 559204503722187
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "Enemy",
+									"sid": 356708292677944,
+									"parameters": {
+										"animation": "\"Kick\""
+									}
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "Enemy",
+									"sid": 654939534754470,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"comparison": 0,
+										"speed": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Enemy",
+									"sid": 946763243639946,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 454139635828408
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Enemy",
+									"sid": 722774026116942,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "Player.X-25"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 757767012466812,
+									"parameters": {
+										"instance-variable": "Visible",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 443901997813933,
+									"parameters": {
+										"variable": "HpEnemy",
+										"comparison": 3,
+										"value": "0"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
 								{
 									"id": "simulate-control",
-									"objectClass": "EnemyDeath",
-									"sid": 646516555993830,
+									"objectClass": "Enemy",
+									"sid": 710427143601501,
 									"behaviorType": "Платформер",
 									"parameters": {
-										"control": "jump"
+										"control": "right"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Enemy",
+									"sid": 766904334128763,
+									"parameters": {
+										"animation": "\"Run\"",
+										"from": "beginning"
 									}
 								},
 								{
 									"id": "set-mirrored",
-									"objectClass": "EnemyDeath",
-									"sid": 984962367176640,
-									"parameters": {
-										"state": "mirrored"
-									}
-								}
-							],
-							"sid": 775842830859698
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-x",
-									"objectClass": "Player",
-									"sid": 735462792216158,
-									"parameters": {
-										"comparison": 2,
-										"x-co-ordinate": "Enemy.X"
-									}
-								},
-								{
-									"id": "is-on-floor",
-									"objectClass": "EnemyDeath",
-									"sid": 573208790496995,
-									"behaviorType": "Платформер"
-								},
-								{
-									"id": "compare-speed",
-									"objectClass": "EnemyDeath",
-									"sid": 139002907189574,
-									"behaviorType": "Платформер",
-									"parameters": {
-										"comparison": 0,
-										"speed": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "EnemyDeath",
-									"sid": 616928063307720,
-									"parameters": {
-										"animation": "\"Down\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 708735612275663
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-destroyed",
 									"objectClass": "Enemy",
-									"sid": 167345128344053
+									"sid": 610061332014141,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 728443677092107,
+									"parameters": {
+										"instance-variable": "rotate",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 734159934173885
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 845183749165630,
+									"parameters": {
+										"variable": "HpEnemy",
+										"comparison": 3,
+										"value": "0"
+									},
+									"isInverted": true
 								},
 								{
 									"id": "compare-x",
-									"objectClass": "Player",
-									"sid": 529530771620178,
+									"objectClass": "Enemy",
+									"sid": 716065900470505,
 									"parameters": {
 										"comparison": 4,
-										"x-co-ordinate": "Enemy.X"
+										"x-co-ordinate": "Player.X+25"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Enemy",
+									"sid": 320736030320298,
+									"parameters": {
+										"instance-variable": "Visible",
+										"comparison": 0,
+										"value": "1"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "spawn-another-object",
-									"objectClass": "Enemy",
-									"sid": 829673147353508,
-									"parameters": {
-										"object": "EnemyDeath",
-										"layer": "0",
-										"image-point": "0",
-										"create-hierarchy": false
-									}
-								},
-								{
-									"id": "set-vector-x",
-									"objectClass": "EnemyDeath",
-									"sid": 639527187481636,
-									"behaviorType": "Платформер",
-									"parameters": {
-										"vector-x": "Self.X-10000"
-									}
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 147176021954503
 								},
 								{
 									"id": "simulate-control",
-									"objectClass": "EnemyDeath",
-									"sid": 916364827279055,
+									"objectClass": "Enemy",
+									"sid": 449221772778411,
 									"behaviorType": "Платформер",
 									"parameters": {
-										"control": "jump"
+										"control": "left"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Enemy",
+									"sid": 576694323591076,
+									"parameters": {
+										"animation": "\"Run\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "Enemy",
+									"sid": 136371292858440,
+									"parameters": {
+										"state": "mirrored"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 418720904997342,
+									"parameters": {
+										"instance-variable": "rotate",
+										"value": "-1"
 									}
 								}
 							],
-							"sid": 351899709567973
+							"sid": 202885075323475
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-x",
-									"objectClass": "Player",
-									"sid": 414628225640129,
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 130571035749662,
 									"parameters": {
-										"comparison": 4,
-										"x-co-ordinate": "Enemy.X"
-									}
-								},
-								{
-									"id": "is-on-floor",
-									"objectClass": "EnemyDeath",
-									"sid": 806836299776290,
-									"behaviorType": "Платформер"
-								},
-								{
-									"id": "compare-speed",
-									"objectClass": "EnemyDeath",
-									"sid": 810085210330372,
-									"behaviorType": "Платформер",
-									"parameters": {
-										"comparison": 0,
-										"speed": "0"
+										"variable": "HPplayer",
+										"comparison": 3,
+										"value": "0"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-animation",
-									"objectClass": "EnemyDeath",
-									"sid": 763415963212980,
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 725622681743463,
 									"parameters": {
-										"animation": "\"Down\"",
+										"instance-variable": "Visible",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Enemy",
+									"sid": 506417589576634,
+									"parameters": {
+										"animation": "\"idle\"",
 										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 841054389211618,
+									"parameters": {
+										"group-name": "\"Enemy\"",
+										"state": "deactivated"
 									}
 								}
 							],
-							"sid": 212308850752180
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-animation-finished",
-							"objectClass": "Enemy",
-							"sid": 753343530276456,
-							"parameters": {
-								"animation": "\"Kick\""
-							}
+							"sid": 647965098740014,
+							"disabled": true
 						},
 						{
-							"id": "compare-speed",
-							"objectClass": "Enemy",
-							"sid": 980633429011061,
-							"behaviorType": "Платформер",
-							"parameters": {
-								"comparison": 0,
-								"speed": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "Enemy",
-							"sid": 566129172746717,
-							"parameters": {
-								"animation": "\"Idle\"",
-								"from": "beginning"
-							}
-						}
-					],
-					"sid": 216799296088951
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-x",
-							"objectClass": "Enemy",
-							"sid": 411442416112534,
-							"parameters": {
-								"comparison": 2,
-								"x-co-ordinate": "Player.X-25"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Enemy",
-							"sid": 411834064385784,
-							"parameters": {
-								"instance-variable": "Visible",
-								"comparison": 0,
-								"value": "1"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 777534044639298,
-							"parameters": {
-								"variable": "HpEnemy",
-								"comparison": 3,
-								"value": "0"
-							},
-							"isInverted": true
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Enemy",
+									"sid": 480736233793699,
+									"parameters": {
+										"object": "Player",
+										"offset-x": "100",
+										"offset-y": "0"
+									}
+								},
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Enemy",
+									"sid": 411855512730818,
+									"parameters": {
+										"object": "Player",
+										"offset-x": "-100",
+										"offset-y": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 922370513672452,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 500368751201715,
+							"isOrBlock": true
 						}
 					],
-					"actions": [
-						{
-							"id": "simulate-control",
-							"objectClass": "Enemy",
-							"sid": 574542941536615,
-							"behaviorType": "Платформер",
-							"parameters": {
-								"control": "right"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "Enemy",
-							"sid": 476324698789360,
-							"parameters": {
-								"animation": "\"Run\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "set-mirrored",
-							"objectClass": "Enemy",
-							"sid": 371203652984452,
-							"parameters": {
-								"state": "not-mirrored"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Enemy",
-							"sid": 453700423275815,
-							"parameters": {
-								"instance-variable": "rotate",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 255762075526617
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 984572478070006,
-							"parameters": {
-								"variable": "HpEnemy",
-								"comparison": 3,
-								"value": "0"
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-x",
-							"objectClass": "Enemy",
-							"sid": 529856222017733,
-							"parameters": {
-								"comparison": 4,
-								"x-co-ordinate": "Player.X+25"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Enemy",
-							"sid": 574285570919206,
-							"parameters": {
-								"instance-variable": "Visible",
-								"comparison": 0,
-								"value": "1"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 348614967789861
-						},
-						{
-							"id": "simulate-control",
-							"objectClass": "Enemy",
-							"sid": 671454914588501,
-							"behaviorType": "Платформер",
-							"parameters": {
-								"control": "left"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "Enemy",
-							"sid": 774888758598962,
-							"parameters": {
-								"animation": "\"Run\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "set-mirrored",
-							"objectClass": "Enemy",
-							"sid": 516779826353845,
-							"parameters": {
-								"state": "mirrored"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Enemy",
-							"sid": 240040883963246,
-							"parameters": {
-								"instance-variable": "rotate",
-								"value": "-1"
-							}
-						}
-					],
-					"sid": 459414376334829
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 100067833319692,
-							"parameters": {
-								"variable": "HPplayer",
-								"comparison": 3,
-								"value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Enemy",
-							"sid": 421936289524211,
-							"parameters": {
-								"instance-variable": "Visible",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "Enemy",
-							"sid": 186774378301241,
-							"parameters": {
-								"animation": "\"idle\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 341147370599762,
-							"parameters": {
-								"group-name": "\"Enemy\"",
-								"state": "deactivated"
-							}
-						}
-					],
-					"sid": 178533264705700,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-overlapping-at-offset",
-							"objectClass": "Enemy",
-							"sid": 655464171014357,
-							"parameters": {
-								"object": "Player",
-								"offset-x": "100",
-								"offset-y": "0"
-							}
-						},
-						{
-							"id": "is-overlapping-at-offset",
-							"objectClass": "Enemy",
-							"sid": 974758495290043,
-							"parameters": {
-								"object": "Player",
-								"offset-x": "-100",
-								"offset-y": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Enemy",
-							"sid": 173680395828704,
-							"parameters": {
-								"instance-variable": "Visible",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 808562445364799,
-					"isOrBlock": true
+					"sid": 954632453863361
 				}
 			],
 			"sid": 255861649952218
