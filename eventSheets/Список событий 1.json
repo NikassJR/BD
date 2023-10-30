@@ -33,16 +33,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "Visible",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 141804934962758
-		},
-		{
-			"eventType": "variable",
 			"name": "weapon",
 			"type": "string",
 			"initialValue": "noWeapon",
@@ -448,55 +438,7 @@
 											}
 										}
 									],
-									"sid": 102352498696107,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 122856533244500,
-													"parameters": {
-														"variable": "weapon",
-														"comparison": 0,
-														"value": "\"noWeapon\""
-													}
-												}
-											],
-											"actions": [],
-											"sid": 597369247528297,
-											"disabled": true
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 118174158742942,
-													"parameters": {
-														"variable": "weapon",
-														"comparison": 0,
-														"value": "\"Baseball\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 434539336544413,
-													"parameters": {
-														"animation": "\"BaseballIdle\"",
-														"from": "beginning"
-													}
-												}
-											],
-											"sid": 796963124564289,
-											"disabled": true
-										}
-									]
+									"sid": 102352498696107
 								}
 							],
 							"sid": 406294127125625
@@ -548,55 +490,7 @@
 											}
 										}
 									],
-									"sid": 630645626299854,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 629264548508109,
-													"parameters": {
-														"variable": "weapon",
-														"comparison": 0,
-														"value": "\"noWeapon\""
-													}
-												}
-											],
-											"actions": [],
-											"sid": 902330663831592,
-											"disabled": true
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 440615912741937,
-													"parameters": {
-														"variable": "weapon",
-														"comparison": 0,
-														"value": "\"Baseball\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Player",
-													"sid": 811714890418280,
-													"parameters": {
-														"animation": "\"BaseballRun\"",
-														"from": "beginning"
-													}
-												}
-											],
-											"sid": 502030340545937,
-											"disabled": true
-										}
-									]
+									"sid": 630645626299854
 								}
 							],
 							"sid": 617600590828803
@@ -623,6 +517,12 @@
 											"id": "is-on-floor",
 											"objectClass": "Player",
 											"sid": 114882470994742,
+											"behaviorType": "Платформер"
+										},
+										{
+											"id": "is-moving",
+											"objectClass": "Player",
+											"sid": 387707410925162,
 											"behaviorType": "Платформер"
 										}
 									],
@@ -1338,31 +1238,44 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Enemy",
+									"sid": 972518944577054,
+									"parameters": {
+										"object": "Player",
+										"offset-x": "40",
+										"offset-y": "0"
+									}
+								},
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Enemy",
+									"sid": 864067277863056,
+									"parameters": {
+										"object": "Player",
+										"offset-x": "-40",
+										"offset-y": "0"
+									}
+								},
+								{
 									"id": "compare-two-values",
 									"objectClass": "System",
 									"sid": 453864666164154,
+									"disabled": true,
 									"parameters": {
 										"first-value": "distance(Enemy.X,Enemy.Y,Player.X,Player.Y)",
 										"comparison": 2,
 										"second-value": "45"
 									}
-								},
-								{
-									"id": "is-group-active",
-									"objectClass": "System",
-									"sid": 983195282758705,
-									"parameters": {
-										"group-name": "\"Player\""
-									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 197763755372599,
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 998491517538480,
 									"parameters": {
-										"variable": "Visible",
+										"instance-variable": "Visible",
 										"value": "0"
 									}
 								},
@@ -1378,22 +1291,23 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 631585868171010,
+									"sid": 759397669112300,
 									"parameters": {
 										"seconds": "0.7"
 									}
 								},
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 703423730034083,
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 120821865367734,
 									"parameters": {
-										"variable": "Visible",
+										"instance-variable": "Visible",
 										"value": "1"
 									}
 								}
 							],
-							"sid": 384591336791148
+							"sid": 384591336791148,
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -1413,6 +1327,14 @@
 									"parameters": {
 										"comparison": 5,
 										"number": "1"
+									}
+								},
+								{
+									"id": "is-group-active",
+									"objectClass": "System",
+									"sid": 985156624517681,
+									"parameters": {
+										"group-name": "\"Player\""
 									}
 								}
 							],
@@ -1461,11 +1383,11 @@
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 950652680982930,
+							"id": "set-instvar-value",
+							"objectClass": "Enemy",
+							"sid": 306969437929802,
 							"parameters": {
-								"variable": "Visible",
+								"instance-variable": "Visible",
 								"value": "0"
 							}
 						},
@@ -1541,11 +1463,11 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 481117282139348,
+							"id": "set-instvar-value",
+							"objectClass": "Enemy",
+							"sid": 970360808902638,
 							"parameters": {
-								"variable": "Visible",
+								"instance-variable": "Visible",
 								"value": "1"
 							}
 						}
@@ -1819,11 +1741,11 @@
 							}
 						},
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 447076384848013,
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 411834064385784,
 							"parameters": {
-								"variable": "Visible",
+								"instance-variable": "Visible",
 								"comparison": 0,
 								"value": "1"
 							}
@@ -1903,11 +1825,11 @@
 							}
 						},
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 197389962609638,
+							"id": "compare-instance-variable",
+							"objectClass": "Enemy",
+							"sid": 574285570919206,
 							"parameters": {
-								"variable": "Visible",
+								"instance-variable": "Visible",
 								"comparison": 0,
 								"value": "1"
 							}
@@ -1959,22 +1881,6 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 930988406476655,
-							"parameters": {
-								"variable": "Visible",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 729020893212375
-				},
-				{
-					"eventType": "block",
 					"conditions": [
 						{
 							"id": "compare-eventvar",
@@ -1989,11 +1895,11 @@
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 191873438438661,
+							"id": "set-instvar-value",
+							"objectClass": "Enemy",
+							"sid": 421936289524211,
 							"parameters": {
-								"variable": "Visible",
+								"instance-variable": "Visible",
 								"value": "0"
 							}
 						},
@@ -2016,7 +1922,46 @@
 							}
 						}
 					],
-					"sid": 178533264705700
+					"sid": 178533264705700,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Enemy",
+							"sid": 655464171014357,
+							"parameters": {
+								"object": "Player",
+								"offset-x": "100",
+								"offset-y": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Enemy",
+							"sid": 974758495290043,
+							"parameters": {
+								"object": "Player",
+								"offset-x": "-100",
+								"offset-y": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemy",
+							"sid": 173680395828704,
+							"parameters": {
+								"instance-variable": "Visible",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 808562445364799,
+					"isOrBlock": true
 				}
 			],
 			"sid": 255861649952218

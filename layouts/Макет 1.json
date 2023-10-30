@@ -137,8 +137,8 @@
 						}
 					},
 					"world": {
-						"x": 226,
-						"y": 471,
+						"x": 533.1375043655501,
+						"y": 490.83470615814,
 						"width": 86,
 						"height": 86,
 						"originX": 0.5,
@@ -475,7 +475,8 @@
 					},
 					"uid": 17,
 					"instanceVariables": {
-						"rotate": 1
+						"rotate": 1,
+						"Visible": 0
 					},
 					"behaviors": {
 						"Платформер": {
@@ -512,11 +513,19 @@
 								"bullet": false,
 								"enabled": false
 							}
+						},
+						"ПолеЗрения": {
+							"properties": {
+								"obstacles": "solids",
+								"range": 10000,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
 						}
 					},
 					"world": {
-						"x": 929,
-						"y": 471,
+						"x": 951.8556741876408,
+						"y": 489.00525920360633,
 						"width": 86,
 						"height": 86,
 						"originX": 0.5,
@@ -639,6 +648,82 @@
 						"height": 269.04912751802397,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Enemy",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 3,
+					"instanceVariables": {
+						"rotate": 1,
+						"Visible": 0
+					},
+					"behaviors": {
+						"Платформер": {
+							"properties": {
+								"max-speed": 250,
+								"acceleration": 10000,
+								"deceleration": 20000,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						},
+						"ПолеЗрения": {
+							"properties": {
+								"obstacles": "solids",
+								"range": 10000,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						}
+					},
+					"world": {
+						"x": 1152.4093381679656,
+						"y": 489.80315093650216,
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
