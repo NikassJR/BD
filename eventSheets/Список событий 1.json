@@ -957,9 +957,9 @@
 										{
 											"id": "set-animation",
 											"objectClass": "Player",
-											"sid": 429127544433986,
+											"sid": 108950205732751,
 											"parameters": {
-												"animation": "\"Jump\"",
+												"animation": "weapon & \"Jump\"",
 												"from": "beginning"
 											}
 										}
@@ -999,25 +999,15 @@
 											"objectClass": "Player",
 											"sid": 516580155832159,
 											"behaviorType": "Платформер"
-										},
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 876634556901972,
-											"parameters": {
-												"variable": "weapon",
-												"comparison": 0,
-												"value": "\"noWeapon\""
-											}
 										}
 									],
 									"actions": [
 										{
 											"id": "set-animation",
 											"objectClass": "Player",
-											"sid": 611531472340956,
+											"sid": 589870395405123,
 											"parameters": {
-												"animation": "\"Animation 1\"",
+												"animation": "weapon & \"Idle\"",
 												"from": "beginning"
 											}
 										}
@@ -1038,9 +1028,9 @@
 										{
 											"id": "set-animation",
 											"objectClass": "Player",
-											"sid": 521333703735880,
+											"sid": 693817706701670,
 											"parameters": {
-												"animation": "\"Fall\"",
+												"animation": "weapon & \"Fall\"",
 												"from": "beginning"
 											}
 										}
@@ -1874,78 +1864,88 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
-							"eventType": "block",
-							"conditions": [
+							"eventType": "group",
+							"disabled": false,
+							"title": "Baseball",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
 								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 575057009602331,
-									"parameters": {
-										"variable": "weapon",
-										"comparison": 0,
-										"value": "\"Baseball\""
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 463483786860692,
+											"parameters": {
+												"variable": "weapon",
+												"comparison": 0,
+												"value": "\"Baseball\""
+											}
+										},
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 179917609492885
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position-to-another-object",
+											"objectClass": "Baseball",
+											"sid": 340069722815753,
+											"parameters": {
+												"object": "Player",
+												"image-point-optional": "0"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "Baseball",
+											"sid": 840484656420613,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 369103281650730
 								},
 								{
-									"id": "every-tick",
-									"objectClass": "System",
-									"sid": 988429321548522
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-click",
+											"objectClass": "Мышь",
+											"sid": 448410839193684,
+											"parameters": {
+												"mouse-button": "right",
+												"click-type": "clicked"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Player",
+											"sid": 871124702043386,
+											"parameters": {
+												"object": "Baseball"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 995048377062012,
+											"parameters": {
+												"variable": "weapon",
+												"value": "\"Baseball\""
+											}
+										}
+									],
+									"sid": 894554432566429
 								}
 							],
-							"actions": [
-								{
-									"id": "set-position-to-another-object",
-									"objectClass": "Baseball",
-									"sid": 564706999953283,
-									"parameters": {
-										"object": "Player",
-										"image-point-optional": "0"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "Baseball",
-									"sid": 182234757112092,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 870826578841442
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Мышь",
-									"sid": 655214471723699,
-									"parameters": {
-										"mouse-button": "right",
-										"click-type": "clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Player",
-									"sid": 173454876258813,
-									"parameters": {
-										"object": "Baseball"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 595550612982390,
-									"parameters": {
-										"variable": "weapon",
-										"value": "\"Baseball\""
-									}
-								}
-							],
-							"sid": 268507411758994
+							"sid": 501962264400143
 						}
 					],
 					"sid": 542870148498405
