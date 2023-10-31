@@ -1540,6 +1540,120 @@
 								}
 							],
 							"sid": 912673891371606
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "HitBox",
+									"sid": 956009833286675,
+									"parameters": {
+										"object": "Enemy"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 165952237141047,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 393631832701073,
+									"parameters": {
+										"instance-variable": "cd",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 284626054584771,
+									"parameters": {
+										"group-name": "\"DamageEnemy\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "subtract-from-eventvar",
+									"objectClass": "System",
+									"sid": 702723181032729,
+									"parameters": {
+										"variable": "HpEnemy",
+										"value": "5"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Enemy",
+									"sid": 571536360460469,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Enemy",
+									"sid": 318587699739044,
+									"parameters": {
+										"animation": "\"Damage\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 364507220274888,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Enemy",
+									"sid": 395834045582117,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Enemy",
+									"sid": 357204545710559,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 556805736139290,
+									"parameters": {
+										"group-name": "\"DamageEnemy\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Enemy",
+									"sid": 481004292623655,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 721106315156049
 						}
 					],
 					"sid": 647339657152041
@@ -1551,120 +1665,6 @@
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-collision-with-another-object",
-									"objectClass": "HitBox",
-									"sid": 790333866990185,
-									"parameters": {
-										"object": "Enemy"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Enemy",
-									"sid": 361022792991421,
-									"parameters": {
-										"instance-variable": "Visible",
-										"value": "0"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Enemy",
-									"sid": 867140529355903,
-									"parameters": {
-										"instance-variable": "cd",
-										"value": "0"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 714858551348678,
-									"parameters": {
-										"group-name": "\"DamageEnemy\"",
-										"state": "deactivated"
-									}
-								},
-								{
-									"id": "subtract-from-eventvar",
-									"objectClass": "System",
-									"sid": 172545253209839,
-									"parameters": {
-										"variable": "HpEnemy",
-										"value": "5"
-									}
-								},
-								{
-									"id": "set-enabled",
-									"objectClass": "Enemy",
-									"sid": 129536064552590,
-									"behaviorType": "Платформер",
-									"parameters": {
-										"state": "disabled"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Enemy",
-									"sid": 338247788227521,
-									"parameters": {
-										"animation": "\"Damage\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 187278568991517,
-									"parameters": {
-										"seconds": "0.5"
-									}
-								},
-								{
-									"id": "set-enabled",
-									"objectClass": "Enemy",
-									"sid": 312269202553757,
-									"behaviorType": "Платформер",
-									"parameters": {
-										"state": "enabled"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Enemy",
-									"sid": 881932092873453,
-									"parameters": {
-										"animation": "\"Idle\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 163379467974079,
-									"parameters": {
-										"group-name": "\"DamageEnemy\"",
-										"state": "activated"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Enemy",
-									"sid": 203239725284970,
-									"parameters": {
-										"instance-variable": "Visible",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 134771252657353
-						},
 						{
 							"eventType": "block",
 							"conditions": [
