@@ -81,9 +81,12 @@
 					"uid": 5,
 					"instanceVariables": {
 						"speedRun": 285,
-						"speedTackel": 375,
+						"speedTackel": 400,
 						"speedDash": 400,
-						"rotate": 1
+						"rotate": 1,
+						"NoEmpty": 0,
+						"CastWeapon": "",
+						"spawn": false
 					},
 					"behaviors": {
 						"Платформер": {
@@ -268,8 +271,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 321,
-						"y": 529,
+						"x": 312.30710147717184,
+						"y": 524.0326294155267,
 						"width": 86,
 						"height": 86,
 						"originX": 0.5,
@@ -465,85 +468,6 @@
 					}
 				},
 				{
-					"type": "Enemy",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Idle",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 17,
-					"instanceVariables": {
-						"rotate": 1,
-						"Visible": 0,
-						"smash": 0,
-						"cd": 0,
-						"distance": 0
-					},
-					"behaviors": {
-						"Платформер": {
-							"properties": {
-								"max-speed": 250,
-								"acceleration": 10000,
-								"deceleration": 20000,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": false,
-								"enabled": true
-							}
-						},
-						"НастраиваемоеДвижение": {
-							"properties": {
-								"stepping-mode": "none",
-								"pixels-per-step": 5,
-								"enabled": true
-							}
-						},
-						"Физика": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": false
-							}
-						},
-						"ПолеЗрения": {
-							"properties": {
-								"obstacles": "solids",
-								"range": 10000,
-								"cone-of-view": 360,
-								"use-collision-cells": true
-							}
-						}
-					},
-					"world": {
-						"x": 951.8556741876408,
-						"y": 489.00525920360633,
-						"width": 86,
-						"height": 86,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "Fon",
 					"properties": {
 						"initially-visible": false,
@@ -600,6 +524,52 @@
 							1
 						],
 						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Brick",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "stock",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 8,
+					"instanceVariables": {
+						"Active": false
+					},
+					"behaviors": {
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.8,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						}
+					},
+					"world": {
+						"x": 682.7656829415403,
+						"y": 516.8457811581803,
+						"width": 20,
+						"height": 5,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.840514731501629,
 						"zElevation": 0
 					}
 				},
@@ -666,8 +636,8 @@
 						}
 					},
 					"world": {
-						"x": 1152.4093381679656,
-						"y": 489.80315093650216,
+						"x": 1029.7996826171875,
+						"y": 490.4438781738281,
 						"width": 86,
 						"height": 86,
 						"originX": 0.5,
@@ -679,6 +649,52 @@
 							1
 						],
 						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Brick",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "stock",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 10,
+					"instanceVariables": {
+						"Active": false
+					},
+					"behaviors": {
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.8,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						}
+					},
+					"world": {
+						"x": 766.9896850585938,
+						"y": 521.0223999023438,
+						"width": 20,
+						"height": 5,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.840514731501629,
 						"zElevation": 0
 					}
 				}
