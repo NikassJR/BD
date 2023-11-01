@@ -82,6 +82,16 @@
 			"sid": 678829917484268
 		},
 		{
+			"eventType": "variable",
+			"name": "Finishing",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 988264356087001
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Setup",
@@ -819,6 +829,15 @@
 									}
 								},
 								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 447281186458614,
+									"parameters": {
+										"variable": "iFrame"
+									},
+									"isInverted": true
+								},
+								{
 									"id": "compare-instance-variable",
 									"objectClass": "Enemy",
 									"sid": 129761384592750,
@@ -1070,6 +1089,118 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "on-key-pressed",
+									"objectClass": "Клавиатура",
+									"sid": 835072603734277,
+									"parameters": {
+										"key": 32
+									}
+								},
+								{
+									"id": "compare-speed",
+									"objectClass": "Player",
+									"sid": 538720295717464,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"comparison": 0,
+										"speed": "0"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 155806690584236,
+									"parameters": {
+										"variable": "iFrame"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "toggle-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 498583273623468,
+									"disabled": true,
+									"parameters": {
+										"variable": "Finishing"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 609746270171584,
+									"parameters": {
+										"animation": "weapon & \"Finishing\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Player",
+									"sid": 185013990142378,
+									"parameters": {
+										"object": "HitBox",
+										"layer": "0",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 719063958272147,
+									"parameters": {
+										"seconds": "0.3"
+									}
+								},
+								{
+									"id": "toggle-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 479423642403837,
+									"disabled": true,
+									"parameters": {
+										"variable": "Finishing"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "HitBox",
+									"sid": 332674272765224
+								}
+							],
+							"sid": 115204457302965
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 974528599477666,
+									"parameters": {
+										"variable": "Finishing"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 608286711028323,
+									"parameters": {
+										"animation": "\"noWeaponFinishing\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 699811901925648,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 167036684729020,
@@ -1272,7 +1403,7 @@
 												{
 													"id": "on-key-pressed",
 													"objectClass": "Клавиатура",
-													"sid": 192247414851834,
+													"sid": 860674061178037,
 													"parameters": {
 														"key": 69
 													}
@@ -1280,7 +1411,7 @@
 												{
 													"id": "is-overlapping-another-object",
 													"objectClass": "Player",
-													"sid": 440128003278241,
+													"sid": 766780785811912,
 													"parameters": {
 														"object": "Brick"
 													}
@@ -1288,7 +1419,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "Player",
-													"sid": 165813039561827,
+													"sid": 931325599913972,
 													"parameters": {
 														"instance-variable": "NoEmpty",
 														"comparison": 0,
@@ -1300,7 +1431,7 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "Player",
-													"sid": 850882069577161,
+													"sid": 648782000896105,
 													"parameters": {
 														"instance-variable": "NoEmpty",
 														"value": "1"
@@ -1309,7 +1440,7 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "Player",
-													"sid": 143689930556948,
+													"sid": 416413703129445,
 													"parameters": {
 														"instance-variable": "CastWeapon",
 														"value": "\"Brick\""
@@ -1318,10 +1449,10 @@
 												{
 													"id": "destroy",
 													"objectClass": "Brick",
-													"sid": 816056754093317
+													"sid": 251894022821930
 												}
 											],
-											"sid": 286419228056473
+											"sid": 931702513607867
 										},
 										{
 											"eventType": "block",
@@ -1329,7 +1460,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "Player",
-													"sid": 694344499297312,
+													"sid": 553844580504186,
 													"parameters": {
 														"instance-variable": "NoEmpty",
 														"comparison": 0,
@@ -1339,7 +1470,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "Player",
-													"sid": 179364033903290,
+													"sid": 579615435544954,
 													"parameters": {
 														"instance-variable": "CastWeapon",
 														"comparison": 0,
@@ -1349,7 +1480,7 @@
 												{
 													"id": "is-boolean-instance-variable-set",
 													"objectClass": "Player",
-													"sid": 204730291298392,
+													"sid": 344896314559625,
 													"parameters": {
 														"instance-variable": "spawn"
 													},
@@ -1360,7 +1491,7 @@
 												{
 													"id": "spawn-another-object",
 													"objectClass": "Player",
-													"sid": 650773874564411,
+													"sid": 730771034253067,
 													"parameters": {
 														"object": "Brick",
 														"layer": "0",
@@ -1371,7 +1502,7 @@
 												{
 													"id": "set-boolean-instvar",
 													"objectClass": "Player",
-													"sid": 736430336882261,
+													"sid": 892924440117269,
 													"parameters": {
 														"instance-variable": "spawn",
 														"value": "true"
@@ -1380,14 +1511,14 @@
 												{
 													"id": "set-boolean-instvar",
 													"objectClass": "Brick",
-													"sid": 955859997225822,
+													"sid": 151282590810735,
 													"parameters": {
 														"instance-variable": "Active",
 														"value": "true"
 													}
 												}
 											],
-											"sid": 477640576482053
+											"sid": 918435892809079
 										},
 										{
 											"eventType": "block",
@@ -1395,7 +1526,7 @@
 												{
 													"id": "is-boolean-instance-variable-set",
 													"objectClass": "Brick",
-													"sid": 374546665445543,
+													"sid": 950709401372608,
 													"parameters": {
 														"instance-variable": "Active"
 													}
@@ -1405,14 +1536,14 @@
 												{
 													"id": "set-position",
 													"objectClass": "Brick",
-													"sid": 573337017439934,
+													"sid": 567568392048151,
 													"parameters": {
 														"x": "Player.X+40*Player.rotate",
 														"y": "Player.Y"
 													}
 												}
 											],
-											"sid": 678554239118942
+											"sid": 753134147947742
 										},
 										{
 											"eventType": "block",
@@ -1420,7 +1551,7 @@
 												{
 													"id": "on-click",
 													"objectClass": "Мышь",
-													"sid": 240169438796623,
+													"sid": 401007125805061,
 													"parameters": {
 														"mouse-button": "right",
 														"click-type": "clicked"
@@ -1429,7 +1560,7 @@
 												{
 													"id": "is-boolean-instance-variable-set",
 													"objectClass": "Brick",
-													"sid": 693093129069646,
+													"sid": 267407440442276,
 													"parameters": {
 														"instance-variable": "Active"
 													}
@@ -1439,16 +1570,25 @@
 												{
 													"id": "set-boolean-instvar",
 													"objectClass": "Brick",
-													"sid": 621188032522088,
+													"sid": 433412668204041,
 													"parameters": {
 														"instance-variable": "Active",
 														"value": "false"
 													}
 												},
 												{
+													"id": "set-instvar-value",
+													"objectClass": "Player",
+													"sid": 425797178884287,
+													"parameters": {
+														"instance-variable": "NoEmpty",
+														"value": "0"
+													}
+												},
+												{
 													"id": "set-enabled",
 													"objectClass": "Brick",
-													"sid": 595909519154636,
+													"sid": 213383785924015,
 													"behaviorType": "Физика",
 													"parameters": {
 														"mode": "enabled"
@@ -1457,7 +1597,7 @@
 												{
 													"id": "apply-impulse-towards-position",
 													"objectClass": "Brick",
-													"sid": 784808418612941,
+													"sid": 850745602616158,
 													"behaviorType": "Физика",
 													"parameters": {
 														"impulse": "0.5 ",
@@ -1469,20 +1609,20 @@
 												{
 													"id": "apply-torque",
 													"objectClass": "Brick",
-													"sid": 654382958830863,
+													"sid": 161452856710730,
 													"behaviorType": "Физика",
 													"parameters": {
 														"torque": "100"
 													}
 												}
 											],
-											"sid": 279462613013578
+											"sid": 797831401043929
 										}
 									],
-									"sid": 927468646085536
+									"sid": 766358274507599
 								}
 							],
-							"sid": 549480948607190
+							"sid": 614530847542422
 						},
 						{
 							"eventType": "group",
@@ -1497,7 +1637,7 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 848669669891303,
+											"sid": 811005991856523,
 											"parameters": {
 												"variable": "weapon",
 												"comparison": 0,
@@ -1507,14 +1647,14 @@
 										{
 											"id": "every-tick",
 											"objectClass": "System",
-											"sid": 453120364068229
+											"sid": 744103096265492
 										}
 									],
 									"actions": [
 										{
 											"id": "set-position-to-another-object",
 											"objectClass": "Baseball",
-											"sid": 948102930960329,
+											"sid": 354993994281308,
 											"parameters": {
 												"object": "Player",
 												"image-point-optional": "0"
@@ -1523,13 +1663,13 @@
 										{
 											"id": "set-visible",
 											"objectClass": "Baseball",
-											"sid": 269978870301197,
+											"sid": 815508871721805,
 											"parameters": {
 												"visibility": "invisible"
 											}
 										}
 									],
-									"sid": 531096416668575
+									"sid": 965539059964802
 								},
 								{
 									"eventType": "block",
@@ -1537,7 +1677,7 @@
 										{
 											"id": "on-click",
 											"objectClass": "Мышь",
-											"sid": 147237364598231,
+											"sid": 239184920873206,
 											"parameters": {
 												"mouse-button": "right",
 												"click-type": "clicked"
@@ -1546,7 +1686,7 @@
 										{
 											"id": "is-overlapping-another-object",
 											"objectClass": "Player",
-											"sid": 760528171113273,
+											"sid": 135959717593421,
 											"parameters": {
 												"object": "Baseball"
 											}
@@ -1556,20 +1696,20 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 337405494937341,
+											"sid": 319929025464738,
 											"parameters": {
 												"variable": "weapon",
 												"value": "\"Baseball\""
 											}
 										}
 									],
-									"sid": 504203296107004
+									"sid": 722465530297325
 								}
 							],
-							"sid": 917432377072215
+							"sid": 836148753657583
 						}
 					],
-					"sid": 425275894451454
+					"sid": 410055449561941
 				}
 			],
 			"sid": 371810727199503
@@ -1965,6 +2105,17 @@
 									"sid": 443094511313551,
 									"parameters": {
 										"object": "Enemy"
+									}
+								},
+								{
+									"id": "compare-velocity",
+									"objectClass": "Brick",
+									"sid": 785797745532519,
+									"behaviorType": "Физика",
+									"parameters": {
+										"which": "x-velocity",
+										"comparison": 4,
+										"value": "0"
 									}
 								},
 								{
