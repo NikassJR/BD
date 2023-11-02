@@ -279,6 +279,24 @@
 											"parameters": {
 												"key": 87
 											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 994431524378357,
+											"parameters": {
+												"instance-variable": "kickrun"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 337220082292934,
+											"parameters": {
+												"instance-variable": "kick"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [
@@ -488,6 +506,15 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 378560575005223,
+											"parameters": {
+												"variable": "iFrame"
+											},
+											"isInverted": true
+										},
+										{
 											"id": "key-is-down",
 											"objectClass": "Клавиатура",
 											"sid": 112569444856198,
@@ -511,6 +538,15 @@
 								{
 									"eventType": "block",
 									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 784272061884708,
+											"parameters": {
+												"variable": "iFrame"
+											},
+											"isInverted": true
+										},
 										{
 											"id": "key-is-down",
 											"objectClass": "Клавиатура",
@@ -1051,6 +1087,12 @@
 									}
 								},
 								{
+									"id": "is-on-floor",
+									"objectClass": "Player",
+									"sid": 674938940890949,
+									"behaviorType": "Платформер"
+								},
+								{
 									"id": "compare-speed",
 									"objectClass": "Player",
 									"sid": 562590375577337,
@@ -1150,10 +1192,9 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 646773970538205,
-									"disabled": true,
+									"sid": 187542875430941,
 									"parameters": {
-										"seconds": "0.1"
+										"seconds": "0.25"
 									}
 								},
 								{
@@ -1326,6 +1367,12 @@
 											}
 										},
 										{
+											"id": "is-on-floor",
+											"objectClass": "Player",
+											"sid": 298993679301172,
+											"behaviorType": "Платформер"
+										},
+										{
 											"id": "is-moving",
 											"objectClass": "Player",
 											"sid": 618334982013678,
@@ -1379,17 +1426,6 @@
 											}
 										},
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Player",
-											"sid": 323544902148119,
-											"parameters": {
-												"object": "HitBox",
-												"layer": "0",
-												"image-point": "0",
-												"create-hierarchy": false
-											}
-										},
-										{
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 570774826608951,
@@ -1414,11 +1450,6 @@
 											"parameters": {
 												"max-speed": "285"
 											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "HitBox",
-											"sid": 733611031667813
 										}
 									],
 									"sid": 248367018463771
@@ -1444,6 +1475,30 @@
 												"animation": "weapon & \"RunKick\"",
 												"from": "beginning"
 											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Player",
+											"sid": 270838063964494,
+											"parameters": {
+												"object": "HitBox",
+												"layer": "0",
+												"image-point": "1",
+												"create-hierarchy": false
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 234407396455582,
+											"parameters": {
+												"seconds": "0.1"
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "HitBox",
+											"sid": 703069287987101
 										}
 									],
 									"sid": 691688670009492
@@ -1651,6 +1706,15 @@
 													"sid": 433412668204041,
 													"parameters": {
 														"instance-variable": "Active",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Player",
+													"sid": 809572551299273,
+													"parameters": {
+														"instance-variable": "spawn",
 														"value": "false"
 													}
 												},
