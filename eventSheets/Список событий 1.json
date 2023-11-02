@@ -23,16 +23,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "kick",
-			"type": "boolean",
-			"initialValue": "false",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 792448305896570
-		},
-		{
-			"eventType": "variable",
 			"name": "weapon",
 			"type": "string",
 			"initialValue": "noWeapon",
@@ -40,16 +30,6 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 264480928336363
-		},
-		{
-			"eventType": "variable",
-			"name": "kickrun",
-			"type": "boolean",
-			"initialValue": "false",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 415111255597673
 		},
 		{
 			"eventType": "variable",
@@ -211,6 +191,36 @@
 						}
 					],
 					"sid": 807703168642216
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 392861662558665
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "HitBox",
+							"sid": 201232663578675,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "HitBoxEnemy",
+							"sid": 643062881882369,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 657896384405976,
+					"disabled": true
 				}
 			],
 			"sid": 849981437794942
@@ -344,11 +354,20 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 811575897761045,
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 550005252269773,
 											"parameters": {
-												"variable": "kickrun"
+												"instance-variable": "kickrun"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 112646653487834,
+											"parameters": {
+												"instance-variable": "kick"
 											},
 											"isInverted": true
 										},
@@ -405,11 +424,20 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 219642108396174,
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 448204971370588,
 											"parameters": {
-												"variable": "kick"
+												"instance-variable": "kick"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 213419832882619,
+											"parameters": {
+												"instance-variable": "kickrun"
 											},
 											"isInverted": true
 										},
@@ -840,15 +868,25 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Enemy",
-									"sid": 129761384592750,
+									"sid": 911013430513709,
+									"disabled": true,
 									"parameters": {
 										"instance-variable": "distance",
 										"comparison": 2,
-										"value": "50"
+										"value": "60"
 									}
 								}
 							],
 							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Player",
+									"sid": 679955008904807,
+									"parameters": {
+										"instance-variable": "kickrun",
+										"value": "false"
+									}
+								},
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
@@ -861,7 +899,7 @@
 								{
 									"id": "set-animation",
 									"objectClass": "Player",
-									"sid": 934339646486917,
+									"sid": 376922786929927,
 									"parameters": {
 										"animation": "weapon & \"Damage\"",
 										"from": "beginning"
@@ -1030,15 +1068,34 @@
 										"variable": "iFrame"
 									},
 									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player",
+									"sid": 807473232594773,
+									"parameters": {
+										"instance-variable": "kick"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player",
+									"sid": 366932552571752,
+									"parameters": {
+										"instance-variable": "kickrun"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
 								{
-									"id": "toggle-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 465456068089659,
+									"id": "set-boolean-instvar",
+									"objectClass": "Player",
+									"sid": 629098092065094,
 									"parameters": {
-										"variable": "kick"
+										"instance-variable": "kick",
+										"value": "true"
 									}
 								},
 								{
@@ -1053,7 +1110,7 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "Player",
-									"sid": 383409412835883,
+									"sid": 705858339264372,
 									"parameters": {
 										"object": "HitBox",
 										"layer": "0",
@@ -1064,17 +1121,9 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 744547125655207,
+									"sid": 780180695432525,
 									"parameters": {
-										"seconds": "0.2"
-									}
-								},
-								{
-									"id": "toggle-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 931956213183814,
-									"parameters": {
-										"variable": "kick"
+										"seconds": "0.3"
 									}
 								},
 								{
@@ -1084,6 +1133,40 @@
 								}
 							],
 							"sid": 565259009294063
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "Player",
+									"sid": 831671438007842,
+									"parameters": {
+										"animation": "weapon & \"Attack\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 646773970538205,
+									"disabled": true,
+									"parameters": {
+										"seconds": "0.1"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Player",
+									"sid": 196168503022657,
+									"parameters": {
+										"instance-variable": "kick",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 418987663626020
 						},
 						{
 							"eventType": "block",
@@ -1201,11 +1284,11 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 167036684729020,
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player",
+									"sid": 942798194462756,
 									"parameters": {
-										"variable": "kick"
+										"instance-variable": "kick"
 									}
 								}
 							],
@@ -1213,14 +1296,15 @@
 								{
 									"id": "set-animation",
 									"objectClass": "Player",
-									"sid": 894849748774689,
+									"sid": 740344140419089,
 									"parameters": {
-										"animation": "\"Attack\"",
+										"animation": "weapon & \"Attack\"",
 										"from": "beginning"
 									}
 								}
 							],
-							"sid": 379500925095976
+							"sid": 379500925095976,
+							"disabled": true
 						},
 						{
 							"eventType": "group",
@@ -1244,13 +1328,31 @@
 										{
 											"id": "is-moving",
 											"objectClass": "Player",
-											"sid": 640945114860201,
+											"sid": 618334982013678,
 											"behaviorType": "Платформер"
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 930672515825676,
+											"parameters": {
+												"instance-variable": "kick"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 715107233167289,
+											"parameters": {
+												"instance-variable": "kickrun"
+											},
+											"isInverted": true
 										},
 										{
 											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 871671904704198,
+											"sid": 982404335472277,
 											"parameters": {
 												"variable": "iFrame"
 											},
@@ -1259,11 +1361,12 @@
 									],
 									"actions": [
 										{
-											"id": "toggle-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 503894279462030,
+											"id": "set-boolean-instvar",
+											"objectClass": "Player",
+											"sid": 125309243977211,
 											"parameters": {
-												"variable": "kickrun"
+												"instance-variable": "kickrun",
+												"value": "true"
 											}
 										},
 										{
@@ -1289,17 +1392,18 @@
 										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 957411577912443,
+											"sid": 570774826608951,
 											"parameters": {
 												"seconds": "0.3"
 											}
 										},
 										{
-											"id": "toggle-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 831557125995940,
+											"id": "set-boolean-instvar",
+											"objectClass": "Player",
+											"sid": 661358010918885,
 											"parameters": {
-												"variable": "kickrun"
+												"instance-variable": "kickrun",
+												"value": "false"
 											}
 										},
 										{
@@ -1315,32 +1419,6 @@
 											"id": "destroy",
 											"objectClass": "HitBox",
 											"sid": 733611031667813
-										},
-										{
-											"id": "set-group-active",
-											"objectClass": "System",
-											"sid": 223291895080615,
-											"parameters": {
-												"group-name": "\"KickRun\"",
-												"state": "deactivated"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 841048377232294,
-											"parameters": {
-												"seconds": "0.5"
-											}
-										},
-										{
-											"id": "set-group-active",
-											"objectClass": "System",
-											"sid": 947565678572369,
-											"parameters": {
-												"group-name": "\"KickRun\"",
-												"state": "activated"
-											}
 										}
 									],
 									"sid": 248367018463771
@@ -1349,11 +1427,11 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 565681338257068,
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 929328973357199,
 											"parameters": {
-												"variable": "kickrun"
+												"instance-variable": "kickrun"
 											}
 										}
 									],
@@ -1361,14 +1439,14 @@
 										{
 											"id": "set-animation",
 											"objectClass": "Player",
-											"sid": 661474701062506,
+											"sid": 195553283857130,
 											"parameters": {
 												"animation": "weapon & \"RunKick\"",
 												"from": "beginning"
 											}
 										}
 									],
-									"sid": 288972985300367
+									"sid": 691688670009492
 								}
 							],
 							"sid": 557429321870556
@@ -1953,7 +2031,6 @@
 									"id": "set-visible",
 									"objectClass": "HitBoxEnemy",
 									"sid": 390663535690538,
-									"disabled": true,
 									"parameters": {
 										"visibility": "invisible"
 									}
