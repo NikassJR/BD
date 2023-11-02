@@ -207,7 +207,7 @@
 							"objectClass": "Текст",
 							"sid": 342848147078146,
 							"parameters": {
-								"text": "Enemy.HPEnemy"
+								"text": "EnemyBaseball.HPEnemy"
 							}
 						}
 					],
@@ -894,7 +894,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 911013430513709,
 									"disabled": true,
 									"parameters": {
@@ -937,7 +937,7 @@
 									"objectClass": "Player",
 									"sid": 588062629799589,
 									"parameters": {
-										"width": "Player.Width * -Enemy.rotate * Player.rotate"
+										"width": "Player.Width * -EnemyBaseball.rotate * Player.rotate"
 									}
 								},
 								{
@@ -947,7 +947,7 @@
 									"behaviorType": "НастраиваемоеДвижение",
 									"parameters": {
 										"which": "overall",
-										"speed": "300 * -Enemy.rotate"
+										"speed": "300 * -EnemyBaseball.rotate"
 									}
 								},
 								{
@@ -1889,14 +1889,14 @@
 							"conditions": [
 								{
 									"id": "is-visible",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 275252147285590
 								}
 							],
 							"actions": [
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 577837998510712,
 									"parameters": {
 										"instance-variable": "distance",
@@ -1911,7 +1911,7 @@
 									"conditions": [
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "Enemy",
+											"objectClass": "EnemyBaseball",
 											"sid": 563646719285755,
 											"parameters": {
 												"instance-variable": "distance",
@@ -1923,7 +1923,7 @@
 									"actions": [
 										{
 											"id": "set-instvar-value",
-											"objectClass": "Enemy",
+											"objectClass": "EnemyBaseball",
 											"sid": 964367044229288,
 											"parameters": {
 												"instance-variable": "distance",
@@ -1951,7 +1951,7 @@
 							"actions": [
 								{
 									"id": "set-animation",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 531059135339688,
 									"parameters": {
 										"animation": "\"Idle\"",
@@ -1976,7 +1976,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 721839006153411,
 									"parameters": {
 										"instance-variable": "distance",
@@ -1986,7 +1986,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 662690053701392,
 									"parameters": {
 										"instance-variable": "cd",
@@ -1996,7 +1996,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 887789769733453,
 									"parameters": {
 										"instance-variable": "smash",
@@ -2008,7 +2008,7 @@
 							"actions": [
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 431378936211927,
 									"parameters": {
 										"instance-variable": "smash",
@@ -2017,7 +2017,7 @@
 								},
 								{
 									"id": "set-animation",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 949330839520383,
 									"parameters": {
 										"animation": "\"Kick\"",
@@ -2026,7 +2026,7 @@
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 517236714206647,
 									"parameters": {
 										"instance-variable": "cd",
@@ -2043,7 +2043,7 @@
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 660691166028006,
 									"parameters": {
 										"instance-variable": "smash",
@@ -2058,7 +2058,7 @@
 							"conditions": [
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 980799074123874,
 									"parameters": {
 										"animation": "\"Kick\""
@@ -2066,7 +2066,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 154923707891057,
 									"parameters": {
 										"instance-variable": "cd",
@@ -2076,7 +2076,7 @@
 								},
 								{
 									"id": "compare-animation-frame",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 837828082558980,
 									"parameters": {
 										"comparison": 0,
@@ -2087,7 +2087,7 @@
 							"actions": [
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 345926278201810,
 									"parameters": {
 										"instance-variable": "cd",
@@ -2096,7 +2096,7 @@
 								},
 								{
 									"id": "spawn-another-object",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 375243487799870,
 									"parameters": {
 										"object": "HitBoxEnemy",
@@ -2137,14 +2137,14 @@
 									"objectClass": "HitBox",
 									"sid": 956009833286675,
 									"parameters": {
-										"object": "Enemy"
+										"object": "EnemyBaseball"
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 165952237141047,
 									"parameters": {
 										"instance-variable": "Visible",
@@ -2153,7 +2153,7 @@
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 393631832701073,
 									"parameters": {
 										"instance-variable": "cd",
@@ -2171,7 +2171,7 @@
 								},
 								{
 									"id": "subtract-from-instvar",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 296294783780416,
 									"parameters": {
 										"instance-variable": "HPEnemy",
@@ -2180,7 +2180,7 @@
 								},
 								{
 									"id": "set-enabled",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 571536360460469,
 									"behaviorType": "Платформер",
 									"parameters": {
@@ -2189,7 +2189,7 @@
 								},
 								{
 									"id": "set-animation",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 318587699739044,
 									"parameters": {
 										"animation": "\"Damage\"",
@@ -2198,7 +2198,7 @@
 								},
 								{
 									"id": "set-width",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 767636791354425,
 									"parameters": {
 										"width": "Self.width* Player.rotate * -Self.rotate"
@@ -2214,7 +2214,7 @@
 								},
 								{
 									"id": "set-enabled",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 395834045582117,
 									"behaviorType": "Платформер",
 									"parameters": {
@@ -2223,7 +2223,7 @@
 								},
 								{
 									"id": "set-animation",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 357204545710559,
 									"parameters": {
 										"animation": "\"Idle\"",
@@ -2241,7 +2241,7 @@
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 481004292623655,
 									"parameters": {
 										"instance-variable": "Visible",
@@ -2259,7 +2259,7 @@
 									"objectClass": "Brick",
 									"sid": 443094511313551,
 									"parameters": {
-										"object": "Enemy"
+										"object": "EnemyBaseball"
 									}
 								},
 								{
@@ -2318,7 +2318,7 @@
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 468163091591110,
 									"parameters": {
 										"instance-variable": "Visible",
@@ -2327,7 +2327,7 @@
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 818500201620615,
 									"parameters": {
 										"instance-variable": "cd",
@@ -2354,7 +2354,7 @@
 								},
 								{
 									"id": "set-enabled",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 597738735415807,
 									"behaviorType": "Платформер",
 									"parameters": {
@@ -2363,7 +2363,7 @@
 								},
 								{
 									"id": "set-animation",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 929010326389644,
 									"parameters": {
 										"animation": "\"Damage\"",
@@ -2372,7 +2372,7 @@
 								},
 								{
 									"id": "set-width",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 408283340241211,
 									"parameters": {
 										"width": "Self.width* Player.rotate * -Self.rotate"
@@ -2388,7 +2388,7 @@
 								},
 								{
 									"id": "set-enabled",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 932764363780267,
 									"behaviorType": "Платформер",
 									"parameters": {
@@ -2397,7 +2397,7 @@
 								},
 								{
 									"id": "set-animation",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 170575566183596,
 									"parameters": {
 										"animation": "\"Idle\"",
@@ -2415,7 +2415,7 @@
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 497192126584364,
 									"parameters": {
 										"instance-variable": "Visible",
@@ -2435,7 +2435,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 709631497610677,
 									"parameters": {
 										"instance-variable": "HPEnemy",
@@ -2447,7 +2447,7 @@
 							"actions": [
 								{
 									"id": "set-boolean-instvar",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 706737638143819,
 									"parameters": {
 										"instance-variable": "Down",
@@ -2462,7 +2462,7 @@
 							"conditions": [
 								{
 									"id": "is-boolean-instance-variable-set",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 235091858521320,
 									"parameters": {
 										"instance-variable": "Down"
@@ -2472,7 +2472,7 @@
 							"actions": [
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 622752539735964,
 									"parameters": {
 										"instance-variable": "Visible",
@@ -2481,7 +2481,7 @@
 								},
 								{
 									"id": "set-animation",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 559654087844962,
 									"parameters": {
 										"animation": "\"Down\"",
@@ -2490,25 +2490,25 @@
 								},
 								{
 									"id": "set-width",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 638703037850374,
 									"parameters": {
-										"width": "Enemy.Width * -Enemy.rotate * Player.rotate"
+										"width": "EnemyBaseball.Width * -EnemyBaseball.rotate * Player.rotate"
 									}
 								},
 								{
 									"id": "set-speed",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 651654768050497,
 									"behaviorType": "НастраиваемоеДвижение",
 									"parameters": {
 										"which": "overall",
-										"speed": "300 *Enemy.rotate"
+										"speed": "300 *EnemyBaseball.rotate"
 									}
 								},
 								{
 									"id": "reverse",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 679482622496728,
 									"behaviorType": "НастраиваемоеДвижение",
 									"parameters": {
@@ -2525,13 +2525,13 @@
 								},
 								{
 									"id": "stop",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 175270817003863,
 									"behaviorType": "НастраиваемоеДвижение"
 								},
 								{
 									"id": "set-boolean-instvar",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 950278475020536,
 									"parameters": {
 										"instance-variable": "Down",
@@ -2540,7 +2540,7 @@
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 619451734291218,
 									"parameters": {
 										"instance-variable": "HPEnemy",
@@ -2565,7 +2565,7 @@
 							"conditions": [
 								{
 									"id": "compare-x",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 527993317714203,
 									"parameters": {
 										"comparison": 2,
@@ -2574,7 +2574,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 597922155223922,
 									"parameters": {
 										"instance-variable": "distance",
@@ -2584,7 +2584,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 757767012466812,
 									"parameters": {
 										"instance-variable": "Visible",
@@ -2594,7 +2594,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 853638576822862,
 									"parameters": {
 										"instance-variable": "smash",
@@ -2606,7 +2606,7 @@
 							"actions": [
 								{
 									"id": "simulate-control",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 710427143601501,
 									"behaviorType": "Платформер",
 									"parameters": {
@@ -2615,7 +2615,7 @@
 								},
 								{
 									"id": "set-max-speed",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 301713901427844,
 									"behaviorType": "Платформер",
 									"parameters": {
@@ -2624,7 +2624,7 @@
 								},
 								{
 									"id": "set-animation",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 766904334128763,
 									"parameters": {
 										"animation": "\"Run\"",
@@ -2633,7 +2633,7 @@
 								},
 								{
 									"id": "set-mirrored",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 610061332014141,
 									"parameters": {
 										"state": "not-mirrored"
@@ -2641,7 +2641,7 @@
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 728443677092107,
 									"parameters": {
 										"instance-variable": "rotate",
@@ -2650,7 +2650,7 @@
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 402871472999942,
 									"parameters": {
 										"instance-variable": "cd",
@@ -2665,7 +2665,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 473751253757886,
 									"parameters": {
 										"instance-variable": "distance",
@@ -2675,7 +2675,7 @@
 								},
 								{
 									"id": "compare-x",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 569989914721579,
 									"parameters": {
 										"comparison": 4,
@@ -2684,7 +2684,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 320736030320298,
 									"parameters": {
 										"instance-variable": "Visible",
@@ -2694,7 +2694,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 838023470916344,
 									"parameters": {
 										"instance-variable": "smash",
@@ -2706,7 +2706,7 @@
 							"actions": [
 								{
 									"id": "simulate-control",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 449221772778411,
 									"behaviorType": "Платформер",
 									"parameters": {
@@ -2715,7 +2715,7 @@
 								},
 								{
 									"id": "set-max-speed",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 133074816768936,
 									"behaviorType": "Платформер",
 									"parameters": {
@@ -2724,7 +2724,7 @@
 								},
 								{
 									"id": "set-animation",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 576694323591076,
 									"parameters": {
 										"animation": "\"Run\"",
@@ -2733,7 +2733,7 @@
 								},
 								{
 									"id": "set-mirrored",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 136371292858440,
 									"parameters": {
 										"state": "mirrored"
@@ -2741,7 +2741,7 @@
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 418720904997342,
 									"parameters": {
 										"instance-variable": "rotate",
@@ -2750,7 +2750,7 @@
 								},
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 274959663783269,
 									"parameters": {
 										"instance-variable": "cd",
@@ -2777,7 +2777,7 @@
 							"actions": [
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 725622681743463,
 									"parameters": {
 										"instance-variable": "Visible",
@@ -2786,7 +2786,7 @@
 								},
 								{
 									"id": "set-animation",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 506417589576634,
 									"parameters": {
 										"animation": "\"idle\"",
@@ -2811,7 +2811,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 389842234506699,
 									"parameters": {
 										"instance-variable": "distance",
@@ -2823,7 +2823,7 @@
 							"actions": [
 								{
 									"id": "set-instvar-value",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 922370513672452,
 									"parameters": {
 										"instance-variable": "Visible",
@@ -2839,7 +2839,7 @@
 							"conditions": [
 								{
 									"id": "on-animation-finished",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 498327835349184,
 									"parameters": {
 										"animation": "\"Kick\""
@@ -2856,7 +2856,7 @@
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 747384855881291,
 									"parameters": {
 										"instance-variable": "Visible",
@@ -2868,7 +2868,7 @@
 							"actions": [
 								{
 									"id": "set-animation",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 539315593741508,
 									"parameters": {
 										"animation": "\"Kick\"",
@@ -2877,7 +2877,7 @@
 								},
 								{
 									"id": "set-animation-frame",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 999919601433083,
 									"parameters": {
 										"frame-number": "4"
@@ -2885,7 +2885,7 @@
 								},
 								{
 									"id": "set-max-speed",
-									"objectClass": "Enemy",
+									"objectClass": "EnemyBaseball",
 									"sid": 717676720087636,
 									"behaviorType": "Платформер",
 									"parameters": {
