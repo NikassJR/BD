@@ -242,6 +242,202 @@
 						{
 							"eventType": "group",
 							"disabled": false,
+							"title": "Movesetup",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 990021579256903,
+											"parameters": {
+												"variable": "iFrame"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Клавиатура",
+											"sid": 723921090737929,
+											"parameters": {
+												"key": 65
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "Player",
+											"sid": 355049959231689,
+											"parameters": {
+												"state": "mirrored"
+											}
+										}
+									],
+									"sid": 280206770362788
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 606785634550536,
+											"parameters": {
+												"variable": "iFrame"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Клавиатура",
+											"sid": 731970249809020,
+											"parameters": {
+												"key": 68
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-mirrored",
+											"objectClass": "Player",
+											"sid": 335696076941173,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										}
+									],
+									"sid": 739013826895750
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Клавиатура",
+											"sid": 644591362736183,
+											"parameters": {
+												"key": 68
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 740497184245363,
+											"parameters": {
+												"variable": "iFrame"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "Player",
+											"sid": 971708635286484,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"control": "right"
+											}
+										}
+									],
+									"sid": 710561000972134
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Клавиатура",
+											"sid": 700012612083054,
+											"parameters": {
+												"key": 65
+											}
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 825269046578959,
+											"parameters": {
+												"variable": "iFrame"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "Player",
+											"sid": 194829326422840,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"control": "left"
+											}
+										}
+									],
+									"sid": 389504952280911
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-width",
+											"objectClass": "Player",
+											"sid": 113682436665968,
+											"parameters": {
+												"comparison": 4,
+												"width": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 155665037956613,
+											"parameters": {
+												"instance-variable": "rotate",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 469033452044597
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-width",
+											"objectClass": "Player",
+											"sid": 471140579893035,
+											"parameters": {
+												"comparison": 2,
+												"width": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 331462934402395,
+											"parameters": {
+												"instance-variable": "rotate",
+												"value": "-1"
+											}
+										}
+									],
+									"sid": 241873121853088
+								}
+							],
+							"sid": 575204630410179
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
 							"title": "Jump",
 							"description": "",
 							"isActiveOnStart": true,
@@ -494,202 +690,6 @@
 								}
 							],
 							"sid": 526227399048507
-						},
-						{
-							"eventType": "group",
-							"disabled": false,
-							"title": "Movesetup",
-							"description": "",
-							"isActiveOnStart": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 378560575005223,
-											"parameters": {
-												"variable": "iFrame"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "key-is-down",
-											"objectClass": "Клавиатура",
-											"sid": 112569444856198,
-											"parameters": {
-												"key": 65
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-mirrored",
-											"objectClass": "Player",
-											"sid": 648981353979589,
-											"parameters": {
-												"state": "mirrored"
-											}
-										}
-									],
-									"sid": 663772909502254
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 784272061884708,
-											"parameters": {
-												"variable": "iFrame"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "key-is-down",
-											"objectClass": "Клавиатура",
-											"sid": 818551052309452,
-											"parameters": {
-												"key": 68
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-mirrored",
-											"objectClass": "Player",
-											"sid": 843716861203804,
-											"parameters": {
-												"state": "not-mirrored"
-											}
-										}
-									],
-									"sid": 261119090465234
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Клавиатура",
-											"sid": 505582123715227,
-											"parameters": {
-												"key": 68
-											}
-										},
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 638081780802616,
-											"parameters": {
-												"variable": "iFrame"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "Player",
-											"sid": 593297565887470,
-											"behaviorType": "Платформер",
-											"parameters": {
-												"control": "right"
-											}
-										}
-									],
-									"sid": 225276311764954
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Клавиатура",
-											"sid": 903267986964132,
-											"parameters": {
-												"key": 65
-											}
-										},
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 699753667522783,
-											"parameters": {
-												"variable": "iFrame"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "Player",
-											"sid": 534992741672486,
-											"behaviorType": "Платформер",
-											"parameters": {
-												"control": "left"
-											}
-										}
-									],
-									"sid": 436944739311939
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-width",
-											"objectClass": "Player",
-											"sid": 254495631989985,
-											"parameters": {
-												"comparison": 4,
-												"width": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 868811116001117,
-											"parameters": {
-												"instance-variable": "rotate",
-												"value": "1"
-											}
-										}
-									],
-									"sid": 611308174326935
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-width",
-											"objectClass": "Player",
-											"sid": 479041961052685,
-											"parameters": {
-												"comparison": 2,
-												"width": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 688681625690615,
-											"parameters": {
-												"instance-variable": "rotate",
-												"value": "-1"
-											}
-										}
-									],
-									"sid": 324718773444705
-								}
-							],
-							"sid": 715413737455426
 						},
 						{
 							"eventType": "group",
@@ -2251,11 +2251,11 @@
 								{
 									"id": "compare-velocity",
 									"objectClass": "Brick",
-									"sid": 785797745532519,
+									"sid": 143414688864754,
 									"behaviorType": "Физика",
 									"parameters": {
 										"which": "x-velocity",
-										"comparison": 4,
+										"comparison": 1,
 										"value": "0"
 									}
 								},
