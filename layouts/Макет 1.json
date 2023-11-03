@@ -88,7 +88,8 @@
 						"CastWeapon": "",
 						"spawn": false,
 						"kick": false,
-						"kickrun": false
+						"kickrun": false,
+						"damage": 0
 					},
 					"behaviors": {
 						"Платформер": {
@@ -228,7 +229,11 @@
 						"live-preview": false
 					},
 					"uid": 9,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"hz": 0.02,
+						"amplitude": 5,
+						"duration": 15
+					},
 					"behaviors": {
 						"СледитьЗа": {
 							"properties": {
@@ -592,7 +597,10 @@
 						"cd": 0,
 						"distance": 0,
 						"HPEnemy": 4,
-						"Down": false
+						"Down": false,
+						"kickCounter": 0,
+						"knockout": false,
+						"death": false
 					},
 					"behaviors": {
 						"Платформер": {
