@@ -62,16 +62,6 @@
 			"sid": 678829917484268
 		},
 		{
-			"eventType": "variable",
-			"name": "Finishing",
-			"type": "boolean",
-			"initialValue": "false",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 988264356087001
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Setup",
@@ -673,6 +663,15 @@
 												"variable": "iFrame"
 											},
 											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 348559006035583,
+											"parameters": {
+												"instance-variable": "Finishing"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [
@@ -1210,6 +1209,83 @@
 							"sid": 418987663626020
 						},
 						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Клавиатура",
+									"sid": 610430444907007,
+									"parameters": {
+										"key": 32
+									}
+								},
+								{
+									"id": "is-on-floor",
+									"objectClass": "Player",
+									"sid": 708434190244341,
+									"behaviorType": "Платформер"
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "shakeScreen",
+									"sid": 362899367245622
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player",
+									"sid": 389119977457478,
+									"parameters": {
+										"animation": "\"noWeaponFinishing\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Player",
+									"sid": 658695835069556,
+									"parameters": {
+										"object": "HitBox",
+										"layer": "0",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Player",
+									"sid": 576161752394449,
+									"parameters": {
+										"instance-variable": "Finishing",
+										"value": "true"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 316030631921603,
+									"parameters": {
+										"seconds": "0.3"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Player",
+									"sid": 610932440953495,
+									"parameters": {
+										"instance-variable": "Finishing",
+										"value": "false"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "HitBox",
+									"sid": 719843454858792
+								}
+							],
+							"sid": 641130112412821
+						},
+						{
 							"functionName": "shakeScreen",
 							"functionDescription": "",
 							"functionCategory": "",
@@ -1341,31 +1417,6 @@
 								}
 							],
 							"sid": 249016882397827
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 974528599477666,
-									"parameters": {
-										"variable": "Finishing"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation",
-									"objectClass": "Player",
-									"sid": 608286711028323,
-									"parameters": {
-										"animation": "\"noWeaponFinishing\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 699811901925648
 						},
 						{
 							"eventType": "block",
@@ -1568,40 +1619,41 @@
 							"title": "noWeapon",
 							"description": "",
 							"isActiveOnStart": true,
-							"children": [],
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 823167714578010,
+											"parameters": {
+												"variable": "weapon",
+												"comparison": 0,
+												"value": "\"noWeapon\""
+											}
+										},
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 285453194285447
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 760383790027960,
+											"parameters": {
+												"instance-variable": "damage",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 956015964207930
+								}
+							],
 							"sid": 271804284198804
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 892128904746328,
-									"parameters": {
-										"variable": "weapon",
-										"comparison": 0,
-										"value": "\"noWeapon\""
-									}
-								},
-								{
-									"id": "every-tick",
-									"objectClass": "System",
-									"sid": 926690756675890
-								}
-							],
-							"actions": [
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player",
-									"sid": 889116172162431,
-									"parameters": {
-										"instance-variable": "damage",
-										"value": "2"
-									}
-								}
-							],
-							"sid": 101445864147919
 						},
 						{
 							"eventType": "group",
@@ -1849,102 +1901,249 @@
 										}
 									],
 									"sid": 766358274507599
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "Baseball",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 256435720799237,
+													"parameters": {
+														"variable": "weapon",
+														"comparison": 0,
+														"value": "\"Baseball\""
+													}
+												},
+												{
+													"id": "every-tick",
+													"objectClass": "System",
+													"sid": 159235245457566
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position-to-another-object",
+													"objectClass": "Baseball",
+													"sid": 979989961589403,
+													"parameters": {
+														"object": "Player",
+														"image-point-optional": "0"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Baseball",
+													"sid": 170094369163544,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Player",
+													"sid": 364566616665332,
+													"parameters": {
+														"instance-variable": "damage",
+														"value": "4"
+													}
+												}
+											],
+											"sid": 360370545437920
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-click",
+													"objectClass": "Мышь",
+													"sid": 428936438082848,
+													"parameters": {
+														"mouse-button": "right",
+														"click-type": "clicked"
+													}
+												},
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player",
+													"sid": 554465103865048,
+													"parameters": {
+														"object": "Baseball"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 524319335463515,
+													"parameters": {
+														"instance-variable": "NoEmpty",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 579398828833650,
+													"parameters": {
+														"variable": "weapon",
+														"value": "\"Baseball\""
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Player",
+													"sid": 798463115807247,
+													"parameters": {
+														"instance-variable": "NoEmpty",
+														"value": "1"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Baseball",
+													"sid": 138798696748116,
+													"parameters": {
+														"instance-variable": "Active",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 664345038935133
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-click",
+													"objectClass": "Мышь",
+													"sid": 266807295335532,
+													"parameters": {
+														"mouse-button": "right",
+														"click-type": "clicked"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Baseball",
+													"sid": 385251302362676,
+													"parameters": {
+														"instance-variable": "Active"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 295370057901793,
+													"parameters": {
+														"instance-variable": "NoEmpty",
+														"comparison": 0,
+														"value": "1"
+													}
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 562050601929362,
+													"parameters": {
+														"variable": "weapon",
+														"comparison": 0,
+														"value": "\"Baseball\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "Baseball",
+													"sid": 180138679027185,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 304359983278177,
+													"parameters": {
+														"variable": "weapon",
+														"value": "\"noWeapon\""
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Baseball",
+													"sid": 271569570088691,
+													"parameters": {
+														"instance-variable": "Active",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Player",
+													"sid": 925772821339139,
+													"parameters": {
+														"instance-variable": "spawn",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Player",
+													"sid": 542856754399338,
+													"parameters": {
+														"instance-variable": "NoEmpty",
+														"value": "0"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "Baseball",
+													"sid": 319460503410641,
+													"behaviorType": "Физика",
+													"parameters": {
+														"mode": "enabled"
+													}
+												},
+												{
+													"id": "apply-impulse-towards-position",
+													"objectClass": "Baseball",
+													"sid": 706974121759060,
+													"behaviorType": "Физика",
+													"parameters": {
+														"impulse": "0.8",
+														"x": "Player.X+50 * Player.rotate",
+														"y": "Player.Y -2",
+														"image-point": "0"
+													}
+												},
+												{
+													"id": "apply-torque",
+													"objectClass": "Baseball",
+													"sid": 613082646895264,
+													"behaviorType": "Физика",
+													"parameters": {
+														"torque": "100"
+													}
+												}
+											],
+											"sid": 572125815876025
+										}
+									],
+									"sid": 459184095155547
 								}
 							],
 							"sid": 614530847542422
-						},
-						{
-							"eventType": "group",
-							"disabled": false,
-							"title": "Baseball",
-							"description": "",
-							"isActiveOnStart": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 811005991856523,
-											"parameters": {
-												"variable": "weapon",
-												"comparison": 0,
-												"value": "\"Baseball\""
-											}
-										},
-										{
-											"id": "every-tick",
-											"objectClass": "System",
-											"sid": 744103096265492
-										}
-									],
-									"actions": [
-										{
-											"id": "set-position-to-another-object",
-											"objectClass": "Baseball",
-											"sid": 354993994281308,
-											"parameters": {
-												"object": "Player",
-												"image-point-optional": "0"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "Baseball",
-											"sid": 815508871721805,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-instvar-value",
-											"objectClass": "Player",
-											"sid": 299778218127789,
-											"parameters": {
-												"instance-variable": "damage",
-												"value": "4"
-											}
-										}
-									],
-									"sid": 965539059964802
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-click",
-											"objectClass": "Мышь",
-											"sid": 239184920873206,
-											"parameters": {
-												"mouse-button": "right",
-												"click-type": "clicked"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Player",
-											"sid": 135959717593421,
-											"parameters": {
-												"object": "Baseball"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 319929025464738,
-											"parameters": {
-												"variable": "weapon",
-												"value": "\"Baseball\""
-											}
-										}
-									],
-									"sid": 722465530297325
-								}
-							],
-							"sid": 836148753657583
 						}
 					],
 					"sid": 410055449561941
@@ -2372,51 +2571,6 @@
 							"conditions": [
 								{
 									"id": "on-collision-with-another-object",
-									"objectClass": "HitBox",
-									"sid": 717709344137237,
-									"parameters": {
-										"object": "EnemyBaseball"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 651106711386836,
-									"parameters": {
-										"variable": "Finishing"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 186976944973622,
-									"parameters": {
-										"seconds": "0.25"
-									}
-								},
-								{
-									"callFunction": "shakeScreen",
-									"sid": 248861376241179
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "EnemyBaseball",
-									"sid": 915152314064173,
-									"parameters": {
-										"animation": "\"Death\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 334172902037923
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-collision-with-another-object",
 									"objectClass": "Brick",
 									"sid": 443094511313551,
 									"parameters": {
@@ -2480,7 +2634,7 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "EnemyBaseball",
-									"sid": 468163091591110,
+									"sid": 771772971971486,
 									"parameters": {
 										"instance-variable": "Visible",
 										"value": "0"
@@ -2505,12 +2659,21 @@
 									}
 								},
 								{
-									"id": "subtract-from-eventvar",
-									"objectClass": "System",
-									"sid": 970189874236288,
+									"id": "set-animation",
+									"objectClass": "EnemyBaseball",
+									"sid": 117775207190615,
 									"parameters": {
-										"variable": "HpEnemy",
-										"value": "5"
+										"animation": "\"Damage\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "EnemyBaseball",
+									"sid": 239044391987015,
+									"parameters": {
+										"instance-variable": "HPEnemy",
+										"value": "1"
 									}
 								},
 								{
@@ -2520,15 +2683,6 @@
 									"behaviorType": "Платформер",
 									"parameters": {
 										"state": "disabled"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "EnemyBaseball",
-									"sid": 929010326389644,
-									"parameters": {
-										"animation": "\"Damage\"",
-										"from": "beginning"
 									}
 								},
 								{
@@ -2542,9 +2696,9 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 263617731057788,
+									"sid": 911657433264204,
 									"parameters": {
-										"seconds": "0.5"
+										"seconds": "1"
 									}
 								},
 								{
@@ -2595,13 +2749,169 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Baseball",
+									"sid": 370645554630237,
+									"parameters": {
+										"object": "EnemyBaseball"
+									}
+								},
+								{
+									"id": "compare-velocity",
+									"objectClass": "Baseball",
+									"sid": 446136916179479,
+									"behaviorType": "Физика",
+									"parameters": {
+										"which": "x-velocity",
+										"comparison": 1,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-velocity",
+									"objectClass": "Baseball",
+									"sid": 450164278267948,
+									"behaviorType": "Физика",
+									"parameters": {
+										"x-component": "0",
+										"y-component": "0"
+									}
+								},
+								{
+									"id": "apply-impulse-towards-position",
+									"objectClass": "Baseball",
+									"sid": 236068632455988,
+									"behaviorType": "Физика",
+									"parameters": {
+										"impulse": "0.50",
+										"x": "Self.X",
+										"y": "Self.Y",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyBaseball",
+									"sid": 512745169084337,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyBaseball",
+									"sid": 413978627997212,
+									"parameters": {
+										"instance-variable": "cd",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 734230029361908,
+									"parameters": {
+										"group-name": "\"Enemy\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyBaseball",
+									"sid": 119098138116412,
+									"parameters": {
+										"animation": "\"Damage\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "EnemyBaseball",
+									"sid": 504877548563054,
+									"parameters": {
+										"instance-variable": "HPEnemy",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "EnemyBaseball",
+									"sid": 630450287342914,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "EnemyBaseball",
+									"sid": 246884275261930,
+									"parameters": {
+										"width": "Self.width* Player.rotate * -Self.rotate"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 334425421905323,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "EnemyBaseball",
+									"sid": 274568756648500,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyBaseball",
+									"sid": 935182694404401,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 598220851351357,
+									"parameters": {
+										"group-name": "\"Enemy\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyBaseball",
+									"sid": 852231505206593,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 213895308070327,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "compare-instance-variable",
 									"objectClass": "EnemyBaseball",
-									"sid": 930755683698547,
+									"sid": 137027283278037,
 									"parameters": {
 										"instance-variable": "kickCounter",
 										"comparison": 0,
-										"value": "1"
+										"value": "2"
 									}
 								}
 							],
@@ -2847,6 +3157,73 @@
 								}
 							],
 							"sid": 858209781834109
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Клавиатура",
+									"sid": 125931310408417,
+									"parameters": {
+										"key": 32
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyBaseball",
+									"sid": 151203098243626,
+									"parameters": {
+										"instance-variable": "death"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "EnemyBaseball",
+									"sid": 288026856810706,
+									"parameters": {
+										"object": "Player"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyBaseball",
+									"sid": 175324397714033,
+									"parameters": {
+										"animation": "\"Death\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation-speed",
+									"objectClass": "EnemyBaseball",
+									"sid": 337444609018595,
+									"parameters": {
+										"speed": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "EnemyBaseball",
+									"sid": 375478168639196,
+									"parameters": {
+										"frame-number": "Self.FinishingDeath"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyBaseball",
+									"sid": 828927380750806,
+									"parameters": {
+										"instance-variable": "FinishingDeath",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 299394722523486,
+							"disabled": true
 						}
 					],
 					"sid": 647339657152041
@@ -2953,6 +3330,15 @@
 										"comparison": 0,
 										"value": "0"
 									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "EnemyBaseball",
+									"sid": 408552443747211,
+									"parameters": {
+										"animation": "\"Damage\""
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -3053,6 +3439,15 @@
 										"comparison": 0,
 										"value": "0"
 									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "EnemyBaseball",
+									"sid": 972793318657487,
+									"parameters": {
+										"animation": "\"Damage\""
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -3178,6 +3573,1456 @@
 				}
 			],
 			"sid": 255861649952218
+		},
+		{
+			"eventType": "group",
+			"disabled": true,
+			"title": "Enemy2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": true,
+					"title": "EnemySetup2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-visible",
+									"objectClass": "EnemyKnife",
+									"sid": 681455763765938
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 183426009169442,
+									"parameters": {
+										"instance-variable": "distance",
+										"value": "Self.X - Player.X"
+									}
+								}
+							],
+							"sid": 942059532556564,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "EnemyKnife",
+											"sid": 634721280542441,
+											"parameters": {
+												"instance-variable": "distance",
+												"comparison": 2,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "EnemyKnife",
+											"sid": 595124020464013,
+											"parameters": {
+												"instance-variable": "distance",
+												"value": "Self.distance*-1"
+											}
+										}
+									],
+									"sid": 451887405842615,
+									"disabled": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-group-active",
+									"objectClass": "System",
+									"sid": 485989513330142,
+									"parameters": {
+										"group-name": "\"Enemy\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 437199789634402,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 401587363085144,
+							"disabled": true
+						}
+					],
+					"sid": 283506443136292
+				},
+				{
+					"eventType": "group",
+					"disabled": true,
+					"title": "DamageEnemy2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyKnife",
+									"sid": 261719047981409,
+									"parameters": {
+										"instance-variable": "death"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 336320873025798,
+									"parameters": {
+										"instance-variable": "distance",
+										"comparison": 2,
+										"value": "50"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 767735192081388,
+									"parameters": {
+										"instance-variable": "cd",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 994622664977679,
+									"parameters": {
+										"instance-variable": "smash",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 575603054817276,
+									"parameters": {
+										"instance-variable": "smash",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 166004477015336,
+									"parameters": {
+										"animation": "\"Kick\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 290577786460624,
+									"parameters": {
+										"instance-variable": "cd",
+										"value": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 430424038433373,
+									"parameters": {
+										"seconds": "0.6"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 700873056821533,
+									"parameters": {
+										"instance-variable": "smash",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 486006110050131,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "EnemyKnife",
+									"sid": 158774497412084,
+									"parameters": {
+										"animation": "\"Kick\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 108027084792524,
+									"parameters": {
+										"instance-variable": "cd",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "EnemyKnife",
+									"sid": 587887918681038,
+									"parameters": {
+										"comparison": 0,
+										"number": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 741364120385456,
+									"parameters": {
+										"instance-variable": "cd",
+										"value": "0"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "EnemyKnife",
+									"sid": 622626947964437,
+									"parameters": {
+										"object": "HitBoxEnemy",
+										"layer": "0",
+										"image-point": "1",
+										"create-hierarchy": false
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "HitBoxEnemy",
+									"sid": 774774207137139,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 597369644725654,
+									"parameters": {
+										"seconds": "0.05"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "HitBoxEnemy",
+									"sid": 207595151312212
+								}
+							],
+							"sid": 607931461031663,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "HitBox",
+									"sid": 341030782149875,
+									"parameters": {
+										"object": "EnemyKnife"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyKnife",
+									"sid": 318091607149922,
+									"parameters": {
+										"instance-variable": "death"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 223825992888422,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 746148055164820,
+									"parameters": {
+										"instance-variable": "cd",
+										"value": "0"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "HitBox",
+									"sid": 430702129555358
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 223730025734589,
+									"parameters": {
+										"group-name": "\"Enemy\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "EnemyKnife",
+									"sid": 292951834908234,
+									"parameters": {
+										"instance-variable": "HPEnemy",
+										"value": "Player.damage"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "EnemyKnife",
+									"sid": 885003386024367,
+									"parameters": {
+										"instance-variable": "kickCounter",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "EnemyKnife",
+									"sid": 949770381136525,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 682077723631710,
+									"parameters": {
+										"animation": "\"Damage\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "EnemyKnife",
+									"sid": 387318135029856,
+									"parameters": {
+										"width": "Self.width* Player.rotate * -Self.rotate"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 835903514940293,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "EnemyKnife",
+									"sid": 289618657360630,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 216585463019666,
+									"disabled": true,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 323565769301073,
+									"parameters": {
+										"group-name": "\"Enemy\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 794651144300082,
+									"disabled": true,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 576976672100918,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Brick",
+									"sid": 168917780774685,
+									"parameters": {
+										"object": "EnemyKnife"
+									}
+								},
+								{
+									"id": "compare-velocity",
+									"objectClass": "Brick",
+									"sid": 562955908904216,
+									"behaviorType": "Физика",
+									"parameters": {
+										"which": "x-velocity",
+										"comparison": 1,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player",
+									"sid": 188502420058237,
+									"parameters": {
+										"instance-variable": "CastWeapon",
+										"comparison": 1,
+										"value": "\"\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-velocity",
+									"objectClass": "Brick",
+									"sid": 687817018705174,
+									"behaviorType": "Физика",
+									"parameters": {
+										"x-component": "0",
+										"y-component": "0"
+									}
+								},
+								{
+									"id": "apply-impulse-towards-position",
+									"objectClass": "Brick",
+									"sid": 132962065713973,
+									"behaviorType": "Физика",
+									"parameters": {
+										"impulse": "0.25",
+										"x": "Self.X",
+										"y": "Self.Y",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Brick",
+									"sid": 268392684320527,
+									"parameters": {
+										"animation": "\"Crush\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 478256976027909,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 702675243963472,
+									"parameters": {
+										"instance-variable": "cd",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 598118247696210,
+									"parameters": {
+										"group-name": "\"Enemy\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 388350579791013,
+									"parameters": {
+										"animation": "\"Damage\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "EnemyKnife",
+									"sid": 456602865762850,
+									"parameters": {
+										"instance-variable": "HPEnemy",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "EnemyKnife",
+									"sid": 106638811816626,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "EnemyKnife",
+									"sid": 649577911944189,
+									"parameters": {
+										"width": "Self.width* Player.rotate * -Self.rotate"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 160905141664814,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "EnemyKnife",
+									"sid": 246635024598885,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 602271184357995,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 649089268341803,
+									"parameters": {
+										"group-name": "\"Enemy\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 219419911521511,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "1"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Brick",
+									"sid": 326519865785351
+								}
+							],
+							"sid": 287096218150756,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Baseball",
+									"sid": 343999655094300,
+									"parameters": {
+										"object": "EnemyKnife"
+									}
+								},
+								{
+									"id": "compare-velocity",
+									"objectClass": "Baseball",
+									"sid": 686060978204633,
+									"behaviorType": "Физика",
+									"parameters": {
+										"which": "x-velocity",
+										"comparison": 1,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-velocity",
+									"objectClass": "Baseball",
+									"sid": 426619241445782,
+									"disabled": true,
+									"behaviorType": "Физика",
+									"parameters": {
+										"which": "x-velocity",
+										"comparison": 4,
+										"value": "250"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-velocity",
+									"objectClass": "Baseball",
+									"sid": 960253873670948,
+									"behaviorType": "Физика",
+									"parameters": {
+										"x-component": "0",
+										"y-component": "0"
+									}
+								},
+								{
+									"id": "apply-impulse-towards-position",
+									"objectClass": "Baseball",
+									"sid": 607119662997465,
+									"behaviorType": "Физика",
+									"parameters": {
+										"impulse": "0.50",
+										"x": "Self.X",
+										"y": "Self.Y",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 224471648393331,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 530693658315568,
+									"parameters": {
+										"instance-variable": "cd",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 420121117781930,
+									"parameters": {
+										"group-name": "\"Enemy\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 351944733663245,
+									"parameters": {
+										"animation": "\"Damage\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "subtract-from-instvar",
+									"objectClass": "EnemyKnife",
+									"sid": 400696675437483,
+									"parameters": {
+										"instance-variable": "HPEnemy",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "EnemyKnife",
+									"sid": 320617470442498,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "EnemyKnife",
+									"sid": 660100537361266,
+									"parameters": {
+										"width": "Self.width* Player.rotate * -Self.rotate"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 682687161026850,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "EnemyKnife",
+									"sid": 297886341989504,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 209169717508023,
+									"parameters": {
+										"animation": "\"Idle\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 197591921279755,
+									"parameters": {
+										"group-name": "\"Enemy\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 709160745414443,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 917427324257873,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 395154851351628,
+									"parameters": {
+										"instance-variable": "kickCounter",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "EnemyKnife",
+									"sid": 979336940893257,
+									"parameters": {
+										"instance-variable": "Down",
+										"value": "true"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "EnemyKnife",
+									"sid": 575995235960339,
+									"parameters": {
+										"instance-variable": "kickCounter",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 222458454147378,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 639624164201068,
+									"parameters": {
+										"instance-variable": "HPEnemy",
+										"comparison": 3,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "EnemyKnife",
+									"sid": 618112222846307,
+									"parameters": {
+										"instance-variable": "knockout",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 585681067427507,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyKnife",
+									"sid": 964406424594989,
+									"parameters": {
+										"instance-variable": "Down"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyKnife",
+									"sid": 614808926708552,
+									"parameters": {
+										"instance-variable": "knockout"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyKnife",
+									"sid": 305405361981239,
+									"parameters": {
+										"instance-variable": "death"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 513463375463874,
+									"parameters": {
+										"animation": "\"Down\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "EnemyKnife",
+									"sid": 115797302740637,
+									"parameters": {
+										"width": "EnemyKnife.Width * -EnemyKnife.rotate * Player.rotate"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "EnemyKnife",
+									"sid": 835885254930791,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "300 *EnemyKnife.rotate"
+									}
+								},
+								{
+									"id": "reverse",
+									"objectClass": "EnemyKnife",
+									"sid": 297531691312988,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"axes": "both"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 360440081376210,
+									"parameters": {
+										"seconds": "0.3"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "EnemyKnife",
+									"sid": 808301304643126,
+									"behaviorType": "НастраиваемоеДвижение"
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "EnemyKnife",
+									"sid": 551145894891470,
+									"parameters": {
+										"instance-variable": "Down",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 880457065819978,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyKnife",
+									"sid": 864343545129203,
+									"parameters": {
+										"instance-variable": "knockout"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyKnife",
+									"sid": 517198396219440,
+									"parameters": {
+										"instance-variable": "death"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 912990846102285,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 691067361067875,
+									"parameters": {
+										"animation": "\"Down\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-width",
+									"objectClass": "EnemyKnife",
+									"sid": 803871596409525,
+									"parameters": {
+										"width": "EnemyKnife.Width * -EnemyKnife.rotate * Player.rotate"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "EnemyKnife",
+									"sid": 221884366615895,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "300 *EnemyKnife.rotate"
+									}
+								},
+								{
+									"id": "reverse",
+									"objectClass": "EnemyKnife",
+									"sid": 157113226983925,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"axes": "both"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 776577579053780,
+									"parameters": {
+										"seconds": "0.3"
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "EnemyKnife",
+									"sid": 713139825782021,
+									"behaviorType": "НастраиваемоеДвижение"
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "EnemyKnife",
+									"sid": 888687526693993,
+									"parameters": {
+										"instance-variable": "death",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "EnemyKnife",
+									"sid": 819313566248142,
+									"parameters": {
+										"frame-number": "2"
+									}
+								}
+							],
+							"sid": 270985317553470,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Клавиатура",
+									"sid": 473303375335994,
+									"parameters": {
+										"key": 32
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyKnife",
+									"sid": 561373322501668,
+									"parameters": {
+										"instance-variable": "death"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "EnemyKnife",
+									"sid": 377573249276022,
+									"parameters": {
+										"object": "Player"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 316633316294835,
+									"parameters": {
+										"animation": "\"Death\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation-speed",
+									"objectClass": "EnemyKnife",
+									"sid": 731167078818916,
+									"parameters": {
+										"speed": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "EnemyKnife",
+									"sid": 138246051753929,
+									"parameters": {
+										"frame-number": "Self.FinishingDeath"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 760721945129747,
+									"parameters": {
+										"instance-variable": "FinishingDeath",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 121635631568892,
+							"disabled": true
+						}
+					],
+					"sid": 747672061866794
+				},
+				{
+					"eventType": "group",
+					"disabled": true,
+					"title": "EnemyMove2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyKnife",
+									"sid": 771140936905266,
+									"parameters": {
+										"instance-variable": "Down"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyKnife",
+									"sid": 667553456618907,
+									"parameters": {
+										"instance-variable": "death"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyKnife",
+									"sid": 902295891676902,
+									"parameters": {
+										"instance-variable": "knockout"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 423716795169024,
+									"parameters": {
+										"instance-variable": "distance",
+										"comparison": 2,
+										"value": "300"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 937832465874709,
+									"parameters": {
+										"instance-variable": "Visible",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 837190589904600,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "EnemyKnife",
+									"sid": 689725942332026,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "Player.X-10"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 397648530065456,
+									"parameters": {
+										"instance-variable": "distance",
+										"comparison": 4,
+										"value": "50"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 263867831062763,
+									"parameters": {
+										"instance-variable": "Visible",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 119326373931408,
+									"parameters": {
+										"instance-variable": "smash",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "EnemyKnife",
+									"sid": 548728057005365,
+									"parameters": {
+										"animation": "\"Damage\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "EnemyKnife",
+									"sid": 446733324064186,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"control": "right"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "EnemyKnife",
+									"sid": 470153010784209,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"max-speed": "250"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 736359780211043,
+									"parameters": {
+										"animation": "\"Run\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "EnemyKnife",
+									"sid": 788167937316591,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 331155144063181,
+									"parameters": {
+										"instance-variable": "rotate",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 955370196231883,
+									"parameters": {
+										"instance-variable": "cd",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 539255080631015,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 138008556010120,
+									"parameters": {
+										"instance-variable": "distance",
+										"comparison": 4,
+										"value": "50"
+									}
+								},
+								{
+									"id": "compare-x",
+									"objectClass": "EnemyKnife",
+									"sid": 887243299459316,
+									"parameters": {
+										"comparison": 4,
+										"x-co-ordinate": "Player.X+10"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 847570786067502,
+									"parameters": {
+										"instance-variable": "Visible",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 710856207007667,
+									"parameters": {
+										"instance-variable": "smash",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "EnemyKnife",
+									"sid": 987026396792482,
+									"parameters": {
+										"animation": "\"Damage\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "EnemyKnife",
+									"sid": 877288476317108,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"control": "left"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "EnemyKnife",
+									"sid": 153568843939999,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"max-speed": "250"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 557098411723564,
+									"parameters": {
+										"animation": "\"Run\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "EnemyKnife",
+									"sid": 490473214596501,
+									"parameters": {
+										"state": "mirrored"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 974907745663834,
+									"parameters": {
+										"instance-variable": "rotate",
+										"value": "-1"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "EnemyKnife",
+									"sid": 532903622982051,
+									"parameters": {
+										"instance-variable": "cd",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 720101160851852,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "EnemyKnife",
+									"sid": 719257347626539,
+									"parameters": {
+										"animation": "\"Kick\""
+									}
+								},
+								{
+									"id": "is-group-active",
+									"objectClass": "System",
+									"sid": 360710194117156,
+									"parameters": {
+										"group-name": "\"Player\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "EnemyKnife",
+									"sid": 521108947491231,
+									"parameters": {
+										"instance-variable": "Visible",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "EnemyKnife",
+									"sid": 878146895184354,
+									"parameters": {
+										"animation": "\"Kick\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "EnemyKnife",
+									"sid": 878924774317176,
+									"parameters": {
+										"frame-number": "4"
+									}
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "EnemyKnife",
+									"sid": 747408715323214,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"max-speed": "0"
+									}
+								}
+							],
+							"sid": 156789180283979,
+							"disabled": true
+						}
+					],
+					"sid": 676788721021453
+				}
+			],
+			"sid": 890978282498051
 		}
 	],
 	"sid": 686803034278913

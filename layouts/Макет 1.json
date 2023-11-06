@@ -89,7 +89,8 @@
 						"spawn": false,
 						"kick": false,
 						"kickrun": false,
-						"damage": 0
+						"damage": 0,
+						"Finishing": false
 					},
 					"behaviors": {
 						"Платформер": {
@@ -275,8 +276,25 @@
 						"live-preview": false
 					},
 					"uid": 11,
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"Active": false
+					},
+					"behaviors": {
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.1,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						}
+					},
 					"world": {
 						"x": 312.30710147717184,
 						"y": 524.0326294155267,
@@ -555,7 +573,7 @@
 								"prevent-rotation": false,
 								"density": 1,
 								"friction": 0.8,
-								"elasticity": 0.2,
+								"elasticity": 1,
 								"linear-damping": 0,
 								"angular-damping": 0.01,
 								"bullet": false,
@@ -600,7 +618,8 @@
 						"Down": false,
 						"kickCounter": 0,
 						"knockout": false,
-						"death": false
+						"death": false,
+						"FinishingDeath": 0
 					},
 					"behaviors": {
 						"Платформер": {
@@ -685,7 +704,7 @@
 								"prevent-rotation": false,
 								"density": 1,
 								"friction": 0.8,
-								"elasticity": 0.2,
+								"elasticity": 1,
 								"linear-damping": 0,
 								"angular-damping": 0.01,
 								"bullet": false,
