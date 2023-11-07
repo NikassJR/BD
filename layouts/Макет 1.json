@@ -599,91 +599,6 @@
 					}
 				},
 				{
-					"type": "EnemyBaseball",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Idle",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 3,
-					"instanceVariables": {
-						"rotate": 1,
-						"Visible": 0,
-						"smash": 0,
-						"cd": 0,
-						"distance": 0,
-						"HPEnemy": 4,
-						"Down": false,
-						"kickCounter": 0,
-						"knockout": false,
-						"death": false,
-						"FinishingDeath": 0
-					},
-					"behaviors": {
-						"Платформер": {
-							"properties": {
-								"max-speed": 250,
-								"acceleration": 10000,
-								"deceleration": 20000,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": false,
-								"enabled": true
-							}
-						},
-						"НастраиваемоеДвижение": {
-							"properties": {
-								"stepping-mode": "none",
-								"pixels-per-step": 5,
-								"enabled": true
-							}
-						},
-						"Физика": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": false
-							}
-						},
-						"ПолеЗрения": {
-							"properties": {
-								"obstacles": "solids",
-								"range": 10000,
-								"cone-of-view": 360,
-								"use-collision-cells": true
-							}
-						}
-					},
-					"world": {
-						"x": 1029.7996826171875,
-						"y": 490.4438781738281,
-						"width": 86,
-						"height": 86,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "Brick",
 					"properties": {
 						"initially-visible": true,
@@ -763,6 +678,96 @@
 						"height": 30,
 						"originX": 0,
 						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "EnemyBaseball",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 3,
+					"instanceVariables": {
+						"rotate": 1,
+						"Visible": 0,
+						"distance": 0,
+						"HPEnemy": 4,
+						"kickCounter": 0,
+						"Active": false,
+						"move": false,
+						"Down": false,
+						"fight": false,
+						"stager": false,
+						"hit": false,
+						"iFrame": false,
+						"downCounter": 0,
+						"death": false,
+						"end": false,
+						"blood": false
+					},
+					"behaviors": {
+						"Платформер": {
+							"properties": {
+								"max-speed": 250,
+								"acceleration": 10000,
+								"deceleration": 20000,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": false,
+								"enabled": true
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						},
+						"ПолеЗрения": {
+							"properties": {
+								"obstacles": "solids",
+								"range": 10000,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						}
+					},
+					"world": {
+						"x": 1036.2198888358007,
+						"y": 491.3142287184477,
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
