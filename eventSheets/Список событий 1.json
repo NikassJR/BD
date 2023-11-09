@@ -384,6 +384,15 @@
 											"isInverted": true
 										},
 										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 285248163471235,
+											"parameters": {
+												"instance-variable": "kick"
+											},
+											"isInverted": true
+										},
+										{
 											"id": "key-is-down",
 											"objectClass": "Клавиатура",
 											"sid": 723921090737929,
@@ -413,6 +422,15 @@
 											"sid": 606785634550536,
 											"parameters": {
 												"variable": "iFrame"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 642985616080736,
+											"parameters": {
+												"instance-variable": "kick"
 											},
 											"isInverted": true
 										},
@@ -449,6 +467,15 @@
 											}
 										},
 										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 925575696342387,
+											"parameters": {
+												"instance-variable": "kick"
+											},
+											"isInverted": true
+										},
+										{
 											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
 											"sid": 740497184245363,
@@ -481,6 +508,15 @@
 											"parameters": {
 												"key": 65
 											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Player",
+											"sid": 384920587218691,
+											"parameters": {
+												"instance-variable": "kick"
+											},
+											"isInverted": true
 										},
 										{
 											"id": "compare-boolean-eventvar",
@@ -1788,12 +1824,32 @@
 													}
 												},
 												{
+													"id": "spawn-another-object",
+													"objectClass": "Brick",
+													"sid": 251975456329658,
+													"parameters": {
+														"object": "HitBox",
+														"layer": "0",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												},
+												{
 													"id": "set-instvar-value",
 													"objectClass": "Player",
 													"sid": 425797178884287,
 													"parameters": {
 														"instance-variable": "NoEmpty",
 														"value": "0"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Brick",
+													"sid": 541592137639876,
+													"parameters": {
+														"instance-variable": "fly",
+														"value": "true"
 													}
 												},
 												{
@@ -1828,6 +1884,40 @@
 												}
 											],
 											"sid": 797831401043929
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Brick",
+													"sid": 156319694040527,
+													"parameters": {
+														"instance-variable": "fly"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "HitBox",
+													"sid": 559099488776140,
+													"parameters": {
+														"animation": "\"breakBox\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-position",
+													"objectClass": "HitBox",
+													"sid": 861711467896793,
+													"parameters": {
+														"x": "Brick.x",
+														"y": "Brick.Y"
+													}
+												}
+											],
+											"sid": 389704304285274
 										}
 									],
 									"sid": 766358274507599
@@ -2286,6 +2376,155 @@
 				{
 					"eventType": "group",
 					"disabled": false,
+					"title": "EnemyMove",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyBaseball",
+									"sid": 460557003811067,
+									"parameters": {
+										"instance-variable": "move"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyBaseball",
+									"sid": 750112336666993,
+									"parameters": {
+										"instance-variable": "fight"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "EnemyBaseball",
+									"sid": 431858493536712,
+									"parameters": {
+										"instance-variable": "end"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 649282912767602,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-x",
+											"objectClass": "EnemyBaseball",
+											"sid": 112727251965149,
+											"parameters": {
+												"comparison": 4,
+												"x-co-ordinate": "Player.X"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "EnemyBaseball",
+											"sid": 898767994819829,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"control": "left"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "EnemyBaseball",
+											"sid": 658766724979591,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"max-speed": "250"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "EnemyBaseball",
+											"sid": 474715383181079,
+											"parameters": {
+												"state": "mirrored"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "EnemyBaseball",
+											"sid": 677290719267361,
+											"parameters": {
+												"animation": "\"Run\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 761814300290589
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-x",
+											"objectClass": "EnemyBaseball",
+											"sid": 255294745892822,
+											"parameters": {
+												"comparison": 2,
+												"x-co-ordinate": "Player.X"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "EnemyBaseball",
+											"sid": 676210849932143,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"control": "right"
+											}
+										},
+										{
+											"id": "set-max-speed",
+											"objectClass": "EnemyBaseball",
+											"sid": 474390212479976,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"max-speed": "250"
+											}
+										},
+										{
+											"id": "set-mirrored",
+											"objectClass": "EnemyBaseball",
+											"sid": 132446817895025,
+											"parameters": {
+												"state": "not-mirrored"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "EnemyBaseball",
+											"sid": 379723877949291,
+											"parameters": {
+												"animation": "\"Run\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 121640005494142
+								}
+							]
+						}
+					],
+					"sid": 186039679009008
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
 					"title": "Enemy switch state",
 					"description": "",
 					"isActiveOnStart": true,
@@ -2715,155 +2954,6 @@
 						}
 					],
 					"sid": 902297969667208
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "EnemyMove",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "EnemyBaseball",
-									"sid": 708691775081249,
-									"parameters": {
-										"instance-variable": "move"
-									}
-								},
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "EnemyBaseball",
-									"sid": 174802123654244,
-									"parameters": {
-										"instance-variable": "fight"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "EnemyBaseball",
-									"sid": 738026019447612,
-									"parameters": {
-										"instance-variable": "end"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [],
-							"sid": 479402022807751,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-x",
-											"objectClass": "EnemyBaseball",
-											"sid": 187295524496695,
-											"parameters": {
-												"comparison": 4,
-												"x-co-ordinate": "Player.X"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "EnemyBaseball",
-											"sid": 607757763469700,
-											"behaviorType": "Платформер",
-											"parameters": {
-												"control": "left"
-											}
-										},
-										{
-											"id": "set-max-speed",
-											"objectClass": "EnemyBaseball",
-											"sid": 680128879147567,
-											"behaviorType": "Платформер",
-											"parameters": {
-												"max-speed": "250"
-											}
-										},
-										{
-											"id": "set-mirrored",
-											"objectClass": "EnemyBaseball",
-											"sid": 181524855108561,
-											"parameters": {
-												"state": "mirrored"
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "EnemyBaseball",
-											"sid": 222375725581411,
-											"parameters": {
-												"animation": "\"Run\"",
-												"from": "beginning"
-											}
-										}
-									],
-									"sid": 338740994731140
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-x",
-											"objectClass": "EnemyBaseball",
-											"sid": 978320100964983,
-											"parameters": {
-												"comparison": 2,
-												"x-co-ordinate": "Player.X"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "EnemyBaseball",
-											"sid": 234021462080492,
-											"behaviorType": "Платформер",
-											"parameters": {
-												"control": "right"
-											}
-										},
-										{
-											"id": "set-max-speed",
-											"objectClass": "EnemyBaseball",
-											"sid": 698693455573719,
-											"behaviorType": "Платформер",
-											"parameters": {
-												"max-speed": "250"
-											}
-										},
-										{
-											"id": "set-mirrored",
-											"objectClass": "EnemyBaseball",
-											"sid": 165758482186579,
-											"parameters": {
-												"state": "not-mirrored"
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "EnemyBaseball",
-											"sid": 174167061472239,
-											"parameters": {
-												"animation": "\"Run\"",
-												"from": "beginning"
-											}
-										}
-									],
-									"sid": 673698762724401
-								}
-							]
-						}
-					],
-					"sid": 684568606104367
 				},
 				{
 					"eventType": "group",
