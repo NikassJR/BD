@@ -619,7 +619,7 @@
 								"collision-mask": "use-collision-polygon",
 								"prevent-rotation": false,
 								"density": 1,
-								"friction": 0.5,
+								"friction": 3,
 								"elasticity": 0.1,
 								"linear-damping": 0,
 								"angular-damping": 0.01,
@@ -639,15 +639,12 @@
 						}
 					},
 					"effects": {
-						"Пульс": {
+						"ВолнаДеформации": {
 							"isEnabled": true,
 							"parameters": {
-								"intensity": 0.04,
-								"lighting": 1,
-								"speed": 5,
-								"frequency": 100,
-								"center-x": 0.5,
-								"center-y": 0.5
+								"frequency": 50,
+								"amplitude": 0.1,
+								"speed": 5
 							}
 						}
 					},
@@ -745,6 +742,52 @@
 							1
 						],
 						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Brick",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "stock",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 11,
+					"instanceVariables": {
+						"Active": false
+					},
+					"behaviors": {
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 0.5,
+								"friction": 1,
+								"elasticity": 0,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						}
+					},
+					"world": {
+						"x": 695,
+						"y": 499,
+						"width": 22,
+						"height": 11,
+						"originX": 0.4318181818181818,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 5.840514731501629,
 						"zElevation": 0
 					}
 				}
