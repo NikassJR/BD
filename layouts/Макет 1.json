@@ -564,8 +564,7 @@
 					},
 					"uid": 3,
 					"instanceVariables": {
-						"Active": false,
-						"fly": false
+						"Active": false
 					},
 					"behaviors": {
 						"Физика": {
@@ -579,7 +578,7 @@
 								"linear-damping": 0,
 								"angular-damping": 0.01,
 								"bullet": false,
-								"enabled": false
+								"enabled": true
 							}
 						}
 					},
@@ -625,7 +624,7 @@
 								"linear-damping": 0,
 								"angular-damping": 0.01,
 								"bullet": false,
-								"enabled": false
+								"enabled": true
 							}
 						},
 						"Угасание": {
@@ -654,9 +653,9 @@
 					},
 					"world": {
 						"x": 330,
-						"y": 397,
-						"width": 86,
-						"height": 86,
+						"y": 494,
+						"width": 36,
+						"height": 8,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -713,8 +712,25 @@
 						"live-preview": false
 					},
 					"uid": 10,
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"Active": false
+					},
+					"behaviors": {
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						}
+					},
 					"world": {
 						"x": 451.8224182128906,
 						"y": 497.6198425292969,
