@@ -364,6 +364,7 @@
 							"id": "set-visible",
 							"objectClass": "HitBox",
 							"sid": 244929377181313,
+							"disabled": true,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -1773,559 +1774,589 @@
 							"isActiveOnStart": true,
 							"children": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-click",
-											"objectClass": "Мышь",
-											"sid": 385734850740669,
-											"parameters": {
-												"mouse-button": "right",
-												"click-type": "clicked"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Player",
-											"sid": 433863910085217,
-											"parameters": {
-												"object": "Baseball"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 959997313940021,
-											"parameters": {
-												"seconds": "0.1"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Baseball",
-											"sid": 804162070817745
-										}
-									],
-									"sid": 260531285057918,
+									"eventType": "group",
+									"disabled": false,
+									"title": "Baseball switch",
+									"description": "",
+									"isActiveOnStart": true,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 258974909931985,
+													"id": "on-click",
+													"objectClass": "Мышь",
+													"sid": 612925269897601,
 													"parameters": {
-														"variable": "weapon",
-														"comparison": 0,
-														"value": "\"noWeapon\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 640902813854174,
-													"parameters": {
-														"variable": "weapon",
-														"value": "\"Baseball\""
-													}
-												}
-											],
-											"sid": 688754322039725
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 873033001627462,
-													"parameters": {
-														"variable": "weapon",
-														"comparison": 0,
-														"value": "\"Bottle\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 418119833283409,
-													"parameters": {
-														"variable": "weapon",
-														"value": "\"Baseball\""
+														"mouse-button": "right",
+														"click-type": "clicked"
 													}
 												},
 												{
-													"id": "spawn-another-object",
+													"id": "is-overlapping-another-object",
 													"objectClass": "Player",
-													"sid": 392230136745438,
+													"sid": 834932303569537,
 													"parameters": {
-														"object": "Bottle",
-														"layer": "0",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "apply-impulse-towards-position",
-													"objectClass": "Bottle",
-													"sid": 293141287676316,
-													"behaviorType": "Физика",
-													"parameters": {
-														"impulse": "1",
-														"x": "Self.X+20 * Player.rotate",
-														"y": "Self.Y - 5",
-														"image-point": "0"
-													}
-												},
-												{
-													"id": "apply-torque",
-													"objectClass": "Bottle",
-													"sid": 814309714504984,
-													"behaviorType": "Физика",
-													"parameters": {
-														"torque": "60"
-													}
-												}
-											],
-											"sid": 892400081490396
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 856937563550740,
-													"parameters": {
-														"variable": "weapon",
-														"comparison": 0,
-														"value": "\"Brick\""
+														"object": "Baseball"
 													}
 												}
 											],
 											"actions": [
 												{
-													"id": "set-eventvar-value",
+													"id": "wait",
 													"objectClass": "System",
-													"sid": 713675587038225,
+													"sid": 627059575512157,
 													"parameters": {
-														"variable": "weapon",
-														"value": "\"Baseball\""
+														"seconds": "0.1"
 													}
 												},
 												{
-													"id": "spawn-another-object",
-													"objectClass": "Player",
-													"sid": 411592204944784,
-													"parameters": {
-														"object": "Brick",
-														"layer": "0",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "apply-impulse-towards-position",
-													"objectClass": "Brick",
-													"sid": 756364210761481,
-													"behaviorType": "Физика",
-													"parameters": {
-														"impulse": "1",
-														"x": "Self.X+20* Player.rotate",
-														"y": "Self.Y - 5",
-														"image-point": "0"
-													}
-												},
-												{
-													"id": "apply-torque",
-													"objectClass": "Brick",
-													"sid": 259438157146474,
-													"behaviorType": "Физика",
-													"parameters": {
-														"torque": "60"
-													}
+													"id": "destroy",
+													"objectClass": "Baseball",
+													"sid": 309693530056079
 												}
 											],
-											"sid": 888305318946638
+											"sid": 634449703161759,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 323415432530302,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"noWeapon\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 469676154397704,
+															"parameters": {
+																"variable": "weapon",
+																"value": "\"Baseball\""
+															}
+														}
+													],
+													"sid": 288300036050236
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 442106969003271,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"Bottle\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 525008425742793,
+															"parameters": {
+																"variable": "weapon",
+																"value": "\"Baseball\""
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "Player",
+															"sid": 287334286619458,
+															"parameters": {
+																"object": "Bottle",
+																"layer": "0",
+																"image-point": "1",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "apply-impulse-towards-position",
+															"objectClass": "Bottle",
+															"sid": 925955540588953,
+															"behaviorType": "Физика",
+															"parameters": {
+																"impulse": "Self.speedCast",
+																"x": "Self.X+Self.dirX_Cast* Player.rotate",
+																"y": "Self.Y - Self.dirY_Cast",
+																"image-point": "0"
+															}
+														},
+														{
+															"id": "apply-torque",
+															"objectClass": "Bottle",
+															"sid": 320050927165242,
+															"behaviorType": "Физика",
+															"parameters": {
+																"torque": "Self.vortexCast*Player.rotate"
+															}
+														}
+													],
+													"sid": 885546377277539
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 332592591451963,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"Brick\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 158295452427513,
+															"parameters": {
+																"variable": "weapon",
+																"value": "\"Baseball\""
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "Player",
+															"sid": 224145598506495,
+															"parameters": {
+																"object": "Brick",
+																"layer": "0",
+																"image-point": "1",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "apply-impulse-towards-position",
+															"objectClass": "Brick",
+															"sid": 320427780071269,
+															"behaviorType": "Физика",
+															"parameters": {
+																"impulse": "Self.speedCast",
+																"x": "Self.X+Self.dirX_Cast* Player.rotate",
+																"y": "Self.Y - Self.dirY_Cast",
+																"image-point": "0"
+															}
+														},
+														{
+															"id": "apply-torque",
+															"objectClass": "Brick",
+															"sid": 296201607365288,
+															"behaviorType": "Физика",
+															"parameters": {
+																"torque": "Self.vortexCast * Player.rotate"
+															}
+														}
+													],
+													"sid": 782459689481038
+												}
+											]
 										}
-									]
+									],
+									"sid": 561306319349059
 								},
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-click",
-											"objectClass": "Мышь",
-											"sid": 500049317584733,
-											"parameters": {
-												"mouse-button": "right",
-												"click-type": "clicked"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Player",
-											"sid": 143558383051658,
-											"parameters": {
-												"object": "Bottle"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 608272264377431,
-											"parameters": {
-												"seconds": "0.1"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Bottle",
-											"sid": 725543242742080
-										}
-									],
-									"sid": 170014760279697,
+									"eventType": "group",
+									"disabled": false,
+									"title": "Brick switch",
+									"description": "",
+									"isActiveOnStart": true,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 592637324591422,
+													"id": "on-click",
+													"objectClass": "Мышь",
+													"sid": 432112989116871,
 													"parameters": {
-														"variable": "weapon",
-														"comparison": 0,
-														"value": "\"noWeapon\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 304040885584364,
-													"parameters": {
-														"variable": "weapon",
-														"value": "\"Bottle\""
-													}
-												}
-											],
-											"sid": 648466463900102
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 540222122011605,
-													"parameters": {
-														"variable": "weapon",
-														"comparison": 0,
-														"value": "\"Baseball\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 518905625698054,
-													"parameters": {
-														"variable": "weapon",
-														"value": "\"Bottle\""
+														"mouse-button": "right",
+														"click-type": "clicked"
 													}
 												},
 												{
-													"id": "spawn-another-object",
+													"id": "is-overlapping-another-object",
 													"objectClass": "Player",
-													"sid": 159612810994581,
+													"sid": 576208447190082,
 													"parameters": {
-														"object": "Baseball",
-														"layer": "0",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "apply-impulse-towards-position",
-													"objectClass": "Baseball",
-													"sid": 817254738105394,
-													"behaviorType": "Физика",
-													"parameters": {
-														"impulse": "1",
-														"x": "Self.X+20* Player.rotate",
-														"y": "Self.Y - 1",
-														"image-point": "0"
-													}
-												},
-												{
-													"id": "apply-torque",
-													"objectClass": "Baseball",
-													"sid": 513320739399475,
-													"behaviorType": "Физика",
-													"parameters": {
-														"torque": "150*Player.rotate"
-													}
-												}
-											],
-											"sid": 558068232416951
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 991089173840147,
-													"parameters": {
-														"variable": "weapon",
-														"comparison": 0,
-														"value": "\"Brick\""
+														"object": "Brick"
 													}
 												}
 											],
 											"actions": [
 												{
-													"id": "set-eventvar-value",
+													"id": "wait",
 													"objectClass": "System",
-													"sid": 107396880960030,
+													"sid": 738945793129556,
 													"parameters": {
-														"variable": "weapon",
-														"value": "\"Bottle\""
+														"seconds": "0.1"
 													}
 												},
 												{
-													"id": "spawn-another-object",
-													"objectClass": "Player",
-													"sid": 972530262532469,
-													"parameters": {
-														"object": "Brick",
-														"layer": "0",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "apply-impulse-towards-position",
+													"id": "destroy",
 													"objectClass": "Brick",
-													"sid": 723891261090679,
-													"behaviorType": "Физика",
-													"parameters": {
-														"impulse": "1",
-														"x": "Self.X+20* Player.rotate",
-														"y": "Self.Y - 5",
-														"image-point": "0"
-													}
-												},
-												{
-													"id": "apply-torque",
-													"objectClass": "Brick",
-													"sid": 654839054628334,
-													"behaviorType": "Физика",
-													"parameters": {
-														"torque": "60"
-													}
+													"sid": 193070622128843
 												}
 											],
-											"sid": 295892380914856
+											"sid": 387890010935702,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 604427210386114,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"noWeapon\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 837219376124831,
+															"parameters": {
+																"variable": "weapon",
+																"value": "\"Brick\""
+															}
+														}
+													],
+													"sid": 575931017849292
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 865530961281748,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"Baseball\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 699567271129834,
+															"parameters": {
+																"variable": "weapon",
+																"value": "\"Brick\""
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "Player",
+															"sid": 102276700485451,
+															"parameters": {
+																"object": "Baseball",
+																"layer": "0",
+																"image-point": "1",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "apply-impulse-towards-position",
+															"objectClass": "Baseball",
+															"sid": 700904178738613,
+															"behaviorType": "Физика",
+															"parameters": {
+																"impulse": "Self.speedCast",
+																"x": "Self.X+Self.dirX_Cast* Player.rotate",
+																"y": "Self.Y - Self.dirY_Cast",
+																"image-point": "0"
+															}
+														},
+														{
+															"id": "apply-torque",
+															"objectClass": "Baseball",
+															"sid": 168469395626431,
+															"behaviorType": "Физика",
+															"parameters": {
+																"torque": "Self.vortexCast* Player.rotate"
+															}
+														}
+													],
+													"sid": 876118531652255
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 598402039681249,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"Bottle\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 369150173467194,
+															"parameters": {
+																"variable": "weapon",
+																"value": "\"Brick\""
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "Player",
+															"sid": 478182842404407,
+															"parameters": {
+																"object": "Bottle",
+																"layer": "0",
+																"image-point": "1",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "apply-impulse-towards-position",
+															"objectClass": "Bottle",
+															"sid": 413818765002458,
+															"behaviorType": "Физика",
+															"parameters": {
+																"impulse": "Self.speedCast",
+																"x": "Self.X+Self.dirX_Cast* Player.rotate",
+																"y": "Self.Y - Self.dirY_Cast",
+																"image-point": "0"
+															}
+														},
+														{
+															"id": "apply-torque",
+															"objectClass": "Bottle",
+															"sid": 467212454387854,
+															"behaviorType": "Физика",
+															"parameters": {
+																"torque": "Self.vortexCast * Player.rotate"
+															}
+														}
+													],
+													"sid": 401423259739630
+												}
+											]
 										}
-									]
+									],
+									"sid": 941807810471067
 								},
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-click",
-											"objectClass": "Мышь",
-											"sid": 194011462845888,
-											"parameters": {
-												"mouse-button": "right",
-												"click-type": "clicked"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Player",
-											"sid": 192860469969685,
-											"parameters": {
-												"object": "Brick"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 111162920775619,
-											"parameters": {
-												"seconds": "0.1"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Brick",
-											"sid": 645489216956024
-										}
-									],
-									"sid": 242915624977970,
+									"eventType": "group",
+									"disabled": false,
+									"title": "Bottle switch",
+									"description": "",
+									"isActiveOnStart": true,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 679198526235910,
+													"id": "on-click",
+													"objectClass": "Мышь",
+													"sid": 117435889590040,
 													"parameters": {
-														"variable": "weapon",
-														"comparison": 0,
-														"value": "\"noWeapon\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 313543257364443,
-													"parameters": {
-														"variable": "weapon",
-														"value": "\"Brick\""
-													}
-												}
-											],
-											"sid": 309802308998298
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 212261289790927,
-													"parameters": {
-														"variable": "weapon",
-														"comparison": 0,
-														"value": "\"Baseball\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 705216951267909,
-													"parameters": {
-														"variable": "weapon",
-														"value": "\"Brick\""
+														"mouse-button": "right",
+														"click-type": "clicked"
 													}
 												},
 												{
-													"id": "spawn-another-object",
+													"id": "is-overlapping-another-object",
 													"objectClass": "Player",
-													"sid": 137827439166899,
+													"sid": 355065398677431,
 													"parameters": {
-														"object": "Baseball",
-														"layer": "0",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "apply-impulse-towards-position",
-													"objectClass": "Baseball",
-													"sid": 660989714097669,
-													"behaviorType": "Физика",
-													"parameters": {
-														"impulse": "1",
-														"x": "Self.X+20* Player.rotate",
-														"y": "Self.Y - 1",
-														"image-point": "0"
-													}
-												},
-												{
-													"id": "apply-torque",
-													"objectClass": "Baseball",
-													"sid": 609105396481102,
-													"behaviorType": "Физика",
-													"parameters": {
-														"torque": "150 * Player.rotate"
-													}
-												}
-											],
-											"sid": 189767362679233
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 427484918000501,
-													"parameters": {
-														"variable": "weapon",
-														"comparison": 0,
-														"value": "\"Bottle\""
+														"object": "Bottle"
 													}
 												}
 											],
 											"actions": [
 												{
-													"id": "set-eventvar-value",
+													"id": "wait",
 													"objectClass": "System",
-													"sid": 915608331415751,
+													"sid": 273440836330609,
 													"parameters": {
-														"variable": "weapon",
-														"value": "\"Brick\""
+														"seconds": "0.1"
 													}
 												},
 												{
-													"id": "spawn-another-object",
-													"objectClass": "Player",
-													"sid": 392202472243068,
-													"parameters": {
-														"object": "Bottle",
-														"layer": "0",
-														"image-point": "1",
-														"create-hierarchy": false
-													}
-												},
-												{
-													"id": "apply-impulse-towards-position",
+													"id": "destroy",
 													"objectClass": "Bottle",
-													"sid": 542790454018083,
-													"behaviorType": "Физика",
-													"parameters": {
-														"impulse": "1",
-														"x": "Self.X+20* Player.rotate",
-														"y": "Self.Y - 5",
-														"image-point": "0"
-													}
-												},
-												{
-													"id": "apply-torque",
-													"objectClass": "Bottle",
-													"sid": 479850217803099,
-													"behaviorType": "Физика",
-													"parameters": {
-														"torque": "60"
-													}
+													"sid": 325032017701205
 												}
 											],
-											"sid": 192875806560605
+											"sid": 840586195600881,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 454094471447908,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"noWeapon\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 677774581869682,
+															"parameters": {
+																"variable": "weapon",
+																"value": "\"Bottle\""
+															}
+														}
+													],
+													"sid": 348991098974741
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 990809351431383,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"Baseball\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 766596480097630,
+															"parameters": {
+																"variable": "weapon",
+																"value": "\"Bottle\""
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "Player",
+															"sid": 348958640905210,
+															"parameters": {
+																"object": "Baseball",
+																"layer": "0",
+																"image-point": "1",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "apply-impulse-towards-position",
+															"objectClass": "Baseball",
+															"sid": 541411122273005,
+															"behaviorType": "Физика",
+															"parameters": {
+																"impulse": "Self.speedCast",
+																"x": "Self.X+Self.dirX_Cast* Player.rotate",
+																"y": "Self.Y - Self.dirY_Cast",
+																"image-point": "0"
+															}
+														},
+														{
+															"id": "apply-torque",
+															"objectClass": "Baseball",
+															"sid": 931046861328911,
+															"behaviorType": "Физика",
+															"parameters": {
+																"torque": "Self.vortexCast*Player.rotate"
+															}
+														}
+													],
+													"sid": 625223322342391
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 784668974141418,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"Brick\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 902415873012247,
+															"parameters": {
+																"variable": "weapon",
+																"value": "\"Bottle\""
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "Player",
+															"sid": 361393680763241,
+															"parameters": {
+																"object": "Brick",
+																"layer": "0",
+																"image-point": "1",
+																"create-hierarchy": false
+															}
+														},
+														{
+															"id": "apply-impulse-towards-position",
+															"objectClass": "Brick",
+															"sid": 415570128963997,
+															"behaviorType": "Физика",
+															"parameters": {
+																"impulse": "Self.speedCast",
+																"x": "Self.X+Self.dirX_Cast* Player.rotate",
+																"y": "Self.Y - Self.dirY_Cast",
+																"image-point": "0"
+															}
+														},
+														{
+															"id": "apply-torque",
+															"objectClass": "Brick",
+															"sid": 160491567193092,
+															"behaviorType": "Физика",
+															"parameters": {
+																"torque": "Self.vortexCast * Player.rotate"
+															}
+														}
+													],
+													"sid": 450906472584792
+												}
+											]
 										}
-									]
+									],
+									"sid": 781038841371141
 								}
 							],
 							"sid": 780888492612995
@@ -2338,219 +2369,704 @@
 							"isActiveOnStart": true,
 							"children": [
 								{
-									"eventType": "block",
-									"conditions": [
+									"eventType": "group",
+									"disabled": false,
+									"title": "Baseball setup",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
 										{
-											"id": "on-click",
-											"objectClass": "Мышь",
-											"sid": 661289418991767,
-											"parameters": {
-												"mouse-button": "right",
-												"click-type": "clicked"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-click",
+													"objectClass": "Мышь",
+													"sid": 139443110737864,
+													"parameters": {
+														"mouse-button": "right",
+														"click-type": "clicked"
+													}
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 389429522961988,
+													"parameters": {
+														"variable": "weapon",
+														"comparison": 0,
+														"value": "\"Baseball\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 648119322571253,
+													"parameters": {
+														"variable": "weapon",
+														"value": "\"noWeapon\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "Player",
+													"sid": 806850973858878,
+													"parameters": {
+														"object": "Baseball",
+														"layer": "0",
+														"image-point": "1",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "Baseball",
+													"sid": 694966351057322,
+													"parameters": {
+														"object": "HitBox",
+														"layer": "0",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-position",
+													"objectClass": "HitBox",
+													"sid": 689711497320427,
+													"parameters": {
+														"x": "Baseball.X",
+														"y": "Baseball.Y"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "HitBox",
+													"sid": 992819924188179,
+													"parameters": {
+														"instance-variable": "fly",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Baseball",
+													"sid": 292954942291733,
+													"parameters": {
+														"instance-variable": "Active",
+														"value": "true"
+													}
+												},
+												{
+													"id": "apply-impulse-towards-position",
+													"objectClass": "Baseball",
+													"sid": 605809792058285,
+													"behaviorType": "Физика",
+													"parameters": {
+														"impulse": "Self.speedCast",
+														"x": "Self.X+Self.dirX_Cast* Player.rotate",
+														"y": "Self.Y - Self.dirY_Cast",
+														"image-point": "0"
+													}
+												},
+												{
+													"id": "apply-torque",
+													"objectClass": "Baseball",
+													"sid": 203881300255579,
+													"behaviorType": "Физика",
+													"parameters": {
+														"torque": "Self.vortexCast * Player.rotate"
+													}
+												}
+											],
+											"sid": 821514865793772
 										},
 										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 802747486627028,
-											"parameters": {
-												"variable": "weapon",
-												"comparison": 0,
-												"value": "\"Baseball\""
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Baseball",
+													"sid": 403243952905572,
+													"parameters": {
+														"instance-variable": "Active"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "HitBox",
+													"sid": 738621233321124,
+													"parameters": {
+														"instance-variable": "fly"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position",
+													"objectClass": "HitBox",
+													"sid": 385790591135896,
+													"parameters": {
+														"x": "Baseball.X",
+														"y": "Baseball.Y"
+													}
+												}
+											],
+											"sid": 596413229302912
 										}
 									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 671696146169538,
-											"parameters": {
-												"variable": "weapon",
-												"value": "\"noWeapon\""
-											}
-										},
-										{
-											"id": "spawn-another-object",
-											"objectClass": "Player",
-											"sid": 390188160269251,
-											"parameters": {
-												"object": "Baseball",
-												"layer": "0",
-												"image-point": "1",
-												"create-hierarchy": false
-											}
-										},
-										{
-											"id": "set-mirrored",
-											"objectClass": "Baseball",
-											"sid": 518602895199427,
-											"parameters": {
-												"state": "mirrored"
-											}
-										},
-										{
-											"id": "apply-impulse-towards-position",
-											"objectClass": "Baseball",
-											"sid": 808988218473685,
-											"behaviorType": "Физика",
-											"parameters": {
-												"impulse": "1.2",
-												"x": "Self.X+20* Player.rotate",
-												"y": "Self.Y - 5",
-												"image-point": "0"
-											}
-										},
-										{
-											"id": "apply-torque",
-											"objectClass": "Baseball",
-											"sid": 221133639116560,
-											"behaviorType": "Физика",
-											"parameters": {
-												"torque": "300 * Player.rotate"
-											}
-										}
-									],
-									"sid": 441751307607215
+									"sid": 516342465385893
 								},
 								{
-									"eventType": "block",
-									"conditions": [
+									"eventType": "group",
+									"disabled": false,
+									"title": "Brick setup",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
 										{
-											"id": "on-click",
-											"objectClass": "Мышь",
-											"sid": 965145540081003,
-											"parameters": {
-												"mouse-button": "right",
-												"click-type": "clicked"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-click",
+													"objectClass": "Мышь",
+													"sid": 873608125769725,
+													"parameters": {
+														"mouse-button": "right",
+														"click-type": "clicked"
+													}
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 527430532201752,
+													"parameters": {
+														"variable": "weapon",
+														"comparison": 0,
+														"value": "\"Brick\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 823504825638166,
+													"parameters": {
+														"variable": "weapon",
+														"value": "\"noWeapon\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "Player",
+													"sid": 536975295111996,
+													"parameters": {
+														"object": "Brick",
+														"layer": "0",
+														"image-point": "1",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "Brick",
+													"sid": 110682510753656,
+													"parameters": {
+														"object": "HitBox",
+														"layer": "0",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "HitBox",
+													"sid": 954186044877436,
+													"parameters": {
+														"instance-variable": "fly",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Brick",
+													"sid": 317714214998970,
+													"parameters": {
+														"instance-variable": "Active",
+														"value": "true"
+													}
+												},
+												{
+													"id": "apply-impulse-towards-position",
+													"objectClass": "Brick",
+													"sid": 988935160276694,
+													"behaviorType": "Физика",
+													"parameters": {
+														"impulse": "Self.speedCast",
+														"x": "Self.X+Self.dirX_Cast* Player.rotate",
+														"y": "Self.Y - Self.dirY_Cast",
+														"image-point": "0"
+													}
+												},
+												{
+													"id": "apply-torque",
+													"objectClass": "Brick",
+													"sid": 447908881295487,
+													"behaviorType": "Физика",
+													"parameters": {
+														"torque": "Self.vortexCast * Player.rotate"
+													}
+												}
+											],
+											"sid": 932149715943782
 										},
 										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 211397313721023,
-											"parameters": {
-												"variable": "weapon",
-												"comparison": 0,
-												"value": "\"Bottle\""
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Brick",
+													"sid": 477032889484434,
+													"parameters": {
+														"instance-variable": "Active"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "HitBox",
+													"sid": 205961878776991,
+													"parameters": {
+														"instance-variable": "fly"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position",
+													"objectClass": "HitBox",
+													"sid": 331528493376574,
+													"parameters": {
+														"x": "Brick.X",
+														"y": "Brick.Y"
+													}
+												}
+											],
+											"sid": 776384153687539
 										}
 									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 430812137705885,
-											"parameters": {
-												"variable": "weapon",
-												"value": "\"noWeapon\""
-											}
-										},
-										{
-											"id": "spawn-another-object",
-											"objectClass": "Player",
-											"sid": 635642411489924,
-											"parameters": {
-												"object": "Bottle",
-												"layer": "0",
-												"image-point": "1",
-												"create-hierarchy": false
-											}
-										},
-										{
-											"id": "apply-impulse-towards-position",
-											"objectClass": "Bottle",
-											"sid": 600533398171123,
-											"behaviorType": "Физика",
-											"parameters": {
-												"impulse": "1",
-												"x": "Self.X+20* Player.rotate",
-												"y": "Self.Y - 5",
-												"image-point": "0"
-											}
-										},
-										{
-											"id": "apply-torque",
-											"objectClass": "Bottle",
-											"sid": 883050418167960,
-											"behaviorType": "Физика",
-											"parameters": {
-												"torque": "60"
-											}
-										}
-									],
-									"sid": 432266206948152
+									"sid": 609827435343555
 								},
 								{
-									"eventType": "block",
-									"conditions": [
+									"eventType": "group",
+									"disabled": false,
+									"title": "Bottle setup",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
 										{
-											"id": "on-click",
-											"objectClass": "Мышь",
-											"sid": 607435082387576,
-											"parameters": {
-												"mouse-button": "right",
-												"click-type": "clicked"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-click",
+													"objectClass": "Мышь",
+													"sid": 157633055479359,
+													"parameters": {
+														"mouse-button": "right",
+														"click-type": "clicked"
+													}
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 686077304828692,
+													"parameters": {
+														"variable": "weapon",
+														"comparison": 0,
+														"value": "\"Bottle\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 998690111364289,
+													"parameters": {
+														"variable": "weapon",
+														"value": "\"noWeapon\""
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "Player",
+													"sid": 430076615165255,
+													"parameters": {
+														"object": "Bottle",
+														"layer": "0",
+														"image-point": "1",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "Bottle",
+													"sid": 548618599422893,
+													"parameters": {
+														"object": "HitBox",
+														"layer": "0",
+														"image-point": "0",
+														"create-hierarchy": false
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "HitBox",
+													"sid": 436029607928232,
+													"parameters": {
+														"instance-variable": "fly",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Bottle",
+													"sid": 359136765491992,
+													"parameters": {
+														"instance-variable": "Active",
+														"value": "true"
+													}
+												},
+												{
+													"id": "apply-impulse-towards-position",
+													"objectClass": "Bottle",
+													"sid": 448830355853281,
+													"behaviorType": "Физика",
+													"parameters": {
+														"impulse": "Self.speedCast",
+														"x": "Self.X+Self.dirX_Cast* Player.rotate",
+														"y": "Self.Y - Self.dirY_Cast",
+														"image-point": "0"
+													}
+												},
+												{
+													"id": "apply-torque",
+													"objectClass": "Bottle",
+													"sid": 884269310768526,
+													"behaviorType": "Физика",
+													"parameters": {
+														"torque": "Self.vortexCast * Player.rotate"
+													}
+												}
+											],
+											"sid": 515902564931399
 										},
 										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 189384562909528,
-											"parameters": {
-												"variable": "weapon",
-												"comparison": 0,
-												"value": "\"Brick\""
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Bottle",
+													"sid": 149154403667675,
+													"parameters": {
+														"instance-variable": "Active"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "HitBox",
+													"sid": 260314020366671,
+													"parameters": {
+														"instance-variable": "fly"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-position",
+													"objectClass": "HitBox",
+													"sid": 759442127454679,
+													"parameters": {
+														"x": "Bottle.X",
+														"y": "Bottle.Y"
+													}
+												}
+											],
+											"sid": 746113825929995
 										}
 									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 695270861963763,
-											"parameters": {
-												"variable": "weapon",
-												"value": "\"noWeapon\""
-											}
-										},
-										{
-											"id": "spawn-another-object",
-											"objectClass": "Player",
-											"sid": 489150992268350,
-											"parameters": {
-												"object": "Brick",
-												"layer": "0",
-												"image-point": "1",
-												"create-hierarchy": false
-											}
-										},
-										{
-											"id": "apply-impulse-towards-position",
-											"objectClass": "Brick",
-											"sid": 877790064527091,
-											"behaviorType": "Физика",
-											"parameters": {
-												"impulse": "1",
-												"x": "Self.X+20* Player.rotate",
-												"y": "Self.Y - 5",
-												"image-point": "0"
-											}
-										},
-										{
-											"id": "apply-torque",
-											"objectClass": "Brick",
-											"sid": 625987977342749,
-											"behaviorType": "Физика",
-											"parameters": {
-												"torque": "60"
-											}
-										}
-									],
-									"sid": 714480298749272
+									"sid": 423546614836051
 								}
 							],
 							"sid": 413822929505760
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "Collision weapon",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "group",
+									"disabled": true,
+									"title": "withWall",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "Baseball",
+													"sid": 578281120908254,
+													"parameters": {
+														"object": "Fon"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Baseball",
+													"sid": 257299518450345,
+													"parameters": {
+														"instance-variable": "Active"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Baseball",
+													"sid": 214807397672328
+												}
+											],
+											"sid": 219776425690376,
+											"disabled": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "Bottle",
+													"sid": 892926542116967,
+													"parameters": {
+														"object": "Fon"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Bottle",
+													"sid": 647186876681966,
+													"parameters": {
+														"instance-variable": "Active"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Baseball",
+													"sid": 621898759397049
+												}
+											],
+											"sid": 580312220946972,
+											"disabled": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "Brick",
+													"sid": 884834916240553,
+													"parameters": {
+														"object": "Fon"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Brick",
+													"sid": 160983144974280,
+													"parameters": {
+														"instance-variable": "Active"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Baseball",
+													"sid": 333221365088044
+												}
+											],
+											"sid": 739809187088229,
+											"disabled": true
+										}
+									],
+									"sid": 338689745284627
+								},
+								{
+									"eventType": "group",
+									"disabled": true,
+									"title": "withEnemy",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "group",
+											"disabled": true,
+											"title": "brick",
+											"description": "",
+											"isActiveOnStart": true,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "on-collision-with-another-object",
+															"objectClass": "Brick",
+															"sid": 436499091363652,
+															"parameters": {
+																"object": "Enemys"
+															}
+														},
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "Brick",
+															"sid": 906772320873971,
+															"parameters": {
+																"instance-variable": "Active"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-velocity",
+															"objectClass": "Brick",
+															"sid": 248623955116063,
+															"behaviorType": "Физика",
+															"parameters": {
+																"x-component": "0",
+																"y-component": "0"
+															}
+														},
+														{
+															"id": "apply-impulse-towards-position",
+															"objectClass": "Brick",
+															"sid": 838551109939949,
+															"behaviorType": "Физика",
+															"parameters": {
+																"impulse": "0.7",
+																"x": "Self.X+Self.dirX_Cast* Player.rotate",
+																"y": "Self.Y",
+																"image-point": "0"
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "Brick",
+															"sid": 270660357754483,
+															"parameters": {
+																"animation": "\"Crush\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 931609962347351,
+													"disabled": true
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "on-animation-finished",
+															"objectClass": "Brick",
+															"sid": 657595553041077,
+															"parameters": {
+																"animation": "\"Crush\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "destroy",
+															"objectClass": "Brick",
+															"sid": 181668620053043
+														}
+													],
+													"sid": 979186995567105,
+													"disabled": true
+												}
+											],
+											"sid": 487916966316554
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "Baseball",
+													"sid": 779888988968310,
+													"parameters": {
+														"object": "Enemys"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Baseball",
+													"sid": 378271147854381,
+													"parameters": {
+														"instance-variable": "Active"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Baseball",
+													"sid": 833722103214147
+												}
+											],
+											"sid": 900301280350570,
+											"disabled": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "Bottle",
+													"sid": 897805054251410,
+													"parameters": {
+														"object": "Enemys"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Bottle",
+													"sid": 489415114167359,
+													"parameters": {
+														"instance-variable": "Active"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Baseball",
+													"sid": 957164987044061
+												}
+											],
+											"sid": 102830845399909,
+											"disabled": true
+										}
+									],
+									"sid": 289217322258295
+								}
+							],
+							"sid": 889672305763344
 						}
 					],
 					"sid": 410055449561941
@@ -2892,6 +3408,31 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "EnemyBaseball",
+									"sid": 462575975722721,
+									"parameters": {
+										"object": "HitBox"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "EnemyBaseball",
+									"sid": 906063936160433,
+									"parameters": {
+										"instance-variable": "Active",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 198823788017562
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "compare-instance-variable",
 									"objectClass": "EnemyBaseball",
 									"sid": 710829950527505,
@@ -2904,7 +3445,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "EnemyBaseball",
-									"sid": 115950202426910,
+									"sid": 710080063411147,
 									"parameters": {
 										"instance-variable": "distance",
 										"comparison": 2,
@@ -2916,7 +3457,7 @@
 								{
 									"id": "set-boolean-instvar",
 									"objectClass": "EnemyBaseball",
-									"sid": 694615391537159,
+									"sid": 240876507271452,
 									"parameters": {
 										"instance-variable": "Active",
 										"value": "true"
@@ -3609,130 +4150,6 @@
 								}
 							],
 							"sid": 594113093010199
-						},
-						{
-							"eventType": "group",
-							"disabled": false,
-							"title": "Stager2",
-							"description": "",
-							"isActiveOnStart": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-collision-with-another-object",
-											"objectClass": "EnemyBaseball",
-											"sid": 528386649694706,
-											"parameters": {
-												"object": "HitBox"
-											}
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Player",
-											"sid": 317477941804273,
-											"parameters": {
-												"instance-variable": "CastWeapon",
-												"comparison": 1,
-												"value": "\"\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-animation",
-											"objectClass": "EnemyBaseball",
-											"sid": 251998326110173,
-											"parameters": {
-												"animation": "\"Damage\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "EnemyBaseball",
-											"sid": 923629252975994,
-											"parameters": {
-												"instance-variable": "hit",
-												"value": "true"
-											}
-										},
-										{
-											"id": "subtract-from-instvar",
-											"objectClass": "EnemyBaseball",
-											"sid": 526136803765111,
-											"parameters": {
-												"instance-variable": "HPEnemy",
-												"value": "Player.damage"
-											}
-										},
-										{
-											"id": "add-to-instvar",
-											"objectClass": "EnemyBaseball",
-											"sid": 888188297383188,
-											"parameters": {
-												"instance-variable": "kickCounter",
-												"value": "1"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "HitBox",
-											"sid": 419090100158626
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 357593998049132,
-											"parameters": {
-												"seconds": "0.3"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "EnemyBaseball",
-											"sid": 762031422633016,
-											"parameters": {
-												"instance-variable": "hit",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "EnemyBaseball",
-											"sid": 149859560317432,
-											"parameters": {
-												"instance-variable": "stager",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "EnemyBaseball",
-											"sid": 270906358552035,
-											"disabled": true,
-											"parameters": {
-												"instance-variable": "Active",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "EnemyBaseball",
-											"sid": 366949044096893,
-											"disabled": true,
-											"parameters": {
-												"instance-variable": "fight",
-												"value": "false"
-											}
-										}
-									],
-									"sid": 226917291044359,
-									"disabled": true
-								}
-							],
-							"sid": 745698174306671
 						},
 						{
 							"eventType": "group",
