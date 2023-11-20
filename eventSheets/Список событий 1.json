@@ -401,6 +401,133 @@
 						{
 							"eventType": "group",
 							"disabled": false,
+							"title": "Lift",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 830269194546599
+										}
+									],
+									"actions": [
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player",
+											"sid": 451127351131384,
+											"parameters": {
+												"instance-variable": "DistanceToLift",
+												"value": "Self.X-Lift.X"
+											}
+										}
+									],
+									"sid": 272868610637609,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player",
+													"sid": 467672496729670,
+													"parameters": {
+														"instance-variable": "DistanceToLift",
+														"comparison": 2,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Player",
+													"sid": 874384152142418,
+													"parameters": {
+														"instance-variable": "DistanceToLift",
+														"value": "Self.DistanceToLift*-1"
+													}
+												}
+											],
+											"sid": 719509431438191
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Клавиатура",
+											"sid": 843259508538029,
+											"parameters": {
+												"key": 87
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Player",
+											"sid": 499980834725400,
+											"parameters": {
+												"object": "Door"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position-to-another-object",
+											"objectClass": "Player",
+											"sid": 418302732188369,
+											"parameters": {
+												"object": "Door2",
+												"image-point-optional": "0"
+											}
+										}
+									],
+									"sid": 582799833064896
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Клавиатура",
+											"sid": 954892211521678,
+											"parameters": {
+												"key": 83
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Player",
+											"sid": 747252058756724,
+											"parameters": {
+												"object": "Door2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-position-to-another-object",
+											"objectClass": "Player",
+											"sid": 568383807647848,
+											"parameters": {
+												"object": "Door",
+												"image-point-optional": "0"
+											}
+										}
+									],
+									"sid": 204193938465717
+								}
+							],
+							"sid": 154225848740955
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
 							"title": "Movesetup",
 							"description": "",
 							"isActiveOnStart": true,
@@ -3076,14 +3203,14 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
+			"disabled": true,
 			"title": "Enemy",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "EnemySetup",
 					"description": "",
 					"isActiveOnStart": true,
@@ -3112,7 +3239,8 @@
 									}
 								}
 							],
-							"sid": 731723035876323
+							"sid": 731723035876323,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -3138,7 +3266,8 @@
 									}
 								}
 							],
-							"sid": 964780464101212
+							"sid": 964780464101212,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -3178,6 +3307,7 @@
 								}
 							],
 							"sid": 979328237288487,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -3204,7 +3334,8 @@
 											}
 										}
 									],
-									"sid": 838766944741962
+									"sid": 838766944741962,
+									"disabled": true
 								}
 							]
 						},
@@ -3239,14 +3370,15 @@
 									}
 								}
 							],
-							"sid": 221191923725876
+							"sid": 221191923725876,
+							"disabled": true
 						}
 					],
 					"sid": 793508164983540
 				},
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "EnemyMove",
 					"description": "",
 					"isActiveOnStart": true,
@@ -3283,6 +3415,7 @@
 							],
 							"actions": [],
 							"sid": 649282912767602,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -3334,7 +3467,8 @@
 											}
 										}
 									],
-									"sid": 761814300290589
+									"sid": 761814300290589,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -3386,7 +3520,8 @@
 											}
 										}
 									],
-									"sid": 121640005494142
+									"sid": 121640005494142,
+									"disabled": true
 								}
 							]
 						}
@@ -3395,7 +3530,7 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "Enemy switch state",
 					"description": "",
 					"isActiveOnStart": true,
@@ -3427,7 +3562,8 @@
 									}
 								}
 							],
-							"sid": 198823788017562
+							"sid": 198823788017562,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -3464,7 +3600,8 @@
 									}
 								}
 							],
-							"sid": 362204592523425
+							"sid": 362204592523425,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -3512,7 +3649,8 @@
 									}
 								}
 							],
-							"sid": 916146577983900
+							"sid": 916146577983900,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -3579,7 +3717,8 @@
 									}
 								}
 							],
-							"sid": 739974200470978
+							"sid": 739974200470978,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -3605,7 +3744,8 @@
 									}
 								}
 							],
-							"sid": 118601700681754
+							"sid": 118601700681754,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -3642,7 +3782,8 @@
 									}
 								}
 							],
-							"sid": 395486005953474
+							"sid": 395486005953474,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -3676,8 +3817,7 @@
 									}
 								}
 							],
-							"sid": 444022481012904,
-							"disabled": true
+							"sid": 444022481012904
 						},
 						{
 							"eventType": "comment",
@@ -3728,7 +3868,8 @@
 									}
 								}
 							],
-							"sid": 976051495446803
+							"sid": 976051495446803,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -3779,7 +3920,8 @@
 									}
 								}
 							],
-							"sid": 949047538550477
+							"sid": 949047538550477,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -3816,7 +3958,8 @@
 									}
 								}
 							],
-							"sid": 356330247023433
+							"sid": 356330247023433,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -3876,7 +4019,8 @@
 									}
 								}
 							],
-							"sid": 643432026329033
+							"sid": 643432026329033,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -3901,21 +4045,22 @@
 									}
 								}
 							],
-							"sid": 154514294963690
+							"sid": 154514294963690,
+							"disabled": true
 						}
 					],
 					"sid": 902297969667208
 				},
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "DamageEnemy",
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "group",
-							"disabled": false,
+							"disabled": true,
 							"title": "Stager",
 							"description": "",
 							"isActiveOnStart": true,
@@ -4045,7 +4190,8 @@
 											}
 										}
 									],
-									"sid": 680269645731954
+									"sid": 680269645731954,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -4146,14 +4292,15 @@
 											}
 										}
 									],
-									"sid": 622675249584558
+									"sid": 622675249584558,
+									"disabled": true
 								}
 							],
 							"sid": 594113093010199
 						},
 						{
 							"eventType": "group",
-							"disabled": false,
+							"disabled": true,
 							"title": "Fight",
 							"description": "",
 							"isActiveOnStart": true,
@@ -4267,7 +4414,8 @@
 											"sid": 428992163800909
 										}
 									],
-									"sid": 615384285834458
+									"sid": 615384285834458,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -4319,7 +4467,8 @@
 											}
 										}
 									],
-									"sid": 693102561318851
+									"sid": 693102561318851,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -4368,14 +4517,15 @@
 											"sid": 464073273899126
 										}
 									],
-									"sid": 615847750506696
+									"sid": 615847750506696,
+									"disabled": true
 								}
 							],
 							"sid": 252508619137768
 						},
 						{
 							"eventType": "group",
-							"disabled": false,
+							"disabled": true,
 							"title": "Down",
 							"description": "",
 							"isActiveOnStart": true,
@@ -4486,6 +4636,7 @@
 										}
 									],
 									"sid": 956010593032898,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -4549,7 +4700,8 @@
 													}
 												}
 											],
-											"sid": 123741598592773
+											"sid": 123741598592773,
+											"disabled": true
 										}
 									]
 								}
@@ -4558,7 +4710,7 @@
 						},
 						{
 							"eventType": "group",
-							"disabled": false,
+							"disabled": true,
 							"title": "Death",
 							"description": "",
 							"isActiveOnStart": true,
@@ -4614,7 +4766,8 @@
 											}
 										}
 									],
-									"sid": 670575919831003
+									"sid": 670575919831003,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -4662,7 +4815,8 @@
 											}
 										}
 									],
-									"sid": 870407392492308
+									"sid": 870407392492308,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -4714,7 +4868,8 @@
 											}
 										}
 									],
-									"sid": 343981431445765
+									"sid": 343981431445765,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -4762,7 +4917,8 @@
 											}
 										}
 									],
-									"sid": 253760727760849
+									"sid": 253760727760849,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -4814,7 +4970,8 @@
 											}
 										}
 									],
-									"sid": 611654749156685
+									"sid": 611654749156685,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -4862,7 +5019,8 @@
 											}
 										}
 									],
-									"sid": 154681464031768
+									"sid": 154681464031768,
+									"disabled": true
 								}
 							],
 							"sid": 737468194782778
