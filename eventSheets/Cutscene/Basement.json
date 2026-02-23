@@ -3923,18 +3923,18 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 677432948753032,
+							"sid": 160346402662861,
 							"parameters": {
-								"interval-seconds": "0.5"
+								"interval-seconds": "0.25"
 							}
 						},
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 441161604828571,
+							"sid": 518737196274512,
 							"parameters": {
 								"variable": "Sound",
-								"comparison": 0,
+								"comparison": 3,
 								"value": "-25"
 							},
 							"isInverted": true
@@ -3942,12 +3942,12 @@
 					],
 					"actions": [
 						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 344281543693678,
+							"id": "subtract-from-instvar",
+							"objectClass": "Numbers_Music",
+							"sid": 356059762919400,
 							"parameters": {
-								"variable": "Sound",
-								"value": "2.5"
+								"instance-variable": "Music",
+								"value": "2"
 							}
 						}
 					],
@@ -3963,19 +3963,18 @@
 							"parameters": {
 								"variable": "Start_Game"
 							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 171393961073963,
-							"parameters": {
-								"variable": "Sound",
-								"comparison": 0,
-								"value": "-25"
-							}
 						}
 					],
 					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 452969167269814,
+							"parameters": {
+								"seconds": "5",
+								"use-timescale": true
+							}
+						},
 						{
 							"id": "stop",
 							"objectClass": "Audio",
@@ -4066,7 +4065,8 @@
 								"0",
 								"269",
 								"1",
-								true
+								true,
+								false
 							]
 						},
 						{
@@ -4727,31 +4727,6 @@
 					"sid": 661818789621959
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Kayboard",
-					"sid": 517137782601690,
-					"parameters": {
-						"key": 84
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Player_All",
-					"sid": 953404500824041,
-					"parameters": {
-						"instance-variable": "textframe",
-						"value": "32"
-					}
-				}
-			],
-			"sid": 775701993248824
 		},
 		{
 			"eventType": "block",

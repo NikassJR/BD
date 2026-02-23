@@ -596,6 +596,15 @@
 							}
 						},
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 699161601220898,
+							"parameters": {
+								"seconds": "0.2",
+								"use-timescale": true
+							}
+						},
+						{
 							"id": "play",
 							"objectClass": "Audio",
 							"sid": 611455972349066,
@@ -1340,9 +1349,9 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 290047028940051,
+					"sid": 441145443507994,
 					"parameters": {
-						"layout": "Bar3"
+						"layout": "Main_Menu"
 					}
 				}
 			],
@@ -1385,53 +1394,38 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Kayboard",
-					"sid": 290167139108355,
-					"parameters": {
-						"key": 84
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
+					"id": "on-collision-with-another-object",
 					"objectClass": "Player_All",
-					"sid": 907056024603127,
+					"sid": 792879056026955,
 					"parameters": {
-						"instance-variable": "textframe",
-						"value": "10"
+						"object": "Trigger_CutScene"
 					}
-				}
-			],
-			"sid": 871298350133535
-		},
-		{
-			"eventType": "block",
-			"conditions": [
+				},
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Kayboard",
-					"sid": 432372258395603,
+					"id": "has-tags",
+					"objectClass": "Trigger_CutScene",
+					"sid": 522526752273604,
 					"parameters": {
-						"key": 67
+						"tags": "\"Save\""
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "fade-volume",
-					"objectClass": "Audio",
-					"sid": 273879622247024,
+					"id": "save",
+					"objectClass": "System",
+					"sid": 509395734067208,
 					"parameters": {
-						"tag": "\"music\"",
-						"db": "-100",
-						"duration": "3",
-						"ending": "stop"
+						"slot": "\"mysave\""
 					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Trigger_CutScene",
+					"sid": 996022705621857
 				}
 			],
-			"sid": 775776338766501
+			"sid": 782709438352104
 		}
 	],
 	"sid": 982125383963349

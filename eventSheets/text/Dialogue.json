@@ -64,6 +64,13 @@
 					"initialValue": "false",
 					"comment": "",
 					"sid": 942515010190162
+				},
+				{
+					"name": "PinPlayer",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 405049327847204
 				}
 			],
 			"eventType": "function-block",
@@ -258,9 +265,62 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
+							"sid": 189927865897834,
+							"parameters": {
+								"variable": "PinPlayer"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Cloud_Dialogue",
+							"sid": 152432437513181,
+							"behaviorType": "Прикрепить",
+							"parameters": {
+								"pin-to": "Player",
+								"image-point": "\"Dialog\"",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "dialogText",
+							"sid": 181124451781320,
+							"behaviorType": "Прикрепить",
+							"parameters": {
+								"pin-to": "Cloud_Dialogue",
+								"image-point": "\"Text\"",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 462286245688210
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
 							"sid": 444756824638041,
 							"parameters": {
 								"variable": "Pin"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 120825521442897,
+							"parameters": {
+								"variable": "PinPlayer"
 							},
 							"isInverted": true
 						}
