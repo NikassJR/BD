@@ -323,8 +323,44 @@
 					"uid": 9470,
 					"sid": 393624233321682,
 					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"Rotate": 0,
+						"distanceToPlayer": 0,
+						"distanceToEnemyY": 0,
+						"distanceToEnemyX": 0
+					},
+					"behaviors": {
+						"Твёрдый": {
+							"properties": {
+								"enabled": true,
+								"use-instance-tags": true,
+								"tags": ""
+							}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 393624233321682,
 						"expanded": true
@@ -360,8 +396,44 @@
 					"uid": 9472,
 					"sid": 292783518444100,
 					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"Rotate": 0,
+						"distanceToPlayer": 0,
+						"distanceToEnemyY": 0,
+						"distanceToEnemyX": 0
+					},
+					"behaviors": {
+						"Твёрдый": {
+							"properties": {
+								"enabled": true,
+								"use-instance-tags": true,
+								"tags": ""
+							}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 292783518444100,
 						"expanded": true
@@ -2163,7 +2235,7 @@
 					"instanceVariables": {
 						"speedRun": 285,
 						"speedTackel": 400,
-						"speedDash": 400,
+						"speedDash": 300,
 						"speedDamage": 400,
 						"rotate": 1,
 						"NoEmpty": 0,
@@ -2190,7 +2262,8 @@
 						"KnifeKick": 0,
 						"Rage": 0,
 						"Combo": 0,
-						"SkvozY": 0
+						"SkvozY": 0,
+						"speedWalk": 150
 					},
 					"behaviors": {
 						"НастраиваемоеДвижение": {
@@ -2477,78 +2550,6 @@
 							1
 						],
 						"angle": 3.141592653589793,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "UpDown",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 9567,
-					"sid": 703028323744750,
-					"tags": "",
-					"instanceVariables": {
-						"distanceToPlayer": 0,
-						"distanceToEnemyY": 0,
-						"distanceToEnemyX": 0
-					},
-					"behaviors": {
-						"Твёрдый": {
-							"properties": {
-								"enabled": false,
-								"use-instance-tags": false,
-								"tags": "UpDown"
-							}
-						},
-						"Физика": {
-							"properties": {
-								"immovable": true,
-								"collision-mask": "use-collision-polygon",
-								"collision-filter-tags": "",
-								"collision-filter-mode": "exclusive",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": true
-							}
-						},
-						"НастраиваемоеДвижение": {
-							"properties": {
-								"stepping-mode": "none",
-								"pixels-per-step": 5,
-								"enabled": true
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 703028323744750,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": -9,
-						"y": 415,
-						"width": 434,
-						"height": 12.995018992,
-						"originX": 0.5116279069767442,
-						"originY": 0.5116279069767442,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0.6981317007977318,
 						"zElevation": 0
 					}
 				},

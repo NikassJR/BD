@@ -11887,7 +11887,8 @@
 					"tags": "",
 					"instanceVariables": {
 						"distanceToPlayer": 0,
-						"Enemy": 0
+						"Enemy": 0,
+						"Solid": 0
 					},
 					"behaviors": {
 						"СквознаяПлатформа": {
@@ -11900,24 +11901,6 @@
 								"enabled": false,
 								"use-instance-tags": false,
 								"tags": "Skvoz"
-							}
-						},
-						"СледоватьЗа": {
-							"properties": {
-								"mode": "time",
-								"delay": 1,
-								"max-delay": 1,
-								"history-rate": 30,
-								"follow-x": true,
-								"follow-y": true,
-								"follow-z-elevation": false,
-								"follow-width": false,
-								"follow-height": false,
-								"follow-angle": false,
-								"follow-opacity": false,
-								"follow-visibility": false,
-								"follow-destroyed": true,
-								"enabled": true
 							}
 						}
 					},
@@ -11932,8 +11915,8 @@
 						"y": 383.6806507405369,
 						"width": 35.19159808107679,
 						"height": 6,
-						"originX": 0,
-						"originY": 0,
+						"originX": 0.5,
+						"originY": 0.5,
 						"color": [
 							1,
 							1,
@@ -14950,8 +14933,44 @@
 					"uid": 9007,
 					"sid": 188860440621044,
 					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"Rotate": 0,
+						"distanceToPlayer": 0,
+						"distanceToEnemyY": 0,
+						"distanceToEnemyX": 0
+					},
+					"behaviors": {
+						"Твёрдый": {
+							"properties": {
+								"enabled": true,
+								"use-instance-tags": true,
+								"tags": ""
+							}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 188860440621044,
 						"expanded": true
@@ -14987,8 +15006,44 @@
 					"uid": 9008,
 					"sid": 491571054983156,
 					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"Rotate": 0,
+						"distanceToPlayer": 0,
+						"distanceToEnemyY": 0,
+						"distanceToEnemyX": 0
+					},
+					"behaviors": {
+						"Твёрдый": {
+							"properties": {
+								"enabled": true,
+								"use-instance-tags": true,
+								"tags": ""
+							}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 491571054983156,
 						"expanded": true
@@ -15077,8 +15132,44 @@
 					"uid": 9012,
 					"sid": 309937212307815,
 					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"Rotate": 0,
+						"distanceToPlayer": 0,
+						"distanceToEnemyY": 0,
+						"distanceToEnemyX": 0
+					},
+					"behaviors": {
+						"Твёрдый": {
+							"properties": {
+								"enabled": true,
+								"use-instance-tags": true,
+								"tags": ""
+							}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						}
+					},
 					"instanceFolderItem": {
 						"sid": 309937212307815,
 						"expanded": true
@@ -18112,7 +18203,7 @@
 					"instanceVariables": {
 						"speedRun": 285,
 						"speedTackel": 400,
-						"speedDash": 400,
+						"speedDash": 300,
 						"speedDamage": 400,
 						"rotate": 1,
 						"NoEmpty": 0,
@@ -18139,7 +18230,8 @@
 						"KnifeKick": 0,
 						"Rage": 0,
 						"Combo": 0,
-						"SkvozY": 0
+						"SkvozY": 0,
+						"speedWalk": 150
 					},
 					"behaviors": {
 						"НастраиваемоеДвижение": {
@@ -19497,78 +19589,6 @@
 							1
 						],
 						"angle": 3.141592653589793,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "UpDown",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 9043,
-					"sid": 984913585609599,
-					"tags": "",
-					"instanceVariables": {
-						"distanceToPlayer": 0,
-						"distanceToEnemyY": 0,
-						"distanceToEnemyX": 0
-					},
-					"behaviors": {
-						"Твёрдый": {
-							"properties": {
-								"enabled": false,
-								"use-instance-tags": false,
-								"tags": "UpDown"
-							}
-						},
-						"Физика": {
-							"properties": {
-								"immovable": true,
-								"collision-mask": "use-collision-polygon",
-								"collision-filter-tags": "",
-								"collision-filter-mode": "exclusive",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": true
-							}
-						},
-						"НастраиваемоеДвижение": {
-							"properties": {
-								"stepping-mode": "none",
-								"pixels-per-step": 5,
-								"enabled": true
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 984913585609599,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 6987.810165360756,
-						"y": 833.312990276622,
-						"width": 434,
-						"height": 12.995018992,
-						"originX": 0.5116279069767442,
-						"originY": 0.5116279069767442,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0.6981317007977318,
 						"zElevation": 0
 					}
 				},
