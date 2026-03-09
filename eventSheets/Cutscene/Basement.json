@@ -48,10 +48,10 @@
 						{
 							"id": "spawn-another-object",
 							"objectClass": "Player_Wolf",
-							"sid": 402808543710281,
+							"sid": 262396980805484,
 							"parameters": {
 								"object": "Shadow3",
-								"layer": "\"Dialog\"",
+								"layer": "\"Front\"",
 								"image-point": "0",
 								"create-hierarchy": false,
 								"template-name": "\"\""
@@ -736,16 +736,20 @@
 							}
 						},
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 200270283079670,
+							"id": "tween-one-property",
+							"objectClass": "Shadow3",
+							"sid": 840331022791120,
+							"behaviorType": "Твинанимация",
 							"parameters": {
-								"object-to-create": "Shadow3",
-								"layer": "\"Front\"",
-								"x": "Player_All.X",
-								"y": "Player_All.Y",
-								"create-hierarchy": false,
-								"template-name": "\"\""
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "0",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
 							}
 						},
 						{
@@ -1053,6 +1057,14 @@
 							}
 						},
 						{
+							"id": "set-default-color",
+							"objectClass": "Shadow4",
+							"sid": 959443392341419,
+							"parameters": {
+								"color": "rgbEx(255, 255, 255)"
+							}
+						},
+						{
 							"id": "tween-one-property",
 							"objectClass": "Shadow4",
 							"sid": 624038371504316,
@@ -1243,6 +1255,14 @@
 								"y": "Player_All.Y",
 								"create-hierarchy": false,
 								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Shadow3",
+							"sid": 259255147592843,
+							"parameters": {
+								"scale": "3"
 							}
 						},
 						{
@@ -3572,6 +3592,15 @@
 							"parameters": {
 								"instance-variable": "onPlayer",
 								"value": "true"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Camera",
+							"sid": 703136288516214,
+							"parameters": {
+								"width": "70",
+								"height": "35"
 							}
 						},
 						{

@@ -1303,6 +1303,14 @@
 									}
 								},
 								{
+									"id": "set-scale",
+									"objectClass": "Shadow3",
+									"sid": 774229051208500,
+									"parameters": {
+										"scale": "3"
+									}
+								},
+								{
 									"id": "tween-one-property",
 									"objectClass": "Shadow3",
 									"sid": 871209778124323,
@@ -1434,9 +1442,9 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 685997497801938,
+					"sid": 834713462444064,
 					"parameters": {
-						"interval-seconds": "0.5"
+						"interval-seconds": "0.25"
 					}
 				},
 				{
@@ -1453,12 +1461,12 @@
 			],
 			"actions": [
 				{
-					"id": "subtract-from-eventvar",
-					"objectClass": "System",
-					"sid": 371168495782521,
+					"id": "subtract-from-instvar",
+					"objectClass": "Numbers_Music",
+					"sid": 507006365991771,
 					"parameters": {
-						"variable": "Sound",
-						"value": "2.5"
+						"instance-variable": "Music",
+						"value": "1"
 					}
 				}
 			],
@@ -1474,19 +1482,18 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 121646624042794,
-					"parameters": {
-						"variable": "Sound",
-						"comparison": 0,
-						"value": "-25"
-					}
 				}
 			],
 			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 967516584985532,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
 				{
 					"id": "stop",
 					"objectClass": "Audio",

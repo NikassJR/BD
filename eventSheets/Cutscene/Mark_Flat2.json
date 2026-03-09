@@ -885,9 +885,9 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 149744559057875,
+					"sid": 796824207337180,
 					"parameters": {
-						"interval-seconds": "0.5"
+						"interval-seconds": "0.25"
 					}
 				},
 				{
@@ -904,12 +904,12 @@
 			],
 			"actions": [
 				{
-					"id": "subtract-from-eventvar",
-					"objectClass": "System",
-					"sid": 759753687812985,
+					"id": "subtract-from-instvar",
+					"objectClass": "Numbers_Music",
+					"sid": 726833221049378,
 					"parameters": {
-						"variable": "Sound",
-						"value": "2.5"
+						"instance-variable": "Music",
+						"value": "1"
 					}
 				}
 			],
@@ -925,19 +925,18 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 417488504902800,
-					"parameters": {
-						"variable": "Sound",
-						"comparison": 0,
-						"value": "-25"
-					}
 				}
 			],
 			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 748176062586942,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
 				{
 					"id": "stop",
 					"objectClass": "Audio",

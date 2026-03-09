@@ -249,7 +249,6 @@
 						{
 							"callFunction": "Create_Dealogue",
 							"sid": 911948856740589,
-							"disabled": true,
 							"parameters": [
 								"\"\"",
 								"Player_All.ImagePointX(\"Dialog\")",
@@ -304,7 +303,6 @@
 						{
 							"callFunction": "Create_Dealogue",
 							"sid": 364948444308082,
-							"disabled": true,
 							"parameters": [
 								"\"\"",
 								"Player_All.ImagePointX(\"Dialog\")",
@@ -405,7 +403,6 @@
 						{
 							"callFunction": "Create_Dealogue",
 							"sid": 108366933419207,
-							"disabled": true,
 							"parameters": [
 								"\"\"",
 								"Player_All.ImagePointX(\"Dialog\")",
@@ -585,9 +582,17 @@
 							}
 						},
 						{
+							"id": "set-scale",
+							"objectClass": "Shadow3",
+							"sid": 387487463201159,
+							"parameters": {
+								"scale": "3"
+							}
+						},
+						{
 							"id": "set-opacity",
 							"objectClass": "Shadow3",
-							"sid": 666695147353860,
+							"sid": 347864022271070,
 							"parameters": {
 								"opacity": "90"
 							}
@@ -1235,6 +1240,40 @@
 					}
 				},
 				{
+					"id": "tween-one-property",
+					"objectClass": "Light_Lamp3",
+					"sid": 662589761366520,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "5000",
+						"time": "2",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Lamp",
+					"sid": 902117943380055,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "5000",
+						"time": "2",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
 					"id": "play",
 					"objectClass": "Audio",
 					"sid": 250480776804290,
@@ -1275,9 +1314,9 @@
 				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "Scene_Light",
-					"sid": 372991384735807,
+					"sid": 984982943212758,
 					"parameters": {
-						"object": "Text_Signboard"
+						"object": "Text_logo"
 					}
 				}
 			],
@@ -1296,12 +1335,17 @@
 					"sid": 853394653051508
 				},
 				{
-					"id": "set-text",
-					"objectClass": "Text_Signboard",
-					"sid": 319353061523132,
+					"id": "set-instvar-value",
+					"objectClass": "Text_logo",
+					"sid": 870531449718676,
 					"parameters": {
-						"text": "\"Они знают?\""
+						"instance-variable": "Lang",
+						"value": "1004"
 					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 140100606372356
 				},
 				{
 					"id": "set-animation-frame",

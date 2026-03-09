@@ -2118,6 +2118,23 @@
 							}
 						},
 						{
+							"id": "set-animation",
+							"objectClass": "Vest",
+							"sid": 325047753167813,
+							"parameters": {
+								"animation": "\"Walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "Vest",
+							"sid": 992631070297319,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
 							"id": "create-object",
 							"objectClass": "System",
 							"sid": 474936042300872,
@@ -3389,6 +3406,14 @@
 					}
 				},
 				{
+					"id": "set-scale",
+					"objectClass": "Shadow3",
+					"sid": 328981971358156,
+					"parameters": {
+						"scale": "3"
+					}
+				},
+				{
 					"id": "tween-one-property",
 					"objectClass": "Shadow3",
 					"sid": 416760891925725,
@@ -3445,9 +3470,9 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 420669483020827,
+					"sid": 818993544002924,
 					"parameters": {
-						"interval-seconds": "0.5"
+						"interval-seconds": "0.25"
 					}
 				},
 				{
@@ -3464,12 +3489,12 @@
 			],
 			"actions": [
 				{
-					"id": "subtract-from-eventvar",
-					"objectClass": "System",
-					"sid": 901704564335702,
+					"id": "subtract-from-instvar",
+					"objectClass": "Numbers_Music",
+					"sid": 123303537652419,
 					"parameters": {
-						"variable": "Sound",
-						"value": "2.5"
+						"instance-variable": "Music",
+						"value": "1"
 					}
 				}
 			],
@@ -3485,19 +3510,18 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 569867117130280,
-					"parameters": {
-						"variable": "Sound",
-						"comparison": 0,
-						"value": "-25"
-					}
 				}
 			],
 			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 459161519359527,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
 				{
 					"id": "stop",
 					"objectClass": "Audio",
