@@ -70,6 +70,42 @@
 							}
 						},
 						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyBaseball",
+							"sid": 621894139322855,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyFurious",
+							"sid": 262542221846397,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyPchel",
+							"sid": 135279588342807,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyKnife",
+							"sid": 605762085308717,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 853118522620515,
@@ -1323,9 +1359,9 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 267200283169223,
+							"sid": 748904115357913,
 							"parameters": {
-								"interval-seconds": "0.5"
+								"interval-seconds": "0.25"
 							}
 						},
 						{
@@ -1342,12 +1378,12 @@
 					],
 					"actions": [
 						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 450299848647202,
+							"id": "subtract-from-instvar",
+							"objectClass": "Numbers_Music",
+							"sid": 594309621043694,
 							"parameters": {
-								"variable": "Sound",
-								"value": "2.5"
+								"instance-variable": "Music",
+								"value": "2"
 							}
 						}
 					],
@@ -1363,19 +1399,18 @@
 							"parameters": {
 								"variable": "Start_Game"
 							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 798271684230080,
-							"parameters": {
-								"variable": "Sound",
-								"comparison": 0,
-								"value": "-25"
-							}
 						}
 					],
 					"actions": [
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 600465270660327,
+							"parameters": {
+								"key": "\"Level\"",
+								"value": "\"5\""
+							}
+						},
 						{
 							"id": "stop",
 							"objectClass": "Audio",
@@ -2168,7 +2203,15 @@
 				{
 					"id": "save",
 					"objectClass": "System",
-					"sid": 428396549799076,
+					"sid": 379112612812989,
+					"parameters": {
+						"slot": "\"start\""
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 372430364374979,
 					"parameters": {
 						"slot": "\"mysave\""
 					}
@@ -2261,33 +2304,11 @@
 						"group-name": "\"Player\"",
 						"state": "activated"
 					}
-				}
-			],
-			"sid": 670237527271180
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-save-complete",
-					"objectClass": "System",
-					"sid": 583278111942132
-				}
-			],
-			"actions": [
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 904262157368433,
-					"parameters": {
-						"seconds": "1",
-						"use-timescale": true
-					}
 				},
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 112990120677946,
+					"sid": 156615502748139,
 					"parameters": {
 						"audio-file": {
 							"path": "Music/Bakery"
@@ -2299,7 +2320,47 @@
 					}
 				}
 			],
-			"sid": 789156521684717
+			"sid": 670237527271180
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 436453701217820
+				},
+				{
+					"id": "compare-key",
+					"objectClass": "Music_Safe",
+					"sid": 461083150003640,
+					"parameters": {
+						"comparison": 0,
+						"string": "\"Level\""
+					}
+				},
+				{
+					"id": "compare-value",
+					"objectClass": "Music_Safe",
+					"sid": 871739958041758,
+					"parameters": {
+						"comparison": 2,
+						"value": "\"5\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "Music_Safe",
+					"sid": 422029633455547,
+					"parameters": {
+						"key": "\"Level\"",
+						"value": "\"5\""
+					}
+				}
+			],
+			"sid": 688015723611783
 		},
 		{
 			"eventType": "block",

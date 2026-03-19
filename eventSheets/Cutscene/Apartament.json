@@ -12,6 +12,16 @@
 			"sid": 630314888568792
 		},
 		{
+			"eventType": "variable",
+			"name": "Apartament",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 156784807559325
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "Dialogue"
 		},
@@ -56,20 +66,6 @@
 					"parameters": {
 						"variable": "Cut_Scene",
 						"value": "false"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 365201931612573,
-					"parameters": {
-						"audio-file": {
-							"path": "Music/Station_Start"
-						},
-						"loop": "looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"Suspense\""
 					}
 				},
 				{
@@ -161,6 +157,20 @@
 					"sid": 889461525724647,
 					"parameters": {
 						"slot": "\"start\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 957844857331133,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/Station_Start"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Suspense\""
 					}
 				},
 				{
@@ -2012,6 +2022,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-item",
+					"objectClass": "Music_Safe",
+					"sid": 525245466488950,
+					"parameters": {
+						"key": "\"Level\"",
+						"value": "\"3\""
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 825905868258627,
@@ -2037,13 +2056,53 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 331145757477190,
+					"sid": 851712175876879,
 					"parameters": {
-						"layout": "Police"
+						"layout": "Bar2"
 					}
 				}
 			],
 			"sid": 963082055231010
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 533747926880145
+				},
+				{
+					"id": "compare-key",
+					"objectClass": "Music_Safe",
+					"sid": 742413727692921,
+					"parameters": {
+						"comparison": 0,
+						"string": "\"Level\""
+					}
+				},
+				{
+					"id": "compare-value",
+					"objectClass": "Music_Safe",
+					"sid": 126626132278821,
+					"parameters": {
+						"comparison": 2,
+						"value": "\"3\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "Music_Safe",
+					"sid": 658680191819326,
+					"parameters": {
+						"key": "\"Level\"",
+						"value": "\"3\""
+					}
+				}
+			],
+			"sid": 661150294997528
 		},
 		{
 			"eventType": "comment",

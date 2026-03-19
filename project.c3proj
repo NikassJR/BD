@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 46602,
+	"savedWithRelease": 47602,
 	"name": "BD",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -91,6 +91,13 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "gamepad",
+			"name": "Геймпад",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Bullet",
 			"name": "Пуля",
@@ -170,7 +177,7 @@
 		{
 			"type": "behavior",
 			"id": "bound",
-			"name": "Ограничить сценой",
+			"name": "[Bound to]",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -184,7 +191,7 @@
 		{
 			"type": "behavior",
 			"id": "destroy",
-			"name": "Уничтожение вне макета",
+			"name": "[Destroy outside]",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -396,7 +403,8 @@
 			{
 				"items": [
 					"Kayboard",
-					"Mouse"
+					"Mouse",
+					"Gamepad"
 				],
 				"subfolders": [],
 				"name": "Control"
@@ -1121,7 +1129,10 @@
 					"Logo",
 					"Boom_Logo",
 					"Text_Setting",
-					"Logo2"
+					"Logo2",
+					"Level",
+					"Menu_Box2",
+					"Level2"
 				],
 				"subfolders": [],
 				"name": "Menu"
@@ -1185,9 +1196,9 @@
 					"Office_lvl10",
 					"Mark_Flat5",
 					"Underground_lvl11",
-					"Warehouse",
+					"Warehouse_lvl12",
 					"Subway",
-					"Garage_Mark_Final"
+					"Garage_Mark_lvl13"
 				],
 				"subfolders": [],
 				"name": "Levels"
@@ -1262,7 +1273,8 @@
 					"Garage_Mark",
 					"Bar5",
 					"Mark_Flat5",
-					"Police"
+					"Police",
+					"Police1"
 				],
 				"subfolders": [],
 				"name": "Cutscene"
@@ -2363,6 +2375,10 @@
 		"items": [],
 		"subfolders": []
 	},
+	"models3d": {
+		"items": [],
+		"subfolders": []
+	},
 	"properties": {
 		"description": "",
 		"version": "1.0.0.0",
@@ -2402,6 +2418,7 @@
 		"multitexturing": "auto",
 		"gpuPreference": "high-performance",
 		"framerateMode": "vsync",
+		"fixedFramerate": 30,
 		"sampling": "nearest",
 		"downscaling": "medium",
 		"renderingMode": "2d",

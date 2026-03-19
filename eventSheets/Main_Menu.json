@@ -1554,6 +1554,15 @@
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
+					"sid": 977878242723530,
+					"parameters": {
+						"layer": "\"Level\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
 					"sid": 332855144885595,
 					"parameters": {
 						"layer": "LayerIndex(\"Tutorial\")",
@@ -1793,11 +1802,6 @@
 							"sid": 242981454232063
 						},
 						{
-							"id": "destroy",
-							"objectClass": "Text_logo",
-							"sid": 692189826409875
-						},
-						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 859648265674493,
@@ -1817,6 +1821,57 @@
 						}
 					],
 					"sid": 131456417391718,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-click",
+							"objectClass": "Mouse",
+							"sid": 783281634110964
+						},
+						{
+							"id": "on-any-key-pressed",
+							"objectClass": "Kayboard",
+							"sid": 583757896161106
+						}
+					],
+					"actions": [],
+					"sid": 841917113958827,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 754363201759688,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1001"
+									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_logo",
+									"sid": 934883938304681,
+									"parameters": {
+										"tags": "\"Start\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Text_logo",
+									"sid": 708223606848332
+								}
+							],
+							"sid": 860792784599354
+						}
+					],
 					"isOrBlock": true
 				}
 			]
@@ -1843,6 +1898,14 @@
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 442407363040902
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Text_logo",
+					"sid": 300307841222563,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				},
 				{
 					"id": "set-animation",
@@ -2664,6 +2727,15 @@
 									"sid": 547404609451122
 								},
 								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 324783954220569,
+									"parameters": {
+										"variable": "NoPause",
+										"value": "false"
+									}
+								},
+								{
 									"id": "load",
 									"objectClass": "System",
 									"sid": 170768872625158,
@@ -3010,7 +3082,7 @@
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 761090706993076,
+									"sid": 574676569307714,
 									"parameters": {
 										"layout": "Station"
 									}
@@ -3381,6 +3453,1754 @@
 						}
 					],
 					"sid": 512263312729993
+				},
+				{
+					"eventType": "comment",
+					"text": "Level"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 836727533812289,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Text_Menu"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 385606769859442,
+							"parameters": {
+								"layer": "\"Main_Menu\""
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 493413934314879,
+							"parameters": {
+								"tags": "\"Level\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 162702587071901,
+							"parameters": {
+								"layer": "\"Level\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Menu_Box",
+							"sid": 176769145109008,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 615577019944314
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 115903459876773,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Text_Menu"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 801168185600657,
+							"parameters": {
+								"layer": "\"Level\""
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 321184927800011,
+							"parameters": {
+								"tags": "\"Back\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 951386243815489,
+							"parameters": {
+								"layer": "\"Main_Menu\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Menu_Box",
+							"sid": 988304139551982,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 659632914593461,
+							"parameters": {
+								"layer": "\"Level\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 924943678287583
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 321348834642602
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "Music_Safe",
+							"sid": 368876641079806,
+							"parameters": {
+								"key": "\"Level\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 682924992183489,
+							"parameters": {
+								"key": "\"Level\""
+							}
+						}
+					],
+					"sid": 597236971413843
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 273661653899314,
+							"parameters": {
+								"layer": "\"Level\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-flashing",
+							"objectClass": "Text_logo",
+							"sid": 285058094544628,
+							"behaviorType": "Мигание"
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Text_logo",
+							"sid": 163939724968577,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 215197214741777,
+							"parameters": {
+								"layer": "\"Main_Menu\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 549143119806151,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 134495874509590,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 745449991990035,
+									"parameters": {
+										"animation": "\"Station\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 441568996865335,
+									"parameters": {
+										"comparison": 5,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 682919555508241,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1006"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 193609237140179,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 727637045504349,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 571641034987946,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 579540873704834,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 341865978952178,
+											"parameters": {
+												"animation": "\"Station\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Camera",
+											"sid": 669002946423504,
+											"parameters": {
+												"object": "Shadow3",
+												"layer": "7",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "Shadow3",
+											"sid": 284139357578441,
+											"parameters": {
+												"opacity": "0"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Shadow3",
+											"sid": 170009482525075,
+											"parameters": {
+												"scale": "2"
+											}
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "Shadow3",
+											"sid": 688185932390495,
+											"behaviorType": "Твинанимация",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "offsetOpacity",
+												"end-value": "100",
+												"time": "1",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 553502756892086
+										},
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 854413277201271,
+											"parameters": {
+												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 149142932241592,
+											"parameters": {
+												"layout": "Station"
+											}
+										}
+									],
+									"sid": 343974220084790
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 720398353330237,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 499039902679843,
+									"parameters": {
+										"animation": "\"Apartament\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 794291052942423,
+									"parameters": {
+										"comparison": 5,
+										"value": "2"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 144496179520749,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1007"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 626854710651273,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 776332547705639,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 814435572951039,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 458917962619202,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 746569211588431,
+											"parameters": {
+												"animation": "\"Apartament\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Camera",
+											"sid": 312162268373395,
+											"parameters": {
+												"object": "Shadow3",
+												"layer": "7",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "Shadow3",
+											"sid": 917046152869180,
+											"parameters": {
+												"opacity": "0"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Shadow3",
+											"sid": 628680460240672,
+											"parameters": {
+												"scale": "2"
+											}
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "Shadow3",
+											"sid": 643821378590661,
+											"behaviorType": "Твинанимация",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "offsetOpacity",
+												"end-value": "100",
+												"time": "1",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 903548500362390
+										},
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 103266745013083,
+											"parameters": {
+												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 670817498288302,
+											"parameters": {
+												"layout": "Apartament_lvl1"
+											}
+										}
+									],
+									"sid": 898544343036048
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 964755243568818,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 388457826571020,
+									"parameters": {
+										"animation": "\"Abandonment\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 493343020263406,
+									"parameters": {
+										"comparison": 5,
+										"value": "3"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 565348506678098,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1008"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 932371769773914,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 899915080699234,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 314092176085246,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 215163903955853,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 687197187751654,
+											"parameters": {
+												"animation": "\"Abandonment\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Camera",
+											"sid": 198579555853284,
+											"parameters": {
+												"object": "Shadow3",
+												"layer": "7",
+												"image-point": "0",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "Shadow3",
+											"sid": 941000036137353,
+											"parameters": {
+												"opacity": "0"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "Shadow3",
+											"sid": 973458210056180,
+											"parameters": {
+												"scale": "2"
+											}
+										},
+										{
+											"id": "tween-one-property",
+											"objectClass": "Shadow3",
+											"sid": 757897351749659,
+											"behaviorType": "Твинанимация",
+											"parameters": {
+												"tags": "\"\"",
+												"property": "offsetOpacity",
+												"end-value": "100",
+												"time": "1",
+												"ease": "default",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										},
+										{
+											"id": "wait-for-previous-actions",
+											"objectClass": "System",
+											"sid": 793950134195073
+										},
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 828863132143688,
+											"parameters": {
+												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 511989066352725,
+											"parameters": {
+												"layout": "Abandonment_lvl2"
+											}
+										}
+									],
+									"sid": 658746455036580
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 706979559391031,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 339979900042853,
+									"parameters": {
+										"animation": "\"Bakery\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 191525197566007,
+									"parameters": {
+										"comparison": 5,
+										"value": "4"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 806581730780376,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1009"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 245477534789130,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 969731346338456,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 576726669096227,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 522949490322979,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 567280837939546,
+											"parameters": {
+												"animation": "\"Bakery\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 473519571942137,
+											"parameters": {
+												"layout": "Bakery_lvl3"
+											}
+										}
+									],
+									"sid": 923411816746566
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 107300594128873,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 209557590684774,
+									"parameters": {
+										"animation": "\"Basement\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 268406354885774,
+									"parameters": {
+										"comparison": 5,
+										"value": "5"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 212840897954831,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1010"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 682837694918833,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 507048531962948,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 138319088148712,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 793237925704046,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 413637457337122,
+											"parameters": {
+												"animation": "\"Basement\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 351999588270484,
+											"parameters": {
+												"layout": "Basement_lvl4"
+											}
+										}
+									],
+									"sid": 938732745010371
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 195060831737951,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 937297613407020,
+									"parameters": {
+										"animation": "\"Hotel\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 485801202513063,
+									"parameters": {
+										"comparison": 5,
+										"value": "6"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 473552278033659,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1011"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 587365983496795,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 251085266450866,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 896002208081575,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 812608762511574,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 110662939371905,
+											"parameters": {
+												"animation": "\"Hotel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 610453845316930,
+											"parameters": {
+												"layout": "Hotel_lvl5"
+											}
+										}
+									],
+									"sid": 346559168842741
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 926824520393785,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 224703812659191,
+									"parameters": {
+										"animation": "\"Night_Club\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 516881850658779,
+									"parameters": {
+										"comparison": 5,
+										"value": "7"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 213862321879419,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1012"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 614002676695537,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 291721847883395,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 469044367851812,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 555088774350772,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 930150197741494,
+											"parameters": {
+												"animation": "\"Night_Club\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 187362344689883,
+											"parameters": {
+												"layout": "Night_Club_lvl6"
+											}
+										}
+									],
+									"sid": 545313197723614
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 261906464686259,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 533556998164385,
+									"parameters": {
+										"animation": "\"Garage\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 994290217766294,
+									"parameters": {
+										"comparison": 5,
+										"value": "8"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 355091433838536,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1013"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 513511339814571,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 811962444713052,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 284506557243161,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 212200926637020,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 951979408734286,
+											"parameters": {
+												"animation": "\"Garage\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 915313953195836,
+											"parameters": {
+												"layout": "Garage_lvl7"
+											}
+										}
+									],
+									"sid": 568750030725129
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 364720185045038,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 361962136033769,
+									"parameters": {
+										"animation": "\"Train\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 862734349387007,
+									"parameters": {
+										"comparison": 5,
+										"value": "8"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 163558927206711,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1014"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 475932049533194,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 853397404811528,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 489060686121044,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 339553144037620,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 585750683573954,
+											"parameters": {
+												"animation": "\"Train\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 236903024066497,
+											"parameters": {
+												"layout": "Train_lvl8"
+											}
+										}
+									],
+									"sid": 561587814761952
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 648179199052450,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 127796737369317,
+									"parameters": {
+										"animation": "\"Tower\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 531489996528879,
+									"parameters": {
+										"comparison": 5,
+										"value": "9"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 933840188409198,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1015"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 493193729400698,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 868347121079985,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 482058974243533,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 946518580150740,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 362924174846150,
+											"parameters": {
+												"animation": "\"Tower\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 429157995276601,
+											"parameters": {
+												"layout": "Tower_lvl9"
+											}
+										}
+									],
+									"sid": 418064781893862
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 713780857156629,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 344064096213807,
+									"parameters": {
+										"animation": "\"Office\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 403526292810891,
+									"parameters": {
+										"comparison": 5,
+										"value": "10"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 263500377784376,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1016"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 512905070111057,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 970064524235384,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 688586566112277,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 751908753585414,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 270226277566663,
+											"parameters": {
+												"animation": "\"Office\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 318047361878728,
+											"parameters": {
+												"layout": "Office_lvl10"
+											}
+										}
+									],
+									"sid": 674701875584168
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 512657976843893,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 624467564598819,
+									"parameters": {
+										"animation": "\"Underground\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 669224201110748,
+									"parameters": {
+										"comparison": 5,
+										"value": "11"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 634517901559904,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1017"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 914178196235390,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 581243592817776,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 655307667696297,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 661694859961897,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 204025249467135,
+											"parameters": {
+												"animation": "\"Underground\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 707949710186508,
+											"parameters": {
+												"layout": "Underground_lvl11"
+											}
+										}
+									],
+									"sid": 981202115549743
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 826702381741884,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 537154956631732,
+									"parameters": {
+										"animation": "\"Warehouse\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 824782356600600,
+									"parameters": {
+										"comparison": 5,
+										"value": "12"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 221329850587250,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1018"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 528875986074407,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 203437930239744,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 938422969070663,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 878827905778256,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 426043803568045,
+											"parameters": {
+												"animation": "\"Warehouse\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 242184904258703,
+											"parameters": {
+												"layout": "Warehouse_lvl12"
+											}
+										}
+									],
+									"sid": 656235077923623
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 120299782057261,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Level",
+									"sid": 132105341653102,
+									"parameters": {
+										"animation": "\"Mark Garage\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 631684609088913,
+									"parameters": {
+										"comparison": 5,
+										"value": "13"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_logo",
+									"sid": 304645635499927,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "1019"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Level",
+									"sid": 913046892816686,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_logo",
+									"sid": 984659043913969,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 530587943129562,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-object-clicked",
+											"objectClass": "Mouse",
+											"sid": 722929825639374,
+											"parameters": {
+												"mouse-button": "left",
+												"click-type": "clicked",
+												"object-clicked": "Level"
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Level",
+											"sid": 521172584172071,
+											"parameters": {
+												"animation": "\"Mark Garage\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 459263894961708,
+											"parameters": {
+												"layout": "Garage_Mark_lvl13"
+											}
+										}
+									],
+									"sid": 463308196957539
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 657025611783266,
+							"parameters": {
+								"object": "Level"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Level",
+							"sid": 706716466570732,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 902795518778101
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 701674017294604
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Level",
+							"sid": 929523159701941,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 724964677603231
 				}
 			],
 			"sid": 705416730304569

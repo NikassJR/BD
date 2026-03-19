@@ -47,20 +47,6 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 239711066054668,
-					"parameters": {
-						"audio-file": {
-							"path": "Music/Soul to soul"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"Suspense\""
-					}
-				},
-				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 192449237093977,
@@ -130,6 +116,20 @@
 					"parameters": {
 						"seconds": "3",
 						"use-timescale": true
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 257419102317553,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/Soul to soul"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Suspense\""
 					}
 				},
 				{
@@ -1349,13 +1349,53 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 994433745959810,
+					"sid": 168750012584457,
 					"parameters": {
-						"layout": "Bar3"
+						"layout": "Police"
 					}
 				}
 			],
 			"sid": 389503521535985
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 904036691576765
+				},
+				{
+					"id": "compare-key",
+					"objectClass": "Music_Safe",
+					"sid": 587681773719896,
+					"parameters": {
+						"comparison": 0,
+						"string": "\"Level\""
+					}
+				},
+				{
+					"id": "compare-value",
+					"objectClass": "Music_Safe",
+					"sid": 997470459460320,
+					"parameters": {
+						"comparison": 2,
+						"value": "\"4\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "Music_Safe",
+					"sid": 896886895886509,
+					"parameters": {
+						"key": "\"Level\"",
+						"value": "\"4\""
+					}
+				}
+			],
+			"sid": 537910876094450
 		},
 		{
 			"eventType": "comment",

@@ -174,6 +174,86 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 584435571577450
+				},
+				{
+					"id": "compare-key",
+					"objectClass": "Music_Safe",
+					"sid": 849255091300761,
+					"parameters": {
+						"comparison": 0,
+						"string": "\"Level\""
+					}
+				},
+				{
+					"id": "compare-value",
+					"objectClass": "Music_Safe",
+					"sid": 288517992496771,
+					"parameters": {
+						"comparison": 2,
+						"value": "\"1\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "Music_Safe",
+					"sid": 600189844899367,
+					"parameters": {
+						"key": "\"Level\"",
+						"value": "\"1\""
+					}
+				}
+			],
+			"sid": 471198075271050
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 396254604781383
+				},
+				{
+					"id": "compare-key",
+					"objectClass": "Music_Safe",
+					"sid": 453344252715930,
+					"parameters": {
+						"comparison": 0,
+						"string": "\"Level\""
+					}
+				},
+				{
+					"id": "compare-value",
+					"objectClass": "Music_Safe",
+					"sid": 633935493569976,
+					"parameters": {
+						"comparison": 2,
+						"value": "\"2\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "Music_Safe",
+					"sid": 360290445384585,
+					"parameters": {
+						"key": "\"Level\"",
+						"value": "\"2\""
+					}
+				}
+			],
+			"sid": 456112388262990
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-created",
 					"objectClass": "Shadow3",
 					"sid": 922005474052387
@@ -2267,9 +2347,9 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 651341854860754,
+					"sid": 456670360395538,
 					"parameters": {
-						"interval-seconds": "0.5"
+						"interval-seconds": "0.25"
 					}
 				},
 				{
@@ -2288,10 +2368,10 @@
 				{
 					"id": "subtract-from-instvar",
 					"objectClass": "Numbers_Music",
-					"sid": 511740310602269,
+					"sid": 826743476706136,
 					"parameters": {
 						"instance-variable": "Music",
-						"value": "2.5"
+						"value": "1"
 					}
 				}
 			],
