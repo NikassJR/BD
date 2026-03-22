@@ -2520,6 +2520,53 @@
 			],
 			"sid": 238342603262101,
 			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_All",
+					"sid": 323201597523754,
+					"parameters": {
+						"object": "Screen_Black"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Player_All",
+					"sid": 312210869554701,
+					"parameters": {
+						"mode": "enable",
+						"effect": "\"УстановитьЦвет\""
+					}
+				}
+			],
+			"sid": 783857494579301
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 416347753824898
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Player_All",
+					"sid": 682375064801180,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"УстановитьЦвет\""
+					}
+				}
+			],
+			"sid": 876060588150038
 		}
 	],
 	"sid": 811950137160895

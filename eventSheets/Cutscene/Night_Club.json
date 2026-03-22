@@ -169,7 +169,8 @@
 					}
 				}
 			],
-			"sid": 122251061706483
+			"sid": 122251061706483,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -2147,6 +2148,104 @@
 				}
 			],
 			"sid": 104283288104107
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_All",
+					"sid": 175020258794203,
+					"parameters": {
+						"object": "Screen_Black"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Player_All",
+					"sid": 333628890417406,
+					"parameters": {
+						"mode": "enable",
+						"effect": "\"УстановитьЦвет\""
+					}
+				}
+			],
+			"sid": 915623088473323
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 536375876565533
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Player_All",
+					"sid": 111356983676937,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"УстановитьЦвет\""
+					}
+				}
+			],
+			"sid": 745984315417472
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Enemys",
+					"sid": 791305347251686,
+					"parameters": {
+						"object": "Screen_Black"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Enemys",
+					"sid": 181406247846388,
+					"parameters": {
+						"mode": "enable",
+						"effect": "\"УстановитьЦвет\""
+					}
+				}
+			],
+			"sid": 246436295950362
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Enemys",
+					"sid": 122730493452451,
+					"parameters": {
+						"object": "Screen_Black"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Enemys",
+					"sid": 693279266216035,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"УстановитьЦвет\""
+					}
+				}
+			],
+			"sid": 323716290390591
 		}
 	],
 	"sid": 902713123400387
