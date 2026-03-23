@@ -247,6 +247,15 @@
 									"parameters": {
 										"obstacle": "Door_Visor"
 									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "Enemys",
+									"sid": 112885605596738,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"УстановитьЦвет\""
+									}
 								}
 							],
 							"sid": 984378127013975,
@@ -378,6 +387,15 @@
 									"parameters": {
 										"obstacle": "Door_Visor"
 									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "Enemys",
+									"sid": 703038247220050,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"УстановитьЦвет\""
+									}
 								}
 							],
 							"sid": 330295072090420
@@ -508,6 +526,15 @@
 									"parameters": {
 										"obstacle": "Door_Visor"
 									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "Enemys",
+									"sid": 543902342476459,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"УстановитьЦвет\""
+									}
 								}
 							],
 							"sid": 323054853856678
@@ -601,6 +628,15 @@
 									"behaviorType": "Физика",
 									"parameters": {
 										"mode": "disabled"
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "Enemys",
+									"sid": 895480887207593,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"УстановитьЦвет\""
 									}
 								}
 							],
@@ -731,6 +767,15 @@
 									"behaviorType": "ПолеЗрения",
 									"parameters": {
 										"obstacle": "Door_Visor"
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "Enemys",
+									"sid": 409335271709472,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"УстановитьЦвет\""
 									}
 								}
 							],
@@ -866,6 +911,15 @@
 									"behaviorType": "ПолеЗрения",
 									"parameters": {
 										"obstacle": "Door_Visor"
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "Enemys",
+									"sid": 670706566186056,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"УстановитьЦвет\""
 									}
 								}
 							],
@@ -1021,6 +1075,15 @@
 									"parameters": {
 										"obstacle": "Door_Visor"
 									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "Enemys",
+									"sid": 361553059059797,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"УстановитьЦвет\""
+									}
 								}
 							],
 							"sid": 349074275423946,
@@ -1152,6 +1215,15 @@
 									"parameters": {
 										"obstacle": "Door_Visor"
 									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "Enemys",
+									"sid": 944679785829453,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"УстановитьЦвет\""
+									}
 								}
 							],
 							"sid": 803032486514813
@@ -1281,6 +1353,15 @@
 									"behaviorType": "ПолеЗрения",
 									"parameters": {
 										"obstacle": "Door_Visor"
+									}
+								},
+								{
+									"id": "set-effect-enabled",
+									"objectClass": "Enemys",
+									"sid": 836462385743675,
+									"parameters": {
+										"mode": "disable",
+										"effect": "\"УстановитьЦвет\""
 									}
 								}
 							],
@@ -2714,6 +2795,29 @@
 					],
 					"sid": 955770162089280,
 					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-enabled",
+							"objectClass": "Player_All",
+							"sid": 102300840575690,
+							"behaviorType": "Платформер"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-default-controls",
+							"objectClass": "Player_All",
+							"sid": 382181179711512,
+							"behaviorType": "Платформер",
+							"parameters": {
+								"default-controls": false
+							}
+						}
+					],
+					"sid": 738178992277326
 				}
 			],
 			"sid": 949698284406254
@@ -21105,6 +21209,15 @@
 													"sid": 895241183311122,
 													"parameters": {
 														"instance-variable": "Death"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "EnemyBaseball",
+													"sid": 173101394829219,
+													"parameters": {
+														"instance-variable": "Damage"
 													},
 													"isInverted": true
 												},
@@ -50577,6 +50690,15 @@
 													"sid": 647997236030069,
 													"parameters": {
 														"instance-variable": "Death"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "EnemySecurity",
+													"sid": 252474131466063,
+													"parameters": {
+														"instance-variable": "Damage"
 													},
 													"isInverted": true
 												},
@@ -80883,6 +81005,15 @@
 												{
 													"id": "is-boolean-instance-variable-set",
 													"objectClass": "EnemyKnife",
+													"sid": 322873942646199,
+													"parameters": {
+														"instance-variable": "Damage"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "EnemyKnife",
 													"sid": 839750870258596,
 													"parameters": {
 														"instance-variable": "Rolling"
@@ -95529,6 +95660,15 @@
 													"sid": 963351844638298,
 													"parameters": {
 														"instance-variable": "Death"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "EnemyPchel",
+													"sid": 847496570695546,
+													"parameters": {
+														"instance-variable": "Damage"
 													},
 													"isInverted": true
 												},
@@ -110694,6 +110834,15 @@
 													"sid": 775598198968327,
 													"parameters": {
 														"instance-variable": "Rolling"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "EnemyFurious",
+													"sid": 687546063094236,
+													"parameters": {
+														"instance-variable": "Damage"
 													},
 													"isInverted": true
 												},
@@ -151345,8 +151494,7 @@
 					}
 				}
 			],
-			"sid": 210833138727433,
-			"disabled": true
+			"sid": 210833138727433
 		},
 		{
 			"eventType": "block",

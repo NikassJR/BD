@@ -1,0 +1,864 @@
+{
+	"name": "Garage_Mark2",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "actual"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Effect"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 655911747042424
+				}
+			],
+			"actions": [
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 324019933289484,
+					"parameters": {
+						"slot": "\"start\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 558057841984917,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 594956563451600,
+					"parameters": {
+						"variable": "Continue_Game",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 184797244338165,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Camera",
+					"sid": 633807328352573,
+					"parameters": {
+						"instance-variable": "onPlayer",
+						"value": "false"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 936229366551996,
+					"disabled": true,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/Bar_embient"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player_All",
+					"sid": 392060082775954,
+					"parameters": {
+						"object": "Shadow3",
+						"layer": "\"Dialog\"",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 592487920264569,
+					"parameters": {
+						"audio-file": {
+							"path": "Elektro_Crash"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"audio\""
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Shadow3",
+					"sid": 379715710199762,
+					"parameters": {
+						"scale": "3"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player_All",
+					"sid": 809834055425944,
+					"parameters": {
+						"object": "Trip",
+						"layer": "\"Dialog\"",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Trip",
+					"sid": 571608127043221,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"ВодныйФон\""
+					}
+				},
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Trip",
+					"sid": 318443574959153,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"РадиальнаяДеформация\""
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Trip",
+					"sid": 810959326674807,
+					"parameters": {
+						"opacity": "0"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Trip",
+					"sid": 901070950461241,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.5",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 782945983790338,
+					"parameters": {
+						"variable": "Safe_Zone",
+						"value": "true"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 205813688061415,
+					"parameters": {
+						"seconds": "1",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Shadow3",
+					"sid": 755487437230995,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Trip",
+					"sid": 349230394495198,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "0.5",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 469072904202417,
+					"parameters": {
+						"variable": "onDialMain",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player_All",
+					"sid": 126557464213852,
+					"parameters": {
+						"instance-variable": "textframe",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Player_All",
+					"sid": 318153439143512,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "-100"
+					}
+				}
+			],
+			"sid": 183309612120766
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 901726325870919,
+					"parameters": {
+						"variable": "onDialMain"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 506392781954549,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 780258102712009,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 164966005079523
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 667890066715347,
+							"parameters": [
+								"\"\"",
+								"\"Junior_Speak4\"",
+								"641",
+								"3"
+							]
+						}
+					],
+					"sid": 548686062502754
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 361174420182173,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 175425852062411
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 354265327507345,
+							"parameters": [
+								"\"\"",
+								"\"Junior_Speak5\"",
+								"642",
+								"1"
+							]
+						}
+					],
+					"sid": 492580652942970
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 330915478418298,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 871107084291712
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 797363091769215,
+							"parameters": [
+								"\"\"",
+								"\"Junior_Speak6\"",
+								"643",
+								"2"
+							]
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 718771979981257,
+							"parameters": {
+								"audio-file": {
+									"path": "Missage"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
+						},
+						{
+							"callFunction": "shakeScreen",
+							"sid": 539912823665077
+						},
+						{
+							"callFunction": "shakeScreen2",
+							"sid": 736601994935825
+						}
+					],
+					"sid": 399130609222792
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 661916174363021,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "4"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 632374694615983
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 730949715208845,
+							"parameters": [
+								"\"\"",
+								"\"Mark7\"",
+								"644",
+								"3"
+							]
+						}
+					],
+					"sid": 934699890460256
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 476417848511901,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "5"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 535130390577904
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 196033635945060,
+							"parameters": [
+								"\"\"",
+								"\"Mark7\"",
+								"645",
+								"1"
+							]
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Player_All",
+							"sid": 290626516832894,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "-100"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_All",
+							"sid": 577408152894002,
+							"parameters": {
+								"animation": "weapon & \"Walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Shadow3",
+							"sid": 249012244107902,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Shadow3",
+							"sid": 763734482784322,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Shadow3",
+							"sid": 135455488545439,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 110082482332713
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 665233886541947,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "6"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 666725665069842
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 226727417653293,
+							"parameters": [
+								"\"\"",
+								"\"Mark4\"",
+								"646",
+								"3"
+							]
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 258275680950131,
+							"parameters": {
+								"audio-file": {
+									"path": "MetallDoorClosed"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
+						}
+					],
+					"sid": 440865659332557
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 786245920645479,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "7"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 309985017876664
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 822902932208006,
+							"parameters": [
+								"\"\"",
+								"\"Mark4\"",
+								"647",
+								"2"
+							]
+						}
+					],
+					"sid": 620087775450308
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 463528374280820,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "8"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 671683950949023
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 637255188918849,
+							"parameters": [
+								"\"\"",
+								"\"Mark4\"",
+								"648",
+								"3"
+							]
+						}
+					],
+					"sid": 338086380639531
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 974882346316189,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "9"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 729684480425933
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 278611984785904,
+							"parameters": [
+								"\"\"",
+								"\"Mark4\"",
+								"649",
+								"2"
+							]
+						}
+					],
+					"sid": 976078715207803
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 866112207120897,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "10"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 619672499826087
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 193914368586104,
+							"parameters": [
+								"\"\"",
+								"\"Mark4\"",
+								"650",
+								"2"
+							]
+						}
+					],
+					"sid": 978316402737144
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 493748726975509,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "11"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 920501598213027
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 689507742281777,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 337841102033019
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 749942476466176,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 749863236719702,
+					"parameters": {
+						"interval-seconds": "0.25"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 363831732599613,
+					"parameters": {
+						"variable": "Sound",
+						"comparison": 0,
+						"value": "-25"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Numbers_Music",
+					"sid": 169401240230214,
+					"parameters": {
+						"instance-variable": "Music",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 279452083188146
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 248201560509298,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 603609373516468,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 175907905554405,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "Music_Safe",
+					"sid": 529784365413928,
+					"parameters": {
+						"key": "\"Sound\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "Music_Safe",
+					"sid": 364393161169243,
+					"parameters": {
+						"key": "\"Sound\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 554152713423020
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 573088559447944,
+					"parameters": {
+						"layout": "Warehouse_lvl12"
+					}
+				}
+			],
+			"sid": 105587614000867
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player_All",
+					"sid": 765278046526894,
+					"parameters": {
+						"object": "Chair"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_All",
+					"sid": 199011440416049,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 2,
+						"value": "5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Player_All",
+					"sid": 725079628954225,
+					"parameters": {
+						"animation": "weapon & \"Idle\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Player_All",
+					"sid": 245445246664915,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "0"
+					}
+				}
+			],
+			"sid": 269031564436466
+		}
+	],
+	"sid": 727625400068257
+}

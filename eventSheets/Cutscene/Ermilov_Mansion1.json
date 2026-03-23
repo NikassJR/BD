@@ -1,0 +1,762 @@
+{
+	"name": "Ermilov_Mansion1",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "actual"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Effect"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 160112974600859
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 832269523823381,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 856441406397967,
+					"parameters": {
+						"variable": "Continue_Game",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 422676234408472,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Camera",
+					"sid": 453275321899637,
+					"parameters": {
+						"instance-variable": "onPlayer",
+						"value": "false"
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 628248377154856,
+					"parameters": {
+						"slot": "\"start\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 380062019003521,
+					"parameters": {
+						"variable": "Safe_Zone",
+						"value": "true"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 813219000291125,
+					"parameters": {
+						"seconds": "1",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 943614233116962,
+					"parameters": {
+						"variable": "onDialMain",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player_All",
+					"sid": 454032349429299,
+					"parameters": {
+						"instance-variable": "textframe",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 644336471098734
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 155062899498857,
+					"parameters": {
+						"variable": "onDialMain"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 361005692127330,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 560086064873195,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 773868408461141
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 884570960830119,
+							"parameters": [
+								"\"\"",
+								"\"Security\"",
+								"621",
+								"2"
+							]
+						}
+					],
+					"sid": 464819622839482
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 923018444648610,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 951300905852780
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 793358433777455,
+							"parameters": [
+								"\"\"",
+								"\"Ermilov\"",
+								"622",
+								"2"
+							]
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "security_Cutscene",
+							"sid": 852421415404510,
+							"parameters": {
+								"animation": "\"Walk\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "security_Cutscene",
+							"sid": 205288509334837,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "100"
+							}
+						}
+					],
+					"sid": 227657381671323
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 484476406291371,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 258374196443558
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 577902673883028,
+							"parameters": [
+								"\"\"",
+								"\"Security\"",
+								"623",
+								"3"
+							]
+						}
+					],
+					"sid": 913742665322880
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 355405543879106,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "4"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 713951649305139
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 122560737118517,
+							"parameters": [
+								"\"\"",
+								"\"Ermilov\"",
+								"624",
+								"3"
+							]
+						}
+					],
+					"sid": 537615381935198
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 938655192133612,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "5"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 263646555376266
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 541636837891776,
+							"parameters": [
+								"\"\"",
+								"\"Security\"",
+								"625",
+								"1"
+							]
+						}
+					],
+					"sid": 977098373632044
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 709123950562491,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "6"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 730538362713083
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 568813310289745,
+							"parameters": [
+								"\"\"",
+								"\"Ermilov\"",
+								"626",
+								"2"
+							]
+						}
+					],
+					"sid": 976292035106557
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 590609479024896,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "7"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 327504128997849
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 329917309288458,
+							"parameters": [
+								"\"\"",
+								"\"Security\"",
+								"627",
+								"2"
+							]
+						}
+					],
+					"sid": 168024636397189
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 724663814373404,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "8"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 406091672189439
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 547524563438940,
+							"parameters": [
+								"\"\"",
+								"\"Ermilov\"",
+								"628",
+								"1"
+							]
+						}
+					],
+					"sid": 551347120606246
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 139947960967469,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "9"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 202117654687675
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 257985614384904,
+							"parameters": [
+								"\"\"",
+								"\"Security\"",
+								"629",
+								"3"
+							]
+						}
+					],
+					"sid": 687211083163307
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 712284424633424,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "10"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 784114665822343
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 642921260809753,
+							"parameters": [
+								"\"\"",
+								"\"Ermilov\"",
+								"630",
+								"1"
+							]
+						}
+					],
+					"sid": 417149259289288
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 138728682294388,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "11"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 870704490857917
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 209318527764055,
+							"parameters": [
+								"\"\"",
+								"\"Security\"",
+								"631",
+								"1"
+							]
+						}
+					],
+					"sid": 810372196274763
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 372899555209684,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "12"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 872192770987498
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 820095203235678,
+							"parameters": [
+								"\"\"",
+								"\"Security\"",
+								"632",
+								"3"
+							]
+						}
+					],
+					"sid": 871158226290741
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 689374319500797,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "13"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 665818783964095
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 684196273175767,
+							"parameters": [
+								"\"\"",
+								"\"Ermilov\"",
+								"633",
+								"3"
+							]
+						}
+					],
+					"sid": 602943652689747
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 485755859256491,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "14"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 167513461746740
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 362053220693971,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 817830213237359
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 832954636646444,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 769009304136467,
+					"parameters": {
+						"interval-seconds": "0.25"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 372883817747203,
+					"parameters": {
+						"variable": "Sound",
+						"comparison": 0,
+						"value": "-25"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Numbers_Music",
+					"sid": 472488780575412,
+					"parameters": {
+						"instance-variable": "Music",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 539033980656823
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 957194784768439,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-one-property",
+					"objectClass": "EndScene",
+					"sid": 572902225619316,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "Camera.X +300",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 820617327785899,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 163779744405622,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "Music_Safe",
+					"sid": 118856533992831,
+					"parameters": {
+						"key": "\"Sound\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "Music_Safe",
+					"sid": 672549688808519,
+					"parameters": {
+						"key": "\"Sound\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 755419211886715
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 358622532641637,
+					"parameters": {
+						"layout": "Underground_lvl11"
+					}
+				}
+			],
+			"sid": 949528263121699
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "security_Cutscene",
+					"sid": 649073792424566,
+					"parameters": {
+						"object": "Table"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "security_Cutscene",
+					"sid": 455950989192455,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "0"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "security_Cutscene",
+					"sid": 131572023497960,
+					"parameters": {
+						"animation": "\"Idle\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 137858027815812
+		}
+	],
+	"sid": 362425738561715
+}
