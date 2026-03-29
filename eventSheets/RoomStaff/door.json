@@ -882,6 +882,91 @@
 								}
 							],
 							"sid": 202038017134253
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "Enemys",
+									"sid": 600116057001565,
+									"parameters": {
+										"object": "Door_Metal"
+									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Door_Metal",
+									"sid": 285973788919100,
+									"parameters": {
+										"tags": "\"Closed\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Door_Metal",
+									"sid": 236570407259702,
+									"disabled": true,
+									"parameters": {
+										"instance-variable": "distanceToEnemyX",
+										"comparison": 2,
+										"value": "50"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Door_Metal",
+									"sid": 876724218778383,
+									"disabled": true,
+									"parameters": {
+										"instance-variable": "distanceToEnemyY",
+										"comparison": 2,
+										"value": "50"
+									}
+								},
+								{
+									"id": "pick-nearestfurthest",
+									"objectClass": "Door_Metal",
+									"sid": 281999984979948,
+									"disabled": true,
+									"parameters": {
+										"which": "nearest",
+										"x": "Enemys.X",
+										"y": "Enemys.Y",
+										"pick-all-tied": false
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Door_Metal",
+									"sid": 452426213084093,
+									"parameters": {
+										"instance-variable": "open",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Door_Metal",
+									"sid": 307377226704523,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Door_Metal",
+									"sid": 430078681247831,
+									"behaviorType": "Твёрдый",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 246902816470963
 						}
 					],
 					"sid": 807995966925308

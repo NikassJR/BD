@@ -250,7 +250,6 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 911948856740589,
 							"parameters": [
-								"\"\"",
 								"Player_All.ImagePointX(\"Dialog\")",
 								"Player_All.ImagePointY(\"Dialog\")",
 								"343",
@@ -304,7 +303,6 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 364948444308082,
 							"parameters": [
-								"\"\"",
 								"Player_All.ImagePointX(\"Dialog\")",
 								"Player_All.ImagePointY(\"Dialog\")",
 								"348",
@@ -404,7 +402,6 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 108366933419207,
 							"parameters": [
-								"\"\"",
 								"Player_All.ImagePointX(\"Dialog\")",
 								"Player_All.ImagePointY(\"Dialog\")",
 								"344",
@@ -786,6 +783,35 @@
 							}
 						},
 						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_All",
+							"sid": 180496641342292,
+							"parameters": {
+								"object": "Text_logo",
+								"layer": "\"Player\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "Text_logo",
+							"sid": 949560038333066,
+							"parameters": {
+								"width": "200"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Text_logo",
+							"sid": 312707674134809,
+							"parameters": {
+								"instance-variable": "Lang",
+								"value": "43"
+							}
+						},
+						{
 							"id": "add-to-instvar",
 							"objectClass": "Player_Cutscene",
 							"sid": 980244964627397,
@@ -817,6 +843,36 @@
 						}
 					],
 					"actions": [
+						{
+							"callFunction": "Text",
+							"sid": 445170335991005
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "Text_logo",
+							"sid": 666689214191688,
+							"parameters": {
+								"color": "rgbEx(255, 255, 255)"
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "Text_logo",
+							"sid": 662007001562069,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"СвечениеВертикальное\""
+							}
+						},
+						{
+							"id": "set-effect-enabled",
+							"objectClass": "Text_logo",
+							"sid": 169160105012220,
+							"parameters": {
+								"mode": "disable",
+								"effect": "\"СвечениеГоризонтальное\""
+							}
+						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
@@ -1026,7 +1082,6 @@
 					"callFunction": "Create_Dealogue",
 					"sid": 436245576830538,
 					"parameters": [
-						"\"\"",
 						"Player_All.ImagePointX(\"Dialog\")",
 						"Player_All.ImagePointY(\"Dialog\")",
 						"347",
@@ -1415,55 +1470,9 @@
 					"parameters": {
 						"from": "beginning"
 					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 411308617875678,
-					"disabled": true,
-					"parameters": {
-						"audio-file": {
-							"path": "Subway/subway-subway-door-opening-sound-effect (1)"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"audio\""
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 434497950413089,
-					"disabled": true,
-					"parameters": {
-						"seconds": "2",
-						"use-timescale": true
-					}
 				}
 			],
 			"sid": 801432698955729
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 174303805983099,
-					"parameters": {
-						"interval-seconds": "0.25"
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "shakeScreen",
-					"sid": 694455173838484
-				}
-			],
-			"sid": 895192485447659,
-			"disabled": true
 		},
 		{
 			"eventType": "block",

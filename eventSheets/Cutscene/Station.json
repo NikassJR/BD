@@ -166,6 +166,15 @@
 						"ping-pong": "no",
 						"repeat-count": "1"
 					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "EnemyManiac",
+					"sid": 833219663494266,
+					"parameters": {
+						"instance-variable": "HP",
+						"value": "5"
+					}
 				}
 			],
 			"sid": 830472082835930
@@ -534,7 +543,6 @@
 					"callFunction": "Create_Dealogue",
 					"sid": 850257187712081,
 					"parameters": [
-						"\"\"",
 						"Player_Cutscene.x",
 						"Player_Cutscene.Y",
 						"28",
@@ -640,7 +648,6 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 772422237160253,
 							"parameters": [
-								"\"\"",
 								"Player_Cutscene.x",
 								"Player_Cutscene.Y",
 								"29",
@@ -981,7 +988,6 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 196894724345444,
 							"parameters": [
-								"\"\"",
 								"Player_Cutscene.x",
 								"Player_Cutscene.Y -50",
 								"30",
@@ -1095,7 +1101,6 @@
 					"callFunction": "Create_Dealogue",
 					"sid": 561485372434124,
 					"parameters": [
-						"\"\"",
 						"EnemyManiac.X",
 						"EnemyManiac.Y -60",
 						"31",
@@ -1398,7 +1403,6 @@
 					"callFunction": "Create_Dealogue",
 					"sid": 164257721981418,
 					"parameters": [
-						"\"\"",
 						"Player_All.ImagePointX(\"Dialog\")",
 						"Player_All.ImagePointY(\"Dialog\")",
 						"32",
@@ -1442,7 +1446,6 @@
 					"callFunction": "Create_Dealogue",
 					"sid": 636124006263932,
 					"parameters": [
-						"\"\"",
 						"Player_All.ImagePointX(\"Dialog\")",
 						"Player_All.ImagePointY(\"Dialog\")",
 						"33",
@@ -1487,19 +1490,6 @@
 				{
 					"callFunction": "Destroy_Dialoge",
 					"sid": 558133086849310
-				},
-				{
-					"callFunction": "Create_Dealogue",
-					"sid": 427812268780001,
-					"parameters": [
-						"\"\"",
-						"Player_All.ImagePointX(\"Dialog\")",
-						"Player_All.ImagePointY(\"Dialog\")",
-						"34",
-						"1",
-						true,
-						false
-					]
 				},
 				{
 					"id": "spawn-another-object",
@@ -1598,6 +1588,27 @@
 					}
 				},
 				{
+					"id": "set-instvar-value",
+					"objectClass": "Text_logo",
+					"sid": 910116711501373,
+					"parameters": {
+						"instance-variable": "Lang",
+						"value": "1027"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "Text_logo",
+					"sid": 683487133800600,
+					"parameters": {
+						"color": "rgbEx(255, 10, 10)"
+					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 903060899138611
+				},
+				{
 					"id": "set-effect-enabled",
 					"objectClass": "Ekran",
 					"sid": 601873497221010,
@@ -1657,6 +1668,134 @@
 				}
 			],
 			"sid": 204718558553794
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Text_logo",
+					"sid": 319871849095331,
+					"parameters": {
+						"instance-variable": "Lang",
+						"comparison": 0,
+						"value": "1027"
+					}
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 210891593277058,
+					"parameters": {
+						"interval-seconds": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Text_logo",
+					"sid": 609249083810251,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 588036164546202,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Text_logo",
+					"sid": 310717506611243,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 227528146647883
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Text_logo",
+					"sid": 490647426982641,
+					"parameters": {
+						"instance-variable": "Lang",
+						"value": "1028"
+					}
+				}
+			],
+			"sid": 356628842645943
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Text_logo",
+					"sid": 981205732479224,
+					"parameters": {
+						"instance-variable": "Lang",
+						"comparison": 0,
+						"value": "1028"
+					}
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 371355915009733,
+					"parameters": {
+						"interval-seconds": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Text_logo",
+					"sid": 802057770616701,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 657825320374029,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Text_logo",
+					"sid": 597845940603970,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 830193566349364
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Text_logo",
+					"sid": 882790837677138,
+					"parameters": {
+						"instance-variable": "Lang",
+						"value": "1027"
+					}
+				}
+			],
+			"sid": 535731771255296
 		},
 		{
 			"eventType": "comment",
@@ -1775,6 +1914,27 @@
 					}
 				},
 				{
+					"callFunction": "Text",
+					"sid": 319080803114290
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Text_logo",
+					"sid": 509881966304373,
+					"parameters": {
+						"instance-variable": "Lang",
+						"value": "1026"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "Text_logo",
+					"sid": 747488788220346,
+					"parameters": {
+						"color": "rgbEx(255, 251, 128)"
+					}
+				},
+				{
 					"id": "play",
 					"objectClass": "Audio",
 					"sid": 321061619535597,
@@ -1801,7 +1961,6 @@
 					"callFunction": "Create_Dealogue",
 					"sid": 288619692374674,
 					"parameters": [
-						"\"\"",
 						"Player_All.X",
 						"Player_All.Y",
 						"35",
@@ -2040,7 +2199,6 @@
 					"callFunction": "Create_mainDialoge",
 					"sid": 469163883565629,
 					"parameters": [
-						"\"\"",
 						"\"Mark6\"",
 						"36",
 						"1"
@@ -2073,7 +2231,6 @@
 					"callFunction": "Create_mainDialoge",
 					"sid": 995089681545216,
 					"parameters": [
-						"\"\"",
 						"\"Mark6\"",
 						"37",
 						"1"
@@ -2106,7 +2263,6 @@
 					"callFunction": "Create_mainDialoge",
 					"sid": 566461773208468,
 					"parameters": [
-						"\"\"",
 						"\"Mark4\"",
 						"38",
 						"3"
@@ -2139,7 +2295,6 @@
 					"callFunction": "Create_mainDialoge",
 					"sid": 797202603941896,
 					"parameters": [
-						"\"\"",
 						"\"Mark4\"",
 						"39",
 						"3"
@@ -2172,7 +2327,6 @@
 					"callFunction": "Create_mainDialoge",
 					"sid": 653822106765930,
 					"parameters": [
-						"\"\"",
 						"\"Mark4\"",
 						"40",
 						"3"
@@ -2205,7 +2359,6 @@
 					"callFunction": "Create_mainDialoge",
 					"sid": 948380884237381,
 					"parameters": [
-						"\"\"",
 						"\"Mark4\"",
 						"41",
 						"3"
@@ -2238,49 +2391,15 @@
 					"callFunction": "Create_mainDialoge",
 					"sid": 388134196900759,
 					"parameters": [
-						"\"\"",
 						"\"Mark4\"",
 						"42",
 						"3"
-					]
-				}
-			],
-			"sid": 257419169442561
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_Cutscene",
-					"sid": 536288858607485,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "15"
-					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 250378896891160
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "Create_mainDialoge",
-					"sid": 905468799128868,
-					"parameters": [
-						"\"\"",
-						"\"Mark4\"",
-						"43",
-						"1"
 					]
 				},
 				{
 					"id": "tween-one-property",
 					"objectClass": "Shadow3",
-					"sid": 271062371188960,
+					"sid": 236819407550199,
 					"behaviorType": "Твинанимация",
 					"parameters": {
 						"tags": "\"\"",
@@ -2295,7 +2414,7 @@
 					}
 				}
 			],
-			"sid": 950570091875037
+			"sid": 257419169442561
 		},
 		{
 			"eventType": "block",
@@ -2303,11 +2422,11 @@
 				{
 					"id": "compare-instance-variable",
 					"objectClass": "Player_Cutscene",
-					"sid": 650769365344571,
+					"sid": 946678673355471,
 					"parameters": {
 						"instance-variable": "textframe",
 						"comparison": 0,
-						"value": "16"
+						"value": "15"
 					}
 				},
 				{
@@ -2763,54 +2882,6 @@
 			],
 			"sid": 409960909832555,
 			"disabled": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Kayboard",
-					"sid": 429902327828607,
-					"parameters": {
-						"key": 84
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-time-scale",
-					"objectClass": "System",
-					"sid": 329652051123250,
-					"parameters": {
-						"time-scale": "5"
-					}
-				}
-			],
-			"sid": 940361150918486
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Kayboard",
-					"sid": 490301923640106,
-					"parameters": {
-						"key": 71
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-time-scale",
-					"objectClass": "System",
-					"sid": 205881895743976,
-					"parameters": {
-						"time-scale": "1"
-					}
-				}
-			],
-			"sid": 991081972435984
 		},
 		{
 			"eventType": "comment",

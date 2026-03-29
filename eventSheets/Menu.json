@@ -590,6 +590,22 @@
 					"parameters": {
 						"scale": "3"
 					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "Music_Safe",
+					"sid": 293522665422581,
+					"parameters": {
+						"key": "\"Language\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "Music_Safe",
+					"sid": 528151310169861,
+					"parameters": {
+						"key": "\"Language\""
+					}
 				}
 			],
 			"sid": 771566540557060
@@ -1807,6 +1823,80 @@
 						}
 					],
 					"sid": 733377883044352
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 110927964819755,
+							"parameters": {
+								"variable": "Start_Game"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 790106521833645,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Numbers_Audio",
+									"sid": 587285052403514,
+									"parameters": {
+										"instance-variable": "Audio",
+										"comparison": 2,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Numbers_Audio",
+									"sid": 211680760550661,
+									"parameters": {
+										"instance-variable": "Audio",
+										"comparison": 4,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Numbers_Audio",
+									"sid": 902668212028664,
+									"parameters": {
+										"instance-variable": "Audio",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 581996785445341,
+									"parameters": {
+										"variable": "Audio",
+										"value": "-100"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Music_Safe",
+									"sid": 860550980544107,
+									"parameters": {
+										"key": "\"Audio\"",
+										"value": "Numbers_Audio.Audio"
+									}
+								}
+							],
+							"sid": 206133665759147,
+							"isOrBlock": true
+						}
+					]
 				}
 			],
 			"sid": 944415657712585
@@ -2464,6 +2554,80 @@
 						}
 					],
 					"sid": 757642288880213
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 351400779405461,
+							"parameters": {
+								"variable": "Start_Game"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 574199073813303,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Numbers_Music",
+									"sid": 852306678987407,
+									"parameters": {
+										"instance-variable": "Music",
+										"comparison": 2,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Numbers_Music",
+									"sid": 753508988056998,
+									"parameters": {
+										"instance-variable": "Music",
+										"comparison": 4,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Numbers_Music",
+									"sid": 488944785521504,
+									"parameters": {
+										"instance-variable": "Music",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 333656792663607,
+									"parameters": {
+										"variable": "Sound",
+										"value": "-100"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Music_Safe",
+									"sid": 783989592037415,
+									"parameters": {
+										"key": "\"Sound\"",
+										"value": "Numbers_Music.Music"
+									}
+								}
+							],
+							"sid": 104414593850970,
+							"isOrBlock": true
+						}
+					]
 				}
 			],
 			"sid": 449691978955507
@@ -2944,6 +3108,15 @@
 					}
 				},
 				{
+					"id": "set-item",
+					"objectClass": "Music_Safe",
+					"sid": 101352704599307,
+					"parameters": {
+						"key": "\"Language\"",
+						"value": "Language"
+					}
+				},
+				{
 					"id": "set-animation-frame",
 					"objectClass": "Flag",
 					"sid": 741909305112143,
@@ -2962,51 +3135,239 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Kayboard",
-					"sid": 507637649813269,
+					"id": "on-item-get",
+					"objectClass": "Music_Safe",
+					"sid": 971322172027105,
 					"parameters": {
-						"key": 84
+						"key": "\"Language\""
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-time-scale",
+					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 421462353695781,
+					"sid": 960417185516932,
 					"parameters": {
-						"time-scale": "5"
+						"variable": "Language",
+						"value": "Music_Safe.ItemValue"
 					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 337762855449390
 				}
 			],
-			"sid": 933208881129237,
-			"disabled": true
+			"sid": 670395589052972
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Kayboard",
-					"sid": 927144711196738,
+					"id": "on-item-missing",
+					"objectClass": "Music_Safe",
+					"sid": 678443314184155,
 					"parameters": {
-						"key": 71
+						"key": "\"Language\""
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-time-scale",
+					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 374284614318661,
+					"sid": 973164649438210,
 					"parameters": {
-						"time-scale": "1"
+						"variable": "Language",
+						"value": "1"
 					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 583750065865141
 				}
 			],
-			"sid": 623116238690788,
-			"disabled": true
+			"sid": 353436443464719
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Debug",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Kayboard",
+							"sid": 932260878652685,
+							"parameters": {
+								"key": 53
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 236563440290936,
+							"parameters": {
+								"time-scale": "5"
+							}
+						}
+					],
+					"sid": 554076743218402
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Kayboard",
+							"sid": 720337776203826,
+							"parameters": {
+								"key": 52
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 958047710332057,
+							"parameters": {
+								"time-scale": "4"
+							}
+						}
+					],
+					"sid": 691012619525838
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Kayboard",
+							"sid": 913031731754753,
+							"parameters": {
+								"key": 51
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 269989337506501,
+							"parameters": {
+								"time-scale": "3"
+							}
+						}
+					],
+					"sid": 961404757657691
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Kayboard",
+							"sid": 259976950298968,
+							"parameters": {
+								"key": 50
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 243776878014855,
+							"parameters": {
+								"time-scale": "2"
+							}
+						}
+					],
+					"sid": 871164596006792
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Kayboard",
+							"sid": 491829264805580,
+							"parameters": {
+								"key": 49
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 674208690957460,
+							"parameters": {
+								"time-scale": "1"
+							}
+						}
+					],
+					"sid": 249502946469250
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Kayboard",
+							"sid": 609786465802673,
+							"parameters": {
+								"key": 72
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 395930595697082,
+							"parameters": {
+								"group-name": "\"Damage\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 544999428876900
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Kayboard",
+							"sid": 389482252345682,
+							"parameters": {
+								"key": 74
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 271049954623882,
+							"parameters": {
+								"group-name": "\"Damage\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 627410330902604
+				}
+			],
+			"sid": 324869828719832
 		}
 	],
 	"sid": 511565052530936

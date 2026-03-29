@@ -1,0 +1,2588 @@
+{
+	"name": "Bakery_lvl3",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Music",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 831015089741882
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "actual"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Menu"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Bakery_Cut",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_All",
+							"sid": 776759100226926,
+							"parameters": {
+								"object": "Trigger_CutScene"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "Shadow2",
+							"sid": 758081899415991,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 383183954252846,
+							"parameters": {
+								"object-to-create": "Scientist",
+								"layer": "\"Trip\"",
+								"x": "4824",
+								"y": "890",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyBaseball",
+							"sid": 621894139322855,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyFurious",
+							"sid": 262542221846397,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyPchel",
+							"sid": 135279588342807,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyKnife",
+							"sid": 605762085308717,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 853118522620515,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_All",
+							"sid": 308502376782130,
+							"parameters": {
+								"animation": "\"noWeaponIdle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 842128499901162,
+							"parameters": {
+								"variable": "Music",
+								"value": "false"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 996404375275052,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 124001978151042,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/It couldn't be shittier"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"Suspense\""
+							}
+						}
+					],
+					"sid": 927397144645750
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Scientist",
+							"sid": 483683881483264
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 834265083800908,
+							"parameters": {
+								"variable": "onDial"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Scientist",
+							"sid": 310459380530308,
+							"parameters": {
+								"animation": "\"Animation 1\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "stop-animation",
+							"objectClass": "Scientist",
+							"sid": 910544844375902
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Scientist",
+							"sid": 430603540214991,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Scientist",
+							"sid": 905488011942876,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "1",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Scientist",
+							"sid": 486517083461182,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Camera",
+							"sid": 558239427923621,
+							"parameters": {
+								"instance-variable": "onPlayer",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 935490533687735,
+							"parameters": {
+								"variable": "CameraAction",
+								"value": "true"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 994917280626008,
+							"parameters": {
+								"seconds": "2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Camera",
+							"sid": 844135513348735,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetX",
+								"end-value": "4824",
+								"time": "0.5",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "dialogText",
+							"sid": 985046110609034,
+							"parameters": {
+								"instance-variable": "Lang",
+								"value": "17"
+							}
+						}
+					],
+					"sid": 371133214600205,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Scientist",
+									"sid": 734431681808458,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 268385424901635
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Create_Dealogue",
+									"sid": 426605555824438,
+									"parameters": [
+										"4810",
+										"840",
+										"230",
+										"1",
+										false,
+										false
+									]
+								}
+							],
+							"sid": 535879015906114
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Kayboard",
+							"sid": 115014595967541,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 864961806149981,
+							"parameters": {
+								"variable": "onDial"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "Scientist",
+							"sid": 347981007615913
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "dialogText",
+							"sid": 707138827010991,
+							"parameters": {
+								"instance-variable": "Lang",
+								"value": "18"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Scientist",
+							"sid": 363041492521439,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 570067389741753,
+							"parameters": {
+								"variable": "onDial",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 259320494742444,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Scientist",
+									"sid": 611615138081714,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 0,
+										"value": "2"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 484138603445134
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Create_Dealogue",
+									"sid": 534040452977192,
+									"parameters": [
+										"4810",
+										"840",
+										"231",
+										"1",
+										false,
+										false
+									]
+								}
+							],
+							"sid": 201403787579064
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Scientist",
+							"sid": 807273360352819,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 980120834524670
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Scientist",
+							"sid": 924526167783685,
+							"parameters": {
+								"animation": "\"Animation 1\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 750319859226555,
+							"parameters": {
+								"audio-file": {
+									"path": "Gless_Door_Destroy"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 595493828673318,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Laba",
+							"sid": 858721799725600,
+							"parameters": {
+								"animation": "\"Destroy\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 201601147679406,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
+						{
+							"callFunction": "shakeScreen",
+							"sid": 948890515627211
+						},
+						{
+							"callFunction": "shakeScreen",
+							"sid": 661131740618920
+						},
+						{
+							"callFunction": "shakeScreen",
+							"sid": 945282189047844
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 525731185588250,
+							"parameters": {
+								"audio-file": {
+									"path": "BOOM!"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 355255994231106,
+							"parameters": {
+								"object-to-create": "Boom",
+								"layer": "\"Trip\"",
+								"x": "Laba.X",
+								"y": "Laba.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 359750470268945,
+							"parameters": {
+								"object-to-create": "BoomFire",
+								"layer": "\"Trip\"",
+								"x": "Laba.X +50",
+								"y": "Laba.Y -20",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 740516601321783,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 758140543972031,
+							"parameters": {
+								"object-to-create": "Fire",
+								"layer": "\"Trip\"",
+								"x": "4922",
+								"y": "870",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 404103583729023,
+							"parameters": {
+								"object-to-create": "Fire",
+								"layer": "\"Trip\"",
+								"x": "4775",
+								"y": "882",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_All",
+							"sid": 217280254409080,
+							"parameters": {
+								"animation": "\"noWeaponDamage\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Scientist",
+							"sid": 253395079658311,
+							"parameters": {
+								"animation": "\"Death\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 153869890746215,
+							"parameters": {
+								"object-to-create": "Blood",
+								"layer": "\"Trip\"",
+								"x": "Scientist.X +50",
+								"y": "Scientist.Y -30",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 876281175798995,
+							"parameters": {
+								"object-to-create": "Blood",
+								"layer": "\"Trip\"",
+								"x": "Scientist.X -50",
+								"y": "Scientist.Y -30",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 532180796833583,
+							"parameters": {
+								"object-to-create": "Blood_mirror",
+								"layer": "\"Trip\"",
+								"x": "Scientist.X ",
+								"y": "Scientist.Y -10",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 330801270830309,
+							"parameters": {
+								"object-to-create": "Fire_Big",
+								"layer": "\"Trip\"",
+								"x": "4832",
+								"y": "892",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Shadow2",
+							"sid": 232109762650349,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "0",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Light_Lamp2",
+							"sid": 530565377502973
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 157368233376280,
+							"parameters": {
+								"seconds": "2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 661189100293085,
+							"parameters": {
+								"object-to-create": "Smoke_Bar2",
+								"layer": "\"Trip\"",
+								"x": "5070",
+								"y": "850",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Smoke_Bar2",
+							"sid": 799146475688128,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Smoke_Bar2",
+							"sid": 419374127882214,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 576859406783698,
+							"parameters": {
+								"object-to-create": "Smoke_Bar2",
+								"layer": "\"Trip\"",
+								"x": "5070",
+								"y": "850",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Smoke_Bar2",
+							"sid": 438044848787948,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Smoke_Bar2",
+							"sid": 882888504322567,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 286446468196567,
+							"parameters": {
+								"object-to-create": "Smoke_Bar2",
+								"layer": "\"Trip\"",
+								"x": "5070",
+								"y": "860",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Smoke_Bar2",
+							"sid": 214878401960077,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Smoke_Bar2",
+							"sid": 312277470364677,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 887378296958345,
+							"parameters": {
+								"object-to-create": "Smoke_Bar2",
+								"layer": "\"Trip\"",
+								"x": "5070",
+								"y": "830",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Smoke_Bar2",
+							"sid": 443842132705562,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Smoke_Bar2",
+							"sid": 608216181486509,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 297127152544861,
+							"parameters": {
+								"object-to-create": "Smoke_Bar2",
+								"layer": "\"Trip\"",
+								"x": "5070",
+								"y": "830",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Smoke_Bar2",
+							"sid": 603012099308582,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Smoke_Bar2",
+							"sid": 805207196057447,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 833410804609113,
+							"parameters": {
+								"seconds": "5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Scientist",
+							"sid": 686195623305847,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 470907525254155
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Scientist",
+							"sid": 525357584321773,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "4"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 788930476342222
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 736385797756446,
+							"parameters": {
+								"object-to-create": "Blockage",
+								"layer": "\"Trip\"",
+								"x": "1350",
+								"y": "745",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 521107170966296,
+							"parameters": {
+								"object-to-create": "Exploution",
+								"layer": "\"Trip\"",
+								"x": "1350",
+								"y": "722",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 552484814372353,
+							"parameters": {
+								"object-to-create": "Car",
+								"layer": "\"Trip\"",
+								"x": "654",
+								"y": "752",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"callFunction": "Destroy_Dialoge",
+							"sid": 907351965688821
+						},
+						{
+							"id": "stop-animation",
+							"objectClass": "Scientist",
+							"sid": 186662104955028
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 859829107317974,
+							"parameters": {
+								"object-to-create": "Light_Cutscene",
+								"layer": "LayerIndex(\"Trip\")",
+								"x": "Laba.X",
+								"y": "Laba.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Light_Cutscene",
+							"sid": 575522862878575,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Light_Cutscene",
+							"sid": 557407214019635,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Scientist",
+							"sid": 870836821999836,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 897695917542145
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Scientist",
+							"sid": 401451886185683,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "5"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 806041931271447
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 292153838841538,
+							"parameters": {
+								"seconds": "2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Light_Cutscene",
+							"sid": 251691994326438,
+							"parameters": {
+								"x": "1000",
+								"y": "755"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Light_Cutscene",
+							"sid": 499902901410830,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_All",
+							"sid": 314346462071829,
+							"parameters": {
+								"animation": "\"Cough\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Light_Cutscene",
+							"sid": 309099008124144,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Player_All",
+							"sid": 904598374972181,
+							"parameters": {
+								"x": "1000",
+								"y": "750"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Camera",
+							"sid": 513576148152349,
+							"parameters": {
+								"x": "1000",
+								"y": "700"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Light_Cutscene",
+							"sid": 235687659402615,
+							"parameters": {
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Cat",
+							"sid": 685219162210261
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Scientist",
+							"sid": 280154659707872,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 781799608032989
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Scientist",
+							"sid": 764460328960557,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "6"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 235060827576309
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "Exploution",
+							"sid": 935476595816411,
+							"behaviorType": "Физика",
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 507544620462849,
+							"parameters": {
+								"object-to-create": "Trip",
+								"layer": "LayerIndex(\"Trip\")",
+								"x": "1000",
+								"y": "750",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Trip",
+							"sid": 821081627126911,
+							"parameters": {
+								"opacity": "10"
+							}
+						},
+						{
+							"id": "stop-animation",
+							"objectClass": "Car",
+							"sid": 984553334872330
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 616688787474571,
+							"parameters": {
+								"variable": "onDial",
+								"value": "true"
+							}
+						},
+						{
+							"callFunction": "Create_Dealogue",
+							"sid": 242456920312718,
+							"parameters": [
+								"Player_All.X",
+								"Player_All.Y",
+								"232",
+								"2",
+								false,
+								false
+							]
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "dialogText",
+							"sid": 155290597250366,
+							"parameters": {
+								"instance-variable": "Lang",
+								"value": "19"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Scientist",
+							"sid": 207584366494657,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 801271139756850
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Scientist",
+							"sid": 603997414090807,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "7"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 621389122674763
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 666583526015006,
+							"parameters": {
+								"variable": "onDial",
+								"value": "false"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 976265232912984,
+							"parameters": {
+								"seconds": "5",
+								"use-timescale": true
+							}
+						},
+						{
+							"callFunction": "Destroy_Dialoge",
+							"sid": 905385893774759
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 987558855061403,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_All",
+							"sid": 743142459196495,
+							"parameters": {
+								"animation": "\"noWeaponDamage\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Player_All",
+							"sid": 787418068131113,
+							"parameters": {
+								"frame-number": "2"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 565297934630544,
+							"parameters": {
+								"seconds": "3",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Car",
+							"sid": 293514476424738,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Scientist",
+							"sid": 662471979984158,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 458104788978015,
+							"parameters": {
+								"seconds": "3",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Shadow3",
+							"sid": 364186493546425,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 177499537589337,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 109388244711308
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 534638684018935,
+							"parameters": {
+								"variable": "Start_Game"
+							}
+						},
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 748904115357913,
+							"parameters": {
+								"interval-seconds": "0.25"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 798138144325032,
+							"parameters": {
+								"variable": "Sound",
+								"comparison": 0,
+								"value": "-25"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Numbers_Music",
+							"sid": 594309621043694,
+							"parameters": {
+								"instance-variable": "Music",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 254117885593781
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 475675075526668,
+							"parameters": {
+								"variable": "Start_Game"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 600465270660327,
+							"parameters": {
+								"key": "\"Level\"",
+								"value": "\"5\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 958599035941429,
+							"parameters": {
+								"tag": "\"Suspense\""
+							}
+						},
+						{
+							"id": "get-item",
+							"objectClass": "Music_Safe",
+							"sid": 688878922615118,
+							"parameters": {
+								"key": "\"Sound\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 684001003447208,
+							"parameters": {
+								"key": "\"Sound\""
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 413686595483461
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 380396080967587,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 857888112183694,
+							"parameters": {
+								"layout": "Basement_lvl4"
+							}
+						}
+					],
+					"sid": 763884565042878
+				}
+			],
+			"sid": 150674779937279
+		},
+		{
+			"eventType": "group",
+			"disabled": true,
+			"title": "Box2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Box_MoveVert",
+							"sid": 702518119546623
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Box_MoveVert",
+							"sid": 108502390843651,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "vertical",
+								"speed": "-100"
+							}
+						}
+					],
+					"sid": 989215519614518,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Box_MoveVert",
+							"sid": 589613380304676,
+							"parameters": {
+								"comparison": 2,
+								"y-co-ordinate": "356"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Box_MoveVert",
+							"sid": 860264947010065,
+							"behaviorType": "НастраиваемоеДвижение"
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Box_MoveVert",
+							"sid": 501202921813611,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "0.5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 589569387230026,
+							"parameters": {
+								"seconds": "2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Box_MoveVert",
+							"sid": 906953116453823
+						}
+					],
+					"sid": 444727210603432,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 476055390135213,
+							"parameters": {
+								"interval-seconds": "2"
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "Conveer_Vertical",
+							"sid": 690149594509597
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 738129223686827,
+							"parameters": {
+								"object-to-create": "Box_MoveHoriz",
+								"layer": "9",
+								"x": "2196",
+								"y": "748",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 967115064977342,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Box_MoveHoriz",
+							"sid": 657738042171203
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 212662340900686,
+							"parameters": {
+								"seconds": "1.0",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Box_MoveHoriz",
+							"sid": 941421737619788,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "100"
+							}
+						}
+					],
+					"sid": 723666536559030,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Box_MoveHoriz",
+							"sid": 783942914936445,
+							"parameters": {
+								"comparison": 4,
+								"x-co-ordinate": "2485"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 125059637926800,
+							"parameters": {
+								"object-to-create": "Box_MoveVert",
+								"layer": "9",
+								"x": "2485",
+								"y": "695",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Box_MoveHoriz",
+							"sid": 958772961359378
+						}
+					],
+					"sid": 204946477676262,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Box_MoveHoriz2",
+							"sid": 748062726570615
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 757661610523275,
+							"parameters": {
+								"seconds": "1.0",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Box_MoveHoriz2",
+							"sid": 997981557230708,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "100"
+							}
+						}
+					],
+					"sid": 353538779755660,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Box_MoveHoriz2",
+							"sid": 317038669342274,
+							"parameters": {
+								"comparison": 4,
+								"x-co-ordinate": "2969"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Box_MoveHoriz2",
+							"sid": 726924933523391,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "0"
+							}
+						}
+					],
+					"sid": 977928261512694,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Box_MoveHoriz2",
+							"sid": 558249407489222
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 404684463919166,
+							"parameters": {
+								"object-to-create": "Box_MoveHoriz2",
+								"layer": "9",
+								"x": "2702",
+								"y": "747",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 763510402254228,
+					"disabled": true
+				}
+			],
+			"sid": 627548507581600
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Box7",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Box_MoveVert",
+							"sid": 789912682740668
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "Box_MoveVert",
+							"sid": 426126427947298,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "vertical",
+								"speed": "-100"
+							}
+						}
+					],
+					"sid": 645647873875743
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Box_MoveVert",
+							"sid": 808337551788439,
+							"parameters": {
+								"object": "Tonel",
+								"offset-x": "0",
+								"offset-y": "24"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Box_MoveVert",
+							"sid": 217888000911431,
+							"behaviorType": "НастраиваемоеДвижение"
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Box_MoveVert",
+							"sid": 509475378957338,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "0.2",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 617655448171787,
+							"disabled": true,
+							"parameters": {
+								"seconds": "2",
+								"use-timescale": true
+							}
+						}
+					],
+					"sid": 703887862251154
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 112216673993859,
+							"parameters": {
+								"interval-seconds": "2"
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Conveyor",
+							"sid": 920917016443416,
+							"parameters": {
+								"tags": "\"Box1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 972073027912732,
+							"parameters": {
+								"object-to-create": "Box_MoveHoriz",
+								"layer": "LayerIndex(\"Box_Move\")",
+								"x": "Conveyor.X -138",
+								"y": "Conveyor.Y -18",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 578927624447172
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Box_MoveHoriz",
+							"sid": 569582128212676
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Conveyor",
+							"sid": 184517170536393,
+							"parameters": {
+								"tags": "\"Box1\""
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Box_MoveHoriz",
+							"sid": 724150486445009,
+							"parameters": {
+								"object": "Conveyor"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 295946379858206,
+							"parameters": {
+								"seconds": "1.0",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Box_MoveHoriz",
+							"sid": 445705615602502,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "100"
+							}
+						}
+					],
+					"sid": 120769620440062
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Prinimatel",
+							"sid": 390241277482304,
+							"parameters": {
+								"object": "Box_MoveHoriz",
+								"offset-x": "25",
+								"offset-y": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Box_MoveHoriz",
+							"sid": 864655313207525,
+							"parameters": {
+								"object": "Conveyor"
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Conveyor",
+							"sid": 855355659277257,
+							"parameters": {
+								"tags": "\"Box1\""
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Prinimatel",
+							"sid": 292441684497892,
+							"parameters": {
+								"tags": "\"Box1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Box_MoveHoriz",
+							"sid": 535884194349024
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 770794741857036,
+							"parameters": {
+								"object-to-create": "Box_MoveVert",
+								"layer": "LayerIndex(\"Box_Move\")",
+								"x": "Prinimatel.X +5",
+								"y": "Prinimatel.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 695166080252884
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-opacity",
+							"objectClass": "Box_MoveVert",
+							"sid": 109376881979547,
+							"parameters": {
+								"comparison": 0,
+								"opacity": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Box_MoveVert",
+							"sid": 282709999085305
+						}
+					],
+					"sid": 758905161045201
+				}
+			],
+			"sid": 515558916400697
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Bakery2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Kayboard",
+							"sid": 418594907709487,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Button_Red",
+							"sid": 381910619276439,
+							"parameters": {
+								"object": "Player_All"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 826130742442112,
+							"parameters": {
+								"audio-file": {
+									"path": "Open_Grid"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "door_closed",
+							"sid": 485580077302191,
+							"behaviorType": "Твёрдый",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "door_closed",
+							"sid": 582566110288314,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "press_E",
+							"sid": 353099779231242
+						}
+					],
+					"sid": 212691003295301,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Stair",
+									"sid": 386418320106891,
+									"parameters": {
+										"animation": "\"Ladder\""
+									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Stair",
+									"sid": 927014690543674,
+									"parameters": {
+										"tags": "\"Cut\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-angle",
+									"objectClass": "Stair",
+									"sid": 268460244479831,
+									"parameters": {
+										"angle": "20"
+									}
+								}
+							],
+							"sid": 375663821414985
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-tags",
+									"objectClass": "Shadow5",
+									"sid": 800517217281622,
+									"parameters": {
+										"tags": "\"Cut\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Shadow5",
+									"sid": 245643173048658
+								}
+							],
+							"sid": 752949446837488
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-tags",
+									"objectClass": "Pandus",
+									"sid": 400159571467725,
+									"parameters": {
+										"tags": "\"Cut\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Pandus",
+									"sid": 540491008356791
+								}
+							],
+							"sid": 746408127714114
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Button_Red",
+							"sid": 147111568244613,
+							"parameters": {
+								"object": "Player_All"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "press_E",
+							"sid": 927616836869445,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 469767772935814
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Button_Red",
+							"sid": 204690327726926,
+							"parameters": {
+								"object": "Player_All"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "press_E",
+							"sid": 563294775211723,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 130134711313561
+				}
+			],
+			"sid": 934795726921344
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 401950317266565
+				}
+			],
+			"actions": [
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 379112612812989,
+					"parameters": {
+						"slot": "\"start\""
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 372430364374979,
+					"parameters": {
+						"slot": "\"mysave\""
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Camera",
+					"sid": 294078586732868,
+					"parameters": {
+						"width": "80",
+						"height": "45"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 283552688163869,
+					"parameters": {
+						"tag": "\"Suspense\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 752207888541340,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 474803484831499,
+					"parameters": {
+						"variable": "Continue_Game",
+						"value": "false"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player_All",
+					"sid": 840219230891556,
+					"parameters": {
+						"object": "Shadow3",
+						"layer": "\"Dialog\"",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Shadow3",
+					"sid": 145255196889906,
+					"parameters": {
+						"scale": "5"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Shadow3",
+					"sid": 120925545299184,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "EndScene",
+					"sid": 533076541644145,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "-1000",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 147094685758816,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "activated"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 612998459312634,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 156615502748139,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/Bakery"
+						},
+						"loop": "looping",
+						"volume": "Sound",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
+				}
+			],
+			"sid": 670237527271180
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 436453701217820
+				},
+				{
+					"id": "compare-key",
+					"objectClass": "Music_Safe",
+					"sid": 461083150003640,
+					"parameters": {
+						"comparison": 0,
+						"string": "\"Level\""
+					}
+				},
+				{
+					"id": "compare-value",
+					"objectClass": "Music_Safe",
+					"sid": 871739958041758,
+					"parameters": {
+						"comparison": 2,
+						"value": "\"5\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-item",
+					"objectClass": "Music_Safe",
+					"sid": 422029633455547,
+					"parameters": {
+						"key": "\"Level\"",
+						"value": "\"5\""
+					}
+				}
+			],
+			"sid": 688015723611783
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 724698036637403
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-scroll",
+					"objectClass": "System",
+					"sid": 471402455779779,
+					"parameters": {
+						"layer": "5",
+						"scroll-x": "1000",
+						"scroll-y": "0"
+					}
+				}
+			],
+			"sid": 257629520662002,
+			"disabled": true
+		},
+		{
+			"eventType": "comment",
+			"text": "Music"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-load-complete",
+					"objectClass": "System",
+					"sid": 374407693147331
+				},
+				{
+					"id": "is-group-active",
+					"objectClass": "System",
+					"sid": 481356713514989,
+					"parameters": {
+						"group-name": "\"Player\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 930368213470470,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/Station_Main"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
+				},
+				{
+					"id": "seek-to",
+					"objectClass": "Audio",
+					"sid": 681485478530644,
+					"parameters": {
+						"tag": "\"music\"",
+						"position": "Music_Safe.ItemValue"
+					}
+				}
+			],
+			"sid": 993849008385994,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-ended",
+					"objectClass": "Audio",
+					"sid": 596882994808959,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "is-group-active",
+					"objectClass": "System",
+					"sid": 135952126199822,
+					"parameters": {
+						"group-name": "\"Player\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 309844424187039,
+					"parameters": {
+						"tag": "\"Suspense\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 514237897615988,
+					"parameters": {
+						"seconds": "0.5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 634462333376725,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/Station_Main"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
+				}
+			],
+			"sid": 626440819377393,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-end-of-layout",
+					"objectClass": "System",
+					"sid": 281910325028054
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 527314598825467,
+					"parameters": {
+						"tag": "\"Suspense\""
+					}
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 402621760388921,
+					"parameters": {
+						"reset-static": false
+					}
+				}
+			],
+			"sid": 238342603262101,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_All",
+					"sid": 323201597523754,
+					"parameters": {
+						"object": "Screen_Black"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Player_All",
+					"sid": 312210869554701,
+					"parameters": {
+						"mode": "enable",
+						"effect": "\"УстановитьЦвет\""
+					}
+				}
+			],
+			"sid": 783857494579301
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 416347753824898
+				}
+			],
+			"actions": [
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Player_All",
+					"sid": 682375064801180,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"УстановитьЦвет\""
+					}
+				}
+			],
+			"sid": 876060588150038
+		}
+	],
+	"sid": 811950137160895
+}

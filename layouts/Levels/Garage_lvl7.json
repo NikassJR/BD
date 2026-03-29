@@ -10364,42 +10364,68 @@
 					}
 				},
 				{
-					"type": "Floor_Tile",
+					"type": "Ladder2",
 					"properties": {
 						"initially-visible": true,
-						"origin": "top-left",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0,
-						"enable-tile-randomization": false,
-						"x-random": 1,
-						"y-random": 1,
-						"angle-random": 1,
-						"blend-margin-x": 0.1,
-						"blend-margin-y": 0.1
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
 					},
-					"uid": 1806,
-					"sid": 121573805983280,
+					"uid": 8494,
+					"sid": 607149037967601,
 					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
+					"instanceVariables": {
+						"Rotate": 0,
+						"distanceToPlayer": 0,
+						"distanceToEnemyY": 0,
+						"distanceToEnemyX": 0
+					},
+					"behaviors": {
+						"Твёрдый": {
+							"properties": {
+								"enabled": true,
+								"use-instance-tags": true,
+								"tags": ""
+							}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						}
+					},
 					"instanceFolderItem": {
-						"sid": 121573805983280,
+						"sid": 607149037967601,
 						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 0,
-						"y": 686,
-						"width": 8076,
-						"height": 14,
-						"originX": 0,
-						"originY": 0,
+						"x": 4439.415740740741,
+						"y": 684,
+						"width": 163,
+						"height": 123.00000000000001,
+						"originX": 0.5280864197530865,
+						"originY": 0.49528301886792453,
 						"color": [
 							1,
 							1,
@@ -10496,79 +10522,6 @@
 							0.5215686274509804,
 							0.5215686274509804,
 							0.5215686274509804,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "Stair",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 1931,
-					"sid": 455402590164695,
-					"tags": "",
-					"instanceVariables": {
-						"Rotate": 0,
-						"distanceToPlayer": 0,
-						"distanceToEnemyY": 0,
-						"distanceToEnemyX": 0
-					},
-					"behaviors": {
-						"Твёрдый": {
-							"properties": {
-								"enabled": true,
-								"use-instance-tags": true,
-								"tags": ""
-							}
-						},
-						"Физика": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"collision-filter-tags": "",
-								"collision-filter-mode": "exclusive",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": true
-							}
-						},
-						"НастраиваемоеДвижение": {
-							"properties": {
-								"stepping-mode": "none",
-								"pixels-per-step": 5,
-								"enabled": true
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 455402590164695,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 1263.5822784810127,
-						"y": 520.5,
-						"width": 221,
-						"height": 169.1413043478261,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
 							1
 						],
 						"z": 0,
@@ -11376,80 +11329,6 @@
 					}
 				},
 				{
-					"type": "Box1",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 1,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 1939,
-					"sid": 182792900624988,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 182792900624988,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 1359,
-						"y": 542,
-						"width": 45,
-						"height": 24,
-						"originX": 0.35555555555555557,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "Cat",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 1938,
-					"sid": 352028043618790,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 352028043618790,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 1359,
-						"y": 544,
-						"width": 20,
-						"height": 21,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							0.5019607843137255,
-							0.5019607843137255,
-							0.5019607843137255,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
 					"type": "Stolb",
 					"properties": {
 						"initially-visible": true,
@@ -11872,7 +11751,7 @@
 						},
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -11945,7 +11824,7 @@
 						},
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -12018,7 +11897,7 @@
 						},
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -12091,7 +11970,7 @@
 						},
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -12164,7 +12043,7 @@
 						},
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -12237,7 +12116,7 @@
 						},
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -14771,113 +14650,6 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 2195,
-					"sid": 998772140385348,
-					"tags": "",
-					"instanceVariables": {
-						"Pistol": 9,
-						"Got": 0,
-						"Bubble": 0,
-						"CrashGless": false,
-						"DifWeaponX": 0,
-						"rotate": 0,
-						"ID": 0,
-						"Vision": false
-					},
-					"behaviors": {
-						"Физика": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"collision-filter-tags": "",
-								"collision-filter-mode": "exclusive",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": true
-							}
-						},
-						"Прикрепить2": {
-							"properties": {
-								"destroy": false
-							}
-						},
-						"Твинанимация": {
-							"properties": {
-								"enabled": true
-							}
-						},
-						"ОграничитьСценой": {
-							"properties": {
-								"bound-by": "edge",
-								"region": "layout"
-							}
-						},
-						"НастраиваемоеДвижение": {
-							"properties": {
-								"stepping-mode": "none",
-								"pixels-per-step": 5,
-								"enabled": true
-							}
-						},
-						"ПолеЗрения": {
-							"properties": {
-								"obstacles": "solids",
-								"range": 10000,
-								"cone-of-view": 360,
-								"use-collision-cells": true
-							}
-						}
-					},
-					"effects": {
-						"Пульс": {
-							"isEnabled": true,
-							"parameters": {
-								"intensity": 1,
-								"lighting": 0.5,
-								"speed": 10,
-								"frequency": 30,
-								"center-x": 0.5,
-								"center-y": 0.5
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 998772140385348,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 6559,
-						"y": 641,
-						"width": 36,
-						"height": 57,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "Chair",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Chair",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
 					"uid": 2196,
 					"sid": 351237856613572,
 					"tags": "",
@@ -15234,7 +15006,7 @@
 						},
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -15263,12 +15035,59 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 6491.029906582579,
-						"y": 669,
-						"width": 43.36363636363637,
-						"height": 45.16129032258064,
+						"x": 6482.909090909091,
+						"y": 665.5806451612904,
+						"width": 45,
+						"height": 52,
 						"originX": 0.5555555555555556,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Floor_Tile",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 1806,
+					"sid": 121573805983280,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 121573805983280,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 0,
+						"y": 686,
+						"width": 8076,
+						"height": 14,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,
@@ -17018,8 +16837,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 4024,
-						"y": 696,
+						"x": 4030,
+						"y": 697,
 						"width": 8062,
 						"height": 21,
 						"originX": 0.5,
@@ -17136,7 +16955,7 @@
 						},
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -17165,10 +16984,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1932.6269909319444,
-						"y": 618.793672947488,
-						"width": -174.53841023425895,
-						"height": 135.0020852640677,
+						"x": 1936.1685185185186,
+						"y": 619,
+						"width": -168,
+						"height": 134,
 						"originX": 0.5280864197530865,
 						"originY": 0.49528301886792453,
 						"color": [
@@ -17235,10 +17054,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1738.026176599141,
+						"x": 1738,
 						"y": 559,
-						"width": 255.49872717613013,
-						"height": 11,
+						"width": 254,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -17249,53 +17068,6 @@
 						],
 						"z": 0,
 						"angle": 0
-					}
-				},
-				{
-					"type": "Wood",
-					"properties": {
-						"initially-visible": true,
-						"origin": "top-left",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0,
-						"enable-tile-randomization": false,
-						"x-random": 1,
-						"y-random": 1,
-						"angle-random": 1,
-						"blend-margin-x": 0.1,
-						"blend-margin-y": 0.1
-					},
-					"uid": 8466,
-					"sid": 248554205416959,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 248554205416959,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 1447.7875742230594,
-						"y": 682.6767474559779,
-						"width": 206.01407457727703,
-						"height": 6,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 5.609792544857394
 					}
 				},
 				{
@@ -17366,6 +17138,80 @@
 							0.4117647058823529,
 							0.4117647058823529,
 							0.4117647058823529,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Box1",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 1,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1939,
+					"sid": 182792900624988,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 182792900624988,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1804,
+						"y": 673,
+						"width": 45,
+						"height": 24,
+						"originX": 0.35555555555555557,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Cat",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1938,
+					"sid": 352028043618790,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 352028043618790,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1804,
+						"y": 675,
+						"width": 20,
+						"height": 21,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.5019607843137255,
+							0.5019607843137255,
+							0.5019607843137255,
 							1
 						],
 						"z": 0,
@@ -17595,53 +17441,6 @@
 					}
 				},
 				{
-					"type": "Wood",
-					"properties": {
-						"initially-visible": true,
-						"origin": "top-left",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0,
-						"enable-tile-randomization": false,
-						"x-random": 1,
-						"y-random": 1,
-						"angle-random": 1,
-						"blend-margin-x": 0.1,
-						"blend-margin-y": 0.1
-					},
-					"uid": 2228,
-					"sid": 418409267452469,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 418409267452469,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 2444.819338612184,
-						"y": 554.4564666764086,
-						"width": 191.50896423702437,
-						"height": 6,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 5.609240495982889
-					}
-				},
-				{
 					"type": "Skvoz",
 					"properties": {
 						"initially-visible": false,
@@ -17652,7 +17451,7 @@
 					},
 					"uid": 2160,
 					"sid": 607035564770955,
-					"tags": "",
+					"tags": "Up",
 					"instanceVariables": {
 						"distanceToPlayer": 0,
 						"Enemy": 0,
@@ -17706,7 +17505,7 @@
 					},
 					"uid": 2229,
 					"sid": 973230686372271,
-					"tags": "",
+					"tags": "Up",
 					"instanceVariables": {
 						"distanceToPlayer": 0,
 						"Enemy": 0,
@@ -17787,8 +17586,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 2898.9522299173277,
-						"y": 383.6806507405369,
+						"x": 2899,
+						"y": 386,
 						"width": 35.19159808107679,
 						"height": 6,
 						"originX": 0.5,
@@ -17841,9 +17640,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 3450.6026207073787,
-						"y": 559.5592201666564,
-						"width": 672.9724057354756,
+						"x": 3458.013797132262,
+						"y": 563.9999994989507,
+						"width": 687,
 						"height": 6,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -17854,7 +17653,7 @@
 							1
 						],
 						"z": 0,
-						"angle": 0
+						"angle": 6.283185235741923
 					}
 				},
 				{
@@ -17895,9 +17694,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 4097.720923385544,
-						"y": 571.180133899938,
-						"width": 237.9540850369699,
+						"x": 4101.477042518485,
+						"y": 574,
+						"width": 237,
 						"height": 6,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -18086,76 +17885,6 @@
 						],
 						"z": 0,
 						"angle": 0
-					}
-				},
-				{
-					"type": "Wall",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 8484,
-					"sid": 588941388176516,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Твёрдый": {
-							"properties": {
-								"enabled": true,
-								"use-instance-tags": false,
-								"tags": "Wall"
-							}
-						},
-						"Физика": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"collision-filter-tags": "",
-								"collision-filter-mode": "exclusive",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": true
-							}
-						}
-					},
-					"effects": {
-						"РадиальноеРазмытие": {
-							"isEnabled": false,
-							"parameters": {
-								"radius": 0.4,
-								"intensity": 1
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 588941388176516,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 2112,
-						"y": 522,
-						"width": 70,
-						"height": 54,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 1.5707963267948966
 					}
 				},
 				{
@@ -18369,147 +18098,6 @@
 					}
 				},
 				{
-					"type": "Wood",
-					"properties": {
-						"initially-visible": true,
-						"origin": "top-left",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0,
-						"enable-tile-randomization": false,
-						"x-random": 1,
-						"y-random": 1,
-						"angle-random": 1,
-						"blend-margin-x": 0.1,
-						"blend-margin-y": 0.1
-					},
-					"uid": 8494,
-					"sid": 744449225647089,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 744449225647089,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 4434,
-						"y": 683,
-						"width": 95,
-						"height": 6,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 5.609240495982889
-					}
-				},
-				{
-					"type": "Wood",
-					"properties": {
-						"initially-visible": true,
-						"origin": "top-left",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0,
-						"enable-tile-randomization": false,
-						"x-random": 1,
-						"y-random": 1,
-						"angle-random": 1,
-						"blend-margin-x": 0.1,
-						"blend-margin-y": 0.1
-					},
-					"uid": 8495,
-					"sid": 853059303564214,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 853059303564214,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 4518,
-						"y": 624,
-						"width": 95,
-						"height": 6,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 2.4777211747707137
-					}
-				},
-				{
-					"type": "Wood",
-					"properties": {
-						"initially-visible": true,
-						"origin": "top-left",
-						"wrap-horizontal": "repeat",
-						"wrap-vertical": "repeat",
-						"image-offset-x": 0,
-						"image-offset-y": 0,
-						"image-scale-x": 1,
-						"image-scale-y": 1,
-						"image-angle": 0,
-						"enable-tile-randomization": false,
-						"x-random": 1,
-						"y-random": 1,
-						"angle-random": 1,
-						"blend-margin-x": 0.1,
-						"blend-margin-y": 0.1
-					},
-					"uid": 8496,
-					"sid": 780924748902771,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 780924748902771,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 2485,
-						"y": 522,
-						"width": 142,
-						"height": 6,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 5.609240495982889
-					}
-				},
-				{
 					"type": "Wall",
 					"properties": {
 						"initially-visible": false,
@@ -18590,7 +18178,7 @@
 					},
 					"uid": 8499,
 					"sid": 867780344897328,
-					"tags": "",
+					"tags": "Up",
 					"instanceVariables": {
 						"distanceToPlayer": 0,
 						"Enemy": 0,
@@ -18671,8 +18259,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 4891.6,
-						"y": 555,
+						"x": 4898,
+						"y": 557,
 						"width": 376,
 						"height": 6,
 						"originX": 0.5,
@@ -18735,7 +18323,7 @@
 					},
 					"uid": 8505,
 					"sid": 913776199734699,
-					"tags": "",
+					"tags": "Up",
 					"instanceVariables": {
 						"distanceToPlayer": 0,
 						"Enemy": 0,
@@ -18762,9 +18350,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 5510.30291794136,
-						"y": 618,
-						"width": 64.94760784227401,
+						"x": 5510,
+						"y": 621,
+						"width": 58,
 						"height": 6,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -18789,7 +18377,7 @@
 					},
 					"uid": 8506,
 					"sid": 281810650323961,
-					"tags": "",
+					"tags": "Up",
 					"instanceVariables": {
 						"distanceToPlayer": 0,
 						"Enemy": 0,
@@ -18816,9 +18404,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 5653.579782178032,
-						"y": 603,
-						"width": 72.60758224499841,
+						"x": 5652.696208877501,
+						"y": 606,
+						"width": 58,
 						"height": 6,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -18843,7 +18431,7 @@
 					},
 					"uid": 8507,
 					"sid": 664852014688959,
-					"tags": "",
+					"tags": "Up",
 					"instanceVariables": {
 						"distanceToPlayer": 0,
 						"Enemy": 0,
@@ -18870,9 +18458,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 5784.597083005273,
-						"y": 601.6680152509803,
-						"width": 77.94356208933277,
+						"x": 5785.028218955334,
+						"y": 604,
+						"width": 64,
 						"height": 6,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -18897,7 +18485,7 @@
 					},
 					"uid": 8508,
 					"sid": 265044790664672,
-					"tags": "",
+					"tags": "Up",
 					"instanceVariables": {
 						"distanceToPlayer": 0,
 						"Enemy": 0,
@@ -18924,8 +18512,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 5922.719999999999,
-						"y": 575,
+						"x": 5922,
+						"y": 577,
 						"width": 78,
 						"height": 6,
 						"originX": 0.5,
@@ -19162,6 +18750,153 @@
 						"height": 126.17025188791035,
 						"originX": 0.5,
 						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Ladder2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 8466,
+					"sid": 682188630415680,
+					"tags": "",
+					"instanceVariables": {
+						"Rotate": 0,
+						"distanceToPlayer": 0,
+						"distanceToEnemyY": 0,
+						"distanceToEnemyX": 0
+					},
+					"behaviors": {
+						"Твёрдый": {
+							"properties": {
+								"enabled": true,
+								"use-instance-tags": true,
+								"tags": ""
+							}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 682188630415680,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1541.4382716049386,
+						"y": 619.5518867924528,
+						"width": 166,
+						"height": 135,
+						"originX": 0.5280864197530865,
+						"originY": 0.49528301886792453,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Barell",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2163,
+					"sid": 125256134013313,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 125256134013313,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1359,
+						"y": 509,
+						"width": 50,
+						"height": 70,
+						"originX": 0.46,
+						"originY": 0.35714285714285715,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Barell",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 8484,
+					"sid": 635219093838782,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 635219093838782,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 2567,
+						"y": 509,
+						"width": 50,
+						"height": 70,
+						"originX": 0.46,
+						"originY": 0.35714285714285715,
 						"color": [
 							1,
 							1,
@@ -19501,8 +19236,8 @@
 					"world": {
 						"x": 69,
 						"y": 641,
-						"width": 70,
-						"height": 35,
+						"width": 80,
+						"height": 45,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -19637,7 +19372,7 @@
 					"locked": false,
 					"world": {
 						"x": 927,
-						"y": 511,
+						"y": 505.66370237588035,
 						"width": 86,
 						"height": 86,
 						"originX": 0.5,
@@ -19772,8 +19507,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1005,
-						"y": 511,
+						"x": 1005.2223591638729,
+						"y": 505.66370237588023,
 						"width": -86,
 						"height": 86,
 						"originX": 0.5,
@@ -20452,7 +20187,7 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 2783.403928361789,
+						"x": 2783,
 						"y": 392,
 						"width": 86,
 						"height": 86,
@@ -21573,7 +21308,7 @@
 					},
 					"uid": 8485,
 					"sid": 166775956469759,
-					"tags": "",
+					"tags": "Up",
 					"instanceVariables": {
 						"distanceToPlayer": 0,
 						"Enemy": 0,
@@ -21600,8 +21335,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1844,
-						"y": 457,
+						"x": 1845,
+						"y": 459,
 						"width": 25,
 						"height": 4,
 						"originX": 0.5,
@@ -22002,7 +21737,7 @@
 					},
 					"uid": 8492,
 					"sid": 789958670181660,
-					"tags": "",
+					"tags": "Up",
 					"instanceVariables": {
 						"distanceToPlayer": 0,
 						"Enemy": 0,
@@ -22224,7 +21959,8 @@
 						"Rage": 0,
 						"Combo": 0,
 						"SkvozY": 0,
-						"speedWalk": 150
+						"speedWalk": 150,
+						"KickJumpRightKlick": false
 					},
 					"behaviors": {
 						"НастраиваемоеДвижение": {
@@ -22278,8 +22014,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 5778,
-						"y": 643,
+						"x": 77,
+						"y": 644,
 						"width": 86,
 						"height": 86,
 						"originX": 0.5,
@@ -22332,8 +22068,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1968.52,
-						"y": 435,
+						"x": 1973,
+						"y": 437,
 						"width": 224,
 						"height": 4,
 						"originX": 0.5,
@@ -22386,10 +22122,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1489.8306976616109,
-						"y": 435.51743253443715,
-						"width": 232.0178891122871,
-						"height": 9.482567465562852,
+						"x": 1496,
+						"y": 440,
+						"width": 220,
+						"height": 10,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -22440,8 +22176,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 2702.48,
-						"y": 435,
+						"x": 2706,
+						"y": 440,
 						"width": 225,
 						"height": 10,
 						"originX": 0.5,
@@ -22494,63 +22230,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 2288.24,
-						"y": 554,
-						"width": 312,
-						"height": 4,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "Skvoz",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 2163,
-					"sid": 244726342895573,
-					"tags": "",
-					"instanceVariables": {
-						"distanceToPlayer": 0,
-						"Enemy": 0,
-						"Solid": 0
-					},
-					"behaviors": {
-						"СквознаяПлатформа": {
-							"properties": {
-								"enabled": true
-							}
-						},
-						"Твёрдый": {
-							"properties": {
-								"enabled": false,
-								"use-instance-tags": false,
-								"tags": "Skvoz"
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 244726342895573,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 1762,
-						"y": 553,
-						"width": 46,
+						"x": 2339.5,
+						"y": 556,
+						"width": 509,
 						"height": 4,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -22739,9 +22421,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 799.2281942737786,
-						"y": 553.1982321034985,
-						"width": 843.8834528231716,
+						"x": 883,
+						"y": 558,
+						"width": 1010.9999999999999,
 						"height": 9.482567465562852,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -22880,6 +22562,168 @@
 						"y": 645,
 						"width": -86,
 						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Skvoz",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1931,
+					"sid": 535449899835085,
+					"tags": "Up",
+					"instanceVariables": {
+						"distanceToPlayer": 0,
+						"Enemy": 0,
+						"Solid": 0
+					},
+					"behaviors": {
+						"СквознаяПлатформа": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Твёрдый": {
+							"properties": {
+								"enabled": false,
+								"use-instance-tags": false,
+								"tags": "Skvoz"
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 535449899835085,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 2117,
+						"y": 489,
+						"width": 46,
+						"height": 4,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Skvoz",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 2228,
+					"sid": 368572798264097,
+					"tags": "Up",
+					"instanceVariables": {
+						"distanceToPlayer": 0,
+						"Enemy": 0,
+						"Solid": 0
+					},
+					"behaviors": {
+						"СквознаяПлатформа": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Твёрдый": {
+							"properties": {
+								"enabled": false,
+								"use-instance-tags": false,
+								"tags": "Skvoz"
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 368572798264097,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1363,
+						"y": 489,
+						"width": 46,
+						"height": 4,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Skvoz",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 9159,
+					"sid": 154455510756729,
+					"tags": "Up",
+					"instanceVariables": {
+						"distanceToPlayer": 0,
+						"Enemy": 0,
+						"Solid": 0
+					},
+					"behaviors": {
+						"СквознаяПлатформа": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Твёрдый": {
+							"properties": {
+								"enabled": false,
+								"use-instance-tags": false,
+								"tags": "Skvoz"
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 154455510756729,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 2570,
+						"y": 489,
+						"width": 46,
+						"height": 4,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -23412,5 +23256,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "Garage"
+	"eventSheet": "Garage_lvl7"
 }

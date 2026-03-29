@@ -35,6 +35,15 @@
 							}
 						},
 						{
+							"id": "set-size",
+							"objectClass": "Camera",
+							"sid": 789840216692953,
+							"parameters": {
+								"width": "70",
+								"height": "35"
+							}
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 789532571068560,
@@ -241,7 +250,6 @@
 									"callFunction": "Create_mainDialoge",
 									"sid": 985982189464617,
 									"parameters": [
-										"\"\"",
 										"\"Mark4\"",
 										"226",
 										"2"
@@ -274,7 +282,6 @@
 									"callFunction": "Create_mainDialoge",
 									"sid": 543483919769399,
 									"parameters": [
-										"\"\"",
 										"\"Mark4\"",
 										"227",
 										"2"
@@ -307,7 +314,6 @@
 									"callFunction": "Create_mainDialoge",
 									"sid": 751155444277647,
 									"parameters": [
-										"\"\"",
 										"\"Mark4\"",
 										"228",
 										"2"
@@ -445,7 +451,6 @@
 									"callFunction": "Create_Dealogue",
 									"sid": 307238170638810,
 									"parameters": [
-										"\"\"",
 										"0",
 										"0",
 										"156",
@@ -493,7 +498,6 @@
 									"callFunction": "Create_Dealogue",
 									"sid": 693012455277068,
 									"parameters": [
-										"\"\"",
 										"0",
 										"0",
 										"157",
@@ -532,7 +536,6 @@
 									"callFunction": "Create_Dealogue",
 									"sid": 641971971545815,
 									"parameters": [
-										"\"\"",
 										"0",
 										"0",
 										"158",
@@ -571,7 +574,6 @@
 									"callFunction": "Create_Dealogue",
 									"sid": 623738370763381,
 									"parameters": [
-										"\"\"",
 										"0",
 										"0",
 										"159",
@@ -610,7 +612,6 @@
 									"callFunction": "Create_Dealogue",
 									"sid": 788567947178003,
 									"parameters": [
-										"\"\"",
 										"0",
 										"0",
 										"160",
@@ -658,7 +659,6 @@
 									"callFunction": "Create_Dealogue",
 									"sid": 885571114192285,
 									"parameters": [
-										"\"\"",
 										"0",
 										"0",
 										"172",
@@ -688,23 +688,6 @@
 									"id": "move-to-top",
 									"objectClass": "Shadow3",
 									"sid": 923573265022629
-								},
-								{
-									"id": "tween-one-property",
-									"objectClass": "Shadow3",
-									"sid": 309215509818023,
-									"behaviorType": "Твинанимация",
-									"parameters": {
-										"tags": "\"\"",
-										"property": "offsetOpacity",
-										"end-value": "100",
-										"time": "2",
-										"ease": "default",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
 								},
 								{
 									"id": "wait",
@@ -928,6 +911,23 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "tween-one-property",
+					"objectClass": "Shadow3",
+					"sid": 287827640979735,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.5",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
 				{
 					"id": "wait",
 					"objectClass": "System",

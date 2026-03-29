@@ -99,6 +99,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Anchor",
+			"name": "Якорь",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Bullet",
 			"name": "Пуля",
 			"author": "Scirra",
@@ -225,6 +232,20 @@
 		},
 		{
 			"type": "effect",
+			"id": "glowhorizontal",
+			"name": "Свечение горизонтальное",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "glowvertical",
+			"name": "Свечение вертикальное",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
 			"id": "pulse",
 			"name": "Пульс",
 			"author": "Danguafer/Silexars",
@@ -269,16 +290,9 @@
 	"uniqueId": "dhizg8oxhd5",
 	"objectTypes": {
 		"items": [
-			"hpEnemyText",
-			"hBar",
-			"stateEnemyText",
 			"Browser",
 			"Music_Safe",
 			"Flag",
-			"tilemap_white",
-			"explosion00",
-			"tilemap_packed",
-			"tilemap_packed2",
 			"Police_Tower"
 		],
 		"subfolders": [
@@ -309,8 +323,8 @@
 					"EnemyJunkie",
 					"EnemyPchel",
 					"EnemyJunkieKnife",
-					"EnemyManiac",
-					"EnemyFat"
+					"EnemyFat",
+					"EnemyManiac"
 				],
 				"subfolders": [
 					{
@@ -364,8 +378,6 @@
 					"Kray",
 					"Skvoznoe",
 					"Trigger_CutScene",
-					"Skvoznoe2",
-					"Skvoznoe3",
 					"Skvoz",
 					"JumpEnemy",
 					"DeadZone",
@@ -395,7 +407,8 @@
 					"Fear",
 					"Shot_Shotgun",
 					"HitBoxDialog",
-					"Out"
+					"Out",
+					"HitBoxWolf"
 				],
 				"subfolders": [],
 				"name": "Hitbox"
@@ -773,7 +786,8 @@
 					{
 						"items": [
 							"Bg_Station",
-							"Perila"
+							"Perila",
+							"Спрайт"
 						],
 						"subfolders": [],
 						"name": "Station"
@@ -1069,7 +1083,8 @@
 					"EnemyText",
 					"Text_Signboard",
 					"HitBoxText",
-					"Text_logo"
+					"Text_logo",
+					"AD"
 				],
 				"subfolders": [],
 				"name": "text"
@@ -1172,14 +1187,14 @@
 				"items": [
 					"Test_elevator",
 					"Station",
+					"Subway",
 					"Bar",
 					"Apartament_lvl1",
-					"Police",
-					"Police1",
 					"Bar2",
 					"Mark_Flat",
 					"Abandonment_lvl2",
-					"Police_station",
+					"Police",
+					"Police1",
 					"Bar3",
 					"Mark_Flat2",
 					"Bakery_lvl3",
@@ -1205,7 +1220,6 @@
 					"Police4",
 					"Garage_Mark2",
 					"Warehouse_lvl12",
-					"Subway",
 					"Garage_Mark_lvl13",
 					"Ermilov_Mansion"
 				],
@@ -1228,7 +1242,6 @@
 			"Main_Menu",
 			"Police2",
 			"Subway",
-			"Train",
 			"Police3",
 			"Police4"
 		],
@@ -1258,20 +1271,20 @@
 			},
 			{
 				"items": [
-					"Bakery",
-					"Night_Club",
-					"Basement",
-					"Hotel",
-					"Tower",
-					"Apartament",
+					"Bakery_lvl3",
+					"Night_Club_lvl6",
+					"Basement_lvl4",
+					"Hotel_lvl5",
+					"Tower_lvl9",
+					"Apartament_lvl1",
 					"Bar",
-					"Office",
+					"Office_lvl10",
 					"Station",
-					"Underground",
-					"Warehouse",
+					"Underground_lvl11",
+					"Warehouse_lvl12",
 					"Bar2",
 					"Mark_Flat",
-					"Abandonment",
+					"Abandonment_lvl2",
 					"Bar3",
 					"Mark_Flat2",
 					"Mark_Flat3",
@@ -1279,7 +1292,7 @@
 					"Bar4",
 					"Mark_Flat4",
 					"Night_Club_Cut",
-					"Garage",
+					"Garage_lvl7",
 					"Garage_Mark",
 					"Bar5",
 					"Mark_Flat5",
@@ -1287,7 +1300,8 @@
 					"Police1",
 					"Ermilov Mansion",
 					"Ermilov_Mansion1",
-					"Garage_Mark2"
+					"Garage_Mark2",
+					"Train_lvl8"
 				],
 				"subfolders": [],
 				"name": "Cutscene"
@@ -1716,6 +1730,30 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Security_Suffering.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 730570566780161,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Security_Suffering1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 230074509295672,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Security_Suffering2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 469231715571393,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [
@@ -1893,6 +1931,14 @@
 							"name": "Bottle_Crash.webm",
 							"type": "audio/webm; codecs=opus",
 							"sid": 393325532332582,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Wolf_Ground.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 325733335431448,
 							"file-info": {
 								"purpose": "none"
 							}

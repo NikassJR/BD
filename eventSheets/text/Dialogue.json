@@ -24,13 +24,6 @@
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
-					"name": "Text",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 366648594005110
-				},
-				{
 					"name": "x",
 					"type": "number",
 					"initialValue": "0",
@@ -184,15 +177,6 @@
 					"sid": 125252498183083,
 					"parameters": {
 						"size-pt": "4"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "dialogText",
-					"sid": 686236671474410,
-					"disabled": true,
-					"parameters": {
-						"text": "Text"
 					}
 				},
 				{
@@ -754,13 +738,6 @@
 			"functionIsAsync": false,
 			"functionParameters": [
 				{
-					"name": "Text",
-					"type": "string",
-					"initialValue": "",
-					"comment": "",
-					"sid": 291619592033264
-				},
-				{
 					"name": "icon",
 					"type": "string",
 					"initialValue": "",
@@ -816,12 +793,12 @@
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 105861052908393,
+					"sid": 654153873327326,
 					"parameters": {
 						"object-to-create": "main_dialogue",
 						"layer": "\"Dialog\"",
-						"x": "Camera.x -200",
-						"y": "Camera.y +110",
+						"x": "borders.X -200",
+						"y": "scrolly +120",
 						"create-hierarchy": false,
 						"template-name": "\"\""
 					}
@@ -1064,6 +1041,86 @@
 				}
 			],
 			"sid": 278020554819236
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "main_dialogue",
+					"sid": 979972270040996
+				},
+				{
+					"id": "compare-width",
+					"objectClass": "Camera",
+					"sid": 868134128588238,
+					"parameters": {
+						"comparison": 0,
+						"width": "70"
+					}
+				},
+				{
+					"id": "compare-height",
+					"objectClass": "Camera",
+					"sid": 996398576697987,
+					"parameters": {
+						"comparison": 0,
+						"height": "35"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "main_dialogue",
+					"sid": 643994696762334,
+					"parameters": {
+						"x": "Camera.X -225",
+						"y": "scrolly +100"
+					}
+				}
+			],
+			"sid": 690697161414314
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "main_dialogue",
+					"sid": 312498508443723
+				},
+				{
+					"id": "compare-width",
+					"objectClass": "Camera",
+					"sid": 610276019825501,
+					"parameters": {
+						"comparison": 0,
+						"width": "80"
+					}
+				},
+				{
+					"id": "compare-height",
+					"objectClass": "Camera",
+					"sid": 689066009023459,
+					"parameters": {
+						"comparison": 0,
+						"height": "45"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "main_dialogue",
+					"sid": 572164186972433,
+					"parameters": {
+						"x": "Camera.X -225",
+						"y": "scrolly +135"
+					}
+				}
+			],
+			"sid": 772459091841706
 		}
 	],
 	"sid": 692011254246023

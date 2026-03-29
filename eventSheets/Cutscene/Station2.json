@@ -37,6 +37,15 @@
 					}
 				},
 				{
+					"id": "set-size",
+					"objectClass": "Camera",
+					"sid": 689372876844046,
+					"parameters": {
+						"width": "70",
+						"height": "35"
+					}
+				},
+				{
 					"id": "stop-animation",
 					"objectClass": "High_Brother",
 					"sid": 392141208467443
@@ -442,7 +451,6 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 569044263017202,
 							"parameters": [
-								"\"\"",
 								"Any.X",
 								"Any.Y -50",
 								"308",
@@ -473,7 +481,6 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 735903563124155,
 							"parameters": [
-								"\"\"",
 								"High_Brother.X +20",
 								"High_Brother.Y -50",
 								"309",
@@ -504,7 +511,6 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 832964201014964,
 							"parameters": [
-								"\"\"",
 								"Mid_Brother.X",
 								"Mid_Brother.Y -50",
 								"310",
@@ -535,7 +541,6 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 921306462079844,
 							"parameters": [
-								"\"\"",
 								"Junior.X",
 								"Junior.Y ",
 								"311",
@@ -647,9 +652,9 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 649200580214909,
+					"sid": 346414238794744,
 					"parameters": {
-						"interval-seconds": "0.5"
+						"interval-seconds": "0.25"
 					}
 				},
 				{
@@ -666,12 +671,12 @@
 			],
 			"actions": [
 				{
-					"id": "subtract-from-eventvar",
-					"objectClass": "System",
-					"sid": 100974940796423,
+					"id": "subtract-from-instvar",
+					"objectClass": "Numbers_Music",
+					"sid": 520740069271305,
 					"parameters": {
-						"variable": "Sound",
-						"value": "2.5"
+						"instance-variable": "Music",
+						"value": "1"
 					}
 				}
 			],
@@ -687,19 +692,18 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 781567494598479,
-					"parameters": {
-						"variable": "Sound",
-						"comparison": 0,
-						"value": "-25"
-					}
 				}
 			],
 			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 502857439860853,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
 				{
 					"id": "stop",
 					"objectClass": "Audio",
