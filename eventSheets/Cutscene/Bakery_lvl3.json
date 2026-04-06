@@ -2341,65 +2341,79 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-end-of-layout",
+					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 436453701217820
-				},
-				{
-					"id": "compare-key",
-					"objectClass": "Music_Safe",
-					"sid": 461083150003640,
+					"sid": 236903389485845,
 					"parameters": {
-						"comparison": 0,
-						"string": "\"Level\""
-					}
-				},
-				{
-					"id": "compare-value",
-					"objectClass": "Music_Safe",
-					"sid": 871739958041758,
-					"parameters": {
-						"comparison": 2,
-						"value": "\"5\""
+						"variable": "Start_Game"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-item",
+					"id": "check-item-exists",
 					"objectClass": "Music_Safe",
-					"sid": 422029633455547,
+					"sid": 659874370203488,
 					"parameters": {
-						"key": "\"Level\"",
-						"value": "\"5\""
+						"key": "\"Level\""
 					}
 				}
 			],
-			"sid": 688015723611783
-		},
-		{
-			"eventType": "block",
-			"conditions": [
+			"sid": 378860454752890,
+			"children": [
 				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 724698036637403
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 339673816882145,
+							"parameters": {
+								"key": "\"Level\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 677910199178138,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 355374708518562,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 166964789874096,
+									"parameters": {
+										"comparison": 2,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "Music_Safe",
+									"sid": 966203319741085,
+									"parameters": {
+										"key": "\"Level\"",
+										"value": "5"
+									}
+								}
+							],
+							"sid": 136044828434512
+						}
+					]
 				}
-			],
-			"actions": [
-				{
-					"id": "set-layer-scroll",
-					"objectClass": "System",
-					"sid": 471402455779779,
-					"parameters": {
-						"layer": "5",
-						"scroll-x": "1000",
-						"scroll-y": "0"
-					}
-				}
-			],
-			"sid": 257629520662002,
-			"disabled": true
+			]
 		},
 		{
 			"eventType": "comment",

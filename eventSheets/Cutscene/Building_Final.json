@@ -1,0 +1,1857 @@
+{
+	"name": "Building_Final",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "actual"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Effect"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 174416017261794
+				}
+			],
+			"actions": [
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 372635044589334,
+					"parameters": {
+						"slot": "\"mysave\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 946282638805812,
+					"parameters": {
+						"variable": "weapon",
+						"value": "\"Pain\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 563662018610327,
+					"disabled": true,
+					"parameters": {
+						"variable": "weapon",
+						"value": "\"Pain\""
+					}
+				},
+				{
+					"id": "stop-animation",
+					"objectClass": "Smoke_Boom",
+					"sid": 160954825518128
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Camera",
+					"sid": 768520888457394,
+					"parameters": {
+						"width": "80",
+						"height": "45"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Camera",
+					"sid": 398373682607556,
+					"parameters": {
+						"instance-variable": "onPlayer",
+						"value": "true"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 656323061085203,
+					"parameters": {
+						"tag": "\"Suspense\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 166450774463324,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 358008300760052,
+					"parameters": {
+						"variable": "Continue_Game",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 583069587869609,
+					"parameters": {
+						"variable": "Safe_Zone",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 774766580904100,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "activated"
+					}
+				}
+			],
+			"sid": 536587910125863
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player_All",
+					"sid": 434005838673856,
+					"parameters": {
+						"object": "Trigger_CutScene"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_All",
+					"sid": 473393924738314,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 2,
+						"value": "1"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Trigger_CutScene",
+					"sid": 752054275207374,
+					"parameters": {
+						"tags": "\"Start\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 594600465746922,
+					"parameters": {
+						"variable": "onDialMain",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 611585842392514,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player_All",
+					"sid": 595270745296945,
+					"parameters": {
+						"instance-variable": "textframe",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player_All",
+					"sid": 679767144990886,
+					"parameters": {
+						"state": "mirrored"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Player_All",
+					"sid": 956896973470884,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "overall",
+						"speed": "0"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player_All",
+					"sid": 992407745155606,
+					"parameters": {
+						"animation": "weapon & \"Idle\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Investigator",
+					"sid": 254183166810182,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "100"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Trigger_CutScene",
+					"sid": 982586416366377
+				}
+			],
+			"sid": 846546852713256
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 949050456977802,
+					"parameters": {
+						"variable": "onDialMain"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 669208779149760,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 416367188434998,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 5,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 331849046483470
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 745952946777379,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Investigator",
+							"sid": 272701238321204,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "0"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Investigator",
+							"sid": 309639730898951,
+							"parameters": {
+								"animation": "\"inv_gun\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "stop-animation",
+							"objectClass": "Investigator",
+							"sid": 669763425218105
+						}
+					],
+					"sid": 947001451175520
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 214377101669157,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 390350352352846
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 984104233453036,
+							"parameters": [
+								"\"Police1\"",
+								"751",
+								"5"
+							]
+						}
+					],
+					"sid": 306886274334180
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 207348664795402,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 774482627328619
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 567178964658312,
+							"parameters": [
+								"\"Police1\"",
+								"752",
+								"1"
+							]
+						}
+					],
+					"sid": 372598792785853
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 645058112355738,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 436653800277153
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 199599017991030,
+							"parameters": [
+								"\"Mark7\"",
+								"753",
+								"3"
+							]
+						}
+					],
+					"sid": 735741321580239
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 544488504671715,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "4"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 930413016080310
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Player_All",
+							"sid": 561810482872001,
+							"parameters": {
+								"animation": "\"PistolPainIdle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 177346820880276,
+							"parameters": {
+								"variable": "weapon",
+								"value": "\"PistolPain\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 806597779985726,
+							"parameters": {
+								"audio-file": {
+									"path": "Kick/WeaponTake"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 427564509014387,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 857777264811234,
+							"parameters": {
+								"group-name": "\"Move\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_All",
+							"sid": 480629411450102,
+							"parameters": {
+								"object": "Pistol",
+								"layer": "\"Player\"",
+								"image-point": "1",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Pistol",
+							"sid": 511154455379998,
+							"parameters": {
+								"animation": "\"Pistol2\"",
+								"from": "current-frame"
+							}
+						},
+						{
+							"id": "stop-animation",
+							"objectClass": "Pistol",
+							"sid": 628882286434321
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Pistol",
+							"sid": 260500360091953,
+							"behaviorType": "Прикрепить2",
+							"parameters": {
+								"pin-to": "Player_All",
+								"image-point": "1",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "Pistol",
+							"sid": 361375172263296,
+							"parameters": {
+								"layer": "Player_All.LayerName"
+							}
+						},
+						{
+							"id": "move-to-top",
+							"objectClass": "Pistol",
+							"sid": 771816147849889
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Star",
+							"sid": 666719303609547,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 864300001771187
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 475476677866344,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "5"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 800904775484627
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 332257919408563,
+							"parameters": {
+								"seconds": "0.5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 667439617886829,
+							"disabled": true,
+							"parameters": {
+								"audio-file": {
+									"path": "EndGame/Metal_Pile"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 205157612173395,
+							"parameters": {
+								"audio-file": {
+									"path": "Crash_Car"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Pistol",
+							"sid": 143042518017767
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 518437511484841,
+							"parameters": {
+								"variable": "weapon",
+								"value": "\"Dead\""
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 571138687796992,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 807453892226397,
+							"parameters": {
+								"group-name": "\"Move\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_All",
+							"sid": 485393754122964,
+							"parameters": {
+								"animation": "\"DeadIdle\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 998403847843724
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_All",
+							"sid": 299144013226881,
+							"parameters": {
+								"object": "Trigger_CutScene"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 403891766213277,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "6"
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Trigger_CutScene",
+							"sid": 556224833525981,
+							"parameters": {
+								"tags": "\"Dead\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "shakeScreen4",
+							"sid": 796534979351968
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Player_All",
+							"sid": 520690301246049,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "0"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_All",
+							"sid": 804007564060456,
+							"parameters": {
+								"object": "Boom_Logo",
+								"layer": "\"Player\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Trigger_CutScene",
+							"sid": 903995852972769
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Player_All",
+							"sid": 213478448462470,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 582951764860309,
+							"parameters": {
+								"seconds": "3",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_All",
+							"sid": 906503106642402,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "7"
+							}
+						}
+					],
+					"sid": 121794574436953
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 482596545704834,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "7"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 508697060733498
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Camera",
+							"sid": 548519082679913,
+							"parameters": {
+								"instance-variable": "onPlayer",
+								"value": "false"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Camera",
+							"sid": 333407268645529,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetY",
+								"end-value": "700",
+								"time": "4",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Camera",
+							"sid": 241028947682921,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "90",
+								"time": "4",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Camera",
+							"sid": 783967880700140,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "55",
+								"time": "4",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 984029839075189
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 936434682270333,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 109587717076247,
+					"parameters": {
+						"interval-seconds": "0.25"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 216246876519647,
+					"parameters": {
+						"variable": "Sound",
+						"comparison": 0,
+						"value": "-25"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "Numbers_Music",
+					"sid": 569873271636921,
+					"parameters": {
+						"instance-variable": "Music",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 417886392646991
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 504889122337439,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 539883081784303,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 550081461532026,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 631984158660199,
+					"parameters": {
+						"tag": "\"Suspense\""
+					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "Music_Safe",
+					"sid": 669932935843850,
+					"parameters": {
+						"key": "\"Sound\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "Music_Safe",
+					"sid": 299757703499972,
+					"parameters": {
+						"key": "\"Sound\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 470325964658886
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 682633453429346,
+					"parameters": {
+						"layout": "Ermilov_Mansion"
+					}
+				}
+			],
+			"sid": 904971715473871
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Kayboard",
+					"sid": 828809259253035,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Door_Card",
+					"sid": 364728227733927,
+					"parameters": {
+						"object": "Player_Police"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-one-property",
+					"objectClass": "EndScene",
+					"sid": 200867642926418,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "Camera.X +250",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "press_E",
+					"sid": 414186735743487,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 355263826247199,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 576792837175257,
+					"parameters": {
+						"variable": "onDialMain",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 887063772116266,
+					"parameters": {
+						"variable": "Safe_Zone",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 460470207072325
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Door_Card",
+					"sid": 394141760544950,
+					"parameters": {
+						"object": "Player_Police"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "press_E",
+					"sid": 162122533708869,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 530799597883378
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 659692880377882
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "press_E",
+					"sid": 328891639091283,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 814278780237722
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Investigator",
+					"sid": 573278439439289,
+					"parameters": {
+						"object": "Shot"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "start-animation",
+					"objectClass": "Investigator",
+					"sid": 454750154968036,
+					"parameters": {
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 910102523989950,
+					"parameters": {
+						"audio-file": {
+							"path": "Beretta"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"audio\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Investigator",
+					"sid": 947364666493331,
+					"parameters": {
+						"object": "Shot_Shotgun",
+						"layer": "\"Player\"",
+						"image-point": "1",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Shot_Shotgun",
+					"sid": 550116807268867,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "1000"
+					}
+				}
+			],
+			"sid": 976132458578445
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player_All",
+					"sid": 384446631813708,
+					"parameters": {
+						"object": "Shot_Shotgun"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "Player_All",
+					"sid": 623421282727090,
+					"parameters": {
+						"animation": "\"noWeaponDamage\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Player_All",
+					"sid": 794235938934945,
+					"parameters": {
+						"object": "BloodAll",
+						"layer": "\"Player\"",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "BloodAll",
+					"sid": 565461468476350,
+					"parameters": {
+						"animation": "\"BloodAxe1\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Player_All",
+					"sid": 100864336455321,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 961433586098350,
+					"parameters": {
+						"variable": "HPplayer",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 945937877664751,
+					"parameters": {
+						"variable": "weapon",
+						"value": "\"noWeapon\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Pistol",
+					"sid": 954128008469465
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 379290281399225,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
+				}
+			],
+			"sid": 457815075204221
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Shot",
+					"sid": 266844384561704
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Shot",
+					"sid": 694122985800242,
+					"parameters": {
+						"instance-variable": "Hit",
+						"value": "Random(100)"
+					}
+				},
+				{
+					"callFunction": "shakeScreen",
+					"sid": 110581119994274
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 260059270121470,
+					"parameters": {
+						"audio-file": {
+							"path": "Beretta"
+						},
+						"loop": "not-looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"audio\""
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Shot",
+					"sid": 163912528496749,
+					"behaviorType": "Пуля",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Shot",
+					"sid": 774780712615336,
+					"behaviorType": "Пуля",
+					"parameters": {
+						"speed": "1000"
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Shot",
+					"sid": 281868496312922,
+					"behaviorType": "Пуля",
+					"parameters": {
+						"angle": "Pistol.Angle "
+					}
+				}
+			],
+			"sid": 925932488460839
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Shot",
+					"sid": 264951405151670,
+					"parameters": {
+						"object": "Fasteners"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Star",
+					"sid": 779540717643395,
+					"parameters": {
+						"tags": "\"Cut\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Star",
+					"sid": 792465204848653
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Fasteners",
+					"sid": 237392570109093,
+					"parameters": {
+						"object": "Elektro",
+						"layer": "\"Player\"",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Fasteners",
+					"sid": 703939700134421
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Elektro",
+					"sid": 880173901483360,
+					"parameters": {
+						"animation": "\"Anim1\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Player_All",
+					"sid": 641312777003856,
+					"parameters": {
+						"instance-variable": "textframe",
+						"value": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 993867869414516,
+					"parameters": {
+						"audio-file": {
+							"path": "EndGame/Lock"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"audio\""
+					}
+				}
+			],
+			"sid": 572865881463070
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player_All",
+					"sid": 284014366443047,
+					"parameters": {
+						"object": "Trigger_CutScene"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Trigger_CutScene",
+					"sid": 874771477060902,
+					"parameters": {
+						"tags": "\"End\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 456183860958756,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 233987080194023,
+					"parameters": {
+						"audio-file": {
+							"path": "Raider_Car"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"audio\""
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player_All",
+					"sid": 927939388381434,
+					"parameters": {
+						"state": "mirrored"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Cars",
+					"sid": 422618423883545,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Cars",
+					"sid": 390927845752248,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "600"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player_All",
+					"sid": 863678320182503,
+					"parameters": {
+						"animation": "weapon & \"Idle\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Player_All",
+					"sid": 117091538565906,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "overall",
+						"speed": "0"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Trigger_CutScene",
+					"sid": 247476076994573
+				}
+			],
+			"sid": 895173593035624
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Cars",
+					"sid": 147549382390195,
+					"parameters": {
+						"object": "Player_All"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "Cars",
+					"sid": 772916698037499
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 820956565122851,
+					"parameters": {
+						"tag": "\"audio\""
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Cars",
+					"sid": 217637679969131,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "0"
+					}
+				},
+				{
+					"id": "stop-animation",
+					"objectClass": "Cars",
+					"sid": 308293462449136
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Cars",
+					"sid": 974529625263628,
+					"parameters": {
+						"frame-number": "2"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player_All",
+					"sid": 934908112342636,
+					"parameters": {
+						"animation": "weapon & \"Damage\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Player_All",
+					"sid": 343239789040559,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "600"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player_All",
+					"sid": 182869816406031,
+					"parameters": {
+						"instance-variable": "textframe",
+						"value": "6"
+					}
+				},
+				{
+					"callFunction": "shakeScreen",
+					"sid": 303462042937307
+				},
+				{
+					"callFunction": "shakeScreen2",
+					"sid": 177664991723795
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 674191413011328,
+					"parameters": {
+						"audio-file": {
+							"path": "Crash_Car"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"audio\""
+					}
+				}
+			],
+			"sid": 645461956010005
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Konteiner",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 278921509676446,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "5"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 781605832707260
+						}
+					],
+					"actions": [],
+					"sid": 446560649672506,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Platform_Rupes",
+									"sid": 533370435082570,
+									"parameters": {
+										"animation": "\"Platform\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "Platform_Rupes",
+									"sid": 372313317646345,
+									"behaviorType": "Твинанимация",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetAngle",
+										"end-value": "110",
+										"time": "0.25",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 687773039519575
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Platform_Rupes",
+									"sid": 890483115331910,
+									"parameters": {
+										"animation": "\"Pile\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Platform_Rupes",
+									"sid": 527810618943564,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 631682495630965
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Platform_Rupes",
+									"sid": 622193269126701,
+									"parameters": {
+										"animation": "\"Pin2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Platform_Rupes",
+									"sid": 840019443894438,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Platform_Rupes",
+									"sid": 216220079091569,
+									"behaviorType": "Физика",
+									"parameters": {
+										"mode": "enabled"
+									}
+								},
+								{
+									"id": "apply-force",
+									"objectClass": "Platform_Rupes",
+									"sid": 167141024008248,
+									"behaviorType": "Физика",
+									"parameters": {
+										"force-x": "0",
+										"force-y": "500",
+										"image-point": "1"
+									}
+								}
+							],
+							"sid": 683734035966908
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Platform_Rupes",
+							"sid": 701426236699961,
+							"parameters": {
+								"object": "Wall"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Platform_Rupes",
+							"sid": 821144477195891,
+							"parameters": {
+								"animation": "\"Pin2\""
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Smoke_Boom",
+							"sid": 804306863287677,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Platform_Rupes",
+							"sid": 278260267545315
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Smoke_Boom",
+							"sid": 964551627257992,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "start-animation",
+							"objectClass": "Smoke_Boom",
+							"sid": 198016056480809,
+							"parameters": {
+								"from": "beginning"
+							}
+						},
+						{
+							"callFunction": "shakeScreen4",
+							"sid": 491240699816502
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Wall",
+							"sid": 435708703677586,
+							"behaviorType": "Твёрдый",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
+					"sid": 892241058184691
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-animation-finished",
+							"objectClass": "Smoke_Boom",
+							"sid": 284139665236567
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Smoke_Boom",
+							"sid": 654344198934973
+						}
+					],
+					"sid": 571884678003789
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Investigator",
+							"sid": 629144114108999,
+							"parameters": {
+								"object": "Platform_Rupes"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Investigator",
+							"sid": 133116176701746,
+							"parameters": {
+								"animation": "\"inv_fall\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "Investigator",
+							"sid": 223654794157134,
+							"parameters": {
+								"layer": "\"Player\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Investigator",
+							"sid": 534532964187172,
+							"parameters": {
+								"object": "BloodAll",
+								"layer": "\"Player\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "BloodAll",
+							"sid": 397440172557139,
+							"parameters": {
+								"animation": "\"BloodAxe1\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 321150524883453,
+							"parameters": {
+								"audio-file": {
+									"path": "BOOM!"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Investigator",
+							"sid": 271301574584750,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "-250"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 111769938784085,
+							"parameters": {
+								"seconds": "0.3",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Investigator",
+							"sid": 862150681033744,
+							"parameters": {
+								"animation": "\"inv_dead\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Investigator",
+							"sid": 448021446108189,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "0"
+							}
+						}
+					],
+					"sid": 605101704170522
+				}
+			],
+			"sid": 695196913785305
+		}
+	],
+	"sid": 670952550685088
+}

@@ -387,41 +387,79 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-end-of-layout",
+					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 561583445366032
-				},
-				{
-					"id": "compare-key",
-					"objectClass": "Music_Safe",
-					"sid": 835126577921178,
+					"sid": 900626858066008,
 					"parameters": {
-						"comparison": 0,
-						"string": "\"Level\""
-					}
-				},
-				{
-					"id": "compare-value",
-					"objectClass": "Music_Safe",
-					"sid": 328259792557796,
-					"parameters": {
-						"comparison": 2,
-						"value": "\"9\""
+						"variable": "Start_Game"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-item",
+					"id": "check-item-exists",
 					"objectClass": "Music_Safe",
-					"sid": 911580773622754,
+					"sid": 117248875739089,
 					"parameters": {
-						"key": "\"Level\"",
-						"value": "\"9\""
+						"key": "\"Level\""
 					}
 				}
 			],
-			"sid": 272130231844334
+			"sid": 951582222217691,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 287648029578634,
+							"parameters": {
+								"key": "\"Level\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 434150785230909,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 747017347907152,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 695804431594863,
+									"parameters": {
+										"comparison": 2,
+										"value": "9"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "Music_Safe",
+									"sid": 179815366555085,
+									"parameters": {
+										"key": "\"Level\"",
+										"value": "8"
+									}
+								}
+							],
+							"sid": 337685861675931
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 682940687077890

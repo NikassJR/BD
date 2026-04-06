@@ -321,12 +321,28 @@
 					}
 				},
 				{
+					"id": "set-animation-frame",
+					"objectClass": "Flag",
+					"sid": 481929998090648,
+					"parameters": {
+						"frame-number": "Language"
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 498783366155173,
 					"parameters": {
 						"seconds": "0.1",
 						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Scene",
+					"sid": 566859434142996,
+					"parameters": {
+						"visibility": "visible"
 					}
 				},
 				{
@@ -395,6 +411,14 @@
 					"sid": 484013547568937,
 					"parameters": {
 						"time-scale": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Scene",
+					"sid": 537339551978998,
+					"parameters": {
+						"visibility": "invisible"
 					}
 				},
 				{
@@ -505,6 +529,21 @@
 					"id": "pin-to-object-properties",
 					"objectClass": "Flag",
 					"sid": 316183202428989,
+					"behaviorType": "Прикрепить",
+					"parameters": {
+						"pin-to": "borders",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "Scene",
+					"sid": 623086601585801,
 					"behaviorType": "Прикрепить",
 					"parameters": {
 						"pin-to": "borders",
@@ -3368,6 +3407,205 @@
 				}
 			],
 			"sid": 324869828719832
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-selection-changed",
+					"objectClass": "Scene",
+					"sid": 489498193943848
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 335501013073626,
+					"parameters": {
+						"layer": "\"HUD\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-time-scale",
+					"objectClass": "System",
+					"sid": 309487499250699,
+					"parameters": {
+						"time-scale": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 337232823147380,
+					"parameters": {
+						"seconds": "0.1",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 583031541972360,
+					"disabled": true,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "activated"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 907632744033372,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 916118206669191,
+					"parameters": {
+						"tag": "\"audio\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 187063921184608,
+					"parameters": {
+						"variable": "Pause",
+						"value": "false"
+					}
+				},
+				{
+					"id": "reset-global-variables",
+					"objectClass": "System",
+					"sid": 554497289607982,
+					"parameters": {
+						"reset-static": true
+					}
+				},
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 350592726126259,
+					"parameters": {
+						"layout": "Scene.SelectedText"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 742015144502755
+				}
+			],
+			"sid": 958585674159059
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Static",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 297872356629896
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "Music_Safe",
+							"sid": 815480204486196,
+							"parameters": {
+								"key": "\"Enemys\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 262674464076108,
+							"parameters": {
+								"key": "\"Enemys\""
+							}
+						},
+						{
+							"id": "get-item",
+							"objectClass": "Music_Safe",
+							"sid": 747713604271251,
+							"parameters": {
+								"key": "\"Time\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 526092777267619,
+							"parameters": {
+								"key": "\"Time\""
+							}
+						}
+					],
+					"sid": 365629448549123,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-end-of-layout",
+							"objectClass": "System",
+							"sid": 188591900952660
+						}
+					],
+					"actions": [
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 613940693605277,
+							"parameters": {
+								"key": "\"Time\"",
+								"value": "wallclocktime"
+							}
+						}
+					],
+					"sid": 478679170471944,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Kayboard",
+							"sid": 487742810425207,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 707578989614295,
+							"parameters": {
+								"key": "\"Enemys\"",
+								"value": " Enemys+Music_Safe.ItemValue"
+							}
+						}
+					],
+					"sid": 370967427467291,
+					"disabled": true
+				}
+			],
+			"sid": 749758173182818
 		}
 	],
 	"sid": 511565052530936

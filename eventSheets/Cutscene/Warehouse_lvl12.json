@@ -26,17 +26,17 @@
 				{
 					"id": "save",
 					"objectClass": "System",
-					"sid": 789050522970274,
+					"sid": 981366898897291,
 					"parameters": {
-						"slot": "\"mysave\""
+						"slot": "\"start\""
 					}
 				},
 				{
 					"id": "save",
 					"objectClass": "System",
-					"sid": 981366898897291,
+					"sid": 166927446754651,
 					"parameters": {
-						"slot": "\"start\""
+						"slot": "\"mysave\""
 					}
 				},
 				{
@@ -211,6 +211,46 @@
 				}
 			],
 			"sid": 874994944216196
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-tags",
+					"objectClass": "Wall",
+					"sid": 697062715277289,
+					"parameters": {
+						"tags": "\"Cut\""
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_All",
+					"sid": 717416634742813,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 166938520506758
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Wall",
+					"sid": 380744345342065,
+					"behaviorType": "Твёрдый",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 491794390147384
 		},
 		{
 			"eventType": "block",
@@ -2976,41 +3016,79 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-end-of-layout",
+					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 944274224362039
-				},
-				{
-					"id": "compare-key",
-					"objectClass": "Music_Safe",
-					"sid": 277444271212233,
+					"sid": 876795215574319,
 					"parameters": {
-						"comparison": 0,
-						"string": "\"Level\""
-					}
-				},
-				{
-					"id": "compare-value",
-					"objectClass": "Music_Safe",
-					"sid": 213001441621636,
-					"parameters": {
-						"comparison": 2,
-						"value": "\"14\""
+						"variable": "Start_Game"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-item",
+					"id": "check-item-exists",
 					"objectClass": "Music_Safe",
-					"sid": 624191694006386,
+					"sid": 184616361064615,
 					"parameters": {
-						"key": "\"Level\"",
-						"value": "\"14\""
+						"key": "\"Level\""
 					}
 				}
 			],
-			"sid": 555109381341529
+			"sid": 887274412067885,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 938724552643513,
+							"parameters": {
+								"key": "\"Level\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 993959882130958,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 850701874991143,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 733000025968341,
+									"parameters": {
+										"comparison": 2,
+										"value": "14"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "Music_Safe",
+									"sid": 937255949660899,
+									"parameters": {
+										"key": "\"Level\"",
+										"value": "14"
+									}
+								}
+							],
+							"sid": 807100927343541
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 238487435061657

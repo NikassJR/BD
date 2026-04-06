@@ -2802,41 +2802,79 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-end-of-layout",
+					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 469370509953194
-				},
-				{
-					"id": "compare-key",
-					"objectClass": "Music_Safe",
-					"sid": 248827112333857,
+					"sid": 556665253030894,
 					"parameters": {
-						"comparison": 0,
-						"string": "\"Level\""
-					}
-				},
-				{
-					"id": "compare-value",
-					"objectClass": "Music_Safe",
-					"sid": 769389409049536,
-					"parameters": {
-						"comparison": 2,
-						"value": "\"7\""
+						"variable": "Start_Game"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-item",
+					"id": "check-item-exists",
 					"objectClass": "Music_Safe",
-					"sid": 469063458248809,
+					"sid": 722627795282269,
 					"parameters": {
-						"key": "\"Level\"",
-						"value": "\"7\""
+						"key": "\"Level\""
 					}
 				}
 			],
-			"sid": 136344624894547
+			"sid": 481858992932781,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 553573066879195,
+							"parameters": {
+								"key": "\"Level\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 882460169615464,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 787848187462375,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 800166813129380,
+									"parameters": {
+										"comparison": 2,
+										"value": "7"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "Music_Safe",
+									"sid": 210105258307927,
+									"parameters": {
+										"key": "\"Level\"",
+										"value": "7"
+									}
+								}
+							],
+							"sid": 508622015763572
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 412618442979125

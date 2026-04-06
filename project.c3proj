@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 47602,
+	"savedWithRelease": 47603,
 	"name": "BD",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -36,8 +36,22 @@
 		},
 		{
 			"type": "plugin",
+			"id": "FileSystem",
+			"name": "Файловая система",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Клавиатура",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "List",
+			"name": "Список",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -830,7 +844,8 @@
 									"Friz_Wall",
 									"Wall_back",
 									"Roof",
-									"Fasteners"
+									"Fasteners",
+									"Platform_Rupes"
 								],
 								"subfolders": [],
 								"name": "Bakery_constr"
@@ -1084,7 +1099,8 @@
 					"Text_Signboard",
 					"HitBoxText",
 					"Text_logo",
-					"AD"
+					"AD",
+					"Scene"
 				],
 				"subfolders": [],
 				"name": "text"
@@ -1152,7 +1168,8 @@
 					"Logo2",
 					"Level",
 					"Menu_Box2",
-					"Level2"
+					"Level2",
+					"Safe"
 				],
 				"subfolders": [],
 				"name": "Menu"
@@ -1202,7 +1219,7 @@
 					"Hotel_lvl5",
 					"Police2",
 					"Mark_Flat3",
-					"Station2",
+					"Forest",
 					"Bar4",
 					"Night_Club_lvl6",
 					"Mark_Flat4",
@@ -1220,8 +1237,12 @@
 					"Police4",
 					"Garage_Mark2",
 					"Warehouse_lvl12",
+					"Garage_Mark3",
+					"Bar6",
 					"Garage_Mark_lvl13",
-					"Ermilov_Mansion"
+					"Police5",
+					"Ermilov_Mansion",
+					"Building_Final"
 				],
 				"subfolders": [],
 				"name": "Levels"
@@ -1301,7 +1322,12 @@
 					"Ermilov Mansion",
 					"Ermilov_Mansion1",
 					"Garage_Mark2",
-					"Train_lvl8"
+					"Train_lvl8",
+					"Garage_Mark3",
+					"Bar6",
+					"Garage_Mark_lvl13",
+					"Police5",
+					"Building_Final"
 				],
 				"subfolders": [],
 				"name": "Cutscene"
@@ -2038,6 +2064,36 @@
 					],
 					"subfolders": [],
 					"name": "Warehouse"
+				},
+				{
+					"items": [
+						{
+							"name": "Police_siren.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 429267686829322,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Metal_Pile.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 825684481225292,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Lock.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 229348887204314,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "EndGame"
 				}
 			]
 		},
@@ -2481,7 +2537,7 @@
 			0
 		],
 		"orientations": "landscape",
-		"webgpu": "no",
+		"webgpu": "yes",
 		"multitexturing": "auto",
 		"gpuPreference": "high-performance",
 		"framerateMode": "vsync",

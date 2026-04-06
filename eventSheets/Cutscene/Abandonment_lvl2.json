@@ -1694,41 +1694,79 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-end-of-layout",
+					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 904036691576765
-				},
-				{
-					"id": "compare-key",
-					"objectClass": "Music_Safe",
-					"sid": 587681773719896,
+					"sid": 756684510647619,
 					"parameters": {
-						"comparison": 0,
-						"string": "\"Level\""
-					}
-				},
-				{
-					"id": "compare-value",
-					"objectClass": "Music_Safe",
-					"sid": 997470459460320,
-					"parameters": {
-						"comparison": 2,
-						"value": "\"4\""
+						"variable": "Start_Game"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-item",
+					"id": "check-item-exists",
 					"objectClass": "Music_Safe",
-					"sid": 896886895886509,
+					"sid": 293106940392350,
 					"parameters": {
-						"key": "\"Level\"",
-						"value": "\"4\""
+						"key": "\"Level\""
 					}
 				}
 			],
-			"sid": 537910876094450
+			"sid": 773348459389095,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 986245901205298,
+							"parameters": {
+								"key": "\"Level\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 974802685465250,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 388593806923419,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 558480147232426,
+									"parameters": {
+										"comparison": 2,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "Music_Safe",
+									"sid": 468851182760935,
+									"parameters": {
+										"key": "\"Level\"",
+										"value": "4"
+									}
+								}
+							],
+							"sid": 275077034960747
+						}
+					]
+				}
+			]
 		},
 		{
 			"eventType": "comment",
