@@ -2,14 +2,52 @@
 	"name": "Menu",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "Timer"
+		},
+		{
 			"eventType": "variable",
-			"name": "Pause",
+			"name": "Start",
 			"type": "boolean",
 			"initialValue": "false",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 312377033324314
+			"sid": 253498605790045
+		},
+		{
+			"eventType": "variable",
+			"name": "sec",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 969727953096401
+		},
+		{
+			"eventType": "variable",
+			"name": "minute",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 100284129402181
+		},
+		{
+			"eventType": "variable",
+			"name": "hour",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 998036460427202
+		},
+		{
+			"eventType": "comment",
+			"text": "Audio"
 		},
 		{
 			"eventType": "variable",
@@ -33,16 +71,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "Language",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 978152544537073
-		},
-		{
-			"eventType": "variable",
 			"name": "SaveMusic",
 			"type": "number",
 			"initialValue": "0",
@@ -50,6 +78,30 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 372110241590884
+		},
+		{
+			"eventType": "comment",
+			"text": "Other"
+		},
+		{
+			"eventType": "variable",
+			"name": "Pause",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 932475353233169
+		},
+		{
+			"eventType": "variable",
+			"name": "Language",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 220127341459749
 		},
 		{
 			"eventType": "group",
@@ -285,7 +337,7 @@
 			"conditions": [
 				{
 					"id": "on-key-pressed",
-					"objectClass": "Kayboard",
+					"objectClass": "Keyboard",
 					"sid": 177354403762705,
 					"parameters": {
 						"key": 27
@@ -380,7 +432,7 @@
 			"conditions": [
 				{
 					"id": "on-key-pressed",
-					"objectClass": "Kayboard",
+					"objectClass": "Keyboard",
 					"sid": 738638103756556,
 					"parameters": {
 						"key": 27
@@ -2962,7 +3014,7 @@
 			"conditions": [
 				{
 					"id": "on-any-key-pressed",
-					"objectClass": "Kayboard",
+					"objectClass": "Keyboard",
 					"sid": 155929023834282
 				},
 				{
@@ -3240,7 +3292,7 @@
 					"conditions": [
 						{
 							"id": "on-key-pressed",
-							"objectClass": "Kayboard",
+							"objectClass": "Keyboard",
 							"sid": 932260878652685,
 							"parameters": {
 								"key": 53
@@ -3264,7 +3316,7 @@
 					"conditions": [
 						{
 							"id": "on-key-pressed",
-							"objectClass": "Kayboard",
+							"objectClass": "Keyboard",
 							"sid": 720337776203826,
 							"parameters": {
 								"key": 52
@@ -3288,7 +3340,7 @@
 					"conditions": [
 						{
 							"id": "on-key-pressed",
-							"objectClass": "Kayboard",
+							"objectClass": "Keyboard",
 							"sid": 913031731754753,
 							"parameters": {
 								"key": 51
@@ -3312,7 +3364,7 @@
 					"conditions": [
 						{
 							"id": "on-key-pressed",
-							"objectClass": "Kayboard",
+							"objectClass": "Keyboard",
 							"sid": 259976950298968,
 							"parameters": {
 								"key": 50
@@ -3336,7 +3388,7 @@
 					"conditions": [
 						{
 							"id": "on-key-pressed",
-							"objectClass": "Kayboard",
+							"objectClass": "Keyboard",
 							"sid": 491829264805580,
 							"parameters": {
 								"key": 49
@@ -3360,7 +3412,7 @@
 					"conditions": [
 						{
 							"id": "on-key-pressed",
-							"objectClass": "Kayboard",
+							"objectClass": "Keyboard",
 							"sid": 609786465802673,
 							"parameters": {
 								"key": 72
@@ -3385,7 +3437,7 @@
 					"conditions": [
 						{
 							"id": "on-key-pressed",
-							"objectClass": "Kayboard",
+							"objectClass": "Keyboard",
 							"sid": 389482252345682,
 							"parameters": {
 								"key": 74
@@ -3510,99 +3562,780 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Timer",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 573331467570208,
+									"parameters": {
+										"variable": "Start"
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 599610855706851,
+									"parameters": {
+										"interval-seconds": "1.0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 316422880541315,
+									"parameters": {
+										"variable": "sec",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 458528886472437
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 717739897260562,
+									"parameters": {
+										"variable": "sec",
+										"comparison": 5,
+										"value": "60"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 570326627549548,
+									"parameters": {
+										"variable": "minute",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 570919206748327,
+									"parameters": {
+										"variable": "sec",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 458199666708567
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 252557732849773,
+									"parameters": {
+										"variable": "minute",
+										"comparison": 5,
+										"value": "60"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 653494254701618,
+									"parameters": {
+										"variable": "hour",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 606736267182864,
+									"parameters": {
+										"variable": "minute",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 498648421894156
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 452754825907464
+								},
+								{
+									"id": "on-resume",
+									"objectClass": "System",
+									"sid": 444372410346453,
+									"disabled": true
+								},
+								{
+									"id": "on-loader-layout-complete",
+									"objectClass": "System",
+									"sid": 564688292106515
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 638841801257670,
+									"parameters": {
+										"variable": "Start",
+										"value": "true"
+									}
+								},
+								{
+									"id": "get-item",
+									"objectClass": "Music_Safe",
+									"sid": 948617855401088,
+									"parameters": {
+										"key": "\"TimerSec\""
+									}
+								},
+								{
+									"id": "get-item",
+									"objectClass": "Music_Safe",
+									"sid": 448291576311385,
+									"parameters": {
+										"key": "\"TimerMin\""
+									}
+								},
+								{
+									"id": "get-item",
+									"objectClass": "Music_Safe",
+									"sid": 708249769719313,
+									"parameters": {
+										"key": "\"TimerHour\""
+									}
+								},
+								{
+									"id": "check-item-exists",
+									"objectClass": "Music_Safe",
+									"sid": 130244186604090,
+									"parameters": {
+										"key": "\"TimerSec\""
+									}
+								},
+								{
+									"id": "check-item-exists",
+									"objectClass": "Music_Safe",
+									"sid": 772484320184842,
+									"parameters": {
+										"key": "\"TimerMin\""
+									}
+								},
+								{
+									"id": "check-item-exists",
+									"objectClass": "Music_Safe",
+									"sid": 987186416198568,
+									"parameters": {
+										"key": "\"TimerHour\""
+									}
+								}
+							],
+							"sid": 863122426015078,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-exists",
+									"objectClass": "Music_Safe",
+									"sid": 521807813740498,
+									"parameters": {
+										"key": "\"TimerHour\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 766709756073702,
+									"parameters": {
+										"variable": "hour",
+										"value": "Music_Safe.ItemValue"
+									}
+								}
+							],
+							"sid": 325387200561346
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-exists",
+									"objectClass": "Music_Safe",
+									"sid": 606352618334397,
+									"parameters": {
+										"key": "\"TimerMin\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 407478140060917,
+									"parameters": {
+										"variable": "minute",
+										"value": "Music_Safe.ItemValue"
+									}
+								}
+							],
+							"sid": 293245683309197
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-exists",
+									"objectClass": "Music_Safe",
+									"sid": 473149648376447,
+									"parameters": {
+										"key": "\"TimerSec\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 830622287132670,
+									"parameters": {
+										"variable": "sec",
+										"value": "Music_Safe.ItemValue"
+									}
+								}
+							],
+							"sid": 579093351515971
+						},
+						{
+							"eventType": "comment",
+							"text": "Вывод на экран"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 918098441202620
+								}
+							],
+							"actions": [],
+							"sid": 956562372118737,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 792845768393495,
+											"parameters": {
+												"variable": "sec",
+												"comparison": 2,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 517516378578863,
+											"parameters": {
+												"variable": "minute",
+												"comparison": 2,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 524755359177532,
+											"parameters": {
+												"variable": "hour",
+												"comparison": 2,
+												"value": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Secundomer",
+											"sid": 272139295676214,
+											"parameters": {
+												"text": "\"0\"&hour&\":\"&\"0\"&minute&\":\"&\"0\"&sec"
+											}
+										}
+									],
+									"sid": 569763077554127
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 565573750583320,
+											"parameters": {
+												"variable": "sec",
+												"comparison": 5,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 212641931717359,
+											"parameters": {
+												"variable": "minute",
+												"comparison": 2,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 475776150490073,
+											"parameters": {
+												"variable": "hour",
+												"comparison": 2,
+												"value": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Secundomer",
+											"sid": 900808911697033,
+											"parameters": {
+												"text": "\"0\"&hour&\":\"&\"0\"&minute&\":\"&sec"
+											}
+										}
+									],
+									"sid": 130521374094031
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 738413800681690,
+											"parameters": {
+												"variable": "sec",
+												"comparison": 2,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 375159048589729,
+											"parameters": {
+												"variable": "minute",
+												"comparison": 5,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 406910307956123,
+											"parameters": {
+												"variable": "hour",
+												"comparison": 2,
+												"value": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Secundomer",
+											"sid": 270323135629679,
+											"parameters": {
+												"text": "\"0\"&hour&\":\"&minute&\":\"&\"0\"&sec"
+											}
+										}
+									],
+									"sid": 580264147136753
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 667317539125184,
+											"parameters": {
+												"variable": "sec",
+												"comparison": 5,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 421470091626583,
+											"parameters": {
+												"variable": "minute",
+												"comparison": 5,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 184687119795571,
+											"parameters": {
+												"variable": "hour",
+												"comparison": 2,
+												"value": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Secundomer",
+											"sid": 151571815615382,
+											"parameters": {
+												"text": "\"0\"&hour&\":\"&minute&\":\"&sec"
+											}
+										}
+									],
+									"sid": 365516636240243
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 710386035162250,
+											"parameters": {
+												"variable": "sec",
+												"comparison": 2,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 556762241603410,
+											"parameters": {
+												"variable": "minute",
+												"comparison": 2,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 639132971288139,
+											"parameters": {
+												"variable": "hour",
+												"comparison": 5,
+												"value": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Secundomer",
+											"sid": 876871281246855,
+											"parameters": {
+												"text": "hour&\":\"&\"0\"&minute&\":\"&\"0\"&sec"
+											}
+										}
+									],
+									"sid": 392562606095675
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 254379836282890,
+											"parameters": {
+												"variable": "sec",
+												"comparison": 2,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 875152954947169,
+											"parameters": {
+												"variable": "minute",
+												"comparison": 5,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 663793416152453,
+											"parameters": {
+												"variable": "hour",
+												"comparison": 5,
+												"value": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Secundomer",
+											"sid": 781168937130638,
+											"parameters": {
+												"text": "hour&\":\"&minute&\":\"&\"0\"&sec"
+											}
+										}
+									],
+									"sid": 371614395969399
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 401524710404686,
+											"parameters": {
+												"variable": "sec",
+												"comparison": 5,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 172859048155473,
+											"parameters": {
+												"variable": "minute",
+												"comparison": 2,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 191909491594875,
+											"parameters": {
+												"variable": "hour",
+												"comparison": 5,
+												"value": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Secundomer",
+											"sid": 788173837833780,
+											"parameters": {
+												"text": "hour&\":\"&\"0\"&minute&\":\"&sec"
+											}
+										}
+									],
+									"sid": 492364491956931
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 867430048009321,
+											"parameters": {
+												"variable": "sec",
+												"comparison": 5,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 922007589393260,
+											"parameters": {
+												"variable": "minute",
+												"comparison": 5,
+												"value": "10"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 899265378097199,
+											"parameters": {
+												"variable": "hour",
+												"comparison": 5,
+												"value": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "Secundomer",
+											"sid": 671972787713324,
+											"parameters": {
+												"text": "hour&\":\"&minute&\":\"&sec"
+											}
+										}
+									],
+									"sid": 981286821156160
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-end-of-layout",
+									"objectClass": "System",
+									"sid": 142561295370193
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 446311823263998,
+									"parameters": {
+										"variable": "Pause"
+									}
+								},
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 749044745258871,
+									"parameters": {
+										"key": 27
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "Music_Safe",
+									"sid": 483790413996295,
+									"parameters": {
+										"key": "\"TimerMin\"",
+										"value": "minute"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Music_Safe",
+									"sid": 973043695227674,
+									"parameters": {
+										"key": "\"TimerSec\"",
+										"value": "sec"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Music_Safe",
+									"sid": 407447817993057,
+									"parameters": {
+										"key": "\"TimerHour\"",
+										"value": "hour"
+									}
+								}
+							],
+							"sid": 822984113431339,
+							"isOrBlock": true
+						}
+					],
+					"sid": 814792863942674
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 297872356629896
-						}
-					],
-					"actions": [
-						{
-							"id": "get-item",
-							"objectClass": "Music_Safe",
-							"sid": 815480204486196,
-							"parameters": {
-								"key": "\"Enemys\""
-							}
+							"sid": 773212783054672
 						},
 						{
-							"id": "check-item-exists",
-							"objectClass": "Music_Safe",
-							"sid": 262674464076108,
-							"parameters": {
-								"key": "\"Enemys\""
-							}
-						},
-						{
-							"id": "get-item",
-							"objectClass": "Music_Safe",
-							"sid": 747713604271251,
-							"parameters": {
-								"key": "\"Time\""
-							}
-						},
-						{
-							"id": "check-item-exists",
-							"objectClass": "Music_Safe",
-							"sid": 526092777267619,
-							"parameters": {
-								"key": "\"Time\""
-							}
-						}
-					],
-					"sid": 365629448549123,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-end-of-layout",
+							"id": "on-loader-layout-complete",
 							"objectClass": "System",
-							"sid": 188591900952660
+							"sid": 265992440086071
 						}
 					],
 					"actions": [
 						{
-							"id": "set-item",
+							"id": "get-item",
 							"objectClass": "Music_Safe",
-							"sid": 613940693605277,
+							"sid": 459986467033781,
 							"parameters": {
-								"key": "\"Time\"",
-								"value": "wallclocktime"
+								"key": "\"Hardcore\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 132192742442572,
+							"parameters": {
+								"key": "\"Hardcore\""
 							}
 						}
 					],
-					"sid": 478679170471944,
-					"disabled": true
+					"sid": 762841062470285,
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Kayboard",
-							"sid": 487742810425207,
+							"id": "compare-key",
+							"objectClass": "Music_Safe",
+							"sid": 345388709921622,
 							"parameters": {
-								"key": 81
+								"comparison": 0,
+								"string": "\"Hardcore\""
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-item",
-							"objectClass": "Music_Safe",
-							"sid": 707578989614295,
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 513874015078642,
 							"parameters": {
-								"key": "\"Enemys\"",
-								"value": " Enemys+Music_Safe.ItemValue"
+								"variable": "Hardcore",
+								"value": "Music_Safe.ItemValue"
 							}
 						}
 					],
-					"sid": 370967427467291,
-					"disabled": true
+					"sid": 945270000155678
 				}
 			],
 			"sid": 749758173182818

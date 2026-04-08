@@ -47,6 +47,7 @@
 					"id": "stop",
 					"objectClass": "Audio",
 					"sid": 606609654181264,
+					"disabled": true,
 					"parameters": {
 						"tag": "\"Suspense\""
 					}
@@ -55,6 +56,7 @@
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 866928461341854,
+					"disabled": true,
 					"parameters": {
 						"variable": "Start_Game",
 						"value": "false"
@@ -64,6 +66,7 @@
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 820931319098975,
+					"disabled": true,
 					"parameters": {
 						"variable": "Continue_Game",
 						"value": "false"
@@ -73,6 +76,7 @@
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 830582446271194,
+					"disabled": true,
 					"parameters": {
 						"variable": "Safe_Zone",
 						"value": "true"
@@ -82,7 +86,6 @@
 					"id": "spawn-another-object",
 					"objectClass": "Player_All",
 					"sid": 736142898654159,
-					"disabled": true,
 					"parameters": {
 						"object": "Shadow3",
 						"layer": "\"Dialog\"",
@@ -95,7 +98,6 @@
 					"id": "set-scale",
 					"objectClass": "Shadow3",
 					"sid": 981756788912885,
-					"disabled": true,
 					"parameters": {
 						"scale": "5"
 					}
@@ -104,7 +106,6 @@
 					"id": "tween-one-property",
 					"objectClass": "Shadow3",
 					"sid": 524215412739408,
-					"disabled": true,
 					"behaviorType": "Твинанимация",
 					"parameters": {
 						"tags": "\"\"",
@@ -122,6 +123,7 @@
 					"id": "set-group-active",
 					"objectClass": "System",
 					"sid": 294719011442525,
+					"disabled": true,
 					"parameters": {
 						"group-name": "\"Player\"",
 						"state": "activated"
@@ -131,6 +133,7 @@
 					"id": "set-size",
 					"objectClass": "Camera",
 					"sid": 119492771930414,
+					"disabled": true,
 					"parameters": {
 						"width": "80",
 						"height": "45"
@@ -140,6 +143,7 @@
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 180860606948058,
+					"disabled": true,
 					"parameters": {
 						"seconds": "2",
 						"use-timescale": true
@@ -149,6 +153,7 @@
 					"id": "tween-one-property",
 					"objectClass": "EndScene",
 					"sid": 333121297801921,
+					"disabled": true,
 					"behaviorType": "Твинанимация",
 					"parameters": {
 						"tags": "\"\"",
@@ -166,6 +171,7 @@
 					"id": "add-to-instvar",
 					"objectClass": "Player_All",
 					"sid": 349503634220107,
+					"disabled": true,
 					"parameters": {
 						"instance-variable": "textframe",
 						"value": "1"
@@ -175,6 +181,7 @@
 					"id": "play",
 					"objectClass": "Audio",
 					"sid": 732150255364550,
+					"disabled": true,
 					"parameters": {
 						"audio-file": {
 							"path": "Music/Night_Club (Remaster)"
@@ -776,7 +783,7 @@
 			"conditions": [
 				{
 					"id": "key-is-down",
-					"objectClass": "Kayboard",
+					"objectClass": "Keyboard",
 					"sid": 854480152877307,
 					"parameters": {
 						"key": 20
@@ -977,10 +984,10 @@
 				{
 					"id": "set-range",
 					"objectClass": "EnemySecurity",
-					"sid": 977322800089084,
+					"sid": 701927228505202,
 					"behaviorType": "ПолеЗрения",
 					"parameters": {
-						"range": "400"
+						"range": "300"
 					}
 				},
 				{
@@ -2140,7 +2147,7 @@
 			"conditions": [
 				{
 					"id": "on-key-pressed",
-					"objectClass": "Kayboard",
+					"objectClass": "Keyboard",
 					"sid": 754377057547096,
 					"parameters": {
 						"key": 71
@@ -2159,467 +2166,6 @@
 				}
 			],
 			"sid": 104283288104107
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Player_All",
-					"sid": 175020258794203,
-					"parameters": {
-						"object": "Screen_Black"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "Player_All",
-					"sid": 560460518622646,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(0, 0, 0)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 915623088473323
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 536375876565533
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "Player_All",
-					"sid": 964351350013501,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(255, 255, 255)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 745984315417472
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Weapon",
-					"sid": 250356272551668,
-					"parameters": {
-						"object": "Screen_Black"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "Player_All",
-					"sid": 223044300226834,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(0, 0, 0)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 466006431032180
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 461483232167943
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "Weapon",
-					"sid": 856072252104625,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(255, 255, 255)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 517735606001052
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "EnemyBaseball",
-					"sid": 791305347251686,
-					"parameters": {
-						"object": "Screen_Black"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EnemyBaseball",
-					"sid": 735783229025524,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(0, 0, 0)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 246436295950362
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "EnemyBaseball",
-					"sid": 122730493452451,
-					"parameters": {
-						"object": "Screen_Black"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EnemyBaseball",
-					"sid": 201863513399685,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(255, 255, 255)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 323716290390591
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "EnemyFurious",
-					"sid": 381750497536857,
-					"parameters": {
-						"object": "Screen_Black"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EnemyFurious",
-					"sid": 582876263472181,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(0, 0, 0)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 641632421447924
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "EnemyFurious",
-					"sid": 121193219820667,
-					"parameters": {
-						"object": "Screen_Black"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EnemyFurious",
-					"sid": 916223673716254,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(255, 255, 255)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 489738957712659
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "EnemyKnife",
-					"sid": 970515982706791,
-					"parameters": {
-						"object": "Screen_Black"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EnemyKnife",
-					"sid": 971838738408541,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(0, 0, 0)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 560859031368503
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "EnemyKnife",
-					"sid": 448496552141233,
-					"parameters": {
-						"object": "Screen_Black"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EnemyKnife",
-					"sid": 490641326798498,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(255, 255, 255)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 439344853641370
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "EnemySecurity",
-					"sid": 394435485107246,
-					"parameters": {
-						"object": "Screen_Black"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EnemySecurity",
-					"sid": 372363378400882,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(0, 0, 0)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 954490286753562
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "EnemySecurity",
-					"sid": 504255277956911,
-					"parameters": {
-						"object": "Screen_Black"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EnemySecurity",
-					"sid": 617954606010814,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(255, 255, 255)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 524197207478313
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "EnemyPchel",
-					"sid": 235128204748064,
-					"parameters": {
-						"object": "Screen_Black"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EnemyPchel",
-					"sid": 506402284913608,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(0, 0, 0)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 558429600565261
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "EnemyPchel",
-					"sid": 201390546189061,
-					"parameters": {
-						"object": "Screen_Black"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EnemyPchel",
-					"sid": 612500648750612,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetColor",
-						"end-value": "rgbEx(255, 255, 255)",
-						"time": "0.1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 205062451884279
 		},
 		{
 			"eventType": "block",
@@ -2698,6 +2244,603 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Screen_Black",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_All",
+							"sid": 118248490860455,
+							"parameters": {
+								"object": "Screen_Black"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "Player_All",
+							"sid": 749360048024278,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(0, 0, 0)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 830585420325362
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 197584051830040
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "Player_All",
+							"sid": 401890627685342,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(255, 255, 255)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 553236308511317
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Weapon",
+							"sid": 263999653738758,
+							"parameters": {
+								"object": "Screen_Black"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "Weapon",
+							"sid": 143211235959717,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(0, 0, 0)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 206521089143146
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 775197746873762
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "Weapon",
+							"sid": 741053399867681,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(255, 255, 255)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 442320803028817
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Head",
+							"sid": 758020355882963,
+							"parameters": {
+								"object": "Screen_Black"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "Head",
+							"sid": 457596260875527,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(0, 0, 0)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 572393267452848
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 330709309777680
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "Head",
+							"sid": 550819946201285,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(255, 255, 255)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 581563488771261
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "HeadPlayer",
+							"sid": 635623496879235,
+							"parameters": {
+								"object": "Screen_Black"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "HeadPlayer",
+							"sid": 479212694508631,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(0, 0, 0)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 628144018500069
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 129732058224243
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "HeadPlayer",
+							"sid": 841004072307076,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(255, 255, 255)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 918031303251556
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "EnemyBaseball",
+							"sid": 848614385871609,
+							"parameters": {
+								"object": "Screen_Black"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "EnemyBaseball",
+							"sid": 780455809251284,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(0, 0, 0)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 428216417217170
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "EnemyBaseball",
+							"sid": 784099427494144,
+							"parameters": {
+								"object": "Screen_Black"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "EnemyBaseball",
+							"sid": 417755290137879,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(255, 255, 255)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 979725949128500
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "EnemyFurious",
+							"sid": 105005666852432,
+							"parameters": {
+								"object": "Screen_Black"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "EnemyFurious",
+							"sid": 351531580286628,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(0, 0, 0)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 224918379702269
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "EnemyFurious",
+							"sid": 357217811438079,
+							"parameters": {
+								"object": "Screen_Black"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "EnemyFurious",
+							"sid": 293601074451716,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(255, 255, 255)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 286534772096660
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "EnemyKnife",
+							"sid": 651443650041630,
+							"parameters": {
+								"object": "Screen_Black"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "EnemyKnife",
+							"sid": 886971056362262,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(0, 0, 0)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 287193382902696
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "EnemyKnife",
+							"sid": 376339711525655,
+							"parameters": {
+								"object": "Screen_Black"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "EnemyKnife",
+							"sid": 794436259015803,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(255, 255, 255)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 528497348869436
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "EnemySecurity",
+							"sid": 526819966227137,
+							"parameters": {
+								"object": "Screen_Black"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "EnemySecurity",
+							"sid": 478736157666199,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(0, 0, 0)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 168020716575781
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "EnemySecurity",
+							"sid": 884498604294065,
+							"parameters": {
+								"object": "Screen_Black"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "EnemySecurity",
+							"sid": 353341901306637,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(255, 255, 255)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 676370050221399
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "EnemyPchel",
+							"sid": 470094316660524,
+							"parameters": {
+								"object": "Screen_Black"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "EnemyPchel",
+							"sid": 420604385231489,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(0, 0, 0)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 247255800957305
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "EnemyPchel",
+							"sid": 542538580437617,
+							"parameters": {
+								"object": "Screen_Black"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "EnemyPchel",
+							"sid": 508521485738574,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(255, 255, 255)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 562700636007144
+				}
+			],
+			"sid": 539178525634971
 		}
 	],
 	"sid": 902713123400387

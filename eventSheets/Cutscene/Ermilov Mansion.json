@@ -22,6 +22,14 @@
 				{
 					"id": "save",
 					"objectClass": "System",
+					"sid": 587000489034432,
+					"parameters": {
+						"slot": "\"start\""
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
 					"sid": 664254159993927,
 					"parameters": {
 						"slot": "\"mysave\""
@@ -31,6 +39,7 @@
 					"id": "set-size",
 					"objectClass": "Camera",
 					"sid": 939076612873965,
+					"disabled": true,
 					"parameters": {
 						"width": "70",
 						"height": "35"
@@ -40,6 +49,7 @@
 					"id": "set-boolean-instvar",
 					"objectClass": "Camera",
 					"sid": 118745180398903,
+					"disabled": true,
 					"parameters": {
 						"instance-variable": "onPlayer",
 						"value": "false"
@@ -49,6 +59,7 @@
 					"id": "stop",
 					"objectClass": "Audio",
 					"sid": 372303895297816,
+					"disabled": true,
 					"parameters": {
 						"tag": "\"Suspense\""
 					}
@@ -57,6 +68,7 @@
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 746781399483705,
+					"disabled": true,
 					"parameters": {
 						"variable": "Start_Game",
 						"value": "false"
@@ -66,6 +78,7 @@
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 658466362838976,
+					"disabled": true,
 					"parameters": {
 						"variable": "Continue_Game",
 						"value": "false"
@@ -75,6 +88,7 @@
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 685700100124071,
+					"disabled": true,
 					"parameters": {
 						"variable": "Safe_Zone",
 						"value": "false"
@@ -84,6 +98,7 @@
 					"id": "set-group-active",
 					"objectClass": "System",
 					"sid": 617153848973742,
+					"disabled": true,
 					"parameters": {
 						"group-name": "\"Player\"",
 						"state": "deactivated"
@@ -93,6 +108,7 @@
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 627637861006779,
+					"disabled": true,
 					"parameters": {
 						"seconds": "1.0",
 						"use-timescale": true
@@ -102,6 +118,7 @@
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 418710934527041,
+					"disabled": true,
 					"parameters": {
 						"variable": "onDialMain",
 						"value": "true"
@@ -111,6 +128,7 @@
 					"id": "set-instvar-value",
 					"objectClass": "Player_All",
 					"sid": 715779451002826,
+					"disabled": true,
 					"parameters": {
 						"instance-variable": "textframe",
 						"value": "1"
@@ -1488,7 +1506,7 @@
 			"conditions": [
 				{
 					"id": "on-key-pressed",
-					"objectClass": "Kayboard",
+					"objectClass": "Keyboard",
 					"sid": 778705449107789,
 					"parameters": {
 						"key": 70
@@ -1627,6 +1645,11 @@
 					"parameters": {
 						"layout": "Building_Final"
 					}
+				},
+				{
+					"id": "save-to-json",
+					"objectClass": "System",
+					"sid": 987803295564044
 				}
 			],
 			"sid": 243919369276922

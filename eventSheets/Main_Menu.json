@@ -23,16 +23,6 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "Setting",
-			"type": "boolean",
-			"initialValue": "false",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 560361234417494
-		},
-		{
-			"eventType": "variable",
 			"name": "Start_Game",
 			"type": "boolean",
 			"initialValue": "false",
@@ -50,6 +40,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 927780246804480
+		},
+		{
+			"eventType": "variable",
+			"name": "Hardcore",
+			"type": "string",
+			"initialValue": "False",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 993083635854684
 		},
 		{
 			"eventType": "include",
@@ -1795,6 +1795,15 @@
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
+					"sid": 273249726311875,
+					"parameters": {
+						"layer": "\"Start_Menu\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
 					"sid": 332855144885595,
 					"parameters": {
 						"layer": "LayerIndex(\"Tutorial\")",
@@ -2014,7 +2023,7 @@
 						},
 						{
 							"id": "on-any-key-pressed",
-							"objectClass": "Kayboard",
+							"objectClass": "Keyboard",
 							"sid": 238785565349546
 						}
 					],
@@ -2056,7 +2065,7 @@
 						},
 						{
 							"id": "on-any-key-pressed",
-							"objectClass": "Kayboard",
+							"objectClass": "Keyboard",
 							"sid": 583757896161106
 						}
 					],
@@ -2466,6 +2475,22 @@
 										{
 											"id": "has-tags",
 											"objectClass": "Text_Menu",
+											"sid": 524167793394062,
+											"parameters": {
+												"tags": "\"Start_Menu\""
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Text_Menu",
+											"sid": 602789088487171,
+											"parameters": {
+												"tags": "\"Hardcore\""
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Text_Menu",
 											"sid": 413210726645413,
 											"parameters": {
 												"tags": "\"Setting\""
@@ -2639,59 +2664,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Setting"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 326591096280512,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "Text_Menu"
-							}
-						},
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 160373360021274,
-							"parameters": {
-								"layer": "\"Main_Menu\""
-							}
-						},
-						{
-							"id": "has-tags",
-							"objectClass": "Text_Menu",
-							"sid": 382674433614120,
-							"parameters": {
-								"tags": "\"Setting\""
-							}
-						},
-						{
-							"id": "compare-opacity",
-							"objectClass": "Menu",
-							"sid": 570320169969322,
-							"parameters": {
-								"comparison": 5,
-								"opacity": "90"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 597125466346450,
-							"parameters": {
-								"variable": "Setting",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 429894072134771
+					"text": "Main"
 				},
 				{
 					"eventType": "block",
@@ -2853,50 +2826,6 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 523825529274710,
-							"parameters": {
-								"variable": "Continue_Game"
-							}
-						},
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 116198978940170,
-							"parameters": {
-								"interval-seconds": "0.25"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 359209467937517,
-							"parameters": {
-								"variable": "Sound",
-								"comparison": 0,
-								"value": "-25"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "subtract-from-instvar",
-							"objectClass": "Numbers_Music",
-							"sid": 245941594635532,
-							"parameters": {
-								"instance-variable": "Music",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 422753748743943
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
 							"sid": 671420733629448,
 							"parameters": {
 								"variable": "Continue_Game"
@@ -2992,6 +2921,45 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 861038996793827,
+							"parameters": {
+								"layer": "\"Setting\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 241064648526141,
+							"parameters": {
+								"layer": "\"Start_Menu\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 190932418566544,
+							"parameters": {
+								"layer": "\"Main_Menu\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 222321558594628
+				},
+				{
+					"eventType": "comment",
+					"text": "New_Game"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-object-clicked",
 							"objectClass": "Mouse",
 							"sid": 522894283977190,
@@ -3004,9 +2972,9 @@
 						{
 							"id": "has-tags",
 							"objectClass": "Text_Menu",
-							"sid": 463193472265366,
+							"sid": 831019150363267,
 							"parameters": {
-								"tags": "\"New_Game\""
+								"tags": "\"Start_Menu\""
 							}
 						},
 						{
@@ -3029,75 +2997,21 @@
 					],
 					"actions": [
 						{
-							"id": "set-item",
-							"objectClass": "Music_Safe",
-							"sid": 890068666744037,
-							"parameters": {
-								"key": "\"Sound\"",
-								"value": "Numbers_Music.Music"
-							}
-						},
-						{
-							"id": "set-item",
-							"objectClass": "Music_Safe",
-							"sid": 381891445364033,
-							"parameters": {
-								"key": "\"Audio\"",
-								"value": "Numbers_Audio.Audio"
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Camera",
-							"sid": 330756991033006,
-							"parameters": {
-								"object": "Shadow3",
-								"layer": "7",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "Shadow3",
-							"sid": 992908426744123,
-							"parameters": {
-								"opacity": "0"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "Shadow3",
-							"sid": 308248628517780,
-							"parameters": {
-								"scale": "2"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 926602728000237,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
+							"id": "wait",
 							"objectClass": "System",
-							"sid": 510742502634652,
+							"sid": 471099910791605,
 							"parameters": {
-								"variable": "Start_Game",
-								"value": "true"
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 240011152906068,
+							"parameters": {
+								"layer": "\"Start_Menu\"",
+								"visibility": "visible"
 							}
 						}
 					],
@@ -3207,7 +3121,438 @@
 							}
 						}
 					],
-					"sid": 689729117760161
+					"sid": 689729117760161,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 966930373720019,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Text_Menu"
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 614839697938386,
+							"parameters": {
+								"tags": "\"New_Game\""
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 833127822539598,
+							"parameters": {
+								"layer": "\"Start_Menu\""
+							}
+						},
+						{
+							"id": "compare-opacity",
+							"objectClass": "Menu",
+							"sid": 867363737458718,
+							"parameters": {
+								"comparison": 5,
+								"opacity": "90"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 569620947915077,
+							"parameters": {
+								"variable": "Hardcore",
+								"value": "\"False\""
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 996285464695063,
+							"parameters": {
+								"key": "\"Hardcore\"",
+								"value": "Hardcore"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 345797918591218,
+							"parameters": {
+								"key": "\"Sound\"",
+								"value": "Numbers_Music.Music"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 175124357609834,
+							"parameters": {
+								"key": "\"Audio\"",
+								"value": "Numbers_Audio.Audio"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Camera",
+							"sid": 336694655653657,
+							"parameters": {
+								"object": "Shadow3",
+								"layer": "7",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Shadow3",
+							"sid": 451197881188859,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Shadow3",
+							"sid": 262991443119187,
+							"parameters": {
+								"scale": "2"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Shadow3",
+							"sid": 926730644910890,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "remove-item",
+							"objectClass": "Music_Safe",
+							"sid": 912498725060706,
+							"parameters": {
+								"key": "\"TimeMin\""
+							}
+						},
+						{
+							"id": "remove-item",
+							"objectClass": "Music_Safe",
+							"sid": 526651525197818,
+							"parameters": {
+								"key": "\"TimeSec\""
+							}
+						},
+						{
+							"id": "remove-item",
+							"objectClass": "Music_Safe",
+							"sid": 875908741042099,
+							"parameters": {
+								"key": "\"TimeHour\""
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 791111049518105,
+							"parameters": {
+								"key": "\"TimerMin\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 929163830582825,
+							"parameters": {
+								"key": "\"TimerSec\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 766439092988917,
+							"parameters": {
+								"key": "\"TimerHour\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 558076791656083,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 281470746798940
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 134662162664610,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Text_Menu"
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 452624791728648,
+							"parameters": {
+								"tags": "\"Hardcore\""
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 690312400275337,
+							"parameters": {
+								"layer": "\"Start_Menu\""
+							}
+						},
+						{
+							"id": "compare-opacity",
+							"objectClass": "Menu",
+							"sid": 734005511236830,
+							"parameters": {
+								"comparison": 5,
+								"opacity": "90"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 845115467010720,
+							"parameters": {
+								"variable": "Hardcore",
+								"value": "\"True\""
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 841469263324855,
+							"parameters": {
+								"key": "\"Hardcore\"",
+								"value": "Hardcore"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 545502383266253,
+							"parameters": {
+								"key": "\"Sound\"",
+								"value": "Numbers_Music.Music"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 593261827278535,
+							"parameters": {
+								"key": "\"Audio\"",
+								"value": "Numbers_Audio.Audio"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Camera",
+							"sid": 268044345810345,
+							"parameters": {
+								"object": "Shadow3",
+								"layer": "7",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Shadow3",
+							"sid": 185986163399963,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Shadow3",
+							"sid": 590966710117095,
+							"parameters": {
+								"scale": "2"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Shadow3",
+							"sid": 843925350470367,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "remove-item",
+							"objectClass": "Music_Safe",
+							"sid": 885505201305463,
+							"parameters": {
+								"key": "\"TimeMin\""
+							}
+						},
+						{
+							"id": "remove-item",
+							"objectClass": "Music_Safe",
+							"sid": 737310764921481,
+							"parameters": {
+								"key": "\"TimeSec\""
+							}
+						},
+						{
+							"id": "remove-item",
+							"objectClass": "Music_Safe",
+							"sid": 317941779582342,
+							"parameters": {
+								"key": "\"TimeHour\""
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 169281808178477,
+							"parameters": {
+								"key": "\"TimerMin\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 342723950188474,
+							"parameters": {
+								"key": "\"TimerSec\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 890753276739414,
+							"parameters": {
+								"key": "\"TimerHour\"",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 513313188656178,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 955370638804107
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 930012591817689,
+							"parameters": {
+								"variable": "Start_Game"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 454225831101059,
+							"parameters": {
+								"seconds": "3",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 325184179602268,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						},
+						{
+							"id": "get-item",
+							"objectClass": "Music_Safe",
+							"sid": 605136176450572,
+							"parameters": {
+								"key": "\"Sound\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 378968559845396,
+							"parameters": {
+								"key": "\"Sound\""
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 227807791219919
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 604394527517670,
+							"parameters": {
+								"layout": "Station"
+							}
+						}
+					],
+					"sid": 564722983573844
 				},
 				{
 					"eventType": "block",
@@ -3257,63 +3602,73 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 374043756983691,
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 524725924457142,
 							"parameters": {
-								"variable": "Start_Game"
+								"object": "Text_Menu"
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 535571337641028,
+							"parameters": {
+								"tags": "\"Hardcore\""
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 370304168405150,
+							"parameters": {
+								"layer": "\"Start_Menu\""
+							}
+						},
+						{
+							"id": "compare-opacity",
+							"objectClass": "Menu",
+							"sid": 335998773885664,
+							"parameters": {
+								"comparison": 5,
+								"opacity": "90"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "wait",
+							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 260735040000327,
+							"sid": 442415454829602,
 							"parameters": {
-								"seconds": "3",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "stop",
-							"objectClass": "Audio",
-							"sid": 140205262290555,
-							"parameters": {
-								"tag": "\"music\""
-							}
-						},
-						{
-							"id": "get-item",
-							"objectClass": "Music_Safe",
-							"sid": 948070053295674,
-							"parameters": {
-								"key": "\"Sound\""
-							}
-						},
-						{
-							"id": "check-item-exists",
-							"objectClass": "Music_Safe",
-							"sid": 749180695007776,
-							"parameters": {
-								"key": "\"Sound\""
-							}
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 927609173642107
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 317648907339948,
-							"parameters": {
-								"layout": "Station"
+								"layer": "\"Hardcore\"",
+								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 445436350708373
+					"sid": 776146321480294
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 462111232072549
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 532107047751191,
+							"parameters": {
+								"layer": "\"Hardcore\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 530388694853017
 				},
 				{
 					"eventType": "block",
@@ -3321,7 +3676,7 @@
 						{
 							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 558774919459513,
+							"sid": 555297880118249,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked",
@@ -3331,15 +3686,15 @@
 						{
 							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 913532090468828,
+							"sid": 971986072307328,
 							"parameters": {
-								"layer": "\"Setting\""
+								"layer": "\"Start_Menu\""
 							}
 						},
 						{
 							"id": "has-tags",
 							"objectClass": "Text_Menu",
-							"sid": 980036185911310,
+							"sid": 219937562233939,
 							"parameters": {
 								"tags": "\"Back\""
 							}
@@ -3349,76 +3704,16 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 165118546347760,
+							"sid": 300709603924288,
 							"parameters": {
 								"seconds": "0.1",
 								"use-timescale": true
 							}
 						},
 						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 905497303051197,
-							"parameters": {
-								"variable": "Setting",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 876422606393060
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 324079303427784,
-							"parameters": {
-								"variable": "Setting"
-							}
-						}
-					],
-					"actions": [
-						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 943168321612682,
-							"parameters": {
-								"layer": "\"Main_Menu\"",
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 769521001314160,
-							"parameters": {
-								"layer": "\"Setting\"",
-								"visibility": "visible"
-							}
-						}
-					],
-					"sid": 729570403514240
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 127108155069478,
-							"parameters": {
-								"variable": "Setting"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 915801967135005,
+							"sid": 224788057042276,
 							"parameters": {
 								"layer": "\"Main_Menu\"",
 								"visibility": "visible"
@@ -3427,14 +3722,104 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 698396254703546,
+							"sid": 669737656645515,
 							"parameters": {
-								"layer": "\"Setting\"",
+								"layer": "\"Start_Menu\"",
 								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 108492293669544
+					"sid": 594120338396442
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 837384988015732,
+							"parameters": {
+								"layer": "\"Start_Menu\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 992530853894014,
+							"parameters": {
+								"layer": "\"Main_Menu\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 304705576618669
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 520621060721202
+						},
+						{
+							"id": "on-loader-layout-complete",
+							"objectClass": "System",
+							"sid": 567653857669692
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "Music_Safe",
+							"sid": 622003246105854,
+							"parameters": {
+								"key": "\"Hardcore\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 562202511484586,
+							"parameters": {
+								"key": "\"Hardcore\""
+							}
+						}
+					],
+					"sid": 934424265628858,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-key",
+							"objectClass": "Music_Safe",
+							"sid": 836812751687512,
+							"parameters": {
+								"comparison": 0,
+								"string": "\"Hardcore\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 650072021199866,
+							"parameters": {
+								"variable": "Hardcore",
+								"value": "Music_Safe.ItemValue"
+							}
+						}
+					],
+					"sid": 716572813868049
+				},
+				{
+					"eventType": "comment",
+					"text": "Setting"
 				},
 				{
 					"eventType": "block",
@@ -3470,6 +3855,179 @@
 					"sid": 530028462635100
 				},
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 465148437419789,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Text_Menu"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 808560465647978,
+							"parameters": {
+								"layer": "\"Main_Menu\""
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 944029275479135,
+							"parameters": {
+								"tags": "\"Setting\""
+							}
+						},
+						{
+							"id": "compare-opacity",
+							"objectClass": "Menu",
+							"sid": 505518660530305,
+							"parameters": {
+								"comparison": 5,
+								"opacity": "90"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 410766216621176,
+							"parameters": {
+								"layer": "\"Setting\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 494101099184833
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 268879510706776,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Text_Menu"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 848074171619916,
+							"parameters": {
+								"layer": "\"Setting\""
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 677172463234800,
+							"parameters": {
+								"tags": "\"Back\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 662158841156760,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 730173981980325,
+							"parameters": {
+								"layer": "\"Setting\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 302592548506047
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 208593258537779,
+							"parameters": {
+								"variable": "Continue_Game"
+							}
+						},
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 784374394848058,
+							"parameters": {
+								"interval-seconds": "0.25"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 992258509822477,
+							"parameters": {
+								"variable": "Sound",
+								"comparison": 0,
+								"value": "-25"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Numbers_Music",
+							"sid": 483317877669909,
+							"parameters": {
+								"instance-variable": "Music",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 733656990588888
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 318834788214803,
+							"parameters": {
+								"layer": "\"Setting\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 834463767533711,
+							"parameters": {
+								"layer": "\"Main_Menu\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 816310317491587
+				},
+				{
 					"eventType": "comment",
 					"text": "Resolution"
 				},
@@ -3502,6 +4060,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 964098670934754,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
 						{
 							"id": "request-fullscreen",
 							"objectClass": "Browser",
@@ -3542,6 +4109,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 808000439369790,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
 						{
 							"id": "cancel-fullscreen",
 							"objectClass": "Browser",
@@ -3776,6 +4352,14 @@
 							"sid": 493413934314879,
 							"parameters": {
 								"tags": "\"Level\""
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 815401550751440,
+							"parameters": {
+								"layer": "\"Main_Menu\""
 							}
 						},
 						{
