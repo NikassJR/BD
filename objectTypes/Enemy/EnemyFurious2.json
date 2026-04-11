@@ -1,0 +1,5257 @@
+{
+	"name": "EnemyFurious2",
+	"plugin-id": "Sprite",
+	"sid": 183673667013064,
+	"isGlobal": false,
+	"editorNewInstanceIsReplica": true,
+	"instanceVariables": [
+		{
+			"name": "vision",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 541783964314213
+		},
+		{
+			"name": "triger",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 474183645114512
+		},
+		{
+			"name": "search",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 899984808271963
+		},
+		{
+			"name": "searchPlayer",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 236575658677352
+		},
+		{
+			"name": "patrul",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 686507256020080
+		},
+		{
+			"name": "DifY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 640588891889544
+		},
+		{
+			"name": "probejka",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 179257931984794
+		},
+		{
+			"name": "speed",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 913777555545168
+		},
+		{
+			"name": "speedPatrul",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 501799965049360
+		},
+		{
+			"name": "speedDamage",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 707064601772637
+		},
+		{
+			"name": "patrulTimerID",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 296913315473701
+		},
+		{
+			"name": "MovingToRamp",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 511879014711144
+		},
+		{
+			"name": "onRamp",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 428981134173409
+		},
+		{
+			"name": "Kick",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 677652703691144
+		},
+		{
+			"name": "DifX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 571541506437103
+		},
+		{
+			"name": "rotate",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 832555274472408
+		},
+		{
+			"name": "HP",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 996962269484366
+		},
+		{
+			"name": "Damage",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 834927971936231
+		},
+		{
+			"name": "Down",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 399597167433022
+		},
+		{
+			"name": "Death",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 988036524110467
+		},
+		{
+			"name": "Rolling",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 788709731834590
+		},
+		{
+			"name": "Rough",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 879121949970748
+		},
+		{
+			"name": "UpDownY",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 493815740640192
+		},
+		{
+			"name": "UpDownX",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 186657784715997
+		},
+		{
+			"name": "Finishing",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 404713489066538
+		},
+		{
+			"name": "HeavyPunch",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 205575492241535
+		},
+		{
+			"name": "Drop",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 310099097801352
+		},
+		{
+			"name": "Fear",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 941182021712594
+		},
+		{
+			"name": "FearSwitch",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 969580409227031
+		},
+		{
+			"name": "StopFear",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 141026967337531
+		},
+		{
+			"name": "Dialog",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 609333690044255
+		},
+		{
+			"name": "HasDialog",
+			"type": "boolean",
+			"desc": "",
+			"show": true,
+			"sid": 419458919448106
+		},
+		{
+			"name": "RollDeathWolf",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 358921348437785
+		},
+		{
+			"name": "Heavy",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 514538985158818
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Platform",
+			"name": "Платформер",
+			"sid": 314486232497029
+		},
+		{
+			"behaviorId": "custom",
+			"name": "НастраиваемоеДвижение",
+			"sid": 311581239943137
+		},
+		{
+			"behaviorId": "LOS",
+			"name": "ПолеЗрения",
+			"sid": 389378205965839
+		},
+		{
+			"behaviorId": "Tween",
+			"name": "Твинанимация",
+			"sid": 868293683255649
+		},
+		{
+			"behaviorId": "Timer",
+			"name": "Таймер",
+			"sid": 819395509795005
+		},
+		{
+			"behaviorId": "Physics",
+			"name": "Физика",
+			"sid": 168400765475520
+		}
+	],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6212604,
+						"collisionPoly": {
+							"points": [
+								0.021942259511392247,
+								0.10243627267290459,
+								0.8568532578701822,
+								0.10354378954780724,
+								0.8650626820868791,
+								0.9994463112663184,
+								0.4610071617715336,
+								1,
+								0.015483915957786787,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.9664683612763656,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.03353163872363438,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.27906976744186046
+							}
+						],
+						"duration": 10,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9514041,
+						"collisionPoly": {
+							"points": [
+								0.021942259511392247,
+								0.10243627267290459,
+								0.8568532578701822,
+								0.10354378954780724,
+								0.8650626820868791,
+								0.9994463112663184,
+								0.4610071617715336,
+								1,
+								0.015483915957786787,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.9664683612763656,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.03353163872363438,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.27906976744186046
+							}
+						],
+						"duration": 10,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8140382,
+						"collisionPoly": {
+							"points": [
+								0.021942259511392247,
+								0.10243627267290459,
+								0.8568532578701822,
+								0.10354378954780724,
+								0.8650626820868791,
+								0.9994463112663184,
+								0.4610071617715336,
+								1,
+								0.015483915957786787,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.9664683612763656,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.03353163872363438,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.27906976744186046
+							}
+						],
+						"duration": 10,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6790151,
+						"collisionPoly": {
+							"points": [
+								0.021942259511392247,
+								0.10243627267290459,
+								0.8568532578701822,
+								0.10354378954780724,
+								0.8650626820868791,
+								0.9994463112663184,
+								0.4610071617715336,
+								1,
+								0.015483915957786787,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.9664683612763656,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.03353163872363438,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.27906976744186046
+							}
+						],
+						"duration": 10,
+						"tag": ""
+					}
+				],
+				"sid": 197148787026317,
+				"name": "Idle2",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 0
+			},
+			{
+				"frames": [
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8064890,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9931482,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4410837,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 88136,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6201654,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 960523,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4418678,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7291906,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 763636022124532,
+				"name": "Rollin",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 15
+			},
+			{
+				"frames": [
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6853084,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6081376,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9273425,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4922100,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7263119,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6441840,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4621325,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5198922,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 540432150956870,
+				"name": "Walk",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			},
+			{
+				"frames": [
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7647409,
+						"collisionPoly": {
+							"points": [
+								0.05647843066244032,
+								0.8466223065111197,
+								0.9687156212554289,
+								0.8294574234836788,
+								0.9651167099658035,
+								1,
+								0.477644106082346,
+								1,
+								0.057758925893113836,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.46875,
+								"y": 0.8953488372093024
+							},
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 10,
+						"tag": ""
+					}
+				],
+				"sid": 686470043775682,
+				"name": "onGround",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 30
+			},
+			{
+				"frames": [
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5789443,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Kick",
+								"x": 0.7790697674418605,
+								"y": 0.36046511627906974
+							},
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.23255813953488372,
+								"y": 0.29069767441860467
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5592723,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Kick",
+								"x": 0.7790697674418605,
+								"y": 0.36046511627906974
+							},
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.23255813953488372,
+								"y": 0.29069767441860467
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 2410826,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Kick",
+								"x": 0.7790697674418605,
+								"y": 0.36046511627906974
+							},
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.23255813953488372,
+								"y": 0.29069767441860467
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 174646424522234,
+				"name": "Kick",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 18
+			},
+			{
+				"frames": [
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4186624,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8735690,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 7757367,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6255666,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8505536,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4663026,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 8211759,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 4612727,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.8047593293672256,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.19524067063277448,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.3488372093023256
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 326981584975941,
+				"name": "Run",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			},
+			{
+				"frames": [
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5706224,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.7674418604651163,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 134213437573233,
+				"name": "Down",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 10
+			},
+			{
+				"frames": [
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 563914,
+						"collisionPoly": {
+							"points": [
+								0.7777892215175356,
+								1,
+								0.522355893917654,
+								1,
+								0.2906973956035227,
+								0.9994463112663186,
+								0.29540413215442884,
+								0.10354378954780724,
+								0.7740864378801351,
+								0.10243627267290459
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.2325581395348837,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.627906976744186,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.5
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 836340160414234,
+				"name": "Damage",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 7
+			},
+			{
+				"frames": [
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3497818,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.7674418604651163,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.27906976744186046
+							}
+						],
+						"duration": 10,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 5974825,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.7674418604651163,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.27906976744186046
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 9659278,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.7674418604651163,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.27906976744186046
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 1231488,
+						"collisionPoly": {
+							"points": [
+								0.2259135621198649,
+								0.10243627267290459,
+								0.7045958678455712,
+								0.10354378954780724,
+								0.7093026043964773,
+								0.9994463112663186,
+								0.477644106082346,
+								1,
+								0.22221077848246443,
+								1
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Точка спрайта 1",
+								"x": 0.7674418604651163,
+								"y": 0.37209302325581395
+							},
+							{
+								"name": "Blood",
+								"x": 0.23255813953488372,
+								"y": 0.2558139534883721
+							},
+							{
+								"name": "Glass",
+								"x": 0.5,
+								"y": 0.27906976744186046
+							}
+						],
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 811242924882254,
+				"name": "Idle",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 7
+			}
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							{
+								"frames": [
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 6315474,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 4552793,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 9913532,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 334940,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 2104937,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 7503253,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 2890894,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 1531922,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 9759287,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									}
+								],
+								"sid": 305893449653875,
+								"name": "noWeaponFinishing",
+								"isLooping": false,
+								"isPingPong": false,
+								"repeatCount": 1,
+								"repeatTo": 0,
+								"speed": 10
+							},
+							{
+								"frames": [
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 5033055,
+										"collisionPoly": {
+											"points": [
+												0.053156196873053355,
+												0.8338869671488918,
+												0.965116152335639,
+												0.8405315107681427,
+												0.9651162790697675,
+												1,
+												0.05647837996878893,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.32558139534883723,
+												"y": 0.9069767441860465
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 6815203,
+										"collisionPoly": {
+											"points": [
+												0.053156196873053355,
+												0.8338869671488918,
+												0.965116152335639,
+												0.8405315107681427,
+												0.9651162790697675,
+												1,
+												0.05647837996878893,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.32558139534883723,
+												"y": 0.9069767441860465
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 2913337,
+										"collisionPoly": {
+											"points": [
+												0.053156196873053355,
+												0.8338869671488918,
+												0.965116152335639,
+												0.8405315107681427,
+												0.9651162790697675,
+												1,
+												0.05647837996878893,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.32558139534883723,
+												"y": 0.9069767441860465
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 665202,
+										"collisionPoly": {
+											"points": [
+												0.053156196873053355,
+												0.8338869671488918,
+												0.965116152335639,
+												0.8405315107681427,
+												0.9651162790697675,
+												1,
+												0.05647837996878893,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.32558139534883723,
+												"y": 0.9069767441860465
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 311621,
+										"collisionPoly": {
+											"points": [
+												0.053156196873053355,
+												0.8338869671488918,
+												0.965116152335639,
+												0.8405315107681427,
+												0.9651162790697675,
+												1,
+												0.05647837996878893,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.32558139534883723,
+												"y": 0.9069767441860465
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 5471077,
+										"collisionPoly": {
+											"points": [
+												0.053156196873053355,
+												0.8338869671488918,
+												0.965116152335639,
+												0.8405315107681427,
+												0.9651162790697675,
+												1,
+												0.05647837996878893,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.32558139534883723,
+												"y": 0.9069767441860465
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 577512,
+										"collisionPoly": {
+											"points": [
+												0.053156196873053355,
+												0.8338869671488918,
+												0.965116152335639,
+												0.8405315107681427,
+												0.9651162790697675,
+												1,
+												0.05647837996878893,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.32558139534883723,
+												"y": 0.9069767441860465
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 2625155,
+										"collisionPoly": {
+											"points": [
+												0.053156196873053355,
+												0.8338869671488918,
+												0.965116152335639,
+												0.8405315107681427,
+												0.9651162790697675,
+												1,
+												0.05647837996878893,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.32558139534883723,
+												"y": 0.9069767441860465
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 9844571,
+										"collisionPoly": {
+											"points": [
+												0.053156196873053355,
+												0.8338869671488918,
+												0.965116152335639,
+												0.8405315107681427,
+												0.9651162790697675,
+												1,
+												0.05647837996878893,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.32558139534883723,
+												"y": 0.9069767441860465
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									}
+								],
+								"sid": 666530875969837,
+								"name": "KnifeFinishing",
+								"isLooping": false,
+								"isPingPong": false,
+								"repeatCount": 1,
+								"repeatTo": 0,
+								"speed": 10
+							},
+							{
+								"frames": [
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 8298488,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 5654373,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 2307705,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 8792766,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 2686384,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 9558489,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 2978154,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 3833663,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 8248661,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									}
+								],
+								"sid": 533375920000477,
+								"name": "BrickFinishing",
+								"isLooping": false,
+								"isPingPong": false,
+								"repeatCount": 1,
+								"repeatTo": 0,
+								"speed": 10
+							},
+							{
+								"frames": [
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 4953137,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 4191704,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 2247584,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 1940167,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 3064004,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 3704924,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 645636,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 8650496,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 5950263,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									}
+								],
+								"sid": 328081474680116,
+								"name": "BaseballFinishing",
+								"isLooping": false,
+								"isPingPong": false,
+								"repeatCount": 1,
+								"repeatTo": 0,
+								"speed": 10
+							},
+							{
+								"frames": [
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 7835486,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 6374624,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 7738343,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 1059422,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 6296489,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 5414792,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 927111,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 6048602,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 2308881,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									}
+								],
+								"sid": 259869693143728,
+								"name": "StakeFinishing",
+								"isLooping": false,
+								"isPingPong": false,
+								"repeatCount": 1,
+								"repeatTo": 0,
+								"speed": 10
+							},
+							{
+								"frames": [
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 9322970,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 8511347,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 5265007,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 5923236,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 6744220,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 8263541,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 4355757,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 7562861,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 100,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 66534,
+										"collisionPoly": {
+											"points": [
+												1,
+												0.8073089194060165,
+												1,
+												1,
+												0.19940476190476197,
+												1,
+												0.2038690703255789,
+												0.8056477391442588
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.3229166666666667,
+												"y": 0.8837209302325582
+											},
+											{
+												"name": "Glass",
+												"x": 0.625,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									}
+								],
+								"sid": 947921343394528,
+								"name": "ExtinguisherFinishing",
+								"isLooping": false,
+								"isPingPong": false,
+								"repeatCount": 1,
+								"repeatTo": 0,
+								"speed": 10
+							},
+							{
+								"frames": [
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 9751626,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 2,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 679923,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 3889522,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 7894600,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 5188886,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 4098222,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 5241959,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									}
+								],
+								"sid": 243294268434209,
+								"name": "DeathRose",
+								"isLooping": false,
+								"isPingPong": false,
+								"repeatCount": 1,
+								"repeatTo": 0,
+								"speed": 10
+							},
+							{
+								"frames": [
+									{
+										"width": 150,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 2654013,
+										"collisionPoly": {
+											"points": [
+												0.4811516864223202,
+												0.8314920151463011,
+												1,
+												0.8301013320820285,
+												1,
+												1,
+												0.48506790680742756,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Точка спрайта 1",
+												"x": 0.48,
+												"y": 1.1627906976744187
+											},
+											{
+												"name": "Точка спрайта 2",
+												"x": 0.5,
+												"y": 0.5116279069767442
+											},
+											{
+												"name": "Blood",
+												"x": 0.47333333333333333,
+												"y": 1.372093023255814
+											},
+											{
+												"name": "Glass",
+												"x": 0.4866666666666667,
+												"y": 0.5116279069767442
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 150,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 8944234,
+										"collisionPoly": {
+											"points": [
+												0.4811516864223202,
+												0.8314920151463011,
+												1,
+												0.8301013320820285,
+												1,
+												1,
+												0.48506790680742756,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Точка спрайта 1",
+												"x": 0.48,
+												"y": 2.316349503817274
+											},
+											{
+												"name": "Точка спрайта 2",
+												"x": 0.5,
+												"y": 1.148999459167117
+											},
+											{
+												"name": "Blood",
+												"x": 0.5066666666666667,
+												"y": 2.2102267724854414
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 1.148999459167117
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 150,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 4296540,
+										"collisionPoly": {
+											"points": [
+												0.4811516864223202,
+												0.8314920151463011,
+												1,
+												0.8301013320820285,
+												1,
+												1,
+												0.48506790680742756,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Точка спрайта 1",
+												"x": 0.48,
+												"y": 1.5413737155219038
+											},
+											{
+												"name": "Точка спрайта 2",
+												"x": 0.5,
+												"y": 0.872093023255814
+											},
+											{
+												"name": "Blood",
+												"x": 0.5066666666666667,
+												"y": 1.4805300162249864
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.872093023255814
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 150,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 3601790,
+										"collisionPoly": {
+											"points": [
+												0.4811516864223202,
+												0.8314920151463011,
+												1,
+												0.8301013320820285,
+												1,
+												1,
+												0.48506790680742756,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Точка спрайта 1",
+												"x": 0.48,
+												"y": 1.5413737155219038
+											},
+											{
+												"name": "Точка спрайта 2",
+												"x": 0.5,
+												"y": 0.872093023255814
+											},
+											{
+												"name": "Blood",
+												"x": 0.5066666666666667,
+												"y": 1.4805300162249864
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.872093023255814
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 150,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 5178733,
+										"collisionPoly": {
+											"points": [
+												0.4811516864223202,
+												0.8314920151463011,
+												1,
+												0.8301013320820285,
+												1,
+												1,
+												0.48506790680742756,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Точка спрайта 1",
+												"x": 0.48,
+												"y": 1.5413737155219038
+											},
+											{
+												"name": "Точка спрайта 2",
+												"x": 0.5,
+												"y": 0.872093023255814
+											},
+											{
+												"name": "Blood",
+												"x": 0.5066666666666667,
+												"y": 1.4805300162249864
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.872093023255814
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 150,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 1246975,
+										"collisionPoly": {
+											"points": [
+												0.4811516864223202,
+												0.8314920151463011,
+												1,
+												0.8301013320820285,
+												1,
+												1,
+												0.48506790680742756,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Точка спрайта 1",
+												"x": 0.48,
+												"y": 1.5413737155219038
+											},
+											{
+												"name": "Точка спрайта 2",
+												"x": 0.5,
+												"y": 0.872093023255814
+											},
+											{
+												"name": "Blood",
+												"x": 0.5066666666666667,
+												"y": 1.4805300162249864
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.872093023255814
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									}
+								],
+								"sid": 441474260663936,
+								"name": "DeathMont",
+								"isLooping": false,
+								"isPingPong": false,
+								"repeatCount": 1,
+								"repeatTo": 0,
+								"speed": 10
+							},
+							{
+								"frames": [
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 2575535,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 2,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 417854,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 8973088,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 8597770,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 933347,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 5185046,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 6500866,
+										"collisionPoly": {
+											"points": [
+												1,
+												1,
+												0.522355893917654,
+												1,
+												0.12790677396958117,
+												1,
+												0.12956803027181532,
+												0.8294574234836786,
+												1,
+												0.8349943868609626
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5,
+												"y": 0.20930232558139536
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									}
+								],
+								"sid": 656779027090787,
+								"name": "DeathGlass",
+								"isLooping": false,
+								"isPingPong": false,
+								"repeatCount": 1,
+								"repeatTo": 0,
+								"speed": 10
+							},
+							{
+								"frames": [
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 2067716,
+										"collisionPoly": {
+											"points": [
+												0.08803988400751803,
+												0.8648948331475919,
+												0.9568105298419332,
+												0.8477298233860223,
+												0.9518276227273016,
+												1,
+												0.477644106082346,
+												1,
+												0.07603132579545759,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5465116279069767,
+												"y": 0.27906976744186046
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											},
+											{
+												"name": "Kill",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 2437906,
+										"collisionPoly": {
+											"points": [
+												0.08803988400751803,
+												0.8648948331475919,
+												0.9568105298419332,
+												0.8477298233860223,
+												0.9518276227273016,
+												1,
+												0.477644106082346,
+												1,
+												0.07603132579545759,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5465116279069767,
+												"y": 0.27906976744186046
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											},
+											{
+												"name": "Kill",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 3060152,
+										"collisionPoly": {
+											"points": [
+												0.08803988400751803,
+												0.8648948331475919,
+												0.9568105298419332,
+												0.8477298233860223,
+												0.9518276227273016,
+												1,
+												0.477644106082346,
+												1,
+												0.07603132579545759,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5465116279069767,
+												"y": 0.27906976744186046
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											},
+											{
+												"name": "Kill",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									},
+									{
+										"width": 86,
+										"height": 86,
+										"originX": 0.5,
+										"originY": 0.5,
+										"originalSource": "",
+										"exportFormat": "lossless",
+										"exportQuality": 0.8,
+										"fileType": "image/png",
+										"imageSpriteId": 8874576,
+										"collisionPoly": {
+											"points": [
+												0.08803988400751803,
+												0.8648948331475919,
+												0.9568105298419332,
+												0.8477298233860223,
+												0.9518276227273016,
+												1,
+												0.477644106082346,
+												1,
+												0.07603132579545759,
+												1
+											]
+										},
+										"useCollisionPoly": true,
+										"imagePoints": [
+											{
+												"name": "Blood",
+												"x": 0.5465116279069767,
+												"y": 0.27906976744186046
+											},
+											{
+												"name": "Glass",
+												"x": 0.5,
+												"y": 0.5
+											},
+											{
+												"name": "Kill",
+												"x": 0.5,
+												"y": 0.5
+											}
+										],
+										"duration": 1,
+										"tag": ""
+									}
+								],
+								"sid": 315041104100635,
+								"name": "KnifeDeath",
+								"isLooping": false,
+								"isPingPong": false,
+								"repeatCount": 1,
+								"repeatTo": 0,
+								"speed": 10
+							}
+						],
+						"subfolders": [],
+						"name": "Finishing"
+					}
+				],
+				"name": "Death"
+			}
+		]
+	}
+}

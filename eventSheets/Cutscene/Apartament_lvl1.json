@@ -53,10 +53,10 @@
 				{
 					"id": "set-size",
 					"objectClass": "Camera",
-					"sid": 685331608555273,
+					"sid": 339634138456202,
 					"parameters": {
-						"width": "70",
-						"height": "35"
+						"width": "80",
+						"height": "45"
 					}
 				},
 				{
@@ -89,10 +89,10 @@
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 784770500263023,
+					"sid": 532364076793731,
 					"parameters": {
 						"object-to-create": "Shadow3",
-						"layer": "\"Player\"",
+						"layer": "\"Front\"",
 						"x": "Player_Cutscene.X",
 						"y": "Player_Cutscene.Y",
 						"create-hierarchy": false,
@@ -207,6 +207,24 @@
 					"parameters": {
 						"group-name": "\"Player\"",
 						"state": "activated"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "EnemyPchel",
+					"sid": 443183943316061,
+					"parameters": {
+						"instance-variable": "speed",
+						"value": "200"
+					}
+				},
+				{
+					"id": "set-range",
+					"objectClass": "EnemyFurious2",
+					"sid": 943341996072393,
+					"behaviorType": "ПолеЗрения",
+					"parameters": {
+						"range": "100"
 					}
 				}
 			],
@@ -941,46 +959,6 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 377764384988564,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "6"
-							}
-						},
-						{
-							"id": "compare-animation-frame",
-							"objectClass": "Player_All",
-							"sid": 107452040922944,
-							"parameters": {
-								"comparison": 0,
-								"number": "4"
-							}
-						},
-						{
-							"id": "is-animation-playing",
-							"objectClass": "Player_All",
-							"sid": 699244291206408,
-							"parameters": {
-								"animation": "\"noWeaponLegKick\""
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 315995744555644
-						}
-					],
-					"actions": [],
-					"sid": 310767760832705,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
 							"sid": 966676658439209,
 							"parameters": {
 								"instance-variable": "textframe",
@@ -1249,6 +1227,14 @@
 								"comparison": 0,
 								"value": "8"
 							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "EnemyBaseball",
+							"sid": 507954724932294,
+							"parameters": {
+								"tags": "\"Crash\""
+							}
 						}
 					],
 					"actions": [
@@ -1497,6 +1483,99 @@
 				{
 					"id": "is-overlapping-another-object",
 					"objectClass": "Player_All",
+					"sid": 462579882237027,
+					"parameters": {
+						"object": "Save_Stolb"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_All",
+					"sid": 802826518065099,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 0,
+						"value": "10"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 336632839947881,
+					"parameters": {
+						"variable": "onDial"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 316922461233592,
+					"parameters": {
+						"variable": "onDial",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 202663383677596,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 902166032643840
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_Dealogue",
+							"sid": 150211548585086,
+							"parameters": [
+								"Player_All.X",
+								"Player_All.Y -50",
+								"791",
+								"1",
+								true,
+								false
+							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 680577246995608,
+							"parameters": {
+								"seconds": "4",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_All",
+							"sid": 928652985194172,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "Destroy_Dialoge",
+							"sid": 379925660799293
+						}
+					],
+					"sid": 252507093640313
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_All",
 					"sid": 451994486801860,
 					"parameters": {
 						"object": "Trigger_CutScene"
@@ -1583,11 +1662,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 900584501091952,
+							"sid": 768375827498795,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "9"
+								"value": "12"
 							}
 						}
 					],
@@ -1596,8 +1675,8 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 931321187396929,
 							"parameters": [
-								"EnemyFat.X",
-								"EnemyFat.Y -50",
+								"EnemyFurious2.X",
+								"EnemyFurious2.Y -50",
 								"112",
 								"1",
 								false,
@@ -1613,11 +1692,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 337847612472168,
+							"sid": 207289838700157,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "10"
+								"value": "13"
 							}
 						}
 					],
@@ -1626,8 +1705,8 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 187683866489472,
 							"parameters": [
-								"EnemyFat.X",
-								"EnemyFat.Y -50",
+								"EnemyFurious2.X",
+								"EnemyFurious2.Y -50",
 								"113",
 								"1",
 								false,
@@ -1636,7 +1715,7 @@
 						},
 						{
 							"id": "set-animation-frame",
-							"objectClass": "EnemyFat",
+							"objectClass": "EnemyFurious2",
 							"sid": 419226377973887,
 							"parameters": {
 								"frame-number": "1"
@@ -1651,11 +1730,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 195788498475065,
+							"sid": 184810895687068,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "11"
+								"value": "14"
 							}
 						}
 					],
@@ -1664,8 +1743,8 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 476221638030398,
 							"parameters": [
-								"EnemyFat.X",
-								"EnemyFat.Y -50",
+								"EnemyFurious2.X",
+								"EnemyFurious2.Y -50",
 								"114",
 								"1",
 								false,
@@ -1674,7 +1753,7 @@
 						},
 						{
 							"id": "set-animation-frame",
-							"objectClass": "EnemyFat",
+							"objectClass": "EnemyFurious2",
 							"sid": 202433232560189,
 							"parameters": {
 								"frame-number": "2"
@@ -1689,11 +1768,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 185580455173819,
+							"sid": 496212696224978,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "12"
+								"value": "15"
 							}
 						}
 					],
@@ -1719,11 +1798,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 612095316516261,
+							"sid": 847574993623492,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "13"
+								"value": "16"
 							}
 						}
 					],
@@ -1732,8 +1811,8 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 899640331082524,
 							"parameters": [
-								"EnemyFat.X",
-								"EnemyFat.Y -50",
+								"EnemyFurious2.X",
+								"EnemyFurious2.Y -50",
 								"116",
 								"1",
 								false,
@@ -1742,7 +1821,7 @@
 						},
 						{
 							"id": "set-animation-frame",
-							"objectClass": "EnemyFat",
+							"objectClass": "EnemyFurious2",
 							"sid": 691858769744651,
 							"parameters": {
 								"frame-number": "3"
@@ -1759,11 +1838,11 @@
 				{
 					"id": "compare-instance-variable",
 					"objectClass": "Player_All",
-					"sid": 825796396353102,
+					"sid": 243713932782589,
 					"parameters": {
 						"instance-variable": "textframe",
 						"comparison": 0,
-						"value": "14"
+						"value": "17"
 					}
 				},
 				{
@@ -1793,10 +1872,19 @@
 				},
 				{
 					"id": "move-to-layer",
-					"objectClass": "EnemyFat",
+					"objectClass": "EnemyFurious2",
 					"sid": 169057504595639,
 					"parameters": {
 						"layer": "\"Player\""
+					}
+				},
+				{
+					"id": "set-range",
+					"objectClass": "EnemyFurious2",
+					"sid": 979013707273256,
+					"behaviorType": "ПолеЗрения",
+					"parameters": {
+						"range": "600"
 					}
 				}
 			],
@@ -2034,9 +2122,9 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 825905868258627,
+					"sid": 222467485920343,
 					"parameters": {
-						"seconds": "3",
+						"seconds": "5",
 						"use-timescale": true
 					}
 				},
@@ -2175,6 +2263,26 @@
 				}
 			],
 			"sid": 776545756744965
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 935042350291161,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 926512145870793
+				}
+			],
+			"actions": [],
+			"sid": 330571636232082
 		}
 	],
 	"sid": 164580079911713

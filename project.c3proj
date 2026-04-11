@@ -112,6 +112,13 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "video",
+			"name": "Видео",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "Anchor",
 			"name": "Якорь",
@@ -338,7 +345,8 @@
 					"EnemyPchel",
 					"EnemyJunkieKnife",
 					"EnemyFat",
-					"EnemyManiac"
+					"EnemyManiac",
+					"EnemyFurious2"
 				],
 				"subfolders": [
 					{
@@ -680,7 +688,8 @@
 							"Table_2",
 							"Road",
 							"Mad",
-							"Flashko"
+							"Flashko",
+							"Chair_Bar2"
 						],
 						"subfolders": [],
 						"name": "Bar"
@@ -700,7 +709,8 @@
 							"Press_Mouse",
 							"Press_Ctrl",
 							"Press_Mouse2",
-							"Press_Caps"
+							"Press_Caps",
+							"Press_Arrow"
 						],
 						"subfolders": [],
 						"name": "Dialogue"
@@ -1101,14 +1111,19 @@
 					"Text_logo",
 					"AD",
 					"Scene",
-					"Secundomer"
+					"Secundomer",
+					"Text_Hint",
+					"Video"
 				],
 				"subfolders": [],
 				"name": "text"
 			},
 			{
 				"items": [
-					"Audio"
+					"Audio",
+					"Audio_cube",
+					"Audio_Lamp",
+					"Audio_Konveer"
 				],
 				"subfolders": [],
 				"name": "Sound"
@@ -1170,7 +1185,9 @@
 					"Level",
 					"Menu_Box2",
 					"Level2",
-					"Safe"
+					"Safe",
+					"Loading",
+					"Save_Stolb"
 				],
 				"subfolders": [],
 				"name": "Menu"
@@ -2061,6 +2078,30 @@
 							"file-info": {
 								"purpose": "none"
 							}
+						},
+						{
+							"name": "Lamp.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 506011445154658,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Konveer.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 977846468446219,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Save_Stolb.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 749643478266175,
+							"file-info": {
+								"purpose": "none"
+							}
 						}
 					],
 					"subfolders": [],
@@ -2095,6 +2136,44 @@
 					],
 					"subfolders": [],
 					"name": "EndGame"
+				},
+				{
+					"items": [
+						{
+							"name": "Walk.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 541007455831594,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Run.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 258481049820147,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Ride_Back.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 373118966711266,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "Ride.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 204066578514577,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Player"
 				}
 			]
 		},
@@ -2329,7 +2408,16 @@
 			]
 		},
 		"video": {
-			"items": [],
+			"items": [
+				{
+					"name": "Salient_Logo.mp4",
+					"type": "video/mp4",
+					"sid": 464014624884654,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"font": {
@@ -2514,7 +2602,7 @@
 		"pixelRounding": false,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
-		"useLoaderLayout": false,
+		"useLoaderLayout": true,
 		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "high",
 		"viewportFit": "cover",

@@ -115,10 +115,10 @@
 						{
 							"id": "set-size",
 							"objectClass": "Camera",
-							"sid": 242655395767206,
+							"sid": 790897882290049,
 							"parameters": {
 								"width": "70",
-								"height": "35"
+								"height": "40"
 							}
 						},
 						{
@@ -479,6 +479,107 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
+							"sid": 806666608432191,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_Cutscene",
+							"sid": 239663888632807,
+							"parameters": {
+								"object": "Any"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 959011860883629,
+							"parameters": {
+								"variable": "onDial"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Any",
+							"sid": 161045902602299,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "press_E",
+							"sid": 206145284350916,
+							"disabled": true,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 247160463564039,
+							"parameters": {
+								"variable": "onDial",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 112186406953680,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Any",
+									"sid": 616237820073000,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Create_Dealogue",
+									"sid": 596562125488440,
+									"parameters": [
+										"Any.X",
+										"Any.Y -50",
+										"76",
+										"1",
+										false,
+										false
+									]
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Any",
+									"sid": 803547827384700,
+									"parameters": {
+										"instance-variable": "textframe",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 764877623050740
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
 							"sid": 232742287137785,
 							"parameters": {
 								"key": 69
@@ -614,13 +715,6 @@
 							"parameters": {
 								"object": "onDial"
 							}
-						},
-						{
-							"id": "is-on-screen",
-							"objectClass": "Cloud_Dialogue",
-							"sid": 226210477990373,
-							"disabled": true,
-							"isInverted": true
 						}
 					],
 					"actions": [
@@ -2035,25 +2129,94 @@
 					],
 					"actions": [
 						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 582288714492856,
+							"parameters": [
+								"\"Mark4\"",
+								"74",
+								"3"
+							]
+						}
+					],
+					"sid": 933026272186891
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_Cutscene",
+							"sid": 233811686534795,
+							"parameters": {
+								"instance-variable": "cast_text",
+								"comparison": 0,
+								"value": "25"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 299366081432701
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 389480045466523,
+							"parameters": [
+								"\"Mark4\"",
+								"75",
+								"3"
+							]
+						}
+					],
+					"sid": 918008442207019
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_Cutscene",
+							"sid": 297594481612762,
+							"parameters": {
+								"instance-variable": "cast_text",
+								"comparison": 0,
+								"value": "26"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 541975632923587
+						}
+					],
+					"actions": [
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 321799021944686,
+							"sid": 516478505580535,
 							"parameters": {
 								"variable": "onDialMain",
 								"value": "false"
 							}
 						},
 						{
+							"id": "destroy",
+							"objectClass": "Chair_Bar",
+							"sid": 283273620930224
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 599507696695067,
+							"sid": 341732560212232,
 							"parameters": {
 								"group-name": "\"Player\"",
 								"state": "activated"
 							}
 						}
 					],
-					"sid": 933026272186891
+					"sid": 459053956027387
 				}
 			],
 			"sid": 871969449983051
@@ -2095,11 +2258,11 @@
 				{
 					"id": "compare-instance-variable",
 					"objectClass": "Player_Cutscene",
-					"sid": 951995268838662,
+					"sid": 453088702712778,
 					"parameters": {
 						"instance-variable": "cast_text",
 						"comparison": 5,
-						"value": "23"
+						"value": "25"
 					}
 				},
 				{

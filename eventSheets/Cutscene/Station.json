@@ -892,6 +892,20 @@
 					"parameters": {
 						"speed": "5"
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 684496561042950,
+					"parameters": {
+						"audio-file": {
+							"path": "Player/Ride_Back"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"audio\""
+					}
 				}
 			],
 			"sid": 672252382103724
@@ -1088,6 +1102,14 @@
 					}
 				},
 				{
+					"id": "set-scale",
+					"objectClass": "Press_Shift",
+					"sid": 299430827751772,
+					"parameters": {
+						"scale": "0.25"
+					}
+				},
+				{
 					"id": "stop-animation",
 					"objectClass": "EnemyManiac",
 					"sid": 944017917880046
@@ -1169,6 +1191,20 @@
 					"id": "destroy",
 					"objectClass": "Press_Shift",
 					"sid": 266823785313673
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 483153339267560,
+					"parameters": {
+						"audio-file": {
+							"path": "Player/Ride"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"audio\""
+					}
 				},
 				{
 					"callFunction": "Destroy_Dialoge",
@@ -1358,6 +1394,14 @@
 					"id": "set-visible",
 					"objectClass": "Press_Mouse",
 					"sid": 732212231070797,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Press_Arrow",
+					"sid": 365629591057612,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -1598,10 +1642,10 @@
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Text_logo",
-					"sid": 910116711501373,
+					"sid": 134167242650731,
 					"parameters": {
 						"instance-variable": "Lang",
-						"value": "1027"
+						"value": "787"
 					}
 				},
 				{
@@ -1682,6 +1726,16 @@
 			"conditions": [
 				{
 					"id": "compare-instance-variable",
+					"objectClass": "Player_Cutscene",
+					"sid": 188997143162658,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 0,
+						"value": "5"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
 					"objectClass": "Text_logo",
 					"sid": 350503663199163,
 					"parameters": {
@@ -1744,6 +1798,16 @@
 		{
 			"eventType": "block",
 			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_Cutscene",
+					"sid": 846916704601588,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 0,
+						"value": "5"
+					}
+				},
 				{
 					"id": "compare-instance-variable",
 					"objectClass": "Text_logo",
@@ -1928,10 +1992,10 @@
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Text_logo",
-					"sid": 509881966304373,
+					"sid": 871774407604714,
 					"parameters": {
 						"instance-variable": "Lang",
-						"value": "1026"
+						"value": "786"
 					}
 				},
 				{
@@ -2520,6 +2584,24 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
+					"sid": 715364288486676,
+					"parameters": {
+						"seconds": "2",
+						"use-timescale": true
+					}
+				},
+				{
+					"callFunction": "Loading",
+					"sid": 402482469221174,
+					"parameters": [
+						"790",
+						"borders.X",
+						"borders.Y"
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
 					"sid": 734412026680583,
 					"parameters": {
 						"seconds": "5",
@@ -2840,6 +2922,11 @@
 					"id": "destroy",
 					"objectClass": "Press_Mouse",
 					"sid": 475693017354996
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Press_Arrow",
+					"sid": 646784748377558
 				}
 			],
 			"sid": 685177091945758

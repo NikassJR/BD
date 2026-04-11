@@ -610,7 +610,7 @@
 				{
 					"id": "set-enabled",
 					"objectClass": "borders",
-					"sid": 902457845409935,
+					"sid": 412485335046706,
 					"behaviorType": "СледитьЗа",
 					"parameters": {
 						"state": "disabled"
@@ -1294,6 +1294,14 @@
 							"parameters": {
 								"tag": "\"Kick\""
 							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 727363593142335,
+							"parameters": {
+								"tag": "\"Walk\""
+							}
 						}
 					],
 					"actions": [
@@ -1330,6 +1338,15 @@
 							"sid": 897469494856129,
 							"parameters": {
 								"tag": "\"Kick\"",
+								"db": "Audio"
+							}
+						},
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 146112297000453,
+							"parameters": {
+								"tag": "\"Walk\"",
 								"db": "Audio"
 							}
 						}
@@ -2759,10 +2776,10 @@
 				{
 					"id": "request-fullscreen",
 					"objectClass": "Browser",
-					"sid": 160822318256093,
+					"sid": 187968670399866,
 					"parameters": {
-						"mode": "stretch-scale-outer",
-						"navigation-ui": "auto"
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "hide"
 					}
 				}
 			],
@@ -3845,6 +3862,7 @@
 							],
 							"actions": [],
 							"sid": 956562372118737,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -3890,7 +3908,8 @@
 											}
 										}
 									],
-									"sid": 569763077554127
+									"sid": 569763077554127,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -3936,7 +3955,8 @@
 											}
 										}
 									],
-									"sid": 130521374094031
+									"sid": 130521374094031,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -3982,7 +4002,8 @@
 											}
 										}
 									],
-									"sid": 580264147136753
+									"sid": 580264147136753,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -4028,7 +4049,8 @@
 											}
 										}
 									],
-									"sid": 365516636240243
+									"sid": 365516636240243,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -4074,7 +4096,8 @@
 											}
 										}
 									],
-									"sid": 392562606095675
+									"sid": 392562606095675,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -4120,7 +4143,8 @@
 											}
 										}
 									],
-									"sid": 371614395969399
+									"sid": 371614395969399,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -4166,7 +4190,8 @@
 											}
 										}
 									],
-									"sid": 492364491956931
+									"sid": 492364491956931,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -4212,7 +4237,8 @@
 											}
 										}
 									],
-									"sid": 981286821156160
+									"sid": 981286821156160,
+									"disabled": true
 								}
 							]
 						},
@@ -4309,6 +4335,7 @@
 						}
 					],
 					"sid": 762841062470285,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -4335,10 +4362,228 @@
 							}
 						}
 					],
-					"sid": 945270000155678
+					"sid": 945270000155678,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 945017087634512,
+							"parameters": {
+								"key": 70
+							}
+						},
+						{
+							"id": "compare-height",
+							"objectClass": "Camera",
+							"sid": 122855556340175,
+							"disabled": true,
+							"parameters": {
+								"comparison": 0,
+								"height": "35"
+							}
+						},
+						{
+							"id": "compare-width",
+							"objectClass": "Camera",
+							"sid": 290631409760411,
+							"disabled": true,
+							"parameters": {
+								"comparison": 0,
+								"width": "70"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Loading",
+							"sid": 981991457424265,
+							"parameters": [
+								"790",
+								"borders.X",
+								"borders.Y"
+							]
+						}
+					],
+					"sid": 900180097176681
 				}
 			],
 			"sid": 749758173182818
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Save",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_All",
+							"sid": 285211721002918,
+							"parameters": {
+								"object": "Save_Stolb"
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Save_Stolb",
+							"sid": 222123562157818,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "press_E",
+							"sid": 115790828063905,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 404894829304628,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 998439728011818,
+									"parameters": {
+										"key": 69
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-speed",
+									"objectClass": "Save_Stolb",
+									"sid": 595074790245811,
+									"parameters": {
+										"speed": "50"
+									}
+								},
+								{
+									"id": "save",
+									"objectClass": "System",
+									"sid": 611481287823590,
+									"parameters": {
+										"slot": "\"mysave\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 596999675252096,
+									"parameters": {
+										"audio-file": {
+											"path": "Warehouse/Save_Stolb"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"audio\""
+									}
+								}
+							],
+							"sid": 329030705395676
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 410582876959984
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "press_E",
+							"sid": 229373098612681,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 452793091441855
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-save-complete",
+							"objectClass": "System",
+							"sid": 528010881176500
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "borders",
+							"sid": 442404338088073,
+							"parameters": {
+								"object": "Loading",
+								"layer": "\"Dialog\"",
+								"image-point": "\"Save\"",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "Loading",
+							"sid": 940465526168094,
+							"behaviorType": "Прикрепить",
+							"parameters": {
+								"pin-to": "borders",
+								"image-point": "\"Save\"",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 370249239616970
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "Loading",
+							"sid": 293357812013270,
+							"parameters": {
+								"animation": "\"Animation 1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Loading",
+							"sid": 242110126045909
+						}
+					],
+					"sid": 582844684147375
+				}
+			],
+			"sid": 136729533850613
 		}
 	],
 	"sid": 511565052530936

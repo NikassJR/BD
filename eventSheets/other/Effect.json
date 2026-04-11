@@ -724,6 +724,88 @@
 				}
 			],
 			"sid": 149246411161033
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Audio_City",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 249503178806690
+						}
+					],
+					"actions": [
+						{
+							"id": "play-at-object",
+							"objectClass": "Audio",
+							"sid": 975596496542404,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/Underground/City_Under"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"object": "Audio_cube",
+								"inner-angle": "360",
+								"outer-angle": "360",
+								"outer-gain": "0",
+								"tag-optional": "\"audio\""
+							}
+						},
+						{
+							"id": "play-at-object",
+							"objectClass": "Audio",
+							"sid": 928586645636437,
+							"parameters": {
+								"audio-file": {
+									"path": "Warehouse/Lamp"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"object": "Audio_Lamp",
+								"inner-angle": "360",
+								"outer-angle": "360",
+								"outer-gain": "0",
+								"tag-optional": "\"audio\""
+							}
+						},
+						{
+							"id": "play-at-object",
+							"objectClass": "Audio",
+							"sid": 645004534680284,
+							"parameters": {
+								"audio-file": {
+									"path": "Warehouse/Konveer"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"object": "Audio_Konveer",
+								"inner-angle": "360",
+								"outer-angle": "360",
+								"outer-gain": "0",
+								"tag-optional": "\"audio\""
+							}
+						},
+						{
+							"id": "set-listener-object",
+							"objectClass": "Audio",
+							"sid": 160718232469591,
+							"parameters": {
+								"object": "Player_All"
+							}
+						}
+					],
+					"sid": 166207977275511
+				}
+			],
+			"sid": 897047920275663
 		}
 	],
 	"sid": 163340988215681

@@ -778,6 +778,11 @@
 					"sid": 437291490914009
 				},
 				{
+					"id": "destroy",
+					"objectClass": "Press_Space",
+					"sid": 864083149904256
+				},
+				{
 					"id": "set-visible",
 					"objectClass": "press_E",
 					"sid": 696281852582496,
@@ -801,6 +806,27 @@
 						"y": "scrolly +120",
 						"create-hierarchy": false,
 						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 908142173361012,
+					"parameters": {
+						"object-to-create": "Press_Space",
+						"layer": "\"Dialog\"",
+						"x": "main_dialogue.ImagePointX(\"Press\")",
+						"y": "main_dialogue.ImagePointY(\"Press\")",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Press_Space",
+					"sid": 183705595149946,
+					"parameters": {
+						"scale": "0.5"
 					}
 				},
 				{
@@ -917,6 +943,142 @@
 			"sid": 576675142271970
 		},
 		{
+			"functionName": "Create_Hint",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Lang",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 942602079811925
+				},
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 766776184397604
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 776332829808427
+				},
+				{
+					"name": "timetyping",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 641484827580008
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Text_Hint",
+					"sid": 164791739556555
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 189560500624451,
+					"parameters": {
+						"object-to-create": "Text_Hint",
+						"layer": "\"Dialog\"",
+						"x": "x",
+						"y": "y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "Text_Hint",
+					"sid": 452771255441143,
+					"parameters": {
+						"color": "rgbEx(255,255, 255)"
+					}
+				},
+				{
+					"id": "set-line-height",
+					"objectClass": "Text_Hint",
+					"sid": 809040959799709,
+					"parameters": {
+						"line-height": "-2"
+					}
+				},
+				{
+					"id": "set-wrapping",
+					"objectClass": "Text_Hint",
+					"sid": 146208122679506,
+					"parameters": {
+						"wrapping": "word"
+					}
+				},
+				{
+					"id": "set-horizontal-alignment",
+					"objectClass": "Text_Hint",
+					"sid": 283422705695014,
+					"parameters": {
+						"horizontal-alignment": "left"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Text_Hint",
+					"sid": 667472472656723,
+					"parameters": {
+						"width": "355",
+						"height": "80"
+					}
+				},
+				{
+					"id": "set-font-face",
+					"objectClass": "Text_Hint",
+					"sid": 383209119243982,
+					"parameters": {
+						"font-face": "\"ofont.ru_Downcome\"",
+						"style": "normal"
+					}
+				},
+				{
+					"id": "set-font-size",
+					"objectClass": "Text_Hint",
+					"sid": 120556413891598,
+					"parameters": {
+						"size-pt": "20"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text_Hint",
+					"sid": 388477253506090,
+					"parameters": {
+						"text": "Lang.At(Language,Lang)"
+					}
+				},
+				{
+					"id": "typewriter-text",
+					"objectClass": "Text_Hint",
+					"sid": 514631450856691,
+					"parameters": {
+						"text": "Lang.At(Language,Lang)",
+						"duration": "timetyping"
+					}
+				}
+			],
+			"sid": 719835373903877
+		},
+		{
 			"functionName": "Destroy_DialogeMain",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -941,6 +1103,11 @@
 					"id": "destroy",
 					"objectClass": "dialogMainText",
 					"sid": 625807247791952
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Press_Space",
+					"sid": 774596732519259
 				},
 				{
 					"id": "add-to-instvar",
@@ -1121,6 +1288,160 @@
 				}
 			],
 			"sid": 772459091841706
+		},
+		{
+			"functionName": "Loading",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "Lang",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 609702064992494
+				},
+				{
+					"name": "x",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 422915570704621
+				},
+				{
+					"name": "y",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 345164962908710
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Text_Hint",
+					"sid": 863775933789929
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 975933653074869,
+					"parameters": {
+						"object-to-create": "End_Scene2",
+						"layer": "\"Dialog\"",
+						"x": "x",
+						"y": "y",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "End_Scene2",
+					"sid": 940696848415848,
+					"parameters": {
+						"width": "Camera.Width * 10",
+						"height": "Camera.Height * 10"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "End_Scene2",
+					"sid": 541669555972116,
+					"parameters": {
+						"object": "Loading",
+						"layer": "\"Dialog\"",
+						"image-point": "\"Loading\"",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 397431534515415,
+					"parameters": {
+						"object-to-create": "Text_Hint",
+						"layer": "\"Dialog\"",
+						"x": "End_Scene2.ImagePointX(\"Hint\")",
+						"y": "End_Scene2.ImagePointY(\"Hint\")",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "Text_Hint",
+					"sid": 437638695520348,
+					"parameters": {
+						"color": "rgbEx(255,255, 255)"
+					}
+				},
+				{
+					"id": "set-line-height",
+					"objectClass": "Text_Hint",
+					"sid": 417107936519318,
+					"parameters": {
+						"line-height": "-2"
+					}
+				},
+				{
+					"id": "set-wrapping",
+					"objectClass": "Text_Hint",
+					"sid": 364763466996233,
+					"parameters": {
+						"wrapping": "word"
+					}
+				},
+				{
+					"id": "set-horizontal-alignment",
+					"objectClass": "Text_Hint",
+					"sid": 755931115068535,
+					"parameters": {
+						"horizontal-alignment": "center"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Text_Hint",
+					"sid": 234259743635598,
+					"parameters": {
+						"width": "300",
+						"height": "100"
+					}
+				},
+				{
+					"id": "set-font-face",
+					"objectClass": "Text_Hint",
+					"sid": 874203398225681,
+					"parameters": {
+						"font-face": "\"ofont.ru_Downcome\"",
+						"style": "normal"
+					}
+				},
+				{
+					"id": "set-font-size",
+					"objectClass": "Text_Hint",
+					"sid": 387018491508980,
+					"parameters": {
+						"size-pt": "14"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text_Hint",
+					"sid": 519467789337225,
+					"parameters": {
+						"text": "Lang.At(Language,Lang)"
+					}
+				}
+			],
+			"sid": 969099156190809
 		}
 	],
 	"sid": 692011254246023
