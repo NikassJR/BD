@@ -1,0 +1,1606 @@
+{
+	"name": "Music",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Audio4",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 442695497663924
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "Music_Safe",
+							"sid": 923307912331898,
+							"parameters": {
+								"key": "\"Audio\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 101597154701816,
+							"parameters": {
+								"key": "\"Audio\""
+							}
+						}
+					],
+					"sid": 118273965812192
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "Music_Safe",
+							"sid": 386901019083472,
+							"parameters": {
+								"key": "\"Audio\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Numbers_Audio",
+							"sid": 244601665185304,
+							"parameters": {
+								"instance-variable": "Audio",
+								"value": "Music_Safe.ItemValue"
+							}
+						}
+					],
+					"sid": 722509668886158
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-missing",
+							"objectClass": "Music_Safe",
+							"sid": 441252304180518,
+							"parameters": {
+								"key": "\"Audio\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Numbers_Audio",
+							"sid": 826381730641372,
+							"parameters": {
+								"instance-variable": "Audio",
+								"value": "7"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Audio",
+							"sid": 244771435383609,
+							"parameters": {
+								"text": "\"70%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 535596752277770,
+							"parameters": {
+								"variable": "Audio",
+								"value": "-7.5"
+							}
+						}
+					],
+					"sid": 145844420316919
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 425454031612946,
+							"parameters": {
+								"tag": "\"audio\""
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 600813692132778,
+							"parameters": {
+								"tag": "\"Damage\""
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 384335882614581,
+							"parameters": {
+								"tag": "\"Fire\""
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 547654446512707,
+							"parameters": {
+								"tag": "\"Water\""
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 716828140836657,
+							"parameters": {
+								"tag": "\"Kick\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 534367657226428,
+							"parameters": {
+								"tag": "\"audio\"",
+								"db": "Audio"
+							}
+						},
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 783731714832870,
+							"parameters": {
+								"tag": "\"Damage\"",
+								"db": "Audio"
+							}
+						},
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 410255293540143,
+							"parameters": {
+								"tag": "\"Fire\"",
+								"db": "Audio"
+							}
+						},
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 366148250415628,
+							"parameters": {
+								"tag": "\"Water\"",
+								"db": "Audio"
+							}
+						},
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 123285030560970,
+							"parameters": {
+								"tag": "\"Kick\"",
+								"db": "Audio"
+							}
+						}
+					],
+					"sid": 564877392166561,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Audio",
+							"sid": 837875723520526,
+							"parameters": {
+								"instance-variable": "Audio",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Audio",
+							"sid": 970479631167802,
+							"parameters": {
+								"text": "\"0%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 858964478275812,
+							"parameters": {
+								"variable": "Audio",
+								"value": "-100"
+							}
+						}
+					],
+					"sid": 372088655191716
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Audio",
+							"sid": 672830948568847,
+							"parameters": {
+								"instance-variable": "Audio",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Audio",
+							"sid": 266421226728074,
+							"parameters": {
+								"text": "\"10%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 816688421126143,
+							"parameters": {
+								"variable": "Audio",
+								"value": "-22.5"
+							}
+						}
+					],
+					"sid": 768234985211695
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Audio",
+							"sid": 632533464620958,
+							"parameters": {
+								"instance-variable": "Audio",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Audio",
+							"sid": 852174573123050,
+							"parameters": {
+								"text": "\"20%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 389511146273891,
+							"parameters": {
+								"variable": "Audio",
+								"value": "-20"
+							}
+						}
+					],
+					"sid": 155966799032499
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Audio",
+							"sid": 531876980333373,
+							"parameters": {
+								"instance-variable": "Audio",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Audio",
+							"sid": 132654303385310,
+							"parameters": {
+								"text": "\"30%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 785830635880417,
+							"parameters": {
+								"variable": "Audio",
+								"value": "-17.5"
+							}
+						}
+					],
+					"sid": 700340100416723
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Audio",
+							"sid": 572650229491411,
+							"parameters": {
+								"instance-variable": "Audio",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Audio",
+							"sid": 212428373354676,
+							"parameters": {
+								"text": "\"40%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 727856279546678,
+							"parameters": {
+								"variable": "Audio",
+								"value": "-15"
+							}
+						}
+					],
+					"sid": 241299588558459
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Audio",
+							"sid": 666236765589100,
+							"parameters": {
+								"instance-variable": "Audio",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Audio",
+							"sid": 401058949872600,
+							"parameters": {
+								"text": "\"50%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 269741485103840,
+							"parameters": {
+								"variable": "Audio",
+								"value": "-12.5"
+							}
+						}
+					],
+					"sid": 803762575745766
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Audio",
+							"sid": 585944779028385,
+							"parameters": {
+								"instance-variable": "Audio",
+								"comparison": 0,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Audio",
+							"sid": 720990419462156,
+							"parameters": {
+								"text": "\"60%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 145600111028371,
+							"parameters": {
+								"variable": "Audio",
+								"value": "-10"
+							}
+						}
+					],
+					"sid": 217164194684891
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Audio",
+							"sid": 128977509930828,
+							"parameters": {
+								"instance-variable": "Audio",
+								"comparison": 0,
+								"value": "7"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Audio",
+							"sid": 999161369397078,
+							"parameters": {
+								"text": "\"70%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 937526877920516,
+							"parameters": {
+								"variable": "Audio",
+								"value": "-7.5"
+							}
+						}
+					],
+					"sid": 644048620785033
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Audio",
+							"sid": 296562603883973,
+							"parameters": {
+								"instance-variable": "Audio",
+								"comparison": 0,
+								"value": "8"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Audio",
+							"sid": 378615202300715,
+							"parameters": {
+								"text": "\"80%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 131246057661809,
+							"parameters": {
+								"variable": "Audio",
+								"value": "-5"
+							}
+						}
+					],
+					"sid": 295649519148936
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Audio",
+							"sid": 578664130631789,
+							"parameters": {
+								"instance-variable": "Audio",
+								"comparison": 0,
+								"value": "9"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Audio",
+							"sid": 727501906151344,
+							"parameters": {
+								"text": "\"90%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 555213185024358,
+							"parameters": {
+								"variable": "Audio",
+								"value": "-2.5"
+							}
+						}
+					],
+					"sid": 963251268233640
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Audio",
+							"sid": 135413416098836,
+							"parameters": {
+								"instance-variable": "Audio",
+								"comparison": 0,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Audio",
+							"sid": 901091400277109,
+							"parameters": {
+								"text": "\"100%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 184065774755427,
+							"parameters": {
+								"variable": "Audio",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 975863877611572
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 962025114724279,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 345499973341854,
+							"parameters": {
+								"object": "Arrow2"
+							}
+						},
+						{
+							"id": "compare-text",
+							"objectClass": "Arrow2",
+							"sid": 154431535507948,
+							"parameters": {
+								"text-to-compare": "\"<\"",
+								"case-sensitivity": "ignore-case"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 644227784169594,
+							"parameters": {
+								"layer": "LayerIndex(\"Setting\")"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Audio",
+							"sid": 387305598819245,
+							"parameters": {
+								"instance-variable": "Audio",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 911201774355129,
+							"disabled": true,
+							"parameters": {
+								"variable": "Audio",
+								"value": "2.5"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Numbers_Audio",
+							"sid": 122310586490759,
+							"parameters": {
+								"instance-variable": "Audio",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 407613430677008,
+							"parameters": {
+								"key": "\"Audio\"",
+								"value": "Numbers_Audio.Audio"
+							}
+						}
+					],
+					"sid": 163758024348717
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 259947078728630,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 118282468521664,
+							"parameters": {
+								"object": "Arrow2"
+							}
+						},
+						{
+							"id": "compare-text",
+							"objectClass": "Arrow2",
+							"sid": 364330377153378,
+							"parameters": {
+								"text-to-compare": "\">\"",
+								"case-sensitivity": "ignore-case"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 320690844686375,
+							"parameters": {
+								"layer": "LayerIndex(\"Setting\")"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Audio",
+							"sid": 175594119012736,
+							"parameters": {
+								"instance-variable": "Audio",
+								"comparison": 2,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 845757114147717,
+							"disabled": true,
+							"parameters": {
+								"variable": "Audio",
+								"value": "2.5"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Numbers_Audio",
+							"sid": 187522891384299,
+							"parameters": {
+								"instance-variable": "Audio",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 850356119356343,
+							"parameters": {
+								"key": "\"Audio\"",
+								"value": "Numbers_Audio.Audio"
+							}
+						}
+					],
+					"sid": 904601689654100
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 420205037436979,
+							"parameters": {
+								"variable": "Start_Game"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 153584772749521,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Numbers_Audio",
+									"sid": 441309481177465,
+									"parameters": {
+										"instance-variable": "Audio",
+										"comparison": 2,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Numbers_Audio",
+									"sid": 645518989969384,
+									"parameters": {
+										"instance-variable": "Audio",
+										"comparison": 4,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Numbers_Audio",
+									"sid": 640345919997156,
+									"parameters": {
+										"instance-variable": "Audio",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 225607232382918,
+									"parameters": {
+										"variable": "Audio",
+										"value": "-100"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Music_Safe",
+									"sid": 869559489174872,
+									"parameters": {
+										"key": "\"Audio\"",
+										"value": "Numbers_Audio.Audio"
+									}
+								}
+							],
+							"sid": 736330896104641,
+							"isOrBlock": true
+						}
+					]
+				}
+			],
+			"sid": 667758644763753
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Music3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 855497974953181
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "Music_Safe",
+							"sid": 250134456087170,
+							"parameters": {
+								"key": "\"Sound\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 734266386969317,
+							"parameters": {
+								"key": "\"Sound\""
+							}
+						}
+					],
+					"sid": 332040324971521
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "Music_Safe",
+							"sid": 536485835545335,
+							"parameters": {
+								"key": "\"Sound\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Numbers_Music",
+							"sid": 326232408920982,
+							"parameters": {
+								"instance-variable": "Music",
+								"value": "Music_Safe.ItemValue"
+							}
+						}
+					],
+					"sid": 265219173291950
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-missing",
+							"objectClass": "Music_Safe",
+							"sid": 183029727530716,
+							"parameters": {
+								"key": "\"Sound\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Numbers_Music",
+							"sid": 153777310359814,
+							"parameters": {
+								"instance-variable": "Music",
+								"value": "7"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Music",
+							"sid": 631991658988388,
+							"parameters": {
+								"text": "\"70%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 856917779456904,
+							"parameters": {
+								"variable": "Sound",
+								"value": "-7.5"
+							}
+						}
+					],
+					"sid": 802080421337892
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 601513100811824,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 528000031932821,
+							"parameters": {
+								"tag": "\"Suspense\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 889252312716527,
+							"parameters": {
+								"tag": "\"music\"",
+								"db": "Sound"
+							}
+						},
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 923447385765458,
+							"parameters": {
+								"tag": "\"Suspense\"",
+								"db": "Sound"
+							}
+						}
+					],
+					"sid": 617280686888606,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Music",
+							"sid": 387533027631680,
+							"parameters": {
+								"instance-variable": "Music",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Music",
+							"sid": 937853683632639,
+							"parameters": {
+								"text": "\"0%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 631256563318816,
+							"parameters": {
+								"variable": "Sound",
+								"value": "-100"
+							}
+						}
+					],
+					"sid": 820458238316361
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Music",
+							"sid": 229397297547597,
+							"parameters": {
+								"instance-variable": "Music",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Music",
+							"sid": 977985322619260,
+							"parameters": {
+								"text": "\"10%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 696149307569192,
+							"parameters": {
+								"variable": "Sound",
+								"value": "-22.5"
+							}
+						}
+					],
+					"sid": 959258589407035
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Music",
+							"sid": 525063538471231,
+							"parameters": {
+								"instance-variable": "Music",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Music",
+							"sid": 363139742738506,
+							"parameters": {
+								"text": "\"20%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 843483713120666,
+							"parameters": {
+								"variable": "Sound",
+								"value": "-20"
+							}
+						}
+					],
+					"sid": 764080471150400
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Music",
+							"sid": 416965866857547,
+							"parameters": {
+								"instance-variable": "Music",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Music",
+							"sid": 514153567851567,
+							"parameters": {
+								"text": "\"30%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 170920546113799,
+							"parameters": {
+								"variable": "Sound",
+								"value": "-17.5"
+							}
+						}
+					],
+					"sid": 952028375911670
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Music",
+							"sid": 618524242468255,
+							"parameters": {
+								"instance-variable": "Music",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Music",
+							"sid": 521251876863561,
+							"parameters": {
+								"text": "\"40%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 109642911449057,
+							"parameters": {
+								"variable": "Sound",
+								"value": "-15"
+							}
+						}
+					],
+					"sid": 157657080950955
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Music",
+							"sid": 992424797771622,
+							"parameters": {
+								"instance-variable": "Music",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Music",
+							"sid": 351131916389171,
+							"parameters": {
+								"text": "\"50%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 925811969696453,
+							"parameters": {
+								"variable": "Sound",
+								"value": "-12.5"
+							}
+						}
+					],
+					"sid": 538743276003790
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Music",
+							"sid": 926935211299522,
+							"parameters": {
+								"instance-variable": "Music",
+								"comparison": 0,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Music",
+							"sid": 833532027998893,
+							"parameters": {
+								"text": "\"60%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 137633820078265,
+							"parameters": {
+								"variable": "Sound",
+								"value": "-10"
+							}
+						}
+					],
+					"sid": 766484445423161
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Music",
+							"sid": 279210626377974,
+							"parameters": {
+								"instance-variable": "Music",
+								"comparison": 0,
+								"value": "7"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Music",
+							"sid": 622272728728760,
+							"parameters": {
+								"text": "\"70%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 986197825337033,
+							"parameters": {
+								"variable": "Sound",
+								"value": "-7.5"
+							}
+						}
+					],
+					"sid": 373095772518515
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Music",
+							"sid": 971264674804955,
+							"parameters": {
+								"instance-variable": "Music",
+								"comparison": 0,
+								"value": "8"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Music",
+							"sid": 185740077985865,
+							"parameters": {
+								"text": "\"80%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 494000171460208,
+							"parameters": {
+								"variable": "Sound",
+								"value": "-5"
+							}
+						}
+					],
+					"sid": 879498737995936
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Music",
+							"sid": 565196099922019,
+							"parameters": {
+								"instance-variable": "Music",
+								"comparison": 0,
+								"value": "9"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Music",
+							"sid": 120955771390928,
+							"parameters": {
+								"text": "\"90%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 395668734349854,
+							"parameters": {
+								"variable": "Sound",
+								"value": "-2.5"
+							}
+						}
+					],
+					"sid": 271372219762665
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Music",
+							"sid": 289187139227419,
+							"parameters": {
+								"instance-variable": "Music",
+								"comparison": 0,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Numbers_Music",
+							"sid": 501767663629712,
+							"parameters": {
+								"text": "\"100%\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 537127814869540,
+							"parameters": {
+								"variable": "Sound",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 968000058922551
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 637354769401870,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 108307971570067,
+							"parameters": {
+								"object": "Arrow"
+							}
+						},
+						{
+							"id": "compare-text",
+							"objectClass": "Arrow",
+							"sid": 133844375095173,
+							"parameters": {
+								"text-to-compare": "\"<\"",
+								"case-sensitivity": "ignore-case"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 779085853635208,
+							"parameters": {
+								"layer": "LayerIndex(\"Setting\")"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Music",
+							"sid": 939027846456563,
+							"parameters": {
+								"instance-variable": "Music",
+								"comparison": 4,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Numbers_Music",
+							"sid": 726091628327791,
+							"parameters": {
+								"instance-variable": "Music",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 926316358868300,
+							"parameters": {
+								"key": "\"Sound\"",
+								"value": "Numbers_Music.Music"
+							}
+						}
+					],
+					"sid": 184320261067012
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 767603969058272,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 525251223729810,
+							"parameters": {
+								"object": "Arrow"
+							}
+						},
+						{
+							"id": "compare-text",
+							"objectClass": "Arrow",
+							"sid": 933736106277506,
+							"parameters": {
+								"text-to-compare": "\">\"",
+								"case-sensitivity": "ignore-case"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 252236555519339,
+							"parameters": {
+								"layer": "LayerIndex(\"Setting\")"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Numbers_Music",
+							"sid": 859024351250729,
+							"parameters": {
+								"instance-variable": "Music",
+								"comparison": 2,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Numbers_Music",
+							"sid": 727003336769572,
+							"parameters": {
+								"instance-variable": "Music",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 355014045791002,
+							"parameters": {
+								"key": "\"Sound\"",
+								"value": "Numbers_Music.Music"
+							}
+						}
+					],
+					"sid": 594276242559395
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 749593584350857,
+							"parameters": {
+								"variable": "Start_Game"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 709619980286106,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Numbers_Music",
+									"sid": 339328344734769,
+									"parameters": {
+										"instance-variable": "Music",
+										"comparison": 2,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Numbers_Music",
+									"sid": 608312203042945,
+									"parameters": {
+										"instance-variable": "Music",
+										"comparison": 4,
+										"value": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Numbers_Music",
+									"sid": 704573665757025,
+									"parameters": {
+										"instance-variable": "Music",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 972049096402089,
+									"parameters": {
+										"variable": "Sound",
+										"value": "-100"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Music_Safe",
+									"sid": 642100425748304,
+									"parameters": {
+										"key": "\"Sound\"",
+										"value": "Numbers_Music.Music"
+									}
+								}
+							],
+							"sid": 123834594921977,
+							"isOrBlock": true
+						}
+					]
+				}
+			],
+			"sid": 757495202533548
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 624366400662141,
+					"parameters": {
+						"variable": "Audio",
+						"comparison": 0,
+						"value": "-25"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 170238402273827,
+					"parameters": {
+						"variable": "Sound",
+						"comparison": 0,
+						"value": "-25"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 765424850646174
+				}
+			],
+			"sid": 292749063351938
+		}
+	],
+	"sid": 313181035949758
+}

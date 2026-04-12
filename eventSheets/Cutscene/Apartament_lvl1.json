@@ -51,6 +51,14 @@
 			],
 			"actions": [
 				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 877516840030907,
+					"parameters": {
+						"slot": "\"start\""
+					}
+				},
+				{
 					"id": "set-size",
 					"objectClass": "Camera",
 					"sid": 339634138456202,
@@ -168,14 +176,6 @@
 					"id": "destroy",
 					"objectClass": "Shadow3",
 					"sid": 606460671702931
-				},
-				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 889461525724647,
-					"parameters": {
-						"slot": "\"start\""
-					}
 				},
 				{
 					"id": "play",
@@ -699,12 +699,12 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 760687551306864,
+							"sid": 636218553903335,
 							"parameters": {
 								"audio-file": {
 									"path": "Music/Apartament"
 								},
-								"loop": "not-looping",
+								"loop": "looping",
 								"volume": "0",
 								"stereo-pan": "0",
 								"tag-optional": "\"music\""
@@ -1481,9 +1481,9 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-overlapping-another-object",
+					"id": "on-collision-with-another-object",
 					"objectClass": "Player_All",
-					"sid": 462579882237027,
+					"sid": 175692959341359,
 					"parameters": {
 						"object": "Save_Stolb"
 					}
@@ -1544,21 +1544,21 @@
 							]
 						},
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 680577246995608,
-							"parameters": {
-								"seconds": "4",
-								"use-timescale": true
-							}
-						},
-						{
 							"id": "add-to-instvar",
 							"objectClass": "Player_All",
 							"sid": 928652985194172,
 							"parameters": {
 								"instance-variable": "textframe",
 								"value": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 274057609349633,
+							"parameters": {
+								"seconds": "4",
+								"use-timescale": true
 							}
 						},
 						{
@@ -2077,10 +2077,10 @@
 				{
 					"id": "spawn-another-object",
 					"objectClass": "Player_All",
-					"sid": 393088959044779,
+					"sid": 185820356425029,
 					"parameters": {
 						"object": "End_Scene2",
-						"layer": "\"Player\"",
+						"layer": "\"Dialog\"",
 						"image-point": "0",
 						"create-hierarchy": false,
 						"template-name": "\"\""

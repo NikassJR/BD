@@ -1,0 +1,339 @@
+{
+	"name": "Loading",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "Music"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Menu"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "actual"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-playback-event",
+					"objectClass": "Video",
+					"sid": 505050382884088,
+					"parameters": {
+						"event": "can-play"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-volume",
+					"objectClass": "Video",
+					"sid": 318382088547410,
+					"parameters": {
+						"volume": "Audio"
+					}
+				}
+			],
+			"sid": 938468948448889
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 283404439794719
+				}
+			],
+			"actions": [
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 754559488711487,
+					"parameters": {
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "hide"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 773845330323520,
+					"parameters": {
+						"variable": "NoPause",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Camera",
+					"sid": 996065538600206,
+					"parameters": {
+						"width": "256",
+						"height": "144"
+					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 172278849627668
+				},
+				{
+					"id": "request-project-file",
+					"objectClass": "AJAX",
+					"sid": 610231181790082,
+					"parameters": {
+						"tag": "\"Lang\"",
+						"file": {
+							"path": "Lang.json"
+						}
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "End_Scene2",
+					"sid": 786395331736571,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 327782517873578
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 965146832807052,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "End_Scene2",
+					"sid": 721310771415059,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 163996565318160
+				},
+				{
+					"id": "play",
+					"objectClass": "Video",
+					"sid": 127399309842520
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 121572548201170,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Camera",
+					"sid": 251473149183518,
+					"parameters": {
+						"width": "150",
+						"height": "95"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 510891160791704,
+					"parameters": {
+						"layout": "Main_Menu"
+					}
+				}
+			],
+			"sid": 840048015000591
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-completed",
+					"objectClass": "AJAX",
+					"sid": 250670672674765,
+					"parameters": {
+						"tag": "\"Lang\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "load",
+					"objectClass": "Lang",
+					"sid": 330606016625222,
+					"parameters": {
+						"json": "AJAX.LastData"
+					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 481843138611349
+				}
+			],
+			"sid": 562317772031260
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 145442106181281,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Flag"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 366764781445519,
+					"parameters": {
+						"variable": "Language",
+						"value": "Language=0?1:0"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "Music_Safe",
+					"sid": 822200435910469,
+					"parameters": {
+						"key": "\"Language\"",
+						"value": "Language"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Flag",
+					"sid": 813933650297247,
+					"parameters": {
+						"frame-number": "Language"
+					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 896417625015170
+				}
+			],
+			"sid": 619966420100454
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "Music_Safe",
+					"sid": 888225518302600,
+					"parameters": {
+						"key": "\"Language\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 147331691648639,
+					"parameters": {
+						"variable": "Language",
+						"value": "Music_Safe.ItemValue"
+					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 458061147322893
+				}
+			],
+			"sid": 653793614236079
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-missing",
+					"objectClass": "Music_Safe",
+					"sid": 798712846202015,
+					"parameters": {
+						"key": "\"Language\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 597173840300665,
+					"parameters": {
+						"variable": "Language",
+						"value": "1"
+					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 146852364643446
+				}
+			],
+			"sid": 717825446303898
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-animation-finished",
+					"objectClass": "Loading",
+					"sid": 394090607302749,
+					"parameters": {
+						"animation": "\"Animation 1\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "start-animation",
+					"objectClass": "Loading",
+					"sid": 383952843272077,
+					"parameters": {
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 592453581553511
+		}
+	],
+	"sid": 776494106512230
+}
