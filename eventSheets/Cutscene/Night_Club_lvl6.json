@@ -31,6 +31,7 @@
 					"id": "save",
 					"objectClass": "System",
 					"sid": 737683075673686,
+					"disabled": true,
 					"parameters": {
 						"slot": "\"mysave\""
 					}
@@ -39,6 +40,7 @@
 					"id": "save",
 					"objectClass": "System",
 					"sid": 115374151929698,
+					"disabled": true,
 					"parameters": {
 						"slot": "\"start\""
 					}
@@ -86,6 +88,7 @@
 					"id": "spawn-another-object",
 					"objectClass": "Player_All",
 					"sid": 736142898654159,
+					"disabled": true,
 					"parameters": {
 						"object": "Shadow3",
 						"layer": "\"Dialog\"",
@@ -98,6 +101,7 @@
 					"id": "set-scale",
 					"objectClass": "Shadow3",
 					"sid": 981756788912885,
+					"disabled": true,
 					"parameters": {
 						"scale": "5"
 					}
@@ -106,6 +110,7 @@
 					"id": "tween-one-property",
 					"objectClass": "Shadow3",
 					"sid": 524215412739408,
+					"disabled": true,
 					"behaviorType": "Твинанимация",
 					"parameters": {
 						"tags": "\"\"",
@@ -229,159 +234,176 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_All",
-					"sid": 744682070879232,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "1"
-					}
-				},
-				{
-					"id": "trigger-once-while-true",
+					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 537785830030888
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "Create_Dealogue",
-					"sid": 566640069341022,
-					"parameters": [
-						"0",
-						"0",
-						"350",
-						"1",
-						true,
-						false
-					]
-				},
-				{
-					"id": "start-timer",
-					"objectClass": "Player_All",
-					"sid": 359727428731669,
-					"behaviorType": "Таймер",
+					"sid": 478861498809156,
 					"parameters": {
-						"duration": "4",
-						"type": "once",
-						"tag": "\"text\""
+						"variable": "Safe_Zone"
 					}
 				}
 			],
-			"sid": 284767422023878
-		},
-		{
-			"eventType": "block",
-			"conditions": [
+			"actions": [],
+			"sid": 527839264304167,
+			"children": [
 				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_All",
-					"sid": 988622894473809,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "2"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 863561214695537,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 265733706973913
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_Dealogue",
+							"sid": 548729868940178,
+							"parameters": [
+								"0",
+								"0",
+								"350",
+								"1",
+								true,
+								false
+							]
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Player_All",
+							"sid": 887110898980893,
+							"behaviorType": "Таймер",
+							"parameters": {
+								"duration": "4",
+								"type": "once",
+								"tag": "\"text\""
+							}
+						}
+					],
+					"sid": 540544519303174
 				},
 				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 731955229722796
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 559052149032936,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 815929710977060
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-timer",
+							"objectClass": "Player_All",
+							"sid": 602597220257756,
+							"behaviorType": "Таймер",
+							"parameters": {
+								"tag": "\"text\""
+							}
+						},
+						{
+							"callFunction": "Create_Dealogue",
+							"sid": 498128714097150,
+							"parameters": [
+								"0",
+								"0",
+								"351",
+								"1",
+								true,
+								false
+							]
+						},
+						{
+							"id": "start-timer",
+							"objectClass": "Player_All",
+							"sid": 738215374776808,
+							"behaviorType": "Таймер",
+							"parameters": {
+								"duration": "4",
+								"type": "once",
+								"tag": "\"text\""
+							}
+						}
+					],
+					"sid": 352576528273773
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 354176244487603,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 733875652046055
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-timer",
+							"objectClass": "Player_All",
+							"sid": 382701535116484,
+							"behaviorType": "Таймер",
+							"parameters": {
+								"tag": "\"text\""
+							}
+						},
+						{
+							"callFunction": "Create_Dealogue",
+							"sid": 949763907854257,
+							"parameters": [
+								"0",
+								"0",
+								"354",
+								"1",
+								true,
+								false
+							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 594319430692399,
+							"parameters": {
+								"seconds": "4",
+								"use-timescale": true
+							}
+						},
+						{
+							"callFunction": "Destroy_Dialoge",
+							"sid": 629895990748286
+						}
+					],
+					"sid": 913527297709215
 				}
-			],
-			"actions": [
-				{
-					"id": "stop-timer",
-					"objectClass": "Player_All",
-					"sid": 949240680882008,
-					"behaviorType": "Таймер",
-					"parameters": {
-						"tag": "\"text\""
-					}
-				},
-				{
-					"callFunction": "Create_Dealogue",
-					"sid": 627081790072729,
-					"parameters": [
-						"0",
-						"0",
-						"351",
-						"1",
-						true,
-						false
-					]
-				},
-				{
-					"id": "start-timer",
-					"objectClass": "Player_All",
-					"sid": 761985499230507,
-					"behaviorType": "Таймер",
-					"parameters": {
-						"duration": "4",
-						"type": "once",
-						"tag": "\"text\""
-					}
-				}
-			],
-			"sid": 860733166335741
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_All",
-					"sid": 634840529002956,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "3"
-					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 396850679986741
-				}
-			],
-			"actions": [
-				{
-					"id": "stop-timer",
-					"objectClass": "Player_All",
-					"sid": 114485766658032,
-					"behaviorType": "Таймер",
-					"parameters": {
-						"tag": "\"text\""
-					}
-				},
-				{
-					"callFunction": "Create_Dealogue",
-					"sid": 355078759840324,
-					"parameters": [
-						"0",
-						"0",
-						"354",
-						"1",
-						true,
-						false
-					]
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 294195777186702,
-					"parameters": {
-						"seconds": "4",
-						"use-timescale": true
-					}
-				},
-				{
-					"callFunction": "Destroy_Dialoge",
-					"sid": 210041166204946
-				}
-			],
-			"sid": 353418510052851
+			]
 		},
 		{
 			"eventType": "block",
@@ -754,11 +776,39 @@
 					"id": "pick-nearestfurthest",
 					"objectClass": "EnemySecurity",
 					"sid": 137526910493959,
+					"disabled": true,
 					"parameters": {
 						"which": "nearest",
 						"x": "Player_All.X",
 						"y": "Player_All.Y",
 						"pick-all-tied": false
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "EnemySecurity",
+					"sid": 883088214182815,
+					"parameters": {
+						"instance-variable": "triger"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "EnemySecurity",
+					"sid": 721674457221419,
+					"parameters": {
+						"instance-variable": "HP",
+						"comparison": 4,
+						"value": "0"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "EnemySecurity",
+					"sid": 197536589837675,
+					"parameters": {
+						"tags": "\"Cut\""
 					}
 				}
 			],
@@ -777,6 +827,34 @@
 				}
 			],
 			"sid": 842421766398066
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-tags",
+					"objectClass": "EnemySecurity",
+					"sid": 451854737250135,
+					"parameters": {
+						"tags": "\"Cut\""
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "EnemySecurity",
+					"sid": 103701485380512,
+					"parameters": {
+						"instance-variable": "triger"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Destroy_DialogeEnemy",
+					"sid": 620411021235237
+				}
+			],
+			"sid": 495778946673139
 		},
 		{
 			"eventType": "block",

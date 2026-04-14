@@ -186,6 +186,14 @@
 							"parameters": {
 								"object": "Trigger_CutScene"
 							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Trigger_CutScene",
+							"sid": 368356567404188,
+							"parameters": {
+								"tags": "\"End\""
+							}
 						}
 					],
 					"actions": [
@@ -1606,6 +1614,137 @@
 						}
 					],
 					"sid": 763884565042878
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 957049120356568,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Door_Old",
+							"sid": 244268935530946,
+							"parameters": {
+								"tags": "\"Closed\""
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Door_Old",
+							"sid": 681044752025952,
+							"parameters": {
+								"animation": "\"Animation 1\""
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Door_Old",
+							"sid": 846615689843928,
+							"parameters": {
+								"comparison": 0,
+								"number": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_All",
+							"sid": 877855157615270,
+							"parameters": {
+								"object": "Trigger_CutScene"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 119503149811809,
+							"parameters": {
+								"variable": "onDial"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_All",
+							"sid": 516738840954418,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 356142290464979,
+							"parameters": {
+								"variable": "onDial",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 114744137050110,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 927211710728064,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 765665606625886
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Create_Dealogue",
+									"sid": 221784975586372,
+									"parameters": [
+										"0",
+										"0",
+										"245",
+										"1",
+										true,
+										false
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 548144237324883,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player_All",
+									"sid": 434668203107208,
+									"parameters": {
+										"instance-variable": "textframe",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 605483045611067
+						}
+					]
 				}
 			],
 			"sid": 150674779937279
@@ -2282,6 +2421,31 @@
 								}
 							],
 							"sid": 746408127714114
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 174666969931239
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Create_Dealogue",
+									"sid": 155192167453926,
+									"parameters": [
+										"0",
+										"0",
+										"246",
+										"1",
+										true,
+										false
+									]
+								}
+							],
+							"sid": 758175277471202
 						}
 					]
 				},

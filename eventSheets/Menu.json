@@ -619,15 +619,6 @@
 					"parameters": {
 						"state": "disabled"
 					}
-				},
-				{
-					"id": "set-item",
-					"objectClass": "Music_Safe",
-					"sid": 343798635046332,
-					"parameters": {
-						"key": "\"Continue_Maket\"",
-						"value": "LayoutName"
-					}
 				}
 			],
 			"sid": 687519329073019
@@ -4415,51 +4406,6 @@
 					],
 					"sid": 945270000155678,
 					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 945017087634512,
-							"parameters": {
-								"key": 70
-							}
-						},
-						{
-							"id": "compare-height",
-							"objectClass": "Camera",
-							"sid": 122855556340175,
-							"disabled": true,
-							"parameters": {
-								"comparison": 0,
-								"height": "35"
-							}
-						},
-						{
-							"id": "compare-width",
-							"objectClass": "Camera",
-							"sid": 290631409760411,
-							"disabled": true,
-							"parameters": {
-								"comparison": 0,
-								"width": "70"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "Loading",
-							"sid": 981991457424265,
-							"parameters": [
-								"790",
-								"borders.X",
-								"borders.Y"
-							]
-						}
-					],
-					"sid": 900180097176681
 				}
 			],
 			"sid": 749758173182818
@@ -4649,6 +4595,28 @@
 						}
 					],
 					"sid": 582844684147375
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-save-complete",
+							"objectClass": "System",
+							"sid": 586297877640693
+						}
+					],
+					"actions": [
+						{
+							"id": "set-item",
+							"objectClass": "Music_Safe",
+							"sid": 343798635046332,
+							"parameters": {
+								"key": "\"Continue_Maket\"",
+								"value": "LayoutName"
+							}
+						}
+					],
+					"sid": 184974532601364
 				}
 			],
 			"sid": 136729533850613
