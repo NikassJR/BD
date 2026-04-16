@@ -222,38 +222,6 @@
 					}
 				},
 				{
-					"id": "get-item",
-					"objectClass": "Music_Safe",
-					"sid": 328959558312210,
-					"parameters": {
-						"key": "\"Language\""
-					}
-				},
-				{
-					"id": "check-item-exists",
-					"objectClass": "Music_Safe",
-					"sid": 365990706523409,
-					"parameters": {
-						"key": "\"Language\""
-					}
-				},
-				{
-					"id": "get-item",
-					"objectClass": "Music_Safe",
-					"sid": 608645263557808,
-					"parameters": {
-						"key": "\"Level\""
-					}
-				},
-				{
-					"id": "check-item-exists",
-					"objectClass": "Music_Safe",
-					"sid": 394090205224989,
-					"parameters": {
-						"key": "\"Level\""
-					}
-				},
-				{
 					"id": "set-boolean-instvar",
 					"objectClass": "Camera",
 					"sid": 108493692543028,
@@ -1211,16 +1179,6 @@
 					],
 					"actions": [
 						{
-							"id": "set-item",
-							"objectClass": "Music_Safe",
-							"sid": 103467012962124,
-							"disabled": true,
-							"parameters": {
-								"key": "\"Sound\"",
-								"value": "Numbers_Music.Music"
-							}
-						},
-						{
 							"id": "spawn-another-object",
 							"objectClass": "Camera",
 							"sid": 586008382268166,
@@ -1379,8 +1337,7 @@
 							}
 						}
 					],
-					"sid": 941997960045917,
-					"disabled": true
+					"sid": 941997960045917
 				},
 				{
 					"eventType": "block",
@@ -1408,25 +1365,8 @@
 							"id": "stop",
 							"objectClass": "Audio",
 							"sid": 136888528375201,
-							"disabled": true,
 							"parameters": {
 								"tag": "\"music\""
-							}
-						},
-						{
-							"id": "get-item",
-							"objectClass": "Music_Safe",
-							"sid": 292497561717999,
-							"parameters": {
-								"key": "\"Sound\""
-							}
-						},
-						{
-							"id": "check-item-exists",
-							"objectClass": "Music_Safe",
-							"sid": 879080333388749,
-							"parameters": {
-								"key": "\"Sound\""
 							}
 						},
 						{
@@ -1720,24 +1660,6 @@
 							}
 						},
 						{
-							"id": "set-item",
-							"objectClass": "Music_Safe",
-							"sid": 345797918591218,
-							"parameters": {
-								"key": "\"Sound\"",
-								"value": "Numbers_Music.Music"
-							}
-						},
-						{
-							"id": "set-item",
-							"objectClass": "Music_Safe",
-							"sid": 175124357609834,
-							"parameters": {
-								"key": "\"Audio\"",
-								"value": "Numbers_Audio.Audio"
-							}
-						},
-						{
 							"id": "spawn-another-object",
 							"objectClass": "Camera",
 							"sid": 336694655653657,
@@ -1904,24 +1826,6 @@
 							}
 						},
 						{
-							"id": "set-item",
-							"objectClass": "Music_Safe",
-							"sid": 545502383266253,
-							"parameters": {
-								"key": "\"Sound\"",
-								"value": "Numbers_Music.Music"
-							}
-						},
-						{
-							"id": "set-item",
-							"objectClass": "Music_Safe",
-							"sid": 593261827278535,
-							"parameters": {
-								"key": "\"Audio\"",
-								"value": "Numbers_Audio.Audio"
-							}
-						},
-						{
 							"id": "spawn-another-object",
 							"objectClass": "Camera",
 							"sid": 268044345810345,
@@ -2060,22 +1964,6 @@
 							}
 						},
 						{
-							"id": "get-item",
-							"objectClass": "Music_Safe",
-							"sid": 605136176450572,
-							"parameters": {
-								"key": "\"Sound\""
-							}
-						},
-						{
-							"id": "check-item-exists",
-							"objectClass": "Music_Safe",
-							"sid": 378968559845396,
-							"parameters": {
-								"key": "\"Sound\""
-							}
-						},
-						{
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
 							"sid": 227807791219919
@@ -2090,50 +1978,6 @@
 						}
 					],
 					"sid": 564722983573844
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 907065120590255,
-							"parameters": {
-								"variable": "Start_Game"
-							}
-						},
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 373329002996472,
-							"parameters": {
-								"interval-seconds": "0.25"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 331159009570837,
-							"parameters": {
-								"variable": "Sound",
-								"comparison": 0,
-								"value": "-25"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "subtract-from-instvar",
-							"objectClass": "Numbers_Music",
-							"sid": 704538159062133,
-							"parameters": {
-								"instance-variable": "Music",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 541834401846158
 				},
 				{
 					"eventType": "block",
@@ -2651,9 +2495,83 @@
 									"path": "Lang.json"
 								}
 							}
+						},
+						{
+							"id": "get-item",
+							"objectClass": "Music_Safe",
+							"sid": 328959558312210,
+							"parameters": {
+								"key": "\"Language\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 365990706523409,
+							"parameters": {
+								"key": "\"Language\""
+							}
 						}
 					],
 					"sid": 509293858598576
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "Music_Safe",
+							"sid": 990934850904100,
+							"parameters": {
+								"key": "\"Language\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 641427811709005,
+							"parameters": {
+								"variable": "Language",
+								"value": "Music_Safe.ItemValue"
+							}
+						},
+						{
+							"callFunction": "Text",
+							"sid": 864793482739710
+						}
+					],
+					"sid": 830167833619807
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-missing",
+							"objectClass": "Music_Safe",
+							"sid": 804316142285876,
+							"parameters": {
+								"key": "\"Language\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 706053631097365,
+							"parameters": {
+								"variable": "Language",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "Text",
+							"sid": 470598987953723
+						}
+					],
+					"sid": 751922046961167
 				},
 				{
 					"eventType": "block",
@@ -2730,64 +2648,6 @@
 						}
 					],
 					"sid": 512263312729993
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-item-get",
-							"objectClass": "Music_Safe",
-							"sid": 898199624211784,
-							"parameters": {
-								"key": "\"Language\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 282485233056518,
-							"parameters": {
-								"variable": "Language",
-								"value": "Music_Safe.ItemValue"
-							}
-						},
-						{
-							"callFunction": "Text",
-							"sid": 183195559653953
-						}
-					],
-					"sid": 478372533226995
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-item-missing",
-							"objectClass": "Music_Safe",
-							"sid": 495459355438780,
-							"parameters": {
-								"key": "\"Language\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 229011281679247,
-							"parameters": {
-								"variable": "Language",
-								"value": "1"
-							}
-						},
-						{
-							"callFunction": "Text",
-							"sid": 789015552907705
-						}
-					],
-					"sid": 909153320647034
 				},
 				{
 					"eventType": "comment",

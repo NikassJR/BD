@@ -38,11 +38,17 @@
 					}
 				},
 				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 401724534653128,
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 497150369512834,
 					"parameters": {
-						"slot": "\"mysave\""
+						"audio-file": {
+							"path": "Music/Bakery"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
 					}
 				},
 				{
@@ -153,17 +159,11 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 937195238898324,
+					"id": "save",
+					"objectClass": "System",
+					"sid": 542750959305551,
 					"parameters": {
-						"audio-file": {
-							"path": "Music/Bakery"
-						},
-						"loop": "looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"music\""
+						"slot": "\"mysave\""
 					}
 				}
 			],
@@ -1506,50 +1506,6 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 534638684018935,
-							"parameters": {
-								"variable": "Start_Game"
-							}
-						},
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 748904115357913,
-							"parameters": {
-								"interval-seconds": "0.25"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 798138144325032,
-							"parameters": {
-								"variable": "Sound",
-								"comparison": 0,
-								"value": "-25"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "subtract-from-instvar",
-							"objectClass": "Numbers_Music",
-							"sid": 594309621043694,
-							"parameters": {
-								"instance-variable": "Music",
-								"value": "2"
-							}
-						}
-					],
-					"sid": 254117885593781
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
 							"sid": 475675075526668,
 							"parameters": {
 								"variable": "Start_Game"
@@ -1558,36 +1514,11 @@
 					],
 					"actions": [
 						{
-							"id": "set-item",
-							"objectClass": "Music_Safe",
-							"sid": 600465270660327,
-							"parameters": {
-								"key": "\"Level\"",
-								"value": "\"5\""
-							}
-						},
-						{
 							"id": "stop",
 							"objectClass": "Audio",
 							"sid": 958599035941429,
 							"parameters": {
 								"tag": "\"Suspense\""
-							}
-						},
-						{
-							"id": "get-item",
-							"objectClass": "Music_Safe",
-							"sid": 688878922615118,
-							"parameters": {
-								"key": "\"Sound\""
-							}
-						},
-						{
-							"id": "check-item-exists",
-							"objectClass": "Music_Safe",
-							"sid": 684001003447208,
-							"parameters": {
-								"key": "\"Sound\""
 							}
 						},
 						{
@@ -2582,137 +2513,6 @@
 		{
 			"eventType": "comment",
 			"text": "Music"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-load-complete",
-					"objectClass": "System",
-					"sid": 374407693147331
-				},
-				{
-					"id": "is-group-active",
-					"objectClass": "System",
-					"sid": 481356713514989,
-					"parameters": {
-						"group-name": "\"Player\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 930368213470470,
-					"parameters": {
-						"audio-file": {
-							"path": "Music/Station_Main"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"music\""
-					}
-				},
-				{
-					"id": "seek-to",
-					"objectClass": "Audio",
-					"sid": 681485478530644,
-					"parameters": {
-						"tag": "\"music\"",
-						"position": "Music_Safe.ItemValue"
-					}
-				}
-			],
-			"sid": 993849008385994,
-			"disabled": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-ended",
-					"objectClass": "Audio",
-					"sid": 596882994808959,
-					"parameters": {
-						"tag": "\"music\""
-					}
-				},
-				{
-					"id": "is-group-active",
-					"objectClass": "System",
-					"sid": 135952126199822,
-					"parameters": {
-						"group-name": "\"Player\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "stop",
-					"objectClass": "Audio",
-					"sid": 309844424187039,
-					"parameters": {
-						"tag": "\"Suspense\""
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 514237897615988,
-					"parameters": {
-						"seconds": "0.5",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 634462333376725,
-					"parameters": {
-						"audio-file": {
-							"path": "Music/Station_Main"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"music\""
-					}
-				}
-			],
-			"sid": 626440819377393,
-			"disabled": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-end-of-layout",
-					"objectClass": "System",
-					"sid": 281910325028054
-				}
-			],
-			"actions": [
-				{
-					"id": "stop",
-					"objectClass": "Audio",
-					"sid": 527314598825467,
-					"parameters": {
-						"tag": "\"Suspense\""
-					}
-				},
-				{
-					"id": "reset-global-variables",
-					"objectClass": "System",
-					"sid": 402621760388921,
-					"parameters": {
-						"reset-static": false
-					}
-				}
-			],
-			"sid": 238342603262101,
-			"disabled": true
 		},
 		{
 			"eventType": "block",

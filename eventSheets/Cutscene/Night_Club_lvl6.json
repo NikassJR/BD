@@ -31,7 +31,6 @@
 					"id": "save",
 					"objectClass": "System",
 					"sid": 737683075673686,
-					"disabled": true,
 					"parameters": {
 						"slot": "\"mysave\""
 					}
@@ -40,7 +39,6 @@
 					"id": "save",
 					"objectClass": "System",
 					"sid": 115374151929698,
-					"disabled": true,
 					"parameters": {
 						"slot": "\"start\""
 					}
@@ -49,7 +47,6 @@
 					"id": "stop",
 					"objectClass": "Audio",
 					"sid": 606609654181264,
-					"disabled": true,
 					"parameters": {
 						"tag": "\"Suspense\""
 					}
@@ -58,7 +55,6 @@
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 866928461341854,
-					"disabled": true,
 					"parameters": {
 						"variable": "Start_Game",
 						"value": "false"
@@ -68,7 +64,6 @@
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 820931319098975,
-					"disabled": true,
 					"parameters": {
 						"variable": "Continue_Game",
 						"value": "false"
@@ -78,7 +73,6 @@
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 830582446271194,
-					"disabled": true,
 					"parameters": {
 						"variable": "Safe_Zone",
 						"value": "true"
@@ -88,7 +82,6 @@
 					"id": "spawn-another-object",
 					"objectClass": "Player_All",
 					"sid": 736142898654159,
-					"disabled": true,
 					"parameters": {
 						"object": "Shadow3",
 						"layer": "\"Dialog\"",
@@ -101,7 +94,6 @@
 					"id": "set-scale",
 					"objectClass": "Shadow3",
 					"sid": 981756788912885,
-					"disabled": true,
 					"parameters": {
 						"scale": "5"
 					}
@@ -110,7 +102,6 @@
 					"id": "tween-one-property",
 					"objectClass": "Shadow3",
 					"sid": 524215412739408,
-					"disabled": true,
 					"behaviorType": "Твинанимация",
 					"parameters": {
 						"tags": "\"\"",
@@ -128,7 +119,6 @@
 					"id": "set-group-active",
 					"objectClass": "System",
 					"sid": 294719011442525,
-					"disabled": true,
 					"parameters": {
 						"group-name": "\"Player\"",
 						"state": "activated"
@@ -138,7 +128,6 @@
 					"id": "set-size",
 					"objectClass": "Camera",
 					"sid": 119492771930414,
-					"disabled": true,
 					"parameters": {
 						"width": "80",
 						"height": "45"
@@ -148,7 +137,6 @@
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 180860606948058,
-					"disabled": true,
 					"parameters": {
 						"seconds": "2",
 						"use-timescale": true
@@ -158,7 +146,6 @@
 					"id": "tween-one-property",
 					"objectClass": "EndScene",
 					"sid": 333121297801921,
-					"disabled": true,
 					"behaviorType": "Твинанимация",
 					"parameters": {
 						"tags": "\"\"",
@@ -176,7 +163,6 @@
 					"id": "add-to-instvar",
 					"objectClass": "Player_All",
 					"sid": 349503634220107,
-					"disabled": true,
 					"parameters": {
 						"instance-variable": "textframe",
 						"value": "1"
@@ -186,7 +172,6 @@
 					"id": "play",
 					"objectClass": "Audio",
 					"sid": 732150255364550,
-					"disabled": true,
 					"parameters": {
 						"audio-file": {
 							"path": "Music/Night_Club (Remaster)"
@@ -2103,50 +2088,6 @@
 				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 993828809789055,
-					"parameters": {
-						"variable": "Start_Game"
-					}
-				},
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 450923364216949,
-					"parameters": {
-						"interval-seconds": "0.5"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 268653536471799,
-					"parameters": {
-						"variable": "Sound",
-						"comparison": 0,
-						"value": "-25"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "subtract-from-eventvar",
-					"objectClass": "System",
-					"sid": 818398705517847,
-					"parameters": {
-						"variable": "Sound",
-						"value": "2.5"
-					}
-				}
-			],
-			"sid": 295749792912129
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
 					"sid": 717039342658032,
 					"parameters": {
 						"variable": "Start_Game"
@@ -2189,22 +2130,6 @@
 					}
 				},
 				{
-					"id": "get-item",
-					"objectClass": "Music_Safe",
-					"sid": 438307529598209,
-					"parameters": {
-						"key": "\"Sound\""
-					}
-				},
-				{
-					"id": "check-item-exists",
-					"objectClass": "Music_Safe",
-					"sid": 916810190454053,
-					"parameters": {
-						"key": "\"Sound\""
-					}
-				},
-				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 847581878805162
@@ -2219,31 +2144,6 @@
 				}
 			],
 			"sid": 866914714464857
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 754377057547096,
-					"parameters": {
-						"key": 71
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 959086031450343,
-					"parameters": {
-						"variable": "Enemys",
-						"value": "40"
-					}
-				}
-			],
-			"sid": 104283288104107
 		},
 		{
 			"eventType": "block",

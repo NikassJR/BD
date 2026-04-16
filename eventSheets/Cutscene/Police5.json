@@ -514,50 +514,6 @@
 				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 271096912904960,
-					"parameters": {
-						"variable": "Start_Game"
-					}
-				},
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 159601408273081,
-					"parameters": {
-						"interval-seconds": "0.25"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 605586798561351,
-					"parameters": {
-						"variable": "Sound",
-						"comparison": 0,
-						"value": "-25"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "subtract-from-instvar",
-					"objectClass": "Numbers_Music",
-					"sid": 985679054170929,
-					"parameters": {
-						"instance-variable": "Music",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 636560654432147
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
 					"sid": 413021937171493,
 					"parameters": {
 						"variable": "Start_Game"
@@ -592,22 +548,6 @@
 					}
 				},
 				{
-					"id": "get-item",
-					"objectClass": "Music_Safe",
-					"sid": 845690370521147,
-					"parameters": {
-						"key": "\"Sound\""
-					}
-				},
-				{
-					"id": "check-item-exists",
-					"objectClass": "Music_Safe",
-					"sid": 780305921358952,
-					"parameters": {
-						"key": "\"Sound\""
-					}
-				},
-				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 604982672854650
@@ -622,127 +562,6 @@
 				}
 			],
 			"sid": 754494257734372
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 254038553418606,
-					"parameters": {
-						"key": 69
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Door_Card",
-					"sid": 128099355260128,
-					"parameters": {
-						"object": "Player_Police"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EndScene",
-					"sid": 514074886818678,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetX",
-						"end-value": "Camera.X +250",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "press_E",
-					"sid": 977286669776645,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 544981079369013,
-					"parameters": {
-						"variable": "Start_Game",
-						"value": "true"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 299929884134179,
-					"parameters": {
-						"variable": "onDialMain",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 789713210521013,
-					"parameters": {
-						"variable": "Safe_Zone",
-						"value": "false"
-					}
-				}
-			],
-			"sid": 962804996375142
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Door_Card",
-					"sid": 830222859714999,
-					"parameters": {
-						"object": "Player_Police"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "press_E",
-					"sid": 596101949613501,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 364999572221794
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 125584182990319
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "press_E",
-					"sid": 660853720959330,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 134418466750726
 		}
 	],
 	"sid": 587569121120916

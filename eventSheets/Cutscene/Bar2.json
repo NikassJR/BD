@@ -22,6 +22,99 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
+							"sid": 223658891296421
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "Music_Safe",
+							"sid": 532094389455671,
+							"parameters": {
+								"key": "\"Apartament\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 715786424479362,
+							"parameters": {
+								"key": "\"Apartament\""
+							}
+						}
+					],
+					"sid": 509804038316239
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "Music_Safe",
+							"sid": 934157646741258,
+							"parameters": {
+								"key": "\"Apartament\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "seek-to",
+							"objectClass": "Audio",
+							"sid": 592766543767769,
+							"parameters": {
+								"tag": "\"Suspense\"",
+								"position": "Music_Safe.ItemValue"
+							}
+						}
+					],
+					"sid": 541969209970275
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-missing",
+							"objectClass": "Music_Safe",
+							"sid": 629103347428511,
+							"parameters": {
+								"key": "\"Apartament\""
+							}
+						},
+						{
+							"id": "on-item-removed",
+							"objectClass": "Music_Safe",
+							"sid": 681119114791166,
+							"parameters": {
+								"key": "\"Apartament\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 925800798614365,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/Heaviness"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"Suspense\""
+							}
+						}
+					],
+					"sid": 755036018456977,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
 							"sid": 720822761724874
 						}
 					],
@@ -64,22 +157,6 @@
 								"volume": "0",
 								"stereo-pan": "0",
 								"tag-optional": "\"Suspense\""
-							}
-						},
-						{
-							"id": "get-item",
-							"objectClass": "Music_Safe",
-							"sid": 241705497062761,
-							"parameters": {
-								"key": "\"Apartament\""
-							}
-						},
-						{
-							"id": "check-item-exists",
-							"objectClass": "Music_Safe",
-							"sid": 130732162457753,
-							"parameters": {
-								"key": "\"Apartament\""
 							}
 						},
 						{
@@ -189,100 +266,6 @@
 						}
 					],
 					"sid": 866118592962516
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-item-get",
-							"objectClass": "Music_Safe",
-							"sid": 330898478288326,
-							"parameters": {
-								"key": "\"Apartament\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 830972847026948,
-							"disabled": true,
-							"parameters": {
-								"audio-file": {
-									"path": "Music/Apartament"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"music\""
-							}
-						},
-						{
-							"id": "seek-to",
-							"objectClass": "Audio",
-							"sid": 622117935753976,
-							"parameters": {
-								"tag": "\"Suspense\"",
-								"position": "Music_Safe.ItemValue"
-							}
-						}
-					],
-					"sid": 539704143418771
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-item-missing",
-							"objectClass": "Music_Safe",
-							"sid": 565540878062700,
-							"parameters": {
-								"key": "\"Apartament\""
-							}
-						},
-						{
-							"id": "on-item-removed",
-							"objectClass": "Music_Safe",
-							"sid": 585159206271775,
-							"parameters": {
-								"key": "\"Apartament\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 595985912691135,
-							"disabled": true,
-							"parameters": {
-								"audio-file": {
-									"path": "Music/Apartament"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"music\""
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 706343565329237,
-							"parameters": {
-								"audio-file": {
-									"path": "Music/Heaviness"
-								},
-								"loop": "looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"Suspense\""
-							}
-						}
-					],
-					"sid": 566918074230008,
-					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -1343,50 +1326,6 @@
 				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 378012023357820,
-					"parameters": {
-						"variable": "Start_Game"
-					}
-				},
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 192527604781116,
-					"parameters": {
-						"interval-seconds": "0.25"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 611973172332067,
-					"parameters": {
-						"variable": "Sound",
-						"comparison": 0,
-						"value": "-25"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "subtract-from-instvar",
-					"objectClass": "Numbers_Music",
-					"sid": 717155305759782,
-					"parameters": {
-						"instance-variable": "Music",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 196785262050124
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
 					"sid": 438410580142020,
 					"parameters": {
 						"variable": "Start_Game"
@@ -1409,22 +1348,6 @@
 					"sid": 140307330153548,
 					"parameters": {
 						"tag": "\"music\""
-					}
-				},
-				{
-					"id": "get-item",
-					"objectClass": "Music_Safe",
-					"sid": 578156335180413,
-					"parameters": {
-						"key": "\"Sound\""
-					}
-				},
-				{
-					"id": "check-item-exists",
-					"objectClass": "Music_Safe",
-					"sid": 365045634121908,
-					"parameters": {
-						"key": "\"Sound\""
 					}
 				},
 				{

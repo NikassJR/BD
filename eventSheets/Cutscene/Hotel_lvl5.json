@@ -1346,6 +1346,14 @@
 					}
 				},
 				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_Wolf",
+					"sid": 727471890523437,
+					"parameters": {
+						"object": "Elektro_Shield"
+					}
+				},
+				{
 					"id": "is-visible",
 					"objectClass": "press_E",
 					"sid": 631174137827538
@@ -2650,50 +2658,6 @@
 				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 580508997356241,
-					"parameters": {
-						"variable": "Start_Game"
-					}
-				},
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 210253544088862,
-					"parameters": {
-						"interval-seconds": "0.25"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 612922982651347,
-					"parameters": {
-						"variable": "Sound",
-						"comparison": 0,
-						"value": "-25"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "subtract-from-instvar",
-					"objectClass": "Numbers_Music",
-					"sid": 275059953855080,
-					"parameters": {
-						"instance-variable": "Music",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 666578719046205
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
 					"sid": 679582710885583,
 					"parameters": {
 						"variable": "Start_Game"
@@ -2716,22 +2680,6 @@
 					"sid": 108240477963857,
 					"parameters": {
 						"tag": "\"Suspense\""
-					}
-				},
-				{
-					"id": "get-item",
-					"objectClass": "Music_Safe",
-					"sid": 475720807541950,
-					"parameters": {
-						"key": "\"Sound\""
-					}
-				},
-				{
-					"id": "check-item-exists",
-					"objectClass": "Music_Safe",
-					"sid": 124969927374348,
-					"parameters": {
-						"key": "\"Sound\""
 					}
 				},
 				{

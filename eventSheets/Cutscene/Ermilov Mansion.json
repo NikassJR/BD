@@ -1505,75 +1505,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 778705449107789,
-					"parameters": {
-						"key": 70
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 852207285426027,
-					"parameters": {
-						"variable": "Enemys",
-						"value": "5"
-					}
-				}
-			],
-			"sid": 552432754436850
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 588819972210218,
-					"parameters": {
-						"variable": "Start_Game"
-					}
-				},
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 888787536876084,
-					"parameters": {
-						"interval-seconds": "0.25"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 352646960922897,
-					"parameters": {
-						"variable": "Sound",
-						"comparison": 3,
-						"value": "-25"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "subtract-from-instvar",
-					"objectClass": "Numbers_Music",
-					"sid": 384377866110354,
-					"parameters": {
-						"instance-variable": "Music",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 149251712681436
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 986973355699442,
@@ -1618,22 +1549,6 @@
 					}
 				},
 				{
-					"id": "get-item",
-					"objectClass": "Music_Safe",
-					"sid": 219142619622624,
-					"parameters": {
-						"key": "\"Sound\""
-					}
-				},
-				{
-					"id": "check-item-exists",
-					"objectClass": "Music_Safe",
-					"sid": 137507611261125,
-					"parameters": {
-						"key": "\"Sound\""
-					}
-				},
-				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 736938672702788
@@ -1645,11 +1560,6 @@
 					"parameters": {
 						"layout": "Building_Final"
 					}
-				},
-				{
-					"id": "save-to-json",
-					"objectClass": "System",
-					"sid": 987803295564044
 				}
 			],
 			"sid": 243919369276922

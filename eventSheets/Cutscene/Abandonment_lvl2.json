@@ -55,15 +55,6 @@
 					}
 				},
 				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 804353041863543,
-					"parameters": {
-						"group-name": "\"Enemy & Fear\"",
-						"state": "deactivated"
-					}
-				},
-				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 192449237093977,
@@ -119,18 +110,9 @@
 					}
 				},
 				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 378192267748332,
-					"parameters": {
-						"seconds": "3",
-						"use-timescale": true
-					}
-				},
-				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 257419102317553,
+					"sid": 712269926457727,
 					"parameters": {
 						"audio-file": {
 							"path": "Music/Soul to soul"
@@ -139,6 +121,15 @@
 						"volume": "0",
 						"stereo-pan": "0",
 						"tag-optional": "\"Suspense\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 378192267748332,
+					"parameters": {
+						"seconds": "3",
+						"use-timescale": true
 					}
 				},
 				{
@@ -509,15 +500,6 @@
 								"volume": "0",
 								"stereo-pan": "0",
 								"tag-optional": "\"music\""
-							}
-						},
-						{
-							"id": "set-item",
-							"objectClass": "Music_Safe",
-							"sid": 379685131308825,
-							"parameters": {
-								"key": "\"SaveMusic\"",
-								"value": "\"0\""
 							}
 						},
 						{
@@ -1590,50 +1572,6 @@
 				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 583556942793061,
-					"parameters": {
-						"variable": "Start_Game"
-					}
-				},
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 326099789744084,
-					"parameters": {
-						"interval-seconds": "0.25"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 533753441911247,
-					"parameters": {
-						"variable": "Sound",
-						"comparison": 0,
-						"value": "-25"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "subtract-from-instvar",
-					"objectClass": "Numbers_Music",
-					"sid": 954723933819117,
-					"parameters": {
-						"instance-variable": "Music",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 201342049209840
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
 					"sid": 359818994656828,
 					"parameters": {
 						"variable": "Start_Game"
@@ -1656,22 +1594,6 @@
 					"sid": 907627376636447,
 					"parameters": {
 						"tag": "\"Suspense\""
-					}
-				},
-				{
-					"id": "get-item",
-					"objectClass": "Music_Safe",
-					"sid": 189187049644366,
-					"parameters": {
-						"key": "\"Sound\""
-					}
-				},
-				{
-					"id": "check-item-exists",
-					"objectClass": "Music_Safe",
-					"sid": 649249785904940,
-					"parameters": {
-						"key": "\"Sound\""
 					}
 				},
 				{

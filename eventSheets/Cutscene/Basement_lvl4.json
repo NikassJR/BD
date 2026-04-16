@@ -3889,50 +3889,6 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 478335219604354,
-							"parameters": {
-								"variable": "Start_Game"
-							}
-						},
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 160346402662861,
-							"parameters": {
-								"interval-seconds": "0.25"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 518737196274512,
-							"parameters": {
-								"variable": "Sound",
-								"comparison": 3,
-								"value": "-25"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "subtract-from-instvar",
-							"objectClass": "Numbers_Music",
-							"sid": 356059762919400,
-							"parameters": {
-								"instance-variable": "Music",
-								"value": "2"
-							}
-						}
-					],
-					"sid": 113403187851551
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
 							"sid": 134619245392527,
 							"parameters": {
 								"variable": "Start_Game"
@@ -3955,22 +3911,6 @@
 							"sid": 987530461128326,
 							"parameters": {
 								"tag": "\"Suspense\""
-							}
-						},
-						{
-							"id": "get-item",
-							"objectClass": "Music_Safe",
-							"sid": 325270420524381,
-							"parameters": {
-								"key": "\"Sound\""
-							}
-						},
-						{
-							"id": "check-item-exists",
-							"objectClass": "Music_Safe",
-							"sid": 177390874360303,
-							"parameters": {
-								"key": "\"Sound\""
 							}
 						},
 						{
@@ -4779,41 +4719,79 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-end-of-layout",
+					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 135485465328283
-				},
-				{
-					"id": "compare-key",
-					"objectClass": "Music_Safe",
-					"sid": 783120975917358,
+					"sid": 956490995204312,
 					"parameters": {
-						"comparison": 0,
-						"string": "\"Level\""
-					}
-				},
-				{
-					"id": "compare-value",
-					"objectClass": "Music_Safe",
-					"sid": 453573784504866,
-					"parameters": {
-						"comparison": 2,
-						"value": "\"6\""
+						"variable": "Start_Game"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-item",
+					"id": "check-item-exists",
 					"objectClass": "Music_Safe",
-					"sid": 564649008437746,
+					"sid": 647674631846570,
 					"parameters": {
-						"key": "\"Level\"",
-						"value": "\"6\""
+						"key": "\"Level\""
 					}
 				}
 			],
-			"sid": 655595399118682
+			"sid": 473535046312167,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Music_Safe",
+							"sid": 699247737689145,
+							"parameters": {
+								"key": "\"Level\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 415696294144065,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Music_Safe",
+									"sid": 346443719754529,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Music_Safe",
+									"sid": 627656149484825,
+									"parameters": {
+										"comparison": 2,
+										"value": "6"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "Music_Safe",
+									"sid": 423778859507300,
+									"parameters": {
+										"key": "\"Level\"",
+										"value": "6"
+									}
+								}
+							],
+							"sid": 529637613820751
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 276946524812111
