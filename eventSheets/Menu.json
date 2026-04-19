@@ -519,6 +519,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 992416427616477,
+					"parameters": {
+						"variable": "Continue_Game",
+						"value": "false"
+					}
+				},
+				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
 					"sid": 980240713291768,
@@ -975,95 +984,7 @@
 				{
 					"id": "stop-all",
 					"objectClass": "Audio",
-					"sid": 459626720587595,
-					"disabled": true
-				},
-				{
-					"id": "set-time-scale",
-					"objectClass": "System",
-					"sid": 523407413753800,
-					"disabled": true,
-					"parameters": {
-						"time-scale": "1"
-					}
-				},
-				{
-					"id": "spawn-another-object",
-					"objectClass": "Camera",
-					"sid": 999757019846744,
-					"disabled": true,
-					"parameters": {
-						"object": "Shadow5",
-						"layer": "\"HUD\"",
-						"image-point": "0",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-opacity",
-					"objectClass": "Shadow5",
-					"sid": 325425322672699,
-					"disabled": true,
-					"parameters": {
-						"opacity": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "Shadow5",
-					"sid": 389519206475640,
-					"disabled": true,
-					"parameters": {
-						"scale": "4"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "Shadow5",
-					"sid": 998180009403828,
-					"disabled": true,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetOpacity",
-						"end-value": "100",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 309142029406375,
-					"disabled": true,
-					"parameters": {
-						"seconds": "3",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 852397005006759,
-					"disabled": true,
-					"parameters": {
-						"variable": "ZoomCamera",
-						"value": "false"
-					}
-				},
-				{
-					"id": "reset-global-variables",
-					"objectClass": "System",
-					"sid": 935055503125788,
-					"disabled": true,
-					"parameters": {
-						"reset-static": false
-					}
+					"sid": 459626720587595
 				},
 				{
 					"id": "set-boolean-eventvar",
@@ -1072,16 +993,6 @@
 					"parameters": {
 						"variable": "Go",
 						"value": "false"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 689280327264376,
-					"disabled": true,
-					"parameters": {
-						"variable": "ZoomCamera",
-						"value": "true"
 					}
 				},
 				{
@@ -1125,6 +1036,109 @@
 				}
 			],
 			"sid": 191003889472040
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 855124022290215
+				},
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 613218213692581
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "Game_Save",
+					"sid": 191823484729934,
+					"parameters": {
+						"key": "\"Hardcore\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 226022502770719,
+					"parameters": {
+						"key": "\"Hardcore\""
+					}
+				}
+			],
+			"sid": 910249359364090,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "Game_Save",
+					"sid": 933141295338187,
+					"parameters": {
+						"key": "\"Hardcore\""
+					}
+				},
+				{
+					"id": "compare-value",
+					"objectClass": "Game_Save",
+					"sid": 248376893604591,
+					"parameters": {
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 562683242899988,
+					"parameters": {
+						"variable": "Hardcore",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 432842406864677
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "Game_Save",
+					"sid": 475384535160001,
+					"parameters": {
+						"key": "\"Hardcore\""
+					}
+				},
+				{
+					"id": "compare-value",
+					"objectClass": "Game_Save",
+					"sid": 201995225716897,
+					"parameters": {
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 952048113079441,
+					"parameters": {
+						"variable": "Hardcore",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 786102290599653
 		},
 		{
 			"eventType": "comment",
@@ -1494,7 +1508,7 @@
 				},
 				{
 					"id": "get-item",
-					"objectClass": "Music_Safe",
+					"objectClass": "Game_Save",
 					"sid": 268962970843259,
 					"parameters": {
 						"key": "\"Language\""
@@ -1502,7 +1516,7 @@
 				},
 				{
 					"id": "check-item-exists",
-					"objectClass": "Music_Safe",
+					"objectClass": "Game_Save",
 					"sid": 958842944533459,
 					"parameters": {
 						"key": "\"Language\""
@@ -1516,7 +1530,7 @@
 			"conditions": [
 				{
 					"id": "on-item-get",
-					"objectClass": "Music_Safe",
+					"objectClass": "Game_Save",
 					"sid": 811261015871764,
 					"parameters": {
 						"key": "\"Language\""
@@ -1530,7 +1544,7 @@
 					"sid": 905441464535800,
 					"parameters": {
 						"variable": "Language",
-						"value": "Music_Safe.ItemValue"
+						"value": "Game_Save.ItemValue"
 					}
 				},
 				{
@@ -1545,7 +1559,7 @@
 			"conditions": [
 				{
 					"id": "on-item-missing",
-					"objectClass": "Music_Safe",
+					"objectClass": "Game_Save",
 					"sid": 297115424390475,
 					"parameters": {
 						"key": "\"Language\""
@@ -1560,6 +1574,15 @@
 					"parameters": {
 						"variable": "Language",
 						"value": "1"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "Game_Save",
+					"sid": 231722073545281,
+					"parameters": {
+						"key": "\"Language\"",
+						"value": "Language"
 					}
 				},
 				{
@@ -1677,7 +1700,7 @@
 				},
 				{
 					"id": "set-item",
-					"objectClass": "Music_Safe",
+					"objectClass": "Game_Save",
 					"sid": 101352704599307,
 					"parameters": {
 						"key": "\"Language\"",
@@ -2124,7 +2147,7 @@
 								},
 								{
 									"id": "get-item",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 948617855401088,
 									"parameters": {
 										"key": "\"TimerSec\""
@@ -2132,7 +2155,7 @@
 								},
 								{
 									"id": "get-item",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 448291576311385,
 									"parameters": {
 										"key": "\"TimerMin\""
@@ -2140,7 +2163,7 @@
 								},
 								{
 									"id": "get-item",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 708249769719313,
 									"parameters": {
 										"key": "\"TimerHour\""
@@ -2148,7 +2171,7 @@
 								},
 								{
 									"id": "check-item-exists",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 130244186604090,
 									"parameters": {
 										"key": "\"TimerSec\""
@@ -2156,7 +2179,7 @@
 								},
 								{
 									"id": "check-item-exists",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 772484320184842,
 									"parameters": {
 										"key": "\"TimerMin\""
@@ -2164,7 +2187,7 @@
 								},
 								{
 									"id": "check-item-exists",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 987186416198568,
 									"parameters": {
 										"key": "\"TimerHour\""
@@ -2179,7 +2202,7 @@
 							"conditions": [
 								{
 									"id": "on-item-exists",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 521807813740498,
 									"parameters": {
 										"key": "\"TimerHour\""
@@ -2193,7 +2216,7 @@
 									"sid": 766709756073702,
 									"parameters": {
 										"variable": "hour",
-										"value": "Music_Safe.ItemValue"
+										"value": "Game_Save.ItemValue"
 									}
 								}
 							],
@@ -2204,7 +2227,7 @@
 							"conditions": [
 								{
 									"id": "on-item-exists",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 606352618334397,
 									"parameters": {
 										"key": "\"TimerMin\""
@@ -2218,7 +2241,7 @@
 									"sid": 407478140060917,
 									"parameters": {
 										"variable": "minute",
-										"value": "Music_Safe.ItemValue"
+										"value": "Game_Save.ItemValue"
 									}
 								}
 							],
@@ -2229,7 +2252,7 @@
 							"conditions": [
 								{
 									"id": "on-item-exists",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 473149648376447,
 									"parameters": {
 										"key": "\"TimerSec\""
@@ -2243,7 +2266,7 @@
 									"sid": 830622287132670,
 									"parameters": {
 										"variable": "sec",
-										"value": "Music_Safe.ItemValue"
+										"value": "Game_Save.ItemValue"
 									}
 								}
 							],
@@ -2672,7 +2695,7 @@
 							"actions": [
 								{
 									"id": "set-item",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 483790413996295,
 									"parameters": {
 										"key": "\"TimerMin\"",
@@ -2681,7 +2704,7 @@
 								},
 								{
 									"id": "set-item",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 973043695227674,
 									"parameters": {
 										"key": "\"TimerSec\"",
@@ -2690,7 +2713,7 @@
 								},
 								{
 									"id": "set-item",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 407447817993057,
 									"parameters": {
 										"key": "\"TimerHour\"",
@@ -2721,7 +2744,7 @@
 					"actions": [
 						{
 							"id": "get-item",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 459986467033781,
 							"parameters": {
 								"key": "\"Hardcore\""
@@ -2729,7 +2752,7 @@
 						},
 						{
 							"id": "check-item-exists",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 132192742442572,
 							"parameters": {
 								"key": "\"Hardcore\""
@@ -2745,7 +2768,7 @@
 					"conditions": [
 						{
 							"id": "compare-key",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 345388709921622,
 							"parameters": {
 								"comparison": 0,
@@ -2753,17 +2776,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 513874015078642,
-							"parameters": {
-								"variable": "Hardcore",
-								"value": "Music_Safe.ItemValue"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 945270000155678,
 					"disabled": true
 				}
@@ -2852,6 +2865,15 @@
 										"stereo-pan": "0",
 										"tag-optional": "\"audio\""
 									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 707203274325500,
+									"parameters": {
+										"variable": "HPplayer",
+										"value": "15"
+									}
 								}
 							],
 							"sid": 329030705395676
@@ -2862,9 +2884,13 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 410582876959984
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_All",
+							"sid": 640004547961409,
+							"parameters": {
+								"object": "Save_Stolb"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -2968,7 +2994,7 @@
 					"actions": [
 						{
 							"id": "set-item",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 343798635046332,
 							"parameters": {
 								"key": "\"Continue_Maket\"",

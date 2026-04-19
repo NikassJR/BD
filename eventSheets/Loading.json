@@ -90,9 +90,36 @@
 					}
 				},
 				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 327782517873578
+				},
+				{
+					"id": "play",
+					"objectClass": "Video",
+					"sid": 308388149138184
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 444562740275439,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Video",
+					"sid": 714501738643078,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
 					"id": "tween-one-property",
 					"objectClass": "End_Scene2",
-					"sid": 786395331736571,
+					"sid": 285531307143386,
 					"behaviorType": "Твинанимация",
 					"parameters": {
 						"tags": "\"\"",
@@ -109,21 +136,21 @@
 				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
-					"sid": 327782517873578
+					"sid": 926936135761460
 				},
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 965146832807052,
+					"sid": 457046636101764,
 					"parameters": {
-						"seconds": "5",
+						"seconds": "3",
 						"use-timescale": true
 					}
 				},
 				{
 					"id": "tween-one-property",
 					"objectClass": "End_Scene2",
-					"sid": 721310771415059,
+					"sid": 306610094534794,
 					"behaviorType": "Твинанимация",
 					"parameters": {
 						"tags": "\"\"",
@@ -140,21 +167,7 @@
 				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
-					"sid": 163996565318160
-				},
-				{
-					"id": "play",
-					"objectClass": "Video",
-					"sid": 127399309842520
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 121572548201170,
-					"parameters": {
-						"seconds": "5",
-						"use-timescale": true
-					}
+					"sid": 344846540942946
 				},
 				{
 					"id": "set-size",
@@ -175,140 +188,6 @@
 				}
 			],
 			"sid": 840048015000591
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-completed",
-					"objectClass": "AJAX",
-					"sid": 250670672674765,
-					"parameters": {
-						"tag": "\"Lang\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "load",
-					"objectClass": "Lang",
-					"sid": 330606016625222,
-					"parameters": {
-						"json": "AJAX.LastData"
-					}
-				},
-				{
-					"callFunction": "Text",
-					"sid": 481843138611349
-				}
-			],
-			"sid": 562317772031260
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 145442106181281,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "Flag"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 366764781445519,
-					"parameters": {
-						"variable": "Language",
-						"value": "Language=0?1:0"
-					}
-				},
-				{
-					"id": "set-item",
-					"objectClass": "Music_Safe",
-					"sid": 822200435910469,
-					"parameters": {
-						"key": "\"Language\"",
-						"value": "Language"
-					}
-				},
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Flag",
-					"sid": 813933650297247,
-					"parameters": {
-						"frame-number": "Language"
-					}
-				},
-				{
-					"callFunction": "Text",
-					"sid": 896417625015170
-				}
-			],
-			"sid": 619966420100454
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-item-get",
-					"objectClass": "Music_Safe",
-					"sid": 888225518302600,
-					"parameters": {
-						"key": "\"Language\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 147331691648639,
-					"parameters": {
-						"variable": "Language",
-						"value": "Music_Safe.ItemValue"
-					}
-				},
-				{
-					"callFunction": "Text",
-					"sid": 458061147322893
-				}
-			],
-			"sid": 653793614236079
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-item-missing",
-					"objectClass": "Music_Safe",
-					"sid": 798712846202015,
-					"parameters": {
-						"key": "\"Language\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 597173840300665,
-					"parameters": {
-						"variable": "Language",
-						"value": "1"
-					}
-				},
-				{
-					"callFunction": "Text",
-					"sid": 146852364643446
-				}
-			],
-			"sid": 717825446303898
 		},
 		{
 			"eventType": "block",

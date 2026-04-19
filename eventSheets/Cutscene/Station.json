@@ -491,12 +491,12 @@
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 596487773512362,
+					"sid": 767843542799271,
 					"parameters": {
 						"object-to-create": "Press_Space",
-						"layer": "4",
+						"layer": "\"Dialog\"",
 						"x": "Player_Cutscene.X ",
-						"y": "Player_Cutscene.Y -70",
+						"y": "Player_Cutscene.Y -120",
 						"create-hierarchy": false,
 						"template-name": "\"\""
 					}
@@ -2792,7 +2792,7 @@
 			"actions": [
 				{
 					"id": "check-item-exists",
-					"objectClass": "Music_Safe",
+					"objectClass": "Game_Save",
 					"sid": 348767314483029,
 					"parameters": {
 						"key": "\"Level\""
@@ -2806,7 +2806,7 @@
 					"conditions": [
 						{
 							"id": "on-item-exists",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 796567759755897,
 							"parameters": {
 								"key": "\"Level\""
@@ -2821,7 +2821,7 @@
 							"conditions": [
 								{
 									"id": "compare-key",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 781038327339782,
 									"parameters": {
 										"comparison": 0,
@@ -2830,7 +2830,7 @@
 								},
 								{
 									"id": "compare-value",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 821998303650352,
 									"parameters": {
 										"comparison": 2,
@@ -2841,7 +2841,7 @@
 							"actions": [
 								{
 									"id": "set-item",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 233281783686193,
 									"parameters": {
 										"key": "\"Level\"",
@@ -2889,7 +2889,7 @@
 			"conditions": [
 				{
 					"id": "on-item-missing",
-					"objectClass": "Music_Safe",
+					"objectClass": "Game_Save",
 					"sid": 499060682480540,
 					"parameters": {
 						"key": "\"Level\""
@@ -2899,7 +2899,7 @@
 			"actions": [
 				{
 					"id": "set-item",
-					"objectClass": "Music_Safe",
+					"objectClass": "Game_Save",
 					"sid": 414993541300859,
 					"parameters": {
 						"key": "\"Level\"",

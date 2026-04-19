@@ -46,6 +46,14 @@
 					],
 					"actions": [
 						{
+							"id": "save",
+							"objectClass": "System",
+							"sid": 169495444106764,
+							"parameters": {
+								"slot": "\"start\""
+							}
+						},
+						{
 							"id": "spawn-another-object",
 							"objectClass": "Player_Wolf",
 							"sid": 262396980805484,
@@ -167,28 +175,20 @@
 							}
 						},
 						{
-							"id": "save",
-							"objectClass": "System",
-							"sid": 462636941262185,
-							"parameters": {
-								"slot": "\"start\""
-							}
-						},
-						{
-							"id": "save",
-							"objectClass": "System",
-							"sid": 934539357007568,
-							"parameters": {
-								"slot": "\"mysave\""
-							}
-						},
-						{
 							"id": "wait",
 							"objectClass": "System",
 							"sid": 575926522989913,
 							"parameters": {
 								"seconds": "1",
 								"use-timescale": true
+							}
+						},
+						{
+							"id": "save",
+							"objectClass": "System",
+							"sid": 390485859142294,
+							"parameters": {
+								"slot": "\"mysave\""
 							}
 						},
 						{
@@ -1677,28 +1677,6 @@
 								"animation": "\"Wolf\"",
 								"from": "beginning"
 							}
-						},
-						{
-							"id": "stop",
-							"objectClass": "Audio",
-							"sid": 285982228055077,
-							"parameters": {
-								"tag": "\"Suspense\""
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 638058899840888,
-							"parameters": {
-								"audio-file": {
-									"path": "Underground"
-								},
-								"loop": "looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"music\""
-							}
 						}
 					],
 					"sid": 786916535285546
@@ -1891,7 +1869,7 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 522813704024614,
+							"sid": 966734265018944,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
@@ -1901,10 +1879,282 @@
 						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
+							"sid": 605342448239796
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Camera",
+							"sid": 236945457388790,
+							"parameters": {
+								"object": "Ekran",
+								"layer": "\"Player\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Ekran",
+							"sid": 660035774053119,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 837006221072731,
+							"parameters": {
+								"audio-file": {
+									"path": "Interferences"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Ekran",
+							"sid": 807731636524440,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "70",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 803926535620701
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Ekran",
+							"sid": 722464341967982,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "5",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 869097936884154,
+							"parameters": [
+								"\"Maniac1\"",
+								"244",
+								"4"
+							]
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Maniac_Station",
+							"sid": 106756564836428,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 285916374315157
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 557622430413655,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "28"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 609930984598511
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 211806611531271,
+							"parameters": [
+								"\"Maniac1\"",
+								"245",
+								"3"
+							]
+						}
+					],
+					"sid": 242674939035627
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 797466200470963,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "29"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 512497926532402
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 410376671883878,
+							"parameters": [
+								"\"Maniac1\"",
+								"246",
+								"2"
+							]
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "AD",
+							"sid": 191514044313391,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "AD",
+							"sid": 240873347335354,
+							"behaviorType": "Мигание",
+							"parameters": {
+								"on-time": "0.5",
+								"off-time": "0.25",
+								"duration": "3"
+							}
+						}
+					],
+					"sid": 266588886259376
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 626718590201542,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "30"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 666276488781582
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 783109132875294,
+							"parameters": [
+								"\"Maniac1\"",
+								"247",
+								"2"
+							]
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 351082765050777,
+							"parameters": {
+								"audio-file": {
+									"path": "Missage"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
+						},
+						{
+							"callFunction": "shakeScreen",
+							"sid": 316518792624234
+						},
+						{
+							"callFunction": "shakeScreen2",
+							"sid": 375488842060140
+						}
+					],
+					"sid": 973538220712653
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 687487323669763,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "31"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
 							"sid": 680425111101707
 						}
 					],
 					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 579545703054559,
+							"parameters": {
+								"tag": "\"Suspense\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 539377182860594,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/Basement"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
+							}
+						},
 						{
 							"id": "create-object",
 							"objectClass": "System",
@@ -1927,18 +2177,6 @@
 								"layer": "\"Front\"",
 								"x": "Player_All.X ",
 								"y": "Player_All.Y -100",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Camera",
-							"sid": 409875523328128,
-							"parameters": {
-								"object": "Ekran",
-								"layer": "\"Player\"",
-								"image-point": "0",
 								"create-hierarchy": false,
 								"template-name": "\"\""
 							}
@@ -1986,6 +2224,14 @@
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
 							"sid": 768486798660481
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Maniac_Station",
+							"sid": 622418494296941,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						},
 						{
 							"id": "tween-one-property",
@@ -2051,11 +2297,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 876014460648217,
+							"sid": 311234251477981,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
@@ -2109,11 +2355,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 788988665157135,
+							"sid": 721548369107612,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
@@ -2167,11 +2413,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 549491247515546,
+							"sid": 124517423030711,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
@@ -2229,21 +2475,21 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 712884383495815,
+							"sid": 130880969191606,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 5,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 209615692890497,
+							"sid": 750297237587599,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 2,
-								"value": "28"
+								"value": "32"
 							}
 						},
 						{
@@ -2350,21 +2596,21 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 181310787380146,
+							"sid": 292248311311286,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 5,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 990515580724274,
+							"sid": 996916777600219,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 2,
-								"value": "28"
+								"value": "32"
 							}
 						}
 					],
@@ -2670,11 +2916,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 996300148689682,
+							"sid": 837448798564478,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
@@ -2774,11 +3020,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 524052106635312,
+							"sid": 151272740234601,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
@@ -2828,11 +3074,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 466398808581113,
+							"sid": 275504312902655,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
@@ -2901,11 +3147,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 914593319333328,
+							"sid": 849438434817691,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
@@ -3015,11 +3261,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 952317064232520,
+							"sid": 193066878567722,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
@@ -3069,11 +3315,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 115992065194522,
+							"sid": 681120623956170,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
@@ -3142,11 +3388,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 378372152127051,
+							"sid": 731688099575037,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
@@ -3266,11 +3512,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 857922938119527,
+							"sid": 839169086291977,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
@@ -3330,11 +3576,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 465555793002547,
+							"sid": 912894539272258,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "27"
+								"value": "31"
 							}
 						},
 						{
@@ -3472,11 +3718,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 962715788964059,
+							"sid": 554663518692211,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "28"
+								"value": "32"
 							}
 						},
 						{
@@ -3511,25 +3757,6 @@
 							"parameters": {
 								"group-name": "\"Player\"",
 								"state": "activated"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "AD",
-							"sid": 191514044313391,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "AD",
-							"sid": 240873347335354,
-							"behaviorType": "Мигание",
-							"parameters": {
-								"on-time": "0.5",
-								"off-time": "0.25",
-								"duration": "3"
 							}
 						},
 						{
@@ -3597,11 +3824,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 495171817210161,
+							"sid": 946628125651597,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "28"
+								"value": "32"
 							}
 						},
 						{
@@ -3626,6 +3853,51 @@
 							"parameters": {
 								"group-name": "\"Player\"",
 								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyFurious",
+							"sid": 120159221183957,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyKnife",
+							"sid": 685546648224948,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyBaseball",
+							"sid": 649797643474438,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemySecurity",
+							"sid": 655551315982482,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyPchel",
+							"sid": 822371399291811,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
 							}
 						},
 						{
@@ -3664,11 +3936,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 329210536387458,
+							"sid": 515713103563247,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "29"
+								"value": "33"
 							}
 						},
 						{
@@ -3806,11 +4078,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 947372206915427,
+							"sid": 102749241363769,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "30"
+								"value": "34"
 							}
 						},
 						{
@@ -3943,21 +4215,21 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 760412894644752,
+							"sid": 282407377788452,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
-								"value": "28"
+								"value": "32"
 							}
 						},
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 261862128267437,
+							"sid": 595888394970908,
 							"parameters": {
 								"variable": "Enemys",
 								"comparison": 2,
-								"value": "32"
+								"value": "30"
 							}
 						},
 						{
@@ -4645,80 +4917,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "Player_All",
-					"sid": 895455951415624,
-					"parameters": {
-						"object": "Trigger_CutScene"
-					}
-				},
-				{
-					"id": "has-tags",
-					"objectClass": "Trigger_CutScene",
-					"sid": 890818752691466,
-					"parameters": {
-						"tags": "\"Save\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 724554175932489,
-					"parameters": {
-						"slot": "\"mysave\""
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Trigger_CutScene",
-					"sid": 502313663168426
-				}
-			],
-			"sid": 759638259196406
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "Player_All",
-					"sid": 203901008156108,
-					"parameters": {
-						"object": "Trigger_CutScene"
-					}
-				},
-				{
-					"id": "has-tags",
-					"objectClass": "Trigger_CutScene",
-					"sid": 641620703859447,
-					"parameters": {
-						"tags": "\"Save1\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 788901655750022,
-					"parameters": {
-						"slot": "\"mysave\""
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Trigger_CutScene",
-					"sid": 462234961337072
-				}
-			],
-			"sid": 969645728904044
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 956490995204312,
@@ -4730,7 +4928,7 @@
 			"actions": [
 				{
 					"id": "check-item-exists",
-					"objectClass": "Music_Safe",
+					"objectClass": "Game_Save",
 					"sid": 647674631846570,
 					"parameters": {
 						"key": "\"Level\""
@@ -4744,7 +4942,7 @@
 					"conditions": [
 						{
 							"id": "on-item-exists",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 699247737689145,
 							"parameters": {
 								"key": "\"Level\""
@@ -4759,7 +4957,7 @@
 							"conditions": [
 								{
 									"id": "compare-key",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 346443719754529,
 									"parameters": {
 										"comparison": 0,
@@ -4768,7 +4966,7 @@
 								},
 								{
 									"id": "compare-value",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 627656149484825,
 									"parameters": {
 										"comparison": 2,
@@ -4779,7 +4977,7 @@
 							"actions": [
 								{
 									"id": "set-item",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 423778859507300,
 									"parameters": {
 										"key": "\"Level\"",

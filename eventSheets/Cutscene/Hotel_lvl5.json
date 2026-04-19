@@ -1261,11 +1261,6 @@
 					"parameters": {
 						"tags": "\"Active\""
 					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 872659168815506
 				}
 			],
 			"actions": [
@@ -1315,11 +1310,6 @@
 						"object": "Elektro_Shield"
 					},
 					"isInverted": true
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 537231916688963
 				}
 			],
 			"actions": [
@@ -2532,6 +2522,11 @@
 					"parameters": {
 						"animation": "\"Death\""
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 902704021759444
 				}
 			],
 			"actions": [
@@ -2632,6 +2627,14 @@
 					}
 				},
 				{
+					"id": "set-scale",
+					"objectClass": "Shadow3",
+					"sid": 946543014085452,
+					"parameters": {
+						"scale": "2"
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 882612589233975,
@@ -2690,9 +2693,9 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 712926048462671,
+					"sid": 548664180698362,
 					"parameters": {
-						"layout": "Mark_Flat3"
+						"layout": "Police2"
 					}
 				}
 			],
@@ -2761,7 +2764,7 @@
 			"actions": [
 				{
 					"id": "check-item-exists",
-					"objectClass": "Music_Safe",
+					"objectClass": "Game_Save",
 					"sid": 722627795282269,
 					"parameters": {
 						"key": "\"Level\""
@@ -2775,7 +2778,7 @@
 					"conditions": [
 						{
 							"id": "on-item-exists",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 553573066879195,
 							"parameters": {
 								"key": "\"Level\""
@@ -2790,7 +2793,7 @@
 							"conditions": [
 								{
 									"id": "compare-key",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 787848187462375,
 									"parameters": {
 										"comparison": 0,
@@ -2799,7 +2802,7 @@
 								},
 								{
 									"id": "compare-value",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 800166813129380,
 									"parameters": {
 										"comparison": 2,
@@ -2810,7 +2813,7 @@
 							"actions": [
 								{
 									"id": "set-item",
-									"objectClass": "Music_Safe",
+									"objectClass": "Game_Save",
 									"sid": 210105258307927,
 									"parameters": {
 										"key": "\"Level\"",

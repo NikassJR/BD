@@ -50,7 +50,7 @@
 					"actions": [
 						{
 							"id": "get-item",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 923307912331898,
 							"parameters": {
 								"key": "\"Audio\""
@@ -58,7 +58,7 @@
 						},
 						{
 							"id": "check-item-exists",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 101597154701816,
 							"parameters": {
 								"key": "\"Audio\""
@@ -73,7 +73,7 @@
 					"conditions": [
 						{
 							"id": "on-item-get",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 386901019083472,
 							"parameters": {
 								"key": "\"Audio\""
@@ -87,7 +87,7 @@
 							"sid": 244601665185304,
 							"parameters": {
 								"instance-variable": "Audio",
-								"value": "Music_Safe.ItemValue"
+								"value": "Game_Save.ItemValue"
 							}
 						}
 					],
@@ -98,7 +98,7 @@
 					"conditions": [
 						{
 							"id": "on-item-missing",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 441252304180518,
 							"parameters": {
 								"key": "\"Audio\""
@@ -134,7 +134,7 @@
 						},
 						{
 							"id": "set-item",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 296417748467037,
 							"parameters": {
 								"key": "\"Audio\"",
@@ -169,6 +169,14 @@
 							"sid": 384335882614581,
 							"parameters": {
 								"tag": "\"Fire\""
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 231133202456518,
+							"parameters": {
+								"tag": "\"Walk\""
 							}
 						},
 						{
@@ -222,6 +230,15 @@
 							"sid": 366148250415628,
 							"parameters": {
 								"tag": "\"Water\"",
+								"db": "Audio"
+							}
+						},
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 786914386230386,
+							"parameters": {
+								"tag": "\"Walk\"",
 								"db": "Audio"
 							}
 						},
@@ -629,22 +646,22 @@
 						{
 							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 169906573292229,
+							"sid": 361669751862364,
 							"parameters": {
-								"layer": "LayerIndex(\"Setting\")"
+								"layer": "\"HUD\""
 							}
 						},
 						{
-							"id": "compare-boolean-eventvar",
+							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 568175040285956,
+							"sid": 425806497660435,
 							"parameters": {
-								"variable": "Pause"
+								"layer": "\"Setting\""
 							}
 						}
 					],
 					"actions": [],
-					"sid": 919811009253227,
+					"sid": 145483531035086,
 					"children": [
 						{
 							"eventType": "block",
@@ -652,7 +669,7 @@
 								{
 									"id": "on-click",
 									"objectClass": "Mouse",
-									"sid": 437760782421295,
+									"sid": 461270452987783,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked"
@@ -661,7 +678,7 @@
 								{
 									"id": "cursor-is-over-object",
 									"objectClass": "Mouse",
-									"sid": 888630985900188,
+									"sid": 690884427200374,
 									"parameters": {
 										"object": "Arrow2"
 									}
@@ -669,16 +686,21 @@
 								{
 									"id": "compare-text",
 									"objectClass": "Arrow2",
-									"sid": 782453800757496,
+									"sid": 647523191824795,
 									"parameters": {
 										"text-to-compare": "\"<\"",
 										"case-sensitivity": "ignore-case"
 									}
 								},
 								{
+									"id": "is-visible",
+									"objectClass": "Arrow2",
+									"sid": 800691850558578
+								},
+								{
 									"id": "compare-instance-variable",
 									"objectClass": "Numbers_Audio",
-									"sid": 236758795429467,
+									"sid": 540593435077034,
 									"parameters": {
 										"instance-variable": "Audio",
 										"comparison": 4,
@@ -690,7 +712,7 @@
 								{
 									"id": "subtract-from-instvar",
 									"objectClass": "Numbers_Audio",
-									"sid": 138116712443543,
+									"sid": 946622583279989,
 									"parameters": {
 										"instance-variable": "Audio",
 										"value": "1"
@@ -698,49 +720,23 @@
 								},
 								{
 									"id": "set-item",
-									"objectClass": "Music_Safe",
-									"sid": 665976975155909,
+									"objectClass": "Game_Save",
+									"sid": 871579690254902,
 									"parameters": {
 										"key": "\"Audio\"",
 										"value": "Numbers_Audio.Audio"
 									}
 								}
 							],
-							"sid": 911648799608085
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 481000385300530,
-							"parameters": {
-								"layer": "LayerIndex(\"Setting\")"
-							}
+							"sid": 987081697086513
 						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 967497268004560,
-							"parameters": {
-								"variable": "Pause"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 858175244316688,
-					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
 									"id": "on-click",
 									"objectClass": "Mouse",
-									"sid": 739315283430437,
+									"sid": 385783768204238,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked"
@@ -749,15 +745,20 @@
 								{
 									"id": "cursor-is-over-object",
 									"objectClass": "Mouse",
-									"sid": 326170469666813,
+									"sid": 559972277808903,
 									"parameters": {
 										"object": "Arrow2"
 									}
 								},
 								{
+									"id": "is-visible",
+									"objectClass": "Arrow2",
+									"sid": 136826074260275
+								},
+								{
 									"id": "compare-text",
 									"objectClass": "Arrow2",
-									"sid": 560365507022888,
+									"sid": 977582067506114,
 									"parameters": {
 										"text-to-compare": "\">\"",
 										"case-sensitivity": "ignore-case"
@@ -766,7 +767,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Numbers_Audio",
-									"sid": 567462290678452,
+									"sid": 644758222509567,
 									"parameters": {
 										"instance-variable": "Audio",
 										"comparison": 2,
@@ -778,7 +779,7 @@
 								{
 									"id": "add-to-instvar",
 									"objectClass": "Numbers_Audio",
-									"sid": 642813924577950,
+									"sid": 617827763312781,
 									"parameters": {
 										"instance-variable": "Audio",
 										"value": "1"
@@ -786,15 +787,15 @@
 								},
 								{
 									"id": "set-item",
-									"objectClass": "Music_Safe",
-									"sid": 717708431785784,
+									"objectClass": "Game_Save",
+									"sid": 553562464708468,
 									"parameters": {
 										"key": "\"Audio\"",
 										"value": "Numbers_Audio.Audio"
 									}
 								}
 							],
-							"sid": 811290424430358
+							"sid": 740230740551128
 						}
 					],
 					"isOrBlock": true
@@ -844,7 +845,7 @@
 						},
 						{
 							"id": "set-item",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 477959564144376,
 							"parameters": {
 								"key": "\"Audio\"",
@@ -854,6 +855,180 @@
 					],
 					"sid": 691196908971579,
 					"isOrBlock": true
+				},
+				{
+					"eventType": "comment",
+					"text": "Player_Move"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 402453965260065,
+							"parameters": {
+								"key": 87
+							}
+						},
+						{
+							"id": "is-jumping",
+							"objectClass": "Player_All",
+							"sid": 927726411348830,
+							"behaviorType": "Платформер"
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 198267655512699
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 572239040733626,
+							"parameters": {
+								"audio-file": {
+									"path": "Player/Jump"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
+						}
+					],
+					"sid": 553291770961664
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-landed",
+							"objectClass": "Player_All",
+							"sid": 200783207644110,
+							"behaviorType": "Платформер"
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 458392450884014,
+							"parameters": {
+								"audio-file": {
+									"path": "Player/Landing"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
+						}
+					],
+					"sid": 998675520275957
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 685707038776567,
+							"parameters": {
+								"key": 65
+							}
+						},
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 551736263457999,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [],
+					"sid": 624507564538385,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "Player_All",
+									"sid": 257352152001858,
+									"behaviorType": "Платформер"
+								},
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 172346302438408,
+									"parameters": {
+										"tag": "\"Walk\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 406647776775605,
+									"parameters": {
+										"animation": "weapon & \"Run\""
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 933824997172598
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 727267282910526,
+									"parameters": {
+										"audio-file": {
+											"path": "Player/Run"
+										},
+										"loop": "looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"Walk\""
+									}
+								}
+							],
+							"sid": 987655054593225
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Player_All",
+							"sid": 871649034773564,
+							"parameters": {
+								"animation": "weapon & \"Run\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 654834242021469,
+							"parameters": {
+								"tag": "\"Walk\""
+							}
+						}
+					],
+					"sid": 264181730056239
 				}
 			],
 			"sid": 667758644763753
@@ -887,7 +1062,7 @@
 					"actions": [
 						{
 							"id": "get-item",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 250134456087170,
 							"parameters": {
 								"key": "\"Sound\""
@@ -895,7 +1070,7 @@
 						},
 						{
 							"id": "check-item-exists",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 734266386969317,
 							"parameters": {
 								"key": "\"Sound\""
@@ -910,7 +1085,7 @@
 					"conditions": [
 						{
 							"id": "on-item-get",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 536485835545335,
 							"parameters": {
 								"key": "\"Sound\""
@@ -924,7 +1099,7 @@
 							"sid": 326232408920982,
 							"parameters": {
 								"instance-variable": "Music",
-								"value": "Music_Safe.ItemValue"
+								"value": "Game_Save.ItemValue"
 							}
 						}
 					],
@@ -935,7 +1110,7 @@
 					"conditions": [
 						{
 							"id": "on-item-missing",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 183029727530716,
 							"parameters": {
 								"key": "\"Sound\""
@@ -971,7 +1146,7 @@
 						},
 						{
 							"id": "set-item",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 766454487689085,
 							"parameters": {
 								"key": "\"Sound\"",
@@ -999,6 +1174,15 @@
 							"sid": 251195173635300,
 							"parameters": {
 								"variable": "Music_Stop"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 117948110703710,
+							"parameters": {
+								"variable": "Continue_Game"
 							},
 							"isInverted": true
 						}
@@ -1497,22 +1681,22 @@
 						{
 							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 171765647473037,
+							"sid": 877647742739397,
 							"parameters": {
-								"layer": "LayerIndex(\"Setting\")"
+								"layer": "\"HUD\""
 							}
 						},
 						{
-							"id": "compare-boolean-eventvar",
+							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 570099499422475,
+							"sid": 126253147128332,
 							"parameters": {
-								"variable": "Pause"
+								"layer": "\"Setting\""
 							}
 						}
 					],
 					"actions": [],
-					"sid": 418233378859741,
+					"sid": 868848113370539,
 					"children": [
 						{
 							"eventType": "block",
@@ -1520,7 +1704,7 @@
 								{
 									"id": "on-click",
 									"objectClass": "Mouse",
-									"sid": 534144531148495,
+									"sid": 442586605563683,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked"
@@ -1529,7 +1713,7 @@
 								{
 									"id": "cursor-is-over-object",
 									"objectClass": "Mouse",
-									"sid": 649598307119330,
+									"sid": 881290755613103,
 									"parameters": {
 										"object": "Arrow"
 									}
@@ -1537,16 +1721,21 @@
 								{
 									"id": "compare-text",
 									"objectClass": "Arrow",
-									"sid": 426851603479755,
+									"sid": 138457443520519,
 									"parameters": {
 										"text-to-compare": "\"<\"",
 										"case-sensitivity": "ignore-case"
 									}
 								},
 								{
+									"id": "is-visible",
+									"objectClass": "Arrow",
+									"sid": 279617547130449
+								},
+								{
 									"id": "compare-instance-variable",
 									"objectClass": "Numbers_Music",
-									"sid": 210687616098682,
+									"sid": 893800052663088,
 									"parameters": {
 										"instance-variable": "Music",
 										"comparison": 4,
@@ -1558,7 +1747,7 @@
 								{
 									"id": "subtract-from-instvar",
 									"objectClass": "Numbers_Music",
-									"sid": 811923115488633,
+									"sid": 200373445097190,
 									"parameters": {
 										"instance-variable": "Music",
 										"value": "1"
@@ -1566,49 +1755,23 @@
 								},
 								{
 									"id": "set-item",
-									"objectClass": "Music_Safe",
-									"sid": 654426405415238,
+									"objectClass": "Game_Save",
+									"sid": 413527326486236,
 									"parameters": {
 										"key": "\"Sound\"",
 										"value": "Numbers_Music.Music"
 									}
 								}
 							],
-							"sid": 416963170967401
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 417947778372880,
-							"parameters": {
-								"layer": "LayerIndex(\"Setting\")"
-							}
+							"sid": 148306525543366
 						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 251753279781632,
-							"parameters": {
-								"variable": "Pause"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 236759038503796,
-					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
 									"id": "on-click",
 									"objectClass": "Mouse",
-									"sid": 678890104546020,
+									"sid": 432642225143465,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked"
@@ -1617,7 +1780,7 @@
 								{
 									"id": "cursor-is-over-object",
 									"objectClass": "Mouse",
-									"sid": 632300699818427,
+									"sid": 310241754660182,
 									"parameters": {
 										"object": "Arrow"
 									}
@@ -1625,16 +1788,21 @@
 								{
 									"id": "compare-text",
 									"objectClass": "Arrow",
-									"sid": 145689241386845,
+									"sid": 327787961112668,
 									"parameters": {
 										"text-to-compare": "\">\"",
 										"case-sensitivity": "ignore-case"
 									}
 								},
 								{
+									"id": "is-visible",
+									"objectClass": "Arrow",
+									"sid": 455230333129215
+								},
+								{
 									"id": "compare-instance-variable",
 									"objectClass": "Numbers_Music",
-									"sid": 544339620787185,
+									"sid": 810088181440945,
 									"parameters": {
 										"instance-variable": "Music",
 										"comparison": 2,
@@ -1646,7 +1814,7 @@
 								{
 									"id": "add-to-instvar",
 									"objectClass": "Numbers_Music",
-									"sid": 915422099909277,
+									"sid": 545976832580825,
 									"parameters": {
 										"instance-variable": "Music",
 										"value": "1"
@@ -1654,15 +1822,15 @@
 								},
 								{
 									"id": "set-item",
-									"objectClass": "Music_Safe",
-									"sid": 426042626729954,
+									"objectClass": "Game_Save",
+									"sid": 207356513087674,
 									"parameters": {
 										"key": "\"Sound\"",
 										"value": "Numbers_Music.Music"
 									}
 								}
 							],
-							"sid": 470248750095880
+							"sid": 818870949214472
 						}
 					],
 					"isOrBlock": true
@@ -1712,7 +1880,7 @@
 						},
 						{
 							"id": "set-item",
-							"objectClass": "Music_Safe",
+							"objectClass": "Game_Save",
 							"sid": 720832893791605,
 							"parameters": {
 								"key": "\"Sound\"",
@@ -1763,54 +1931,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 422085836956776,
-					"parameters": {
-						"key": 81
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 631223647239952,
-					"parameters": {
-						"variable": "Music_Stop",
-						"value": "true"
-					}
-				},
-				{
-					"id": "fade-volume",
-					"objectClass": "Audio",
-					"sid": 946021458330788,
-					"parameters": {
-						"tag": "\"music\"",
-						"db": "-100",
-						"duration": "3",
-						"ending": "stop"
-					}
-				},
-				{
-					"id": "fade-volume",
-					"objectClass": "Audio",
-					"sid": 484598126153615,
-					"parameters": {
-						"tag": "\"Suspense\"",
-						"db": "-100",
-						"duration": "3",
-						"ending": "stop"
-					}
-				}
-			],
-			"sid": 824774395492855,
-			"disabled": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "on-end-of-layout",
 					"objectClass": "System",
 					"sid": 272095161905477
@@ -1827,6 +1947,123 @@
 				}
 			],
 			"sid": 882415765339110
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 249503178806690
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 911069453572958,
+					"parameters": {
+						"object": "Audio_cube"
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 743606594780204,
+					"parameters": {
+						"object": "Audio_Konveer"
+					}
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 114943203861907,
+					"parameters": {
+						"object": "Audio_Lamp"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play-at-object",
+					"objectClass": "Audio",
+					"sid": 975596496542404,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/Underground/City_Under"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"object": "Audio_cube",
+						"inner-angle": "360",
+						"outer-angle": "360",
+						"outer-gain": "0",
+						"tag-optional": "\"audio\""
+					}
+				},
+				{
+					"id": "play-at-object",
+					"objectClass": "Audio",
+					"sid": 928586645636437,
+					"parameters": {
+						"audio-file": {
+							"path": "Warehouse/Lamp"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"object": "Audio_Lamp",
+						"inner-angle": "360",
+						"outer-angle": "360",
+						"outer-gain": "0",
+						"tag-optional": "\"audio\""
+					}
+				},
+				{
+					"id": "play-at-object",
+					"objectClass": "Audio",
+					"sid": 645004534680284,
+					"parameters": {
+						"audio-file": {
+							"path": "Warehouse/Konveer"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"object": "Audio_Konveer",
+						"inner-angle": "360",
+						"outer-angle": "360",
+						"outer-gain": "0",
+						"tag-optional": "\"audio\""
+					}
+				},
+				{
+					"id": "set-listener-object",
+					"objectClass": "Audio",
+					"sid": 160718232469591,
+					"parameters": {
+						"object": "Player_All"
+					}
+				}
+			],
+			"sid": 166207977275511
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 302599162922826,
+					"parameters": {
+						"interval-seconds": "60"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "unload-unused-images",
+					"objectClass": "System",
+					"sid": 934008387548586
+				}
+			],
+			"sid": 787227987854967
 		}
 	],
 	"sid": 313181035949758
