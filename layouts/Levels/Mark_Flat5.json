@@ -5544,7 +5544,7 @@
 					}
 				},
 				{
-					"type": "EnemyBaseball3",
+					"type": "EnemyBaseball",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Blondin_sit",
@@ -5556,10 +5556,6 @@
 					"sid": 206838353984102,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -5567,8 +5563,8 @@
 						"patrul": false,
 						"DifY": 0,
 						"probejka": false,
-						"speed": 200,
-						"speedPatrul": 100,
+						"speed": 0,
+						"speedPatrul": 0,
 						"speedDamage": 150,
 						"patrulTimerID": false,
 						"MovingToRamp": false,
@@ -5594,40 +5590,30 @@
 						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
-						"RollDeathWolf": 0
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
 							}
 						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 400,
-								"gravity": 1000,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": false
-							}
-						},
 						"НастраиваемоеДвижение": {
 							"properties": {
 								"stepping-mode": "none",
-								"pixels-per-step": 100,
+								"pixels-per-step": 5,
 								"enabled": true
 							}
 						},
 						"ПолеЗрения": {
 							"properties": {
 								"obstacles": "custom",
-								"range": 600,
+								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -5642,7 +5628,7 @@
 						},
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -5654,6 +5640,20 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
 							}
 						}
 					},

@@ -16598,7 +16598,7 @@
 					}
 				},
 				{
-					"type": "EnemyBaseball3",
+					"type": "EnemyBaseball",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Idle1",
@@ -16610,10 +16610,6 @@
 					"sid": 569248329582408,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -16621,8 +16617,8 @@
 						"patrul": false,
 						"DifY": 0,
 						"probejka": false,
-						"speed": 200,
-						"speedPatrul": 100,
+						"speed": 0,
+						"speedPatrul": 0,
 						"speedDamage": 150,
 						"patrulTimerID": false,
 						"MovingToRamp": false,
@@ -16648,40 +16644,30 @@
 						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
-						"RollDeathWolf": 0
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
 							}
 						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 400,
-								"gravity": 1000,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
-							}
-						},
 						"НастраиваемоеДвижение": {
 							"properties": {
 								"stepping-mode": "none",
-								"pixels-per-step": 100,
+								"pixels-per-step": 5,
 								"enabled": true
 							}
 						},
 						"ПолеЗрения": {
 							"properties": {
 								"obstacles": "custom",
-								"range": 600,
+								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -16708,6 +16694,20 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
 							}
 						}
 					},
@@ -16747,10 +16747,6 @@
 					"sid": 418039994543251,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -16781,30 +16777,21 @@
 						"Fear": 10,
 						"FearSwitch": false,
 						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
 						"RollDeathWolf": 0,
-						"onRampFear": false
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 500,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
 							}
 						},
 						"НастраиваемоеДвижение": {
@@ -16817,7 +16804,7 @@
 						"ПолеЗрения": {
 							"properties": {
 								"obstacles": "custom",
-								"range": 600,
+								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -16844,6 +16831,20 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
 							}
 						}
 					},
@@ -16883,146 +16884,6 @@
 					"sid": 211487531843268,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
-						"vision": false,
-						"triger": false,
-						"search": false,
-						"searchPlayer": false,
-						"patrul": false,
-						"DifY": 0,
-						"probejka": false,
-						"speed": 200,
-						"speedPatrul": 100,
-						"speedDamage": 150,
-						"patrulTimerID": false,
-						"MovingToRamp": false,
-						"onRamp": false,
-						"Kick": false,
-						"DifX": 0,
-						"rotate": 0,
-						"HP": 10,
-						"Damage": false,
-						"Down": false,
-						"Death": false,
-						"Rolling": false,
-						"Rough": 0,
-						"UpDownY": 0,
-						"UpDownX": 0,
-						"Finishing": "",
-						"HeavyPunch": false,
-						"Drop": 0,
-						"Fear": 10,
-						"FearSwitch": false,
-						"Heavy": 0,
-						"Dialog": false,
-						"HasDialog": false,
-						"RollDeathWolf": 0,
-						"onRampFear": false
-					},
-					"behaviors": {
-						"ОграничитьСценой": {
-							"properties": {
-								"bound-by": "edge",
-								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 500,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
-							}
-						},
-						"НастраиваемоеДвижение": {
-							"properties": {
-								"stepping-mode": "none",
-								"pixels-per-step": 5,
-								"enabled": true
-							}
-						},
-						"ПолеЗрения": {
-							"properties": {
-								"obstacles": "custom",
-								"range": 600,
-								"cone-of-view": 360,
-								"use-collision-cells": true
-							}
-						},
-						"Твинанимация": {
-							"properties": {
-								"enabled": true
-							}
-						},
-						"Таймер": {
-							"properties": {}
-						},
-						"Физика": {
-							"properties": {
-								"immovable": true,
-								"collision-mask": "use-collision-polygon",
-								"collision-filter-tags": "",
-								"collision-filter-mode": "exclusive",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": false
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 211487531843268,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 652,
-						"y": 720,
-						"width": -86,
-						"height": 86,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "EnemyBaseball3",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Idle1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 7173,
-					"sid": 636714811713823,
-					"tags": "",
-					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -17057,40 +16918,30 @@
 						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
-						"RollDeathWolf": 0
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
 							}
 						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 400,
-								"gravity": 1000,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
-							}
-						},
 						"НастраиваемоеДвижение": {
 							"properties": {
 								"stepping-mode": "none",
-								"pixels-per-step": 100,
+								"pixels-per-step": 5,
 								"enabled": true
 							}
 						},
 						"ПолеЗрения": {
 							"properties": {
 								"obstacles": "custom",
-								"range": 600,
+								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -17117,6 +16968,157 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 211487531843268,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 652,
+						"y": 720,
+						"width": -86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "EnemyBaseball",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Idle1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 7173,
+					"sid": 636714811713823,
+					"tags": "",
+					"instanceVariables": {
+						"vision": false,
+						"triger": false,
+						"search": false,
+						"searchPlayer": false,
+						"patrul": false,
+						"DifY": 0,
+						"probejka": false,
+						"speed": 0,
+						"speedPatrul": 0,
+						"speedDamage": 150,
+						"patrulTimerID": false,
+						"MovingToRamp": false,
+						"onRamp": false,
+						"Kick": false,
+						"DifX": 0,
+						"rotate": 0,
+						"HP": 10,
+						"Damage": false,
+						"Down": false,
+						"Death": false,
+						"Rolling": false,
+						"Rough": 0,
+						"UpDownY": 0,
+						"UpDownX": 0,
+						"Finishing": "",
+						"HeavyPunch": false,
+						"Drop": 0,
+						"Fear": 10,
+						"FearSwitch": false,
+						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
+						"Dialog": false,
+						"HasDialog": false,
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
+					},
+					"behaviors": {
+						"BoundTo": {
+							"properties": {
+								"bound-by": "edge",
+								"region": "layout"
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						},
+						"ПолеЗрения": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 10000,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						},
+						"Твинанимация": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Таймер": {
+							"properties": {}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
 							}
 						}
 					},
@@ -17156,145 +17158,6 @@
 					"sid": 277779669705166,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
-						"vision": false,
-						"triger": false,
-						"search": false,
-						"searchPlayer": false,
-						"patrul": false,
-						"DifY": 0,
-						"probejka": false,
-						"speed": 300,
-						"speedPatrul": 100,
-						"speedDamage": 150,
-						"patrulTimerID": false,
-						"MovingToRamp": false,
-						"onRamp": false,
-						"Kick": false,
-						"DifX": 0,
-						"rotate": 0,
-						"HP": 10,
-						"Damage": false,
-						"Down": false,
-						"Death": false,
-						"Rolling": false,
-						"Rough": 0,
-						"UpDownY": 0,
-						"UpDownX": 0,
-						"Finishing": "",
-						"HeavyPunch": false,
-						"Drop": 0,
-						"Fear": 10,
-						"FearSwitch": false,
-						"Heavy": 0,
-						"Dialog": false,
-						"HasDialog": false,
-						"RollDeathWolf": 0
-					},
-					"behaviors": {
-						"ОграничитьСценой": {
-							"properties": {
-								"bound-by": "edge",
-								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 330,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
-							}
-						},
-						"НастраиваемоеДвижение": {
-							"properties": {
-								"stepping-mode": "none",
-								"pixels-per-step": 5,
-								"enabled": true
-							}
-						},
-						"ПолеЗрения": {
-							"properties": {
-								"obstacles": "custom",
-								"range": 10000,
-								"cone-of-view": 360,
-								"use-collision-cells": true
-							}
-						},
-						"Твинанимация": {
-							"properties": {
-								"enabled": true
-							}
-						},
-						"Таймер": {
-							"properties": {}
-						},
-						"Физика": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"collision-filter-tags": "",
-								"collision-filter-mode": "exclusive",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": true
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 277779669705166,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 1067,
-						"y": 720,
-						"width": -86,
-						"height": 86,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "EnemyBaseball3",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Idle",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 7174,
-					"sid": 142537905877945,
-					"tags": "",
-					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -17329,40 +17192,30 @@
 						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
-						"RollDeathWolf": 0
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
 							}
 						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 250,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 400,
-								"gravity": 1000,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
-							}
-						},
 						"НастраиваемоеДвижение": {
 							"properties": {
 								"stepping-mode": "none",
-								"pixels-per-step": 100,
+								"pixels-per-step": 5,
 								"enabled": true
 							}
 						},
 						"ПолеЗрения": {
 							"properties": {
 								"obstacles": "custom",
-								"range": 600,
+								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -17389,6 +17242,157 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 277779669705166,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1067,
+						"y": 720,
+						"width": -86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "EnemyBaseball",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 7174,
+					"sid": 142537905877945,
+					"tags": "",
+					"instanceVariables": {
+						"vision": false,
+						"triger": false,
+						"search": false,
+						"searchPlayer": false,
+						"patrul": false,
+						"DifY": 0,
+						"probejka": false,
+						"speed": 0,
+						"speedPatrul": 0,
+						"speedDamage": 150,
+						"patrulTimerID": false,
+						"MovingToRamp": false,
+						"onRamp": false,
+						"Kick": false,
+						"DifX": 0,
+						"rotate": 0,
+						"HP": 10,
+						"Damage": false,
+						"Down": false,
+						"Death": false,
+						"Rolling": false,
+						"Rough": 0,
+						"UpDownY": 0,
+						"UpDownX": 0,
+						"Finishing": "",
+						"HeavyPunch": false,
+						"Drop": 0,
+						"Fear": 10,
+						"FearSwitch": false,
+						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
+						"Dialog": false,
+						"HasDialog": false,
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
+					},
+					"behaviors": {
+						"BoundTo": {
+							"properties": {
+								"bound-by": "edge",
+								"region": "layout"
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						},
+						"ПолеЗрения": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 10000,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						},
+						"Твинанимация": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Таймер": {
+							"properties": {}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
 							}
 						}
 					},
@@ -17428,10 +17432,6 @@
 					"sid": 394823187969133,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -17462,30 +17462,21 @@
 						"Fear": 10,
 						"FearSwitch": false,
 						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
 						"RollDeathWolf": 0,
-						"onRampFear": false
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 500,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
 							}
 						},
 						"НастраиваемоеДвижение": {
@@ -17498,7 +17489,7 @@
 						"ПолеЗрения": {
 							"properties": {
 								"obstacles": "custom",
-								"range": 600,
+								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -17525,6 +17516,20 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
 							}
 						}
 					},
@@ -17688,7 +17693,7 @@
 					}
 				},
 				{
-					"type": "EnemyBaseball3",
+					"type": "EnemyBaseball",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Idle1",
@@ -17700,10 +17705,6 @@
 					"sid": 643788732788478,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -17711,8 +17712,8 @@
 						"patrul": false,
 						"DifY": 0,
 						"probejka": false,
-						"speed": 200,
-						"speedPatrul": 100,
+						"speed": 0,
+						"speedPatrul": 0,
 						"speedDamage": 150,
 						"patrulTimerID": false,
 						"MovingToRamp": false,
@@ -17738,40 +17739,30 @@
 						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
-						"RollDeathWolf": 0
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
 							}
 						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 400,
-								"gravity": 1000,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
-							}
-						},
 						"НастраиваемоеДвижение": {
 							"properties": {
 								"stepping-mode": "none",
-								"pixels-per-step": 100,
+								"pixels-per-step": 5,
 								"enabled": true
 							}
 						},
 						"ПолеЗрения": {
 							"properties": {
 								"obstacles": "custom",
-								"range": 600,
+								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -17798,6 +17789,20 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
 							}
 						}
 					},
@@ -18133,10 +18138,6 @@
 					"sid": 669647868478689,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -18167,30 +18168,21 @@
 						"Fear": 10,
 						"FearSwitch": false,
 						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
 						"RollDeathWolf": 0,
-						"onRampFear": false
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 500,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
 							}
 						},
 						"НастраиваемоеДвижение": {
@@ -18203,7 +18195,7 @@
 						"ПолеЗрения": {
 							"properties": {
 								"obstacles": "custom",
-								"range": 600,
+								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -18230,6 +18222,20 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
 							}
 						}
 					},
@@ -18269,10 +18275,6 @@
 					"sid": 886184424352948,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -18280,7 +18282,7 @@
 						"patrul": false,
 						"DifY": 0,
 						"probejka": false,
-						"speed": 300,
+						"speed": 200,
 						"speedPatrul": 100,
 						"speedDamage": 150,
 						"patrulTimerID": false,
@@ -18303,29 +18305,21 @@
 						"Fear": 10,
 						"FearSwitch": false,
 						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
-						"RollDeathWolf": 0
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 330,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
 							}
 						},
 						"НастраиваемоеДвижение": {
@@ -18353,7 +18347,7 @@
 						},
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -18364,6 +18358,20 @@
 								"linear-damping": 0,
 								"angular-damping": 0.01,
 								"bullet": false,
+								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
 								"enabled": true
 							}
 						}
@@ -18738,10 +18746,6 @@
 					"sid": 233826602217557,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -18749,7 +18753,7 @@
 						"patrul": false,
 						"DifY": 0,
 						"probejka": false,
-						"speed": 300,
+						"speed": 200,
 						"speedPatrul": 100,
 						"speedDamage": 150,
 						"patrulTimerID": false,
@@ -18772,29 +18776,21 @@
 						"Fear": 10,
 						"FearSwitch": false,
 						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
-						"RollDeathWolf": 0
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 330,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
 							}
 						},
 						"НастраиваемоеДвижение": {
@@ -18822,7 +18818,7 @@
 						},
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -18833,6 +18829,20 @@
 								"linear-damping": 0,
 								"angular-damping": 0.01,
 								"bullet": false,
+								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
 								"enabled": true
 							}
 						}
@@ -18873,146 +18883,6 @@
 					"sid": 714042038946319,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
-						"vision": false,
-						"triger": false,
-						"search": false,
-						"searchPlayer": false,
-						"patrul": false,
-						"DifY": 0,
-						"probejka": false,
-						"speed": 200,
-						"speedPatrul": 100,
-						"speedDamage": 150,
-						"patrulTimerID": false,
-						"MovingToRamp": false,
-						"onRamp": false,
-						"Kick": false,
-						"DifX": 0,
-						"rotate": 0,
-						"HP": 10,
-						"Damage": false,
-						"Down": false,
-						"Death": false,
-						"Rolling": false,
-						"Rough": 0,
-						"UpDownY": 0,
-						"UpDownX": 0,
-						"Finishing": "",
-						"HeavyPunch": false,
-						"Drop": 0,
-						"Fear": 10,
-						"FearSwitch": false,
-						"Heavy": 0,
-						"Dialog": false,
-						"HasDialog": false,
-						"RollDeathWolf": 0,
-						"onRampFear": false
-					},
-					"behaviors": {
-						"ОграничитьСценой": {
-							"properties": {
-								"bound-by": "edge",
-								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 500,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
-							}
-						},
-						"НастраиваемоеДвижение": {
-							"properties": {
-								"stepping-mode": "none",
-								"pixels-per-step": 5,
-								"enabled": true
-							}
-						},
-						"ПолеЗрения": {
-							"properties": {
-								"obstacles": "custom",
-								"range": 600,
-								"cone-of-view": 360,
-								"use-collision-cells": true
-							}
-						},
-						"Твинанимация": {
-							"properties": {
-								"enabled": true
-							}
-						},
-						"Таймер": {
-							"properties": {}
-						},
-						"Физика": {
-							"properties": {
-								"immovable": true,
-								"collision-mask": "use-collision-polygon",
-								"collision-filter-tags": "",
-								"collision-filter-mode": "exclusive",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": false
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 714042038946319,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 1141,
-						"y": 507,
-						"width": -86,
-						"height": 86,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "EnemyBaseball3",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Idle1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 7289,
-					"sid": 356113234475872,
-					"tags": "",
-					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -19047,40 +18917,30 @@
 						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
-						"RollDeathWolf": 0
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
 							}
 						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 400,
-								"gravity": 1000,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
-							}
-						},
 						"НастраиваемоеДвижение": {
 							"properties": {
 								"stepping-mode": "none",
-								"pixels-per-step": 100,
+								"pixels-per-step": 5,
 								"enabled": true
 							}
 						},
 						"ПолеЗрения": {
 							"properties": {
 								"obstacles": "custom",
-								"range": 600,
+								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -19107,6 +18967,157 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 714042038946319,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1141,
+						"y": 507,
+						"width": -86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "EnemyBaseball",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Idle1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 7289,
+					"sid": 356113234475872,
+					"tags": "",
+					"instanceVariables": {
+						"vision": false,
+						"triger": false,
+						"search": false,
+						"searchPlayer": false,
+						"patrul": false,
+						"DifY": 0,
+						"probejka": false,
+						"speed": 0,
+						"speedPatrul": 0,
+						"speedDamage": 150,
+						"patrulTimerID": false,
+						"MovingToRamp": false,
+						"onRamp": false,
+						"Kick": false,
+						"DifX": 0,
+						"rotate": 0,
+						"HP": 10,
+						"Damage": false,
+						"Down": false,
+						"Death": false,
+						"Rolling": false,
+						"Rough": 0,
+						"UpDownY": 0,
+						"UpDownX": 0,
+						"Finishing": "",
+						"HeavyPunch": false,
+						"Drop": 0,
+						"Fear": 10,
+						"FearSwitch": false,
+						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
+						"Dialog": false,
+						"HasDialog": false,
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
+					},
+					"behaviors": {
+						"BoundTo": {
+							"properties": {
+								"bound-by": "edge",
+								"region": "layout"
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						},
+						"ПолеЗрения": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 10000,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						},
+						"Твинанимация": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Таймер": {
+							"properties": {}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
 							}
 						}
 					},
@@ -19146,10 +19157,6 @@
 					"sid": 564150503923176,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -19180,30 +19187,21 @@
 						"Fear": 10,
 						"FearSwitch": false,
 						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
 						"RollDeathWolf": 0,
-						"onRampFear": false
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 500,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
 							}
 						},
 						"НастраиваемоеДвижение": {
@@ -19216,7 +19214,7 @@
 						"ПолеЗрения": {
 							"properties": {
 								"obstacles": "custom",
-								"range": 600,
+								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -19243,6 +19241,20 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
 							}
 						}
 					},
@@ -19282,10 +19294,6 @@
 					"sid": 269751680486761,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -19293,7 +19301,7 @@
 						"patrul": false,
 						"DifY": 0,
 						"probejka": false,
-						"speed": 300,
+						"speed": 200,
 						"speedPatrul": 100,
 						"speedDamage": 150,
 						"patrulTimerID": false,
@@ -19316,29 +19324,21 @@
 						"Fear": 10,
 						"FearSwitch": false,
 						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
-						"RollDeathWolf": 0
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 330,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
 							}
 						},
 						"НастраиваемоеДвижение": {
@@ -19366,7 +19366,7 @@
 						},
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -19377,6 +19377,20 @@
 								"linear-damping": 0,
 								"angular-damping": 0.01,
 								"bullet": false,
+								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
 								"enabled": true
 							}
 						}
@@ -19553,146 +19567,6 @@
 					"sid": 351468565455842,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
-						"vision": false,
-						"triger": false,
-						"search": false,
-						"searchPlayer": false,
-						"patrul": false,
-						"DifY": 0,
-						"probejka": false,
-						"speed": 200,
-						"speedPatrul": 100,
-						"speedDamage": 150,
-						"patrulTimerID": false,
-						"MovingToRamp": false,
-						"onRamp": false,
-						"Kick": false,
-						"DifX": 0,
-						"rotate": 0,
-						"HP": 10,
-						"Damage": false,
-						"Down": false,
-						"Death": false,
-						"Rolling": false,
-						"Rough": 0,
-						"UpDownY": 0,
-						"UpDownX": 0,
-						"Finishing": "",
-						"HeavyPunch": false,
-						"Drop": 0,
-						"Fear": 10,
-						"FearSwitch": false,
-						"Heavy": 0,
-						"Dialog": false,
-						"HasDialog": false,
-						"RollDeathWolf": 0,
-						"onRampFear": false
-					},
-					"behaviors": {
-						"ОграничитьСценой": {
-							"properties": {
-								"bound-by": "edge",
-								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 500,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
-							}
-						},
-						"НастраиваемоеДвижение": {
-							"properties": {
-								"stepping-mode": "none",
-								"pixels-per-step": 5,
-								"enabled": true
-							}
-						},
-						"ПолеЗрения": {
-							"properties": {
-								"obstacles": "custom",
-								"range": 600,
-								"cone-of-view": 360,
-								"use-collision-cells": true
-							}
-						},
-						"Твинанимация": {
-							"properties": {
-								"enabled": true
-							}
-						},
-						"Таймер": {
-							"properties": {}
-						},
-						"Физика": {
-							"properties": {
-								"immovable": true,
-								"collision-mask": "use-collision-polygon",
-								"collision-filter-tags": "",
-								"collision-filter-mode": "exclusive",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": false
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 351468565455842,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 814,
-						"y": 912,
-						"width": -86,
-						"height": 86,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "EnemyBaseball3",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Idle1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 7356,
-					"sid": 456897728312414,
-					"tags": "",
-					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -19727,40 +19601,30 @@
 						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
-						"RollDeathWolf": 0
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
 							}
 						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 400,
-								"gravity": 1000,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
-							}
-						},
 						"НастраиваемоеДвижение": {
 							"properties": {
 								"stepping-mode": "none",
-								"pixels-per-step": 100,
+								"pixels-per-step": 5,
 								"enabled": true
 							}
 						},
 						"ПолеЗрения": {
 							"properties": {
 								"obstacles": "custom",
-								"range": 600,
+								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -19787,6 +19651,157 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 351468565455842,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 814,
+						"y": 912,
+						"width": -86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "EnemyBaseball",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Idle1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 7356,
+					"sid": 456897728312414,
+					"tags": "",
+					"instanceVariables": {
+						"vision": false,
+						"triger": false,
+						"search": false,
+						"searchPlayer": false,
+						"patrul": false,
+						"DifY": 0,
+						"probejka": false,
+						"speed": 0,
+						"speedPatrul": 0,
+						"speedDamage": 150,
+						"patrulTimerID": false,
+						"MovingToRamp": false,
+						"onRamp": false,
+						"Kick": false,
+						"DifX": 0,
+						"rotate": 0,
+						"HP": 10,
+						"Damage": false,
+						"Down": false,
+						"Death": false,
+						"Rolling": false,
+						"Rough": 0,
+						"UpDownY": 0,
+						"UpDownX": 0,
+						"Finishing": "",
+						"HeavyPunch": false,
+						"Drop": 0,
+						"Fear": 10,
+						"FearSwitch": false,
+						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
+						"Dialog": false,
+						"HasDialog": false,
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
+					},
+					"behaviors": {
+						"BoundTo": {
+							"properties": {
+								"bound-by": "edge",
+								"region": "layout"
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						},
+						"ПолеЗрения": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 10000,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						},
+						"Твинанимация": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Таймер": {
+							"properties": {}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
 							}
 						}
 					},
@@ -19826,10 +19841,6 @@
 					"sid": 268502871842983,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -19860,30 +19871,21 @@
 						"Fear": 10,
 						"FearSwitch": false,
 						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
 						"RollDeathWolf": 0,
-						"onRampFear": false
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 500,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
 							}
 						},
 						"НастраиваемоеДвижение": {
@@ -19896,7 +19898,7 @@
 						"ПолеЗрения": {
 							"properties": {
 								"obstacles": "custom",
-								"range": 600,
+								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -19923,6 +19925,20 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
 							}
 						}
 					},
@@ -20073,10 +20089,6 @@
 					"sid": 549357367030657,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -20084,7 +20096,7 @@
 						"patrul": false,
 						"DifY": 0,
 						"probejka": false,
-						"speed": 300,
+						"speed": 200,
 						"speedPatrul": 100,
 						"speedDamage": 150,
 						"patrulTimerID": false,
@@ -20107,29 +20119,21 @@
 						"Fear": 10,
 						"FearSwitch": false,
 						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
-						"RollDeathWolf": 0
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 330,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
 							}
 						},
 						"НастраиваемоеДвижение": {
@@ -20157,7 +20161,7 @@
 						},
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -20168,6 +20172,20 @@
 								"linear-damping": 0,
 								"angular-damping": 0.01,
 								"bullet": false,
+								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
 								"enabled": true
 							}
 						}

@@ -4106,10 +4106,6 @@
 					"sid": 122719379357309,
 					"tags": "",
 					"instanceVariables": {
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
 						"vision": false,
 						"triger": false,
 						"search": false,
@@ -4140,30 +4136,21 @@
 						"Fear": 10,
 						"FearSwitch": false,
 						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
 						"Dialog": false,
 						"HasDialog": false,
 						"RollDeathWolf": 0,
-						"onRampFear": false
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0
 					},
 					"behaviors": {
-						"ОграничитьСценой": {
+						"BoundTo": {
 							"properties": {
 								"bound-by": "edge",
 								"region": "layout"
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 200,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 500,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
 							}
 						},
 						"НастраиваемоеДвижение": {
@@ -4175,8 +4162,8 @@
 						},
 						"ПолеЗрения": {
 							"properties": {
-								"obstacles": "solids",
-								"range": 600,
+								"obstacles": "custom",
+								"range": 10000,
 								"cone-of-view": 360,
 								"use-collision-cells": true
 							}
@@ -4203,6 +4190,20 @@
 								"angular-damping": 0.01,
 								"bullet": false,
 								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
 							}
 						}
 					},

@@ -179,7 +179,7 @@
 				},
 				{
 					"id": "has-tags",
-					"objectClass": "EnemyBaseball3",
+					"objectClass": "Enemy_Mili",
 					"sid": 941468233877130,
 					"parameters": {
 						"tags": "\"Cut\""
@@ -189,16 +189,7 @@
 			"actions": [
 				{
 					"id": "set-instvar-value",
-					"objectClass": "EnemyPchel",
-					"sid": 669846935214466,
-					"parameters": {
-						"instance-variable": "speed",
-						"value": "200"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "EnemyBaseball3",
+					"objectClass": "Enemy_Mili",
 					"sid": 848539987659644,
 					"parameters": {
 						"instance-variable": "speed",
@@ -1503,7 +1494,7 @@
 						},
 						{
 							"id": "has-tags",
-							"objectClass": "EnemyBaseball3",
+							"objectClass": "EnemyBaseball",
 							"sid": 883763788009965,
 							"parameters": {
 								"tags": "\"Cut\""
@@ -1513,7 +1504,7 @@
 					"actions": [
 						{
 							"id": "set-animation",
-							"objectClass": "EnemyBaseball3",
+							"objectClass": "EnemyBaseball",
 							"sid": 277040016942563,
 							"parameters": {
 								"animation": "\"Blondin_WOW!\"",
@@ -1522,7 +1513,7 @@
 						},
 						{
 							"id": "set-mirrored",
-							"objectClass": "EnemyBaseball3",
+							"objectClass": "EnemyBaseball",
 							"sid": 805347455973758,
 							"parameters": {
 								"state": "not-mirrored"
@@ -1567,17 +1558,7 @@
 							"sid": 627632884883137
 						}
 					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "EnemyPchel",
-							"sid": 994514835321944,
-							"parameters": {
-								"instance-variable": "Fear",
-								"value": "0"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 833240082002498
 				},
 				{
@@ -2239,7 +2220,7 @@
 						},
 						{
 							"id": "has-tags",
-							"objectClass": "EnemyBaseball3",
+							"objectClass": "EnemyBaseball",
 							"sid": 934484297504593,
 							"parameters": {
 								"tags": "\"Vint\""
@@ -2256,8 +2237,8 @@
 							"callFunction": "Create_DealogueEnemy",
 							"sid": 574014764975524,
 							"parameters": [
-								"EnemyBaseball3.X",
-								"EnemyBaseball3.Y -50",
+								"EnemyBaseball.X",
+								"EnemyBaseball.Y -50",
 								"462",
 								"2",
 								false,
@@ -2304,7 +2285,7 @@
 						},
 						{
 							"id": "has-tags",
-							"objectClass": "EnemyBaseball3",
+							"objectClass": "EnemyBaseball",
 							"sid": 198553574189403,
 							"parameters": {
 								"tags": "\"Vint\""
@@ -2321,8 +2302,8 @@
 							"callFunction": "Create_DealogueEnemy",
 							"sid": 440552623043272,
 							"parameters": [
-								"EnemyBaseball3.X",
-								"EnemyBaseball3.Y -50",
+								"EnemyBaseball.X",
+								"EnemyBaseball.Y -50",
 								"463",
 								"2",
 								false,
@@ -2361,58 +2342,7 @@
 			"conditions": [
 				{
 					"id": "has-tags",
-					"objectClass": "EnemyKnife",
-					"sid": 453303967317655,
-					"parameters": {
-						"tags": "\"Cut\""
-					}
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "EnemyKnife",
-					"sid": 105097537887994,
-					"parameters": {
-						"instance-variable": "triger"
-					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 726033714869192
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 604608935833702,
-					"parameters": {
-						"variable": "onDialEnemy",
-						"value": "false"
-					}
-				},
-				{
-					"callFunction": "Destroy_DialogeEnemy",
-					"sid": 873128812747966
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Enemys",
-					"sid": 688249810915903,
-					"parameters": {
-						"instance-variable": "textframe",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 856658243586365
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "has-tags",
-					"objectClass": "EnemyBaseball3",
+					"objectClass": "Enemy_Mili",
 					"sid": 555766838892988,
 					"parameters": {
 						"tags": "\"Vint\""
@@ -2420,7 +2350,7 @@
 				},
 				{
 					"id": "is-boolean-instance-variable-set",
-					"objectClass": "EnemyBaseball3",
+					"objectClass": "Enemy_Mili",
 					"sid": 274340874406314,
 					"parameters": {
 						"instance-variable": "triger"

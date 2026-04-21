@@ -628,43 +628,28 @@
 					"parameters": {
 						"state": "disabled"
 					}
-				}
-			],
-			"sid": 687519329073019
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 114425975898007
-				}
-			],
-			"actions": [
-				{
-					"id": "set-position",
-					"objectClass": "borders",
-					"sid": 921057974007365,
-					"disabled": true,
-					"parameters": {
-						"x": "lerp(Self.X,Player_All.X,0.025)",
-						"y": "lerp(Self.Y,Player_All.Y-50,0.025)"
-					}
 				},
 				{
 					"id": "set-position",
 					"objectClass": "borders",
-					"sid": 417064246375952,
+					"sid": 189215264862855,
 					"parameters": {
 						"x": "lerp(Self.X,Camera.X,0.075)",
 						"y": "lerp(Self.Y,Camera.Y,0.075)"
 					}
 				},
 				{
+					"id": "set-cursor-from-sprite",
+					"objectClass": "Mouse",
+					"sid": 778139857609289,
+					"parameters": {
+						"sprite": "Cursor_Mouse"
+					}
+				},
+				{
 					"id": "pin-to-object-imagepoint",
 					"objectClass": "borders",
-					"sid": 917614219832798,
+					"sid": 748009996126507,
 					"behaviorType": "Прикрепить",
 					"parameters": {
 						"pin-to": "Camera",
@@ -676,7 +661,7 @@
 					}
 				}
 			],
-			"sid": 771566540557060
+			"sid": 687519329073019
 		},
 		{
 			"eventType": "block",
