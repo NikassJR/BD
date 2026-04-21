@@ -48,6 +48,24 @@
 			],
 			"actions": [
 				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Camera",
+					"sid": 691770755014826,
+					"parameters": {
+						"instance-variable": "onPlayer",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 137703215925993,
+					"parameters": {
+						"layer": "\"Diskl\"",
+						"visibility": "invisible"
+					}
+				},
+				{
 					"id": "request-fullscreen",
 					"objectClass": "Browser",
 					"sid": 754559488711487,
@@ -55,6 +73,11 @@
 						"mode": "stretch-letterbox-scale",
 						"navigation-ui": "hide"
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Video",
+					"sid": 293478761144395
 				},
 				{
 					"id": "set-boolean-eventvar",
@@ -95,11 +118,6 @@
 					"sid": 327782517873578
 				},
 				{
-					"id": "play",
-					"objectClass": "Video",
-					"sid": 308388149138184
-				},
-				{
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 444562740275439,
@@ -117,26 +135,18 @@
 					}
 				},
 				{
-					"id": "tween-one-property",
-					"objectClass": "End_Scene2",
-					"sid": 285531307143386,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetOpacity",
-						"end-value": "0",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 926936135761460
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 793268495182129,
+					"parameters": {
+						"layer": "\"Diskl\"",
+						"visibility": "visible"
+					}
 				},
 				{
 					"id": "wait",
@@ -148,20 +158,24 @@
 					}
 				},
 				{
-					"id": "tween-one-property",
-					"objectClass": "End_Scene2",
-					"sid": 306610094534794,
-					"behaviorType": "Твинанимация",
+					"callFunction": "End_Scene2",
+					"sid": 307022724727714,
+					"parameters": [
+						"100",
+						"2",
+						"0",
+						false,
+						false,
+						true
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 454987761680468,
 					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetOpacity",
-						"end-value": "100",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
+						"seconds": "2",
+						"use-timescale": true
 					}
 				},
 				{

@@ -38,20 +38,6 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 497150369512834,
-					"parameters": {
-						"audio-file": {
-							"path": "Music/Bakery"
-						},
-						"loop": "looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"music\""
-					}
-				},
-				{
 					"id": "set-size",
 					"objectClass": "Camera",
 					"sid": 762746210212564,
@@ -87,58 +73,16 @@
 					}
 				},
 				{
-					"id": "spawn-another-object",
-					"objectClass": "Player_All",
-					"sid": 799855364446599,
-					"parameters": {
-						"object": "Shadow3",
-						"layer": "\"Dialog\"",
-						"image-point": "0",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "Shadow3",
-					"sid": 889824197785208,
-					"parameters": {
-						"scale": "5"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "Shadow3",
-					"sid": 743229473298053,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetOpacity",
-						"end-value": "0",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "EndScene",
-					"sid": 134834871667630,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetX",
-						"end-value": "-1000",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
+					"callFunction": "End_Scene2",
+					"sid": 852348108119500,
+					"parameters": [
+						"0",
+						"1",
+						"100",
+						true,
+						false,
+						true
+					]
 				},
 				{
 					"id": "set-group-active",
@@ -156,6 +100,20 @@
 					"parameters": {
 						"seconds": "1.0",
 						"use-timescale": true
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 998610562662858,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/Bakery"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
 					}
 				},
 				{
@@ -229,7 +187,7 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "EnemyBaseball",
+							"objectClass": "EnemyBaseball3",
 							"sid": 621894139322855,
 							"parameters": {
 								"instance-variable": "Fear",
@@ -1463,29 +1421,24 @@
 							}
 						},
 						{
+							"callFunction": "End_Scene2",
+							"sid": 292797816570947,
+							"parameters": [
+								"100",
+								"0",
+								"100",
+								false,
+								false,
+								true
+							]
+						},
+						{
 							"id": "wait",
 							"objectClass": "System",
 							"sid": 458104788978015,
 							"parameters": {
 								"seconds": "3",
 								"use-timescale": true
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 364186493546425,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
 							}
 						},
 						{

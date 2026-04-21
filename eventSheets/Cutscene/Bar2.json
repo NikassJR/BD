@@ -61,9 +61,9 @@
 						{
 							"id": "seek-to",
 							"objectClass": "Audio",
-							"sid": 592766543767769,
+							"sid": 790014449319102,
 							"parameters": {
-								"tag": "\"Suspense\"",
+								"tag": "\"Quiet\"",
 								"position": "Game_Save.ItemValue"
 							}
 						}
@@ -94,7 +94,7 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 925800798614365,
+							"sid": 119927015619933,
 							"parameters": {
 								"audio-file": {
 									"path": "Music/Heaviness"
@@ -102,7 +102,7 @@
 								"loop": "looping",
 								"volume": "0",
 								"stereo-pan": "0",
-								"tag-optional": "\"Suspense\""
+								"tag-optional": "\"Quiet\""
 							}
 						}
 					],
@@ -178,43 +178,6 @@
 							}
 						},
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Player_All",
-							"sid": 603784651202426,
-							"parameters": {
-								"object": "Shadow3",
-								"layer": "\"UI\"",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "Shadow3",
-							"sid": 450616253952459,
-							"parameters": {
-								"scale": "2"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 428503601649429,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "0",
-								"time": "2",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 777851176293739,
@@ -222,6 +185,18 @@
 								"variable": "Safe_Zone",
 								"value": "true"
 							}
+						},
+						{
+							"callFunction": "End_Scene2",
+							"sid": 513681437270653,
+							"parameters": [
+								"0",
+								"2",
+								"100",
+								true,
+								false,
+								true
+							]
 						},
 						{
 							"id": "wait",

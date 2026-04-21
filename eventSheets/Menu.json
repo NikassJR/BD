@@ -674,59 +674,9 @@
 						"height-type": "no",
 						"z": false
 					}
-				},
-				{
-					"id": "spawn-another-object",
-					"objectClass": "Camera",
-					"sid": 698932779044298,
-					"parameters": {
-						"object": "EndScene",
-						"layer": "\"Dialog\"",
-						"image-point": "0",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "EndScene",
-					"sid": 729376475119562,
-					"parameters": {
-						"scale": "3"
-					}
 				}
 			],
 			"sid": 771566540557060
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-created",
-					"objectClass": "EndScene",
-					"sid": 322546717951044
-				}
-			],
-			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EndScene",
-					"sid": 514363811097271,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetX",
-						"end-value": "-1000",
-						"time": "2",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				}
-			],
-			"sid": 368479132062363
 		},
 		{
 			"eventType": "block",
@@ -3006,6 +2956,358 @@
 				}
 			],
 			"sid": 136729533850613
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "End_Scene",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "End_Scene2",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Appearance",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 782944428515461
+						},
+						{
+							"name": "Timer",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 967962017628184
+						},
+						{
+							"name": "Opacity",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 246330000158373
+						},
+						{
+							"name": "Delete",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 876747146324795
+						},
+						{
+							"name": "LayerDown",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 641340352137798
+						},
+						{
+							"name": "LayerUp",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 749523098611469
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 734264244179047,
+							"parameters": {
+								"object-to-create": "End_Scene2",
+								"layer": "\"Dialog\"",
+								"x": "Camera.X",
+								"y": "Camera.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "End_Scene2",
+							"sid": 778692181342213,
+							"behaviorType": "Прикрепить",
+							"parameters": {
+								"pin-to": "Camera",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "End_Scene2",
+							"sid": 857693712875885,
+							"parameters": {
+								"opacity": "Opacity"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "End_Scene2",
+							"sid": 396659460482386,
+							"parameters": {
+								"width": "LayoutWidth",
+								"height": "LayoutHeight"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "End_Scene2",
+							"sid": 864177886566719,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "Appearance",
+								"time": "Timer",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 834671628975003,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 823185270403147,
+									"parameters": {
+										"variable": "LayerDown"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-bottom",
+									"objectClass": "End_Scene2",
+									"sid": 296808583982563
+								}
+							],
+							"sid": 122486021658832
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 152173090299089,
+									"parameters": {
+										"variable": "LayerDown"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-top",
+									"objectClass": "End_Scene2",
+									"sid": 630688095678553
+								}
+							],
+							"sid": 276796725843534
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 322127074001711,
+									"parameters": {
+										"variable": "Delete"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 256554415595798
+								},
+								{
+									"id": "destroy",
+									"objectClass": "End_Scene2",
+									"sid": 546530857383833
+								}
+							],
+							"sid": 827224971926711
+						}
+					]
+				},
+				{
+					"functionName": "End_Scene",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Opacity",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 905369951237752
+						},
+						{
+							"name": "Delete",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 645317569441304
+						},
+						{
+							"name": "LayerDown",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 221922146884157
+						},
+						{
+							"name": "LayerUp",
+							"type": "boolean",
+							"initialValue": "false",
+							"comment": "",
+							"sid": 606100193343153
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 810818791928120,
+							"parameters": {
+								"object-to-create": "EndScene",
+								"layer": "\"Dialog\"",
+								"x": "Camera.X",
+								"y": "Camera.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "EndScene",
+							"sid": 502549457331510,
+							"parameters": {
+								"opacity": "Opacity"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "EndScene",
+							"sid": 673742900525534,
+							"parameters": {
+								"width": "OriginalViewportWidth",
+								"height": "OriginalViewportHeight"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "EndScene",
+							"sid": 155994222140547,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "-1000"
+							}
+						}
+					],
+					"sid": 730844479583534,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 282794462180866,
+									"parameters": {
+										"variable": "LayerDown"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-bottom",
+									"objectClass": "EndScene",
+									"sid": 524893029551448
+								}
+							],
+							"sid": 200288629974343
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 279839164610205,
+									"parameters": {
+										"variable": "LayerDown"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-top",
+									"objectClass": "EndScene",
+									"sid": 898742305022520
+								}
+							],
+							"sid": 359228033949356
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 410451265637829,
+									"parameters": {
+										"variable": "Delete"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 801337892238911
+								},
+								{
+									"id": "destroy",
+									"objectClass": "EndScene",
+									"sid": 277201054936607
+								}
+							],
+							"sid": 980625511937148
+						}
+					]
+				}
+			],
+			"sid": 719551143832814
 		}
 	],
 	"sid": 511565052530936

@@ -20,29 +20,33 @@
 			],
 			"actions": [
 				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 127459353186444,
+					"parameters": {
+						"slot": "\"start\""
+					}
+				},
+				{
 					"id": "set-size",
 					"objectClass": "Camera",
-					"sid": 922281987756358,
+					"sid": 243482518796488,
 					"parameters": {
 						"width": "80",
 						"height": "45"
 					}
 				},
 				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 229762074279462,
-					"parameters": {
-						"slot": "\"start\""
-					}
-				},
-				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 980286497988233,
-					"parameters": {
-						"slot": "\"mysave\""
-					}
+					"callFunction": "End_Scene2",
+					"sid": 848272634590856,
+					"parameters": [
+						"0",
+						"1",
+						"100",
+						true,
+						false,
+						true
+					]
 				},
 				{
 					"id": "stop",
@@ -71,6 +75,15 @@
 					}
 				},
 				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 106343756976046,
+					"parameters": {
+						"variable": "Safe_Zone",
+						"value": "false"
+					}
+				},
+				{
 					"id": "set-group-active",
 					"objectClass": "System",
 					"sid": 919505859942624,
@@ -95,6 +108,14 @@
 					"parameters": {
 						"seconds": "1.0",
 						"use-timescale": true
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 427844625382123,
+					"parameters": {
+						"slot": "\"mysave\""
 					}
 				},
 				{
@@ -273,23 +294,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EndScene",
-					"sid": 764884140699510,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetX",
-						"end-value": "Trigger_CutScene.X +350",
-						"time": "0.5",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
 				{
 					"id": "wait",
 					"objectClass": "System",

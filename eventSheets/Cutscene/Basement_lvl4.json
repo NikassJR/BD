@@ -54,24 +54,16 @@
 							}
 						},
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Player_Wolf",
-							"sid": 262396980805484,
-							"parameters": {
-								"object": "Shadow3",
-								"layer": "\"Front\"",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "Shadow3",
-							"sid": 375628687153204,
-							"parameters": {
-								"scale": "5"
-							}
+							"callFunction": "End_Scene2",
+							"sid": 983906666546159,
+							"parameters": [
+								"100",
+								"1.5",
+								"100",
+								true,
+								false,
+								false
+							]
 						},
 						{
 							"id": "create-object",
@@ -311,21 +303,16 @@
 							}
 						},
 						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 881679103774096,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "0",
-								"time": "0.5",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
+							"callFunction": "End_Scene2",
+							"sid": 130555317236647,
+							"parameters": [
+								"0",
+								"0.5",
+								"100",
+								true,
+								false,
+								false
+							]
 						},
 						{
 							"id": "tween-one-property",
@@ -737,21 +724,16 @@
 							}
 						},
 						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 840331022791120,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "0",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
+							"callFunction": "End_Scene2",
+							"sid": 295257071199516,
+							"parameters": [
+								"100",
+								"0",
+								"100",
+								false,
+								true,
+								false
+							]
 						},
 						{
 							"id": "wait",
@@ -926,10 +908,10 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 550487547712414,
+							"sid": 706413130396425,
 							"parameters": {
 								"object-to-create": "Shadow4",
-								"layer": "\"Front\"",
+								"layer": "\"Dialog\"",
 								"x": "Player_All.X",
 								"y": "Player_All.Y",
 								"create-hierarchy": false,
@@ -997,8 +979,8 @@
 					"actions": [
 						{
 							"id": "destroy",
-							"objectClass": "Shadow3",
-							"sid": 879854350186472
+							"objectClass": "End_Scene2",
+							"sid": 920487642043269
 						},
 						{
 							"id": "tween-one-property",
@@ -1131,50 +1113,16 @@
 					],
 					"actions": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 271341905517333,
-							"parameters": {
-								"object-to-create": "Shadow3",
-								"layer": "\"Front\"",
-								"x": "Player_All.x",
-								"y": "Player_All.Y",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "Shadow3",
-							"sid": 259255147592843,
-							"parameters": {
-								"scale": "3"
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "Shadow3",
-							"sid": 385106565354573,
-							"parameters": {
-								"opacity": "0"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 112938380837076,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
+							"callFunction": "End_Scene2",
+							"sid": 191117968329355,
+							"parameters": [
+								"100",
+								"1",
+								"0",
+								false,
+								true,
+								false
+							]
 						},
 						{
 							"callFunction": "Create_mainDialoge",
@@ -1209,21 +1157,21 @@
 					],
 					"actions": [
 						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 445950798539961,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "0",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
+							"id": "destroy",
+							"objectClass": "End_Scene2",
+							"sid": 457749183529300
+						},
+						{
+							"callFunction": "End_Scene2",
+							"sid": 187346368853118,
+							"parameters": [
+								"0",
+								"1",
+								"100",
+								true,
+								true,
+								false
+							]
 						},
 						{
 							"id": "set-animation",
@@ -1362,21 +1310,16 @@
 					],
 					"actions": [
 						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 637964169342054,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
+							"callFunction": "End_Scene2",
+							"sid": 410547569489661,
+							"parameters": [
+								"100",
+								"1",
+								"0",
+								false,
+								true,
+								false
+							]
 						},
 						{
 							"id": "wait",
@@ -1461,21 +1404,21 @@
 							}
 						},
 						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 789522423721810,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "0",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
+							"id": "destroy",
+							"objectClass": "End_Scene2",
+							"sid": 205189050473057
+						},
+						{
+							"callFunction": "End_Scene2",
+							"sid": 380751315502208,
+							"parameters": [
+								"0",
+								"1",
+								"100",
+								true,
+								true,
+								false
+							]
 						},
 						{
 							"callFunction": "Create_mainDialoge",
@@ -1538,21 +1481,16 @@
 					],
 					"actions": [
 						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 171343615680675,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
+							"callFunction": "End_Scene2",
+							"sid": 374873482459262,
+							"parameters": [
+								"100",
+								"1",
+								"0",
+								false,
+								true,
+								false
+							]
 						},
 						{
 							"callFunction": "Create_mainDialoge",
@@ -1644,21 +1582,21 @@
 							}
 						},
 						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 649993184164522,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "0",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
+							"id": "destroy",
+							"objectClass": "End_Scene2",
+							"sid": 949276570161310
+						},
+						{
+							"callFunction": "End_Scene2",
+							"sid": 803115131645421,
+							"parameters": [
+								"0",
+								"1",
+								"100",
+								true,
+								true,
+								false
+							]
 						},
 						{
 							"callFunction": "Create_mainDialoge",
@@ -2829,7 +2767,7 @@
 									"sid": 530583830393570,
 									"parameters": {
 										"audio-file": {
-											"path": "Kick/AxeFinishing"
+											"path": "AxeFinishing"
 										},
 										"loop": "not-looping",
 										"volume": "0",
@@ -2974,6 +2912,7 @@
 							"id": "play",
 							"objectClass": "Audio",
 							"sid": 105238646162888,
+							"disabled": true,
 							"parameters": {
 								"audio-file": {
 									"path": "ChainZvon"
@@ -2983,6 +2922,15 @@
 								"stereo-pan": "0",
 								"tag-optional": "\"audio\""
 							}
+						},
+						{
+							"callFunction": "Audio_Play_Sound",
+							"sid": 781191506623557,
+							"parameters": [
+								"\"ChainZvon\"",
+								"0",
+								"\"audio\""
+							]
 						}
 					],
 					"sid": 716461230576433
@@ -3213,6 +3161,7 @@
 									"id": "play",
 									"objectClass": "Audio",
 									"sid": 335842765375320,
+									"disabled": true,
 									"parameters": {
 										"audio-file": {
 											"path": "ChainZvon"
@@ -3222,6 +3171,15 @@
 										"stereo-pan": "0",
 										"tag-optional": "\"audio\""
 									}
+								},
+								{
+									"callFunction": "Audio_Play_Sound",
+									"sid": 473123625154005,
+									"parameters": [
+										"\"ChainZvon\"",
+										"0",
+										"\"audio\""
+									]
 								}
 							],
 							"sid": 271536504508833
@@ -3464,6 +3422,7 @@
 									"id": "play",
 									"objectClass": "Audio",
 									"sid": 271855555352791,
+									"disabled": true,
 									"parameters": {
 										"audio-file": {
 											"path": "ChainZvon"
@@ -3473,6 +3432,15 @@
 										"stereo-pan": "0",
 										"tag-optional": "\"audio\""
 									}
+								},
+								{
+									"callFunction": "Audio_Play_Sound",
+									"sid": 304177117764573,
+									"parameters": [
+										"\"ChainZvon\"",
+										"0",
+										"\"audio\""
+									]
 								}
 							],
 							"sid": 722203280171352
@@ -3665,7 +3633,7 @@
 							"sid": 779421120130233,
 							"parameters": {
 								"audio-file": {
-									"path": "Kick/ChainCrash"
+									"path": "ChainCrash"
 								},
 								"loop": "not-looping",
 								"volume": "0",
@@ -3749,6 +3717,11 @@
 								"variable": "onDialMain",
 								"value": "false"
 							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Shadow4",
+							"sid": 493526009332008
 						},
 						{
 							"id": "set-group-active",
@@ -3875,7 +3848,7 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "EnemyBaseball",
+							"objectClass": "EnemyBaseball3",
 							"sid": 649797643474438,
 							"parameters": {
 								"instance-variable": "Fear",
@@ -4004,10 +3977,10 @@
 						{
 							"id": "set-size",
 							"objectClass": "Trip",
-							"sid": 480712226886072,
+							"sid": 630375643525594,
 							"parameters": {
-								"width": "700",
-								"height": "400"
+								"width": "OriginalViewportWidth",
+								"height": "OriginalViewportHeight"
 							}
 						},
 						{
@@ -4093,33 +4066,16 @@
 					],
 					"actions": [
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Camera",
-							"sid": 270004358209415,
-							"parameters": {
-								"object": "Shadow3",
-								"layer": "\"Dialog\"",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "Shadow3",
-							"sid": 271344128170807,
-							"parameters": {
-								"x": "Player_All.X",
-								"y": "Player_All.Y"
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "Shadow3",
-							"sid": 683235714016653,
-							"parameters": {
-								"opacity": "100"
-							}
+							"callFunction": "End_Scene2",
+							"sid": 349005659547478,
+							"parameters": [
+								"100",
+								"0",
+								"100",
+								false,
+								false,
+								false
+							]
 						},
 						{
 							"id": "stop",

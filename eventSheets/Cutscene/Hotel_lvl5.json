@@ -27,6 +27,26 @@
 					],
 					"actions": [
 						{
+							"id": "save",
+							"objectClass": "System",
+							"sid": 753308002972351,
+							"parameters": {
+								"slot": "\"start\""
+							}
+						},
+						{
+							"callFunction": "End_Scene2",
+							"sid": 653527370818830,
+							"parameters": [
+								"0",
+								"3",
+								"100",
+								true,
+								false,
+								true
+							]
+						},
+						{
 							"id": "set-boolean-instvar",
 							"objectClass": "Camera",
 							"sid": 596929115481887,
@@ -42,19 +62,6 @@
 							"parameters": {
 								"x": "Boss.X",
 								"y": "Boss.Y"
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 680495243726404,
-							"parameters": {
-								"object-to-create": "Shadow3",
-								"layer": "\"Dialog\"",
-								"x": "Camera.X",
-								"y": "Camera.Y -100",
-								"create-hierarchy": false,
-								"template-name": "\"\""
 							}
 						},
 						{
@@ -94,36 +101,11 @@
 							}
 						},
 						{
-							"id": "save",
-							"objectClass": "System",
-							"sid": 111561370546365,
-							"parameters": {
-								"slot": "\"start\""
-							}
-						},
-						{
 							"id": "set-visible",
 							"objectClass": "Enemys",
 							"sid": 284479701487216,
 							"parameters": {
 								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 893719500722761,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "0",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
 							}
 						},
 						{
@@ -182,95 +164,6 @@
 						}
 					],
 					"sid": 482254646306962
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 691548745947138
-						}
-					],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 378732366148795,
-							"parameters": {
-								"object-to-create": "Shadow3",
-								"layer": "11",
-								"x": "Camera.X",
-								"y": "Camera.Y -100",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 830528896866292,
-							"parameters": {
-								"audio-file": {
-									"path": "Started_engine"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"audio\""
-							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Camera",
-							"sid": 586673597758165,
-							"parameters": {
-								"instance-variable": "onPlayer",
-								"value": "false"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 687744815877928,
-							"parameters": {
-								"seconds": "6",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 112725888897026,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "0",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 980066769256554,
-							"parameters": {
-								"object-to-create": "Car_Cat",
-								"layer": "10",
-								"x": "5244",
-								"y": "1900",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						}
-					],
-					"sid": 374717568320464,
-					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -908,27 +801,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-animation-playing",
-							"objectClass": "BoomFire",
-							"sid": 638135094864911,
-							"parameters": {
-								"animation": "\"Animation 1\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "shakeScreen",
-							"sid": 767817499484494
-						}
-					],
-					"sid": 390980225663165,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "on-animation-finished",
 							"objectClass": "BoomFire",
 							"sid": 733110094996656,
@@ -1018,27 +890,6 @@
 						}
 					],
 					"sid": 202776933218057
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 193216590073484,
-							"parameters": {
-								"interval-seconds": "0.5"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "shakeScreen",
-							"sid": 367052460096731
-						}
-					],
-					"sid": 417994323465694,
-					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -1961,6 +1812,11 @@
 				},
 				{
 					"id": "destroy",
+					"objectClass": "Shadow3",
+					"sid": 759147352360490
+				},
+				{
+					"id": "destroy",
 					"objectClass": "Elevator_Door",
 					"sid": 592633535555212
 				},
@@ -2078,7 +1934,7 @@
 				{
 					"id": "trigger-once-while-true",
 					"objectClass": "System",
-					"sid": 575334537309133
+					"sid": 769676769912851
 				}
 			],
 			"actions": [
@@ -2145,7 +2001,7 @@
 				{
 					"id": "trigger-once-while-true",
 					"objectClass": "System",
-					"sid": 401856471846928
+					"sid": 979206393765353
 				}
 			],
 			"actions": [
@@ -2614,34 +2470,16 @@
 					}
 				},
 				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 692938418034581,
-					"parameters": {
-						"object-to-create": "Shadow3",
-						"layer": "12",
-						"x": "Boss.X",
-						"y": "Boss.Y",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "Shadow3",
-					"sid": 946543014085452,
-					"parameters": {
-						"scale": "2"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 882612589233975,
-					"parameters": {
-						"seconds": "3",
-						"use-timescale": true
-					}
+					"callFunction": "End_Scene2",
+					"sid": 316990730821755,
+					"parameters": [
+						"100",
+						"0",
+						"100",
+						false,
+						false,
+						true
+					]
 				},
 				{
 					"id": "set-boolean-eventvar",

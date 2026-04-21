@@ -36,6 +36,16 @@
 					}
 				},
 				{
+					"callFunction": "End_Scene",
+					"sid": 327811270240773,
+					"parameters": [
+						"100",
+						false,
+						false,
+						true
+					]
+				},
+				{
 					"id": "set-size",
 					"objectClass": "Camera",
 					"sid": 847604678383936,
@@ -86,23 +96,6 @@
 					"parameters": {
 						"variable": "Safe_Zone",
 						"value": "true"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "EndScene",
-					"sid": 891584916901905,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetX",
-						"end-value": "-2000",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
 					}
 				},
 				{
@@ -761,6 +754,18 @@
 					],
 					"actions": [
 						{
+							"callFunction": "End_Scene2",
+							"sid": 335033728107971,
+							"parameters": [
+								"100",
+								"0",
+								"100",
+								false,
+								false,
+								true
+							]
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 950291594854202,
@@ -787,23 +792,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "tween-one-property",
-					"objectClass": "EndScene",
-					"sid": 319571646551758,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetX",
-						"end-value": "Camera.X +150",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
 				{
 					"id": "wait",
 					"objectClass": "System",

@@ -71,42 +71,16 @@
 					}
 				},
 				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 664731218541967,
-					"parameters": {
-						"object-to-create": "Shadow3",
-						"layer": "\"Front\"",
-						"x": "Player_Cutscene.X",
-						"y": "Player_Cutscene.Y",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "Shadow3",
-					"sid": 322972763301816,
-					"parameters": {
-						"scale": "3"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "EndScene",
-					"sid": 641823247381419,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetX",
-						"end-value": "-1000",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
+					"callFunction": "End_Scene2",
+					"sid": 260519678752692,
+					"parameters": [
+						"0",
+						"2",
+						"100",
+						true,
+						false,
+						false
+					]
 				},
 				{
 					"id": "set-boolean-eventvar",
@@ -159,23 +133,6 @@
 					}
 				},
 				{
-					"id": "tween-one-property",
-					"objectClass": "Shadow3",
-					"sid": 633322785475842,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetOpacity",
-						"end-value": "0",
-						"time": "3",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
 					"id": "set-instvar-value",
 					"objectClass": "EnemyManiac",
 					"sid": 833219663494266,
@@ -186,80 +143,6 @@
 				}
 			],
 			"sid": 830472082835930
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-created",
-					"objectClass": "Shadow3",
-					"sid": 922005474052387
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_Cutscene",
-					"sid": 283318719756660,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "0"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 473994881500347
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-opacity",
-					"objectClass": "Shadow3",
-					"sid": 833648534000700,
-					"parameters": {
-						"comparison": 0,
-						"opacity": "0"
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_All",
-					"sid": 235783210548755,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 2,
-						"value": "5"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-angle-of-motion",
-					"objectClass": "Sheet",
-					"sid": 375091259133606,
-					"behaviorType": "НастраиваемоеДвижение",
-					"parameters": {
-						"angle": "20"
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Shadow3",
-					"sid": 604674683137295
-				},
-				{
-					"id": "set-speed",
-					"objectClass": "Sheet",
-					"sid": 356152020447537,
-					"disabled": true,
-					"behaviorType": "НастраиваемоеДвижение",
-					"parameters": {
-						"which": "overall",
-						"speed": "500"
-					}
-				}
-			],
-			"sid": 438648918663038
 		},
 		{
 			"eventType": "block",
@@ -330,9 +213,27 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 984201260856108,
+					"sid": 887376851325646,
 					"parameters": {
-						"seconds": "6",
+						"seconds": "3",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-angle-of-motion",
+					"objectClass": "Sheet",
+					"sid": 935230493170525,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"angle": "20"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 930945187119126,
+					"parameters": {
+						"seconds": "3",
 						"use-timescale": true
 					}
 				},
@@ -819,7 +720,7 @@
 					"sid": 684496561042950,
 					"parameters": {
 						"audio-file": {
-							"path": "Player/Ride_Back"
+							"path": "Player_Ride_Back"
 						},
 						"loop": "not-looping",
 						"volume": "0",
@@ -1118,7 +1019,7 @@
 					"sid": 483153339267560,
 					"parameters": {
 						"audio-file": {
-							"path": "Player/Ride"
+							"path": "Player_Ride"
 						},
 						"loop": "not-looping",
 						"volume": "0",
@@ -1971,24 +1872,16 @@
 					}
 				},
 				{
-					"id": "spawn-another-object",
-					"objectClass": "Player_All",
-					"sid": 568975719650578,
-					"parameters": {
-						"object": "Shadow3",
-						"layer": "\"Front\"",
-						"image-point": "0",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "Shadow3",
-					"sid": 650824499124409,
-					"parameters": {
-						"scale": "4"
-					}
+					"callFunction": "End_Scene2",
+					"sid": 181782449213254,
+					"parameters": [
+						"100",
+						"4",
+						"100",
+						true,
+						false,
+						false
+					]
 				},
 				{
 					"callFunction": "Destroy_Dialoge",
@@ -2036,21 +1929,16 @@
 			],
 			"actions": [
 				{
-					"id": "tween-one-property",
-					"objectClass": "Shadow3",
-					"sid": 177587843060757,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetOpacity",
-						"end-value": "0",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
+					"callFunction": "End_Scene2",
+					"sid": 422589152479734,
+					"parameters": [
+						"0",
+						"2",
+						"100",
+						true,
+						false,
+						false
+					]
 				},
 				{
 					"id": "set-group-active",
@@ -2151,6 +2039,15 @@
 					"sid": 293631208001219
 				},
 				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 828907037656107,
+					"parameters": {
+						"seconds": "2",
+						"use-timescale": true
+					}
+				},
+				{
 					"id": "add-to-instvar",
 					"objectClass": "Player_Cutscene",
 					"sid": 486042635965095,
@@ -2185,7 +2082,7 @@
 				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
-					"sid": 932194978791217
+					"sid": 857611847438609
 				},
 				{
 					"callFunction": "Create_mainDialoge",
@@ -2380,6 +2277,18 @@
 			],
 			"actions": [
 				{
+					"callFunction": "End_Scene2",
+					"sid": 134804344156494,
+					"parameters": [
+						"100",
+						"1",
+						"0",
+						false,
+						true,
+						false
+					]
+				},
+				{
 					"callFunction": "Create_mainDialoge",
 					"sid": 388134196900759,
 					"parameters": [
@@ -2387,23 +2296,6 @@
 						"42",
 						"3"
 					]
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "Shadow3",
-					"sid": 236819407550199,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetOpacity",
-						"end-value": "100",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
 				}
 			],
 			"sid": 257419169442561

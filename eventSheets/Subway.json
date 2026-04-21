@@ -24,6 +24,16 @@
 			],
 			"actions": [
 				{
+					"callFunction": "End_Scene",
+					"sid": 400729221500348,
+					"parameters": [
+						"100",
+						false,
+						false,
+						true
+					]
+				},
+				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 192529171245828,
@@ -44,19 +54,6 @@
 					"behaviorType": "Твинанимация",
 					"parameters": {
 						"mode": "disabled"
-					}
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 381807804817014,
-					"parameters": {
-						"object-to-create": "Shadow3",
-						"layer": "\"Front\"",
-						"x": "Player_Cutscene.X",
-						"y": "Player_Cutscene.Y",
-						"create-hierarchy": false,
-						"template-name": "\"\""
 					}
 				},
 				{
@@ -133,23 +130,6 @@
 					"sid": 658560683274413,
 					"parameters": {
 						"frame-number": "0"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "EndScene",
-					"sid": 262857732879120,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetX",
-						"end-value": "-1000",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
 					}
 				},
 				{

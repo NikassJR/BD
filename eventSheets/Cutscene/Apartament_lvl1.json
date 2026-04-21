@@ -51,6 +51,18 @@
 			],
 			"actions": [
 				{
+					"callFunction": "End_Scene2",
+					"sid": 463380826273915,
+					"parameters": [
+						"0",
+						"2",
+						"100",
+						true,
+						true,
+						false
+					]
+				},
+				{
 					"id": "save",
 					"objectClass": "System",
 					"sid": 877516840030907,
@@ -95,44 +107,6 @@
 					}
 				},
 				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 532364076793731,
-					"parameters": {
-						"object-to-create": "Shadow3",
-						"layer": "\"Front\"",
-						"x": "Player_Cutscene.X",
-						"y": "Player_Cutscene.Y",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "Shadow3",
-					"sid": 683531631689557,
-					"parameters": {
-						"scale": "2"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "EndScene",
-					"sid": 836070938602445,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetX",
-						"end-value": "-1000",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 634692502708118,
@@ -142,31 +116,9 @@
 					}
 				},
 				{
-					"id": "tween-one-property",
-					"objectClass": "Shadow3",
-					"sid": 489945150133326,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetOpacity",
-						"end-value": "0",
-						"time": "1",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 413068496138680
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Shadow3",
-					"sid": 606460671702931
 				},
 				{
 					"id": "play",
@@ -738,7 +690,7 @@
 							"sid": 289642270392671,
 							"parameters": {
 								"audio-file": {
-									"path": "Kick/KickBaseball"
+									"path": "KickBaseball"
 								},
 								"loop": "not-looping",
 								"volume": "0",
@@ -1000,7 +952,7 @@
 							"sid": 237897524738888,
 							"parameters": {
 								"audio-file": {
-									"path": "Kick/AxeFinishing"
+									"path": "AxeFinishing"
 								},
 								"loop": "not-looping",
 								"volume": "0",
@@ -1221,7 +1173,7 @@
 						},
 						{
 							"id": "has-tags",
-							"objectClass": "EnemyBaseball",
+							"objectClass": "EnemyBaseball3",
 							"sid": 507954724932294,
 							"parameters": {
 								"tags": "\"Crash\""
@@ -1233,8 +1185,8 @@
 							"callFunction": "Create_Dealogue",
 							"sid": 755151069018794,
 							"parameters": [
-								"EnemyBaseball.X",
-								"EnemyBaseball.Y -50",
+								"EnemyBaseball3.X",
+								"EnemyBaseball3.Y -50",
 								"110",
 								"1",
 								false,
@@ -1411,7 +1363,7 @@
 				},
 				{
 					"id": "set-range",
-					"objectClass": "EnemyBaseball",
+					"objectClass": "EnemyBaseball3",
 					"sid": 681950715375679,
 					"behaviorType": "ПолеЗрения",
 					"parameters": {
@@ -2018,7 +1970,7 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 724055129989065,
+					"sid": 534700324862207,
 					"parameters": {
 						"audio-file": {
 							"path": "Music/Heaviness"
@@ -2026,7 +1978,7 @@
 						"loop": "looping",
 						"volume": "0",
 						"stereo-pan": "0",
-						"tag-optional": "\"Suspense\""
+						"tag-optional": "\"Quiet\""
 					}
 				},
 				{
@@ -2066,24 +2018,16 @@
 					}
 				},
 				{
-					"id": "spawn-another-object",
-					"objectClass": "Player_All",
-					"sid": 185820356425029,
-					"parameters": {
-						"object": "End_Scene2",
-						"layer": "\"Dialog\"",
-						"image-point": "0",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "End_Scene2",
-					"sid": 614657356726159,
-					"parameters": {
-						"scale": "3"
-					}
+					"callFunction": "End_Scene2",
+					"sid": 551438528307883,
+					"parameters": [
+						"100",
+						"0",
+						"100",
+						false,
+						false,
+						false
+					]
 				},
 				{
 					"id": "set-boolean-eventvar",
@@ -2122,10 +2066,10 @@
 				{
 					"id": "set-item",
 					"objectClass": "Game_Save",
-					"sid": 485359713338924,
+					"sid": 286717134663088,
 					"parameters": {
 						"key": "\"Apartament\"",
-						"value": "Audio.PlaybackTime(\"Suspense\")"
+						"value": "Audio.PlaybackTime(\"Quiet\")"
 					}
 				},
 				{

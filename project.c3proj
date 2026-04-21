@@ -36,6 +36,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Dictionary",
+			"name": "Словарь",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Json",
 			"name": "JSON",
 			"author": "Scirra",
@@ -108,6 +115,13 @@
 			"type": "plugin",
 			"id": "TiledBg",
 			"name": "Тайловый фон",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Карта тайлов",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -331,7 +345,9 @@
 			"Police_Tower",
 			"JSON",
 			"ТекстурныйШрифт",
-			"Ползунок"
+			"Ползунок",
+			"Словарь",
+			"КартаТайлов"
 		],
 		"subfolders": [
 			{
@@ -354,7 +370,7 @@
 					"Scientist",
 					"security_Cutscene",
 					"Range",
-					"EnemyBaseball",
+					"EnemyBaseball3",
 					"EnemySecurity",
 					"EnemyKnife",
 					"EnemyFurious",
@@ -363,7 +379,9 @@
 					"EnemyJunkieKnife",
 					"EnemyFat",
 					"EnemyManiac",
-					"EnemyFurious2"
+					"EnemyFurious2",
+					"EnemyBaseball",
+					"EnemyKnife2"
 				],
 				"subfolders": [
 					{
@@ -1227,7 +1245,8 @@
 			"GlassCrash",
 			"LadderStair",
 			"SubWay_Scene",
-			"StoryMan"
+			"StoryMan",
+			"Enemy_Mili"
 		],
 		"subfolders": []
 	},
@@ -1302,7 +1321,8 @@
 			"Police4",
 			"Loading",
 			"Music",
-			"Test_Level"
+			"Test_Level",
+			"Enemy"
 		],
 		"subfolders": [
 			{
@@ -1810,207 +1830,247 @@
 					"file-info": {
 						"purpose": "none"
 					}
+				},
+				{
+					"name": "Player_Wave.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 123068881798315,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Cast.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 195201371813717,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Kick.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 979194394662163,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Chain.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 274386207560180,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Chain2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 688770374450289,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "AxeFinishing.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 424988108575587,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "FinishingnoWeapon.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 299589447447370,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "BaseballFinishing.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 101873180917565,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "KnifeFinishing.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 345232432742691,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "GlessDestroy.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 285588962059156,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "KickBaseball.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 950490231539860,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Wolf_Ground.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 325733335431448,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Axe.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 341497332490205,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Mounting.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 700060812771828,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Ride.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 397104063034476,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Ride_Back.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 109397582519102,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Jump.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 790227958870072,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Landing.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 442687798251547,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Player_Run.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 706147004000388,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "KnifeKick.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 704462555917295,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Knife.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 397937256759817,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "MetallProps.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 786487564694957,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "WeaponTake.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 105594340193722,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Fire_Extinguisher.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 814893350362193,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Extinguisher_Crash.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 996073469885807,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "ChainCrash.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 658520772554726,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Bottle_Crash.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 393325532332582,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "BaseballFly.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 666816207882997,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "BaseballFall.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 388558836249659,
+					"file-info": {
+						"purpose": "none"
+					}
 				}
 			],
 			"subfolders": [
 				{
 					"items": [
 						{
-							"name": "FinishingnoWeapon.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 299589447447370,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "AxeFinishing.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 424988108575587,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "BaseballFinishing.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 101873180917565,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "KnifeFinishing.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 345232432742691,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Knife.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 397937256759817,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "MetallProps.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 786487564694957,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Wave.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 123068881798315,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Cast.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 195201371813717,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "WeaponTake.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 105594340193722,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "KnifeKick.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 704462555917295,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "KickBaseball.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 950490231539860,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Fire_Extinguisher.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 814893350362193,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "BaseballFly.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 666816207882997,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "BaseballFall.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 388558836249659,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Kick.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 979194394662163,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "GlessDestroy.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 285588962059156,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Chain.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 274386207560180,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Chain2.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 688770374450289,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Mounting.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 700060812771828,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Bottle_Crash.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 393325532332582,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Wolf_Ground.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 325733335431448,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
 							"name": "ChairCrash.webm",
 							"type": "audio/webm; codecs=opus",
 							"sid": 142360697622456,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Axe.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 341497332490205,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "ChainCrash.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 658520772554726,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Extinguisher_Crash.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 996073469885807,
 							"file-info": {
 								"purpose": "none"
 							}
@@ -2164,52 +2224,6 @@
 					],
 					"subfolders": [],
 					"name": "EndGame"
-				},
-				{
-					"items": [
-						{
-							"name": "Ride.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 397104063034476,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Landing.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 442687798251547,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Jump.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 790227958870072,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Ride_Back.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 109397582519102,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "Run.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 706147004000388,
-							"file-info": {
-								"purpose": "none"
-							}
-						}
-					],
-					"subfolders": [],
-					"name": "Player"
 				}
 			]
 		},

@@ -28,6 +28,18 @@
 					}
 				},
 				{
+					"callFunction": "End_Scene2",
+					"sid": 972779023775913,
+					"parameters": [
+						"0",
+						"2",
+						"100",
+						true,
+						false,
+						true
+					]
+				},
+				{
 					"id": "set-boolean-instvar",
 					"objectClass": "Camera",
 					"sid": 820334774667709,
@@ -70,43 +82,6 @@
 					"parameters": {
 						"variable": "Continue_Game",
 						"value": "false"
-					}
-				},
-				{
-					"id": "spawn-another-object",
-					"objectClass": "Player_All",
-					"sid": 394440106044031,
-					"parameters": {
-						"object": "Shadow3",
-						"layer": "\"Dialog\"",
-						"image-point": "0",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "Shadow3",
-					"sid": 328195909464583,
-					"parameters": {
-						"scale": "5"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "Shadow3",
-					"sid": 767781884349064,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetOpacity",
-						"end-value": "0",
-						"time": "2",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
 					}
 				},
 				{
@@ -1265,12 +1240,16 @@
 					],
 					"actions": [
 						{
-							"id": "set-opacity",
-							"objectClass": "Shadow3",
-							"sid": 846919628942343,
-							"parameters": {
-								"opacity": "100"
-							}
+							"callFunction": "End_Scene2",
+							"sid": 745579757536122,
+							"parameters": [
+								"100",
+								"0",
+								"100",
+								false,
+								false,
+								false
+							]
 						},
 						{
 							"id": "play",
@@ -1376,7 +1355,7 @@
 					"sid": 268030192453423,
 					"parameters": {
 						"audio-file": {
-							"path": "Kick/FinishingnoWeapon"
+							"path": "FinishingnoWeapon"
 						},
 						"loop": "not-looping",
 						"volume": "0",
@@ -1450,7 +1429,7 @@
 					"sid": 627321444277983,
 					"parameters": {
 						"audio-file": {
-							"path": "Kick/FinishingnoWeapon"
+							"path": "FinishingnoWeapon"
 						},
 						"loop": "not-looping",
 						"volume": "0",
