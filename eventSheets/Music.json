@@ -2158,6 +2158,11 @@
 					"id": "unload-unused-images",
 					"objectClass": "System",
 					"sid": 934008387548586
+				},
+				{
+					"id": "unload-all",
+					"objectClass": "Audio",
+					"sid": 669755836216970
 				}
 			],
 			"sid": 787227987854967
@@ -2534,7 +2539,7 @@
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "Группа2",
+					"title": "EnemyDamageSound",
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
@@ -2770,137 +2775,6 @@
 										{
 											"id": "is-overlapping-another-object",
 											"objectClass": "Shotgun",
-											"sid": 359165196560839,
-											"parameters": {
-												"object": "EnemyFurious"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Pistol",
-											"sid": 562382711618039,
-											"parameters": {
-												"object": "EnemyFurious"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Head",
-											"sid": 563882280963321,
-											"parameters": {
-												"object": "EnemyFurious"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Baseball",
-											"sid": 225567058622232,
-											"parameters": {
-												"object": "EnemyFurious"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Stake",
-											"sid": 517265276505099,
-											"parameters": {
-												"object": "EnemyFurious"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Mounting",
-											"sid": 364104892230827,
-											"parameters": {
-												"object": "EnemyFurious"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Brick",
-											"sid": 631632854688845,
-											"parameters": {
-												"object": "EnemyFurious"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Axe",
-											"sid": 610048156869488,
-											"parameters": {
-												"object": "EnemyFurious"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 938686417273595,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemyFurious",
-													"sid": 905037536126342,
-													"parameters": {
-														"instance-variable": "Damage"
-													}
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemyFurious",
-													"sid": 714599764041228,
-													"parameters": {
-														"instance-variable": "Death"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemyFurious",
-													"sid": 808898604126411,
-													"parameters": {
-														"instance-variable": "Down"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 707087657820595,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 507517876409357
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "Audio_Play_Sound",
-															"sid": 134663080652185,
-															"parameters": [
-																"\"Kick\"",
-																"0",
-																"\"Damage\""
-															]
-														}
-													],
-													"sid": 430952911259735
-												}
-											]
-										}
-									],
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Shotgun",
 											"sid": 999113839858923,
 											"parameters": {
 												"object": "EnemyJunkie"
@@ -3031,137 +2905,6 @@
 									"conditions": [
 										{
 											"id": "is-overlapping-another-object",
-											"objectClass": "Shotgun",
-											"sid": 369991711915265,
-											"parameters": {
-												"object": "EnemySecurity"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Pistol",
-											"sid": 136943919811175,
-											"parameters": {
-												"object": "EnemySecurity"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Head",
-											"sid": 563258610786547,
-											"parameters": {
-												"object": "EnemySecurity"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Baseball",
-											"sid": 166871700823954,
-											"parameters": {
-												"object": "EnemySecurity"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Stake",
-											"sid": 278849971301664,
-											"parameters": {
-												"object": "EnemySecurity"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Mounting",
-											"sid": 857146913208716,
-											"parameters": {
-												"object": "EnemySecurity"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Brick",
-											"sid": 495146980827091,
-											"parameters": {
-												"object": "EnemySecurity"
-											}
-										},
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Axe",
-											"sid": 466624815706404,
-											"parameters": {
-												"object": "EnemySecurity"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 483211438288204,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemySecurity",
-													"sid": 387162354092301,
-													"parameters": {
-														"instance-variable": "Damage"
-													}
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemySecurity",
-													"sid": 547275394013250,
-													"parameters": {
-														"instance-variable": "Death"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemySecurity",
-													"sid": 723582144441489,
-													"parameters": {
-														"instance-variable": "Down"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 904846894479407,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 311616618840737
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "Audio_Play_Sound",
-															"sid": 644137126116200,
-															"parameters": [
-																"\"Kick\"",
-																"0",
-																"\"Damage\""
-															]
-														}
-													],
-													"sid": 381877786919465
-												}
-											]
-										}
-									],
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
 											"objectClass": "Brick",
 											"sid": 940924556716480,
 											"parameters": {
@@ -3239,366 +2982,61 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 908187566891069,
+									"id": "is-animation-playing",
+									"objectClass": "Bottle",
+									"sid": 518851560526130,
 									"parameters": {
-										"variable": "Audio",
-										"comparison": 3,
-										"value": "-25"
-									},
-									"isInverted": true
+										"animation": "\"Crash\""
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 764636208790906
 								}
 							],
-							"actions": [],
-							"sid": 527880485448767,
-							"children": [
+							"actions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Bottle",
-											"sid": 568323748907855,
-											"parameters": {
-												"animation": "\"Crash\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 443699902070703,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [],
-											"sid": 504125199562667,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 394916737198153
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "Audio_Play_Sound",
-															"sid": 367930937952644,
-															"parameters": [
-																"\"Gless\"",
-																"0",
-																"\"Fire\""
-															]
-														}
-													],
-													"sid": 709689120812790
-												}
-											]
-										}
+									"callFunction": "Audio_Play_Sound",
+									"sid": 623014774915730,
+									"parameters": [
+										"\"Gless\"",
+										"0",
+										"\"Fire\""
 									]
 								}
-							]
+							],
+							"sid": 439792002237434
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-velocity",
-									"objectClass": "Chair",
-									"sid": 348948409027148,
-									"behaviorType": "Физика",
-									"parameters": {
-										"which": "overall-velocity",
-										"comparison": 4,
-										"value": "150"
-									}
-								},
-								{
 									"id": "is-animation-playing",
 									"objectClass": "Chair",
 									"sid": 239262157338293,
-									"disabled": true,
 									"parameters": {
 										"animation": "\"Break\""
-									},
-									"isInverted": true
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 888836034088977
 								}
 							],
-							"actions": [],
-							"sid": 107589884681984,
-							"children": [
+							"actions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Chair",
-											"sid": 589414320267630,
-											"parameters": {
-												"object": "Enemy_Mili"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 515929764632577,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 387602849172216,
-													"parameters": {
-														"instance-variable": "Death"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 923328771500439,
-													"parameters": {
-														"instance-variable": "Down"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 276963170299274,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 728355884682196
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "Audio_Play_Sound",
-															"sid": 702245548345891,
-															"parameters": [
-																"\"ChairCrash\"",
-																"0",
-																"\"Fire\""
-															]
-														}
-													],
-													"sid": 580568075618752
-												}
-											]
-										}
-									],
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Chair",
-											"sid": 241016252594699,
-											"parameters": {
-												"object": "EnemyFurious"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 605522581458860,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemyFurious",
-													"sid": 834600359129176,
-													"parameters": {
-														"instance-variable": "Death"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemyFurious",
-													"sid": 416988792558691,
-													"parameters": {
-														"instance-variable": "Down"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 747407973502424,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 209738803441556
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "Audio_Play_Sound",
-															"sid": 216291011343976,
-															"parameters": [
-																"\"ChairCrash\"",
-																"0",
-																"\"Fire\""
-															]
-														}
-													],
-													"sid": 117664247845625
-												}
-											]
-										}
-									],
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Chair",
-											"sid": 873318483689084,
-											"parameters": {
-												"object": "EnemyJunkie"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 423607060097430,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemyJunkie",
-													"sid": 164203207007156,
-													"parameters": {
-														"instance-variable": "Death"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemyJunkie",
-													"sid": 311770942275789,
-													"parameters": {
-														"instance-variable": "Down"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 382868398218136,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 643937501273326
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "Audio_Play_Sound",
-															"sid": 722296301922051,
-															"parameters": [
-																"\"ChairCrash\"",
-																"0",
-																"\"Fire\""
-															]
-														}
-													],
-													"sid": 781673004074169
-												}
-											]
-										}
-									],
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Chair",
-											"sid": 840551020610934,
-											"parameters": {
-												"object": "EnemySecurity"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 840584612377435,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemySecurity",
-													"sid": 325612854831078,
-													"parameters": {
-														"instance-variable": "Death"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemySecurity",
-													"sid": 854585619739444,
-													"parameters": {
-														"instance-variable": "Down"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 351942004591204,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 433355204556343
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "Audio_Play_Sound",
-															"sid": 451321113285240,
-															"parameters": [
-																"\"ChairCrash\"",
-																"0",
-																"\"Fire\""
-															]
-														}
-													],
-													"sid": 419616293638392
-												}
-											]
-										}
-									],
-									"isOrBlock": true
+									"callFunction": "Audio_Play_Sound",
+									"sid": 239115965338223,
+									"parameters": [
+										"\"ChairCrash\"",
+										"0",
+										"\"Fire\""
+									]
 								}
-							]
+							],
+							"sid": 107589884681984
 						},
 						{
 							"eventType": "block",
@@ -3617,10 +3055,9 @@
 								{
 									"id": "is-animation-playing",
 									"objectClass": "Extinguisher",
-									"sid": 673564000633490,
-									"disabled": true,
+									"sid": 235059218346793,
 									"parameters": {
-										"animation": "\"Break\""
+										"animation": "\"Crash\""
 									},
 									"isInverted": true
 								}
@@ -3680,82 +3117,15 @@
 													"actions": [
 														{
 															"callFunction": "Audio_Play_Sound",
-															"sid": 408652120285844,
+															"sid": 380606876328903,
 															"parameters": [
 																"\"MetallProps\"",
 																"0",
-																"\"Damage\""
+																"\"Fire\""
 															]
 														}
 													],
 													"sid": 400345503041640
-												}
-											]
-										}
-									],
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Extinguisher",
-											"sid": 550070937315077,
-											"parameters": {
-												"object": "EnemyFurious"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 495319647196415,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemyFurious",
-													"sid": 798284322547209,
-													"parameters": {
-														"instance-variable": "Death"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemyFurious",
-													"sid": 530353682656517,
-													"parameters": {
-														"instance-variable": "Down"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 346129756181738,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 418593211972110
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "Audio_Play_Sound",
-															"sid": 874115843337967,
-															"parameters": [
-																"\"MetallProps\"",
-																"0",
-																"\"Damage\""
-															]
-														}
-													],
-													"sid": 716825064672134
 												}
 											]
 										}
@@ -3814,82 +3184,15 @@
 													"actions": [
 														{
 															"callFunction": "Audio_Play_Sound",
-															"sid": 169899363815894,
+															"sid": 192518152794787,
 															"parameters": [
 																"\"MetallProps\"",
 																"0",
-																"\"Damage\""
+																"\"Fire\""
 															]
 														}
 													],
 													"sid": 712822005302493
-												}
-											]
-										}
-									],
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Extinguisher",
-											"sid": 985346092101006,
-											"parameters": {
-												"object": "EnemySecurity"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 996861813504492,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemySecurity",
-													"sid": 133424828998326,
-													"parameters": {
-														"instance-variable": "Death"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "EnemySecurity",
-													"sid": 982672170777519,
-													"parameters": {
-														"instance-variable": "Down"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 963623148577123,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 103017431352617
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "Audio_Play_Sound",
-															"sid": 610567390266483,
-															"parameters": [
-																"\"MetallProps\"",
-																"0",
-																"\"Damage\""
-															]
-														}
-													],
-													"sid": 687222343758030
 												}
 											]
 										}
@@ -3904,7 +3207,7 @@
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "EnemyDamageSound",
+					"title": "EnemyFinishingSound",
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
@@ -3946,63 +3249,6 @@
 							"actions": [],
 							"sid": 600995418273159,
 							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "HitBox",
-											"sid": 134112328567861,
-											"parameters": {
-												"object": "EnemyFurious"
-											}
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "EnemyFurious",
-											"sid": 734861494402339,
-											"parameters": {
-												"instance-variable": "Death"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "EnemyFurious",
-											"sid": 777845362890455,
-											"parameters": {
-												"instance-variable": "Down"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [],
-									"sid": 893776237026244,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "trigger-once-while-true",
-													"objectClass": "System",
-													"sid": 260224240816921
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "Audio_Play_Sound",
-													"sid": 628926328580102,
-													"parameters": [
-														"\"Kick\"",
-														"0",
-														"\"Damage\""
-													]
-												}
-											],
-											"sid": 598894124447465
-										}
-									]
-								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -4116,63 +3362,6 @@
 											"sid": 848460507679079
 										}
 									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "EnemySecurity",
-											"sid": 707970630638556,
-											"parameters": {
-												"object": "HitBox"
-											}
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "EnemySecurity",
-											"sid": 806409036438604,
-											"parameters": {
-												"instance-variable": "Death"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "EnemySecurity",
-											"sid": 921946265508589,
-											"parameters": {
-												"instance-variable": "Down"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [],
-									"sid": 562094593002481,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "trigger-once-while-true",
-													"objectClass": "System",
-													"sid": 786332986474039
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "Audio_Play_Sound",
-													"sid": 137418868745460,
-													"parameters": [
-														"\"Kick\"",
-														"0",
-														"\"Damage\""
-													]
-												}
-											],
-											"sid": 958390819975078
-										}
-									]
 								}
 							]
 						},
@@ -4188,57 +3377,85 @@
 									}
 								},
 								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 327594930561084,
+									"parameters": {
+										"animation": "\"AxeFinishing\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Enemys",
+									"sid": 933128933587783,
+									"parameters": {
+										"animation": "\"AxeFinishing\""
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 613144920747529
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Audio_Play_Sound",
+									"sid": 655205545087856,
+									"parameters": [
+										"\"AxeFinishing\"",
+										"0",
+										"\"Kick\""
+									]
+								}
+							],
+							"sid": 550047963879744
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "is-overlapping-another-object",
 									"objectClass": "Player_All",
-									"sid": 732418776076672,
+									"sid": 384346336166203,
 									"parameters": {
 										"object": "Enemy_Mili"
 									}
-								}
-							],
-							"actions": [],
-							"sid": 550047963879744,
-							"children": [
+								},
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Player_All",
-											"sid": 919499926085519,
-											"parameters": {
-												"animation": "\"AxeFinishing\""
-											}
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "Enemys",
-											"sid": 504002888419926,
-											"parameters": {
-												"animation": "\"AxeFinishing\""
-											}
-										},
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 464363895664642
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "Audio_Play_Sound",
-											"sid": 641319657885990,
-											"parameters": [
-												"\"AxeFinishing\"",
-												"0",
-												"\"Damage\""
-											]
-										}
-									],
-									"sid": 765687357051686
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 250812088063244,
+									"parameters": {
+										"animation": "\"AxeFinishing\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Enemy_Mili",
+									"sid": 713289229140962,
+									"parameters": {
+										"animation": "\"AxeFinishing\""
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 522020791871486
 								}
 							],
-							"isOrBlock": true
+							"actions": [
+								{
+									"callFunction": "Audio_Play_Sound",
+									"sid": 687543328914483,
+									"parameters": [
+										"\"AxeFinishing\"",
+										"0",
+										"\"Kick\""
+									]
+								}
+							],
+							"sid": 229013447026493
 						},
 						{
 							"eventType": "block",
@@ -4486,15 +3703,113 @@
 											"actions": [
 												{
 													"callFunction": "Audio_Play_Sound",
-													"sid": 127394986129045,
+													"sid": 507508089119198,
 													"parameters": [
 														"\"BaseballFinishing\"",
 														"0",
-														"\"Damage\""
+														"\"Kick\""
 													]
 												}
 											],
 											"sid": 425383625482234
+										}
+									],
+									"isOrBlock": true
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 250241441177977,
+									"parameters": {
+										"animation": "\"BaseballFinishing\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 740957665647057,
+									"parameters": {
+										"animation": "\"ExtinguisherFinishing\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 493224186038199,
+									"parameters": {
+										"animation": "\"BrickFinishing\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 524751874128241,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Enemy_Mili",
+											"sid": 179420345481045,
+											"parameters": {
+												"animation": "\"BaseballFinishing\""
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Enemy_Mili",
+											"sid": 358581432320039,
+											"parameters": {
+												"animation": "\"ExtinguisherFinishing\""
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Enemy_Mili",
+											"sid": 312156530309742,
+											"parameters": {
+												"animation": "\"BrickFinishing\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 982552404918178,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player_All",
+													"sid": 395249655586303,
+													"parameters": {
+														"object": "Enemy_Mili"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 296794182540850
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "Audio_Play_Sound",
+													"sid": 526621248862216,
+													"parameters": [
+														"\"BaseballFinishing\"",
+														"0",
+														"\"Kick\""
+													]
+												}
+											],
+											"sid": 514741171400521
 										}
 									],
 									"isOrBlock": true
@@ -4600,15 +3915,129 @@
 											"actions": [
 												{
 													"callFunction": "Audio_Play_Sound",
-													"sid": 217440318560038,
+													"sid": 306719777623355,
 													"parameters": [
 														"\"KnifeFinishing\"",
 														"0",
-														"\"Damage\""
+														"\"Kick\""
 													]
 												}
 											],
 											"sid": 854059681745636
+										}
+									],
+									"isOrBlock": true
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 850388425262770,
+									"parameters": {
+										"animation": "\"KnifeFinishing\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 761789300908243,
+									"parameters": {
+										"animation": "\"StakeFinishing\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 376445415785800,
+									"parameters": {
+										"animation": "\"GlassFinishing\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 608663599633675,
+									"parameters": {
+										"animation": "\"RoseFinishing\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 494172898518204,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Enemy_Mili",
+											"sid": 220736295833875,
+											"parameters": {
+												"animation": "\"KnifeFinishing\""
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Enemy_Mili",
+											"sid": 280685927204540,
+											"parameters": {
+												"animation": "\"StakeFinishing\""
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Enemy_Mili",
+											"sid": 538798535292726,
+											"parameters": {
+												"animation": "\"DeathRose\""
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Enemy_Mili",
+											"sid": 372884195304165,
+											"parameters": {
+												"animation": "\"DeathGlass\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 377890269256929,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Player_All",
+													"sid": 280297424690636,
+													"parameters": {
+														"object": "Enemy_Mili"
+													}
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 206510174931321
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "Audio_Play_Sound",
+													"sid": 206723467467511,
+													"parameters": [
+														"\"KnifeFinishing\"",
+														"0",
+														"\"Kick\""
+													]
+												}
+											],
+											"sid": 412806197059718
 										}
 									],
 									"isOrBlock": true

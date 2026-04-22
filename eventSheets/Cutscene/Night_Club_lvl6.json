@@ -178,7 +178,7 @@
 				},
 				{
 					"id": "has-tags",
-					"objectClass": "EnemySecurity",
+					"objectClass": "EnemySecurity2",
 					"sid": 952971648849383,
 					"parameters": {
 						"tags": "\"Cut\""
@@ -188,7 +188,7 @@
 			"actions": [
 				{
 					"id": "set-range",
-					"objectClass": "EnemySecurity",
+					"objectClass": "EnemySecurity2",
 					"sid": 824364611063162,
 					"behaviorType": "ПолеЗрения",
 					"parameters": {
@@ -741,20 +741,8 @@
 					}
 				},
 				{
-					"id": "pick-nearestfurthest",
-					"objectClass": "EnemySecurity",
-					"sid": 137526910493959,
-					"disabled": true,
-					"parameters": {
-						"which": "nearest",
-						"x": "Player_All.X",
-						"y": "Player_All.Y",
-						"pick-all-tied": false
-					}
-				},
-				{
 					"id": "is-boolean-instance-variable-set",
-					"objectClass": "EnemySecurity",
+					"objectClass": "EnemySecurity2",
 					"sid": 883088214182815,
 					"parameters": {
 						"instance-variable": "triger"
@@ -763,7 +751,7 @@
 				},
 				{
 					"id": "compare-instance-variable",
-					"objectClass": "EnemySecurity",
+					"objectClass": "EnemySecurity2",
 					"sid": 721674457221419,
 					"parameters": {
 						"instance-variable": "HP",
@@ -773,7 +761,7 @@
 				},
 				{
 					"id": "has-tags",
-					"objectClass": "EnemySecurity",
+					"objectClass": "EnemySecurity2",
 					"sid": 197536589837675,
 					"parameters": {
 						"tags": "\"Cut\""
@@ -785,8 +773,8 @@
 					"callFunction": "Create_DealogueEnemy",
 					"sid": 881860873709756,
 					"parameters": [
-						"EnemySecurity.X",
-						"EnemySecurity.Y -50",
+						"EnemySecurity2.X",
+						"EnemySecurity2.Y -50",
 						"353",
 						"1",
 						false,
@@ -801,7 +789,7 @@
 			"conditions": [
 				{
 					"id": "has-tags",
-					"objectClass": "EnemySecurity",
+					"objectClass": "EnemySecurity2",
 					"sid": 451854737250135,
 					"parameters": {
 						"tags": "\"Cut\""
@@ -809,7 +797,7 @@
 				},
 				{
 					"id": "is-boolean-instance-variable-set",
-					"objectClass": "EnemySecurity",
+					"objectClass": "EnemySecurity2",
 					"sid": 103701485380512,
 					"parameters": {
 						"instance-variable": "triger"
@@ -837,7 +825,7 @@
 				},
 				{
 					"id": "has-tags",
-					"objectClass": "EnemySecurity",
+					"objectClass": "EnemySecurity2",
 					"sid": 628828212588869,
 					"parameters": {
 						"tags": "\"Stealth\""
@@ -863,7 +851,7 @@
 			"actions": [
 				{
 					"id": "set-range",
-					"objectClass": "EnemySecurity",
+					"objectClass": "EnemySecurity2",
 					"sid": 234897091017898,
 					"behaviorType": "ПолеЗрения",
 					"parameters": {
@@ -902,7 +890,7 @@
 			"actions": [
 				{
 					"id": "set-range",
-					"objectClass": "EnemySecurity",
+					"objectClass": "EnemySecurity2",
 					"sid": 829971527319716,
 					"behaviorType": "ПолеЗрения",
 					"parameters": {
@@ -1029,7 +1017,7 @@
 			"actions": [
 				{
 					"id": "set-range",
-					"objectClass": "EnemySecurity",
+					"objectClass": "EnemySecurity2",
 					"sid": 701927228505202,
 					"behaviorType": "ПолеЗрения",
 					"parameters": {
@@ -1267,7 +1255,7 @@
 			"conditions": [
 				{
 					"id": "has-tags",
-					"objectClass": "EnemySecurity",
+					"objectClass": "EnemySecurity2",
 					"sid": 962629453988481,
 					"parameters": {
 						"tags": "\"End\""
@@ -1275,7 +1263,7 @@
 				},
 				{
 					"id": "compare-instance-variable",
-					"objectClass": "EnemySecurity",
+					"objectClass": "EnemySecurity2",
 					"sid": 586847791620524,
 					"parameters": {
 						"instance-variable": "HP",
@@ -2514,140 +2502,6 @@
 						}
 					],
 					"sid": 979725949128500
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "EnemyFurious",
-							"sid": 105005666852432,
-							"parameters": {
-								"object": "Screen_Black"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "tween-one-property",
-							"objectClass": "EnemyFurious",
-							"sid": 351531580286628,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetColor",
-								"end-value": "rgbEx(0, 0, 0)",
-								"time": "0.1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						}
-					],
-					"sid": 224918379702269
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "EnemyFurious",
-							"sid": 357217811438079,
-							"parameters": {
-								"object": "Screen_Black"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "tween-one-property",
-							"objectClass": "EnemyFurious",
-							"sid": 293601074451716,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetColor",
-								"end-value": "rgbEx(255, 255, 255)",
-								"time": "0.1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						}
-					],
-					"sid": 286534772096660
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "EnemySecurity",
-							"sid": 526819966227137,
-							"parameters": {
-								"object": "Screen_Black"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "tween-one-property",
-							"objectClass": "EnemySecurity",
-							"sid": 478736157666199,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetColor",
-								"end-value": "rgbEx(0, 0, 0)",
-								"time": "0.1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						}
-					],
-					"sid": 168020716575781
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "EnemySecurity",
-							"sid": 884498604294065,
-							"parameters": {
-								"object": "Screen_Black"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "tween-one-property",
-							"objectClass": "EnemySecurity",
-							"sid": 353341901306637,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetColor",
-								"end-value": "rgbEx(255, 255, 255)",
-								"time": "0.1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						}
-					],
-					"sid": 676370050221399
 				}
 			],
 			"sid": 539178525634971

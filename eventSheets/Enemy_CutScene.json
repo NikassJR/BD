@@ -14673,6 +14673,54 @@
 					],
 					"sid": 161644252370982,
 					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "EnemyFurious2",
+							"sid": 697697226999875,
+							"parameters": {
+								"instance-variable": "Drop",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "EnemyFurious2",
+							"sid": 200627697157016,
+							"parameters": {
+								"object": "Fear",
+								"layer": "EnemyFurious2.LayerName",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 592645623871649,
+							"parameters": {
+								"variable": "Enemys",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyFurious2",
+							"sid": 253473959902809,
+							"parameters": {
+								"instance-variable": "Drop",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 445463436547630
 				}
 			],
 			"sid": 549002393623154
@@ -20588,6 +20636,45 @@
 						}
 					],
 					"sid": 582005478729591
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "EnemyManiac",
+							"sid": 646947168905602,
+							"parameters": {
+								"instance-variable": "Drop",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "EnemyManiac",
+							"sid": 299878870810220,
+							"parameters": {
+								"object": "Knife",
+								"layer": "EnemyManiac.LayerName",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyManiac",
+							"sid": 913029601152780,
+							"parameters": {
+								"instance-variable": "Drop",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 510936447318201
 				},
 				{
 					"eventType": "block",
