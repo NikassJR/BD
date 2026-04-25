@@ -138,8 +138,8 @@
 						},
 						{
 							"id": "set-visible",
-							"objectClass": "Enemys",
-							"sid": 734309123346027,
+							"objectClass": "Enemy_Mili",
+							"sid": 233917839882745,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -610,18 +610,13 @@
 							],
 							"actions": [
 								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 147435488557937,
-									"parameters": {
-										"audio-file": {
-											"path": "Mobile_Sound"
-										},
-										"loop": "not-looping",
-										"volume": "0",
-										"stereo-pan": "0",
-										"tag-optional": "\"audio\""
-									}
+									"callFunction": "Audio_Play_Sound",
+									"sid": 583857238570249,
+									"parameters": [
+										"\"Mobile_Sound\"",
+										"0",
+										"\"Mobile_Sound\""
+									]
 								},
 								{
 									"id": "wait",
@@ -654,18 +649,13 @@
 									}
 								},
 								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 939578549795547,
-									"parameters": {
-										"audio-file": {
-											"path": "WeaponTake"
-										},
-										"loop": "not-looping",
-										"volume": "0",
-										"stereo-pan": "0",
-										"tag-optional": "\"audio\""
-									}
+									"callFunction": "Audio_Play_Sound",
+									"sid": 183365933673233,
+									"parameters": [
+										"\"WeaponTake\"",
+										"0",
+										"\"WeaponTake\""
+									]
 								},
 								{
 									"id": "set-animation",
@@ -1416,18 +1406,13 @@
 									"sid": 713790606841270
 								},
 								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 727162569087590,
-									"parameters": {
-										"audio-file": {
-											"path": "Missage"
-										},
-										"loop": "not-looping",
-										"volume": "0",
-										"stereo-pan": "0",
-										"tag-optional": "\"audio\""
-									}
+									"callFunction": "Audio_Play_Sound",
+									"sid": 609199863283711,
+									"parameters": [
+										"\"Missage\"",
+										"0",
+										"\"Missage\""
+									]
 								}
 							],
 							"sid": 320114906883281
@@ -1839,8 +1824,8 @@
 					"actions": [
 						{
 							"id": "set-visible",
-							"objectClass": "Enemys",
-							"sid": 734977143275933,
+							"objectClass": "Enemy_Mili",
+							"sid": 629449919575289,
 							"parameters": {
 								"visibility": "visible"
 							}
@@ -1895,23 +1880,28 @@
 							}
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 696199372751261,
-							"parameters": {
-								"audio-file": {
-									"path": "OpenSmash"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"audio\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 707460613168416,
+							"parameters": [
+								"\"OpenSmash\"",
+								"0",
+								"\"OpenSmash\""
+							]
 						},
 						{
 							"id": "set-speed",
 							"objectClass": "EnemySecurity",
 							"sid": 193102103628342,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "-100"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "EnemyKnife",
+							"sid": 501118299036845,
 							"behaviorType": "НастраиваемоеДвижение",
 							"parameters": {
 								"which": "horizontal",
@@ -2002,18 +1992,13 @@
 					],
 					"actions": [
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 893347240637959,
-							"parameters": {
-								"audio-file": {
-									"path": "End_Scene"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"music\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 993130785920310,
+							"parameters": [
+								"\"End_Scene\"",
+								"0",
+								"\"End_Scene\""
+							]
 						},
 						{
 							"id": "tween-one-property",
@@ -2125,18 +2110,13 @@
 							}
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 198723179623132,
-							"parameters": {
-								"audio-file": {
-									"path": "Interferences"
-								},
-								"loop": "looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"Elektro\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 588975818549495,
+							"parameters": [
+								"\"Interferences\"",
+								"0",
+								"\"Interferences\""
+							]
 						},
 						{
 							"id": "wait",
@@ -2235,18 +2215,13 @@
 							}
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 380066469109010,
-							"parameters": {
-								"audio-file": {
-									"path": "Paper_Money"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"Water\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 536272048822677,
+							"parameters": [
+								"\"Paper_Money\"",
+								"0",
+								"\"Paper_Money\""
+							]
 						},
 						{
 							"id": "tween-one-property",
@@ -2520,18 +2495,13 @@
 							]
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 423405623966303,
-							"parameters": {
-								"audio-file": {
-									"path": "Pants are taken"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"Suspense\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 756934006661695,
+							"parameters": [
+								"\"Pants are taken\"",
+								"0",
+								"\"Pants are taken\""
+							]
 						},
 						{
 							"id": "play",

@@ -3,16 +3,6 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "Sound_Change",
-			"type": "number",
-			"initialValue": "5",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 365445249987371
-		},
-		{
-			"eventType": "variable",
 			"name": "Quet",
 			"type": "boolean",
 			"initialValue": "false",
@@ -20,6 +10,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 111994761376978
+		},
+		{
+			"eventType": "variable",
+			"name": "Sound_Teg",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 364047206325612
 		},
 		{
 			"eventType": "group",
@@ -151,6 +151,7 @@
 							"id": "is-tag-playing",
 							"objectClass": "Audio",
 							"sid": 425454031612946,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"audio\""
 							}
@@ -159,6 +160,7 @@
 							"id": "is-tag-playing",
 							"objectClass": "Audio",
 							"sid": 600813692132778,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"Damage\""
 							}
@@ -167,6 +169,7 @@
 							"id": "is-tag-playing",
 							"objectClass": "Audio",
 							"sid": 384335882614581,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"Fire\""
 							}
@@ -175,6 +178,7 @@
 							"id": "is-tag-playing",
 							"objectClass": "Audio",
 							"sid": 231133202456518,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"Walk\""
 							}
@@ -183,6 +187,7 @@
 							"id": "is-tag-playing",
 							"objectClass": "Audio",
 							"sid": 547654446512707,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"Water\""
 							}
@@ -191,9 +196,15 @@
 							"id": "is-tag-playing",
 							"objectClass": "Audio",
 							"sid": 716828140836657,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"Kick\""
 							}
+						},
+						{
+							"id": "is-any-playing",
+							"objectClass": "Audio",
+							"sid": 481992340553227
 						}
 					],
 					"actions": [
@@ -201,6 +212,7 @@
 							"id": "set-volume",
 							"objectClass": "Audio",
 							"sid": 534367657226428,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"audio\"",
 								"db": "Audio"
@@ -210,6 +222,7 @@
 							"id": "set-volume",
 							"objectClass": "Audio",
 							"sid": 783731714832870,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"Damage\"",
 								"db": "Audio"
@@ -219,6 +232,7 @@
 							"id": "set-volume",
 							"objectClass": "Audio",
 							"sid": 410255293540143,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"Fire\"",
 								"db": "Audio"
@@ -228,6 +242,7 @@
 							"id": "set-volume",
 							"objectClass": "Audio",
 							"sid": 366148250415628,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"Water\"",
 								"db": "Audio"
@@ -237,6 +252,7 @@
 							"id": "set-volume",
 							"objectClass": "Audio",
 							"sid": 786914386230386,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"Walk\"",
 								"db": "Audio"
@@ -246,13 +262,24 @@
 							"id": "set-volume",
 							"objectClass": "Audio",
 							"sid": 123285030560970,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"Kick\"",
+								"db": "Audio"
+							}
+						},
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 493115335752393,
+							"parameters": {
+								"tag": "Sound_Teg",
 								"db": "Audio"
 							}
 						}
 					],
 					"sid": 564877392166561,
+					"disabled": true,
 					"isOrBlock": true
 				},
 				{
@@ -949,6 +976,7 @@
 					],
 					"actions": [],
 					"sid": 624507564538385,
+					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -993,7 +1021,8 @@
 									}
 								}
 							],
-							"sid": 987655054593225
+							"sid": 987655054593225,
+							"disabled": true
 						}
 					],
 					"isOrBlock": true
@@ -2040,11 +2069,6 @@
 					"sid": 399892749350284
 				},
 				{
-					"id": "unload-all",
-					"objectClass": "Audio",
-					"sid": 972480470519931
-				},
-				{
 					"id": "unload-unused-images",
 					"objectClass": "System",
 					"sid": 598952997999170
@@ -2109,7 +2133,7 @@
 					"sid": 928586645636437,
 					"parameters": {
 						"audio-file": {
-							"path": "Warehouse/Lamp"
+							"path": "Lamp"
 						},
 						"loop": "looping",
 						"volume": "0",
@@ -2126,7 +2150,7 @@
 					"sid": 645004534680284,
 					"parameters": {
 						"audio-file": {
-							"path": "Warehouse/Konveer"
+							"path": "Konveer"
 						},
 						"loop": "looping",
 						"volume": "0",
@@ -2144,9 +2168,19 @@
 					"parameters": {
 						"object": "Player_All"
 					}
+				},
+				{
+					"callFunction": "Audio_Play_Sound",
+					"sid": 780226286803527,
+					"parameters": [
+						"\"\"",
+						"-100",
+						"\"\""
+					]
 				}
 			],
-			"sid": 166207977275511
+			"sid": 166207977275511,
+			"disabled": true
 		},
 		{
 			"eventType": "group",
@@ -2196,7 +2230,33 @@
 								{
 									"id": "is-tag-playing",
 									"objectClass": "Audio",
-									"sid": 350546213815137,
+									"sid": 312589720265722,
+									"parameters": {
+										"tag": "tag"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "preload-by-name",
+									"objectClass": "Audio",
+									"sid": 944969075903088,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "fileName"
+									}
+								}
+							],
+							"sid": 407290248826545,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 251451762690370,
 									"parameters": {
 										"tag": "tag"
 									},
@@ -2207,18 +2267,27 @@
 								{
 									"id": "play-by-name",
 									"objectClass": "Audio",
-									"sid": 678922675081535,
+									"sid": 388824019944808,
 									"parameters": {
 										"folder": "sounds",
 										"audio-file-name": "fileName",
 										"loop": "not-looping",
-										"volume": "0",
+										"volume": "Audio",
 										"stereo-pan": "0",
 										"tag-optional": "tag"
 									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 740440387534321,
+									"parameters": {
+										"variable": "Sound_Teg",
+										"value": "tag"
+									}
 								}
 							],
-							"sid": 103059493522678
+							"sid": 758256931737768
 						},
 						{
 							"eventType": "block",
@@ -2226,7 +2295,7 @@
 								{
 									"id": "is-tag-playing",
 									"objectClass": "Audio",
-									"sid": 656852361984658,
+									"sid": 283490674049049,
 									"parameters": {
 										"tag": "tag"
 									}
@@ -2234,7 +2303,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 853250194295666,
+									"sid": 174141087052585,
 									"parameters": {
 										"variable": "tag",
 										"comparison": 1,
@@ -2246,7 +2315,7 @@
 								{
 									"id": "stop",
 									"objectClass": "Audio",
-									"sid": 583064358881801,
+									"sid": 232242259094418,
 									"parameters": {
 										"tag": "tag"
 									}
@@ -2254,18 +2323,27 @@
 								{
 									"id": "play-by-name",
 									"objectClass": "Audio",
-									"sid": 597809656972202,
+									"sid": 257128785166526,
 									"parameters": {
 										"folder": "sounds",
 										"audio-file-name": "fileName",
 										"loop": "not-looping",
-										"volume": "0",
+										"volume": "Audio",
 										"stereo-pan": "0",
 										"tag-optional": "tag"
 									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 646732446959206,
+									"parameters": {
+										"variable": "Sound_Teg",
+										"value": "tag"
+									}
 								}
 							],
-							"sid": 577092397437612
+							"sid": 432310327282471
 						},
 						{
 							"eventType": "comment",
@@ -2330,6 +2408,67 @@
 					]
 				},
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 868367630300951,
+							"parameters": {
+								"key": 89
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 918008473936258
+						}
+					],
+					"sid": 532448697103988
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 531224188249888,
+							"parameters": {
+								"key": 81
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Audio_Play_Sound",
+							"sid": 606136739723492,
+							"parameters": [
+								"\"Axe\"",
+								"0",
+								"\"Axe\""
+							]
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 539481730377613,
+							"disabled": true,
+							"parameters": {
+								"audio-file": {
+									"path": "AxeFinishing"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"AxeFinishing\""
+							}
+						}
+					],
+					"sid": 277894106518030
+				},
+				{
 					"eventType": "comment",
 					"text": "Player"
 				},
@@ -2385,11 +2524,11 @@
 							"actions": [
 								{
 									"callFunction": "Audio_Play_Sound",
-									"sid": 454287258400438,
+									"sid": 664991667509899,
 									"parameters": [
 										"\"Player_Wave\"",
 										"0",
-										"\"Kick\""
+										"\"Player_Wave\""
 									]
 								}
 							],
@@ -2419,11 +2558,11 @@
 					"actions": [
 						{
 							"callFunction": "Audio_Play_Sound",
-							"sid": 470267076849673,
+							"sid": 893085419276423,
 							"parameters": [
 								"\"Player_Cast\"",
 								"0",
-								"\"Kick\""
+								"\"Player_Cast\""
 							]
 						}
 					],
@@ -2450,11 +2589,11 @@
 					"actions": [
 						{
 							"callFunction": "Audio_Play_Sound",
-							"sid": 183508835025069,
+							"sid": 827649745237015,
 							"parameters": [
 								"\"Player_Cast\"",
 								"0",
-								"\"Kick\""
+								"\"Player_Cast\""
 							]
 						}
 					],
@@ -2497,11 +2636,11 @@
 					"actions": [
 						{
 							"callFunction": "Audio_Play_Sound",
-							"sid": 661479398060369,
+							"sid": 766696903125445,
 							"parameters": [
 								"\"Player_Cast\"",
 								"0",
-								"\"Kick\""
+								"\"Player_Cast\""
 							]
 						}
 					],
@@ -2735,11 +2874,11 @@
 													"actions": [
 														{
 															"callFunction": "Audio_Play_Sound",
-															"sid": 801593982793165,
+															"sid": 366572139708160,
 															"parameters": [
 																"\"Kick\"",
 																"0",
-																"\"Damage\""
+																"\"Fire\""
 															]
 														}
 													],
@@ -2810,11 +2949,11 @@
 													"actions": [
 														{
 															"callFunction": "Audio_Play_Sound",
-															"sid": 658204410240647,
+															"sid": 335686252219865,
 															"parameters": [
 																"\"Kick\"",
 																"0",
-																"\"Damage\""
+																"\"Fire\""
 															]
 														}
 													],
@@ -2994,103 +3133,6 @@
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 426204385572064,
-									"parameters": {
-										"variable": "Audio",
-										"comparison": 2,
-										"value": "-25"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 410126348053883,
-									"parameters": {
-										"variable": "weapon",
-										"comparison": 0,
-										"value": "\"noWeapon\""
-									}
-								},
-								{
-									"id": "compare-animation-frame",
-									"objectClass": "Player_All",
-									"sid": 689218950245596,
-									"parameters": {
-										"comparison": 5,
-										"number": "3"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [],
-							"sid": 600995418273159,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "HitBox",
-											"sid": 263546188266868,
-											"parameters": {
-												"object": "Enemy_Mili"
-											}
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "Enemy_Mili",
-											"sid": 882114595566721,
-											"parameters": {
-												"instance-variable": "Death"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "Enemy_Mili",
-											"sid": 496257819291168,
-											"parameters": {
-												"instance-variable": "Down"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [],
-									"sid": 581717469556080,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "trigger-once-while-true",
-													"objectClass": "System",
-													"sid": 712654757805759
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "Audio_Play_Sound",
-													"sid": 898448748898852,
-													"parameters": [
-														"\"Kick\"",
-														"0",
-														"\"Damage\""
-													]
-												}
-											],
-											"sid": 655906538560335
-										}
-									]
-								}
-							]
-						},
 						{
 							"eventType": "block",
 							"conditions": [

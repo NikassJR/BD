@@ -7431,13 +7431,13 @@
 										{
 											"id": "play",
 											"objectClass": "Audio",
-											"sid": 349669313557419,
+											"sid": 368943479039513,
 											"parameters": {
 												"audio-file": {
 													"path": "Fire_Extinguisher"
 												},
 												"loop": "not-looping",
-												"volume": "-10",
+												"volume": "Audio",
 												"stereo-pan": "0",
 												"tag-optional": "\"Fire\""
 											}
@@ -7676,18 +7676,13 @@
 											}
 										},
 										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 981606989645242,
-											"parameters": {
-												"audio-file": {
-													"path": "Extinguisher_Crash"
-												},
-												"loop": "not-looping",
-												"volume": "0",
-												"stereo-pan": "0",
-												"tag-optional": "\"audio\""
-											}
+											"callFunction": "Audio_Play_Sound",
+											"sid": 318850456903348,
+											"parameters": [
+												"\"Extinguisher_Crash\"",
+												"0",
+												"\"Extinguisher_Crash\""
+											]
 										}
 									],
 									"sid": 497125082752887
@@ -18876,7 +18871,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Enemy & Fear2",
+			"title": "Enemy & Fear",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -27133,32 +27128,22 @@
 																			}
 																		},
 																		{
-																			"id": "play",
-																			"objectClass": "Audio",
-																			"sid": 590800110676800,
-																			"parameters": {
-																				"audio-file": {
-																					"path": "FinishingnoWeapon"
-																				},
-																				"loop": "not-looping",
-																				"volume": "Audio",
-																				"stereo-pan": "0",
-																				"tag-optional": "\"audio\""
-																			}
+																			"callFunction": "Audio_Play_Sound",
+																			"sid": 324635942042585,
+																			"parameters": [
+																				"\"FinishingnoWeapon\"",
+																				"0",
+																				"\"FinishingnoWeapon\""
+																			]
 																		},
 																		{
-																			"id": "play",
-																			"objectClass": "Audio",
-																			"sid": 905168376385665,
-																			"parameters": {
-																				"audio-file": {
-																					"path": "Kick"
-																				},
-																				"loop": "not-looping",
-																				"volume": "Audio",
-																				"stereo-pan": "0",
-																				"tag-optional": "\"audio\""
-																			}
+																			"callFunction": "Audio_Play_Sound",
+																			"sid": 256993828842005,
+																			"parameters": [
+																				"\"Kick\"",
+																				"0",
+																				"\"Kick\""
+																			]
 																		}
 																	],
 																	"sid": 361650807524291,
@@ -29033,6 +29018,11 @@
 											}
 										},
 										{
+											"id": "destroy",
+											"objectClass": "HitBox",
+											"sid": 908266898105652
+										},
+										{
 											"id": "stop",
 											"objectClass": "Enemy_Mili",
 											"sid": 997113266020416,
@@ -29338,11 +29328,11 @@
 													"actions": [
 														{
 															"callFunction": "Audio_Play_Sound",
-															"sid": 705823437675685,
+															"sid": 487878364251648,
 															"parameters": [
 																"\"KickBaseball\"",
 																"0",
-																"\"Damage\""
+																"\"KickBaseball\""
 															]
 														}
 													],
@@ -29371,6 +29361,37 @@
 															"sid": 590794410326407
 														}
 													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player_All",
+															"sid": 280432710860622,
+															"parameters": {
+																"animation": "\"noWeaponAttack3\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 798623098375167
+														}
+													],
+													"actions": [
+														{
+															"callFunction": "Audio_Play_Sound",
+															"sid": 608329399519518,
+															"parameters": [
+																"\"Kick\"",
+																"0",
+																"\"Kick\""
+															]
+														}
+													],
+													"sid": 849833889374169
 												},
 												{
 													"eventType": "block",

@@ -237,18 +237,13 @@
 							}
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 545020619253624,
-							"parameters": {
-								"audio-file": {
-									"path": "Raider_Car"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"audio\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 812363753390205,
+							"parameters": [
+								"\"Raider_Car\"",
+								"0",
+								"\"Raider_Car\""
+							]
 						},
 						{
 							"id": "set-speed",
@@ -319,32 +314,22 @@
 							}
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 967097865497464,
-							"parameters": {
-								"audio-file": {
-									"path": "Gless_Door_Destroy"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"audio\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 744339249175086,
+							"parameters": [
+								"\"Gless_Door_Destroy\"",
+								"0",
+								"\"Gless_Door_Destroy\""
+							]
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 936685063278420,
-							"parameters": {
-								"audio-file": {
-									"path": "Crash_Furniture"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"audio\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 543807279653297,
+							"parameters": [
+								"\"Crash_Furniture\"",
+								"0",
+								"\"Crash_Furniture\""
+							]
 						}
 					],
 					"sid": 162916167651528
@@ -501,26 +486,18 @@
 							}
 						},
 						{
-							"id": "stop",
+							"id": "stop-all",
 							"objectClass": "Audio",
-							"sid": 464616629873581,
-							"parameters": {
-								"tag": "\"audio\""
-							}
+							"sid": 901445260498612
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 779666398164148,
-							"parameters": {
-								"audio-file": {
-									"path": "Crash_Car"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"audio\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 644765193705680,
+							"parameters": [
+								"\"Crash_Car\"",
+								"0",
+								"\"Crash_Car\""
+							]
 						},
 						{
 							"id": "set-position",
@@ -625,18 +602,13 @@
 							}
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 373853165696671,
-							"parameters": {
-								"audio-file": {
-									"path": "OpenSmash"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"audio\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 212528148453187,
+							"parameters": [
+								"\"OpenSmash\"",
+								"0",
+								"\"OpenSmash\""
+							]
 						},
 						{
 							"id": "set-animation",
@@ -905,18 +877,13 @@
 					],
 					"actions": [
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 892962384509171,
-							"parameters": {
-								"audio-file": {
-									"path": "Crash_Glass2"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"audio\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 793406526278081,
+							"parameters": [
+								"\"Crash_Glass2\"",
+								"0",
+								"\"Crash_Glass2\""
+							]
 						}
 					],
 					"sid": 378402415130724
@@ -1112,6 +1079,15 @@
 					"parameters": {
 						"tags": "\"Active\""
 					}
+				},
+				{
+					"id": "compare-animation-frame",
+					"objectClass": "Elektro_Shield",
+					"sid": 834976305338254,
+					"parameters": {
+						"comparison": 0,
+						"number": "2"
+					}
 				}
 			],
 			"actions": [
@@ -1226,18 +1202,13 @@
 			],
 			"actions": [
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 236687154815303,
-					"parameters": {
-						"audio-file": {
-							"path": "Open_Grid"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"audio\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 431570167301905,
+					"parameters": [
+						"\"Open_Grid\"",
+						"0",
+						"\"Open_Grid\""
+					]
 				},
 				{
 					"id": "destroy",
@@ -1396,7 +1367,8 @@
 				{
 					"id": "destroy",
 					"objectClass": "press_E",
-					"sid": 210044985735826
+					"sid": 210044985735826,
+					"disabled": true
 				},
 				{
 					"id": "set-animation-frame",
@@ -1533,7 +1505,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "Enemys",
+					"objectClass": "Enemy_Mili",
 					"sid": 111956727543392,
 					"parameters": {
 						"visibility": "invisible"
@@ -1752,7 +1724,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "Enemys",
+					"objectClass": "Enemy_Mili",
 					"sid": 663910378751937,
 					"parameters": {
 						"visibility": "visible"
@@ -1821,18 +1793,13 @@
 					"sid": 592633535555212
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 858017642453842,
-					"parameters": {
-						"audio-file": {
-							"path": "Open_Grid"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"audio\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 717073195840287,
+					"parameters": [
+						"\"Open_Grid\"",
+						"0",
+						"\"Open_Grid\""
+					]
 				},
 				{
 					"id": "set-boolean-eventvar",
@@ -1942,6 +1909,7 @@
 					"id": "create-object",
 					"objectClass": "System",
 					"sid": 866966748484184,
+					"disabled": true,
 					"parameters": {
 						"object-to-create": "press_E",
 						"layer": "12",
@@ -2279,18 +2247,13 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 659113120753757,
-					"parameters": {
-						"audio-file": {
-							"path": "zvuk-miasa-bossa-2_AzrZ196E"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 282370930737019,
+					"parameters": [
+						"\"zvuk-miasa-bossa-2_AzrZ196E\"",
+						"0",
+						"\"zvuk-miasa-bossa-2_AzrZ196E\""
+					]
 				}
 			],
 			"sid": 955592955924725
@@ -2318,14 +2281,6 @@
 			],
 			"actions": [
 				{
-					"id": "stop",
-					"objectClass": "Audio",
-					"sid": 684550994736537,
-					"parameters": {
-						"tag": "\"\""
-					}
-				},
-				{
 					"id": "create-object",
 					"objectClass": "System",
 					"sid": 242144996736690,
@@ -2339,18 +2294,13 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 748385257255671,
-					"parameters": {
-						"audio-file": {
-							"path": "zvuk-miasa-bossa_DTmUc8rr"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 452472399213304,
+					"parameters": [
+						"\"zvuk-miasa-bossa_DTmUc8rr\"",
+						"0",
+						"\"zvuk-miasa-bossa_DTmUc8rr\""
+					]
 				},
 				{
 					"callFunction": "shakeScreen",
@@ -2421,18 +2371,13 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 773030058959756,
-					"parameters": {
-						"audio-file": {
-							"path": "zvuk-miasa-bossa_DTmUc8rr"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 163220696094589,
+					"parameters": [
+						"\"zvuk-miasa-bossa_DTmUc8rr\"",
+						"0",
+						"\"zvuk-miasa-bossa_DTmUc8rr\""
+					]
 				},
 				{
 					"callFunction": "shakeScreen",
@@ -2456,18 +2401,13 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 123187558394510,
-					"parameters": {
-						"audio-file": {
-							"path": "End_Scene"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"audio\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 543989395655109,
+					"parameters": [
+						"\"End_Scene\"",
+						"0",
+						"\"End_Scene\""
+					]
 				},
 				{
 					"callFunction": "End_Scene2",
@@ -2545,11 +2485,11 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 209122779091871,
+					"sid": 896306438199426,
 					"parameters": {
 						"variable": "Enemys",
-						"comparison": 0,
-						"value": "Enemys.Count"
+						"comparison": 5,
+						"value": "24"
 					}
 				},
 				{

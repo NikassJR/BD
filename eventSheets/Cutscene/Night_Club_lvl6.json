@@ -538,32 +538,22 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 339608029900988,
-					"parameters": {
-						"audio-file": {
-							"path": "OpenDoor"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"Suspense\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 226973002389372,
+					"parameters": [
+						"\"OpenDoor\"",
+						"0",
+						"\"OpenDoor\""
+					]
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 428668738792681,
-					"parameters": {
-						"audio-file": {
-							"path": "Pants are taken"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"Suspense\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 777665056203501,
+					"parameters": [
+						"\"Pants are taken\"",
+						"0",
+						"\"Pants are taken\""
+					]
 				},
 				{
 					"id": "wait",
@@ -583,18 +573,13 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 906596725844555,
-					"parameters": {
-						"audio-file": {
-							"path": "ClosedDoor"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"Suspense\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 700056793413933,
+					"parameters": [
+						"\"ClosedDoor\"",
+						"0",
+						"\"ClosedDoor\""
+					]
 				},
 				{
 					"id": "spawn-another-object",
@@ -1048,6 +1033,17 @@
 					}
 				},
 				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 206234883854432,
+					"disabled": true,
+					"parameters": {
+						"variable": "Enemys",
+						"comparison": 5,
+						"value": "40"
+					}
+				},
+				{
 					"id": "compare-instance-variable",
 					"objectClass": "Player_All",
 					"sid": 161378693881785,
@@ -1058,62 +1054,9 @@
 					}
 				},
 				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 372275895672587,
-					"parameters": {
-						"variable": "Enemys",
-						"comparison": 2,
-						"value": "40"
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "Create_Dealogue",
-					"sid": 828174645076882,
-					"parameters": [
-						"0",
-						"0",
-						"355",
-						"1",
-						true,
-						false
-					]
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 280369212360146,
-					"parameters": {
-						"seconds": "4",
-						"use-timescale": true
-					}
-				},
-				{
-					"callFunction": "Destroy_Dialoge",
-					"sid": 486293215282589
-				}
-			],
-			"sid": 322521673166752
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 281419241241506,
-					"parameters": {
-						"variable": "Enemys",
-						"comparison": 5,
-						"value": "40"
-					}
-				},
-				{
 					"id": "has-tags",
 					"objectClass": "Door_HotelAktiv",
-					"sid": 159922450383345,
+					"sid": 463716879069837,
 					"parameters": {
 						"tags": "\"Closed\""
 					}
@@ -1121,18 +1064,89 @@
 			],
 			"actions": [
 				{
+					"id": "set-instvar-value",
+					"objectClass": "Enemy_Mili",
+					"sid": 438869191884605,
+					"parameters": {
+						"instance-variable": "Fear",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 747062561698377,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 167392398634878,
+					"parameters": {
+						"group-name": "\"Enemy & Fear\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 356118989899002,
+					"parameters": {
+						"variable": "weapon",
+						"value": "\"noweapon\""
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player_All",
+					"sid": 563488940036973,
+					"parameters": {
+						"animation": "\"noWeaponAttack3\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 282211133954849,
+					"parameters": {
+						"seconds": "0.3",
+						"use-timescale": true
+					}
+				},
+				{
+					"callFunction": "shakeScreen2",
+					"sid": 317022968632764
+				},
+				{
+					"callFunction": "shakeScreen",
+					"sid": 380875988996219
+				},
+				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 160298912150357,
+					"sid": 731485352243879,
 					"parameters": {
 						"variable": "Cut_Scene",
 						"value": "true"
 					}
 				},
 				{
+					"callFunction": "Audio_Play_Sound",
+					"sid": 407359204885595,
+					"parameters": [
+						"\"OpenSmash\"",
+						"0",
+						"\"audio\""
+					]
+				},
+				{
 					"id": "set-boolean-instvar",
 					"objectClass": "Door_HotelAktiv",
-					"sid": 663122979940803,
+					"sid": 716054776469189,
 					"parameters": {
 						"instance-variable": "open",
 						"value": "true"
@@ -1141,7 +1155,7 @@
 				{
 					"id": "set-boolean-instvar",
 					"objectClass": "Door_HotelAktiv",
-					"sid": 475441911751426,
+					"sid": 209223672365071,
 					"parameters": {
 						"instance-variable": "Visor",
 						"value": "false"
@@ -1150,7 +1164,7 @@
 				{
 					"id": "set-animation-frame",
 					"objectClass": "Door_HotelAktiv",
-					"sid": 772544540196853,
+					"sid": 134245204184871,
 					"parameters": {
 						"frame-number": "1"
 					}
@@ -1158,7 +1172,7 @@
 				{
 					"id": "set-enabled",
 					"objectClass": "Door_HotelAktiv",
-					"sid": 294884629501154,
+					"sid": 277556923448927,
 					"behaviorType": "Твёрдый",
 					"parameters": {
 						"state": "disabled"
@@ -1167,14 +1181,142 @@
 				{
 					"id": "change-tags",
 					"objectClass": "Door_HotelAktiv",
-					"sid": 206645537504503,
+					"sid": 808783637129484,
 					"parameters": {
 						"action": "remove",
 						"tags": "\"Closed\""
 					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "security",
+					"sid": 181378495269811,
+					"parameters": {
+						"animation": "\"security_down\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "security",
+					"sid": 108162775329180,
+					"parameters": {
+						"state": "mirrored"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "security",
+					"sid": 963591822749708,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "300"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Kray",
+					"sid": 432688808351428
 				}
 			],
-			"sid": 326570508310709
+			"sid": 322521673166752
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "security",
+					"sid": 358837924592615,
+					"parameters": {
+						"object": "Table_Light"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "shakeScreen2",
+					"sid": 231213482671817
+				},
+				{
+					"callFunction": "shakeScreen",
+					"sid": 257202220795016
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "security",
+					"sid": 564205474355471,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "0"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Table_Light",
+					"sid": 812870311407312,
+					"parameters": {
+						"frame-number": "2"
+					}
+				},
+				{
+					"callFunction": "Audio_Play_Sound",
+					"sid": 110730976274412,
+					"parameters": [
+						"\"FinishingnoWeapon\"",
+						"0",
+						"\"audio\""
+					]
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "security",
+					"sid": 242636547712638,
+					"parameters": {
+						"animation": "\"security_dead_molotok\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player_All",
+					"sid": 765643564616861,
+					"parameters": {
+						"instance-variable": "textframe",
+						"value": "4"
+					}
+				},
+				{
+					"id": "set-mirrored",
+					"objectClass": "Player_All",
+					"sid": 569741926442124,
+					"parameters": {
+						"state": "not-mirrored"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player_All",
+					"sid": 730745278875120,
+					"parameters": {
+						"animation": "\"noWeaponWalk\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Player_All",
+					"sid": 639440499478198,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "150"
+					}
+				}
+			],
+			"sid": 273248330756617
 		},
 		{
 			"eventType": "block",
@@ -1295,45 +1437,10 @@
 						"group-name": "\"Enemy & Fear\"",
 						"state": "deactivated"
 					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Player_All",
-					"sid": 700072143724414,
-					"parameters": {
-						"instance-variable": "textframe",
-						"value": "4"
-					}
-				},
-				{
-					"id": "set-mirrored",
-					"objectClass": "Player_All",
-					"sid": 445072404910597,
-					"parameters": {
-						"state": "not-mirrored"
-					}
-				},
-				{
-					"id": "set-animation",
-					"objectClass": "Player_All",
-					"sid": 772930833079331,
-					"parameters": {
-						"animation": "\"noWeaponWalk\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-speed",
-					"objectClass": "Player_All",
-					"sid": 915017986214628,
-					"behaviorType": "НастраиваемоеДвижение",
-					"parameters": {
-						"which": "horizontal",
-						"speed": "150"
-					}
 				}
 			],
-			"sid": 704878710508467
+			"sid": 704878710508467,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -1443,18 +1550,13 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 122052212200397,
-					"parameters": {
-						"audio-file": {
-							"path": "Gless_Door_Destroy"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"audio\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 834560436575112,
+					"parameters": [
+						"\"Gless_Door_Destroy\"",
+						"0",
+						"\"Gless_Door_Destroy\""
+					]
 				},
 				{
 					"id": "wait",
@@ -1986,18 +2088,13 @@
 							]
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 720968104251423,
-							"parameters": {
-								"audio-file": {
-									"path": "Missage"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"audio\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 841264101881811,
+							"parameters": [
+								"\"Missage\"",
+								"0",
+								"\"Missage\""
+							]
 						},
 						{
 							"callFunction": "shakeScreen",
@@ -2030,6 +2127,18 @@
 						}
 					],
 					"actions": [
+						{
+							"callFunction": "End_Scene2",
+							"sid": 207048175010286,
+							"parameters": [
+								"100",
+								"0",
+								"100",
+								false,
+								false,
+								true
+							]
+						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
@@ -2505,6 +2614,221 @@
 				}
 			],
 			"sid": 539178525634971
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-animation-playing",
+					"objectClass": "LightMove",
+					"sid": 818209752788823,
+					"parameters": {
+						"animation": "\"Light\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "LightMove",
+					"sid": 657637412148530,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "250"
+					}
+				}
+			],
+			"sid": 843993768407477
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "LightMove",
+					"sid": 198742255380198,
+					"parameters": {
+						"comparison": 5,
+						"x-co-ordinate": "1000"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "LightMove",
+					"sid": 659633175379602,
+					"parameters": {
+						"animation": "\"Light\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "LightMove",
+					"sid": 634059875620450
+				}
+			],
+			"sid": 487749494858927
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-destroyed",
+					"objectClass": "LightMove",
+					"sid": 530804134463698
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "LightMove",
+					"sid": 375304135876284,
+					"parameters": {
+						"animation": "\"Light\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 644824399760517,
+					"parameters": {
+						"object-to-create": "LightMove",
+						"layer": "\"Tower\"",
+						"x": "-309",
+						"y": "1500",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "LightMove",
+					"sid": 792870948348836,
+					"parameters": {
+						"animation": "\"Light\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 858052163491083
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-animation-playing",
+					"objectClass": "LightMove",
+					"sid": 773489257385744,
+					"parameters": {
+						"animation": "\"Light2\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-speed",
+					"objectClass": "LightMove",
+					"sid": 724365444222712,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "vertical",
+						"speed": "100"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "LightMove",
+					"sid": 658877785935378,
+					"parameters": {
+						"width": "136",
+						"height": "231"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "LightMove",
+					"sid": 199658949051358,
+					"parameters": {
+						"angle": "90"
+					}
+				}
+			],
+			"sid": 474974050044045
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-y",
+					"objectClass": "LightMove",
+					"sid": 351015903067323,
+					"parameters": {
+						"comparison": 5,
+						"y-co-ordinate": "740"
+					}
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "LightMove",
+					"sid": 449288316590041,
+					"parameters": {
+						"animation": "\"Light2\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "LightMove",
+					"sid": 655989572335789
+				}
+			],
+			"sid": 505114507045057
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-destroyed",
+					"objectClass": "LightMove",
+					"sid": 347968218460439
+				},
+				{
+					"id": "is-animation-playing",
+					"objectClass": "LightMove",
+					"sid": 306760354777492,
+					"parameters": {
+						"animation": "\"Light2\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 443262678485271,
+					"parameters": {
+						"object-to-create": "LightMove",
+						"layer": "\"Light\"",
+						"x": "2712",
+						"y": "-165",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "LightMove",
+					"sid": 508003795597174,
+					"parameters": {
+						"animation": "\"Light2\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 378870229776605
 		}
 	],
 	"sid": 902713123400387

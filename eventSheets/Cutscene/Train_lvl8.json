@@ -173,18 +173,13 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 180815921656881,
-					"parameters": {
-						"audio-file": {
-							"path": "Subway/Train"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"audio\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 966459893845153,
+					"parameters": [
+						"\"Train\"",
+						"0",
+						"\"Train\""
+					]
 				},
 				{
 					"id": "wait",
@@ -481,18 +476,13 @@
 					"sid": 969645416916934
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 863723398400514,
-					"parameters": {
-						"audio-file": {
-							"path": "Crash_Car"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"audio\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 533428804556280,
+					"parameters": [
+						"\"Crash_Car\"",
+						"0",
+						"\"Crash_Car\""
+					]
 				},
 				{
 					"id": "wait",
@@ -548,18 +538,13 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 428916904584179,
-					"parameters": {
-						"audio-file": {
-							"path": "Subway/Metro_Cycle"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"audio\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 438226233968137,
+					"parameters": [
+						"\"Metro_Cycle\"",
+						"0",
+						"\"Metro_Cycle\""
+					]
 				},
 				{
 					"id": "set-speed",
@@ -1018,6 +1003,25 @@
 							}
 						},
 						{
+							"id": "set-speed",
+							"objectClass": "Player_All",
+							"sid": 320104444475978,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "overall",
+								"speed": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemy_Mili",
+							"sid": 493316801135187,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 314355118916474,
@@ -1185,18 +1189,13 @@
 							}
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 585184966817222,
-							"parameters": {
-								"audio-file": {
-									"path": "KickBaseball"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"audio\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 282552082585461,
+							"parameters": [
+								"\"KickBaseball\"",
+								"0",
+								"\"KickBaseball\""
+							]
 						},
 						{
 							"callFunction": "shakeScreen",

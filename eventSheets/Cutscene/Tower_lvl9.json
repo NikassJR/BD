@@ -36,6 +36,15 @@
 					}
 				},
 				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 992701249565757,
+					"parameters": {
+						"group-name": "\"Enemy & Fear\"",
+						"state": "deactivated"
+					}
+				},
+				{
 					"id": "stop",
 					"objectClass": "Audio",
 					"sid": 247266170252550,
@@ -85,15 +94,6 @@
 					"sid": 968358922433984,
 					"parameters": {
 						"group-name": "\"Player\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 318357935715486,
-					"parameters": {
-						"group-name": "\"Enemy & Fear\"",
 						"state": "deactivated"
 					}
 				},
@@ -358,18 +358,13 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 531453555331987,
-					"parameters": {
-						"audio-file": {
-							"path": "Crash_Car"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"audio\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 104344937331955,
+					"parameters": [
+						"\"Crash_Car\"",
+						"0",
+						"\"Crash_Car\""
+					]
 				},
 				{
 					"id": "add-to-instvar",
@@ -1353,18 +1348,13 @@
 							}
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 550287950465426,
-							"parameters": {
-								"audio-file": {
-									"path": "End_Scene"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"music\""
-							}
+							"callFunction": "Audio_Play_Sound",
+							"sid": 631105519626820,
+							"parameters": [
+								"\"End_Scene\"",
+								"0",
+								"\"End_Scene\""
+							]
 						},
 						{
 							"id": "set-boolean-eventvar",
@@ -1558,7 +1548,17 @@
 							"sid": 627632884883137
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyPchel",
+							"sid": 447090199714925,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						}
+					],
 					"sid": 833240082002498
 				},
 				{
@@ -1597,7 +1597,7 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 895573097951182,
+							"sid": 533188773744416,
 							"parameters": {
 								"group-name": "\"Enemy & Fear\"",
 								"state": "activated"
@@ -2014,18 +2014,13 @@
 					}
 				},
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 142079675000076,
-					"parameters": {
-						"audio-file": {
-							"path": "Open_Grid"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"audio\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 566351663459382,
+					"parameters": [
+						"\"Open_Grid\"",
+						"0",
+						"\"Open_Grid\""
+					]
 				},
 				{
 					"id": "destroy",

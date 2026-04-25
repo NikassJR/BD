@@ -32,6 +32,36 @@
 			"sid": 387094834441224
 		},
 		{
+			"eventType": "variable",
+			"name": "Var0",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 327049175377743
+		},
+		{
+			"eventType": "variable",
+			"name": "Var1",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 209515044169843
+		},
+		{
+			"eventType": "variable",
+			"name": "TotalTilesPlus1",
+			"type": "number",
+			"initialValue": "6",
+			"comment": "Put the total of the tiles you want to animate+1",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 954543722575890
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -452,6 +482,7 @@
 							"id": "play",
 							"objectClass": "Audio",
 							"sid": 693459467013887,
+							"disabled": true,
 							"parameters": {
 								"audio-file": {
 									"path": "Break_Desk"
@@ -461,6 +492,15 @@
 								"stereo-pan": "0",
 								"tag-optional": "\"audio\""
 							}
+						},
+						{
+							"callFunction": "Audio_Play_Sound",
+							"sid": 740037691037850,
+							"parameters": [
+								"\"Break_Desk\"",
+								"0",
+								"\"Break_Desk\""
+							]
 						},
 						{
 							"id": "set-boolean-instvar",
