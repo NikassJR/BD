@@ -20,6 +20,14 @@
 			],
 			"actions": [
 				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 569141022526295,
+					"parameters": {
+						"slot": "\"start\""
+					}
+				},
+				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 649574776241032,
@@ -38,6 +46,18 @@
 					}
 				},
 				{
+					"callFunction": "End_Scene2",
+					"sid": 487244831755117,
+					"parameters": [
+						"0",
+						"2",
+						"100",
+						true,
+						false,
+						true
+					]
+				},
+				{
 					"id": "set-group-active",
 					"objectClass": "System",
 					"sid": 528266292694050,
@@ -49,24 +69,15 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 484926060073736,
-					"disabled": true,
+					"sid": 429113274614611,
 					"parameters": {
 						"audio-file": {
-							"path": "Music/Bar_embient"
+							"path": "Music/Bonus Suicide x Mental Sorrow - from the outside "
 						},
 						"loop": "not-looping",
 						"volume": "0",
 						"stereo-pan": "0",
 						"tag-optional": "\"music\""
-					}
-				},
-				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 196962281697501,
-					"parameters": {
-						"slot": "\"start\""
 					}
 				},
 				{
@@ -149,7 +160,8 @@
 							"parameters": [
 								"\"Police1\"",
 								"421",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -181,7 +193,8 @@
 							"parameters": [
 								"\"PoliceEvil1\"",
 								"422",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -213,7 +226,8 @@
 							"parameters": [
 								"\"Police2\"",
 								"423",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -245,7 +259,8 @@
 							"parameters": [
 								"\"PoliceEvil1\"",
 								"424",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -277,7 +292,8 @@
 							"parameters": [
 								"\"Police3\"",
 								"425",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -309,7 +325,8 @@
 							"parameters": [
 								"\"PoliceEvil2\"",
 								"426",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -341,7 +358,8 @@
 							"parameters": [
 								"\"PoliceEvil1\"",
 								"427",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -375,6 +393,18 @@
 							"id": "wait-for-previous-actions",
 							"objectClass": "System",
 							"sid": 367836411849935
+						},
+						{
+							"callFunction": "End_Scene2",
+							"sid": 188974663810810,
+							"parameters": [
+								"100",
+								"1",
+								"0",
+								false,
+								false,
+								true
+							]
 						},
 						{
 							"id": "set-boolean-eventvar",

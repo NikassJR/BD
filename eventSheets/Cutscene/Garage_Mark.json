@@ -38,6 +38,18 @@
 					}
 				},
 				{
+					"callFunction": "End_Scene2",
+					"sid": 383628965922779,
+					"parameters": [
+						"100",
+						"0",
+						"100",
+						false,
+						false,
+						true
+					]
+				},
+				{
 					"id": "set-group-active",
 					"objectClass": "System",
 					"sid": 865638978837002,
@@ -74,6 +86,7 @@
 					"id": "spawn-another-object",
 					"objectClass": "Player_All",
 					"sid": 223725079801234,
+					"disabled": true,
 					"parameters": {
 						"object": "Shadow3",
 						"layer": "\"Dialog\"",
@@ -81,6 +94,24 @@
 						"create-hierarchy": false,
 						"template-name": "\"\""
 					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 993252840399754,
+					"parameters": {
+						"seconds": "0.1",
+						"use-timescale": true
+					}
+				},
+				{
+					"callFunction": "Audio_Play_Sound",
+					"sid": 705784234209962,
+					"parameters": [
+						"\"Slap in the face\"",
+						"0",
+						"\"Slap in the face\""
+					]
 				},
 				{
 					"id": "spawn-another-object",
@@ -93,15 +124,6 @@
 						"create-hierarchy": false,
 						"template-name": "\"\""
 					}
-				},
-				{
-					"callFunction": "Audio_Play_Sound",
-					"sid": 522841160699823,
-					"parameters": [
-						"\"Slap in the face\"",
-						"0",
-						"\"Slap in the face\""
-					]
 				},
 				{
 					"id": "set-effect-enabled",
@@ -132,7 +154,7 @@
 				{
 					"id": "tween-one-property",
 					"objectClass": "Trip",
-					"sid": 187781080332054,
+					"sid": 474101960795397,
 					"behaviorType": "Твинанимация",
 					"parameters": {
 						"tags": "\"\"",
@@ -166,9 +188,15 @@
 					"sid": 605944446445028
 				},
 				{
+					"id": "destroy",
+					"objectClass": "End_Scene2",
+					"sid": 261985387134464
+				},
+				{
 					"id": "set-visible",
 					"objectClass": "Shadow3",
 					"sid": 733979074490550,
+					"disabled": true,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -177,6 +205,7 @@
 					"id": "set-scale",
 					"objectClass": "Shadow3",
 					"sid": 329110137098136,
+					"disabled": true,
 					"parameters": {
 						"scale": "3"
 					}
@@ -354,7 +383,8 @@
 							"parameters": [
 								"\"High_Brother2\"",
 								"429",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -386,7 +416,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"430",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -418,7 +449,8 @@
 							"parameters": [
 								"\"High_Brother\"",
 								"431",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -450,7 +482,8 @@
 							"parameters": [
 								"\"High_Brother\"",
 								"432",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -482,7 +515,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"433",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -514,7 +548,8 @@
 							"parameters": [
 								"\"High_Brother\"",
 								"434",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -600,7 +635,8 @@
 							"parameters": [
 								"\"Ermilov\"",
 								"435",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -632,7 +668,8 @@
 							"parameters": [
 								"\"Mid_Brother\"",
 								"436",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -664,7 +701,8 @@
 							"parameters": [
 								"\"Ermilov\"",
 								"437",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -696,7 +734,8 @@
 							"parameters": [
 								"\"Junior\"",
 								"438",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -728,7 +767,8 @@
 							"parameters": [
 								"\"Ermilov_Evil\"",
 								"439",
-								"3"
+								"3",
+								false
 							]
 						},
 						{
@@ -773,7 +813,8 @@
 							"parameters": [
 								"\"Mid_Brother\"",
 								"440",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -805,7 +846,8 @@
 							"parameters": [
 								"\"Ermilov_Evil\"",
 								"441",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -837,7 +879,8 @@
 							"parameters": [
 								"\"Ermilov_Evil\"",
 								"442",
-								"1"
+								"1",
+								false
 							]
 						},
 						{
@@ -974,7 +1017,8 @@
 							"parameters": [
 								"\"Ermilov\"",
 								"443",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -1006,7 +1050,8 @@
 							"parameters": [
 								"\"Security\"",
 								"444",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -1038,7 +1083,8 @@
 							"parameters": [
 								"\"Ermilov\"",
 								"445",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -1124,7 +1170,8 @@
 							"parameters": [
 								"\"High_Brother\"",
 								"446",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -1156,7 +1203,8 @@
 							"parameters": [
 								"\"High_Brother\"",
 								"447",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -1188,7 +1236,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"448",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -1220,7 +1269,8 @@
 							"parameters": [
 								"\"High_Brother\"",
 								"449",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -1252,7 +1302,8 @@
 							"parameters": [
 								"\"High_Brother\"",
 								"450",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -1284,7 +1335,8 @@
 							"parameters": [
 								"\"High_Brother\"",
 								"451",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -1316,7 +1368,8 @@
 							"parameters": [
 								"\"High_Brother\"",
 								"452",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -1348,7 +1401,8 @@
 							"parameters": [
 								"\"High_Brother\"",
 								"453",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -1380,7 +1434,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"454",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -1407,12 +1462,25 @@
 					],
 					"actions": [
 						{
+							"callFunction": "End_Scene2",
+							"sid": 128391546270490,
+							"parameters": [
+								"100",
+								"2",
+								"0",
+								false,
+								true,
+								false
+							]
+						},
+						{
 							"callFunction": "Create_mainDialoge",
 							"sid": 979257642145425,
 							"parameters": [
 								"\"High_Brother2\"",
 								"455",
-								"2"
+								"2",
+								false
 							]
 						},
 						{
@@ -1450,39 +1518,6 @@
 								"which": "horizontal",
 								"speed": "100"
 							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Shadow3",
-							"sid": 624509830614718,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "Shadow3",
-							"sid": 642634828155580,
-							"parameters": {
-								"opacity": "0"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 913650195389407,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
 						}
 					],
 					"sid": 436806016385935
@@ -1513,7 +1548,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"456",
-								"2"
+								"2",
+								false
 							]
 						},
 						{

@@ -22,10 +22,30 @@
 				{
 					"id": "save",
 					"objectClass": "System",
+					"sid": 189624086324261,
+					"parameters": {
+						"slot": "\"start\""
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
 					"sid": 897179502427408,
 					"parameters": {
 						"slot": "\"mysave\""
 					}
+				},
+				{
+					"callFunction": "End_Scene2",
+					"sid": 724954927457205,
+					"parameters": [
+						"0",
+						"1",
+						"100",
+						true,
+						false,
+						true
+					]
 				},
 				{
 					"id": "set-size",
@@ -232,7 +252,8 @@
 							"parameters": [
 								"\"Police1\"",
 								"726",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -264,7 +285,8 @@
 							"parameters": [
 								"\"PoliceEvil1\"",
 								"727",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -296,7 +318,8 @@
 							"parameters": [
 								"\"Police2\"",
 								"728",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -328,7 +351,8 @@
 							"parameters": [
 								"\"PoliceEvil2\"",
 								"729",
-								"4"
+								"4",
+								false
 							]
 						},
 						{
@@ -373,7 +397,8 @@
 							"parameters": [
 								"\"PoliceEvil1\"",
 								"730",
-								"4"
+								"4",
+								false
 							]
 						}
 					],
@@ -405,7 +430,8 @@
 							"parameters": [
 								"\"PoliceEvil1\"",
 								"731",
-								"4"
+								"4",
+								false
 							]
 						}
 					],
@@ -433,11 +459,12 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 281895459339114,
+							"sid": 196857594402314,
 							"parameters": [
 								"\"Police1\"",
-								"731",
-								"4"
+								"732",
+								"2",
+								false
 							]
 						}
 					],
@@ -463,6 +490,18 @@
 						}
 					],
 					"actions": [
+						{
+							"callFunction": "End_Scene2",
+							"sid": 442659038594995,
+							"parameters": [
+								"100",
+								"1",
+								"0",
+								false,
+								false,
+								true
+							]
+						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",

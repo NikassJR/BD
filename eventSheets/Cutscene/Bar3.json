@@ -186,14 +186,6 @@
 								{
 									"id": "is-overlapping-another-object",
 									"objectClass": "Player_Cutscene",
-									"sid": 655603966766021,
-									"parameters": {
-										"object": "Chair_Bar"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Player_Cutscene",
 									"sid": 201308291043620,
 									"parameters": {
 										"object": "Table_Beer"
@@ -212,6 +204,40 @@
 							],
 							"sid": 278891873896132,
 							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Cutscene",
+									"sid": 959549906367759,
+									"parameters": {
+										"object": "Chair_Bar"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 941673698757892,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 3,
+										"value": "13"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "press_E",
+									"sid": 909426908042648,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 740682955308907
 						},
 						{
 							"eventType": "block",
@@ -253,6 +279,16 @@
 							"sid": 216590606709511,
 							"parameters": {
 								"object": "Chair_Bar"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 125662839613367,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 3,
+								"value": "13"
 							}
 						},
 						{
@@ -388,7 +424,8 @@
 									"parameters": [
 										"\"Mark1\"",
 										"209",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -420,7 +457,8 @@
 									"parameters": [
 										"\"Any1\"",
 										"210",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -452,7 +490,8 @@
 									"parameters": [
 										"\"Mark4\"",
 										"211",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -484,7 +523,8 @@
 									"parameters": [
 										"\"Fedor1\"",
 										"212",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -516,7 +556,8 @@
 									"parameters": [
 										"\"Fedor4\"",
 										"213",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -548,7 +589,8 @@
 									"parameters": [
 										"\"Any4\"",
 										"214",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -580,7 +622,8 @@
 									"parameters": [
 										"\"Any4\"",
 										"215",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -612,7 +655,8 @@
 									"parameters": [
 										"\"Mark2\"",
 										"216",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -644,7 +688,8 @@
 									"parameters": [
 										"\"Fedor1\"",
 										"217",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -676,7 +721,8 @@
 									"parameters": [
 										"\"Any2\"",
 										"218",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -708,7 +754,8 @@
 									"parameters": [
 										"\"Mark2\"",
 										"219",
-										"1"
+										"1",
+										false
 									]
 								}
 							],
@@ -740,7 +787,8 @@
 									"parameters": [
 										"\"Mark2\"",
 										"220",
-										"1"
+										"1",
+										false
 									]
 								}
 							],

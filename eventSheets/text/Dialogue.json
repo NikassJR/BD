@@ -757,6 +757,13 @@
 					"initialValue": "0",
 					"comment": "",
 					"sid": 867710944088598
+				},
+				{
+					"name": "Thoughts",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 501463893439849
 				}
 			],
 			"eventType": "function-block",
@@ -906,15 +913,6 @@
 					}
 				},
 				{
-					"id": "set-font-face",
-					"objectClass": "dialogMainText",
-					"sid": 454905826128958,
-					"parameters": {
-						"font-face": "\"Pixel\"",
-						"style": "normal"
-					}
-				},
-				{
 					"id": "set-font-size",
 					"objectClass": "dialogMainText",
 					"sid": 459506700366199,
@@ -940,7 +938,60 @@
 					}
 				}
 			],
-			"sid": 576675142271970
+			"sid": 576675142271970,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 939264549362199,
+							"parameters": {
+								"variable": "Thoughts"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-face",
+							"objectClass": "dialogMainText",
+							"sid": 544664884026137,
+							"parameters": {
+								"font-face": "\"Pixel\"",
+								"style": "italic"
+							}
+						}
+					],
+					"sid": 404586212595756
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 559964078984984,
+							"parameters": {
+								"variable": "Thoughts"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-face",
+							"objectClass": "dialogMainText",
+							"sid": 370587879485748,
+							"parameters": {
+								"font-face": "\"Pixel\"",
+								"style": "normal"
+							}
+						}
+					],
+					"sid": 684261354182256
+				}
+			]
 		},
 		{
 			"functionName": "Create_Hint",

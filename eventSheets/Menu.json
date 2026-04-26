@@ -949,6 +949,15 @@
 					}
 				},
 				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 426514452029382,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "false"
+					}
+				},
+				{
 					"id": "set-time-scale",
 					"objectClass": "System",
 					"sid": 539998361475437,
@@ -2795,15 +2804,6 @@
 										"0",
 										"\"Save_Stolb\""
 									]
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 707203274325500,
-									"parameters": {
-										"variable": "HPplayer",
-										"value": "15"
-									}
 								}
 							],
 							"sid": 329030705395676
@@ -3176,7 +3176,7 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 810818791928120,
+							"sid": 154342034297419,
 							"parameters": {
 								"object-to-create": "EndScene",
 								"layer": "\"Dialog\"",
@@ -3195,12 +3195,11 @@
 							}
 						},
 						{
-							"id": "set-size",
+							"id": "set-scale",
 							"objectClass": "EndScene",
-							"sid": 673742900525534,
+							"sid": 595626719904112,
 							"parameters": {
-								"width": "OriginalViewportWidth",
-								"height": "OriginalViewportHeight"
+								"scale": "3"
 							}
 						},
 						{
@@ -3288,6 +3287,28 @@
 				}
 			],
 			"sid": 719551143832814
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-load-complete",
+					"objectClass": "System",
+					"sid": 917729241254533
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 285422980475889,
+					"parameters": {
+						"variable": "HPplayer",
+						"value": "15"
+					}
+				}
+			],
+			"sid": 508431232946632
 		}
 	],
 	"sid": 511565052530936

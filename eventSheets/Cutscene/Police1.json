@@ -22,10 +22,30 @@
 				{
 					"id": "save",
 					"objectClass": "System",
+					"sid": 308098539453429,
+					"parameters": {
+						"slot": "\"start\""
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
 					"sid": 758508072773251,
 					"parameters": {
 						"slot": "\"mysave\""
 					}
+				},
+				{
+					"callFunction": "End_Scene2",
+					"sid": 221624152914755,
+					"parameters": [
+						"0",
+						"1",
+						"100",
+						true,
+						false,
+						true
+					]
 				},
 				{
 					"id": "set-size",
@@ -446,7 +466,8 @@
 							"parameters": [
 								"\"Police_Klim\"",
 								"602",
-								"1"
+								"1",
+								false
 							]
 						},
 						{
@@ -503,7 +524,8 @@
 							"parameters": [
 								"\"Police1\"",
 								"603",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -636,7 +658,8 @@
 							"parameters": [
 								"\"Police2\"",
 								"604",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -668,7 +691,8 @@
 							"parameters": [
 								"\"Maniac\"",
 								"605",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -700,7 +724,8 @@
 							"parameters": [
 								"\"Police1\"",
 								"606",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -784,7 +809,8 @@
 							"parameters": [
 								"\"PoliceEvil1\"",
 								"608",
-								"3"
+								"3",
+								false
 							]
 						},
 						{
@@ -843,7 +869,8 @@
 							"parameters": [
 								"\"Police2\"",
 								"609",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -875,7 +902,8 @@
 							"parameters": [
 								"\"Police2\"",
 								"610",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -907,7 +935,8 @@
 							"parameters": [
 								"\"PoliceEvil1\"",
 								"611",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -939,7 +968,8 @@
 							"parameters": [
 								"\"Police3\"",
 								"612",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -971,7 +1001,8 @@
 							"parameters": [
 								"\"PoliceEvil2\"",
 								"613",
-								"2"
+								"2",
+								false
 							]
 						},
 						{
@@ -1016,7 +1047,8 @@
 							"parameters": [
 								"\"Police3\"",
 								"614",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -1048,7 +1080,8 @@
 							"parameters": [
 								"\"PoliceEvil2\"",
 								"615",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -1080,7 +1113,8 @@
 							"parameters": [
 								"\"Police_Klim1\"",
 								"616",
-								"1"
+								"1",
+								false
 							]
 						},
 						{
@@ -1136,6 +1170,27 @@
 								"animation": "\"Sit2\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 124019426044587,
+							"parameters": {
+								"seconds": "1.0",
+								"use-timescale": true
+							}
+						},
+						{
+							"callFunction": "End_Scene2",
+							"sid": 936663679353387,
+							"parameters": [
+								"100",
+								"1",
+								"0",
+								false,
+								false,
+								true
+							]
 						},
 						{
 							"id": "set-boolean-eventvar",

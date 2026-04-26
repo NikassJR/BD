@@ -81,41 +81,16 @@
 							}
 						},
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Player_All",
-							"sid": 693427502973899,
-							"parameters": {
-								"object": "Shadow3",
-								"layer": "\"UI\"",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "Shadow3",
-							"sid": 291832737301384,
-							"parameters": {
-								"scale": "2"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 536945872290635,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "0",
-								"time": "2",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
+							"callFunction": "End_Scene2",
+							"sid": 902517831292198,
+							"parameters": [
+								"0",
+								"2",
+								"100",
+								true,
+								false,
+								false
+							]
 						},
 						{
 							"id": "save",
@@ -170,14 +145,6 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "Player_Cutscene",
-							"sid": 614135652713799,
-							"parameters": {
-								"object": "Chair_Bar"
-							}
-						},
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Cutscene",
 							"sid": 767783507216141,
 							"parameters": {
 								"object": "HookahMan"
@@ -196,6 +163,40 @@
 					],
 					"sid": 590977989607752,
 					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_Cutscene",
+							"sid": 232085860605879,
+							"parameters": {
+								"object": "Chair_Bar"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 890784703321090,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 2,
+								"value": "19"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "press_E",
+							"sid": 814507616493727,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 884350511019524
 				},
 				{
 					"eventType": "block",
@@ -399,6 +400,16 @@
 							}
 						},
 						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 708508542011408,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 2,
+								"value": "19"
+							}
+						},
+						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 405530282656143,
@@ -541,7 +552,8 @@
 									"parameters": [
 										"\"Fedor3\"",
 										"491",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -573,7 +585,8 @@
 									"parameters": [
 										"\"Mark1\"",
 										"492",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -601,11 +614,12 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 349300340706142,
+									"sid": 140560135956993,
 									"parameters": [
 										"\"Mark4\"",
 										"493",
-										"1"
+										"1",
+										true
 									]
 								}
 							],
@@ -637,7 +651,8 @@
 									"parameters": [
 										"\"Fedor4\"",
 										"494",
-										"3"
+										"3",
+										false
 									]
 								}
 							],
@@ -669,7 +684,8 @@
 									"parameters": [
 										"\"Fedor3\"",
 										"495",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -701,7 +717,8 @@
 									"parameters": [
 										"\"Fedor4\"",
 										"496",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -733,7 +750,8 @@
 									"parameters": [
 										"\"Mark1\"",
 										"497",
-										"1"
+										"1",
+										false
 									]
 								}
 							],
@@ -765,7 +783,8 @@
 									"parameters": [
 										"\"Fedor4\"",
 										"498",
-										"3"
+										"3",
+										false
 									]
 								}
 							],
@@ -797,7 +816,8 @@
 									"parameters": [
 										"\"Mark10\"",
 										"499",
-										"1"
+										"1",
+										false
 									]
 								}
 							],
@@ -829,7 +849,8 @@
 									"parameters": [
 										"\"Fedor5\"",
 										"500",
-										"3"
+										"3",
+										false
 									]
 								}
 							],
@@ -861,7 +882,8 @@
 									"parameters": [
 										"\"Mark3\"",
 										"501",
-										"1"
+										"1",
+										false
 									]
 								}
 							],
@@ -893,7 +915,8 @@
 									"parameters": [
 										"\"Fedor4\"",
 										"502",
-										"3"
+										"3",
+										false
 									]
 								}
 							],
@@ -925,7 +948,8 @@
 									"parameters": [
 										"\"Fedor3\"",
 										"503",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -957,7 +981,8 @@
 									"parameters": [
 										"\"Fedor3\"",
 										"504",
-										"4"
+										"4",
+										false
 									]
 								}
 							],
@@ -989,7 +1014,8 @@
 									"parameters": [
 										"\"Mark3\"",
 										"505",
-										"1"
+										"1",
+										false
 									]
 								}
 							],
@@ -1021,7 +1047,8 @@
 									"parameters": [
 										"\"Fedor4\"",
 										"506",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -1053,7 +1080,8 @@
 									"parameters": [
 										"\"Mark1\"",
 										"507",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -1085,7 +1113,8 @@
 									"parameters": [
 										"\"Fedor4\"",
 										"508",
-										"1"
+										"1",
+										false
 									]
 								}
 							],
@@ -1197,6 +1226,18 @@
 						"animation": "\"noWeaponIdle\"",
 						"from": "beginning"
 					}
+				},
+				{
+					"callFunction": "End_Scene2",
+					"sid": 126856850470792,
+					"parameters": [
+						"100",
+						"1",
+						"0",
+						false,
+						false,
+						false
+					]
 				}
 			],
 			"sid": 396294109544507
@@ -1246,31 +1287,6 @@
 				}
 			],
 			"sid": 638523583896072
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 557752216683826,
-					"parameters": {
-						"key": 84
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Player_All",
-					"sid": 106658191375597,
-					"parameters": {
-						"instance-variable": "textframe",
-						"value": "19"
-					}
-				}
-			],
-			"sid": 447650700054830
 		}
 	],
 	"sid": 820835899789191

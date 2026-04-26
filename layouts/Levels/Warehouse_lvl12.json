@@ -9109,9 +9109,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": -4,
+						"x": 412,
 						"y": 1358,
-						"width": 7539,
+						"width": 694,
 						"height": 96,
 						"originX": 0,
 						"originY": 0,
@@ -15459,6 +15459,53 @@
 					}
 				},
 				{
+					"type": "Forest_BG4",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 16,
+					"sid": 202955219334938,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 202955219334938,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 9524,
+						"y": 1358,
+						"width": 484,
+						"height": 96,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
 					"type": "Brick_Wall4",
 					"properties": {
 						"initially-visible": true,
@@ -17498,6 +17545,147 @@
 					}
 				},
 				{
+					"type": "EnemyBaseball",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Idle",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 9695,
+					"sid": 892184362076599,
+					"tags": "Cut",
+					"instanceVariables": {
+						"vision": false,
+						"triger": false,
+						"search": false,
+						"searchPlayer": false,
+						"patrul": false,
+						"DifY": 0,
+						"probejka": false,
+						"speed": 0,
+						"speedPatrul": 0,
+						"speedDamage": 150,
+						"patrulTimerID": false,
+						"MovingToRamp": false,
+						"onRamp": false,
+						"Kick": false,
+						"DifX": 0,
+						"rotate": 0,
+						"HP": 10,
+						"Damage": false,
+						"Down": false,
+						"Death": false,
+						"Rolling": false,
+						"Rough": 0,
+						"UpDownY": 0,
+						"UpDownX": 0,
+						"Finishing": "",
+						"HeavyPunch": false,
+						"Drop": 0,
+						"Fear": 10,
+						"FearSwitch": false,
+						"Heavy": 0,
+						"SkvozY": 0,
+						"Skvoz": 0,
+						"Dialog": false,
+						"HasDialog": false,
+						"RollDeathWolf": 0,
+						"DistancePlayer": 0,
+						"RotateEnemy": 0,
+						"Got": false,
+						"textframe": 0,
+						"Fat": false,
+						"Security": false,
+						"Reloaded": false,
+						"Ammo": 0
+					},
+					"behaviors": {
+						"BoundTo": {
+							"properties": {
+								"bound-by": "edge",
+								"region": "layout"
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						},
+						"ПолеЗрения": {
+							"properties": {
+								"obstacles": "custom",
+								"range": 10000,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						},
+						"Твинанимация": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"Таймер": {
+							"properties": {}
+						},
+						"Физика": {
+							"properties": {
+								"immovable": true,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						},
+						"Платформер": {
+							"properties": {
+								"max-speed": 330,
+								"acceleration": 1500,
+								"deceleration": 1500,
+								"jump-strength": 650,
+								"gravity": 1500,
+								"max-fall-speed": 1000,
+								"double-jump": false,
+								"jump-sustain": 0,
+								"default-controls": true,
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 892184362076599,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 4375,
+						"y": 860,
+						"width": -86,
+						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
 					"type": "High_Wall_Hotel2",
 					"properties": {
 						"initially-visible": true,
@@ -17854,7 +18042,7 @@
 					"type": "security",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "security_idle",
+						"initial-animation": "DeathAxe",
 						"initial-frame": 3,
 						"enable-collisions": true,
 						"live-preview": false
@@ -17882,9 +18070,9 @@
 						"x": 6028,
 						"y": 846,
 						"width": -86,
-						"height": 86,
+						"height": 100,
 						"originX": 0.5,
-						"originY": 0.5,
+						"originY": 0.43,
 						"color": [
 							0.6,
 							0.6,
@@ -22126,7 +22314,7 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 6119,
+						"x": 6070,
 						"y": 999,
 						"width": 70,
 						"height": 30,
@@ -22539,7 +22727,7 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 6057,
+						"x": 6008,
 						"y": 991,
 						"width": 45,
 						"height": 45,
@@ -28138,9 +28326,9 @@
 					"locked": false,
 					"world": {
 						"x": 5054.115,
-						"y": 638.6310000000001,
+						"y": 637.0695000000001,
 						"width": 2213,
-						"height": 141,
+						"height": 144,
 						"originX": 0.4925,
 						"originY": 0.4795,
 						"color": [
@@ -28844,7 +29032,7 @@
 				{
 					"type": "JumpEnemy2",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -28881,7 +29069,7 @@
 				{
 					"type": "JumpEnemy2",
 					"properties": {
-						"initially-visible": true,
+						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
@@ -32753,10 +32941,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 5062.5,
-						"y": 564,
-						"width": 2218,
-						"height": 15,
+						"x": 5064,
+						"y": 559,
+						"width": 2215,
+						"height": 5,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -33420,7 +33608,7 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 4251,
+						"x": 4358,
 						"y": 485,
 						"width": 28,
 						"height": 146,
@@ -33591,7 +33779,7 @@
 					"locked": false,
 					"world": {
 						"x": 4886,
-						"y": 809,
+						"y": 810,
 						"width": 2563,
 						"height": 180,
 						"originX": 0.4925,
@@ -33879,7 +34067,7 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 4079,
+						"x": 4043,
 						"y": 513,
 						"width": 86,
 						"height": 86,
@@ -36292,147 +36480,6 @@
 					}
 				},
 				{
-					"type": "EnemyBaseball",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Idle",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 9695,
-					"sid": 892184362076599,
-					"tags": "Cut",
-					"instanceVariables": {
-						"vision": false,
-						"triger": false,
-						"search": false,
-						"searchPlayer": false,
-						"patrul": false,
-						"DifY": 0,
-						"probejka": false,
-						"speed": 0,
-						"speedPatrul": 0,
-						"speedDamage": 150,
-						"patrulTimerID": false,
-						"MovingToRamp": false,
-						"onRamp": false,
-						"Kick": false,
-						"DifX": 0,
-						"rotate": 0,
-						"HP": 10,
-						"Damage": false,
-						"Down": false,
-						"Death": false,
-						"Rolling": false,
-						"Rough": 0,
-						"UpDownY": 0,
-						"UpDownX": 0,
-						"Finishing": "",
-						"HeavyPunch": false,
-						"Drop": 0,
-						"Fear": 10,
-						"FearSwitch": false,
-						"Heavy": 0,
-						"SkvozY": 0,
-						"Skvoz": 0,
-						"Dialog": false,
-						"HasDialog": false,
-						"RollDeathWolf": 0,
-						"DistancePlayer": 0,
-						"RotateEnemy": 0,
-						"Got": false,
-						"textframe": 0,
-						"Fat": false,
-						"Security": false,
-						"Reloaded": false,
-						"Ammo": 0
-					},
-					"behaviors": {
-						"BoundTo": {
-							"properties": {
-								"bound-by": "edge",
-								"region": "layout"
-							}
-						},
-						"НастраиваемоеДвижение": {
-							"properties": {
-								"stepping-mode": "none",
-								"pixels-per-step": 5,
-								"enabled": true
-							}
-						},
-						"ПолеЗрения": {
-							"properties": {
-								"obstacles": "custom",
-								"range": 10000,
-								"cone-of-view": 360,
-								"use-collision-cells": true
-							}
-						},
-						"Твинанимация": {
-							"properties": {
-								"enabled": true
-							}
-						},
-						"Таймер": {
-							"properties": {}
-						},
-						"Физика": {
-							"properties": {
-								"immovable": true,
-								"collision-mask": "use-collision-polygon",
-								"collision-filter-tags": "",
-								"collision-filter-mode": "exclusive",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": false
-							}
-						},
-						"Платформер": {
-							"properties": {
-								"max-speed": 330,
-								"acceleration": 1500,
-								"deceleration": 1500,
-								"jump-strength": 650,
-								"gravity": 1500,
-								"max-fall-speed": 1000,
-								"double-jump": false,
-								"jump-sustain": 0,
-								"default-controls": true,
-								"enabled": true
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 892184362076599,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 4375,
-						"y": 860,
-						"width": -86,
-						"height": 86,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
 					"type": "Player_Mask",
 					"properties": {
 						"initially-visible": true,
@@ -36530,7 +36577,7 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 315,
+						"x": 306,
 						"y": 1409,
 						"width": 86,
 						"height": 86,

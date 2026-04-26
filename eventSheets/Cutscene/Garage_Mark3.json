@@ -75,13 +75,12 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 208678398617314,
-					"disabled": true,
+					"sid": 435474435160654,
 					"parameters": {
 						"audio-file": {
-							"path": "Music/Bar_embient"
+							"path": "Music/Soul to soul"
 						},
-						"loop": "not-looping",
+						"loop": "looping",
 						"volume": "0",
 						"stereo-pan": "0",
 						"tag-optional": "\"music\""
@@ -195,7 +194,8 @@
 							"parameters": [
 								"\"Junior_Speak7\"",
 								"681",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -227,7 +227,8 @@
 							"parameters": [
 								"\"Junior_Speak7\"",
 								"682",
-								"2"
+								"2",
+								false
 							]
 						},
 						{
@@ -276,7 +277,8 @@
 							"parameters": [
 								"\"Junior_Speak8\"",
 								"683",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -308,7 +310,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"684",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -340,7 +343,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"685",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -372,7 +376,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"686",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -404,7 +409,8 @@
 							"parameters": [
 								"\"Junior_Speak8\"",
 								"687",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -436,7 +442,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"688",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -468,7 +475,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"689",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -500,7 +508,8 @@
 							"parameters": [
 								"\"Junior_Speak8\"",
 								"690",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -532,7 +541,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"691",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -564,7 +574,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"692",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -596,7 +607,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"693",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -628,7 +640,8 @@
 							"parameters": [
 								"\"Junior_Speak8\"",
 								"694",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -660,7 +673,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"695",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -710,36 +724,25 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 982563075068822
 				}
 			],
 			"actions": [
 				{
-					"id": "spawn-another-object",
-					"objectClass": "Player_All",
-					"sid": 951242413230786,
-					"parameters": {
-						"object": "Shadow3",
-						"layer": "\"Dialog\"",
-						"image-point": "0",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "Shadow3",
-					"sid": 431286809809650,
-					"parameters": {
-						"scale": "3"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "Shadow3",
-					"sid": 421125196059143,
-					"parameters": {
-						"visibility": "visible"
-					}
+					"callFunction": "End_Scene2",
+					"sid": 924120479706812,
+					"parameters": [
+						"100",
+						"0",
+						"100",
+						false,
+						false,
+						true
+					]
 				},
 				{
 					"callFunction": "Audio_Play_Sound",

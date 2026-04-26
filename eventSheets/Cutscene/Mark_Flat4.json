@@ -27,6 +27,34 @@
 					],
 					"actions": [
 						{
+							"id": "save",
+							"objectClass": "System",
+							"sid": 123722908525432,
+							"parameters": {
+								"slot": "\"start\""
+							}
+						},
+						{
+							"id": "save",
+							"objectClass": "System",
+							"sid": 898405972421233,
+							"parameters": {
+								"slot": "\"mysave\""
+							}
+						},
+						{
+							"callFunction": "End_Scene2",
+							"sid": 221697570620827,
+							"parameters": [
+								"0",
+								"1",
+								"100",
+								true,
+								false,
+								true
+							]
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 150314653203901,
@@ -73,14 +101,6 @@
 							"parameters": {
 								"variable": "Continue_Game",
 								"value": "false"
-							}
-						},
-						{
-							"id": "save",
-							"objectClass": "System",
-							"sid": 886553175629562,
-							"parameters": {
-								"slot": "\"start\""
 							}
 						},
 						{
@@ -508,6 +528,7 @@
 									"id": "set-position",
 									"objectClass": "Player_All",
 									"sid": 596325232787805,
+									"disabled": true,
 									"parameters": {
 										"x": "480",
 										"y": "230"
@@ -659,10 +680,10 @@
 			"actions": [
 				{
 					"callFunction": "End_Scene2",
-					"sid": 568598643087360,
+					"sid": 453508986590540,
 					"parameters": [
 						"100",
-						"3",
+						"2",
 						"0",
 						false,
 						false,

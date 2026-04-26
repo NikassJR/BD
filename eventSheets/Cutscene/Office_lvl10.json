@@ -26,18 +26,30 @@
 				{
 					"id": "save",
 					"objectClass": "System",
+					"sid": 138582229628654,
+					"parameters": {
+						"slot": "\"start\""
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
 					"sid": 731075736694627,
 					"parameters": {
 						"slot": "\"mysave\""
 					}
 				},
 				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 403223643644753,
-					"parameters": {
-						"slot": "\"start\""
-					}
+					"callFunction": "End_Scene2",
+					"sid": 859011836641749,
+					"parameters": [
+						"0",
+						"1",
+						"100",
+						true,
+						false,
+						true
+					]
 				},
 				{
 					"id": "set-size",
@@ -201,38 +213,6 @@
 				{
 					"id": "on-collision-with-another-object",
 					"objectClass": "Player_All",
-					"sid": 338330305794098,
-					"parameters": {
-						"object": "Trigger_CutScene"
-					}
-				},
-				{
-					"id": "has-tags",
-					"objectClass": "Trigger_CutScene",
-					"sid": 395770355751715,
-					"parameters": {
-						"tags": "\"Save\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 645907859137419,
-					"parameters": {
-						"slot": "\"mysave\""
-					}
-				}
-			],
-			"sid": 425877461511344
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "Player_All",
 					"sid": 792215240725819,
 					"parameters": {
 						"object": "Trigger_CutScene"
@@ -327,6 +307,15 @@
 					}
 				},
 				{
+					"id": "set-animation",
+					"objectClass": "Player_All",
+					"sid": 346615230172115,
+					"parameters": {
+						"animation": "weapon & \"Idle\"",
+						"from": "beginning"
+					}
+				},
+				{
 					"id": "create-object",
 					"objectClass": "System",
 					"sid": 626196053482881,
@@ -395,7 +384,8 @@
 					"parameters": [
 						"\"Junior_Fear\"",
 						"516",
-						"1"
+						"1",
+						false
 					]
 				}
 			],
@@ -427,7 +417,8 @@
 					"parameters": [
 						"\"Mark1\"",
 						"517",
-						"1"
+						"1",
+						false
 					]
 				}
 			],
@@ -485,50 +476,6 @@
 				}
 			],
 			"sid": 668872003981973
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 163796382466302,
-					"parameters": {
-						"variable": "Start_Game"
-					}
-				},
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 575854284285696,
-					"parameters": {
-						"interval-seconds": "0.25"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 889658499322010,
-					"parameters": {
-						"variable": "Sound",
-						"comparison": 0,
-						"value": "-25"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "subtract-from-instvar",
-					"objectClass": "Numbers_Music",
-					"sid": 349842546136888,
-					"parameters": {
-						"instance-variable": "Music",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 496700831754436
 		},
 		{
 			"eventType": "block",

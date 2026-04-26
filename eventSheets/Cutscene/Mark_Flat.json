@@ -49,70 +49,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-item-get",
-							"objectClass": "Game_Save",
-							"sid": 602675922833520,
-							"parameters": {
-								"key": "\"Apartament\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "seek-to",
-							"objectClass": "Audio",
-							"sid": 872086041890166,
-							"parameters": {
-								"tag": "\"Suspense\"",
-								"position": "Game_Save.ItemValue"
-							}
-						}
-					],
-					"sid": 765802509868680
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-item-missing",
-							"objectClass": "Game_Save",
-							"sid": 394655550964843,
-							"parameters": {
-								"key": "\"Apartament\""
-							}
-						},
-						{
-							"id": "on-item-removed",
-							"objectClass": "Game_Save",
-							"sid": 534281976740722,
-							"parameters": {
-								"key": "\"Apartament\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 684351359321326,
-							"parameters": {
-								"audio-file": {
-									"path": "Music/Heaviness"
-								},
-								"loop": "looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"Suspense\""
-							}
-						}
-					],
-					"sid": 781592632701277,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
 							"sid": 236793146643051
@@ -142,6 +78,20 @@
 							"sid": 233917839882745,
 							"parameters": {
 								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 112145208624867,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/Heaviness"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"Suspense\""
 							}
 						},
 						{
@@ -391,7 +341,8 @@
 									"parameters": [
 										"\"Mark4\"",
 										"161",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -423,7 +374,8 @@
 									"parameters": [
 										"\"Mark4\"",
 										"162",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -455,7 +407,8 @@
 									"parameters": [
 										"\"Mark4\"",
 										"163",
-										"4"
+										"4",
+										false
 									]
 								}
 							],
@@ -487,7 +440,8 @@
 									"parameters": [
 										"\"Mark4\"",
 										"164",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -519,7 +473,8 @@
 									"parameters": [
 										"\"Mark4\"",
 										"165",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -551,7 +506,8 @@
 									"parameters": [
 										"\"Mark4\"",
 										"166",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -583,7 +539,8 @@
 									"parameters": [
 										"\"Mark4\"",
 										"167",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -704,7 +661,8 @@
 									"parameters": [
 										"\"Mobile\"",
 										"169",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -736,7 +694,8 @@
 									"parameters": [
 										"\"Mark4\"",
 										"170",
-										"1"
+										"1",
+										false
 									]
 								}
 							],
@@ -768,7 +727,8 @@
 									"parameters": [
 										"\"Mark4\"",
 										"171",
-										"1"
+										"1",
+										false
 									]
 								}
 							],
@@ -1334,7 +1294,8 @@
 									"parameters": [
 										"\"Paper\"",
 										"371",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -1366,7 +1327,8 @@
 									"parameters": [
 										"\"Paper\"",
 										"372",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -1398,7 +1360,8 @@
 									"parameters": [
 										"\"Paper\"",
 										"373",
-										"2"
+										"2",
+										false
 									]
 								},
 								{
@@ -1443,7 +1406,8 @@
 									"parameters": [
 										"\"Paper\"",
 										"374",
-										"3"
+										"3",
+										false
 									]
 								}
 							],
@@ -1475,7 +1439,8 @@
 									"parameters": [
 										"\"Paper\"",
 										"375",
-										"3"
+										"3",
+										false
 									]
 								}
 							],
@@ -1507,7 +1472,8 @@
 									"parameters": [
 										"\"Paper\"",
 										"376",
-										"2"
+										"2",
+										false
 									]
 								}
 							],
@@ -1933,7 +1899,8 @@
 							"parameters": [
 								"\"Security\"",
 								"173",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -1965,7 +1932,8 @@
 							"parameters": [
 								"\"Security\"",
 								"174",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -2028,7 +1996,7 @@
 						},
 						{
 							"id": "destroy",
-							"objectClass": "Enemys",
+							"objectClass": "Enemy_Mili",
 							"sid": 473966435480155
 						},
 						{
@@ -2272,7 +2240,8 @@
 							"parameters": [
 								"\"Mark4\"",
 								"175",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -2304,7 +2273,8 @@
 							"parameters": [
 								"\"Mark4\"",
 								"176",
-								"1"
+								"1",
+								false
 							]
 						},
 						{
@@ -2370,7 +2340,8 @@
 							"parameters": [
 								"\"Mark4\"",
 								"177",
-								"2"
+								"2",
+								false
 							]
 						},
 						{
@@ -2410,7 +2381,8 @@
 							"parameters": [
 								"\"Mark4\"",
 								"178",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -2442,7 +2414,8 @@
 							"parameters": [
 								"\"Mark4\"",
 								"179",
-								"2"
+								"2",
+								false
 							]
 						},
 						{
@@ -2491,7 +2464,8 @@
 							"parameters": [
 								"\"Mark4\"",
 								"180",
-								"3"
+								"3",
+								false
 							]
 						},
 						{
@@ -2602,7 +2576,8 @@
 							"parameters": [
 								"\"Mark4\"",
 								"181",
-								"1"
+								"1",
+								false
 							]
 						},
 						{
@@ -2729,7 +2704,8 @@
 							"parameters": [
 								"\"Mark4\"",
 								"182",
-								"1"
+								"1",
+								false
 							]
 						},
 						{
@@ -2892,6 +2868,12 @@
 								"animation": "\"Idle\"",
 								"from": "beginning"
 							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "EnemyKnife",
+							"sid": 714689349997366,
+							"behaviorType": "НастраиваемоеДвижение"
 						}
 					],
 					"sid": 677757058378303

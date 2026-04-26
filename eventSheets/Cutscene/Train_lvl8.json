@@ -359,6 +359,15 @@
 					"sid": 776764842919825
 				},
 				{
+					"id": "set-instvar-value",
+					"objectClass": "Enemy_Mili",
+					"sid": 245197839807819,
+					"parameters": {
+						"instance-variable": "Fear",
+						"value": "20"
+					}
+				},
+				{
 					"id": "add-to-instvar",
 					"objectClass": "Player_All",
 					"sid": 584231021882908,
@@ -930,11 +939,11 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 882664597386298,
+					"sid": 798403131987439,
 					"parameters": {
 						"variable": "Enemys",
 						"comparison": 5,
-						"value": "11"
+						"value": "10"
 					}
 				}
 			],
@@ -1112,7 +1121,8 @@
 							"parameters": [
 								"\"High_Brother2\"",
 								"413",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -1144,7 +1154,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"414",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -1292,50 +1303,6 @@
 					"sid": 643201704476043
 				}
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 558126163462188,
-					"parameters": {
-						"variable": "Start_Game"
-					}
-				},
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 630707741215977,
-					"parameters": {
-						"interval-seconds": "0.25"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 698741013481959,
-					"parameters": {
-						"variable": "Sound",
-						"comparison": 0,
-						"value": "-25"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "subtract-from-instvar",
-					"objectClass": "Numbers_Music",
-					"sid": 506707919094705,
-					"parameters": {
-						"instance-variable": "Music",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 846046326748760
 		},
 		{
 			"eventType": "block",

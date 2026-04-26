@@ -28,6 +28,14 @@
 					}
 				},
 				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 238908384206900,
+					"parameters": {
+						"slot": "\"mysave\""
+					}
+				},
+				{
 					"id": "set-size",
 					"objectClass": "Camera",
 					"sid": 243482518796488,
@@ -37,13 +45,11 @@
 					}
 				},
 				{
-					"callFunction": "End_Scene2",
-					"sid": 848272634590856,
+					"callFunction": "End_Scene",
+					"sid": 379289049382849,
 					"parameters": [
-						"0",
-						"1",
 						"100",
-						true,
+						false,
 						false,
 						true
 					]
@@ -89,6 +95,15 @@
 					"sid": 919505859942624,
 					"parameters": {
 						"group-name": "\"Player\"",
+						"state": "activated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 607285864629843,
+					"parameters": {
+						"group-name": "\"Enemy & Fear\"",
 						"state": "activated"
 					}
 				},
@@ -206,10 +221,12 @@
 			],
 			"actions": [
 				{
-					"callFunction": "End_Scene",
-					"sid": 847832083625189,
+					"callFunction": "End_Scene2",
+					"sid": 293543267497925,
 					"parameters": [
 						"100",
+						"1",
+						"0",
 						false,
 						false,
 						true

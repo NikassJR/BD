@@ -36,18 +36,9 @@
 					}
 				},
 				{
-					"id": "set-size",
-					"objectClass": "Camera",
-					"sid": 879017040683179,
-					"parameters": {
-						"width": "80",
-						"height": "45"
-					}
-				},
-				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 539047345550618,
+					"sid": 538593612403122,
 					"parameters": {
 						"variable": "Start_Game",
 						"value": "false"
@@ -56,10 +47,68 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 649980415032256,
+					"sid": 551149030679126,
+					"parameters": {
+						"variable": "Safe_Zone",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 960411948359785,
 					"parameters": {
 						"variable": "Continue_Game",
 						"value": "false"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 415274852251571,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "activated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 185464406461374,
+					"parameters": {
+						"group-name": "\"Enemy & Fear\"",
+						"state": "activated"
+					}
+				},
+				{
+					"callFunction": "End_Scene",
+					"sid": 449292730554000,
+					"parameters": [
+						"100",
+						false,
+						false,
+						true
+					]
+				},
+				{
+					"callFunction": "End_Scene2",
+					"sid": 391130443150457,
+					"parameters": [
+						"0",
+						"1",
+						"100",
+						false,
+						false,
+						true
+					]
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Camera",
+					"sid": 879017040683179,
+					"parameters": {
+						"width": "80",
+						"height": "45"
 					}
 				}
 			],
@@ -106,7 +155,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"721",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -138,7 +188,8 @@
 							"parameters": [
 								"\"Security\"",
 								"722",
-								"4"
+								"4",
+								false
 							]
 						}
 					],
@@ -269,32 +320,16 @@
 			],
 			"actions": [
 				{
-					"id": "spawn-another-object",
-					"objectClass": "Player_All",
-					"sid": 576691475962457,
-					"parameters": {
-						"object": "Shadow3",
-						"layer": "\"Dialog\"",
-						"image-point": "0",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "Shadow3",
-					"sid": 637587836999540,
-					"parameters": {
-						"scale": "3"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "Shadow3",
-					"sid": 559959721462997,
-					"parameters": {
-						"visibility": "visible"
-					}
+					"callFunction": "End_Scene2",
+					"sid": 808036256019972,
+					"parameters": [
+						"100",
+						"0",
+						"100",
+						false,
+						false,
+						true
+					]
 				},
 				{
 					"callFunction": "Audio_Play_Sound",
@@ -330,9 +365,9 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 368557083698288,
+					"sid": 721455291067047,
 					"parameters": {
-						"layout": "Bar6"
+						"layout": "Police5"
 					}
 				}
 			],

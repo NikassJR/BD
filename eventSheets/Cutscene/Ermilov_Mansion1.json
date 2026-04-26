@@ -20,6 +20,34 @@
 			],
 			"actions": [
 				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 528169951845756,
+					"parameters": {
+						"slot": "\"start\""
+					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 408343101842676,
+					"parameters": {
+						"slot": "\"mysave\""
+					}
+				},
+				{
+					"callFunction": "End_Scene2",
+					"sid": 638248382110045,
+					"parameters": [
+						"0",
+						"1",
+						"100",
+						true,
+						false,
+						true
+					]
+				},
+				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 832269523823381,
@@ -53,14 +81,6 @@
 					"parameters": {
 						"instance-variable": "onPlayer",
 						"value": "false"
-					}
-				},
-				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 628248377154856,
-					"parameters": {
-						"slot": "\"start\""
 					}
 				},
 				{
@@ -152,7 +172,8 @@
 							"parameters": [
 								"\"Security\"",
 								"621",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -184,7 +205,8 @@
 							"parameters": [
 								"\"Ermilov\"",
 								"622",
-								"2"
+								"2",
+								false
 							]
 						},
 						{
@@ -235,7 +257,8 @@
 							"parameters": [
 								"\"Security\"",
 								"623",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -267,7 +290,8 @@
 							"parameters": [
 								"\"Ermilov\"",
 								"624",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -299,7 +323,8 @@
 							"parameters": [
 								"\"Security\"",
 								"625",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -331,7 +356,8 @@
 							"parameters": [
 								"\"Ermilov\"",
 								"626",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -363,7 +389,8 @@
 							"parameters": [
 								"\"Security\"",
 								"627",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -395,7 +422,8 @@
 							"parameters": [
 								"\"Ermilov\"",
 								"628",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -427,7 +455,8 @@
 							"parameters": [
 								"\"Security\"",
 								"629",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -459,7 +488,8 @@
 							"parameters": [
 								"\"Ermilov\"",
 								"630",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -491,7 +521,8 @@
 							"parameters": [
 								"\"Security\"",
 								"631",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -523,7 +554,8 @@
 							"parameters": [
 								"\"Security\"",
 								"632",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -555,7 +587,8 @@
 							"parameters": [
 								"\"Ermilov\"",
 								"633",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -582,12 +615,33 @@
 					],
 					"actions": [
 						{
+							"callFunction": "End_Scene2",
+							"sid": 802958171354355,
+							"parameters": [
+								"100",
+								"1",
+								"0",
+								false,
+								false,
+								true
+							]
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 362053220693971,
 							"parameters": {
 								"variable": "Start_Game",
 								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 133120818634202,
+							"parameters": {
+								"variable": "onDialMain",
+								"value": "false"
 							}
 						}
 					],

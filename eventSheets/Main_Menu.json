@@ -173,6 +173,15 @@
 					}
 				},
 				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 305396261426248,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "false"
+					}
+				},
+				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 240686711649836
@@ -599,11 +608,11 @@
 				},
 				{
 					"callFunction": "Audio_Play_Sound",
-					"sid": 629516778365209,
+					"sid": 884798790850798,
 					"parameters": [
-						"\"ChainCrash\"",
+						"\"ChairCrash\"",
 						"0",
-						"\"ChainCrash\""
+						"\"ChairCrash\""
 					]
 				},
 				{
@@ -2938,61 +2947,50 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 669002946423504,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 284139357578441,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 170009482525075,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 688185932390495,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 553502756892086
+											"sid": 592449843774371,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 885941163370657,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 779569690211480,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
 											"objectClass": "Audio",
-											"sid": 854413277201271,
+											"sid": 842090789608279,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 616277987961106,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{
@@ -3092,54 +3090,34 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 312162268373395,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 917046152869180,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 628680460240672,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 643821378590661,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 903548500362390
+											"sid": 189795767400839,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 864181036439409,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 612675507703192,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
@@ -3147,6 +3125,15 @@
 											"sid": 103266745013083,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 985028900778258,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{
@@ -3246,61 +3233,50 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 198579555853284,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 941000036137353,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 973458210056180,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 757897351749659,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 793950134195073
+											"sid": 754613698949162,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 229131337406903,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 207573413525137,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
 											"objectClass": "Audio",
-											"sid": 828863132143688,
+											"sid": 508372875425287,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 415114981344832,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{
@@ -3400,61 +3376,50 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 331833101433859,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 445367067973197,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 720483130631634,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 564747267493079,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 996540643685811
+											"sid": 712274533466555,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 806901121212960,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 766653191497595,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
 											"objectClass": "Audio",
-											"sid": 129273575501660,
+											"sid": 726356007268800,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 201893484430259,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{
@@ -3554,61 +3519,50 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 409899388161339,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 382209128295752,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 130530312588254,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 741217342794150,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 511847372414406
+											"sid": 395757990164600,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 915262828747318,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 721632830609251,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
 											"objectClass": "Audio",
-											"sid": 463407943209296,
+											"sid": 900035855674373,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 277304267142693,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{
@@ -3708,61 +3662,50 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 721156933826127,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 233567193421867,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 322746640060178,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 135850936191063,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 244438063452102
+											"sid": 712349763855440,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 642866887490407,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 777204237984754,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
 											"objectClass": "Audio",
-											"sid": 567455252922554,
+											"sid": 757207710192384,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 284286383201332,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{
@@ -3862,61 +3805,50 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 709209297846702,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 556138922251962,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 722108112646809,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 294754338259202,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 171460788109886
+											"sid": 113977585905981,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 142839387654021,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 378753140638300,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
 											"objectClass": "Audio",
-											"sid": 357438259598402,
+											"sid": 897723846719657,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 754894598693400,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{
@@ -4016,61 +3948,50 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 956982889306466,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 136836438124791,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 304195952436538,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 491156861798078,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 851891868931690
+											"sid": 659234050366178,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 453518258352687,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 395604882772992,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
 											"objectClass": "Audio",
-											"sid": 155529445027683,
+											"sid": 220116139559548,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 791861407987656,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{
@@ -4170,61 +4091,50 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 298594636960784,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 772777047646648,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 697356266313391,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 698763967152189,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 449301351978464
+											"sid": 896467482854653,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 328469509940682,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 126795051133896,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
 											"objectClass": "Audio",
-											"sid": 515838856588481,
+											"sid": 552075309345660,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 595191610274792,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{
@@ -4324,61 +4234,50 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 514908230365538,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 837835034423120,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 871435210424705,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 379981391680735,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 100492853646342
+											"sid": 299349349275406,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 212799603125361,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 865754910709553,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
 											"objectClass": "Audio",
-											"sid": 685711405562630,
+											"sid": 617325266779566,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 375672580087001,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{
@@ -4478,61 +4377,50 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 482039847019341,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 678210164176945,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 874602387293883,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 521437470589491,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 282007460538976
+											"sid": 101467370278252,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 226820384038774,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 465976247771469,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
 											"objectClass": "Audio",
-											"sid": 164600240921904,
+											"sid": 424900802575862,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 869990120918304,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{
@@ -4632,61 +4520,50 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 813255584847842,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 959628041300393,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 807964328183400,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 544944917527856,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 573220906031103
+											"sid": 163857843885424,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 322351964742703,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 326016452403608,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
 											"objectClass": "Audio",
-											"sid": 394461351344796,
+											"sid": 607158757554958,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 820506230959014,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{
@@ -4786,61 +4663,50 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 540533015982629,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 741801714678149,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 703471872042627,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 942449577976519,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 505700668723577
+											"sid": 169921323948845,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 167018581282511,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 312803988824436,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
 											"objectClass": "Audio",
-											"sid": 209826902534169,
+											"sid": 389466875431337,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 992655088241033,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{
@@ -4940,61 +4806,50 @@
 									],
 									"actions": [
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Camera",
-											"sid": 519655645981221,
-											"parameters": {
-												"object": "Shadow3",
-												"layer": "7",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "Shadow3",
-											"sid": 396740730227406,
-											"parameters": {
-												"opacity": "0"
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Shadow3",
-											"sid": 656768163214920,
-											"parameters": {
-												"scale": "2"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "Shadow3",
-											"sid": 760767937187266,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetOpacity",
-												"end-value": "100",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait-for-previous-actions",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 331592717240005
+											"sid": 512572223567757,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "End_Scene2",
+											"sid": 194582646632041,
+											"parameters": [
+												"100",
+												"1",
+												"0",
+												false,
+												false,
+												true
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 422352369563407,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "stop",
 											"objectClass": "Audio",
-											"sid": 553615867785147,
+											"sid": 694633367509938,
 											"parameters": {
 												"tag": "\"music\""
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 248091768605870,
+											"parameters": {
+												"variable": "Music_Stop",
+												"value": "false"
 											}
 										},
 										{

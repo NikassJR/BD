@@ -40,6 +40,34 @@
 					}
 				},
 				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 154704129701891,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "activated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 628989802133808,
+					"parameters": {
+						"group-name": "\"Enemy & Fear\"",
+						"state": "activated"
+					}
+				},
+				{
+					"callFunction": "End_Scene",
+					"sid": 217951557915042,
+					"parameters": [
+						"100",
+						false,
+						false,
+						true
+					]
+				},
+				{
 					"id": "stop",
 					"objectClass": "Audio",
 					"sid": 334536446228991,
@@ -105,6 +133,36 @@
 				}
 			],
 			"sid": 880122669046116
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 869227795665825
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "EnemyBaseball",
+					"sid": 569706777151083,
+					"parameters": {
+						"tags": "\"Player\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-range",
+					"objectClass": "EnemyBaseball",
+					"sid": 218953183163674,
+					"behaviorType": "ПолеЗрения",
+					"parameters": {
+						"range": "20"
+					}
+				}
+			],
+			"sid": 759392619306031
 		},
 		{
 			"eventType": "block",
@@ -372,6 +430,16 @@
 							"parameters": {
 								"state": "mirrored"
 							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "EnemyBaseball",
+							"sid": 565198557899051,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "-250"
+							}
 						}
 					],
 					"sid": 839492400159807
@@ -497,7 +565,7 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 542541716831673,
+							"sid": 659557199317995,
 							"parameters": {
 								"object-to-create": "Player_Fear",
 								"layer": "\"Player\"",
@@ -533,9 +601,54 @@
 								"instance-variable": "textframe",
 								"value": "1"
 							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_All",
+							"sid": 128115736874836,
+							"parameters": {
+								"instance-variable": "speedWalk",
+								"value": "150"
+							}
 						}
 					],
 					"sid": 960803849762336
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-tags",
+							"objectClass": "EnemyBaseball",
+							"sid": 832733350784812,
+							"parameters": {
+								"tags": "\"Player\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 930684714961157,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 411631065413985
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "EnemyBaseball",
+							"sid": 561247673154930
+						}
+					],
+					"sid": 526237684609146
 				},
 				{
 					"eventType": "block",
@@ -648,6 +761,15 @@
 							"parameters": {
 								"group-name": "\"Player\"",
 								"state": "activated"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Ladder_Club",
+							"sid": 501962518385321,
+							"behaviorType": "Твёрдый",
+							"parameters": {
+								"state": "disabled"
 							}
 						}
 					],
@@ -778,6 +900,16 @@
 							}
 						},
 						{
+							"id": "set-speed",
+							"objectClass": "EnemyBaseball",
+							"sid": 556487480346376,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "200"
+							}
+						},
+						{
 							"id": "wait",
 							"objectClass": "System",
 							"sid": 914402163619399,
@@ -785,6 +917,12 @@
 								"seconds": "0.5",
 								"use-timescale": true
 							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "EnemyBaseball",
+							"sid": 162099508293118,
+							"behaviorType": "НастраиваемоеДвижение"
 						},
 						{
 							"id": "set-animation",
@@ -1549,6 +1687,37 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-ended",
+							"objectClass": "Audio",
+							"sid": 502400446548859,
+							"parameters": {
+								"tag": "\"Palka\""
+							}
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "Player",
+							"sid": 479652489645711,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Audio_Play_Sound",
+							"sid": 482415343026989,
+							"parameters": [
+								"\"Palka\"",
+								"0",
+								"\"Palka\""
+							]
+						}
+					],
+					"sid": 355662444468488
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
 							"sid": 178928021669424,
@@ -1572,6 +1741,14 @@
 							"parameters": {
 								"animation": "\"Fear\"",
 								"from": "beginning"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 384315808298440,
+							"parameters": {
+								"tag": "\"Palka\""
 							}
 						},
 						{
@@ -1760,32 +1937,6 @@
 						{
 							"callFunction": "Destroy_Dialoge",
 							"sid": 975432054057348
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 386229178344022,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "0",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"callFunction": "Audio_Play_Sound",
-							"sid": 248616774613765,
-							"parameters": [
-								"\"End_Scene\"",
-								"0",
-								"\"End_Scene\""
-							]
 						},
 						{
 							"id": "set-boolean-eventvar",
@@ -2820,15 +2971,76 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "compare-instance-variable",
+					"objectClass": "EnemyBaseball",
+					"sid": 110893842375858,
+					"parameters": {
+						"instance-variable": "HP",
+						"comparison": 3,
+						"value": "0"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "EnemyBaseball",
+					"sid": 835168194213644,
+					"parameters": {
+						"tags": "\"Player\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 298670018782084,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 240643076012809
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 359398979561725,
 					"parameters": {
 						"variable": "Start_Game"
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 263467495405446
 				}
 			],
 			"actions": [
+				{
+					"callFunction": "End_Scene2",
+					"sid": 200350015399137,
+					"parameters": [
+						"100",
+						"0",
+						"100",
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"callFunction": "Audio_Play_Sound",
+					"sid": 950388662630511,
+					"parameters": [
+						"\"End_Scene\"",
+						"0",
+						"\"End_Scene\""
+					]
+				},
 				{
 					"id": "wait",
 					"objectClass": "System",
@@ -2854,9 +3066,9 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 808914160435132,
+					"sid": 602543292813911,
 					"parameters": {
-						"layout": "Main_Menu"
+						"layout": "Garage_Mark3"
 					}
 				}
 			],

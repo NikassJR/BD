@@ -36,6 +36,16 @@
 					}
 				},
 				{
+					"callFunction": "End_Scene",
+					"sid": 824634209590144,
+					"parameters": [
+						"100",
+						false,
+						false,
+						true
+					]
+				},
+				{
 					"id": "set-group-active",
 					"objectClass": "System",
 					"sid": 992701249565757,
@@ -276,18 +286,13 @@
 			],
 			"actions": [
 				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 295287598561578,
-					"parameters": {
-						"audio-file": {
-							"path": "Music/Tower/Column_Crash"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"audio\""
-					}
+					"callFunction": "Audio_Play_Sound",
+					"sid": 463666995046775,
+					"parameters": [
+						"\"Column_Crash\"",
+						"0",
+						"\"Column_Crash\""
+					]
 				},
 				{
 					"id": "set-speed",
@@ -436,7 +441,8 @@
 							"parameters": [
 								"\"Junior_Speak\"",
 								"465",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -468,7 +474,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"466",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -500,7 +507,8 @@
 							"parameters": [
 								"\"Junior_Speak3\"",
 								"467",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -532,7 +540,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"468",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -564,7 +573,8 @@
 							"parameters": [
 								"\"Junior_Speak\"",
 								"469",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -596,7 +606,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"470",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -628,7 +639,8 @@
 							"parameters": [
 								"\"Junior_Speak3\"",
 								"471",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -660,7 +672,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"472",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -692,7 +705,8 @@
 							"parameters": [
 								"\"Junior_Speak\"",
 								"473",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -724,7 +738,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"474",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -756,7 +771,8 @@
 							"parameters": [
 								"\"Junior_Speak3\"",
 								"475",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -788,7 +804,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"476",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -820,7 +837,8 @@
 							"parameters": [
 								"\"Junior_Speak\"",
 								"477",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -852,7 +870,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"478",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -884,7 +903,8 @@
 							"parameters": [
 								"\"Junior_Speak3\"",
 								"479",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -916,7 +936,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"480",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -948,7 +969,8 @@
 							"parameters": [
 								"\"Junior_Speak\"",
 								"481",
-								"3"
+								"3",
+								false
 							]
 						}
 					],
@@ -980,7 +1002,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"482",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -1012,7 +1035,8 @@
 							"parameters": [
 								"\"Junior_Speak2\"",
 								"483",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -1044,7 +1068,8 @@
 							"parameters": [
 								"\"Junior_Speak\"",
 								"484",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -1076,7 +1101,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"485",
-								"2"
+								"2",
+								false
 							]
 						},
 						{
@@ -1105,6 +1131,14 @@
 							"parameters": {
 								"which": "horizontal",
 								"speed": "100"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "Junior",
+							"sid": 785335880477874,
+							"parameters": {
+								"y": "957"
 							}
 						},
 						{
@@ -1146,7 +1180,8 @@
 							"parameters": [
 								"\"Drug_Woman\"",
 								"486",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -1173,41 +1208,16 @@
 					],
 					"actions": [
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Player_All",
-							"sid": 244763239585157,
-							"parameters": {
-								"object": "Shadow3",
-								"layer": "\"Dialog\"",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "Shadow3",
-							"sid": 920308870137608,
-							"parameters": {
-								"opacity": "0"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 290015933392152,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "2",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
+							"callFunction": "End_Scene2",
+							"sid": 964160004888408,
+							"parameters": [
+								"100",
+								"0",
+								"100",
+								false,
+								false,
+								false
+							]
 						},
 						{
 							"id": "wait-for-previous-actions",
@@ -1282,12 +1292,9 @@
 							}
 						},
 						{
-							"id": "set-opacity",
-							"objectClass": "Shadow3",
-							"sid": 394941160304704,
-							"parameters": {
-								"opacity": "0"
-							}
+							"id": "destroy",
+							"objectClass": "End_Scene2",
+							"sid": 856198380268102
 						},
 						{
 							"id": "wait",
@@ -1304,7 +1311,8 @@
 							"parameters": [
 								"\"Mark7\"",
 								"487",
-								"1"
+								"1",
+								false
 							]
 						}
 					],
@@ -1340,12 +1348,16 @@
 							}
 						},
 						{
-							"id": "set-opacity",
-							"objectClass": "Shadow3",
-							"sid": 330456886793600,
-							"parameters": {
-								"opacity": "100"
-							}
+							"callFunction": "End_Scene2",
+							"sid": 608642850075812,
+							"parameters": [
+								"100",
+								"0",
+								"100",
+								false,
+								false,
+								false
+							]
 						},
 						{
 							"callFunction": "Audio_Play_Sound",
@@ -1693,7 +1705,7 @@
 				},
 				{
 					"id": "add-to-instvar",
-					"objectClass": "Enemys",
+					"objectClass": "Enemy_Mili",
 					"sid": 591291993054296,
 					"parameters": {
 						"instance-variable": "textframe",
@@ -1794,6 +1806,17 @@
 					"parameters": {
 						"tags": "\"Final\""
 					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Enemy_Mili",
+					"sid": 545654837607337,
+					"disabled": true,
+					"parameters": {
+						"instance-variable": "HP",
+						"comparison": 4,
+						"value": "0"
+					}
 				}
 			],
 			"actions": [
@@ -1819,6 +1842,7 @@
 					"id": "set-group-active",
 					"objectClass": "System",
 					"sid": 236827553709417,
+					"disabled": true,
 					"parameters": {
 						"group-name": "\"Enemy & Fear\"",
 						"state": "deactivated"
@@ -1826,8 +1850,9 @@
 				},
 				{
 					"id": "set-animation",
-					"objectClass": "Enemys",
+					"objectClass": "Enemy_Mili",
 					"sid": 400226493140095,
+					"disabled": true,
 					"parameters": {
 						"animation": "\"Idle\"",
 						"from": "beginning"
@@ -2140,7 +2165,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Enemys",
+							"objectClass": "Enemy_Mili",
 							"sid": 417182429914104,
 							"parameters": {
 								"instance-variable": "textframe",
@@ -2190,7 +2215,7 @@
 						},
 						{
 							"id": "add-to-instvar",
-							"objectClass": "Enemys",
+							"objectClass": "Enemy_Mili",
 							"sid": 254662065059399,
 							"parameters": {
 								"instance-variable": "textframe",
@@ -2205,7 +2230,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Enemys",
+							"objectClass": "Enemy_Mili",
 							"sid": 153636283084417,
 							"parameters": {
 								"instance-variable": "textframe",
@@ -2255,7 +2280,7 @@
 						},
 						{
 							"id": "add-to-instvar",
-							"objectClass": "Enemys",
+							"objectClass": "Enemy_Mili",
 							"sid": 175976979257417,
 							"parameters": {
 								"instance-variable": "textframe",
@@ -2270,7 +2295,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Enemys",
+							"objectClass": "Enemy_Mili",
 							"sid": 608327955196030,
 							"parameters": {
 								"instance-variable": "textframe",
@@ -2502,7 +2527,8 @@
 							"parameters": [
 								"\"Paper\"",
 								"458",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -2579,7 +2605,8 @@
 							"parameters": [
 								"\"Paper\"",
 								"458",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
@@ -2656,7 +2683,8 @@
 							"parameters": [
 								"\"Paper\"",
 								"459",
-								"2"
+								"2",
+								false
 							]
 						}
 					],
