@@ -3,11 +3,11 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "Music"
+			"includeSheet": "actual"
 		},
 		{
 			"eventType": "include",
-			"includeSheet": "actual"
+			"includeSheet": "Music"
 		},
 		{
 			"eventType": "include",
@@ -29,9 +29,9 @@
 				{
 					"id": "set-volume",
 					"objectClass": "Video",
-					"sid": 318382088547410,
+					"sid": 414953620205372,
 					"parameters": {
-						"volume": "Audio"
+						"volume": "Sound"
 					}
 				}
 			],
@@ -47,6 +47,15 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 440802275725247,
+					"parameters": {
+						"layer": "\"HUD\"",
+						"visibility": "invisible"
+					}
+				},
 				{
 					"id": "set-boolean-instvar",
 					"objectClass": "Camera",
@@ -179,6 +188,15 @@
 					}
 				},
 				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 241291687292284,
+					"parameters": {
+						"variable": "NoPause",
+						"value": "false"
+					}
+				},
+				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 344846540942946
@@ -195,9 +213,9 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 510891160791704,
+					"sid": 926327603922073,
 					"parameters": {
-						"layout": "Main_Menu"
+						"layout": "Garage_lvl7"
 					}
 				}
 			],

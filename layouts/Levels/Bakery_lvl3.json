@@ -13530,6 +13530,53 @@
 						"z": 0,
 						"angle": 0
 					}
+				},
+				{
+					"type": "Pipe_Battery",
+					"properties": {
+						"initially-visible": true,
+						"origin": "top-left",
+						"wrap-horizontal": "repeat",
+						"wrap-vertical": "repeat",
+						"image-offset-x": 0,
+						"image-offset-y": 0,
+						"image-scale-x": 1,
+						"image-scale-y": 1,
+						"image-angle": 0,
+						"enable-tile-randomization": false,
+						"x-random": 1,
+						"y-random": 1,
+						"angle-random": 1,
+						"blend-margin-x": 0.1,
+						"blend-margin-y": 0.1
+					},
+					"uid": 22,
+					"sid": 211930852674935,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 211930852674935,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 2699,
+						"y": 260,
+						"width": 130,
+						"height": 5,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							0.5803921568627451,
+							0.5803921568627451,
+							0.5803921568627451,
+							1
+						],
+						"z": 0,
+						"angle": 4.71238898038469
+					}
 				}
 			],
 			"sid": 728943443364993,
@@ -18357,8 +18404,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 3205,
-						"y": 487,
+						"x": 2925,
+						"y": 490,
 						"width": 86,
 						"height": 86,
 						"originX": 0.5,
@@ -20860,10 +20907,123 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 110,
-						"y": 757,
+						"x": 264,
+						"y": 759,
 						"width": 86,
 						"height": 86,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "Baseball",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Baseball",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 361,
+					"sid": 615937625368874,
+					"tags": "",
+					"instanceVariables": {
+						"Pistol": 9,
+						"Got": 0,
+						"Bubble": 0,
+						"CrashGless": false,
+						"DifWeaponX": 0,
+						"rotate": 0,
+						"ID": 0,
+						"Vision": false,
+						"Active": false,
+						"speedCast": 0,
+						"vortexCast": 0,
+						"dirX_Cast": 0,
+						"dirY_Cast": 0,
+						"dirCast": 0
+					},
+					"behaviors": {
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": true
+							}
+						},
+						"Прикрепить2": {
+							"properties": {
+								"destroy": false
+							}
+						},
+						"Твинанимация": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"ОграничитьСценой": {
+							"properties": {
+								"bound-by": "edge",
+								"region": "layout"
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						},
+						"ПолеЗрения": {
+							"properties": {
+								"obstacles": "solids",
+								"range": 10000,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						}
+					},
+					"effects": {
+						"Пульс": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 1,
+								"lighting": 0.5,
+								"speed": 10,
+								"frequency": 30,
+								"center-x": 0.5,
+								"center-y": 0.5
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 615937625368874,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 171,
+						"y": 794,
+						"width": 34,
+						"height": 6,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -20885,8 +21045,8 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 22,
-					"sid": 747573036750821,
+					"uid": 547,
+					"sid": 255728738000395,
 					"tags": "",
 					"instanceVariables": {
 						"Pistol": 9,
@@ -20901,7 +21061,7 @@
 					"behaviors": {
 						"Физика": {
 							"properties": {
-								"immovable": false,
+								"immovable": true,
 								"collision-mask": "use-collision-polygon",
 								"collision-filter-tags": "",
 								"collision-filter-mode": "exclusive",
@@ -20961,22 +21121,61 @@
 						}
 					},
 					"instanceFolderItem": {
-						"sid": 747573036750821,
+						"sid": 255728738000395,
 						"expanded": true
 					},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 222,
-						"y": 734,
+						"x": 2699,
+						"y": 309,
 						"width": 49,
 						"height": 6,
-						"originX": 0.5204081632653061,
-						"originY": 0.5833333333333334,
+						"originX": 1,
+						"originY": 1,
 						"color": [
 							1,
 							1,
 							1,
+							1
+						],
+						"z": 0,
+						"angle": 1.5707963267948966
+					}
+				},
+				{
+					"type": "TubeStatic",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 548,
+					"sid": 783800857168614,
+					"tags": "",
+					"instanceVariables": {
+						"Crash": false
+					},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 783800857168614,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 2695,
+						"y": 329,
+						"width": 89,
+						"height": 46,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							0.5882352941176471,
+							0.5882352941176471,
+							0.5882352941176471,
 							1
 						],
 						"z": 0,

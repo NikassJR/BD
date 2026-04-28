@@ -5037,6 +5037,153 @@
 						{
 							"eventType": "group",
 							"disabled": false,
+							"title": "Tube",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-click",
+											"objectClass": "Mouse",
+											"sid": 314735627226369,
+											"parameters": {
+												"mouse-button": "right",
+												"click-type": "clicked"
+											}
+										},
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Player_All",
+											"sid": 673674578742497,
+											"parameters": {
+												"object": "TubeStatic"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "TubeStatic",
+											"sid": 234719193159399,
+											"parameters": {
+												"instance-variable": "Crash"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Audio_Play_Sound",
+											"sid": 844034417202362,
+											"parameters": [
+												"\"Pipe_Crash\"",
+												"0",
+												"\"Pipe_Crash\""
+											]
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "TubeStatic",
+											"sid": 420214978611769,
+											"parameters": {
+												"instance-variable": "Crash",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 772230251383949
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "TubeStatic",
+											"sid": 200642149782585,
+											"parameters": {
+												"instance-variable": "Crash"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 463380360437578
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Audio_Play_Sound",
+											"sid": 678142317737573,
+											"parameters": [
+												"\"Extinguisher_Crash\"",
+												"0",
+												"\"Extinguisher_Crash\""
+											]
+										},
+										{
+											"id": "set-size",
+											"objectClass": "Ball",
+											"sid": 424450478106285,
+											"parameters": {
+												"size": "8"
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "Ball",
+											"sid": 755914053979741,
+											"parameters": {
+												"speed": "200"
+											}
+										},
+										{
+											"id": "set-particle-object",
+											"objectClass": "Ball",
+											"sid": 608015414634646,
+											"parameters": {
+												"object": "Fire_Extinguisher"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 905514988234705,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-rate",
+											"objectClass": "Ball",
+											"sid": 862460276210107,
+											"parameters": {
+												"rate": "0"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 796849129603854,
+											"parameters": {
+												"seconds": "3",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "destroy",
+											"objectClass": "Ball",
+											"sid": 256579717200084
+										}
+									],
+									"sid": 924463256378771
+								}
+							],
+							"sid": 908749530744867
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
 							"title": "WolfWeapon",
 							"description": "",
 							"isActiveOnStart": true,
@@ -9384,123 +9531,6 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 720455258470834,
-											"parameters": {
-												"variable": "weapon",
-												"comparison": 0,
-												"value": "\"Tube\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "create-object",
-											"objectClass": "System",
-											"sid": 806730251954248,
-											"parameters": {
-												"object-to-create": "Tube",
-												"layer": "Player_All.LayerName",
-												"x": "Player_All.X",
-												"y": "Player_All.Y",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "spawn-another-object",
-											"objectClass": "Tube",
-											"sid": 584762950206221,
-											"parameters": {
-												"object": "HitBox",
-												"layer": "Tube.LayerName",
-												"image-point": "0",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "pin-to-object-properties",
-											"objectClass": "HitBox",
-											"sid": 342998522551997,
-											"behaviorType": "Прикрепить",
-											"parameters": {
-												"pin-to": "Tube",
-												"x": true,
-												"y": true,
-												"angle": true,
-												"width-type": "no",
-												"height-type": "no",
-												"z": false
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "HitBox",
-											"sid": 346417609800758,
-											"parameters": {
-												"animation": "\"TubeBox\"",
-												"from": "beginning"
-											}
-										},
-										{
-											"id": "apply-impulse-towards-position",
-											"objectClass": "Tube",
-											"sid": 521657249827828,
-											"behaviorType": "Физика",
-											"parameters": {
-												"impulse": "2",
-												"x": "Mouse.X",
-												"y": "Mouse.Y",
-												"image-point": "0"
-											}
-										},
-										{
-											"id": "enabledisable-collisions",
-											"objectClass": "Tube",
-											"sid": 759177123200943,
-											"behaviorType": "Физика",
-											"parameters": {
-												"object": "Enemys",
-												"state": "enable"
-											}
-										},
-										{
-											"id": "set-linear-damping",
-											"objectClass": "Tube",
-											"sid": 502040140201097,
-											"disabled": true,
-											"behaviorType": "Физика",
-											"parameters": {
-												"linear-damping": "1.5"
-											}
-										},
-										{
-											"id": "apply-torque",
-											"objectClass": "Tube",
-											"sid": 742094680007510,
-											"behaviorType": "Физика",
-											"parameters": {
-												"torque": "500"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 506551913006498,
-											"parameters": {
-												"variable": "weapon",
-												"value": "\"noWeapon\""
-											}
-										}
-									],
-									"sid": 438515639572174
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
 											"sid": 502628837467817,
 											"parameters": {
 												"variable": "weapon",
@@ -10800,6 +10830,100 @@
 											"sid": 609490935015892
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 320771700388392,
+											"parameters": {
+												"variable": "weapon",
+												"comparison": 0,
+												"value": "\"Tube\""
+											}
+										},
+										{
+											"id": "is-on-floor",
+											"objectClass": "Player_All",
+											"sid": 722330799172201,
+											"behaviorType": "Платформер"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Player_All",
+											"sid": 748212054626576,
+											"parameters": {
+												"instance-variable": "kick",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Player_All",
+											"sid": 744831438399063,
+											"parameters": {
+												"animation": "\"TubeThrowing\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 906978594423304,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-x",
+													"objectClass": "Player_All",
+													"sid": 716737642810220,
+													"parameters": {
+														"comparison": 2,
+														"x-co-ordinate": "Mouse.X "
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-mirrored",
+													"objectClass": "Player_All",
+													"sid": 338085152318237,
+													"parameters": {
+														"state": "not-mirrored"
+													}
+												}
+											],
+											"sid": 485409388420456
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-x",
+													"objectClass": "Player_All",
+													"sid": 717078953067201,
+													"parameters": {
+														"comparison": 4,
+														"x-co-ordinate": "Mouse.X "
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-mirrored",
+													"objectClass": "Player_All",
+													"sid": 994270760152272,
+													"parameters": {
+														"state": "mirrored"
+													}
+												}
+											],
+											"sid": 445596130680115
+										}
+									]
 								}
 							]
 						},
@@ -11043,6 +11167,171 @@
 									"sid": 355244462524429
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-frame-changed",
+									"objectClass": "Player_All",
+									"sid": 467121873431847
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 555784347359202,
+									"parameters": {
+										"animation": "\"TubeThrowing\""
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Player_All",
+									"sid": 723930574683529,
+									"parameters": {
+										"comparison": 0,
+										"number": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 596494977515259,
+									"parameters": {
+										"object-to-create": "Tube",
+										"layer": "Player_All.LayerName",
+										"x": "Player_All.X",
+										"y": "Player_All.Y -20",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Tube",
+									"sid": 945153953921602,
+									"behaviorType": "Физика",
+									"parameters": {
+										"mode": "enabled"
+									}
+								},
+								{
+									"id": "set-immovable",
+									"objectClass": "Tube",
+									"sid": 591764737801025,
+									"behaviorType": "Физика",
+									"parameters": {
+										"setting": "movable"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Tube",
+									"sid": 745456820478196,
+									"parameters": {
+										"object": "HitBox",
+										"layer": "Tube.LayerName",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "HitBox",
+									"sid": 282742200249881,
+									"behaviorType": "Прикрепить",
+									"parameters": {
+										"pin-to": "Tube",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "HitBox",
+									"sid": 487470200547987,
+									"parameters": {
+										"animation": "\"TubeBox\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "apply-impulse-towards-position",
+									"objectClass": "Tube",
+									"sid": 913014602616758,
+									"behaviorType": "Физика",
+									"parameters": {
+										"impulse": "1",
+										"x": "Mouse.X",
+										"y": "Mouse.Y",
+										"image-point": "0"
+									}
+								},
+								{
+									"id": "enabledisable-collisions",
+									"objectClass": "Tube",
+									"sid": 516287110808799,
+									"behaviorType": "Физика",
+									"parameters": {
+										"object": "Enemys",
+										"state": "enable"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "Tube",
+									"sid": 969378205094637,
+									"parameters": {
+										"angle": "angle(Player_All.X, Player_All.Y, Mouse.X, Mouse.Y)"
+									}
+								},
+								{
+									"id": "set-linear-damping",
+									"objectClass": "Tube",
+									"sid": 838145082089997,
+									"disabled": true,
+									"behaviorType": "Физика",
+									"parameters": {
+										"linear-damping": "1.5"
+									}
+								},
+								{
+									"id": "apply-torque",
+									"objectClass": "Tube",
+									"sid": 930251137958963,
+									"disabled": true,
+									"behaviorType": "Физика",
+									"parameters": {
+										"torque": "500"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 394026434652199,
+									"parameters": {
+										"variable": "weapon",
+										"value": "\"noWeapon\""
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Player_All",
+									"sid": 713795347690632,
+									"parameters": {
+										"instance-variable": "kick",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 397795325159987
 						},
 						{
 							"eventType": "block",
@@ -20716,6 +21005,42 @@
 											"eventType": "block",
 											"conditions": [
 												{
+													"id": "compare-instance-variable",
+													"objectClass": "Enemy_Mili",
+													"sid": 584483135605414,
+													"parameters": {
+														"instance-variable": "Finishing",
+														"comparison": 0,
+														"value": "\"Tube\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "Enemy_Mili",
+													"sid": 810179512711361,
+													"parameters": {
+														"animation": "\"DeathTube\"",
+														"from": "current-frame"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Enemy_Mili",
+													"sid": 659020950130946,
+													"parameters": {
+														"instance-variable": "Death",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 598578679529613
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
 													"id": "on-landed",
 													"objectClass": "Enemy_Mili",
 													"sid": 439463500444614,
@@ -21714,6 +22039,91 @@
 														}
 													],
 													"sid": 638208323815089
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-velocity",
+															"objectClass": "Tube",
+															"sid": 308283667342005,
+															"behaviorType": "Физика",
+															"parameters": {
+																"which": "overall-velocity",
+																"comparison": 4,
+																"value": "150"
+															}
+														},
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Tube",
+															"sid": 456591754793579,
+															"parameters": {
+																"object": "Enemy_Mili"
+															}
+														},
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 760834065466471
+														}
+													],
+													"actions": [
+														{
+															"id": "set-enabled",
+															"objectClass": "Enemy_Mili",
+															"sid": 339793221348495,
+															"behaviorType": "Физика",
+															"parameters": {
+																"mode": "enabled"
+															}
+														},
+														{
+															"id": "enabledisable-collisions",
+															"objectClass": "Tube",
+															"sid": 337851847874898,
+															"behaviorType": "Физика",
+															"parameters": {
+																"object": "Enemy_Mili",
+																"state": "enable"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 889025952590130,
+															"parameters": {
+																"seconds": "0.1",
+																"use-timescale": true
+															}
+														},
+														{
+															"id": "enabledisable-collisions",
+															"objectClass": "Tube",
+															"sid": 287263806317245,
+															"behaviorType": "Физика",
+															"parameters": {
+																"object": "Enemy_Mili",
+																"state": "disable"
+															}
+														},
+														{
+															"id": "set-enabled",
+															"objectClass": "Enemy_Mili",
+															"sid": 608390755751400,
+															"behaviorType": "Физика",
+															"parameters": {
+																"mode": "disabled"
+															}
+														},
+														{
+															"id": "destroy",
+															"objectClass": "HitBox",
+															"sid": 491164311419031
+														}
+													],
+													"sid": 802650764156132,
+													"disabled": true
 												},
 												{
 													"eventType": "block",
@@ -23568,6 +23978,449 @@
 													"conditions": [
 														{
 															"id": "compare-velocity",
+															"objectClass": "Tube",
+															"sid": 821498124145784,
+															"behaviorType": "Физика",
+															"parameters": {
+																"which": "overall-velocity",
+																"comparison": 4,
+																"value": "150"
+															}
+														},
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Tube",
+															"sid": 464744924980347,
+															"parameters": {
+																"object": "Enemy_Mili"
+															}
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Enemy_Mili",
+															"sid": 986986751503434,
+															"parameters": {
+																"animation": "\"onGround\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Tube",
+															"sid": 861810255278077,
+															"parameters": {
+																"object": "GlassBox"
+															}
+														},
+														{
+															"id": "pick-random-instance",
+															"objectClass": "System",
+															"sid": 830251244850536,
+															"parameters": {
+																"object": "Enemy_Mili"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Enemy_Mili",
+															"sid": 596763767789631,
+															"parameters": {
+																"instance-variable": "Got",
+																"value": "true"
+															}
+														}
+													],
+													"sid": 907231296126013,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "trigger-once-while-true",
+																	"objectClass": "System",
+																	"sid": 963899094823435
+																},
+																{
+																	"id": "for-each",
+																	"objectClass": "System",
+																	"sid": 290373363853587,
+																	"parameters": {
+																		"object": "Enemy_Mili"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "Audio_Play_Sound",
+																	"sid": 590438728195303,
+																	"parameters": [
+																		"\"Knife\"",
+																		"0",
+																		"\"Damage\""
+																	]
+																}
+															],
+															"sid": 188854600943110
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-overlapping-at-offset",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 639396542965229,
+																	"parameters": {
+																		"object": "Wall",
+																		"offset-x": "0",
+																		"offset-y": "10"
+																	}
+																},
+																{
+																	"id": "is-overlapping-at-offset",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 416475740751855,
+																	"parameters": {
+																		"object": "Wall",
+																		"offset-x": "0",
+																		"offset-y": "-10"
+																	}
+																},
+																{
+																	"id": "is-overlapping-at-offset",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 206743268193631,
+																	"parameters": {
+																		"object": "Skvoz",
+																		"offset-x": "0",
+																		"offset-y": "60"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-animation",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 374860616280455,
+																	"parameters": {
+																		"animation": "\"DeathTube\"",
+																		"from": "beginning"
+																	}
+																},
+																{
+																	"id": "set-boolean-instvar",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 496276512999617,
+																	"parameters": {
+																		"instance-variable": "Death",
+																		"value": "true"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 884405120486029,
+																	"parameters": {
+																		"instance-variable": "Finishing",
+																		"value": "\"Tube\""
+																	}
+																},
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 702227006712747,
+																	"parameters": {
+																		"object": "BloodAll",
+																		"layer": "LayerIndex(\"Blood\")",
+																		"image-point": "Enemy_Mili.ImagePointX(\"Blood\") - Enemy_Mili.ImagePointY(\"Blood\")",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-animation",
+																	"objectClass": "BloodAll",
+																	"sid": 114349240432426,
+																	"parameters": {
+																		"animation": "\"BloodAxe1\"",
+																		"from": "beginning"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 299909369211751,
+																	"parameters": {
+																		"instance-variable": "HP",
+																		"value": "0"
+																	}
+																},
+																{
+																	"id": "destroy",
+																	"objectClass": "Tube",
+																	"sid": 891985177956369
+																}
+															],
+															"sid": 411573282991069,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-overlapping-another-object",
+																			"objectClass": "Enemy_Mili",
+																			"sid": 410057660810672,
+																			"parameters": {
+																				"object": "Wall_Blood"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "spawn-another-object",
+																			"objectClass": "Enemy_Mili",
+																			"sid": 803349590820802,
+																			"parameters": {
+																				"object": "BloodAll",
+																				"layer": "LayerIndex(\"Blood\")",
+																				"image-point": "Enemy_Mili.ImagePointX(\"Blood\") - Enemy_Mili.ImagePointY(\"Blood\")",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "set-animation",
+																			"objectClass": "BloodAll",
+																			"sid": 131496503513748,
+																			"parameters": {
+																				"animation": "\"BloodGlass\"",
+																				"from": "beginning"
+																			}
+																		}
+																	],
+																	"sid": 740347573490153
+																}
+															],
+															"isOrBlock": true
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-overlapping-at-offset",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 678900598430427,
+																	"parameters": {
+																		"object": "LadderStair",
+																		"offset-x": "-10",
+																		"offset-y": "0"
+																	}
+																},
+																{
+																	"id": "is-overlapping-at-offset",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 237805837144506,
+																	"parameters": {
+																		"object": "LadderStair",
+																		"offset-x": "10",
+																		"offset-y": "0"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 707326075038506,
+																	"parameters": {
+																		"instance-variable": "HP",
+																		"value": "0"
+																	}
+																},
+																{
+																	"id": "set-boolean-instvar",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 610052868881728,
+																	"parameters": {
+																		"instance-variable": "Damage",
+																		"value": "true"
+																	}
+																},
+																{
+																	"id": "set-boolean-instvar",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 419612045435681,
+																	"parameters": {
+																		"instance-variable": "triger",
+																		"value": "false"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 681849446353773,
+																	"parameters": {
+																		"instance-variable": "Finishing",
+																		"value": "\"Tube\""
+																	}
+																},
+																{
+																	"id": "destroy",
+																	"objectClass": "Tube",
+																	"sid": 844420077935513
+																}
+															],
+															"sid": 827396379876713,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-animation-playing",
+																			"objectClass": "Enemy_Mili",
+																			"sid": 472874906785496,
+																			"parameters": {
+																				"animation": "\"DeathTube\""
+																			}
+																		},
+																		{
+																			"id": "compare-instance-variable",
+																			"objectClass": "Enemy_Mili",
+																			"sid": 553351734819796,
+																			"parameters": {
+																				"instance-variable": "Finishing",
+																				"comparison": 0,
+																				"value": "\"Tube\""
+																			}
+																		}
+																	],
+																	"actions": [],
+																	"sid": 146921941318826,
+																	"children": [
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "is-overlapping-another-object",
+																					"objectClass": "Enemy_Mili",
+																					"sid": 269778565813958,
+																					"parameters": {
+																						"object": "Wall_Blood"
+																					}
+																				},
+																				{
+																					"id": "compare-instance-variable",
+																					"objectClass": "LadderStair",
+																					"sid": 159976216876613,
+																					"parameters": {
+																						"instance-variable": "Rotate",
+																						"comparison": 0,
+																						"value": "-1"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "spawn-another-object",
+																					"objectClass": "Enemy_Mili",
+																					"sid": 413168591500105,
+																					"parameters": {
+																						"object": "BloodAll",
+																						"layer": "LayerIndex(\"Blood\")",
+																						"image-point": "Enemy_Mili.ImagePointX(\"Blood\") - Enemy_Mili.ImagePointY(\"Blood\")",
+																						"create-hierarchy": false,
+																						"template-name": "\"\""
+																					}
+																				},
+																				{
+																					"id": "set-animation",
+																					"objectClass": "BloodAll",
+																					"sid": 804238253468243,
+																					"parameters": {
+																						"animation": "\"BloodMont\"",
+																						"from": "beginning"
+																					}
+																				},
+																				{
+																					"id": "set-angle",
+																					"objectClass": "BloodAll",
+																					"sid": 193041198561204,
+																					"parameters": {
+																						"angle": "40"
+																					}
+																				}
+																			],
+																			"sid": 385494875525733
+																		},
+																		{
+																			"eventType": "block",
+																			"conditions": [
+																				{
+																					"id": "is-overlapping-another-object",
+																					"objectClass": "Enemy_Mili",
+																					"sid": 346531245527145,
+																					"parameters": {
+																						"object": "Wall_Blood"
+																					}
+																				},
+																				{
+																					"id": "compare-instance-variable",
+																					"objectClass": "LadderStair",
+																					"sid": 242046013757966,
+																					"parameters": {
+																						"instance-variable": "Rotate",
+																						"comparison": 0,
+																						"value": "1"
+																					}
+																				}
+																			],
+																			"actions": [
+																				{
+																					"id": "spawn-another-object",
+																					"objectClass": "Enemy_Mili",
+																					"sid": 698237538801308,
+																					"parameters": {
+																						"object": "BloodAll",
+																						"layer": "LayerIndex(\"Blood\")",
+																						"image-point": "Enemy_Mili.ImagePointX(\"Blood\") - Enemy_Mili.ImagePointY(\"Blood\")",
+																						"create-hierarchy": false,
+																						"template-name": "\"\""
+																					}
+																				},
+																				{
+																					"id": "set-animation",
+																					"objectClass": "BloodAll",
+																					"sid": 411352998581911,
+																					"parameters": {
+																						"animation": "\"BloodMont\"",
+																						"from": "beginning"
+																					}
+																				},
+																				{
+																					"id": "set-angle",
+																					"objectClass": "BloodAll",
+																					"sid": 434400713128678,
+																					"parameters": {
+																						"angle": "140"
+																					}
+																				}
+																			],
+																			"sid": 549714452537883
+																		}
+																	],
+																	"isOrBlock": true
+																}
+															],
+															"isOrBlock": true
+														}
+													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-velocity",
 															"objectClass": "Rose",
 															"sid": 137269191730449,
 															"behaviorType": "Физика",
@@ -25159,6 +26012,15 @@
 														{
 															"id": "is-animation-playing",
 															"objectClass": "Enemy_Mili",
+															"sid": 802844719615952,
+															"parameters": {
+																"animation": "\"DeathTube\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Enemy_Mili",
 															"sid": 995517345414937,
 															"parameters": {
 																"animation": "\"DeathGlass\""
@@ -26091,6 +26953,260 @@
 																		}
 																	],
 																	"sid": 417611751644681
+																}
+															]
+														},
+														{
+															"eventType": "block",
+															"conditions": [
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "Player_All",
+																	"sid": 644638871352730,
+																	"parameters": {
+																		"animation": "\"TubeFinishing\""
+																	}
+																},
+																{
+																	"id": "compare-animation-frame",
+																	"objectClass": "Player_All",
+																	"sid": 126312320457719,
+																	"parameters": {
+																		"comparison": 4,
+																		"number": "1"
+																	}
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 787235142980618,
+																	"parameters": {
+																		"instance-variable": "Finishing",
+																		"comparison": 0,
+																		"value": "\"Baseball\""
+																	},
+																	"isInverted": true
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 880412387683164,
+																	"parameters": {
+																		"instance-variable": "Finishing",
+																		"comparison": 0,
+																		"value": "\"Glass\""
+																	},
+																	"isInverted": true
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 480016293466683,
+																	"parameters": {
+																		"instance-variable": "Finishing",
+																		"comparison": 0,
+																		"value": "\"Bottle\""
+																	},
+																	"isInverted": true
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 346907504906936,
+																	"parameters": {
+																		"instance-variable": "Finishing",
+																		"comparison": 0,
+																		"value": "\"Axe\""
+																	},
+																	"isInverted": true
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 144418278150260,
+																	"parameters": {
+																		"instance-variable": "Finishing",
+																		"comparison": 0,
+																		"value": "\"Extinguisher\""
+																	},
+																	"isInverted": true
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 184965164208214,
+																	"parameters": {
+																		"instance-variable": "Finishing",
+																		"comparison": 0,
+																		"value": "\"noWeapon\""
+																	},
+																	"isInverted": true
+																},
+																{
+																	"id": "compare-instance-variable",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 493183753739515,
+																	"parameters": {
+																		"instance-variable": "Finishing",
+																		"comparison": 0,
+																		"value": "\"Pistol\""
+																	},
+																	"isInverted": true
+																},
+																{
+																	"id": "trigger-once-while-true",
+																	"objectClass": "System",
+																	"sid": 189406540035476
+																},
+																{
+																	"id": "for-each",
+																	"objectClass": "System",
+																	"sid": 448925601373734,
+																	"parameters": {
+																		"object": "Enemy_Mili"
+																	}
+																}
+															],
+															"actions": [
+																{
+																	"callFunction": "Audio_Play_Sound",
+																	"sid": 743715931434481,
+																	"parameters": [
+																		"\"AxeFinishing\"",
+																		"0",
+																		"\"Kick\""
+																	]
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 554501973538955,
+																	"parameters": {
+																		"instance-variable": "HP",
+																		"value": "0"
+																	}
+																},
+																{
+																	"id": "set-instvar-value",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 515006228813444,
+																	"parameters": {
+																		"instance-variable": "Finishing",
+																		"value": "\"Tube\""
+																	}
+																},
+																{
+																	"id": "add-to-instvar",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 874489811308862,
+																	"parameters": {
+																		"instance-variable": "Rough",
+																		"value": "1"
+																	}
+																},
+																{
+																	"id": "set-animation",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 604283638399496,
+																	"parameters": {
+																		"animation": "\"DeathTube\"",
+																		"from": "current-frame"
+																	}
+																},
+																{
+																	"id": "set-animation-frame",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 775036520678204,
+																	"parameters": {
+																		"frame-number": "5"
+																	}
+																},
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 520252029813172,
+																	"parameters": {
+																		"object-to-create": "BloodAll",
+																		"layer": "LayerIndex(\"Blood\")",
+																		"x": "Enemy_Mili.ImagePointX(\"Blood\")",
+																		"y": "Enemy_Mili.ImagePointY(\"Blood\")",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-animation",
+																	"objectClass": "BloodAll",
+																	"sid": 909662947268039,
+																	"parameters": {
+																		"animation": "\"BloodAxe1\"",
+																		"from": "beginning"
+																	}
+																},
+																{
+																	"callFunction": "shakeScreen",
+																	"sid": 410383519784064
+																},
+																{
+																	"callFunction": "shakeScreen2",
+																	"sid": 951120737665843
+																}
+															],
+															"sid": 741404546517371,
+															"children": [
+																{
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "is-overlapping-another-object",
+																			"objectClass": "Enemy_Mili",
+																			"sid": 823925501604777,
+																			"parameters": {
+																				"object": "Wall_Blood"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "create-object",
+																			"objectClass": "System",
+																			"sid": 410755164145542,
+																			"parameters": {
+																				"object-to-create": "BloodAll",
+																				"layer": "LayerIndex(\"Blood\")",
+																				"x": "Enemy_Mili.ImagePointX(\"Blood\")",
+																				"y": "Enemy_Mili.ImagePointY(\"Blood\")",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		}
+																	],
+																	"sid": 795134093767618
+																},
+																{
+																	"eventType": "block",
+																	"conditions": [],
+																	"actions": [
+																		{
+																			"id": "wait",
+																			"objectClass": "System",
+																			"sid": 592490935803431,
+																			"parameters": {
+																				"seconds": "0.3",
+																				"use-timescale": true
+																			}
+																		},
+																		{
+																			"id": "set-eventvar-value",
+																			"objectClass": "System",
+																			"sid": 923736159357857,
+																			"parameters": {
+																				"variable": "weapon",
+																				"value": "\"noWeapon\""
+																			}
+																		}
+																	],
+																	"sid": 117423987839556
 																}
 															]
 														},
@@ -28185,6 +29301,41 @@
 												}
 											],
 											"sid": 943727710304250
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Enemy_Mili",
+													"sid": 290555598630030,
+													"parameters": {
+														"instance-variable": "Finishing",
+														"comparison": 0,
+														"value": "\"Tube\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "Enemy_Mili",
+													"sid": 281761486400779,
+													"parameters": {
+														"animation": "\"TubeDeath\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "Enemy_Mili",
+													"sid": 586262706777607,
+													"parameters": {
+														"frame-number": "5"
+													}
+												}
+											],
+											"sid": 385192863841924
 										},
 										{
 											"eventType": "block",
@@ -32107,7 +33258,7 @@
 												{
 													"id": "set-boolean-instvar",
 													"objectClass": "Enemy_Mili",
-													"sid": 257306810428155,
+													"sid": 560009606508005,
 													"parameters": {
 														"instance-variable": "Damage",
 														"value": "true"
@@ -32132,7 +33283,7 @@
 														{
 															"id": "start-timer",
 															"objectClass": "Enemy_Mili",
-															"sid": 572017157899970,
+															"sid": 718956407094450,
 															"behaviorType": "Таймер",
 															"parameters": {
 																"duration": "1",
@@ -32143,7 +33294,7 @@
 														{
 															"id": "set-boolean-instvar",
 															"objectClass": "Enemy_Mili",
-															"sid": 392057036416785,
+															"sid": 692053251720905,
 															"parameters": {
 																"instance-variable": "triger",
 																"value": "false"
@@ -32152,7 +33303,7 @@
 														{
 															"id": "set-boolean-instvar",
 															"objectClass": "Enemy_Mili",
-															"sid": 447195083464270,
+															"sid": 407810290851557,
 															"parameters": {
 																"instance-variable": "vision",
 																"value": "false"
@@ -32161,7 +33312,7 @@
 														{
 															"id": "set-boolean-instvar",
 															"objectClass": "Enemy_Mili",
-															"sid": 605424890843708,
+															"sid": 171499948408530,
 															"parameters": {
 																"instance-variable": "search",
 																"value": "false"
@@ -32170,7 +33321,7 @@
 														{
 															"id": "set-boolean-instvar",
 															"objectClass": "Enemy_Mili",
-															"sid": 359669048585639,
+															"sid": 860140545660086,
 															"parameters": {
 																"instance-variable": "Kick",
 																"value": "false"
@@ -32179,7 +33330,7 @@
 														{
 															"id": "set-boolean-instvar",
 															"objectClass": "Enemy_Mili",
-															"sid": 399350708667230,
+															"sid": 176990565316765,
 															"parameters": {
 																"instance-variable": "onRamp",
 																"value": "false"
@@ -32188,7 +33339,7 @@
 														{
 															"id": "set-animation",
 															"objectClass": "Enemy_Mili",
-															"sid": 420060655438527,
+															"sid": 231114684988359,
 															"parameters": {
 																"animation": "\"Damage\"",
 																"from": "beginning"
