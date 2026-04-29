@@ -2923,6 +2923,174 @@
 						}
 					],
 					"sid": 184974532601364
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 590437513176407
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "Game_Save",
+							"sid": 361292316927327,
+							"parameters": {
+								"key": "\"Hardcore\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 615796298940944,
+							"parameters": {
+								"key": "\"Hardcore\""
+							}
+						}
+					],
+					"sid": 531873508842856
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "Game_Save",
+							"sid": 232974571300268,
+							"parameters": {
+								"key": "\"Hardcore\""
+							}
+						},
+						{
+							"id": "compare-key",
+							"objectClass": "Game_Save",
+							"sid": 571233710253230,
+							"parameters": {
+								"comparison": 0,
+								"string": "\"True\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 316601565292677,
+							"parameters": {
+								"variable": "Hardcore",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 365615339399485
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "Game_Save",
+							"sid": 475079044621369,
+							"parameters": {
+								"key": "\"Hardcore\""
+							}
+						},
+						{
+							"id": "compare-key",
+							"objectClass": "Game_Save",
+							"sid": 619042975263431,
+							"parameters": {
+								"comparison": 0,
+								"string": "\"False\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 671483520385343,
+							"parameters": {
+								"variable": "Hardcore",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 599481235613546
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 361353292584972,
+							"parameters": {
+								"variable": "Hardcore"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 578159836461113,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Enemy_Mili",
+									"sid": 389337461208821,
+									"parameters": {
+										"animation": "\"Kick\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-speed",
+									"objectClass": "Enemy_Mili",
+									"sid": 566654551051051,
+									"parameters": {
+										"speed": "20"
+									}
+								}
+							],
+							"sid": 403351115424393
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 572610075977761
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 310302028930522,
+									"parameters": {
+										"object": "Enemy_Mili"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Enemy_Mili",
+									"sid": 682195032397706,
+									"parameters": {
+										"instance-variable": "speed",
+										"value": "20"
+									}
+								}
+							],
+							"sid": 408171761237072
+						}
+					]
 				}
 			],
 			"sid": 136729533850613

@@ -1983,6 +1983,15 @@
 					]
 				},
 				{
+					"callFunction": "Audio_Play_Sound",
+					"sid": 488316531992003,
+					"parameters": [
+						"\"End_Scene\"",
+						"0",
+						"\"End_Scene\""
+					]
+				},
+				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 212495219795207,
@@ -2114,6 +2123,92 @@
 								}
 							],
 							"sid": 131000452393174
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 718886695556948,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 699809470087954,
+					"parameters": {
+						"variable": "Hardcore"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 227537849049301,
+					"parameters": {
+						"key": "\"Level\""
+					}
+				}
+			],
+			"sid": 719149581931392,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 468616373057047,
+							"parameters": {
+								"key": "\"Level\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 160102849122908,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Game_Save",
+									"sid": 499707374005219,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Game_Save",
+									"sid": 796711697622186,
+									"parameters": {
+										"comparison": 2,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 293260884979181,
+									"parameters": {
+										"key": "\"Level\"",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 785813097928465
 						}
 					]
 				}

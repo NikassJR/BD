@@ -21005,42 +21005,6 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-instance-variable",
-													"objectClass": "Enemy_Mili",
-													"sid": 584483135605414,
-													"parameters": {
-														"instance-variable": "Finishing",
-														"comparison": 0,
-														"value": "\"Tube\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Enemy_Mili",
-													"sid": 810179512711361,
-													"parameters": {
-														"animation": "\"DeathTube\"",
-														"from": "current-frame"
-													}
-												},
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "Enemy_Mili",
-													"sid": 659020950130946,
-													"parameters": {
-														"instance-variable": "Death",
-														"value": "true"
-													}
-												}
-											],
-											"sid": 598578679529613
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
 													"id": "on-landed",
 													"objectClass": "Enemy_Mili",
 													"sid": 439463500444614,
@@ -21601,257 +21565,6 @@
 												}
 											],
 											"sid": 423869554828062
-										}
-									]
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Enemy_Mili",
-											"sid": 608881719244665,
-											"parameters": {
-												"instance-variable": "HP",
-												"comparison": 3,
-												"value": "0"
-											}
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "Enemy_Mili",
-											"sid": 856729765803349,
-											"parameters": {
-												"instance-variable": "Rolling"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 857595181763769,
-									"disabled": true,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "is-overlapping-at-offset",
-													"objectClass": "Enemy_Mili",
-													"sid": 770888984859611,
-													"parameters": {
-														"object": "LadderStair",
-														"offset-x": "-10",
-														"offset-y": "0"
-													}
-												},
-												{
-													"id": "is-overlapping-at-offset",
-													"objectClass": "Enemy_Mili",
-													"sid": 482098480838447,
-													"parameters": {
-														"object": "LadderStair",
-														"offset-x": "10",
-														"offset-y": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "Enemy_Mili",
-													"sid": 496738290488995,
-													"parameters": {
-														"instance-variable": "Rolling",
-														"value": "true"
-													}
-												},
-												{
-													"id": "set-instvar-value",
-													"objectClass": "Enemy_Mili",
-													"sid": 385774525289547,
-													"parameters": {
-														"instance-variable": "HP",
-														"value": "0"
-													}
-												},
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "Enemy_Mili",
-													"sid": 195344941047407,
-													"parameters": {
-														"instance-variable": "Damage",
-														"value": "true"
-													}
-												},
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "Enemy_Mili",
-													"sid": 393823492177566,
-													"parameters": {
-														"instance-variable": "triger",
-														"value": "false"
-													}
-												},
-												{
-													"id": "set-instvar-value",
-													"objectClass": "Enemy_Mili",
-													"sid": 539594253709150,
-													"parameters": {
-														"instance-variable": "Finishing",
-														"value": "\"Glass\""
-													}
-												},
-												{
-													"id": "destroy",
-													"objectClass": "GlassWeapon",
-													"sid": 516156356307805
-												}
-											],
-											"sid": 561574372046849,
-											"disabled": true,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-animation-playing",
-															"objectClass": "Enemy_Mili",
-															"sid": 450043739714821,
-															"parameters": {
-																"animation": "\"DeathGlass\""
-															}
-														},
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Enemy_Mili",
-															"sid": 390767495476451,
-															"parameters": {
-																"instance-variable": "Finishing",
-																"comparison": 0,
-																"value": "\"Glass\""
-															}
-														}
-													],
-													"actions": [],
-													"sid": 194893343121220,
-													"disabled": true,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "is-overlapping-another-object",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 628437522484235,
-																	"parameters": {
-																		"object": "Wall_Blood"
-																	}
-																},
-																{
-																	"id": "compare-instance-variable",
-																	"objectClass": "LadderStair",
-																	"sid": 647364678178797,
-																	"parameters": {
-																		"instance-variable": "Rotate",
-																		"comparison": 0,
-																		"value": "-1"
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"id": "spawn-another-object",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 340220286311008,
-																	"parameters": {
-																		"object": "BloodAll",
-																		"layer": "LayerIndex(\"Blood\")",
-																		"image-point": "Enemy_Mili.ImagePointX(\"Blood\") - Enemy_Mili.ImagePointY(\"Blood\")",
-																		"create-hierarchy": false,
-																		"template-name": "\"\""
-																	}
-																},
-																{
-																	"id": "set-animation",
-																	"objectClass": "BloodAll",
-																	"sid": 248907627611537,
-																	"parameters": {
-																		"animation": "\"BloodMont\"",
-																		"from": "beginning"
-																	}
-																},
-																{
-																	"id": "set-angle",
-																	"objectClass": "BloodAll",
-																	"sid": 362956820025767,
-																	"parameters": {
-																		"angle": "40"
-																	}
-																}
-															],
-															"sid": 576748602726910,
-															"disabled": true
-														},
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "is-overlapping-another-object",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 234978260677877,
-																	"parameters": {
-																		"object": "Wall_Blood"
-																	}
-																},
-																{
-																	"id": "compare-instance-variable",
-																	"objectClass": "LadderStair",
-																	"sid": 666628224064500,
-																	"parameters": {
-																		"instance-variable": "Rotate",
-																		"comparison": 0,
-																		"value": "1"
-																	}
-																}
-															],
-															"actions": [
-																{
-																	"id": "spawn-another-object",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 331162637645054,
-																	"parameters": {
-																		"object": "BloodAll",
-																		"layer": "LayerIndex(\"Blood\")",
-																		"image-point": "Enemy_Mili.ImagePointX(\"Blood\") - Enemy_Mili.ImagePointY(\"Blood\")",
-																		"create-hierarchy": false,
-																		"template-name": "\"\""
-																	}
-																},
-																{
-																	"id": "set-animation",
-																	"objectClass": "BloodAll",
-																	"sid": 584373435395459,
-																	"parameters": {
-																		"animation": "\"BloodMont\"",
-																		"from": "beginning"
-																	}
-																},
-																{
-																	"id": "set-angle",
-																	"objectClass": "BloodAll",
-																	"sid": 542360401279655,
-																	"parameters": {
-																		"angle": "140"
-																	}
-																}
-															],
-															"sid": 947737550954509,
-															"disabled": true
-														}
-													],
-													"isOrBlock": true
-												}
-											],
-											"isOrBlock": true
 										}
 									]
 								},
@@ -27096,6 +26809,15 @@
 																	}
 																},
 																{
+																	"id": "set-boolean-instvar",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 754479529329010,
+																	"parameters": {
+																		"instance-variable": "Death",
+																		"value": "true"
+																	}
+																},
+																{
 																	"id": "add-to-instvar",
 																	"objectClass": "Enemy_Mili",
 																	"sid": 874489811308862,
@@ -29320,9 +29042,9 @@
 												{
 													"id": "set-animation",
 													"objectClass": "Enemy_Mili",
-													"sid": 281761486400779,
+													"sid": 654912472025122,
 													"parameters": {
-														"animation": "\"TubeDeath\"",
+														"animation": "\"DeathTube\"",
 														"from": "beginning"
 													}
 												},
@@ -30341,6 +30063,41 @@
 												}
 											],
 											"sid": 444810352517848
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Enemy_Mili",
+													"sid": 137317547841872,
+													"parameters": {
+														"instance-variable": "Finishing",
+														"comparison": 0,
+														"value": "\"Tube\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "Enemy_Mili",
+													"sid": 588113444936144,
+													"parameters": {
+														"animation": "\"DeathTube\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "Enemy_Mili",
+													"sid": 721310669983705,
+													"parameters": {
+														"frame-number": "5"
+													}
+												}
+											],
+											"sid": 992747876439984
 										},
 										{
 											"eventType": "block",

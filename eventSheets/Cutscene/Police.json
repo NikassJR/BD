@@ -105,6 +105,29 @@
 					}
 				},
 				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 993803831104941,
+					"parameters": {
+						"seconds": "0.5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 247941186881886,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/Bonus Suicide x Mental Sorrow - from the outside "
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
+				},
+				{
 					"id": "set-group-active",
 					"objectClass": "System",
 					"sid": 824302127892916,
@@ -269,12 +292,12 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 248450273054548,
+							"sid": 225997522764055,
 							"parameters": [
 								"\"Mark4\"",
 								"582",
 								"2",
-								false
+								true
 							]
 						}
 					],
@@ -401,12 +424,12 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 629426074931300,
+							"sid": 184025073596793,
 							"parameters": [
 								"\"Mark4\"",
 								"586",
 								"1",
-								false
+								true
 							]
 						}
 					],
@@ -874,15 +897,6 @@
 			],
 			"actions": [
 				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 443506420507639,
-					"parameters": {
-						"group-name": "\"Player\"",
-						"state": "deactivated"
-					}
-				},
-				{
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 452879824838897,
@@ -936,6 +950,15 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 712371259536692,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
+				},
 				{
 					"id": "set-visible",
 					"objectClass": "press_E",

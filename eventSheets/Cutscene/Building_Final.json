@@ -112,6 +112,20 @@
 						"group-name": "\"Player\"",
 						"state": "activated"
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 747319544356486,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/Start"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
 				}
 			],
 			"sid": 536587910125863
@@ -514,6 +528,15 @@
 							"parameters": {
 								"visibility": "visible"
 							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 289564828319698,
+							"parameters": {
+								"variable": "Silent",
+								"value": "true"
+							}
 						}
 					],
 					"sid": 864300001771187
@@ -521,6 +544,14 @@
 				{
 					"eventType": "block",
 					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Platform_Rupes",
+							"sid": 474844818393274,
+							"parameters": {
+								"object": "Wall"
+							}
+						},
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
@@ -530,11 +561,6 @@
 								"comparison": 0,
 								"value": "5"
 							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 800904775484627
 						}
 					],
 					"actions": [
@@ -542,6 +568,7 @@
 							"id": "wait",
 							"objectClass": "System",
 							"sid": 332257919408563,
+							"disabled": true,
 							"parameters": {
 								"seconds": "0.5",
 								"use-timescale": true
@@ -586,6 +613,46 @@
 							}
 						},
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 835370804999897,
+							"parameters": {
+								"seconds": "2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 781825106216772,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 559431041685174,
+							"parameters": {
+								"variable": "Silent",
+								"value": "false"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 760370264672992,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/Mid"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
+							}
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 571138687796992,
@@ -610,6 +677,15 @@
 							"parameters": {
 								"animation": "\"DeadIdle\"",
 								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_All",
+							"sid": 854612413327964,
+							"parameters": {
+								"instance-variable": "speedWalk",
+								"value": "100"
 							}
 						}
 					],
@@ -736,15 +812,29 @@
 							}
 						},
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 372902924678964,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/End"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
+							}
+						},
+						{
 							"id": "tween-one-property",
 							"objectClass": "Camera",
-							"sid": 333407268645529,
+							"sid": 569041337286811,
 							"behaviorType": "Твинанимация",
 							"parameters": {
 								"tags": "\"\"",
 								"property": "offsetY",
 								"end-value": "700",
-								"time": "4",
+								"time": "8",
 								"ease": "default",
 								"destroy-on-complete": "no",
 								"loop": "no",
@@ -755,13 +845,13 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "Camera",
-							"sid": 241028947682921,
+							"sid": 978283238759985,
 							"behaviorType": "Твинанимация",
 							"parameters": {
 								"tags": "\"\"",
 								"property": "offsetWidth",
 								"end-value": "90",
-								"time": "4",
+								"time": "8",
 								"ease": "default",
 								"destroy-on-complete": "no",
 								"loop": "no",
@@ -772,13 +862,13 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "Camera",
-							"sid": 783967880700140,
+							"sid": 585783457491465,
 							"behaviorType": "Твинанимация",
 							"parameters": {
 								"tags": "\"\"",
 								"property": "offsetHeight",
 								"end-value": "55",
-								"time": "4",
+								"time": "8",
 								"ease": "default",
 								"destroy-on-complete": "no",
 								"loop": "no",
@@ -845,110 +935,6 @@
 				}
 			],
 			"sid": 904971715473871
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 828809259253035,
-					"parameters": {
-						"key": 69
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Door_Card",
-					"sid": 364728227733927,
-					"parameters": {
-						"object": "Player_Police"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "press_E",
-					"sid": 414186735743487,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 355263826247199,
-					"parameters": {
-						"variable": "Start_Game",
-						"value": "true"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 576792837175257,
-					"parameters": {
-						"variable": "onDialMain",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 887063772116266,
-					"parameters": {
-						"variable": "Safe_Zone",
-						"value": "false"
-					}
-				}
-			],
-			"sid": 460470207072325
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Door_Card",
-					"sid": 394141760544950,
-					"parameters": {
-						"object": "Player_Police"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "press_E",
-					"sid": 162122533708869,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 530799597883378
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 659692880377882
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "press_E",
-					"sid": 328891639091283,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 814278780237722
 		},
 		{
 			"eventType": "block",
@@ -1021,9 +1007,9 @@
 				{
 					"id": "set-animation",
 					"objectClass": "Player_All",
-					"sid": 623421282727090,
+					"sid": 615797795093198,
 					"parameters": {
-						"animation": "\"noWeaponDamage\"",
+						"animation": "\"noWeaponDead\"",
 						"from": "beginning"
 					}
 				},
@@ -1051,9 +1037,9 @@
 				{
 					"id": "set-animation-frame",
 					"objectClass": "Player_All",
-					"sid": 100864336455321,
+					"sid": 327521357925634,
 					"parameters": {
-						"frame-number": "0"
+						"frame-number": "2"
 					}
 				},
 				{
@@ -1086,6 +1072,15 @@
 					"parameters": {
 						"group-name": "\"Player\"",
 						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 687836505281811,
+					"parameters": {
+						"variable": "Silent",
+						"value": "true"
 					}
 				}
 			],
@@ -1257,6 +1252,15 @@
 					}
 				},
 				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 720091860787796,
+					"parameters": {
+						"variable": "Silent",
+						"value": "true"
+					}
+				},
+				{
 					"callFunction": "Audio_Play_Sound",
 					"sid": 861640587094684,
 					"parameters": [
@@ -1419,6 +1423,23 @@
 						"0",
 						"\"Crash_Car\""
 					]
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 286077973556651,
+					"parameters": {
+						"variable": "Silent",
+						"value": "false"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 499023920768961,
+					"parameters": {
+						"tag": "\"music\""
+					}
 				}
 			],
 			"sid": 645461956010005
@@ -1446,7 +1467,7 @@
 						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 781605832707260
+							"sid": 326367675831861
 						}
 					],
 					"actions": [],
@@ -1468,13 +1489,13 @@
 								{
 									"id": "tween-one-property",
 									"objectClass": "Platform_Rupes",
-									"sid": 372313317646345,
+									"sid": 585809424218341,
 									"behaviorType": "Твинанимация",
 									"parameters": {
 										"tags": "\"\"",
 										"property": "offsetAngle",
 										"end-value": "110",
-										"time": "0.25",
+										"time": "0.5",
 										"ease": "default",
 										"destroy-on-complete": "no",
 										"loop": "no",
@@ -1484,14 +1505,38 @@
 								}
 							],
 							"sid": 687773039519575
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 180015660499878,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "5"
+							}
 						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 208220686053578
+						}
+					],
+					"actions": [],
+					"sid": 881510335577413,
+					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
 									"id": "is-animation-playing",
 									"objectClass": "Platform_Rupes",
-									"sid": 890483115331910,
+									"sid": 719722068682424,
 									"parameters": {
 										"animation": "\"Pile\""
 									}
@@ -1499,16 +1544,25 @@
 							],
 							"actions": [
 								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 262721318096808,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
 									"id": "set-enabled",
 									"objectClass": "Platform_Rupes",
-									"sid": 527810618943564,
+									"sid": 245883072861201,
 									"behaviorType": "Платформер",
 									"parameters": {
 										"state": "enabled"
 									}
 								}
 							],
-							"sid": 631682495630965
+							"sid": 793210333943943
 						},
 						{
 							"eventType": "block",
@@ -1516,7 +1570,7 @@
 								{
 									"id": "is-animation-playing",
 									"objectClass": "Platform_Rupes",
-									"sid": 622193269126701,
+									"sid": 434413087744234,
 									"parameters": {
 										"animation": "\"Pin2\""
 									}
@@ -1524,9 +1578,18 @@
 							],
 							"actions": [
 								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 165767135726896,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
 									"id": "set-enabled",
 									"objectClass": "Platform_Rupes",
-									"sid": 840019443894438,
+									"sid": 947764188298619,
 									"behaviorType": "Платформер",
 									"parameters": {
 										"state": "enabled"
@@ -1535,7 +1598,7 @@
 								{
 									"id": "set-enabled",
 									"objectClass": "Platform_Rupes",
-									"sid": 216220079091569,
+									"sid": 582903743190132,
 									"behaviorType": "Физика",
 									"parameters": {
 										"mode": "enabled"
@@ -1544,7 +1607,7 @@
 								{
 									"id": "apply-force",
 									"objectClass": "Platform_Rupes",
-									"sid": 167141024008248,
+									"sid": 858918536074819,
 									"behaviorType": "Физика",
 									"parameters": {
 										"force-x": "0",
@@ -1553,7 +1616,7 @@
 									}
 								}
 							],
-							"sid": 683734035966908
+							"sid": 962300372408683
 						}
 					]
 				},
@@ -1695,11 +1758,11 @@
 						},
 						{
 							"callFunction": "Audio_Play_Sound",
-							"sid": 383333171100822,
+							"sid": 262095928257762,
 							"parameters": [
-								"\"BOOM!\"",
+								"\"Save_Stolb\"",
 								"0",
-								"\"BOOM!\""
+								"\"Save_Stolb\""
 							]
 						},
 						{
@@ -1720,6 +1783,15 @@
 								"seconds": "0.3",
 								"use-timescale": true
 							}
+						},
+						{
+							"callFunction": "Audio_Play_Sound",
+							"sid": 363924258095380,
+							"parameters": [
+								"\"BOOM!\"",
+								"0",
+								"\"BOOM!\""
+							]
 						},
 						{
 							"id": "set-animation",

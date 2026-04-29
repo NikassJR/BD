@@ -135,11 +135,26 @@
 				{
 					"callFunction": "Audio_Play_Sound",
 					"sid": 501514665219182,
+					"disabled": true,
 					"parameters": [
 						"\"Start_Sub\"",
 						"0",
 						"\"Start_Sub\""
 					]
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 148892242844581,
+					"parameters": {
+						"audio-file": {
+							"path": "Start_Sub"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
 				},
 				{
 					"id": "wait",
@@ -739,13 +754,14 @@
 							}
 						},
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Player_All",
-							"sid": 180496641342292,
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 541898347778765,
 							"parameters": {
-								"object": "Text_logo",
+								"object-to-create": "Text_logo",
 								"layer": "\"Player\"",
-								"image-point": "0",
+								"x": "1350",
+								"y": "420",
 								"create-hierarchy": false,
 								"template-name": "\"\""
 							}
@@ -753,9 +769,9 @@
 						{
 							"id": "set-width",
 							"objectClass": "Text_logo",
-							"sid": 949560038333066,
+							"sid": 710556592206727,
 							"parameters": {
-								"width": "200"
+								"width": "250"
 							}
 						},
 						{
@@ -809,6 +825,31 @@
 							"sid": 666689214191688,
 							"parameters": {
 								"color": "rgbEx(255, 255, 255)"
+							}
+						},
+						{
+							"id": "set-font-size",
+							"objectClass": "Text_logo",
+							"sid": 655018845171645,
+							"parameters": {
+								"size-pt": "12"
+							}
+						},
+						{
+							"id": "set-height",
+							"objectClass": "Text_logo",
+							"sid": 733050278424642,
+							"parameters": {
+								"height": "25"
+							}
+						},
+						{
+							"id": "set-font-face",
+							"objectClass": "Text_logo",
+							"sid": 932716564333571,
+							"parameters": {
+								"font-face": "\"Pixel\"",
+								"style": "normal"
 							}
 						},
 						{
@@ -1100,11 +1141,26 @@
 				{
 					"callFunction": "Audio_Play_Sound",
 					"sid": 918910241363655,
+					"disabled": true,
 					"parameters": [
 						"\"End_Sub\"",
 						"0",
 						"\"End_Sub\""
 					]
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 882149207533527,
+					"parameters": {
+						"audio-file": {
+							"path": "End_Sub"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
 				},
 				{
 					"id": "wait",
@@ -1149,11 +1205,6 @@
 						"instance-variable": "Trigger",
 						"value": "true"
 					}
-				},
-				{
-					"id": "stop-all",
-					"objectClass": "Audio",
-					"sid": 330092408144334
 				},
 				{
 					"id": "tween-one-property",

@@ -12,6 +12,16 @@
 			"sid": 111994761376978
 		},
 		{
+			"eventType": "variable",
+			"name": "Silent",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 234808439553556
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Audio4",
@@ -1252,6 +1262,79 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
+							"sid": 867270140911564,
+							"parameters": {
+								"variable": "Silent"
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 235177967103677,
+							"disabled": true,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "fade-volume",
+							"objectClass": "Audio",
+							"sid": 875803237521545,
+							"parameters": {
+								"tag": "\"music\"",
+								"db": "-25",
+								"duration": "1",
+								"ending": "keep-playing"
+							}
+						}
+					],
+					"sid": 702269265055054
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 316917263244092,
+							"parameters": {
+								"variable": "Silent"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 522219199485409,
+							"disabled": true,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "fade-volume",
+							"objectClass": "Audio",
+							"sid": 984013589232103,
+							"parameters": {
+								"tag": "\"music\"",
+								"db": "Sound",
+								"duration": "0.25",
+								"ending": "keep-playing"
+							}
+						}
+					],
+					"sid": 615461067148132
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
 							"sid": 887681773321645,
 							"parameters": {
 								"variable": "Start_Game"
@@ -1273,6 +1356,15 @@
 							"sid": 117948110703710,
 							"parameters": {
 								"variable": "Continue_Game"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 609040102524354,
+							"parameters": {
+								"variable": "Silent"
 							},
 							"isInverted": true
 						}

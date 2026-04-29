@@ -2792,6 +2792,96 @@
 				}
 			],
 			"sid": 295500992254790
+		},
+		{
+			"eventType": "comment",
+			"text": "Hardcore"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 661942131958678,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 425449211595462,
+					"parameters": {
+						"variable": "Hardcore"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 795935107206841,
+					"parameters": {
+						"key": "\"HardcoreLevel\""
+					}
+				}
+			],
+			"sid": 774958855951275,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 762216803413719,
+							"parameters": {
+								"key": "\"HardcoreLevel\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 783923405256325,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Game_Save",
+									"sid": 663522340927827,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"HardcoreLevel\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Game_Save",
+									"sid": 959830272829823,
+									"parameters": {
+										"comparison": 2,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 809972251165724,
+									"parameters": {
+										"key": "\"HardcoreLevel\"",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 509009058169229
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 254775127056567
