@@ -1192,49 +1192,16 @@
 					],
 					"actions": [
 						{
-							"id": "spawn-another-object",
-							"objectClass": "Camera",
-							"sid": 586008382268166,
-							"parameters": {
-								"object": "Shadow3",
-								"layer": "7",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "Shadow3",
-							"sid": 335583250537748,
-							"parameters": {
-								"opacity": "0"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "Shadow3",
-							"sid": 566829629607135,
-							"parameters": {
-								"scale": "2"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 612426822298104,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
+							"callFunction": "End_Scene2",
+							"sid": 263616939215289,
+							"parameters": [
+								"100",
+								"1",
+								"0",
+								false,
+								false,
+								false
+							]
 						},
 						{
 							"id": "set-boolean-eventvar",
@@ -1646,6 +1613,18 @@
 					],
 					"actions": [
 						{
+							"callFunction": "End_Scene2",
+							"sid": 477347169175127,
+							"parameters": [
+								"100",
+								"1",
+								"0",
+								false,
+								false,
+								false
+							]
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 316115198627498,
@@ -1661,51 +1640,6 @@
 							"parameters": {
 								"key": "\"Hardcore\"",
 								"value": "Hardcore"
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Camera",
-							"sid": 336694655653657,
-							"parameters": {
-								"object": "Shadow3",
-								"layer": "7",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "Shadow3",
-							"sid": 451197881188859,
-							"parameters": {
-								"opacity": "0"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "Shadow3",
-							"sid": 262991443119187,
-							"parameters": {
-								"scale": "2"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 926730644910890,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
 							}
 						},
 						{
@@ -1788,6 +1722,18 @@
 					],
 					"actions": [
 						{
+							"callFunction": "End_Scene2",
+							"sid": 802464360544953,
+							"parameters": [
+								"100",
+								"1",
+								"0",
+								false,
+								false,
+								false
+							]
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 726645796579662,
@@ -1803,51 +1749,6 @@
 							"parameters": {
 								"key": "\"Hardcore\"",
 								"value": "Hardcore"
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Camera",
-							"sid": 268044345810345,
-							"parameters": {
-								"object": "Shadow3",
-								"layer": "7",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "Shadow3",
-							"sid": 185986163399963,
-							"parameters": {
-								"opacity": "0"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "Shadow3",
-							"sid": 590966710117095,
-							"parameters": {
-								"scale": "2"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 843925350470367,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
 							}
 						},
 						{
@@ -5377,6 +5278,15 @@
 											}
 										},
 										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 223069987146557,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
+											}
+										},
+										{
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 559651648265854,
@@ -5550,6 +5460,15 @@
 											}
 										},
 										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 492846617627467,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
+											}
+										},
+										{
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 691226432729004,
@@ -5699,6 +5618,15 @@
 											"parameters": {
 												"variable": "Hardcore",
 												"value": "true"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 926364208889908,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
 											}
 										},
 										{
@@ -5854,6 +5782,15 @@
 											}
 										},
 										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 393163503386829,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
+											}
+										},
+										{
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 789024739989237,
@@ -6003,6 +5940,15 @@
 											"parameters": {
 												"variable": "Hardcore",
 												"value": "true"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 217247166726060,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
 											}
 										},
 										{
@@ -6158,6 +6104,15 @@
 											}
 										},
 										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 706257916601204,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
+											}
+										},
+										{
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 643853585774286,
@@ -6307,6 +6262,15 @@
 											"parameters": {
 												"variable": "Hardcore",
 												"value": "true"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 424922748227985,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
 											}
 										},
 										{
@@ -6462,6 +6426,15 @@
 											}
 										},
 										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 330541790770601,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
+											}
+										},
+										{
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 145823153067222,
@@ -6611,6 +6584,15 @@
 											"parameters": {
 												"variable": "Hardcore",
 												"value": "true"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 483744782319658,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
 											}
 										},
 										{
@@ -6766,6 +6748,15 @@
 											}
 										},
 										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 179104872586141,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
+											}
+										},
+										{
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 226057048431617,
@@ -6915,6 +6906,15 @@
 											"parameters": {
 												"variable": "Hardcore",
 												"value": "true"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 789759908548278,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
 											}
 										},
 										{
@@ -7070,6 +7070,15 @@
 											}
 										},
 										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 643083206628267,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
+											}
+										},
+										{
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 503881731498697,
@@ -7222,6 +7231,15 @@
 											}
 										},
 										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 138808668664943,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
+											}
+										},
+										{
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 153827158430105,
@@ -7371,6 +7389,15 @@
 											"parameters": {
 												"variable": "Hardcore",
 												"value": "true"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 254836944234791,
+											"parameters": {
+												"key": "\"Hardcore\"",
+												"value": "Hardcore"
 											}
 										},
 										{

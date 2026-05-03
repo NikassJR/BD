@@ -151,11 +151,13 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 820629471201615,
+							"sid": 219482462518789,
 							"parameters": [
 								"\"Mark7\"",
 								"721",
 								"3",
+								false,
+								true,
 								false
 							]
 						}
@@ -184,12 +186,14 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 475496134121800,
+							"sid": 781827892675217,
 							"parameters": [
 								"\"Security\"",
 								"722",
 								"4",
-								false
+								false,
+								false,
+								true
 							]
 						}
 					],
@@ -565,6 +569,132 @@
 				}
 			],
 			"sid": 694467781053599
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 460155657168683,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 861053419365868
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 464930556238033,
+					"parameters": {
+						"key": "\"Enemys\""
+					}
+				}
+			],
+			"sid": 672625787098340,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 875755009082753,
+							"parameters": {
+								"key": "\"Enemys\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "Enemys_Number",
+							"sid": 909293394289637,
+							"parameters": {
+								"json": "Game_Save.ItemValue"
+							}
+						}
+					],
+					"sid": 188594042488505,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Enemys_Number",
+									"sid": 669200505579657,
+									"parameters": {
+										"key": "\"Garage_Mark_lvl13\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-key",
+									"objectClass": "Enemys_Number",
+									"sid": 666874479612328,
+									"parameters": {
+										"key": "\"Garage_Mark_lvl13\"",
+										"value": "Enemys"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 718598207771249,
+									"parameters": {
+										"key": "\"Enemys\"",
+										"value": "Enemys_Number.AsJSON"
+									}
+								}
+							],
+							"sid": 221720168047727
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Enemys_Number",
+									"sid": 583095142841228,
+									"parameters": {
+										"key": "\"Garage_Mark_lvl13\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "Enemys_Number",
+									"sid": 186734694047582,
+									"parameters": {
+										"key": "\"Garage_Mark_lvl13\"",
+										"value": "Enemys"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 607518845984740,
+									"parameters": {
+										"key": "\"Enemys\"",
+										"value": "Enemys_Number.AsJSON"
+									}
+								}
+							],
+							"sid": 943775907183856
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 438866835001913

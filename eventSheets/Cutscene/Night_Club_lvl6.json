@@ -1717,11 +1717,13 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 483485092798967,
+							"sid": 747851622618840,
 							"parameters": [
 								"\"Mark7\"",
 								"356",
 								"2",
+								false,
+								true,
 								false
 							]
 						}
@@ -1755,6 +1757,8 @@
 								"\"Club_Boss\"",
 								"357",
 								"2",
+								false,
+								false,
 								false
 							]
 						}
@@ -1783,11 +1787,13 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 756258632187374,
+							"sid": 549285111081430,
 							"parameters": [
 								"\"Mark7\"",
 								"358",
 								"1",
+								false,
+								true,
 								false
 							]
 						}
@@ -1821,6 +1827,8 @@
 								"\"Club_Boss\"",
 								"359",
 								"2",
+								false,
+								false,
 								false
 							]
 						}
@@ -1849,11 +1857,13 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 466789223085910,
+							"sid": 372930556575077,
 							"parameters": [
 								"\"Mark7\"",
 								"360",
 								"1",
+								false,
+								true,
 								false
 							]
 						},
@@ -1958,11 +1968,13 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 764643808089970,
+							"sid": 694367949165828,
 							"parameters": [
 								"\"Mark7\"",
 								"361",
 								"1",
+								false,
+								true,
 								false
 							]
 						}
@@ -1996,6 +2008,8 @@
 								"\"Club_Boss1\"",
 								"362",
 								"1",
+								false,
+								false,
 								false
 							]
 						}
@@ -2024,11 +2038,13 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 283425302118387,
+							"sid": 973717150634749,
 							"parameters": [
 								"\"Mark7\"",
 								"363",
 								"1",
+								false,
+								true,
 								false
 							]
 						}
@@ -2062,6 +2078,8 @@
 								"\"Club_Boss1\"",
 								"364",
 								"1",
+								false,
+								false,
 								false
 							]
 						}
@@ -2090,11 +2108,13 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 865050375548508,
+							"sid": 143783139510248,
 							"parameters": [
 								"\"Mark13\"",
 								"365",
 								"1",
+								false,
+								true,
 								false
 							]
 						},
@@ -2229,6 +2249,15 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 997534655965874,
+					"parameters": {
+						"variable": "Hardcore"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -2292,6 +2321,218 @@
 								}
 							],
 							"sid": 921809236569284
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 137498516432388,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 353391400999707,
+					"parameters": {
+						"variable": "Hardcore"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 916749831447523,
+					"parameters": {
+						"key": "\"HardcoreLevel\""
+					}
+				}
+			],
+			"sid": 252709846064171,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 393805990075281,
+							"parameters": {
+								"key": "\"HardcoreLevel\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 628491022297445,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Game_Save",
+									"sid": 328741698615550,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"HardcoreLevel\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Game_Save",
+									"sid": 614550283999104,
+									"parameters": {
+										"comparison": 2,
+										"value": "8"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 906452540259351,
+									"parameters": {
+										"key": "\"HardcoreLevel\"",
+										"value": "8"
+									}
+								}
+							],
+							"sid": 949365094518433
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 461607289542937,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 682922182889177
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 734706785693296,
+					"parameters": {
+						"key": "\"Enemys\""
+					}
+				}
+			],
+			"sid": 271643947524570,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 407001015434064,
+							"parameters": {
+								"key": "\"Enemys\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "Enemys_Number",
+							"sid": 809324929013886,
+							"parameters": {
+								"json": "Game_Save.ItemValue"
+							}
+						}
+					],
+					"sid": 505831186805772,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Enemys_Number",
+									"sid": 993357064691231,
+									"parameters": {
+										"key": "\"Night_Club_lvl6\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-key",
+									"objectClass": "Enemys_Number",
+									"sid": 385742130265601,
+									"parameters": {
+										"key": "\"Night_Club_lvl6\"",
+										"value": "Enemys"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 263159598353120,
+									"parameters": {
+										"key": "\"Enemys\"",
+										"value": "Enemys_Number.AsJSON"
+									}
+								}
+							],
+							"sid": 933306318511866
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Enemys_Number",
+									"sid": 274625450332616,
+									"parameters": {
+										"key": "\"Night_Club_lvl6\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "Enemys_Number",
+									"sid": 308668065281075,
+									"parameters": {
+										"key": "\"Night_Club_lvl6\"",
+										"value": "Enemys"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 671941827602842,
+									"parameters": {
+										"key": "\"Enemys\"",
+										"value": "Enemys_Number.AsJSON"
+									}
+								}
+							],
+							"sid": 710762012539842
 						}
 					]
 				}

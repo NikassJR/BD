@@ -150,127 +150,76 @@
 						{
 							"id": "is-tag-playing",
 							"objectClass": "Audio",
-							"sid": 520322957137114,
-							"disabled": true,
+							"sid": 717389041868010,
 							"parameters": {
-								"tag": "\"audio\""
+								"tag": "\"Vibe\""
 							}
-						},
-						{
-							"id": "is-tag-playing",
-							"objectClass": "Audio",
-							"sid": 625812635666170,
-							"disabled": true,
-							"parameters": {
-								"tag": "\"Damage\""
-							}
-						},
-						{
-							"id": "is-tag-playing",
-							"objectClass": "Audio",
-							"sid": 186961523250919,
-							"disabled": true,
-							"parameters": {
-								"tag": "\"Fire\""
-							}
-						},
-						{
-							"id": "is-tag-playing",
-							"objectClass": "Audio",
-							"sid": 752119596387433,
-							"disabled": true,
-							"parameters": {
-								"tag": "\"Walk\""
-							}
-						},
-						{
-							"id": "is-tag-playing",
-							"objectClass": "Audio",
-							"sid": 777660294112948,
-							"disabled": true,
-							"parameters": {
-								"tag": "\"Water\""
-							}
-						},
-						{
-							"id": "is-tag-playing",
-							"objectClass": "Audio",
-							"sid": 419150200884672,
-							"disabled": true,
-							"parameters": {
-								"tag": "\"Kick\""
-							}
-						},
-						{
-							"id": "is-any-playing",
-							"objectClass": "Audio",
-							"sid": 998499988464477
 						}
 					],
 					"actions": [
 						{
 							"id": "set-volume",
 							"objectClass": "Audio",
-							"sid": 513683477023729,
-							"disabled": true,
+							"sid": 958109133860778,
 							"parameters": {
-								"tag": "\"audio\"",
-								"db": "Audio"
-							}
-						},
-						{
-							"id": "set-volume",
-							"objectClass": "Audio",
-							"sid": 634536742419205,
-							"disabled": true,
-							"parameters": {
-								"tag": "\"Damage\"",
-								"db": "Audio"
-							}
-						},
-						{
-							"id": "set-volume",
-							"objectClass": "Audio",
-							"sid": 889749718797814,
-							"disabled": true,
-							"parameters": {
-								"tag": "\"Fire\"",
-								"db": "Audio"
-							}
-						},
-						{
-							"id": "set-volume",
-							"objectClass": "Audio",
-							"sid": 729911799982136,
-							"disabled": true,
-							"parameters": {
-								"tag": "\"Water\"",
-								"db": "Audio"
-							}
-						},
-						{
-							"id": "set-volume",
-							"objectClass": "Audio",
-							"sid": 785010183286113,
-							"disabled": true,
-							"parameters": {
-								"tag": "\"Walk\"",
-								"db": "Audio"
-							}
-						},
-						{
-							"id": "set-volume",
-							"objectClass": "Audio",
-							"sid": 699903756075701,
-							"disabled": true,
-							"parameters": {
-								"tag": "\"Kick\"",
+								"tag": "\"Vibe\"",
 								"db": "Audio"
 							}
 						}
 					],
 					"sid": 621080014772644,
-					"disabled": true,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 205767409157538,
+							"parameters": {
+								"tag": "\"Text\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 216339390596711,
+							"parameters": {
+								"tag": "\"Text\"",
+								"db": "Audio"
+							}
+						}
+					],
+					"sid": 532015587447812,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 351418236598236,
+							"parameters": {
+								"tag": "\"VibeCity\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 195821821228423,
+							"parameters": {
+								"tag": "\"VibeCity\"",
+								"db": "Audio"
+							}
+						}
+					],
+					"sid": 783930201000619,
 					"isOrBlock": true
 				},
 				{
@@ -2154,30 +2103,106 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-start-of-layout",
+					"id": "trigger-once-while-true",
 					"objectClass": "System",
-					"sid": 249503178806690
+					"sid": 274725155988481
 				},
 				{
 					"id": "for-each",
 					"objectClass": "System",
-					"sid": 911069453572958,
+					"sid": 913197683654788,
 					"parameters": {
 						"object": "Audio_cube"
 					}
-				},
+				}
+			],
+			"actions": [
 				{
-					"id": "for-each",
-					"objectClass": "System",
-					"sid": 743606594780204,
+					"id": "play-at-object",
+					"objectClass": "Audio",
+					"sid": 106193204529664,
 					"parameters": {
-						"object": "Audio_Konveer"
+						"audio-file": {
+							"path": "Music/City_Under"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"object": "Audio_cube",
+						"inner-angle": "360",
+						"outer-angle": "360",
+						"outer-gain": "0",
+						"tag-optional": "\"VibeCity\""
 					}
 				},
 				{
+					"id": "set-listener-object",
+					"objectClass": "Audio",
+					"sid": 644686341257775,
+					"parameters": {
+						"object": "Player_All"
+					}
+				}
+			],
+			"sid": 207312446088897
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 285090426155142
+				},
+				{
 					"id": "for-each",
 					"objectClass": "System",
-					"sid": 114943203861907,
+					"sid": 286464528329902,
+					"parameters": {
+						"object": "Audio_Konveer"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play-at-object",
+					"objectClass": "Audio",
+					"sid": 246477137865816,
+					"parameters": {
+						"audio-file": {
+							"path": "Konveer"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"object": "Audio_Forest",
+						"inner-angle": "360",
+						"outer-angle": "360",
+						"outer-gain": "0",
+						"tag-optional": "\"VibeCity\""
+					}
+				},
+				{
+					"id": "set-listener-object",
+					"objectClass": "Audio",
+					"sid": 237442187816714,
+					"parameters": {
+						"object": "Player_All"
+					}
+				}
+			],
+			"sid": 777520113040247
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 423959898596442
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 711002131298436,
 					"parameters": {
 						"object": "Audio_Lamp"
 					}
@@ -2187,74 +2212,76 @@
 				{
 					"id": "play-at-object",
 					"objectClass": "Audio",
-					"sid": 975596496542404,
-					"parameters": {
-						"audio-file": {
-							"path": "Music/Underground/City_Under"
-						},
-						"loop": "looping",
-						"volume": "0",
-						"object": "Audio_cube",
-						"inner-angle": "360",
-						"outer-angle": "360",
-						"outer-gain": "0",
-						"tag-optional": "\"audio\""
-					}
-				},
-				{
-					"id": "play-at-object",
-					"objectClass": "Audio",
-					"sid": 928586645636437,
+					"sid": 857387599857225,
 					"parameters": {
 						"audio-file": {
 							"path": "Lamp"
 						},
 						"loop": "looping",
 						"volume": "0",
-						"object": "Audio_Lamp",
+						"object": "Audio_Forest",
 						"inner-angle": "360",
 						"outer-angle": "360",
 						"outer-gain": "0",
-						"tag-optional": "\"audio\""
-					}
-				},
-				{
-					"id": "play-at-object",
-					"objectClass": "Audio",
-					"sid": 645004534680284,
-					"parameters": {
-						"audio-file": {
-							"path": "Konveer"
-						},
-						"loop": "looping",
-						"volume": "0",
-						"object": "Audio_Konveer",
-						"inner-angle": "360",
-						"outer-angle": "360",
-						"outer-gain": "0",
-						"tag-optional": "\"audio\""
+						"tag-optional": "\"VibeCity\""
 					}
 				},
 				{
 					"id": "set-listener-object",
 					"objectClass": "Audio",
-					"sid": 160718232469591,
+					"sid": 583469907351930,
 					"parameters": {
 						"object": "Player_All"
 					}
-				},
-				{
-					"callFunction": "Audio_Play_Sound",
-					"sid": 780226286803527,
-					"parameters": [
-						"\"\"",
-						"-100",
-						"\"\""
-					]
 				}
 			],
-			"sid": 166207977275511,
-			"disabled": true
+			"sid": 196414012490316
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 352315779042392
+				},
+				{
+					"id": "for-each",
+					"objectClass": "System",
+					"sid": 276150360134506,
+					"parameters": {
+						"object": "Audio_Forest"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play-at-object",
+					"objectClass": "Audio",
+					"sid": 869722199034465,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/Forest"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"object": "Audio_Forest",
+						"inner-angle": "360",
+						"outer-angle": "360",
+						"outer-gain": "0",
+						"tag-optional": "\"VibeCity\""
+					}
+				},
+				{
+					"id": "set-listener-object",
+					"objectClass": "Audio",
+					"sid": 586785274047456,
+					"parameters": {
+						"object": "Player_All"
+					}
+				}
+			],
+			"sid": 267910164734367
 		},
 		{
 			"eventType": "group",
@@ -2869,11 +2896,11 @@
 													"actions": [
 														{
 															"callFunction": "Audio_Play_Sound",
-															"sid": 366572139708160,
+															"sid": 849392231350450,
 															"parameters": [
 																"\"Kick\"",
 																"0",
-																"\"Fire\""
+																"\"Kick\""
 															]
 														}
 													],
@@ -2944,11 +2971,11 @@
 													"actions": [
 														{
 															"callFunction": "Audio_Play_Sound",
-															"sid": 335686252219865,
+															"sid": 594394403948138,
 															"parameters": [
 																"\"Kick\"",
 																"0",
-																"\"Fire\""
+																"\"Kick\""
 															]
 														}
 													],
@@ -2982,11 +3009,11 @@
 							"actions": [
 								{
 									"callFunction": "Audio_Play_Sound",
-									"sid": 623014774915730,
+									"sid": 331320139003341,
 									"parameters": [
 										"\"Gless\"",
 										"0",
-										"\"Fire\""
+										"\"Gless\""
 									]
 								}
 							],
@@ -3012,11 +3039,11 @@
 							"actions": [
 								{
 									"callFunction": "Audio_Play_Sound",
-									"sid": 239115965338223,
+									"sid": 985019859593044,
 									"parameters": [
 										"\"ChairCrash\"",
 										"0",
-										"\"Fire\""
+										"\"ChairCrash\""
 									]
 								}
 							],
@@ -3101,11 +3128,11 @@
 													"actions": [
 														{
 															"callFunction": "Audio_Play_Sound",
-															"sid": 380606876328903,
+															"sid": 849400106931746,
 															"parameters": [
 																"\"MetallProps\"",
 																"0",
-																"\"Fire\""
+																"\"MetallProps\""
 															]
 														}
 													],
@@ -3164,11 +3191,11 @@
 							"actions": [
 								{
 									"callFunction": "Audio_Play_Sound",
-									"sid": 655205545087856,
+									"sid": 499993749848227,
 									"parameters": [
 										"\"AxeFinishing\"",
 										"0",
-										"\"Kick\""
+										"\"AxeFinishing\""
 									]
 								}
 							],
@@ -3210,11 +3237,11 @@
 							"actions": [
 								{
 									"callFunction": "Audio_Play_Sound",
-									"sid": 687543328914483,
+									"sid": 339696523902723,
 									"parameters": [
 										"\"AxeFinishing\"",
 										"0",
-										"\"Kick\""
+										"\"AxeFinishing\""
 									]
 								}
 							],
@@ -3286,11 +3313,11 @@
 											"actions": [
 												{
 													"callFunction": "Audio_Play_Sound",
-													"sid": 208336229991142,
+													"sid": 640867490802294,
 													"parameters": [
 														"\"FinishingnoWeapon\"",
 														"0",
-														"\"Kick\""
+														"\"FinishingnoWeapon\""
 													]
 												}
 											],
@@ -3368,11 +3395,11 @@
 											"actions": [
 												{
 													"callFunction": "Audio_Play_Sound",
-													"sid": 628651604821440,
+													"sid": 631889645350031,
 													"parameters": [
 														"\"FinishingnoWeapon\"",
 														"0",
-														"\"Kick\""
+														"\"FinishingnoWeapon\""
 													]
 												}
 											],
@@ -3466,11 +3493,11 @@
 											"actions": [
 												{
 													"callFunction": "Audio_Play_Sound",
-													"sid": 507508089119198,
+													"sid": 350860432667843,
 													"parameters": [
 														"\"BaseballFinishing\"",
 														"0",
-														"\"Kick\""
+														"\"BaseballFinishing\""
 													]
 												}
 											],
@@ -3564,11 +3591,11 @@
 											"actions": [
 												{
 													"callFunction": "Audio_Play_Sound",
-													"sid": 526621248862216,
+													"sid": 728028393087170,
 													"parameters": [
 														"\"BaseballFinishing\"",
 														"0",
-														"\"Kick\""
+														"\"BaseballFinishing\""
 													]
 												}
 											],
@@ -3678,11 +3705,11 @@
 											"actions": [
 												{
 													"callFunction": "Audio_Play_Sound",
-													"sid": 306719777623355,
+													"sid": 245448827469076,
 													"parameters": [
 														"\"KnifeFinishing\"",
 														"0",
-														"\"Kick\""
+														"\"KnifeFinishing\""
 													]
 												}
 											],
@@ -3792,11 +3819,11 @@
 											"actions": [
 												{
 													"callFunction": "Audio_Play_Sound",
-													"sid": 206723467467511,
+													"sid": 352012741950913,
 													"parameters": [
 														"\"KnifeFinishing\"",
 														"0",
-														"\"Kick\""
+														"\"KnifeFinishing\""
 													]
 												}
 											],
@@ -3842,11 +3869,11 @@
 					"actions": [
 						{
 							"callFunction": "Audio_Play_Sound",
-							"sid": 186985996513217,
+							"sid": 957842224789183,
 							"parameters": [
 								"\"GlessDestroy\"",
 								"0",
-								"\"Fire\""
+								"\"GlessDestroy\""
 							]
 						},
 						{
@@ -3892,11 +3919,11 @@
 					"actions": [
 						{
 							"callFunction": "Audio_Play_Sound",
-							"sid": 353128560047753,
+							"sid": 348587859100218,
 							"parameters": [
 								"\"Gless\"",
 								"0",
-								"\"Fire\""
+								"\"Gless\""
 							]
 						},
 						{
@@ -3963,11 +3990,11 @@
 							"actions": [
 								{
 									"callFunction": "Audio_Play_Sound",
-									"sid": 508552892765882,
+									"sid": 389386762492810,
 									"parameters": [
 										"\"Player_Chain\"",
 										"0",
-										"\"Kick\""
+										"\"Player_Chain\""
 									]
 								}
 							],
@@ -4028,11 +4055,11 @@
 							"actions": [
 								{
 									"callFunction": "Audio_Play_Sound",
-									"sid": 790314955501891,
+									"sid": 288137828860050,
 									"parameters": [
 										"\"Player_Chain2\"",
 										"0",
-										"\"Kick\""
+										"\"Player_Chain2\""
 									]
 								}
 							],
@@ -4077,11 +4104,11 @@
 							"actions": [
 								{
 									"callFunction": "Audio_Play_Sound",
-									"sid": 273152034512749,
+									"sid": 290947488423767,
 									"parameters": [
 										"\"Player_Chain2\"",
 										"0",
-										"\"Kick\""
+										"\"Player_Chain2\""
 									]
 								}
 							],

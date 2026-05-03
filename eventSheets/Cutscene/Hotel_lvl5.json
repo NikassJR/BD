@@ -920,12 +920,14 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 888047494805724,
+							"sid": 327016375236901,
 							"parameters": [
 								"\"Boss\"",
 								"271",
 								"2",
-								false
+								false,
+								false,
+								true
 							]
 						}
 					],
@@ -958,6 +960,8 @@
 								"\"Scientists\"",
 								"272",
 								"2",
+								false,
+								false,
 								false
 							]
 						}
@@ -986,12 +990,14 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 932835579978138,
+							"sid": 873242544680359,
 							"parameters": [
 								"\"Boss\"",
 								"273",
 								"2",
-								false
+								false,
+								false,
+								true
 							]
 						}
 					],
@@ -1024,6 +1030,8 @@
 								"\"Scientists\"",
 								"274",
 								"2",
+								false,
+								false,
 								false
 							]
 						}
@@ -1052,12 +1060,14 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 597149858722361,
+							"sid": 174892059968395,
 							"parameters": [
 								"\"Boss\"",
 								"275",
 								"2",
-								false
+								false,
+								false,
+								true
 							]
 						}
 					],
@@ -1099,9 +1109,9 @@
 				{
 					"id": "set-visible",
 					"objectClass": "press_E",
-					"sid": 551483618695235,
+					"sid": 586901269435881,
 					"parameters": {
-						"visibility": "visible"
+						"visibility": "toggle"
 					}
 				},
 				{
@@ -1130,31 +1140,6 @@
 				}
 			],
 			"sid": 358117655058210
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Player_Wolf",
-					"sid": 518046290604835,
-					"parameters": {
-						"object": "Elektro_Shield"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "press_E",
-					"sid": 866321401980094,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 109681173745579
 		},
 		{
 			"eventType": "block",
@@ -1585,11 +1570,13 @@
 			"actions": [
 				{
 					"callFunction": "Create_mainDialoge",
-					"sid": 487044085072302,
+					"sid": 527402020093074,
 					"parameters": [
 						"\"Mark4\"",
 						"276",
 						"2",
+						true,
+						true,
 						false
 					]
 				}
@@ -1618,11 +1605,13 @@
 			"actions": [
 				{
 					"callFunction": "Create_mainDialoge",
-					"sid": 516850853403202,
+					"sid": 682485622307063,
 					"parameters": [
 						"\"Mark4\"",
 						"277",
 						"2",
+						true,
+						true,
 						false
 					]
 				}
@@ -1916,7 +1905,6 @@
 					"id": "create-object",
 					"objectClass": "System",
 					"sid": 866966748484184,
-					"disabled": true,
 					"parameters": {
 						"object-to-create": "press_E",
 						"layer": "12",
@@ -2117,12 +2105,14 @@
 			"actions": [
 				{
 					"callFunction": "Create_mainDialoge",
-					"sid": 517973046518009,
+					"sid": 944440512882735,
 					"parameters": [
 						"\"Boss2\"",
 						"278",
 						"2",
-						false
+						false,
+						false,
+						true
 					]
 				}
 			],
@@ -2150,11 +2140,13 @@
 			"actions": [
 				{
 					"callFunction": "Create_mainDialoge",
-					"sid": 267131421537197,
+					"sid": 654625264430255,
 					"parameters": [
 						"\"Mark4\"",
 						"279",
 						"2",
+						false,
+						true,
 						false
 					]
 				}
@@ -2183,12 +2175,14 @@
 			"actions": [
 				{
 					"callFunction": "Create_mainDialoge",
-					"sid": 259921409051805,
+					"sid": 785438344665253,
 					"parameters": [
 						"\"Boss2\"",
 						"280",
 						"2",
-						false
+						false,
+						false,
+						true
 					]
 				}
 			],
@@ -2216,12 +2210,14 @@
 			"actions": [
 				{
 					"callFunction": "Create_mainDialoge",
-					"sid": 259486553506898,
+					"sid": 359857102937336,
 					"parameters": [
 						"\"Boss2\"",
 						"281",
 						"2",
-						false
+						false,
+						false,
+						true
 					]
 				}
 			],
@@ -2557,6 +2553,15 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 551768462376246,
+					"parameters": {
+						"variable": "Hardcore"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -2620,6 +2625,218 @@
 								}
 							],
 							"sid": 508622015763572
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 996082513897956,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 685302029466572,
+					"parameters": {
+						"variable": "Hardcore"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 313667799697788,
+					"parameters": {
+						"key": "\"HardcoreLevel\""
+					}
+				}
+			],
+			"sid": 209155424270792,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 802492059113242,
+							"parameters": {
+								"key": "\"HardcoreLevel\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 719312857468332,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Game_Save",
+									"sid": 779697703641761,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"HardcoreLevel\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Game_Save",
+									"sid": 432999046623984,
+									"parameters": {
+										"comparison": 2,
+										"value": "7"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 236027651029399,
+									"parameters": {
+										"key": "\"HardcoreLevel\"",
+										"value": "7"
+									}
+								}
+							],
+							"sid": 641711328032582
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 115869006685081,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 474819225886036
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 420480709178228,
+					"parameters": {
+						"key": "\"Enemys\""
+					}
+				}
+			],
+			"sid": 431750417513413,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 121787349582130,
+							"parameters": {
+								"key": "\"Enemys\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "Enemys_Number",
+							"sid": 585863368725791,
+							"parameters": {
+								"json": "Game_Save.ItemValue"
+							}
+						}
+					],
+					"sid": 496223912785402,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Enemys_Number",
+									"sid": 571552801540554,
+									"parameters": {
+										"key": "\"Hotel_lvl5\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-key",
+									"objectClass": "Enemys_Number",
+									"sid": 520049477200560,
+									"parameters": {
+										"key": "\"Hotel_lvl5\"",
+										"value": "Enemys"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 676881284436984,
+									"parameters": {
+										"key": "\"Enemys\"",
+										"value": "Enemys_Number.AsJSON"
+									}
+								}
+							],
+							"sid": 506876949279578
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Enemys_Number",
+									"sid": 393024519158840,
+									"parameters": {
+										"key": "\"Hotel_lvl5\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "Enemys_Number",
+									"sid": 990825287501222,
+									"parameters": {
+										"key": "\"Hotel_lvl5\"",
+										"value": "Enemys"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 213320123703328,
+									"parameters": {
+										"key": "\"Enemys\"",
+										"value": "Enemys_Number.AsJSON"
+									}
+								}
+							],
+							"sid": 838991741125683
 						}
 					]
 				}

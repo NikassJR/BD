@@ -650,9 +650,9 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Player_All",
-							"sid": 217280254409080,
+							"sid": 508744766287193,
 							"parameters": {
-								"animation": "\"noWeaponDamage\"",
+								"animation": "\"noWeaponDead\"",
 								"from": "beginning"
 							}
 						},
@@ -1343,9 +1343,9 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Player_All",
-							"sid": 743142459196495,
+							"sid": 229611225682857,
 							"parameters": {
-								"animation": "\"noWeaponDamage\"",
+								"animation": "\"noWeaponDead\"",
 								"from": "beginning"
 							}
 						},
@@ -1384,8 +1384,17 @@
 							}
 						},
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 458104788978015,
+							"parameters": {
+								"seconds": "3",
+								"use-timescale": true
+							}
+						},
+						{
 							"callFunction": "End_Scene2",
-							"sid": 292797816570947,
+							"sid": 156657605450051,
 							"parameters": [
 								"100",
 								"0",
@@ -1394,15 +1403,6 @@
 								false,
 								true
 							]
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 458104788978015,
-							"parameters": {
-								"seconds": "3",
-								"use-timescale": true
-							}
 						},
 						{
 							"id": "set-boolean-eventvar",
@@ -2353,6 +2353,15 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 581049995486648,
+					"parameters": {
+						"variable": "Hardcore"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -2416,6 +2425,218 @@
 								}
 							],
 							"sid": 136044828434512
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 527199419587262,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 937861619693343,
+					"parameters": {
+						"variable": "Hardcore"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 946383176024727,
+					"parameters": {
+						"key": "\"HardcoreLevel\""
+					}
+				}
+			],
+			"sid": 416234002459568,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 890306336079320,
+							"parameters": {
+								"key": "\"HardcoreLevel\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 361775615330298,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Game_Save",
+									"sid": 204445708006643,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"HardcoreLevel\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Game_Save",
+									"sid": 675621203484336,
+									"parameters": {
+										"comparison": 2,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 267297044704213,
+									"parameters": {
+										"key": "\"HardcoreLevel\"",
+										"value": "5"
+									}
+								}
+							],
+							"sid": 372514485819496
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 737150936961297,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 170633124643307
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 634604562773777,
+					"parameters": {
+						"key": "\"Enemys\""
+					}
+				}
+			],
+			"sid": 669938117245515,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 729287409544041,
+							"parameters": {
+								"key": "\"Enemys\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "Enemys_Number",
+							"sid": 366110732195108,
+							"parameters": {
+								"json": "Game_Save.ItemValue"
+							}
+						}
+					],
+					"sid": 480025769455778,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Enemys_Number",
+									"sid": 953570603297768,
+									"parameters": {
+										"key": "\"Bakery_lvl3\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-key",
+									"objectClass": "Enemys_Number",
+									"sid": 417676361795290,
+									"parameters": {
+										"key": "\"Bakery_lvl3\"",
+										"value": "Enemys"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 734338701065845,
+									"parameters": {
+										"key": "\"Enemys\"",
+										"value": "Enemys_Number.AsJSON"
+									}
+								}
+							],
+							"sid": 367469279225242
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Enemys_Number",
+									"sid": 447709126399603,
+									"parameters": {
+										"key": "\"Bakery_lvl3\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "Enemys_Number",
+									"sid": 526197358518848,
+									"parameters": {
+										"key": "\"Bakery_lvl3\"",
+										"value": "Enemys"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 588334926002723,
+									"parameters": {
+										"key": "\"Enemys\"",
+										"value": "Enemys_Number.AsJSON"
+									}
+								}
+							],
+							"sid": 215405803399058
 						}
 					]
 				}

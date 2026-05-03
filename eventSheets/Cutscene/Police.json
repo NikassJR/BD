@@ -116,7 +116,7 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 247941186881886,
+					"sid": 752130334309100,
 					"parameters": {
 						"audio-file": {
 							"path": "Music/Bonus Suicide x Mental Sorrow - from the outside "
@@ -124,7 +124,7 @@
 						"loop": "looping",
 						"volume": "0",
 						"stereo-pan": "0",
-						"tag-optional": "\"music\""
+						"tag-optional": "\"Suspense\""
 					}
 				},
 				{
@@ -264,6 +264,8 @@
 								"\"Police_Man\"",
 								"581",
 								"3",
+								false,
+								false,
 								false
 							]
 						}
@@ -292,12 +294,14 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 225997522764055,
+							"sid": 666407796118765,
 							"parameters": [
 								"\"Mark4\"",
 								"582",
 								"2",
-								true
+								true,
+								true,
+								false
 							]
 						}
 					],
@@ -330,6 +334,8 @@
 								"\"Police1\"",
 								"583",
 								"3",
+								false,
+								false,
 								false
 							]
 						}
@@ -363,6 +369,8 @@
 								"\"Police1\"",
 								"584",
 								"2",
+								false,
+								false,
 								false
 							]
 						}
@@ -391,11 +399,13 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 437082267130960,
+							"sid": 608804513093743,
 							"parameters": [
 								"\"Mark6\"",
 								"585",
 								"2",
+								false,
+								true,
 								false
 							]
 						}
@@ -424,12 +434,14 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 184025073596793,
+							"sid": 459434427131800,
 							"parameters": [
 								"\"Mark4\"",
 								"586",
 								"1",
-								true
+								true,
+								true,
+								false
 							]
 						}
 					],
@@ -457,11 +469,13 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 944901212868811,
+							"sid": 963313268481513,
 							"parameters": [
 								"\"Mark1\"",
 								"587",
 								"2",
+								false,
+								true,
 								false
 							]
 						}
@@ -495,6 +509,8 @@
 								"\"Police2\"",
 								"588",
 								"3",
+								false,
+								false,
 								false
 							]
 						}
@@ -523,11 +539,13 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 410670581653577,
+							"sid": 259082758003267,
 							"parameters": [
 								"\"Mark1\"",
 								"589",
 								"3",
+								false,
+								true,
 								false
 							]
 						}
@@ -561,6 +579,8 @@
 								"\"Police1\"",
 								"590",
 								"2",
+								false,
+								false,
 								false
 							]
 						}
@@ -594,6 +614,8 @@
 								"\"Police1\"",
 								"591",
 								"2",
+								false,
+								false,
 								false
 							]
 						}
@@ -622,11 +644,13 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 436223002338203,
+							"sid": 244769407224151,
 							"parameters": [
 								"\"Mark1\"",
 								"592",
 								"2",
+								false,
+								true,
 								false
 							]
 						}
@@ -660,6 +684,8 @@
 								"\"Police2\"",
 								"593",
 								"2",
+								false,
+								false,
 								false
 							]
 						}
@@ -693,6 +719,8 @@
 								"\"Police1\"",
 								"594",
 								"2",
+								false,
+								false,
 								false
 							]
 						},
@@ -960,12 +988,18 @@
 					}
 				},
 				{
-					"id": "set-visible",
-					"objectClass": "press_E",
-					"sid": 869480892497488,
+					"id": "set-animation",
+					"objectClass": "Player_All",
+					"sid": 181857679229838,
 					"parameters": {
-						"visibility": "invisible"
+						"animation": "weapon & \"Idle\"",
+						"from": "beginning"
 					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "press_E",
+					"sid": 787683216628557
 				},
 				{
 					"callFunction": "End_Scene2",

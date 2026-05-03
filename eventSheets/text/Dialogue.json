@@ -764,6 +764,20 @@
 					"initialValue": "false",
 					"comment": "",
 					"sid": 501463893439849
+				},
+				{
+					"name": "TextMark",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 470284239117466
+				},
+				{
+					"name": "TextEnemy",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 493977121158345
 				}
 			],
 			"eventType": "function-block",
@@ -944,6 +958,139 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "is-running-typewriter-text",
+							"objectClass": "dialogMainText",
+							"sid": 577659974816875
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 545820932103876,
+							"parameters": {
+								"variable": "TextMark"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 758671537878475,
+							"parameters": {
+								"variable": "TextEnemy"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 387595921441379,
+							"parameters": {
+								"audio-file": {
+									"path": "Text/TextTyping"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"Text\""
+							}
+						}
+					],
+					"sid": 876539256925212
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-running-typewriter-text",
+							"objectClass": "dialogMainText",
+							"sid": 121663899170786
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 955595817211358,
+							"parameters": {
+								"variable": "TextMark"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 171476994392007,
+							"parameters": {
+								"variable": "TextEnemy"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 599077946329881,
+							"parameters": {
+								"audio-file": {
+									"path": "Text/TextMark"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"Text\""
+							}
+						}
+					],
+					"sid": 583323650759808
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-running-typewriter-text",
+							"objectClass": "dialogMainText",
+							"sid": 988042402297854
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 878394114479221,
+							"parameters": {
+								"variable": "TextEnemy"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 371954936828683,
+							"parameters": {
+								"variable": "TextMark"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 113755262151627,
+							"parameters": {
+								"audio-file": {
+									"path": "Text/TextEnemy"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"Text\""
+							}
+						}
+					],
+					"sid": 850369254291457
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 939264549362199,
@@ -992,6 +1139,28 @@
 					"sid": 684261354182256
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-running-typewriter-text",
+					"objectClass": "dialogMainText",
+					"sid": 968763059828668,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 197777726688876,
+					"parameters": {
+						"tag": "\"Text\""
+					}
+				}
+			],
+			"sid": 671743706970303
 		},
 		{
 			"functionName": "Create_Hint",

@@ -98,6 +98,16 @@
 			"sid": 220127341459749
 		},
 		{
+			"eventType": "variable",
+			"name": "Enemys_Stat",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 810595846910978
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Collors",
@@ -3086,11 +3096,182 @@
 										"instance-variable": "speed",
 										"value": "20"
 									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 854434351057836,
+									"parameters": {
+										"variable": "HPplayer",
+										"value": "10"
+									}
 								}
 							],
 							"sid": 408171761237072
 						}
 					]
+				},
+				{
+					"functionName": "Enemys_Number",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Apartament_lvl1",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 642771667555502
+						},
+						{
+							"name": "Abandonment_lvl2",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 681300965328991
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "Game_Save",
+							"sid": 967587648807395,
+							"parameters": {
+								"key": "\"HC_Enemys\""
+							}
+						},
+						{
+							"id": "load",
+							"objectClass": "Enemys_Number",
+							"sid": 347060187120696,
+							"parameters": {
+								"json": "Game_Save.ItemValue"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 293919594280644,
+							"parameters": {
+								"variable": "Enemys_Stat",
+								"value": "Enemys_Number.Get(\"Apartament_lvl1\")+Enemys_Number.Get(\"Abandonment_lvl2\")"
+							}
+						}
+					],
+					"sid": 934987061355484,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Enemys_Number",
+									"sid": 610091811719310,
+									"parameters": {
+										"key": "\"Apartament_lvl1\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 168604748333216,
+									"parameters": {
+										"variable": "Apartament_lvl1",
+										"value": "Enemys_Number.Get(\"Apartament_lvl1\")"
+									}
+								}
+							],
+							"sid": 646730917005020,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Enemys_Number",
+									"sid": 935485894490228,
+									"parameters": {
+										"key": "\"Abandonment_lvl2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 578755502703460,
+									"parameters": {
+										"variable": "Abandonment_lvl2",
+										"value": "Enemys_Number.Get(\"Abandonment_lvl2\")"
+									}
+								}
+							],
+							"sid": 157567195692482,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 204232611933426
+						}
+					],
+					"actions": [
+						{
+							"id": "get-item",
+							"objectClass": "Game_Save",
+							"sid": 175307463930166,
+							"parameters": {
+								"key": "\"Enemy_Deaths\""
+							}
+						},
+						{
+							"id": "check-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 962134227598000,
+							"parameters": {
+								"key": "\"Enemy_Deaths\""
+							}
+						}
+					],
+					"sid": 194178631181055
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "Game_Save",
+							"sid": 952189882328012,
+							"parameters": {
+								"key": "\"Enemy_Deaths\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-key",
+							"objectClass": "Enemys_Number",
+							"sid": 168751998941127,
+							"parameters": {
+								"key": "\"Enemy_Deaths\"",
+								"value": "Game_Save.ItemValue"
+							}
+						}
+					],
+					"sid": 475324183258408
 				}
 			],
 			"sid": 136729533850613
@@ -3453,6 +3634,15 @@
 					"id": "on-load-complete",
 					"objectClass": "System",
 					"sid": 917729241254533
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 857885611580580,
+					"parameters": {
+						"variable": "Hardcore"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -3464,9 +3654,102 @@
 						"variable": "HPplayer",
 						"value": "15"
 					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "Game_Save",
+					"sid": 221058694759386,
+					"parameters": {
+						"key": "\"Number_Deaths\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 211006942635695,
+					"parameters": {
+						"key": "\"Number_Deaths\""
+					}
 				}
 			],
 			"sid": 508431232946632
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-load-complete",
+					"objectClass": "System",
+					"sid": 700775834303873
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 132862037790214,
+					"parameters": {
+						"variable": "Hardcore"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 675548459421060,
+					"parameters": {
+						"variable": "HPplayer",
+						"value": "10"
+					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "Game_Save",
+					"sid": 417366511695598,
+					"parameters": {
+						"key": "\"Number_Deaths\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 887917772133942,
+					"parameters": {
+						"key": "\"Number_Deaths\""
+					}
+				}
+			],
+			"sid": 700004796887474
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-key",
+					"objectClass": "Game_Save",
+					"sid": 391060083312114,
+					"parameters": {
+						"comparison": 0,
+						"string": "\"Number_Deaths\""
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 169866583923088
+				}
+			],
+			"actions": [
+				{
+					"id": "set-key",
+					"objectClass": "Enemys_Number",
+					"sid": 758785662614964,
+					"parameters": {
+						"key": "\"Number_Deaths\"",
+						"value": "Game_Save.ItemValue"
+					}
+				}
+			],
+			"sid": 509719194941927
 		}
 	],
 	"sid": 511565052530936

@@ -22,6 +22,139 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
+							"sid": 259239938784104
+						}
+					],
+					"actions": [
+						{
+							"id": "save",
+							"objectClass": "System",
+							"sid": 446661109196717,
+							"parameters": {
+								"slot": "\"start\""
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "Camera",
+							"sid": 906344994890725,
+							"parameters": {
+								"width": "70",
+								"height": "35"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 884705541316662,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 643082460646570,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/Heaviness"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"Suspense\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 946080479800731,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 183143504666653,
+							"parameters": {
+								"variable": "Continue_Game",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 527791035341398,
+							"parameters": {
+								"variable": "Safe_Zone",
+								"value": "true"
+							}
+						},
+						{
+							"callFunction": "End_Scene2",
+							"sid": 903730895081232,
+							"parameters": [
+								"0",
+								"2",
+								"100",
+								true,
+								false,
+								true
+							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 867141642627388,
+							"parameters": {
+								"seconds": "3",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_All",
+							"sid": 696028568321134,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 562127796503631,
+							"parameters": {
+								"variable": "onDialMain",
+								"value": "true"
+							}
+						},
+						{
+							"id": "pin-to-object-imagepoint",
+							"objectClass": "press_E",
+							"sid": 528592438731232,
+							"behaviorType": "Прикрепить",
+							"parameters": {
+								"pin-to": "Player_All",
+								"image-point": "2",
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						}
+					],
+					"sid": 900024362466387
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
 							"sid": 223658891296421
 						}
 					],
@@ -113,139 +246,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 720822761724874
-						}
-					],
-					"actions": [
-						{
-							"id": "save",
-							"objectClass": "System",
-							"sid": 631011678867335,
-							"parameters": {
-								"slot": "\"start\""
-							}
-						},
-						{
-							"id": "set-size",
-							"objectClass": "Camera",
-							"sid": 743523425096860,
-							"parameters": {
-								"width": "70",
-								"height": "35"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 618597450191410,
-							"parameters": {
-								"group-name": "\"Player\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 696664698640810,
-							"parameters": {
-								"audio-file": {
-									"path": "Music/Heaviness"
-								},
-								"loop": "looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"Suspense\""
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 748092068853394,
-							"parameters": {
-								"variable": "Start_Game",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 410249102403805,
-							"parameters": {
-								"variable": "Continue_Game",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 777851176293739,
-							"parameters": {
-								"variable": "Safe_Zone",
-								"value": "true"
-							}
-						},
-						{
-							"callFunction": "End_Scene2",
-							"sid": 513681437270653,
-							"parameters": [
-								"0",
-								"2",
-								"100",
-								true,
-								false,
-								true
-							]
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 204372213237758,
-							"parameters": {
-								"seconds": "3",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player_All",
-							"sid": 348105217049381,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 335110637114690,
-							"parameters": {
-								"variable": "onDialMain",
-								"value": "true"
-							}
-						},
-						{
-							"id": "pin-to-object-imagepoint",
-							"objectClass": "press_E",
-							"sid": 160137595223586,
-							"behaviorType": "Прикрепить",
-							"parameters": {
-								"pin-to": "Player_All",
-								"image-point": "2",
-								"angle": true,
-								"width-type": "no",
-								"height-type": "no",
-								"z": false
-							}
-						}
-					],
-					"sid": 866118592962516
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 528895352722304,
@@ -279,11 +279,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 385382099207409,
+									"sid": 538128830276389,
 									"parameters": [
 										"\"Any2\"",
 										"117",
-										"3",
+										"2",
+										false,
+										false,
 										false
 									]
 								}
@@ -317,6 +319,8 @@
 										"\"Any1\"",
 										"118",
 										"1",
+										false,
+										false,
 										false
 									]
 								},
@@ -371,11 +375,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 543877021027697,
+									"sid": 288873439794862,
 									"parameters": [
 										"\"Mark1\"",
 										"119",
 										"1",
+										false,
+										true,
 										false
 									]
 								}
@@ -404,11 +410,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 344578907003552,
+									"sid": 955501452362455,
 									"parameters": [
 										"\"Any3\"",
 										"120",
-										"1",
+										"2",
+										false,
+										false,
 										false
 									]
 								}
@@ -437,11 +445,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 205328238991102,
+									"sid": 355541233641046,
 									"parameters": [
 										"\"Mark1\"",
 										"121",
-										"1",
+										"1.5",
+										false,
+										true,
 										false
 									]
 								}
@@ -470,11 +480,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 699417159975152,
+									"sid": 483669484701702,
 									"parameters": [
 										"\"Any1\"",
 										"122",
-										"1",
+										"2",
+										false,
+										false,
 										false
 									]
 								}
@@ -503,11 +515,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 759386374904204,
+									"sid": 658067534758058,
 									"parameters": [
 										"\"Mark4\"",
 										"123",
 										"1",
+										true,
+										true,
 										false
 									]
 								},
@@ -553,11 +567,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 183848335513157,
+									"sid": 356413859476781,
 									"parameters": [
 										"\"Mark4\"",
 										"124",
-										"1",
+										"2",
+										true,
+										true,
 										false
 									]
 								}
@@ -586,11 +602,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 219131012094851,
+									"sid": 882507726042458,
 									"parameters": [
 										"\"Mark4\"",
 										"125",
 										"1",
+										true,
+										true,
 										false
 									]
 								}
@@ -619,11 +637,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 513226095710225,
+									"sid": 262107494518242,
 									"parameters": [
 										"\"Any2\"",
 										"126",
-										"1",
+										"0.5",
+										false,
+										false,
 										false
 									]
 								},
@@ -669,11 +689,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 326150434857902,
+									"sid": 263441466179245,
 									"parameters": [
 										"\"Mark3\"",
 										"127",
-										"1",
+										"0.5",
+										false,
+										true,
 										false
 									]
 								}
@@ -707,6 +729,8 @@
 										"\"Any2\"",
 										"128",
 										"1",
+										false,
+										false,
 										false
 									]
 								}
@@ -735,11 +759,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 725477923308148,
+									"sid": 731865985879297,
 									"parameters": [
 										"\"Mark3\"",
 										"129",
 										"1",
+										false,
+										true,
 										false
 									]
 								}
@@ -768,11 +794,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 246430310840651,
+									"sid": 432371253290350,
 									"parameters": [
 										"\"Any2\"",
 										"130",
-										"1",
+										"2",
+										false,
+										false,
 										false
 									]
 								}
@@ -801,11 +829,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 782119110600061,
+									"sid": 245353019153177,
 									"parameters": [
 										"\"Mark2\"",
 										"131",
 										"1",
+										false,
+										true,
 										false
 									]
 								}
@@ -834,11 +864,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 645706521858795,
+									"sid": 447667178139978,
 									"parameters": [
 										"\"Mark2\"",
 										"132",
-										"1",
+										"2",
+										false,
+										true,
 										false
 									]
 								}
@@ -872,6 +904,8 @@
 										"\"Any2\"",
 										"133",
 										"1",
+										false,
+										false,
 										false
 									]
 								}
@@ -900,11 +934,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 158157151552883,
+									"sid": 673631990920204,
 									"parameters": [
 										"\"Mark2\"",
 										"134",
-										"1",
+										"2",
+										false,
+										true,
 										false
 									]
 								}
@@ -933,11 +969,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 248314464254507,
+									"sid": 815094941851643,
 									"parameters": [
 										"\"Any2\"",
 										"135",
-										"1",
+										"2",
+										false,
+										false,
 										false
 									]
 								}
@@ -966,11 +1004,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 602428814942237,
+									"sid": 937047469914969,
 									"parameters": [
 										"\"Mark2\"",
 										"136",
 										"1",
+										false,
+										true,
 										false
 									]
 								}
@@ -999,11 +1039,13 @@
 							"actions": [
 								{
 									"callFunction": "Create_mainDialoge",
-									"sid": 383982855172316,
+									"sid": 222589057874475,
 									"parameters": [
 										"\"Mark2\"",
 										"137",
 										"1",
+										false,
+										true,
 										false
 									]
 								}

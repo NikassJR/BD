@@ -2056,23 +2056,32 @@
 				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 670638416615809,
+					"sid": 112486671125327,
 					"parameters": {
 						"variable": "Start_Game"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 702522456788477,
+					"parameters": {
+						"variable": "Hardcore"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
 				{
 					"id": "check-item-exists",
 					"objectClass": "Game_Save",
-					"sid": 949191975840853,
+					"sid": 613091778045446,
 					"parameters": {
 						"key": "\"Level\""
 					}
 				}
 			],
-			"sid": 822252245492866,
+			"sid": 894624676623960,
 			"children": [
 				{
 					"eventType": "block",
@@ -2080,14 +2089,14 @@
 						{
 							"id": "on-item-exists",
 							"objectClass": "Game_Save",
-							"sid": 970228099884255,
+							"sid": 984527555453601,
 							"parameters": {
 								"key": "\"Level\""
 							}
 						}
 					],
 					"actions": [],
-					"sid": 314577079499381,
+					"sid": 745417774251838,
 					"children": [
 						{
 							"eventType": "block",
@@ -2095,7 +2104,7 @@
 								{
 									"id": "compare-key",
 									"objectClass": "Game_Save",
-									"sid": 999507946169752,
+									"sid": 153844977021986,
 									"parameters": {
 										"comparison": 0,
 										"string": "\"Level\""
@@ -2104,7 +2113,7 @@
 								{
 									"id": "compare-value",
 									"objectClass": "Game_Save",
-									"sid": 879107414360010,
+									"sid": 956866397128797,
 									"parameters": {
 										"comparison": 2,
 										"value": "3"
@@ -2115,14 +2124,14 @@
 								{
 									"id": "set-item",
 									"objectClass": "Game_Save",
-									"sid": 606691351666569,
+									"sid": 825123025897226,
 									"parameters": {
 										"key": "\"Level\"",
 										"value": "3"
 									}
 								}
 							],
-							"sid": 131000452393174
+							"sid": 892133642470728
 						}
 					]
 				}
@@ -2134,7 +2143,7 @@
 				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 718886695556948,
+					"sid": 278220781105226,
 					"parameters": {
 						"variable": "Start_Game"
 					}
@@ -2142,7 +2151,7 @@
 				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 699809470087954,
+					"sid": 223230705656981,
 					"parameters": {
 						"variable": "Hardcore"
 					}
@@ -2152,13 +2161,13 @@
 				{
 					"id": "check-item-exists",
 					"objectClass": "Game_Save",
-					"sid": 227537849049301,
+					"sid": 586979569294471,
 					"parameters": {
-						"key": "\"Level\""
+						"key": "\"HardcoreLevel\""
 					}
 				}
 			],
-			"sid": 719149581931392,
+			"sid": 696172230392853,
 			"children": [
 				{
 					"eventType": "block",
@@ -2166,14 +2175,14 @@
 						{
 							"id": "on-item-exists",
 							"objectClass": "Game_Save",
-							"sid": 468616373057047,
+							"sid": 580949143721494,
 							"parameters": {
-								"key": "\"Level\""
+								"key": "\"HardcoreLevel\""
 							}
 						}
 					],
 					"actions": [],
-					"sid": 160102849122908,
+					"sid": 458545319749043,
 					"children": [
 						{
 							"eventType": "block",
@@ -2181,16 +2190,16 @@
 								{
 									"id": "compare-key",
 									"objectClass": "Game_Save",
-									"sid": 499707374005219,
+									"sid": 471222098491930,
 									"parameters": {
 										"comparison": 0,
-										"string": "\"Level\""
+										"string": "\"HardcoreLevel\""
 									}
 								},
 								{
 									"id": "compare-value",
 									"objectClass": "Game_Save",
-									"sid": 796711697622186,
+									"sid": 906749152924865,
 									"parameters": {
 										"comparison": 2,
 										"value": "3"
@@ -2201,14 +2210,140 @@
 								{
 									"id": "set-item",
 									"objectClass": "Game_Save",
-									"sid": 293260884979181,
+									"sid": 326688361467284,
 									"parameters": {
-										"key": "\"Level\"",
+										"key": "\"HardcoreLevel\"",
 										"value": "3"
 									}
 								}
 							],
-							"sid": 785813097928465
+							"sid": 676909147072085
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 415197378954068,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 603053775998916
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 774818013482587,
+					"parameters": {
+						"key": "\"Enemys\""
+					}
+				}
+			],
+			"sid": 146953235042947,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 349931902704731,
+							"parameters": {
+								"key": "\"Enemys\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "Enemys_Number",
+							"sid": 774676927369573,
+							"parameters": {
+								"json": "Game_Save.ItemValue"
+							}
+						}
+					],
+					"sid": 934695351062262,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Enemys_Number",
+									"sid": 890206342258477,
+									"parameters": {
+										"key": "\"Apartament_lvl1\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-key",
+									"objectClass": "Enemys_Number",
+									"sid": 895163441483718,
+									"parameters": {
+										"key": "\"Apartament_lvl1\"",
+										"value": "Enemys"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 417831208414914,
+									"parameters": {
+										"key": "\"Enemys\"",
+										"value": "Enemys_Number.AsJSON"
+									}
+								}
+							],
+							"sid": 114198811568915
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-key",
+									"objectClass": "Enemys_Number",
+									"sid": 446333963932532,
+									"parameters": {
+										"key": "\"Apartament_lvl1\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-key",
+									"objectClass": "Enemys_Number",
+									"sid": 512712716419894,
+									"parameters": {
+										"key": "\"Apartament_lvl1\"",
+										"value": "Enemys"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 398925828289390,
+									"parameters": {
+										"key": "\"Enemys\"",
+										"value": "Enemys_Number.AsJSON"
+									}
+								}
+							],
+							"sid": 669439645970008
 						}
 					]
 				}
