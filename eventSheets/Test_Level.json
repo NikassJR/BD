@@ -13,215 +13,28 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-playback-event",
-					"objectClass": "Video",
-					"sid": 290599846417224,
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 512124978577224,
 					"parameters": {
-						"event": "can-play"
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Steam"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-volume",
-					"objectClass": "Video",
-					"sid": 827629298940237,
-					"parameters": {
-						"volume": "Sound"
-					}
-				}
-			],
-			"sid": 257574461642701
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 972828302936212
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-instvar",
-					"objectClass": "Camera",
-					"sid": 508487367161337,
-					"parameters": {
-						"instance-variable": "onPlayer",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 984515206942719,
-					"parameters": {
-						"layer": "\"Diskl\"",
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "request-fullscreen",
+					"id": "open-url-in-new-window",
 					"objectClass": "Browser",
-					"sid": 319862468110297,
+					"sid": 591802850372384,
 					"parameters": {
-						"mode": "stretch-letterbox-scale",
-						"navigation-ui": "hide"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Video",
-					"sid": 166455358577326
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 448495506873026,
-					"parameters": {
-						"variable": "NoPause",
-						"value": "true"
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "Camera",
-					"sid": 683492707340111,
-					"parameters": {
-						"width": "256",
-						"height": "144"
-					}
-				},
-				{
-					"callFunction": "Text",
-					"sid": 652890647179001
-				},
-				{
-					"id": "request-project-file",
-					"objectClass": "AJAX",
-					"sid": 278094940594735,
-					"parameters": {
-						"tag": "\"Lang\"",
-						"file": {
-							"path": "Lang.json"
-						}
-					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 487699581916336
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 774190423880632,
-					"parameters": {
-						"seconds": "5",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "Video",
-					"sid": 189906118112713,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 657061628235010
-				},
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 259256579043208,
-					"parameters": {
-						"layer": "\"Diskl\"",
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 275215480077222,
-					"parameters": {
-						"seconds": "3",
-						"use-timescale": true
-					}
-				},
-				{
-					"callFunction": "End_Scene2",
-					"sid": 917696719525345,
-					"parameters": [
-						"100",
-						"2",
-						"0",
-						false,
-						false,
-						true
-					]
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 774601182727792,
-					"parameters": {
-						"seconds": "2",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 187075418704896
-				},
-				{
-					"id": "set-size",
-					"objectClass": "Camera",
-					"sid": 316566552262525,
-					"parameters": {
-						"width": "150",
-						"height": "95"
-					}
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 882534537758270,
-					"parameters": {
-						"layout": "Garage_lvl7"
+						"url": "\"https://store.steampowered.com/app/4576430/Breakdown_Silent_Riot/\"",
+						"tag": "\"NewWindow\""
 					}
 				}
 			],
 			"sid": 600489616965400
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-animation-finished",
-					"objectClass": "Loading",
-					"sid": 611986033860477,
-					"parameters": {
-						"animation": "\"Animation 1\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "start-animation",
-					"objectClass": "Loading",
-					"sid": 765065137909847,
-					"parameters": {
-						"from": "beginning"
-					}
-				}
-			],
-			"sid": 839230944301568
 		}
 	],
 	"sid": 778464521102941

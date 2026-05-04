@@ -811,6 +811,23 @@
 					}
 				},
 				{
+					"id": "tween-one-property",
+					"objectClass": "Steam",
+					"sid": 500281655511949,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
 					"id": "set-animation-frame",
 					"objectClass": "Flag",
 					"sid": 873505960349631,
@@ -1464,113 +1481,6 @@
 						}
 					],
 					"sid": 749860747837193
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 795654790099828,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "Text_Menu"
-							}
-						},
-						{
-							"id": "has-tags",
-							"objectClass": "Text_Menu",
-							"sid": 802281256140736,
-							"parameters": {
-								"tags": "\"Play_Demo\""
-							}
-						},
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 364229145373310,
-							"parameters": {
-								"layer": "\"Main_Menu\""
-							}
-						},
-						{
-							"id": "compare-opacity",
-							"objectClass": "Menu",
-							"sid": 660464873259684,
-							"parameters": {
-								"comparison": 5,
-								"opacity": "90"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-item",
-							"objectClass": "Game_Save",
-							"sid": 701667904930616,
-							"parameters": {
-								"key": "\"Sound\"",
-								"value": "Numbers_Music.Music"
-							}
-						},
-						{
-							"id": "spawn-another-object",
-							"objectClass": "Camera",
-							"sid": 306072420681515,
-							"parameters": {
-								"object": "Shadow3",
-								"layer": "7",
-								"image-point": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "Shadow3",
-							"sid": 522347129202277,
-							"parameters": {
-								"opacity": "0"
-							}
-						},
-						{
-							"id": "set-scale",
-							"objectClass": "Shadow3",
-							"sid": 309126436532312,
-							"parameters": {
-								"scale": "2"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow3",
-							"sid": 706998953303352,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetOpacity",
-								"end-value": "100",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 761522803269115,
-							"parameters": {
-								"variable": "Start_Game",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 689729117760161,
-					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -2806,7 +2716,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 745449991990035,
 									"parameters": {
 										"animation": "\"Station\""
@@ -2835,7 +2745,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 193609237140179,
 									"parameters": {
 										"visibility": "visible"
@@ -2862,12 +2772,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 341865978952178,
 											"parameters": {
 												"animation": "\"Station\""
@@ -2958,7 +2868,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 499039902679843,
 									"parameters": {
 										"animation": "\"Apartament\""
@@ -2987,7 +2897,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 626854710651273,
 									"parameters": {
 										"visibility": "visible"
@@ -3014,12 +2924,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 746569211588431,
 											"parameters": {
 												"animation": "\"Apartament\""
@@ -3110,7 +3020,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 388457826571020,
 									"parameters": {
 										"animation": "\"Abandonment\""
@@ -3139,7 +3049,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 932371769773914,
 									"parameters": {
 										"visibility": "visible"
@@ -3166,12 +3076,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 687197187751654,
 											"parameters": {
 												"animation": "\"Abandonment\""
@@ -3262,7 +3172,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 339979900042853,
 									"parameters": {
 										"animation": "\"Bakery\""
@@ -3291,7 +3201,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 245477534789130,
 									"parameters": {
 										"visibility": "visible"
@@ -3318,12 +3228,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 567280837939546,
 											"parameters": {
 												"animation": "\"Bakery\""
@@ -3414,7 +3324,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 209557590684774,
 									"parameters": {
 										"animation": "\"Basement\""
@@ -3443,7 +3353,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 682837694918833,
 									"parameters": {
 										"visibility": "visible"
@@ -3470,12 +3380,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 413637457337122,
 											"parameters": {
 												"animation": "\"Basement\""
@@ -3566,7 +3476,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 937297613407020,
 									"parameters": {
 										"animation": "\"Hotel\""
@@ -3595,7 +3505,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 587365983496795,
 									"parameters": {
 										"visibility": "visible"
@@ -3622,12 +3532,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 110662939371905,
 											"parameters": {
 												"animation": "\"Hotel\""
@@ -3718,7 +3628,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 224703812659191,
 									"parameters": {
 										"animation": "\"Night_Club\""
@@ -3747,7 +3657,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 614002676695537,
 									"parameters": {
 										"visibility": "visible"
@@ -3774,12 +3684,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 930150197741494,
 											"parameters": {
 												"animation": "\"Night_Club\""
@@ -3870,7 +3780,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 533556998164385,
 									"parameters": {
 										"animation": "\"Garage\""
@@ -3899,7 +3809,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 513511339814571,
 									"parameters": {
 										"visibility": "visible"
@@ -3926,12 +3836,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 951979408734286,
 											"parameters": {
 												"animation": "\"Garage\""
@@ -4022,7 +3932,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 361962136033769,
 									"parameters": {
 										"animation": "\"Train\""
@@ -4051,7 +3961,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 475932049533194,
 									"parameters": {
 										"visibility": "visible"
@@ -4078,12 +3988,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 585750683573954,
 											"parameters": {
 												"animation": "\"Train\""
@@ -4174,7 +4084,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 127796737369317,
 									"parameters": {
 										"animation": "\"Tower\""
@@ -4203,7 +4113,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 493193729400698,
 									"parameters": {
 										"visibility": "visible"
@@ -4230,12 +4140,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 362924174846150,
 											"parameters": {
 												"animation": "\"Tower\""
@@ -4326,7 +4236,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 344064096213807,
 									"parameters": {
 										"animation": "\"Office\""
@@ -4355,7 +4265,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 512905070111057,
 									"parameters": {
 										"visibility": "visible"
@@ -4382,12 +4292,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 270226277566663,
 											"parameters": {
 												"animation": "\"Office\""
@@ -4478,7 +4388,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 624467564598819,
 									"parameters": {
 										"animation": "\"Underground\""
@@ -4507,7 +4417,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 914178196235390,
 									"parameters": {
 										"visibility": "visible"
@@ -4534,12 +4444,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 204025249467135,
 											"parameters": {
 												"animation": "\"Underground\""
@@ -4630,7 +4540,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 537154956631732,
 									"parameters": {
 										"animation": "\"Warehouse\""
@@ -4659,7 +4569,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 528875986074407,
 									"parameters": {
 										"visibility": "visible"
@@ -4686,12 +4596,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 426043803568045,
 											"parameters": {
 												"animation": "\"Warehouse\""
@@ -4782,7 +4692,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 132105341653102,
 									"parameters": {
 										"animation": "\"Mark Garage\""
@@ -4811,7 +4721,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 913046892816686,
 									"parameters": {
 										"visibility": "visible"
@@ -4838,12 +4748,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 521172584172071,
 											"parameters": {
 												"animation": "\"Mark Garage\""
@@ -5187,7 +5097,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 360332124253945,
 									"parameters": {
 										"animation": "\"Station\""
@@ -5207,7 +5117,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 139652768766470,
 									"parameters": {
 										"visibility": "visible"
@@ -5234,12 +5144,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 553130216261758,
 											"parameters": {
 												"animation": "\"Station\""
@@ -5337,7 +5247,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 829552379922959,
 									"parameters": {
 										"visibility": "invisible"
@@ -5360,7 +5270,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 579030001592135,
 									"parameters": {
 										"animation": "\"Apartament\""
@@ -5389,7 +5299,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 493283499314442,
 									"parameters": {
 										"visibility": "visible"
@@ -5416,12 +5326,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 988327553155750,
 											"parameters": {
 												"animation": "\"Apartament\""
@@ -5521,7 +5431,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 828945725452683,
 									"parameters": {
 										"animation": "\"Abandonment\""
@@ -5550,7 +5460,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 323501307143290,
 									"parameters": {
 										"visibility": "visible"
@@ -5577,12 +5487,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 285668744408067,
 											"parameters": {
 												"animation": "\"Abandonment\""
@@ -5682,7 +5592,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 180206205375911,
 									"parameters": {
 										"animation": "\"Bakery\""
@@ -5711,7 +5621,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 554590889528100,
 									"parameters": {
 										"visibility": "visible"
@@ -5738,12 +5648,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 826086871774919,
 											"parameters": {
 												"animation": "\"Bakery\""
@@ -5843,7 +5753,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 607150877383400,
 									"parameters": {
 										"animation": "\"Basement\""
@@ -5872,7 +5782,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 196890413255678,
 									"parameters": {
 										"visibility": "visible"
@@ -5899,12 +5809,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 930597663597944,
 											"parameters": {
 												"animation": "\"Basement\""
@@ -6004,7 +5914,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 588195553978414,
 									"parameters": {
 										"animation": "\"Hotel\""
@@ -6033,7 +5943,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 256890641704262,
 									"parameters": {
 										"visibility": "visible"
@@ -6060,12 +5970,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 555547463907568,
 											"parameters": {
 												"animation": "\"Hotel\""
@@ -6165,7 +6075,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 171024359538394,
 									"parameters": {
 										"animation": "\"Night_Club\""
@@ -6194,7 +6104,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 247116341855123,
 									"parameters": {
 										"visibility": "visible"
@@ -6221,12 +6131,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 175885329993271,
 											"parameters": {
 												"animation": "\"Night_Club\""
@@ -6326,7 +6236,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 898168007021267,
 									"parameters": {
 										"animation": "\"Garage\""
@@ -6355,7 +6265,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 291738631368145,
 									"parameters": {
 										"visibility": "visible"
@@ -6382,12 +6292,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 571915470487967,
 											"parameters": {
 												"animation": "\"Garage\""
@@ -6487,7 +6397,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 445461568390839,
 									"parameters": {
 										"animation": "\"Train\""
@@ -6516,7 +6426,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 628088850960244,
 									"parameters": {
 										"visibility": "visible"
@@ -6543,12 +6453,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 471799043733725,
 											"parameters": {
 												"animation": "\"Train\""
@@ -6648,7 +6558,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 706884477575572,
 									"parameters": {
 										"animation": "\"Tower\""
@@ -6677,7 +6587,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 474111274121831,
 									"parameters": {
 										"visibility": "visible"
@@ -6704,12 +6614,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 799592111326499,
 											"parameters": {
 												"animation": "\"Tower\""
@@ -6809,7 +6719,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 501019861358786,
 									"parameters": {
 										"animation": "\"Office\""
@@ -6838,7 +6748,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 421405762640464,
 									"parameters": {
 										"visibility": "visible"
@@ -6865,12 +6775,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 435811612273871,
 											"parameters": {
 												"animation": "\"Office\""
@@ -6970,7 +6880,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 440308229884488,
 									"parameters": {
 										"animation": "\"Underground\""
@@ -6999,7 +6909,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 274022849640559,
 									"parameters": {
 										"visibility": "visible"
@@ -7026,12 +6936,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 709804350254314,
 											"parameters": {
 												"animation": "\"Underground\""
@@ -7131,7 +7041,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 657519250068915,
 									"parameters": {
 										"animation": "\"Warehouse\""
@@ -7160,7 +7070,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 208550999142456,
 									"parameters": {
 										"visibility": "visible"
@@ -7187,12 +7097,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 249921800193146,
 											"parameters": {
 												"animation": "\"Warehouse\""
@@ -7292,7 +7202,7 @@
 								},
 								{
 									"id": "is-animation-playing",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 165191365080301,
 									"parameters": {
 										"animation": "\"Mark Garage\""
@@ -7321,7 +7231,7 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Level",
+									"objectClass": "Level3",
 									"sid": 483705120287114,
 									"parameters": {
 										"visibility": "visible"
@@ -7348,12 +7258,12 @@
 											"parameters": {
 												"mouse-button": "left",
 												"click-type": "clicked",
-												"object-clicked": "Level"
+												"object-clicked": "Level3"
 											}
 										},
 										{
 											"id": "is-animation-playing",
-											"objectClass": "Level",
+											"objectClass": "Level3",
 											"sid": 636299589432448,
 											"parameters": {
 												"animation": "\"Mark Garage\""
@@ -7646,6 +7556,165 @@
 				}
 			],
 			"sid": 705416730304569
+		},
+		{
+			"eventType": "comment",
+			"text": "Demo"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 734270839136318,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Text_Menu"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Text_Menu",
+					"sid": 921484481559014,
+					"parameters": {
+						"tags": "\"Play_Demo\""
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 256764797844185,
+					"parameters": {
+						"layer": "\"Main_Menu\""
+					}
+				},
+				{
+					"id": "compare-opacity",
+					"objectClass": "Menu",
+					"sid": 572087512873970,
+					"parameters": {
+						"comparison": 5,
+						"opacity": "90"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "End_Scene2",
+					"sid": 612257823247202,
+					"parameters": [
+						"100",
+						"1",
+						"0",
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 890721532232449,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 818970070599527
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 936044506247692,
+					"parameters": {
+						"object": "Steam"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "Steam",
+					"sid": 130000227755734
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Steam",
+					"sid": 631326523297132,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 638658622399536
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 554520644899487
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "Steam",
+					"sid": 663943717428383
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Steam",
+					"sid": 998370263686696,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 750012907369110
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 259932127635353,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Steam"
+					}
+				},
+				{
+					"id": "compare-opacity",
+					"objectClass": "Steam",
+					"sid": 443003289336766,
+					"parameters": {
+						"comparison": 4,
+						"opacity": "90"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "open-url-in-new-window",
+					"objectClass": "Browser",
+					"sid": 886616067999121,
+					"parameters": {
+						"url": "\"https://store.steampowered.com/app/4576430/Breakdown_Silent_Riot/\"",
+						"tag": "\"NewWindow\""
+					}
+				}
+			],
+			"sid": 700327007335987
 		}
 	],
 	"sid": 658662795798694
