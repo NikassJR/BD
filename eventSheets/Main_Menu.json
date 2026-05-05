@@ -62,6 +62,30 @@
 			"sid": 261078943644951
 		},
 		{
+			"eventType": "comment",
+			"text": "Gamepad"
+		},
+		{
+			"eventType": "variable",
+			"name": "CursorSpeed",
+			"type": "number",
+			"initialValue": "5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 402638052806023
+		},
+		{
+			"eventType": "variable",
+			"name": "MouseSensitivity",
+			"type": "number",
+			"initialValue": "1.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 214796597775284
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "Effect"
 		},
@@ -196,11 +220,19 @@
 					}
 				},
 				{
-					"id": "set-cursor-from-sprite",
-					"objectClass": "Mouse",
-					"sid": 155410865509138,
+					"id": "pin-to-object-properties",
+					"objectClass": "Camera_Main",
+					"sid": 513355911249353,
+					"disabled": true,
+					"behaviorType": "Прикрепить",
 					"parameters": {
-						"sprite": "Cursor_Mouse"
+						"pin-to": "Camera",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
 					}
 				},
 				{
@@ -273,14 +305,6 @@
 					"parameters": {
 						"layer": "LayerIndex(\"Tutorial\")",
 						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-cursor-from-sprite",
-					"objectClass": "Mouse",
-					"sid": 312510478742203,
-					"parameters": {
-						"sprite": "Cursor_Mouse"
 					}
 				},
 				{
@@ -608,21 +632,37 @@
 					}
 				},
 				{
+					"id": "set-cursor-from-sprite",
+					"objectClass": "Mouse",
+					"sid": 813067041049502,
+					"parameters": {
+						"sprite": "Cursor_Mouse"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "Camera_Main",
+					"sid": 277923369576226,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
 					"callFunction": "Audio_Play_Sound",
-					"sid": 884798790850798,
+					"sid": 614450518885159,
 					"parameters": [
-						"\"ChairCrash\"",
+						"\"Missage\"",
 						"0",
-						"\"ChairCrash\""
+						"\"Missage\""
 					]
 				},
 				{
 					"callFunction": "Audio_Play_Sound",
-					"sid": 438388352840781,
+					"sid": 407793646240912,
 					"parameters": [
-						"\"Damage\"",
+						"\"CameraCrash\"",
 						"0",
-						"\"Damage\""
+						"\"CameraCrash\""
 					]
 				},
 				{
@@ -686,6 +726,23 @@
 						"tags": "\"\"",
 						"property": "offsetColor",
 						"end-value": "rgbEx(0, 0, 0)",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Shadow4",
+					"sid": 579601283970424,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
 						"time": "1",
 						"ease": "default",
 						"destroy-on-complete": "no",
@@ -796,12 +853,12 @@
 				{
 					"id": "tween-one-property",
 					"objectClass": "Logo2",
-					"sid": 148497676090180,
+					"sid": 668389557732314,
 					"behaviorType": "Твинанимация",
 					"parameters": {
 						"tags": "\"\"",
 						"property": "offsetOpacity",
-						"end-value": "70",
+						"end-value": "0",
 						"time": "1",
 						"ease": "default",
 						"destroy-on-complete": "no",
@@ -819,6 +876,24 @@
 						"tags": "\"\"",
 						"property": "offsetOpacity",
 						"end-value": "100",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Camera_Main",
+					"sid": 493430024789537,
+					"disabled": true,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "80",
 						"time": "1",
 						"ease": "default",
 						"destroy-on-complete": "no",
@@ -880,135 +955,149 @@
 								{
 									"id": "cursor-is-over-object",
 									"objectClass": "Mouse",
-									"sid": 835413734558168,
+									"sid": 388515837880977,
 									"parameters": {
 										"object": "Text_Menu"
 									}
 								},
 								{
-									"id": "is-visible",
-									"objectClass": "Text_Menu",
-									"sid": 392541264337969
+									"id": "is-overlapping-another-object",
+									"objectClass": "Cursor_Mouse",
+									"sid": 964952756568305,
+									"parameters": {
+										"object": "Text_Menu"
+									}
 								}
 							],
 							"actions": [],
-							"sid": 153943169857056,
+							"sid": 279143399106330,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "has-tags",
+											"id": "is-visible",
 											"objectClass": "Text_Menu",
-											"sid": 190522243371520,
-											"parameters": {
-												"tags": "\"Continue\""
-											}
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Menu",
-											"sid": 717500575597705,
-											"parameters": {
-												"tags": "\"Play_Demo\""
-											}
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Menu",
-											"sid": 776345207702920,
-											"parameters": {
-												"tags": "\"New_Game\""
-											}
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Menu",
-											"sid": 524167793394062,
-											"parameters": {
-												"tags": "\"Start_Menu\""
-											}
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Menu",
-											"sid": 602789088487171,
-											"parameters": {
-												"tags": "\"Hardcore\""
-											}
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Menu",
-											"sid": 413210726645413,
-											"parameters": {
-												"tags": "\"Setting\""
-											}
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Menu",
-											"sid": 172088545832098,
-											"parameters": {
-												"tags": "\"Level\""
-											}
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Menu",
-											"sid": 693979493486074,
-											"parameters": {
-												"tags": "\"Exit\""
-											}
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Menu",
-											"sid": 528006561697270,
-											"parameters": {
-												"tags": "\"Back\""
-											}
+											"sid": 712002260553501
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 959105393280594,
+									"children": [
 										{
-											"id": "set-font-color",
-											"objectClass": "Text_Menu",
-											"sid": 918740053618686,
-											"parameters": {
-												"color": "rgbEx(50, 0, 0)"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Menu",
+													"sid": 108127406630020,
+													"parameters": {
+														"tags": "\"Continue\""
+													}
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Menu",
+													"sid": 164444216321328,
+													"parameters": {
+														"tags": "\"Play_Demo\""
+													}
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Menu",
+													"sid": 908743402335809,
+													"parameters": {
+														"tags": "\"New_Game\""
+													}
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Menu",
+													"sid": 517601126087507,
+													"parameters": {
+														"tags": "\"Start_Menu\""
+													}
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Menu",
+													"sid": 577631758147725,
+													"parameters": {
+														"tags": "\"Hardcore\""
+													}
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Menu",
+													"sid": 562815931574124,
+													"parameters": {
+														"tags": "\"Setting\""
+													}
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Menu",
+													"sid": 350090119423799,
+													"parameters": {
+														"tags": "\"Level\""
+													}
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Menu",
+													"sid": 712088552305234,
+													"parameters": {
+														"tags": "\"Exit\""
+													}
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Menu",
+													"sid": 141107132102248,
+													"parameters": {
+														"tags": "\"Back\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-font-color",
+													"objectClass": "Text_Menu",
+													"sid": 925909236215709,
+													"parameters": {
+														"color": "rgbEx(50, 0, 0)"
+													}
+												}
+											],
+											"sid": 498087075058560,
+											"isOrBlock": true
 										}
-									],
-									"sid": 384480913484186,
-									"isOrBlock": true
+									]
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 462377875575909,
-									"parameters": {
-										"object": "Text_Menu"
-									},
-									"isInverted": true
+									"id": "else",
+									"objectClass": "System",
+									"sid": 250348812344153
 								}
 							],
 							"actions": [
 								{
 									"id": "set-font-color",
 									"objectClass": "Text_Menu",
-									"sid": 506278596421551,
+									"sid": 596604611490578,
 									"parameters": {
 										"color": "rgbEx(75, 75, 75)"
 									}
 								}
 							],
-							"sid": 668180729352093
+							"sid": 576293540672558
 						},
 						{
 							"eventType": "block",
@@ -1107,6 +1196,111 @@
 								}
 							],
 							"sid": 130570295095921
+						},
+						{
+							"eventType": "comment",
+							"text": "Main"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-gamepads",
+									"objectClass": "Gamepad",
+									"sid": 300540426114116
+								},
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 702007600054716
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 651920155257928,
+									"parameters": {
+										"variable": "CursorX",
+										"value": "CursorX + Gamepad.Axis(0, 2) * CursorSpeed * dt * MouseSensitivity"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 863346747428445,
+									"parameters": {
+										"variable": "CursorY",
+										"value": "CursorY + Gamepad.Axis(0, 3) * CursorSpeed * dt * MouseSensitivity"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "Cursor_Mouse",
+									"sid": 376161492456775,
+									"parameters": {
+										"x": "CursorX",
+										"y": "CursorY"
+									}
+								}
+							],
+							"sid": 157322443387206
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-gamepads",
+									"objectClass": "Gamepad",
+									"sid": 778542020371721
+								}
+							],
+							"actions": [
+								{
+									"id": "request-pointer-lock",
+									"objectClass": "Mouse",
+									"sid": 956673442554376,
+									"parameters": {
+										"unadjusted-movement": false
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Cursor_Mouse",
+									"sid": 896122426105778,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 820940575339989
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-gamepads",
+									"objectClass": "Gamepad",
+									"sid": 503018487882601,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "release-pointer-lock",
+									"objectClass": "Mouse",
+									"sid": 383900363169236
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Cursor_Mouse",
+									"sid": 220375178165311,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 510661924069700
 						}
 					],
 					"sid": 892839535353213
@@ -1131,15 +1325,20 @@
 						{
 							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 392741463099830,
+							"sid": 607425972913106,
 							"parameters": {
 								"layer": "\"Main_Menu\""
 							}
 						},
 						{
+							"id": "is-visible",
+							"objectClass": "Text_Menu",
+							"sid": 490194703924457
+						},
+						{
 							"id": "has-tags",
 							"objectClass": "Text_Menu",
-							"sid": 326940536796499,
+							"sid": 118983653351740,
 							"parameters": {
 								"tags": "\"Exit\""
 							}
@@ -1147,7 +1346,7 @@
 						{
 							"id": "compare-opacity",
 							"objectClass": "Menu",
-							"sid": 507095234468294,
+							"sid": 108514857708151,
 							"parameters": {
 								"comparison": 5,
 								"opacity": "90"
@@ -1158,7 +1357,7 @@
 						{
 							"id": "close",
 							"objectClass": "Browser",
-							"sid": 614648524011128
+							"sid": 155698804326052
 						}
 					],
 					"sid": 154030050928422
@@ -1177,6 +1376,14 @@
 							}
 						},
 						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 426586283747072,
+							"parameters": {
+								"layer": "\"Main_Menu\""
+							}
+						},
+						{
 							"id": "has-tags",
 							"objectClass": "Text_Menu",
 							"sid": 911983432717619,
@@ -1188,14 +1395,6 @@
 							"id": "is-visible",
 							"objectClass": "Text_Menu",
 							"sid": 151304034080315
-						},
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 860294027945117,
-							"parameters": {
-								"layer": "\"Main_Menu\""
-							}
 						},
 						{
 							"id": "compare-opacity",
@@ -2052,6 +2251,15 @@
 					],
 					"actions": [
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 121210806945784,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
+						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
 							"sid": 410766216621176,
@@ -2528,7 +2736,33 @@
 							}
 						}
 					],
-					"sid": 615577019944314
+					"sid": 615577019944314,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-tags",
+									"objectClass": "Blick_Club3",
+									"sid": 592708078808908,
+									"parameters": {
+										"tags": "\"Level\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Blick_Club3",
+									"sid": 760835005591583,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 186238812270868
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -2596,7 +2830,33 @@
 							}
 						}
 					],
-					"sid": 924943678287583
+					"sid": 924943678287583,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-tags",
+									"objectClass": "Blick_Club3",
+									"sid": 919045859867685,
+									"parameters": {
+										"tags": "\"Level\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Blick_Club3",
+									"sid": 800936891970723,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 374499432729098
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -2620,6 +2880,7 @@
 							"id": "check-item-exists",
 							"objectClass": "Game_Save",
 							"sid": 682924992183489,
+							"disabled": true,
 							"parameters": {
 								"key": "\"Level\""
 							}
@@ -2659,7 +2920,6 @@
 							"id": "set-visible",
 							"objectClass": "Text_logo",
 							"sid": 163939724968577,
-							"disabled": true,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -3618,20 +3878,20 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-key",
-									"objectClass": "Game_Save",
-									"sid": 926824520393785,
-									"parameters": {
-										"comparison": 0,
-										"string": "\"Level\""
-									}
-								},
-								{
 									"id": "is-animation-playing",
 									"objectClass": "Level3",
 									"sid": 224703812659191,
 									"parameters": {
 										"animation": "\"Night_Club\""
+									}
+								},
+								{
+									"id": "compare-key",
+									"objectClass": "Game_Save",
+									"sid": 282914159152655,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"Level\""
 									}
 								},
 								{
@@ -4993,6 +5253,7 @@
 							"id": "check-item-exists",
 							"objectClass": "Game_Save",
 							"sid": 163454905352303,
+							"disabled": true,
 							"parameters": {
 								"key": "\"HardcoreLevel\""
 							}
@@ -5031,7 +5292,6 @@
 							"id": "set-visible",
 							"objectClass": "Text_logo",
 							"sid": 442780291202302,
-							"disabled": true,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -7367,14 +7627,14 @@
 							"objectClass": "Mouse",
 							"sid": 657025611783266,
 							"parameters": {
-								"object": "Level"
+								"object": "Level3"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-animation-frame",
-							"objectClass": "Level",
+							"objectClass": "Level3",
 							"sid": 706716466570732,
 							"parameters": {
 								"frame-number": "1"
@@ -7395,7 +7655,7 @@
 					"actions": [
 						{
 							"id": "set-animation-frame",
-							"objectClass": "Level",
+							"objectClass": "Level3",
 							"sid": 929523159701941,
 							"parameters": {
 								"frame-number": "0"
@@ -7553,6 +7813,99 @@
 						}
 					],
 					"sid": 646664273901938
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 450549241184057,
+							"parameters": {
+								"layer": "\"Level\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Camera_Main",
+							"sid": 155492305252673,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Flag",
+							"sid": 242469600353244,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Secundomer",
+							"sid": 826617938297554,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Logo",
+							"sid": 379153976480332,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 829879336130268
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 382351641697541
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Camera_Main",
+							"sid": 409835104797197,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Flag",
+							"sid": 391669021662943,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Secundomer",
+							"sid": 791999301672522,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Logo",
+							"sid": 286828657574967,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 246738064276248
 				}
 			],
 			"sid": 705416730304569
@@ -7715,6 +8068,540 @@
 				}
 			],
 			"sid": 700327007335987
+		},
+		{
+			"eventType": "comment",
+			"text": "Timer"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 364153350170856
+				}
+			],
+			"actions": [],
+			"sid": 798896348776106,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 100765407280132,
+							"parameters": {
+								"variable": "sec",
+								"comparison": 2,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 650955277334347,
+							"parameters": {
+								"variable": "minute",
+								"comparison": 2,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 274036605179052,
+							"parameters": {
+								"variable": "hour",
+								"comparison": 2,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Secundomer",
+							"sid": 204700431431515,
+							"parameters": {
+								"text": "\"0\"&hour&\":\"&\"0\"&minute&\":\"&\"0\"&sec"
+							}
+						}
+					],
+					"sid": 281649887750205
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 244942986323971,
+							"parameters": {
+								"variable": "sec",
+								"comparison": 5,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 350851797733107,
+							"parameters": {
+								"variable": "minute",
+								"comparison": 2,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 338991460035400,
+							"parameters": {
+								"variable": "hour",
+								"comparison": 2,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Secundomer",
+							"sid": 281189657302078,
+							"parameters": {
+								"text": "\"0\"&hour&\":\"&\"0\"&minute&\":\"&sec"
+							}
+						}
+					],
+					"sid": 335016426417276
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 990707101204323,
+							"parameters": {
+								"variable": "sec",
+								"comparison": 2,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 160041420846192,
+							"parameters": {
+								"variable": "minute",
+								"comparison": 5,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 222177781247598,
+							"parameters": {
+								"variable": "hour",
+								"comparison": 2,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Secundomer",
+							"sid": 817169798887218,
+							"parameters": {
+								"text": "\"0\"&hour&\":\"&minute&\":\"&\"0\"&sec"
+							}
+						}
+					],
+					"sid": 923107651944098
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 672859347013554,
+							"parameters": {
+								"variable": "sec",
+								"comparison": 5,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 844470146704002,
+							"parameters": {
+								"variable": "minute",
+								"comparison": 5,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 187312798550470,
+							"parameters": {
+								"variable": "hour",
+								"comparison": 2,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Secundomer",
+							"sid": 634077864400264,
+							"parameters": {
+								"text": "\"0\"&hour&\":\"&minute&\":\"&sec"
+							}
+						}
+					],
+					"sid": 380064417989699
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 204939505446188,
+							"parameters": {
+								"variable": "sec",
+								"comparison": 2,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 960825298326888,
+							"parameters": {
+								"variable": "minute",
+								"comparison": 2,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 793321017003717,
+							"parameters": {
+								"variable": "hour",
+								"comparison": 5,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Secundomer",
+							"sid": 794081346691441,
+							"parameters": {
+								"text": "hour&\":\"&\"0\"&minute&\":\"&\"0\"&sec"
+							}
+						}
+					],
+					"sid": 884934341923629
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 159763524368288,
+							"parameters": {
+								"variable": "sec",
+								"comparison": 2,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 438599414017234,
+							"parameters": {
+								"variable": "minute",
+								"comparison": 5,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 244876447929009,
+							"parameters": {
+								"variable": "hour",
+								"comparison": 5,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Secundomer",
+							"sid": 568274124506642,
+							"parameters": {
+								"text": "hour&\":\"&minute&\":\"&\"0\"&sec"
+							}
+						}
+					],
+					"sid": 423203048681549
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 132428905411310,
+							"parameters": {
+								"variable": "sec",
+								"comparison": 5,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 541795976284347,
+							"parameters": {
+								"variable": "minute",
+								"comparison": 2,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 144708691512676,
+							"parameters": {
+								"variable": "hour",
+								"comparison": 5,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Secundomer",
+							"sid": 384260802410926,
+							"parameters": {
+								"text": "hour&\":\"&\"0\"&minute&\":\"&sec"
+							}
+						}
+					],
+					"sid": 853273561802115
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 143446389101939,
+							"parameters": {
+								"variable": "sec",
+								"comparison": 5,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 254906237064250,
+							"parameters": {
+								"variable": "minute",
+								"comparison": 5,
+								"value": "10"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 956295255793286,
+							"parameters": {
+								"variable": "hour",
+								"comparison": 5,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Secundomer",
+							"sid": 770807896179325,
+							"parameters": {
+								"text": "hour&\":\"&minute&\":\"&sec"
+							}
+						}
+					],
+					"sid": 396397478650562
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 651105047466903
+				},
+				{
+					"id": "on-resume",
+					"objectClass": "System",
+					"sid": 776698350737159,
+					"disabled": true
+				},
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 309394410998020
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "Game_Save",
+					"sid": 845146661306278,
+					"parameters": {
+						"key": "\"TimerSec\""
+					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "Game_Save",
+					"sid": 246381007725989,
+					"parameters": {
+						"key": "\"TimerMin\""
+					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "Game_Save",
+					"sid": 166442729536082,
+					"parameters": {
+						"key": "\"TimerHour\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 229832708145352,
+					"parameters": {
+						"key": "\"TimerSec\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 237181745307938,
+					"parameters": {
+						"key": "\"TimerMin\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 899269970890156,
+					"parameters": {
+						"key": "\"TimerHour\""
+					}
+				}
+			],
+			"sid": 831457175920827,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 195710078977585,
+					"parameters": {
+						"key": "\"TimerHour\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 902563188723420,
+					"parameters": {
+						"variable": "hour",
+						"value": "Game_Save.ItemValue"
+					}
+				}
+			],
+			"sid": 579381134402698
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 314073850174440,
+					"parameters": {
+						"key": "\"TimerMin\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 563768854113249,
+					"parameters": {
+						"variable": "minute",
+						"value": "Game_Save.ItemValue"
+					}
+				}
+			],
+			"sid": 203587549408737
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 331714360736262,
+					"parameters": {
+						"key": "\"TimerSec\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 475684960179590,
+					"parameters": {
+						"variable": "sec",
+						"value": "Game_Save.ItemValue"
+					}
+				}
+			],
+			"sid": 620414244369345
 		}
 	],
 	"sid": 658662795798694

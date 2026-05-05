@@ -2840,104 +2840,125 @@
 						{
 							"id": "on-click",
 							"objectClass": "Mouse",
-							"sid": 822337129265854,
+							"sid": 191893374293513,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked"
 							}
 						},
 						{
-							"id": "is-animation-playing",
-							"objectClass": "Player_All",
-							"sid": 220834263191114,
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 296363796745661,
 							"parameters": {
-								"animation": "\"Wolf4\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 837448798564478,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "31"
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 2,
+								"value": "-25"
 							}
-						},
-						{
-							"id": "compare-animation-frame",
-							"objectClass": "Player_All",
-							"sid": 922655993818175,
-							"parameters": {
-								"comparison": 0,
-								"number": "0"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 277880046116961,
-							"parameters": {
-								"instance-variable": "Wolf",
-								"comparison": 1,
-								"value": "20"
-							}
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Player_Wolf",
-							"sid": 869037812772740,
-							"parameters": {
-								"instance-variable": "CutDeath"
-							},
-							"isInverted": true
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 543074521143049,
+					"children": [
 						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_All",
-							"sid": 379720706667243,
-							"parameters": {
-								"instance-variable": "Wolf",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Player_All",
-							"sid": 651287015108759,
-							"parameters": {
-								"frame-number": "1"
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 105238646162888,
-							"disabled": true,
-							"parameters": {
-								"audio-file": {
-									"path": "ChainZvon"
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 713572358960462,
+									"parameters": {
+										"animation": "\"Wolf4\""
+									},
+									"isInverted": true
 								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"audio\""
-							}
-						},
-						{
-							"callFunction": "Audio_Play_Sound",
-							"sid": 781191506623557,
-							"parameters": [
-								"\"ChainZvon\"",
-								"0",
-								"\"audio\""
-							]
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 466710124550200,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 0,
+										"value": "31"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Player_All",
+									"sid": 733030645061700,
+									"parameters": {
+										"comparison": 0,
+										"number": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 447023178485748,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"comparison": 1,
+										"value": "20"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player_Wolf",
+									"sid": 852959313697619,
+									"parameters": {
+										"instance-variable": "CutDeath"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Player_All",
+									"sid": 611979223590299,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Player_All",
+									"sid": 212579450317623,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 179246772723346,
+									"disabled": true,
+									"parameters": {
+										"audio-file": {
+											"path": "ChainZvon"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"audio\""
+									}
+								},
+								{
+									"callFunction": "Audio_Play_Sound",
+									"sid": 256817891477274,
+									"parameters": [
+										"\"ChainZvon\"",
+										"0",
+										"\"audio\""
+									]
+								}
+							],
+							"sid": 217681321480309
 						}
 					],
-					"sid": 716461230576433
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -2945,80 +2966,101 @@
 						{
 							"id": "on-click",
 							"objectClass": "Mouse",
-							"sid": 607108803629505,
+							"sid": 892886559340846,
 							"parameters": {
 								"mouse-button": "right",
 								"click-type": "clicked"
 							}
 						},
 						{
-							"id": "is-animation-playing",
-							"objectClass": "Player_All",
-							"sid": 283692121925384,
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 678196223767968,
 							"parameters": {
-								"animation": "\"Wolf4\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-animation-frame",
-							"objectClass": "Player_All",
-							"sid": 489011051134820,
-							"parameters": {
-								"comparison": 0,
-								"number": "1"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 151272740234601,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "31"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 158170742311227,
-							"parameters": {
-								"instance-variable": "Wolf",
-								"comparison": 1,
-								"value": "20"
-							}
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Player_Wolf",
-							"sid": 203781488024876,
-							"parameters": {
-								"instance-variable": "CutDeath"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_All",
-							"sid": 138835072946839,
-							"parameters": {
-								"instance-variable": "Wolf",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Player_All",
-							"sid": 746924520862063,
-							"parameters": {
-								"frame-number": "0"
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 4,
+								"value": "25"
 							}
 						}
 					],
-					"sid": 660783382658780
+					"actions": [],
+					"sid": 975215705677513,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 239610700983889,
+									"parameters": {
+										"animation": "\"Wolf4\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Player_All",
+									"sid": 598666415863293,
+									"parameters": {
+										"comparison": 0,
+										"number": "1"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 561064317698718,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 0,
+										"value": "31"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 647008629077294,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"comparison": 1,
+										"value": "20"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player_Wolf",
+									"sid": 811196435774691,
+									"parameters": {
+										"instance-variable": "CutDeath"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Player_All",
+									"sid": 314751642551046,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Player_All",
+									"sid": 817467987789607,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 109272602663413
+						}
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -3072,123 +3114,144 @@
 						{
 							"id": "on-click",
 							"objectClass": "Mouse",
-							"sid": 905869948205195,
+							"sid": 872097127189997,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked"
 							}
 						},
 						{
-							"id": "is-animation-playing",
-							"objectClass": "Player_All",
-							"sid": 568028057845783,
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 714179872720665,
 							"parameters": {
-								"animation": "\"Wolf4\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-animation-frame",
-							"objectClass": "Player_All",
-							"sid": 336768460493939,
-							"parameters": {
-								"comparison": 0,
-								"number": "0"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 849438434817691,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "31"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 292015379716590,
-							"parameters": {
-								"instance-variable": "Wolf",
-								"comparison": 0,
-								"value": "20"
-							}
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Player_Wolf",
-							"sid": 751899479287718,
-							"parameters": {
-								"instance-variable": "CutDeath"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Player_All",
-							"sid": 263662614180625,
-							"parameters": {
-								"frame-number": "1"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_All",
-							"sid": 102675843475893,
-							"parameters": {
-								"instance-variable": "Wolf",
-								"value": "1"
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 2,
+								"value": "-25"
 							}
 						}
 					],
-					"sid": 459358213812087,
+					"actions": [],
+					"sid": 862789420341878,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-tag-playing",
-									"objectClass": "Audio",
-									"sid": 350925122569378,
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 484523752060485,
 									"parameters": {
-										"tag": "\"audio\""
+										"animation": "\"Wolf4\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Player_All",
+									"sid": 952837857492299,
+									"parameters": {
+										"comparison": 0,
+										"number": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 861061224078517,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 0,
+										"value": "31"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 809178182961885,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"comparison": 0,
+										"value": "20"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player_Wolf",
+									"sid": 228485804272289,
+									"parameters": {
+										"instance-variable": "CutDeath"
 									},
 									"isInverted": true
 								}
 							],
 							"actions": [
 								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 335842765375320,
-									"disabled": true,
+									"id": "set-animation-frame",
+									"objectClass": "Player_All",
+									"sid": 616803338379093,
 									"parameters": {
-										"audio-file": {
-											"path": "ChainZvon"
-										},
-										"loop": "not-looping",
-										"volume": "0",
-										"stereo-pan": "0",
-										"tag-optional": "\"audio\""
+										"frame-number": "1"
 									}
 								},
 								{
-									"callFunction": "Audio_Play_Sound",
-									"sid": 473123625154005,
-									"parameters": [
-										"\"ChainZvon\"",
-										"0",
-										"\"audio\""
-									]
+									"id": "add-to-instvar",
+									"objectClass": "Player_All",
+									"sid": 923426614098201,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"value": "1"
+									}
 								}
 							],
-							"sid": 271536504508833
+							"sid": 549860649305314,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-tag-playing",
+											"objectClass": "Audio",
+											"sid": 269318711268445,
+											"parameters": {
+												"tag": "\"audio\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 477611332817269,
+											"disabled": true,
+											"parameters": {
+												"audio-file": {
+													"path": "ChainZvon"
+												},
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"audio\""
+											}
+										},
+										{
+											"callFunction": "Audio_Play_Sound",
+											"sid": 182987264540687,
+											"parameters": [
+												"\"ChainZvon\"",
+												"0",
+												"\"audio\""
+											]
+										}
+									],
+									"sid": 984451746847650
+								}
+							]
 						}
-					]
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -3196,80 +3259,101 @@
 						{
 							"id": "on-click",
 							"objectClass": "Mouse",
-							"sid": 898309091022781,
+							"sid": 714548809271425,
 							"parameters": {
 								"mouse-button": "right",
 								"click-type": "clicked"
 							}
 						},
 						{
-							"id": "is-animation-playing",
-							"objectClass": "Player_All",
-							"sid": 987181508408094,
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 915275888808573,
 							"parameters": {
-								"animation": "\"Wolf4\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-animation-frame",
-							"objectClass": "Player_All",
-							"sid": 427612125480935,
-							"parameters": {
-								"comparison": 0,
-								"number": "1"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 193066878567722,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "31"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 807175127545365,
-							"parameters": {
-								"instance-variable": "Wolf",
-								"comparison": 0,
-								"value": "20"
-							}
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Player_Wolf",
-							"sid": 703104555643028,
-							"parameters": {
-								"instance-variable": "CutDeath"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Player_All",
-							"sid": 413756004539572,
-							"parameters": {
-								"frame-number": "0"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_All",
-							"sid": 155370869220981,
-							"parameters": {
-								"instance-variable": "Wolf",
-								"value": "1"
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 4,
+								"value": "25"
 							}
 						}
 					],
-					"sid": 166211085172793
+					"actions": [],
+					"sid": 928777992907833,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 492966130912874,
+									"parameters": {
+										"animation": "\"Wolf4\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Player_All",
+									"sid": 803917908394941,
+									"parameters": {
+										"comparison": 0,
+										"number": "1"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 521223497276442,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 0,
+										"value": "31"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 726992856947766,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"comparison": 0,
+										"value": "20"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player_Wolf",
+									"sid": 267756505614783,
+									"parameters": {
+										"instance-variable": "CutDeath"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Player_All",
+									"sid": 549056883965838,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Player_All",
+									"sid": 361984749828871,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 372102210357978
+						}
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -3323,133 +3407,154 @@
 						{
 							"id": "on-click",
 							"objectClass": "Mouse",
-							"sid": 975973362305610,
+							"sid": 652761171067870,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked"
 							}
 						},
 						{
-							"id": "compare-animation-frame",
-							"objectClass": "Player_All",
-							"sid": 166773642136825,
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 427724715015484,
 							"parameters": {
-								"comparison": 0,
-								"number": "0"
-							}
-						},
-						{
-							"id": "is-animation-playing",
-							"objectClass": "Player_All",
-							"sid": 917151332159965,
-							"parameters": {
-								"animation": "\"Wolf4\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 731688099575037,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "31"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 462434563096871,
-							"parameters": {
-								"instance-variable": "Wolf",
-								"comparison": 0,
-								"value": "40"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 199813919358030,
-							"parameters": {
-								"instance-variable": "Wolf",
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
 								"comparison": 2,
-								"value": "60"
-							}
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Player_Wolf",
-							"sid": 349411435139065,
-							"parameters": {
-								"instance-variable": "CutDeath"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Player_All",
-							"sid": 276223822760487,
-							"parameters": {
-								"frame-number": "1"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_All",
-							"sid": 593084868437794,
-							"parameters": {
-								"instance-variable": "Wolf",
-								"value": "1"
+								"value": "-25"
 							}
 						}
 					],
-					"sid": 366057531007642,
+					"actions": [],
+					"sid": 667572879899447,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-tag-playing",
-									"objectClass": "Audio",
-									"sid": 929850312947243,
+									"id": "compare-animation-frame",
+									"objectClass": "Player_All",
+									"sid": 481800263828906,
 									"parameters": {
-										"tag": "\"audio\""
+										"comparison": 0,
+										"number": "0"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 918345052713892,
+									"parameters": {
+										"animation": "\"Wolf4\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 194760360750581,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 0,
+										"value": "31"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 872330436734223,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"comparison": 0,
+										"value": "40"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 862844167909356,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"comparison": 2,
+										"value": "60"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player_Wolf",
+									"sid": 894851587667119,
+									"parameters": {
+										"instance-variable": "CutDeath"
 									},
 									"isInverted": true
 								}
 							],
 							"actions": [
 								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 271855555352791,
-									"disabled": true,
+									"id": "set-animation-frame",
+									"objectClass": "Player_All",
+									"sid": 959889059122604,
 									"parameters": {
-										"audio-file": {
-											"path": "ChainZvon"
-										},
-										"loop": "not-looping",
-										"volume": "0",
-										"stereo-pan": "0",
-										"tag-optional": "\"audio\""
+										"frame-number": "1"
 									}
 								},
 								{
-									"callFunction": "Audio_Play_Sound",
-									"sid": 304177117764573,
-									"parameters": [
-										"\"ChainZvon\"",
-										"0",
-										"\"audio\""
-									]
+									"id": "add-to-instvar",
+									"objectClass": "Player_All",
+									"sid": 173218491310390,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"value": "1"
+									}
 								}
 							],
-							"sid": 722203280171352
+							"sid": 458661743392107,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-tag-playing",
+											"objectClass": "Audio",
+											"sid": 125197005841753,
+											"parameters": {
+												"tag": "\"audio\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 281427304524902,
+											"disabled": true,
+											"parameters": {
+												"audio-file": {
+													"path": "ChainZvon"
+												},
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"audio\""
+											}
+										},
+										{
+											"callFunction": "Audio_Play_Sound",
+											"sid": 278911736845976,
+											"parameters": [
+												"\"ChainZvon\"",
+												"0",
+												"\"audio\""
+											]
+										}
+									],
+									"sid": 541599777331419
+								}
+							]
 						}
-					]
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -3457,90 +3562,111 @@
 						{
 							"id": "on-click",
 							"objectClass": "Mouse",
-							"sid": 901345370432777,
+							"sid": 937411035183282,
 							"parameters": {
 								"mouse-button": "right",
 								"click-type": "clicked"
 							}
 						},
 						{
-							"id": "compare-animation-frame",
-							"objectClass": "Player_All",
-							"sid": 278997773386407,
+							"id": "compare-axis",
+							"objectClass": "Gamepad",
+							"sid": 250329751521114,
 							"parameters": {
-								"comparison": 0,
-								"number": "1"
-							}
-						},
-						{
-							"id": "is-animation-playing",
-							"objectClass": "Player_All",
-							"sid": 959914443858261,
-							"parameters": {
-								"animation": "\"Wolf4\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 839169086291977,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "31"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 725740619139748,
-							"parameters": {
-								"instance-variable": "Wolf",
-								"comparison": 0,
-								"value": "40"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 708876566349220,
-							"parameters": {
-								"instance-variable": "Wolf",
-								"comparison": 2,
-								"value": "60"
-							}
-						},
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "Player_Wolf",
-							"sid": 584430188237174,
-							"parameters": {
-								"instance-variable": "CutDeath"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Player_All",
-							"sid": 123470743739462,
-							"parameters": {
-								"frame-number": "0"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_All",
-							"sid": 515242614414989,
-							"parameters": {
-								"instance-variable": "Wolf",
-								"value": "1"
+								"gamepad": "0",
+								"axis": "left-analog-x-axis",
+								"comparison": 4,
+								"value": "25"
 							}
 						}
 					],
-					"sid": 706062110241589
+					"actions": [],
+					"sid": 382534356811484,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Player_All",
+									"sid": 625532638733243,
+									"parameters": {
+										"comparison": 0,
+										"number": "1"
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 116359495309127,
+									"parameters": {
+										"animation": "\"Wolf4\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 671406162700638,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 0,
+										"value": "31"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 190289125627357,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"comparison": 0,
+										"value": "40"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 856351229665107,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"comparison": 2,
+										"value": "60"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player_Wolf",
+									"sid": 237020671364512,
+									"parameters": {
+										"instance-variable": "CutDeath"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Player_All",
+									"sid": 730201914703891,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Player_All",
+									"sid": 486857901691454,
+									"parameters": {
+										"instance-variable": "Wolf",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 853076856784301
+						}
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",

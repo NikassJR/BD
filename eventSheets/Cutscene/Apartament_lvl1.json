@@ -602,103 +602,122 @@
 						{
 							"id": "on-click",
 							"objectClass": "Mouse",
-							"sid": 735313737110402,
+							"sid": 849660953671014,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked"
 							}
 						},
 						{
-							"id": "is-visible",
-							"objectClass": "Press_Mouse2",
-							"sid": 648729353383308
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 596447644530415,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 745811498384930,
 							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "5"
+								"gamepad": "0",
+								"button": "button-x"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 963845131563394,
+					"children": [
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 636218553903335,
-							"parameters": {
-								"audio-file": {
-									"path": "Music/Apartament"
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-visible",
+									"objectClass": "Press_Mouse2",
+									"sid": 920982633172250
 								},
-								"loop": "looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"music\""
-							}
-						},
-						{
-							"callFunction": "Destroy_Dialoge",
-							"sid": 910390213019120
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "Player_All",
-							"sid": 439030661211227,
-							"parameters": {
-								"animation": "\"noWeaponAttack3\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "move-forward",
-							"objectClass": "Player_All",
-							"sid": 896396621501427,
-							"parameters": {
-								"distance": "7"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "Press_Mouse2",
-							"sid": 348883341474612
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 922218196564594
-						},
-						{
-							"callFunction": "Audio_Play_Sound",
-							"sid": 253342272701665,
-							"parameters": [
-								"\"KickBaseball\"",
-								"0",
-								"\"KickBaseball\""
-							]
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_All",
-							"sid": 938482775689099,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 915557809112082,
-							"parameters": {
-								"variable": "onDial",
-								"value": "true"
-							}
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 496000735178020,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 331973030366487,
+									"parameters": {
+										"audio-file": {
+											"path": "Music/Apartament"
+										},
+										"loop": "looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"music\""
+									}
+								},
+								{
+									"callFunction": "Destroy_Dialoge",
+									"sid": 278589337004871
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player_All",
+									"sid": 965991246247672,
+									"parameters": {
+										"animation": "\"noWeaponAttack3\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "move-forward",
+									"objectClass": "Player_All",
+									"sid": 143893864542765,
+									"parameters": {
+										"distance": "7"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Press_Mouse2",
+									"sid": 984155184500298
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 195239711136223
+								},
+								{
+									"callFunction": "Audio_Play_Sound",
+									"sid": 774661959811604,
+									"parameters": [
+										"\"KickBaseball\"",
+										"0",
+										"\"KickBaseball\""
+									]
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Player_All",
+									"sid": 478593236895515,
+									"parameters": {
+										"instance-variable": "textframe",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 812173468379403,
+									"parameters": {
+										"variable": "onDial",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 626559535409428
 						}
 					],
-					"sid": 344866495376792
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
