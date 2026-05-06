@@ -3,10 +3,6 @@
 	"events": [
 		{
 			"eventType": "include",
-			"includeSheet": "Dialogue"
-		},
-		{
-			"eventType": "include",
 			"includeSheet": "actual"
 		},
 		{
@@ -165,16 +161,6 @@
 					}
 				},
 				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 136259212727003,
-					"disabled": true,
-					"parameters": {
-						"group-name": "\"Enemy_Maniac\"",
-						"state": "activated"
-					}
-				},
-				{
 					"id": "set-enabled",
 					"objectClass": "Player_Cutscene",
 					"sid": 315337100036813,
@@ -195,21 +181,6 @@
 					"parameters": {
 						"animation": "\"Starting_Dead\"",
 						"from": "beginning"
-					}
-				},
-				{
-					"id": "stop-animation",
-					"objectClass": "Player_Cutscene",
-					"sid": 763380201344829,
-					"disabled": true
-				},
-				{
-					"id": "start-animation",
-					"objectClass": "Player_Cutscene",
-					"sid": 331543937904072,
-					"disabled": true,
-					"parameters": {
-						"from": "current-frame"
 					}
 				},
 				{
@@ -384,14 +355,22 @@
 				{
 					"id": "create-object",
 					"objectClass": "System",
-					"sid": 767843542799271,
+					"sid": 693278913407756,
 					"parameters": {
 						"object-to-create": "Press_Space",
 						"layer": "\"Dialog\"",
-						"x": "Player_Cutscene.X ",
-						"y": "Player_Cutscene.Y -120",
+						"x": "Cloud_Dialogue.X -25",
+						"y": "Cloud_Dialogue.Y -20",
 						"create-hierarchy": false,
 						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Press_Space",
+					"sid": 933875882333236,
+					"parameters": {
+						"scale": "0.5"
 					}
 				}
 			],
@@ -412,6 +391,16 @@
 					"id": "is-visible",
 					"objectClass": "Press_Space",
 					"sid": 152059161609761
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_Cutscene",
+					"sid": 172916450412836,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 2,
+						"value": "2"
+					}
 				}
 			],
 			"actions": [
@@ -462,6 +451,11 @@
 								"comparison": 0,
 								"value": "2"
 							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 483099853080128
 						}
 					],
 					"actions": [
@@ -476,6 +470,29 @@
 								false,
 								false
 							]
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 538450615698049,
+							"parameters": {
+								"audio-file": {
+									"path": "Player_Run"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"Vibe\""
+							}
+						},
+						{
+							"id": "set-playback-rate",
+							"objectClass": "Audio",
+							"sid": 654333045756789,
+							"parameters": {
+								"tag": "\"Vibe\"",
+								"playback-rate": "0.6"
+							}
 						}
 					],
 					"sid": 317789705549813
@@ -586,6 +603,14 @@
 				{
 					"callFunction": "Destroy_Dialoge",
 					"sid": 161737344634520
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 348595216343760,
+					"parameters": {
+						"tag": "\"Vibe\""
+					}
 				},
 				{
 					"id": "set-group-active",
@@ -761,6 +786,29 @@
 					}
 				},
 				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 118062918331103,
+					"parameters": {
+						"audio-file": {
+							"path": "Player_Run"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"Vibe\""
+					}
+				},
+				{
+					"id": "set-playback-rate",
+					"objectClass": "Audio",
+					"sid": 156730831286068,
+					"parameters": {
+						"tag": "\"Vibe\"",
+						"playback-rate": "0.6"
+					}
+				},
+				{
 					"id": "set-group-active",
 					"objectClass": "System",
 					"sid": 609849669945281,
@@ -877,6 +925,14 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 348730456240106,
+					"parameters": {
+						"tag": "\"Vibe\""
+					}
+				},
 				{
 					"id": "set-group-active",
 					"objectClass": "System",
@@ -2033,6 +2089,33 @@
 					}
 				},
 				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 647288030485598,
+					"parameters": {
+						"variable": "onDial",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 800946460085189,
+					"parameters": {
+						"variable": "onDialMain",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 308308808736011,
+					"parameters": {
+						"variable": "Safe_Zone",
+						"value": "true"
+					}
+				},
+				{
 					"id": "add-to-instvar",
 					"objectClass": "Player_Cutscene",
 					"sid": 486042635965095,
@@ -2048,299 +2131,325 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_Cutscene",
-					"sid": 857992297983427,
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 937371409825072,
 					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "8"
+						"variable": "onDialMain"
 					}
+				}
+			],
+			"actions": [],
+			"sid": 129885953483355,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 307913748874236,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "8"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 869376608618253
+						}
+					],
+					"actions": [
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 110712316412251
+						},
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 920516242539789,
+							"parameters": [
+								"\"Mark6\"",
+								"36",
+								"1",
+								false,
+								false,
+								false
+							]
+						}
+					],
+					"sid": 155205050255015
 				},
 				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 485187386075783
-				}
-			],
-			"actions": [
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 857611847438609
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 240263961155971,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "9"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 135997481585053
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 475523431538383,
+							"parameters": [
+								"\"Mark6\"",
+								"37",
+								"1",
+								false,
+								false,
+								false
+							]
+						}
+					],
+					"sid": 615287146918435
 				},
 				{
-					"callFunction": "Create_mainDialoge",
-					"sid": 469163883565629,
-					"parameters": [
-						"\"Mark6\"",
-						"36",
-						"1",
-						false,
-						false,
-						false
-					]
-				}
-			],
-			"sid": 555057802058776
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_Cutscene",
-					"sid": 831574311430624,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "9"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 598993489513700,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "10"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 254469623020807
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 193311040107730,
+							"parameters": [
+								"\"Mark4\"",
+								"38",
+								"3",
+								true,
+								true,
+								false
+							]
+						}
+					],
+					"sid": 163582554139230
 				},
 				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 309797501735837
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "Create_mainDialoge",
-					"sid": 995089681545216,
-					"parameters": [
-						"\"Mark6\"",
-						"37",
-						"1",
-						false,
-						false,
-						false
-					]
-				}
-			],
-			"sid": 867264277007451
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_Cutscene",
-					"sid": 603893139841482,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "10"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 875409348071211,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "11"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 261343231473430
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 241547340346447,
+							"parameters": [
+								"\"Mark4\"",
+								"39",
+								"3",
+								true,
+								true,
+								false
+							]
+						}
+					],
+					"sid": 864714780374071
 				},
 				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 296290255137252
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "Create_mainDialoge",
-					"sid": 878259442166970,
-					"parameters": [
-						"\"Mark4\"",
-						"38",
-						"3",
-						true,
-						true,
-						false
-					]
-				}
-			],
-			"sid": 538831111688672
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_Cutscene",
-					"sid": 714717786041825,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "11"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 388377580113131,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "12"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 145968179544076
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 465666341369958,
+							"parameters": [
+								"\"Mark4\"",
+								"40",
+								"3",
+								true,
+								true,
+								false
+							]
+						}
+					],
+					"sid": 505855198787340
 				},
 				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 904423191129370
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "Create_mainDialoge",
-					"sid": 293577159663565,
-					"parameters": [
-						"\"Mark4\"",
-						"39",
-						"3",
-						true,
-						true,
-						false
-					]
-				}
-			],
-			"sid": 881543526040052
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_Cutscene",
-					"sid": 364404805321237,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "12"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 530431703171680,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "13"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 346225851124562
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 978079275089247,
+							"parameters": [
+								"\"Mark4\"",
+								"41",
+								"3",
+								true,
+								true,
+								false
+							]
+						}
+					],
+					"sid": 715803587373138
 				},
 				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 443442065631659
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "Create_mainDialoge",
-					"sid": 984169274166037,
-					"parameters": [
-						"\"Mark4\"",
-						"40",
-						"3",
-						true,
-						true,
-						false
-					]
-				}
-			],
-			"sid": 345215656704778
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_Cutscene",
-					"sid": 980852918951916,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "13"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 952690708581515,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "14"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 119732381201168
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "End_Scene2",
+							"sid": 446468505594354,
+							"parameters": [
+								"100",
+								"1",
+								"0",
+								false,
+								true,
+								false
+							]
+						},
+						{
+							"callFunction": "Create_mainDialoge",
+							"sid": 673112723430223,
+							"parameters": [
+								"\"Mark4\"",
+								"42",
+								"1",
+								true,
+								true,
+								false
+							]
+						}
+					],
+					"sid": 114142957515038
 				},
 				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 985016376675776
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 310346824972076,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "15"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 607803400072957
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 618297896617023,
+							"parameters": {
+								"variable": "onDialMain",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 137612473646952,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "true"
+							}
+						},
+						{
+							"callFunction": "Destroy_DialogeMain",
+							"sid": 525600406396458
+						}
+					],
+					"sid": 699746694824320
 				}
-			],
-			"actions": [
-				{
-					"callFunction": "Create_mainDialoge",
-					"sid": 447047802785612,
-					"parameters": [
-						"\"Mark4\"",
-						"41",
-						"3",
-						true,
-						true,
-						false
-					]
-				}
-			],
-			"sid": 315832125541486
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_Cutscene",
-					"sid": 595947210165645,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "14"
-					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 747972553414004
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "End_Scene2",
-					"sid": 134804344156494,
-					"parameters": [
-						"100",
-						"1",
-						"0",
-						false,
-						true,
-						false
-					]
-				},
-				{
-					"callFunction": "Create_mainDialoge",
-					"sid": 772953650135682,
-					"parameters": [
-						"\"Mark4\"",
-						"42",
-						"1",
-						true,
-						true,
-						false
-					]
-				}
-			],
-			"sid": 257419169442561
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_Cutscene",
-					"sid": 946678673355471,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "15"
-					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 854700263562445
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 643082211734821,
-					"parameters": {
-						"variable": "Start_Game",
-						"value": "true"
-					}
-				},
-				{
-					"callFunction": "Destroy_DialogeMain",
-					"sid": 159407547847325
-				}
-			],
-			"sid": 221665772570466
+			]
 		},
 		{
 			"eventType": "block",

@@ -191,18 +191,9 @@
 							}
 						},
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 252908093858270,
-							"parameters": {
-								"seconds": "3",
-								"use-timescale": true
-							}
-						},
-						{
 							"id": "pin-to-object-imagepoint",
 							"objectClass": "press_E",
-							"sid": 211285601399215,
+							"sid": 822650625298578,
 							"behaviorType": "Прикрепить",
 							"parameters": {
 								"pin-to": "Player_All",
@@ -211,6 +202,15 @@
 								"width-type": "no",
 								"height-type": "no",
 								"z": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 252908093858270,
+							"parameters": {
+								"seconds": "3",
+								"use-timescale": true
 							}
 						}
 					],
@@ -280,9 +280,9 @@
 							}
 						},
 						{
-							"id": "add-to-instvar",
+							"id": "set-instvar-value",
 							"objectClass": "Player_Cutscene",
-							"sid": 175323562815014,
+							"sid": 444331317603834,
 							"parameters": {
 								"instance-variable": "cast_text",
 								"value": "1"
@@ -800,6 +800,15 @@
 										"variable": "Cut_Scene",
 										"value": "false"
 									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Player_All",
+									"sid": 290034052915142,
+									"parameters": {
+										"instance-variable": "Lock",
+										"value": "true"
+									}
 								}
 							],
 							"sid": 819767430756704
@@ -1251,9 +1260,9 @@
 									}
 								},
 								{
-									"id": "add-to-instvar",
+									"id": "set-instvar-value",
 									"objectClass": "Player_Cutscene",
-									"sid": 838212037615793,
+									"sid": 920191547059201,
 									"parameters": {
 										"instance-variable": "cast_text",
 										"value": "1"
@@ -1294,7 +1303,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Player_Cutscene",
-									"sid": 876340854127670,
+									"sid": 671437197215516,
 									"parameters": {
 										"instance-variable": "cast_text",
 										"comparison": 0,
@@ -1329,7 +1338,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Player_Cutscene",
-									"sid": 615051123139341,
+									"sid": 292936133402602,
 									"parameters": {
 										"instance-variable": "cast_text",
 										"comparison": 0,
@@ -1364,7 +1373,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Player_Cutscene",
-									"sid": 636773639860471,
+									"sid": 991579711470663,
 									"parameters": {
 										"instance-variable": "cast_text",
 										"comparison": 0,
@@ -1412,7 +1421,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Player_Cutscene",
-									"sid": 243803401140768,
+									"sid": 377108251860764,
 									"parameters": {
 										"instance-variable": "cast_text",
 										"comparison": 0,
@@ -1447,7 +1456,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Player_Cutscene",
-									"sid": 567816427890893,
+									"sid": 665270903717563,
 									"parameters": {
 										"instance-variable": "cast_text",
 										"comparison": 0,
@@ -1482,7 +1491,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Player_Cutscene",
-									"sid": 877982133923090,
+									"sid": 347886587711105,
 									"parameters": {
 										"instance-variable": "cast_text",
 										"comparison": 0,
@@ -1517,7 +1526,7 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Player_Cutscene",
-									"sid": 527181961776922,
+									"sid": 554897050703286,
 									"parameters": {
 										"instance-variable": "cast_text",
 										"comparison": 0,
@@ -1552,12 +1561,21 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Player_Cutscene",
-									"sid": 224402228634939,
+									"sid": 896042564763163,
 									"parameters": {
 										"instance-variable": "cast_text",
 										"comparison": 0,
 										"value": "8"
 									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player_Cutscene",
+									"sid": 975875405988801,
+									"parameters": {
+										"instance-variable": "Lock"
+									},
+									"isInverted": true
 								},
 								{
 									"id": "trigger-once-while-true",
@@ -1566,6 +1584,15 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player_Cutscene",
+									"sid": 771918957515681,
+									"parameters": {
+										"instance-variable": "cast_text",
+										"value": "0"
+									}
+								},
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
@@ -1585,15 +1612,6 @@
 									}
 								},
 								{
-									"id": "set-instvar-value",
-									"objectClass": "Player_Cutscene",
-									"sid": 422720777059685,
-									"parameters": {
-										"instance-variable": "cast_text",
-										"value": "0"
-									}
-								},
-								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 685849463146635,
@@ -1604,6 +1622,73 @@
 								}
 							],
 							"sid": 590832856266513
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_Cutscene",
+									"sid": 755504773702128,
+									"parameters": {
+										"instance-variable": "cast_text",
+										"comparison": 0,
+										"value": "8"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Player_Cutscene",
+									"sid": 999577590978071,
+									"parameters": {
+										"instance-variable": "Lock"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 941058928925477
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player_Cutscene",
+									"sid": 677253750430067,
+									"parameters": {
+										"instance-variable": "cast_text",
+										"value": "12"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 913571893866081,
+									"parameters": {
+										"group-name": "\"Player\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player_All",
+									"sid": 927879111050861,
+									"parameters": {
+										"instance-variable": "textframe",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 829921691989021,
+									"parameters": {
+										"variable": "onDialMain",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 676375993378358
 						}
 					]
 				},
@@ -2428,14 +2513,6 @@
 								true,
 								false
 							]
-						},
-						{
-							"id": "stop",
-							"objectClass": "Audio",
-							"sid": 764980743940819,
-							"parameters": {
-								"tag": "\"Suspense\""
-							}
 						}
 					],
 					"sid": 321089117525901
@@ -2547,6 +2624,14 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 947587606735170,
+							"parameters": {
+								"tag": "\"Suspense\""
+							}
+						},
 						{
 							"callFunction": "Create_mainDialoge",
 							"sid": 932620580901880,

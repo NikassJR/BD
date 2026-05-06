@@ -318,6 +318,33 @@
 						}
 					],
 					"sid": 137988476320694
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-running-typewriter-text",
+							"objectClass": "dialogText",
+							"sid": 613421748884980
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 574561732319440,
+							"parameters": {
+								"audio-file": {
+									"path": "Text/TextTyping"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"Text\""
+							}
+						}
+					],
+					"sid": 348809320996697
 				}
 			]
 		},
@@ -683,6 +710,14 @@
 					"id": "destroy",
 					"objectClass": "dialogText",
 					"sid": 301690900803267
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 880475839230919,
+					"parameters": {
+						"tag": "\"Text\""
+					}
 				},
 				{
 					"id": "set-boolean-eventvar",
@@ -1163,6 +1198,28 @@
 			"sid": 671743706970303
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-running-typewriter-text",
+					"objectClass": "dialogText",
+					"sid": 967531366981273,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 636600470807178,
+					"parameters": {
+						"tag": "\"Text\""
+					}
+				}
+			],
+			"sid": 357154207872352
+		},
+		{
 			"functionName": "Create_Hint",
 			"functionDescription": "",
 			"functionCategory": "",
@@ -1508,161 +1565,6 @@
 				}
 			],
 			"sid": 772459091841706
-		},
-		{
-			"functionName": "Loading",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [
-				{
-					"name": "Lang",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 609702064992494
-				},
-				{
-					"name": "x",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 422915570704621
-				},
-				{
-					"name": "y",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"sid": 345164962908710
-				}
-			],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "Text_Hint",
-					"sid": 863775933789929
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 975933653074869,
-					"parameters": {
-						"object-to-create": "End_Scene2",
-						"layer": "\"Dialog\"",
-						"x": "x",
-						"y": "y",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "End_Scene2",
-					"sid": 940696848415848,
-					"parameters": {
-						"width": "Camera.Width * 10",
-						"height": "Camera.Height * 10"
-					}
-				},
-				{
-					"id": "spawn-another-object",
-					"objectClass": "End_Scene2",
-					"sid": 541669555972116,
-					"parameters": {
-						"object": "Loading",
-						"layer": "\"Dialog\"",
-						"image-point": "\"Loading\"",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 397431534515415,
-					"parameters": {
-						"object-to-create": "Text_Hint",
-						"layer": "\"Dialog\"",
-						"x": "End_Scene2.ImagePointX(\"Hint\")",
-						"y": "End_Scene2.ImagePointY(\"Hint\")",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-font-color",
-					"objectClass": "Text_Hint",
-					"sid": 437638695520348,
-					"parameters": {
-						"color": "rgbEx(255,255, 255)"
-					}
-				},
-				{
-					"id": "set-line-height",
-					"objectClass": "Text_Hint",
-					"sid": 417107936519318,
-					"parameters": {
-						"line-height": "-2"
-					}
-				},
-				{
-					"id": "set-wrapping",
-					"objectClass": "Text_Hint",
-					"sid": 364763466996233,
-					"parameters": {
-						"wrapping": "word"
-					}
-				},
-				{
-					"id": "set-horizontal-alignment",
-					"objectClass": "Text_Hint",
-					"sid": 755931115068535,
-					"parameters": {
-						"horizontal-alignment": "center"
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "Text_Hint",
-					"sid": 234259743635598,
-					"parameters": {
-						"width": "300",
-						"height": "100"
-					}
-				},
-				{
-					"id": "set-font-face",
-					"objectClass": "Text_Hint",
-					"sid": 874203398225681,
-					"parameters": {
-						"font-face": "\"ofont.ru_Downcome\"",
-						"style": "normal"
-					}
-				},
-				{
-					"id": "set-font-size",
-					"objectClass": "Text_Hint",
-					"sid": 387018491508980,
-					"parameters": {
-						"size-pt": "14"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "Text_Hint",
-					"sid": 519467789337225,
-					"parameters": {
-						"text": "Lang.At(Language,Lang)"
-					}
-				}
-			],
-			"sid": 969099156190809,
-			"disabled": true
 		}
 	],
 	"sid": 692011254246023

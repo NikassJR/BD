@@ -202,6 +202,32 @@
 						{
 							"id": "is-tag-playing",
 							"objectClass": "Audio",
+							"sid": 662149773866978,
+							"parameters": {
+								"tag": "\"Run\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-volume",
+							"objectClass": "Audio",
+							"sid": 898840882086084,
+							"parameters": {
+								"tag": "\"Run\"",
+								"db": "Audio"
+							}
+						}
+					],
+					"sid": 411406493081178,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
 							"sid": 351418236598236,
 							"parameters": {
 								"tag": "\"VibeCity\""
@@ -916,7 +942,6 @@
 					],
 					"actions": [],
 					"sid": 366925021095150,
-					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -936,11 +961,20 @@
 									}
 								},
 								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 499084600673351,
+									"parameters": {
+										"animation": "weapon & \"Walk\""
+									},
+									"isInverted": true
+								},
+								{
 									"id": "is-tag-playing",
 									"objectClass": "Audio",
-									"sid": 475046755402496,
+									"sid": 988950872484804,
 									"parameters": {
-										"tag": "\"Walk\""
+										"tag": "\"Run\""
 									},
 									"isInverted": true
 								}
@@ -949,7 +983,7 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 681583667717840,
+									"sid": 705236820877338,
 									"parameters": {
 										"audio-file": {
 											"path": "Player_Run"
@@ -957,15 +991,157 @@
 										"loop": "looping",
 										"volume": "0",
 										"stereo-pan": "0",
-										"tag-optional": "\"Walk\""
+										"tag-optional": "\"Run\""
+									}
+								},
+								{
+									"id": "set-playback-rate",
+									"objectClass": "Audio",
+									"sid": 310373626974874,
+									"parameters": {
+										"tag": "\"Run\"",
+										"playback-rate": "0.8"
 									}
 								}
 							],
-							"sid": 170254931097549,
-							"disabled": true
+							"sid": 170254931097549
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "Player_All",
+									"sid": 307736173509987,
+									"behaviorType": "Платформер"
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 828491695709801,
+									"parameters": {
+										"animation": "weapon & \"Walk\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "Player_All",
+									"sid": 264110171617964,
+									"parameters": {
+										"animation": "weapon & \"Run\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 989857973794852,
+									"parameters": {
+										"tag": "\"Run\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 958942945497937,
+									"parameters": {
+										"audio-file": {
+											"path": "Player_Run"
+										},
+										"loop": "looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"Run\""
+									}
+								},
+								{
+									"id": "set-playback-rate",
+									"objectClass": "Audio",
+									"sid": 764052259143038,
+									"parameters": {
+										"tag": "\"Run\"",
+										"playback-rate": "0.6"
+									}
+								}
+							],
+							"sid": 238156609621837
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-released",
+									"objectClass": "Keyboard",
+									"sid": 906302004642034,
+									"parameters": {
+										"key": 20
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-playback-rate",
+									"objectClass": "Audio",
+									"sid": 435578130438706,
+									"parameters": {
+										"tag": "\"Run\"",
+										"playback-rate": "0.8"
+									}
+								}
+							],
+							"sid": 471643421652703
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 806773703165933,
+									"parameters": {
+										"key": 20
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-playback-rate",
+									"objectClass": "Audio",
+									"sid": 942412821091956,
+									"parameters": {
+										"tag": "\"Run\"",
+										"playback-rate": "0.6"
+									}
+								}
+							],
+							"sid": 797463679784894
 						}
 					],
 					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 190440390972829
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 402703965477034,
+							"parameters": {
+								"tag": "\"Run\""
+							}
+						}
+					],
+					"sid": 825659208147351
 				},
 				{
 					"eventType": "block",
