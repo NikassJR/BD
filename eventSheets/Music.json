@@ -662,66 +662,94 @@
 								{
 									"id": "on-click",
 									"objectClass": "Mouse",
-									"sid": 497854853506282,
+									"sid": 151229672035611,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked"
 									}
 								},
 								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 863601183937686,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 933421962371203,
 									"parameters": {
-										"object": "Arrow2"
-									}
-								},
-								{
-									"id": "compare-text",
-									"objectClass": "Arrow2",
-									"sid": 695765380034935,
-									"parameters": {
-										"text-to-compare": "\"<\"",
-										"case-sensitivity": "ignore-case"
-									}
-								},
-								{
-									"id": "is-visible",
-									"objectClass": "Arrow2",
-									"sid": 803343081522734
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Numbers_Audio",
-									"sid": 693865051268011,
-									"parameters": {
-										"instance-variable": "Audio",
-										"comparison": 4,
-										"value": "0"
+										"gamepad": "0",
+										"button": "button-a"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 177276437512706,
+							"children": [
 								{
-									"id": "subtract-from-instvar",
-									"objectClass": "Numbers_Audio",
-									"sid": 765875737317502,
-									"parameters": {
-										"instance-variable": "Audio",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-item",
-									"objectClass": "Game_Save",
-									"sid": 504954855711092,
-									"parameters": {
-										"key": "\"Audio\"",
-										"value": "Numbers_Audio.Audio"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 143008343952280,
+											"disabled": true,
+											"parameters": {
+												"object": "Arrow2"
+											}
+										},
+										{
+											"id": "compare-text",
+											"objectClass": "Arrow2",
+											"sid": 809862620919812,
+											"parameters": {
+												"text-to-compare": "\"<\"",
+												"case-sensitivity": "ignore-case"
+											}
+										},
+										{
+											"id": "is-visible",
+											"objectClass": "Arrow2",
+											"sid": 893153127423136
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Arrow2",
+											"sid": 618191864201708,
+											"parameters": {
+												"instance-variable": "IsSelected"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Numbers_Audio",
+											"sid": 963069351760316,
+											"parameters": {
+												"instance-variable": "Audio",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "Numbers_Audio",
+											"sid": 557336526678127,
+											"parameters": {
+												"instance-variable": "Audio",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 146942038798375,
+											"parameters": {
+												"key": "\"Audio\"",
+												"value": "Numbers_Audio.Audio"
+											}
+										}
+									],
+									"sid": 884579066905728
 								}
 							],
-							"sid": 723458880457567
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -729,66 +757,94 @@
 								{
 									"id": "on-click",
 									"objectClass": "Mouse",
-									"sid": 510143181370213,
+									"sid": 891598174110662,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked"
 									}
 								},
 								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 320322809084183,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 712967015723083,
 									"parameters": {
-										"object": "Arrow2"
-									}
-								},
-								{
-									"id": "is-visible",
-									"objectClass": "Arrow2",
-									"sid": 212850032081155
-								},
-								{
-									"id": "compare-text",
-									"objectClass": "Arrow2",
-									"sid": 278563612145137,
-									"parameters": {
-										"text-to-compare": "\">\"",
-										"case-sensitivity": "ignore-case"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Numbers_Audio",
-									"sid": 843414108441174,
-									"parameters": {
-										"instance-variable": "Audio",
-										"comparison": 2,
-										"value": "10"
+										"gamepad": "0",
+										"button": "button-a"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 815324072415890,
+							"children": [
 								{
-									"id": "add-to-instvar",
-									"objectClass": "Numbers_Audio",
-									"sid": 833607799852249,
-									"parameters": {
-										"instance-variable": "Audio",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-item",
-									"objectClass": "Game_Save",
-									"sid": 150689478754359,
-									"parameters": {
-										"key": "\"Audio\"",
-										"value": "Numbers_Audio.Audio"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 580342339341976,
+											"disabled": true,
+											"parameters": {
+												"object": "Arrow2"
+											}
+										},
+										{
+											"id": "is-visible",
+											"objectClass": "Arrow2",
+											"sid": 126255789410015
+										},
+										{
+											"id": "compare-text",
+											"objectClass": "Arrow2",
+											"sid": 437286787894962,
+											"parameters": {
+												"text-to-compare": "\">\"",
+												"case-sensitivity": "ignore-case"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Arrow2",
+											"sid": 402283567909187,
+											"parameters": {
+												"instance-variable": "IsSelected"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Numbers_Audio",
+											"sid": 269079309363947,
+											"parameters": {
+												"instance-variable": "Audio",
+												"comparison": 2,
+												"value": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-instvar",
+											"objectClass": "Numbers_Audio",
+											"sid": 398757647495750,
+											"parameters": {
+												"instance-variable": "Audio",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 382792438581736,
+											"parameters": {
+												"key": "\"Audio\"",
+												"value": "Numbers_Audio.Audio"
+											}
+										}
+									],
+									"sid": 280209450094181
 								}
 							],
-							"sid": 624851433222876
+							"isOrBlock": true
 						}
 					],
 					"isOrBlock": true
@@ -2028,66 +2084,85 @@
 								{
 									"id": "on-click",
 									"objectClass": "Mouse",
-									"sid": 442586605563683,
+									"sid": 604050257753888,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked"
 									}
 								},
 								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 881290755613103,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 433754689455770,
 									"parameters": {
-										"object": "Arrow"
-									}
-								},
-								{
-									"id": "compare-text",
-									"objectClass": "Arrow",
-									"sid": 138457443520519,
-									"parameters": {
-										"text-to-compare": "\"<\"",
-										"case-sensitivity": "ignore-case"
-									}
-								},
-								{
-									"id": "is-visible",
-									"objectClass": "Arrow",
-									"sid": 279617547130449
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Numbers_Music",
-									"sid": 893800052663088,
-									"parameters": {
-										"instance-variable": "Music",
-										"comparison": 4,
-										"value": "0"
+										"gamepad": "0",
+										"button": "button-a"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 531023450746370,
+							"children": [
 								{
-									"id": "subtract-from-instvar",
-									"objectClass": "Numbers_Music",
-									"sid": 200373445097190,
-									"parameters": {
-										"instance-variable": "Music",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-item",
-									"objectClass": "Game_Save",
-									"sid": 413527326486236,
-									"parameters": {
-										"key": "\"Sound\"",
-										"value": "Numbers_Music.Music"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-text",
+											"objectClass": "Arrow",
+											"sid": 734787372462370,
+											"parameters": {
+												"text-to-compare": "\"<\"",
+												"case-sensitivity": "ignore-case"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Arrow",
+											"sid": 758496401309697,
+											"parameters": {
+												"instance-variable": "IsSelected"
+											}
+										},
+										{
+											"id": "is-visible",
+											"objectClass": "Arrow",
+											"sid": 585370274148404
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Numbers_Music",
+											"sid": 803063599368593,
+											"parameters": {
+												"instance-variable": "Music",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "Numbers_Music",
+											"sid": 506527151757870,
+											"parameters": {
+												"instance-variable": "Music",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 760493189955191,
+											"parameters": {
+												"key": "\"Sound\"",
+												"value": "Numbers_Music.Music"
+											}
+										}
+									],
+									"sid": 818160492554799
 								}
 							],
-							"sid": 148306525543366
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -2095,66 +2170,85 @@
 								{
 									"id": "on-click",
 									"objectClass": "Mouse",
-									"sid": 432642225143465,
+									"sid": 803769082158583,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked"
 									}
 								},
 								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 310241754660182,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 273498906842181,
 									"parameters": {
-										"object": "Arrow"
-									}
-								},
-								{
-									"id": "compare-text",
-									"objectClass": "Arrow",
-									"sid": 327787961112668,
-									"parameters": {
-										"text-to-compare": "\">\"",
-										"case-sensitivity": "ignore-case"
-									}
-								},
-								{
-									"id": "is-visible",
-									"objectClass": "Arrow",
-									"sid": 455230333129215
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Numbers_Music",
-									"sid": 810088181440945,
-									"parameters": {
-										"instance-variable": "Music",
-										"comparison": 2,
-										"value": "10"
+										"gamepad": "0",
+										"button": "button-a"
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 438566999512385,
+							"children": [
 								{
-									"id": "add-to-instvar",
-									"objectClass": "Numbers_Music",
-									"sid": 545976832580825,
-									"parameters": {
-										"instance-variable": "Music",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-item",
-									"objectClass": "Game_Save",
-									"sid": 207356513087674,
-									"parameters": {
-										"key": "\"Sound\"",
-										"value": "Numbers_Music.Music"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-text",
+											"objectClass": "Arrow",
+											"sid": 301498961846455,
+											"parameters": {
+												"text-to-compare": "\">\"",
+												"case-sensitivity": "ignore-case"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Arrow",
+											"sid": 577826982863349,
+											"parameters": {
+												"instance-variable": "IsSelected"
+											}
+										},
+										{
+											"id": "is-visible",
+											"objectClass": "Arrow",
+											"sid": 686165247068388
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Numbers_Music",
+											"sid": 297505780928071,
+											"parameters": {
+												"instance-variable": "Music",
+												"comparison": 2,
+												"value": "10"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-instvar",
+											"objectClass": "Numbers_Music",
+											"sid": 322872389803672,
+											"parameters": {
+												"instance-variable": "Music",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-item",
+											"objectClass": "Game_Save",
+											"sid": 886007077044040,
+											"parameters": {
+												"key": "\"Sound\"",
+												"value": "Numbers_Music.Music"
+											}
+										}
+									],
+									"sid": 302555766638822
 								}
 							],
-							"sid": 818870949214472
+							"isOrBlock": true
 						}
 					],
 					"isOrBlock": true

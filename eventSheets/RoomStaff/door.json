@@ -305,116 +305,135 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 931097327237540,
+									"sid": 197139781870051,
 									"parameters": {
 										"key": 69
 									}
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Door_Metal",
-									"sid": 303973928879992,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 655974176538960,
 									"parameters": {
-										"instance-variable": "distanceToPlayerX",
-										"comparison": 2,
-										"value": "50"
+										"gamepad": "0",
+										"button": "button-y"
 									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Door_Metal",
-									"sid": 455747845678038,
-									"parameters": {
-										"instance-variable": "distanceToPlayerY",
-										"comparison": 2,
-										"value": "50"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Door_Metal",
-									"sid": 147455716759313,
-									"parameters": {
-										"tags": "\"Closed\""
-									},
-									"isInverted": true
 								}
 							],
 							"actions": [],
-							"sid": 984290592586842,
+							"sid": 485821215394023,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-boolean-instance-variable-set",
+											"id": "compare-instance-variable",
 											"objectClass": "Door_Metal",
-											"sid": 126907145833012,
+											"sid": 902105725122727,
 											"parameters": {
-												"instance-variable": "open"
-											},
-											"isInverted": true
+												"instance-variable": "distanceToPlayerX",
+												"comparison": 2,
+												"value": "50"
+											}
 										},
 										{
-											"id": "compare-animation-frame",
+											"id": "compare-instance-variable",
 											"objectClass": "Door_Metal",
-											"sid": 473852256856226,
+											"sid": 749167714763364,
 											"parameters": {
-												"comparison": 0,
-												"number": "1"
+												"instance-variable": "distanceToPlayerY",
+												"comparison": 2,
+												"value": "50"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Door_Metal",
+											"sid": 637853708588767,
+											"parameters": {
+												"tags": "\"Closed\""
 											},
 											"isInverted": true
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 796595964201344,
+									"children": [
 										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Door_Metal",
-											"sid": 668303348518041,
-											"parameters": {
-												"instance-variable": "open",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Door_Metal",
-											"sid": 992906550446790,
-											"behaviorType": "Твёрдый",
-											"parameters": {
-												"state": "disabled"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 980779083223066,
-											"parameters": {
-												"seconds": "0.01",
-												"use-timescale": true
-											}
-										},
-										{
-											"callFunction": "Audio_Play_Sound",
-											"sid": 763131527479217,
-											"parameters": [
-												"\"MetallDoorOpen\"",
-												"0",
-												"\"MetallDoorOpen\""
-											]
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "Door_Metal",
-											"sid": 279594489994308,
-											"parameters": {
-												"frame-number": "1"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Door_Metal",
+													"sid": 740647270141717,
+													"parameters": {
+														"instance-variable": "open"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "Door_Metal",
+													"sid": 292933374207639,
+													"parameters": {
+														"comparison": 0,
+														"number": "1"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Door_Metal",
+													"sid": 136602443719939,
+													"parameters": {
+														"instance-variable": "open",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "Door_Metal",
+													"sid": 637655301849500,
+													"behaviorType": "Твёрдый",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 331014160759037,
+													"parameters": {
+														"seconds": "0.01",
+														"use-timescale": true
+													}
+												},
+												{
+													"callFunction": "Audio_Play_Sound",
+													"sid": 312788553330949,
+													"parameters": [
+														"\"MetallDoorOpen\"",
+														"0",
+														"\"MetallDoorOpen\""
+													]
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "Door_Metal",
+													"sid": 157457322372063,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 764454206160771
 										}
-									],
-									"sid": 921462476719643
+									]
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -422,115 +441,134 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 276319759442745,
+									"sid": 121206134128689,
 									"parameters": {
 										"key": 69
 									}
 								},
 								{
-									"id": "has-tags",
-									"objectClass": "Door_Metal",
-									"sid": 341591998553248,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 983409837575278,
 									"parameters": {
-										"tags": "\"Closed\""
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Door_Metal",
-									"sid": 508029556785958,
-									"parameters": {
-										"instance-variable": "distanceToPlayerX",
-										"comparison": 2,
-										"value": "50"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Door_Metal",
-									"sid": 947567810040602,
-									"parameters": {
-										"instance-variable": "distanceToPlayerY",
-										"comparison": 2,
-										"value": "50"
+										"gamepad": "0",
+										"button": "button-y"
 									}
 								}
 							],
 							"actions": [],
-							"sid": 319516606536286,
+							"sid": 858985544073359,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-boolean-instance-variable-set",
+											"id": "has-tags",
 											"objectClass": "Door_Metal",
-											"sid": 217018050274465,
+											"sid": 848209195963660,
 											"parameters": {
-												"instance-variable": "open"
-											}
-										},
-										{
-											"id": "compare-animation-frame",
-											"objectClass": "Door_Metal",
-											"sid": 309199616508857,
-											"parameters": {
-												"comparison": 0,
-												"number": "0"
+												"tags": "\"Closed\""
 											},
 											"isInverted": true
-										}
-									],
-									"actions": [
+										},
 										{
-											"id": "set-boolean-instvar",
+											"id": "compare-instance-variable",
 											"objectClass": "Door_Metal",
-											"sid": 963550142404345,
+											"sid": 462630074402845,
 											"parameters": {
-												"instance-variable": "open",
-												"value": "false"
+												"instance-variable": "distanceToPlayerX",
+												"comparison": 2,
+												"value": "50"
 											}
 										},
 										{
-											"id": "set-enabled",
+											"id": "compare-instance-variable",
 											"objectClass": "Door_Metal",
-											"sid": 708879224506238,
-											"behaviorType": "Твёрдый",
+											"sid": 814031092131082,
 											"parameters": {
-												"state": "enabled"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 459675282016471,
-											"parameters": {
-												"seconds": "0.01",
-												"use-timescale": true
-											}
-										},
-										{
-											"callFunction": "Audio_Play_Sound",
-											"sid": 224387089048312,
-											"parameters": [
-												"\"MetallDoorClosed\"",
-												"0",
-												"\"MetallDoorClosed\""
-											]
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "Door_Metal",
-											"sid": 123420484717726,
-											"parameters": {
-												"frame-number": "0"
+												"instance-variable": "distanceToPlayerY",
+												"comparison": 2,
+												"value": "50"
 											}
 										}
 									],
-									"sid": 627893223250825
+									"actions": [],
+									"sid": 643733355660827,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Door_Metal",
+													"sid": 926335650181989,
+													"parameters": {
+														"instance-variable": "open"
+													}
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "Door_Metal",
+													"sid": 112752284631082,
+													"parameters": {
+														"comparison": 0,
+														"number": "0"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Door_Metal",
+													"sid": 727962579513360,
+													"parameters": {
+														"instance-variable": "open",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "Door_Metal",
+													"sid": 761935945175599,
+													"behaviorType": "Твёрдый",
+													"parameters": {
+														"state": "enabled"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 529572753598658,
+													"parameters": {
+														"seconds": "0.01",
+														"use-timescale": true
+													}
+												},
+												{
+													"callFunction": "Audio_Play_Sound",
+													"sid": 221966049391928,
+													"parameters": [
+														"\"MetallDoorClosed\"",
+														"0",
+														"\"MetallDoorClosed\""
+													]
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "Door_Metal",
+													"sid": 275418848959116,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 756186380760661
+										}
+									]
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -1276,116 +1314,135 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 644725708875635,
+									"sid": 104171394635464,
 									"parameters": {
 										"key": 69
 									}
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Door_Old",
-									"sid": 631918395028792,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 926899253120566,
 									"parameters": {
-										"instance-variable": "distanceToPlayerX",
-										"comparison": 2,
-										"value": "50"
+										"gamepad": "0",
+										"button": "button-y"
 									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Door_Old",
-									"sid": 227948231692122,
-									"parameters": {
-										"instance-variable": "distanceToPlayerY",
-										"comparison": 2,
-										"value": "50"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Door_Old",
-									"sid": 362422944585768,
-									"parameters": {
-										"tags": "\"Closed\""
-									},
-									"isInverted": true
 								}
 							],
 							"actions": [],
-							"sid": 862839354213536,
+							"sid": 136993008448244,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-boolean-instance-variable-set",
+											"id": "compare-instance-variable",
 											"objectClass": "Door_Old",
-											"sid": 174118290520295,
+											"sid": 463390740379796,
 											"parameters": {
-												"instance-variable": "open"
-											},
-											"isInverted": true
+												"instance-variable": "distanceToPlayerX",
+												"comparison": 2,
+												"value": "50"
+											}
 										},
 										{
-											"id": "compare-animation-frame",
+											"id": "compare-instance-variable",
 											"objectClass": "Door_Old",
-											"sid": 793655770738966,
+											"sid": 427708505786225,
 											"parameters": {
-												"comparison": 0,
-												"number": "1"
+												"instance-variable": "distanceToPlayerY",
+												"comparison": 2,
+												"value": "50"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Door_Old",
+											"sid": 318882524908269,
+											"parameters": {
+												"tags": "\"Closed\""
 											},
 											"isInverted": true
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 513351699795473,
+									"children": [
 										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Door_Old",
-											"sid": 381750103532671,
-											"parameters": {
-												"instance-variable": "open",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Door_Old",
-											"sid": 635202210717022,
-											"behaviorType": "Твёрдый",
-											"parameters": {
-												"state": "disabled"
-											}
-										},
-										{
-											"callFunction": "Audio_Play_Sound",
-											"sid": 406316383395876,
-											"parameters": [
-												"\"OpenDoor\"",
-												"0",
-												"\"OpenDoor\""
-											]
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 525207424057670,
-											"parameters": {
-												"seconds": "0.01",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "Door_Old",
-											"sid": 801765917746539,
-											"parameters": {
-												"frame-number": "1"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Door_Old",
+													"sid": 503477944466646,
+													"parameters": {
+														"instance-variable": "open"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "Door_Old",
+													"sid": 843517304346222,
+													"parameters": {
+														"comparison": 0,
+														"number": "1"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Door_Old",
+													"sid": 242590714954863,
+													"parameters": {
+														"instance-variable": "open",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "Door_Old",
+													"sid": 386227016954862,
+													"behaviorType": "Твёрдый",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"callFunction": "Audio_Play_Sound",
+													"sid": 656813121860905,
+													"parameters": [
+														"\"OpenDoor\"",
+														"0",
+														"\"OpenDoor\""
+													]
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 740468756735204,
+													"parameters": {
+														"seconds": "0.01",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "Door_Old",
+													"sid": 272028829439442,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 829440637305309
 										}
-									],
-									"sid": 334359866227590
+									]
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -1393,115 +1450,134 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 970852276219636,
+									"sid": 469555843328634,
 									"parameters": {
 										"key": 69
 									}
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Door_Old",
-									"sid": 273025043885460,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 505571534332961,
 									"parameters": {
-										"instance-variable": "distanceToPlayerX",
-										"comparison": 2,
-										"value": "50"
+										"gamepad": "0",
+										"button": "button-y"
 									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Door_Old",
-									"sid": 286050583669325,
-									"parameters": {
-										"instance-variable": "distanceToPlayerY",
-										"comparison": 2,
-										"value": "50"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Door_Old",
-									"sid": 909930666896849,
-									"parameters": {
-										"tags": "\"Closed\""
-									},
-									"isInverted": true
 								}
 							],
 							"actions": [],
-							"sid": 613840614689730,
+							"sid": 832053556310326,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-boolean-instance-variable-set",
+											"id": "compare-instance-variable",
 											"objectClass": "Door_Old",
-											"sid": 227489066228182,
+											"sid": 345221259637341,
 											"parameters": {
-												"instance-variable": "open"
+												"instance-variable": "distanceToPlayerX",
+												"comparison": 2,
+												"value": "50"
 											}
 										},
 										{
-											"id": "compare-animation-frame",
+											"id": "compare-instance-variable",
 											"objectClass": "Door_Old",
-											"sid": 281599644374307,
+											"sid": 956601344006283,
 											"parameters": {
-												"comparison": 0,
-												"number": "0"
+												"instance-variable": "distanceToPlayerY",
+												"comparison": 2,
+												"value": "50"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Door_Old",
+											"sid": 837747225315984,
+											"parameters": {
+												"tags": "\"Closed\""
 											},
 											"isInverted": true
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 688449256453503,
+									"children": [
 										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Door_Old",
-											"sid": 838486858922384,
-											"parameters": {
-												"instance-variable": "open",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Door_Old",
-											"sid": 505734317294951,
-											"behaviorType": "Твёрдый",
-											"parameters": {
-												"state": "enabled"
-											}
-										},
-										{
-											"callFunction": "Audio_Play_Sound",
-											"sid": 392421900249054,
-											"parameters": [
-												"\"ClosedDoor\"",
-												"0",
-												"\"ClosedDoor\""
-											]
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 211196938020909,
-											"parameters": {
-												"seconds": "0.01",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "Door_Old",
-											"sid": 574174843481300,
-											"parameters": {
-												"frame-number": "0"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Door_Old",
+													"sid": 534228762689609,
+													"parameters": {
+														"instance-variable": "open"
+													}
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "Door_Old",
+													"sid": 913595671558610,
+													"parameters": {
+														"comparison": 0,
+														"number": "0"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Door_Old",
+													"sid": 910978670048059,
+													"parameters": {
+														"instance-variable": "open",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "Door_Old",
+													"sid": 933848073528253,
+													"behaviorType": "Твёрдый",
+													"parameters": {
+														"state": "enabled"
+													}
+												},
+												{
+													"callFunction": "Audio_Play_Sound",
+													"sid": 249661238873464,
+													"parameters": [
+														"\"ClosedDoor\"",
+														"0",
+														"\"ClosedDoor\""
+													]
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 524185415610493,
+													"parameters": {
+														"seconds": "0.01",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "Door_Old",
+													"sid": 306005085008454,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 314266463979662
 										}
-									],
-									"sid": 837474070939445
+									]
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -2500,116 +2576,135 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 293783826049647,
+									"sid": 302545062787793,
 									"parameters": {
 										"key": 69
 									}
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Door_HotelAktiv",
-									"sid": 245210294326368,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 756658052669555,
 									"parameters": {
-										"instance-variable": "distanceToPlayerX",
-										"comparison": 2,
-										"value": "50"
+										"gamepad": "0",
+										"button": "button-y"
 									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Door_HotelAktiv",
-									"sid": 113674940243675,
-									"parameters": {
-										"instance-variable": "distanceToPlayerY",
-										"comparison": 2,
-										"value": "50"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Door_HotelAktiv",
-									"sid": 761213655143735,
-									"parameters": {
-										"tags": "\"Closed\""
-									},
-									"isInverted": true
 								}
 							],
 							"actions": [],
-							"sid": 236663268090985,
+							"sid": 799765590716087,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-boolean-instance-variable-set",
+											"id": "compare-instance-variable",
 											"objectClass": "Door_HotelAktiv",
-											"sid": 457661210848244,
+											"sid": 320850169769024,
 											"parameters": {
-												"instance-variable": "open"
-											},
-											"isInverted": true
+												"instance-variable": "distanceToPlayerX",
+												"comparison": 2,
+												"value": "50"
+											}
 										},
 										{
-											"id": "compare-animation-frame",
+											"id": "compare-instance-variable",
 											"objectClass": "Door_HotelAktiv",
-											"sid": 671402722921458,
+											"sid": 422776705268292,
 											"parameters": {
-												"comparison": 0,
-												"number": "1"
+												"instance-variable": "distanceToPlayerY",
+												"comparison": 2,
+												"value": "50"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Door_HotelAktiv",
+											"sid": 565014393748169,
+											"parameters": {
+												"tags": "\"Closed\""
 											},
 											"isInverted": true
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 351374806657197,
+									"children": [
 										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Door_HotelAktiv",
-											"sid": 670879554368505,
-											"parameters": {
-												"instance-variable": "open",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Door_HotelAktiv",
-											"sid": 787009840613918,
-											"behaviorType": "Твёрдый",
-											"parameters": {
-												"state": "disabled"
-											}
-										},
-										{
-											"callFunction": "Audio_Play_Sound",
-											"sid": 271792387190588,
-											"parameters": [
-												"\"OpenDoor\"",
-												"0",
-												"\"OpenDoor\""
-											]
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 336565480096755,
-											"parameters": {
-												"seconds": "0.01",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "Door_HotelAktiv",
-											"sid": 470215002473202,
-											"parameters": {
-												"frame-number": "1"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Door_HotelAktiv",
+													"sid": 819127706389593,
+													"parameters": {
+														"instance-variable": "open"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "Door_HotelAktiv",
+													"sid": 713866329721178,
+													"parameters": {
+														"comparison": 0,
+														"number": "1"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Door_HotelAktiv",
+													"sid": 418322636651153,
+													"parameters": {
+														"instance-variable": "open",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "Door_HotelAktiv",
+													"sid": 943397518982606,
+													"behaviorType": "Твёрдый",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"callFunction": "Audio_Play_Sound",
+													"sid": 342531684938653,
+													"parameters": [
+														"\"OpenDoor\"",
+														"0",
+														"\"OpenDoor\""
+													]
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 827338476201147,
+													"parameters": {
+														"seconds": "0.01",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "Door_HotelAktiv",
+													"sid": 388920817953435,
+													"parameters": {
+														"frame-number": "1"
+													}
+												}
+											],
+											"sid": 677417463124641
 										}
-									],
-									"sid": 370691992979080
+									]
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -2617,115 +2712,134 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 532173934571026,
+									"sid": 585200346980646,
 									"parameters": {
 										"key": 69
 									}
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Door_HotelAktiv",
-									"sid": 716012257391186,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 190032300386504,
 									"parameters": {
-										"instance-variable": "distanceToPlayerX",
-										"comparison": 2,
-										"value": "50"
+										"gamepad": "0",
+										"button": "button-y"
 									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Door_HotelAktiv",
-									"sid": 331613796925679,
-									"parameters": {
-										"instance-variable": "distanceToPlayerY",
-										"comparison": 2,
-										"value": "50"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Door_HotelAktiv",
-									"sid": 183047548599860,
-									"parameters": {
-										"tags": "\"Closed\""
-									},
-									"isInverted": true
 								}
 							],
 							"actions": [],
-							"sid": 476458041207510,
+							"sid": 901486850477053,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-boolean-instance-variable-set",
+											"id": "compare-instance-variable",
 											"objectClass": "Door_HotelAktiv",
-											"sid": 216570630451188,
+											"sid": 538454266591981,
 											"parameters": {
-												"instance-variable": "open"
+												"instance-variable": "distanceToPlayerX",
+												"comparison": 2,
+												"value": "50"
 											}
 										},
 										{
-											"id": "compare-animation-frame",
+											"id": "compare-instance-variable",
 											"objectClass": "Door_HotelAktiv",
-											"sid": 379323594059492,
+											"sid": 991808224681523,
 											"parameters": {
-												"comparison": 0,
-												"number": "0"
+												"instance-variable": "distanceToPlayerY",
+												"comparison": 2,
+												"value": "50"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Door_HotelAktiv",
+											"sid": 845876080494378,
+											"parameters": {
+												"tags": "\"Closed\""
 											},
 											"isInverted": true
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 598312741835691,
+									"children": [
 										{
-											"id": "set-boolean-instvar",
-											"objectClass": "Door_HotelAktiv",
-											"sid": 517602410782473,
-											"parameters": {
-												"instance-variable": "open",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "Door_HotelAktiv",
-											"sid": 637480776137770,
-											"behaviorType": "Твёрдый",
-											"parameters": {
-												"state": "enabled"
-											}
-										},
-										{
-											"callFunction": "Audio_Play_Sound",
-											"sid": 647600046074231,
-											"parameters": [
-												"\"ClosedDoor\"",
-												"0",
-												"\"ClosedDoor\""
-											]
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 266687822448285,
-											"parameters": {
-												"seconds": "0.01",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "Door_HotelAktiv",
-											"sid": 120621986296834,
-											"parameters": {
-												"frame-number": "0"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Door_HotelAktiv",
+													"sid": 145782241465761,
+													"parameters": {
+														"instance-variable": "open"
+													}
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "Door_HotelAktiv",
+													"sid": 986370217492502,
+													"parameters": {
+														"comparison": 0,
+														"number": "0"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Door_HotelAktiv",
+													"sid": 597358921573216,
+													"parameters": {
+														"instance-variable": "open",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "Door_HotelAktiv",
+													"sid": 984489494484502,
+													"behaviorType": "Твёрдый",
+													"parameters": {
+														"state": "enabled"
+													}
+												},
+												{
+													"callFunction": "Audio_Play_Sound",
+													"sid": 991915640998499,
+													"parameters": [
+														"\"ClosedDoor\"",
+														"0",
+														"\"ClosedDoor\""
+													]
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 445375360281765,
+													"parameters": {
+														"seconds": "0.01",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-animation-frame",
+													"objectClass": "Door_HotelAktiv",
+													"sid": 590124632161974,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 145377011199141
 										}
-									],
-									"sid": 935004941917395
+									]
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
