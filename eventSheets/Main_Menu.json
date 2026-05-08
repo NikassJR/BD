@@ -477,6 +477,14 @@
 							"id": "on-any-key-pressed",
 							"objectClass": "Keyboard",
 							"sid": 238785565349546
+						},
+						{
+							"id": "on-any-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 606272837334598,
+							"parameters": {
+								"gamepad": "0"
+							}
 						}
 					],
 					"actions": [
@@ -519,6 +527,14 @@
 							"id": "on-any-key-pressed",
 							"objectClass": "Keyboard",
 							"sid": 583757896161106
+						},
+						{
+							"id": "on-any-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 919221409420732,
+							"parameters": {
+								"gamepad": "0"
+							}
 						}
 					],
 					"actions": [],
@@ -584,9 +600,16 @@
 					"sid": 442407363040902
 				},
 				{
+					"id": "stop-flashing",
+					"objectClass": "Text_logo",
+					"sid": 971855934947338,
+					"behaviorType": "Мигание"
+				},
+				{
 					"id": "set-visible",
 					"objectClass": "Text_logo",
 					"sid": 300307841222563,
+					"disabled": true,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -953,354 +976,318 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 388515837880977,
-									"parameters": {
-										"object": "Text_Menu"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Cursor_Mouse",
-									"sid": 964952756568305,
-									"parameters": {
-										"object": "Text_Menu"
-									}
+									"id": "has-gamepads",
+									"objectClass": "Gamepad",
+									"sid": 466995669791296,
+									"isInverted": true
 								}
 							],
 							"actions": [],
-							"sid": 279143399106330,
+							"sid": 730706702377413,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-visible",
-											"objectClass": "Text_Menu",
-											"sid": 712002260553501
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 904120426953698,
+											"parameters": {
+												"object": "Text_Menu"
+											}
 										}
 									],
 									"actions": [],
-									"sid": 959105393280594,
+									"sid": 949962357359289,
 									"children": [
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "has-tags",
+													"id": "is-visible",
 													"objectClass": "Text_Menu",
-													"sid": 108127406630020,
-													"parameters": {
-														"tags": "\"Continue\""
-													}
-												},
-												{
-													"id": "has-tags",
-													"objectClass": "Text_Menu",
-													"sid": 164444216321328,
-													"parameters": {
-														"tags": "\"Play_Demo\""
-													}
-												},
-												{
-													"id": "has-tags",
-													"objectClass": "Text_Menu",
-													"sid": 908743402335809,
-													"parameters": {
-														"tags": "\"New_Game\""
-													}
-												},
-												{
-													"id": "has-tags",
-													"objectClass": "Text_Menu",
-													"sid": 517601126087507,
-													"parameters": {
-														"tags": "\"Start_Menu\""
-													}
-												},
-												{
-													"id": "has-tags",
-													"objectClass": "Text_Menu",
-													"sid": 577631758147725,
-													"parameters": {
-														"tags": "\"Hardcore\""
-													}
-												},
-												{
-													"id": "has-tags",
-													"objectClass": "Text_Menu",
-													"sid": 562815931574124,
-													"parameters": {
-														"tags": "\"Setting\""
-													}
-												},
-												{
-													"id": "has-tags",
-													"objectClass": "Text_Menu",
-													"sid": 350090119423799,
-													"parameters": {
-														"tags": "\"Level\""
-													}
-												},
-												{
-													"id": "has-tags",
-													"objectClass": "Text_Menu",
-													"sid": 712088552305234,
-													"parameters": {
-														"tags": "\"Exit\""
-													}
-												},
-												{
-													"id": "has-tags",
-													"objectClass": "Text_Menu",
-													"sid": 141107132102248,
-													"parameters": {
-														"tags": "\"Back\""
-													}
+													"sid": 664099631010927
 												}
 											],
-											"actions": [
+											"actions": [],
+											"sid": 339241061723498,
+											"children": [
 												{
-													"id": "set-font-color",
-													"objectClass": "Text_Menu",
-													"sid": 925909236215709,
-													"parameters": {
-														"color": "rgbEx(50, 0, 0)"
-													}
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "has-tags",
+															"objectClass": "Text_Menu",
+															"sid": 931004765076411,
+															"parameters": {
+																"tags": "\"Continue\""
+															}
+														},
+														{
+															"id": "has-tags",
+															"objectClass": "Text_Menu",
+															"sid": 701432909412231,
+															"parameters": {
+																"tags": "\"Play_Demo\""
+															}
+														},
+														{
+															"id": "has-tags",
+															"objectClass": "Text_Menu",
+															"sid": 758871502658490,
+															"parameters": {
+																"tags": "\"New_Game\""
+															}
+														},
+														{
+															"id": "has-tags",
+															"objectClass": "Text_Menu",
+															"sid": 984225165223143,
+															"parameters": {
+																"tags": "\"Start_Menu\""
+															}
+														},
+														{
+															"id": "has-tags",
+															"objectClass": "Text_Menu",
+															"sid": 465226036347891,
+															"parameters": {
+																"tags": "\"Hardcore\""
+															}
+														},
+														{
+															"id": "has-tags",
+															"objectClass": "Text_Menu",
+															"sid": 277219724061018,
+															"parameters": {
+																"tags": "\"Setting\""
+															}
+														},
+														{
+															"id": "has-tags",
+															"objectClass": "Text_Menu",
+															"sid": 122745118460133,
+															"parameters": {
+																"tags": "\"SettingBack\""
+															}
+														},
+														{
+															"id": "has-tags",
+															"objectClass": "Text_Menu",
+															"sid": 676918319792068,
+															"parameters": {
+																"tags": "\"Level\""
+															}
+														},
+														{
+															"id": "has-tags",
+															"objectClass": "Text_Menu",
+															"sid": 367997888873574,
+															"parameters": {
+																"tags": "\"Exit\""
+															}
+														},
+														{
+															"id": "has-tags",
+															"objectClass": "Text_Menu",
+															"sid": 507864082607931,
+															"parameters": {
+																"tags": "\"Back\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Text_Menu",
+															"sid": 213549842151776,
+															"parameters": {
+																"instance-variable": "IsSelected",
+																"value": "true"
+															}
+														},
+														{
+															"id": "set-font-color",
+															"objectClass": "Text_Menu",
+															"sid": 848266564505305,
+															"parameters": {
+																"color": "rgbEx(50, 0, 0)"
+															}
+														}
+													],
+													"sid": 731143550467904,
+													"isOrBlock": true
 												}
-											],
-											"sid": 498087075058560,
-											"isOrBlock": true
+											]
 										}
-									]
-								}
-							],
-							"isOrBlock": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 250348812344153
-								}
-							],
-							"actions": [
-								{
-									"id": "set-font-color",
-									"objectClass": "Text_Menu",
-									"sid": 596604611490578,
-									"parameters": {
-										"color": "rgbEx(75, 75, 75)"
-									}
-								}
-							],
-							"sid": 576293540672558
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 239714740109934,
-									"parameters": {
-										"object": "Arrow"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-font-color",
-									"objectClass": "Arrow",
-									"sid": 492030831389369,
-									"parameters": {
-										"color": "rgbEx(50, 0, 0)"
-									}
-								}
-							],
-							"sid": 650494229424339
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 773009621946127,
-									"parameters": {
-										"object": "Arrow"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-font-color",
-									"objectClass": "Arrow",
-									"sid": 687891802778774,
-									"parameters": {
-										"color": "rgbEx(75, 75, 75)"
-									}
-								}
-							],
-							"sid": 260822557908325
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 994354216700968,
-									"parameters": {
-										"object": "Arrow2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-font-color",
-									"objectClass": "Arrow2",
-									"sid": 485805574736414,
-									"parameters": {
-										"color": "rgbEx(50, 0, 0)"
-									}
-								}
-							],
-							"sid": 269595821667828
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 840765833306100,
-									"parameters": {
-										"object": "Arrow2"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-font-color",
-									"objectClass": "Arrow2",
-									"sid": 891051127118891,
-									"parameters": {
-										"color": "rgbEx(75, 75, 75)"
-									}
-								}
-							],
-							"sid": 130570295095921
-						},
-						{
-							"eventType": "comment",
-							"text": "Main"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "has-gamepads",
-									"objectClass": "Gamepad",
-									"sid": 300540426114116
+									],
+									"isOrBlock": true
 								},
 								{
-									"id": "every-tick",
-									"objectClass": "System",
-									"sid": 702007600054716
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 651920155257928,
-									"parameters": {
-										"variable": "CursorX",
-										"value": "CursorX + Gamepad.Axis(0, 2) * CursorSpeed * dt * MouseSensitivity"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 849155001089577
+										}
+									],
+									"actions": [
+										{
+											"id": "set-font-color",
+											"objectClass": "Text_Menu",
+											"sid": 174021403841686,
+											"parameters": {
+												"color": "rgbEx(75, 75, 75)"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Text_Menu",
+											"sid": 991351770362084,
+											"parameters": {
+												"instance-variable": "IsSelected",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 788798597170555
 								},
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 863346747428445,
-									"parameters": {
-										"variable": "CursorY",
-										"value": "CursorY + Gamepad.Axis(0, 3) * CursorSpeed * dt * MouseSensitivity"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 952081330218445,
+											"parameters": {
+												"object": "Arrow"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-font-color",
+											"objectClass": "Arrow",
+											"sid": 719429676810448,
+											"parameters": {
+												"color": "rgbEx(50, 0, 0)"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Arrow",
+											"sid": 437019948066682,
+											"parameters": {
+												"instance-variable": "IsSelected",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 470289605574485
 								},
 								{
-									"id": "set-position",
-									"objectClass": "Cursor_Mouse",
-									"sid": 376161492456775,
-									"parameters": {
-										"x": "CursorX",
-										"y": "CursorY"
-									}
-								}
-							],
-							"sid": 157322443387206
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "has-gamepads",
-									"objectClass": "Gamepad",
-									"sid": 778542020371721
-								}
-							],
-							"actions": [
-								{
-									"id": "request-pointer-lock",
-									"objectClass": "Mouse",
-									"sid": 956673442554376,
-									"parameters": {
-										"unadjusted-movement": false
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 189518334355067,
+											"parameters": {
+												"object": "Arrow"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-font-color",
+											"objectClass": "Arrow",
+											"sid": 411912315722991,
+											"parameters": {
+												"color": "rgbEx(75, 75, 75)"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Arrow",
+											"sid": 964580113809637,
+											"parameters": {
+												"instance-variable": "IsSelected",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 505270128269823
 								},
 								{
-									"id": "set-visible",
-									"objectClass": "Cursor_Mouse",
-									"sid": 896122426105778,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 820940575339989
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "has-gamepads",
-									"objectClass": "Gamepad",
-									"sid": 503018487882601,
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "release-pointer-lock",
-									"objectClass": "Mouse",
-									"sid": 383900363169236
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 616433709922843,
+											"parameters": {
+												"object": "Arrow2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-font-color",
+											"objectClass": "Arrow2",
+											"sid": 582617168053278,
+											"parameters": {
+												"color": "rgbEx(50, 0, 0)"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Arrow2",
+											"sid": 135263745627822,
+											"parameters": {
+												"instance-variable": "IsSelected",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 339739193358393
 								},
 								{
-									"id": "set-visible",
-									"objectClass": "Cursor_Mouse",
-									"sid": 220375178165311,
-									"parameters": {
-										"visibility": "invisible"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 188951016684047,
+											"parameters": {
+												"object": "Arrow2"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-font-color",
+											"objectClass": "Arrow2",
+											"sid": 139423500197954,
+											"parameters": {
+												"color": "rgbEx(75, 75, 75)"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Arrow2",
+											"sid": 191450448199240,
+											"parameters": {
+												"instance-variable": "IsSelected",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 286289123724547
 								}
-							],
-							"sid": 510661924069700
+							]
 						}
 					],
 					"sid": 892839535353213
@@ -2216,7 +2203,7 @@
 						{
 							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 465148437419789,
+							"sid": 759962769707755,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked",
@@ -2224,52 +2211,79 @@
 							}
 						},
 						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 808560465647978,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 770319429071158,
 							"parameters": {
-								"layer": "\"Main_Menu\""
-							}
-						},
-						{
-							"id": "has-tags",
-							"objectClass": "Text_Menu",
-							"sid": 944029275479135,
-							"parameters": {
-								"tags": "\"Setting\""
-							}
-						},
-						{
-							"id": "compare-opacity",
-							"objectClass": "Menu",
-							"sid": 505518660530305,
-							"parameters": {
-								"comparison": 5,
-								"opacity": "90"
+								"gamepad": "0",
+								"button": "button-a"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 974596067678381,
+					"children": [
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 121210806945784,
-							"parameters": {
-								"seconds": "0.1",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 410766216621176,
-							"parameters": {
-								"layer": "\"Setting\"",
-								"visibility": "visible"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 122647701319068,
+									"parameters": {
+										"layer": "\"Main_Menu\""
+									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Menu",
+									"sid": 476643018339170,
+									"parameters": {
+										"tags": "\"Setting\""
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Text_Menu",
+									"sid": 505850289003381,
+									"parameters": {
+										"instance-variable": "IsSelected"
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "Menu",
+									"sid": 349416098184717,
+									"parameters": {
+										"comparison": 5,
+										"opacity": "90"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 525528928840347,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 486513152135279,
+									"parameters": {
+										"layer": "\"Setting\"",
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 688403535684504
 						}
 					],
-					"sid": 494101099184833
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -2277,7 +2291,7 @@
 						{
 							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 268879510706776,
+							"sid": 875366005188824,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked",
@@ -2285,43 +2299,70 @@
 							}
 						},
 						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 848074171619916,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 256134584338889,
 							"parameters": {
-								"layer": "\"Setting\""
-							}
-						},
-						{
-							"id": "has-tags",
-							"objectClass": "Text_Menu",
-							"sid": 677172463234800,
-							"parameters": {
-								"tags": "\"Back\""
+								"gamepad": "0",
+								"button": "button-a"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 348790437813241,
+					"children": [
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 662158841156760,
-							"parameters": {
-								"seconds": "0.1",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 730173981980325,
-							"parameters": {
-								"layer": "\"Setting\"",
-								"visibility": "invisible"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 495525195126919,
+									"parameters": {
+										"layer": "\"Setting\""
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Text_Menu",
+									"sid": 798857234678547,
+									"parameters": {
+										"instance-variable": "IsSelected"
+									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Menu",
+									"sid": 840799625751057,
+									"parameters": {
+										"tags": "\"SettingBack\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 535052435226202,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 246546554984057,
+									"parameters": {
+										"layer": "\"Setting\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 787172169768514
 						}
 					],
-					"sid": 302592548506047
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -2446,6 +2487,131 @@
 						}
 					],
 					"sid": 424222356253498
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 167148546006828,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 296486151363959,
+							"isInverted": true
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 949753372619628,
+							"parameters": {
+								"layer": "\"Setting\""
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 467607331566567,
+							"parameters": {
+								"tags": "\"Fullscreen\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Text_Menu",
+							"sid": 339254444314316,
+							"parameters": {
+								"instance-variable": "IsSelected"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 784602329225299,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "request-fullscreen",
+							"objectClass": "Browser",
+							"sid": 107005412935909,
+							"parameters": {
+								"mode": "stretch-scale-outer",
+								"navigation-ui": "auto"
+							}
+						}
+					],
+					"sid": 895948119233598
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 500568670741352,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						},
+						{
+							"id": "is-fullscreen",
+							"objectClass": "Browser",
+							"sid": 740859401730626
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 901521209850998,
+							"parameters": {
+								"tags": "\"Fullscreen\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Text_Menu",
+							"sid": 874119536733126,
+							"parameters": {
+								"instance-variable": "IsSelected"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 181402575892932,
+							"parameters": {
+								"layer": "\"Setting\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 151567757256389,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "cancel-fullscreen",
+							"objectClass": "Browser",
+							"sid": 332528310875583
+						}
+					],
+					"sid": 775353843364231
 				},
 				{
 					"eventType": "block",
@@ -8602,6 +8768,790 @@
 				}
 			],
 			"sid": 620414244369345
+		},
+		{
+			"eventType": "comment",
+			"text": "Gamepad"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 492147792658123
+				}
+			],
+			"actions": [],
+			"sid": 547450825253595,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Text_Menu",
+							"sid": 383431121708270,
+							"parameters": {
+								"instance-variable": "GridX",
+								"comparison": 0,
+								"value": "SelectedX"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Text_Menu",
+							"sid": 419757994302614,
+							"parameters": {
+								"instance-variable": "GridY",
+								"comparison": 0,
+								"value": "SelectedY"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Text_Menu",
+							"sid": 473652819247477,
+							"parameters": {
+								"instance-variable": "IsSelected",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 290895177235680
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Text_Menu",
+							"sid": 283544405654565,
+							"parameters": {
+								"instance-variable": "GridX",
+								"comparison": 0,
+								"value": "SelectedX"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Text_Menu",
+							"sid": 339077736068176,
+							"parameters": {
+								"instance-variable": "GridY",
+								"comparison": 0,
+								"value": "SelectedY"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Text_Menu",
+							"sid": 412835464679501,
+							"parameters": {
+								"instance-variable": "IsSelected",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 542085090308054,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Arrow",
+							"sid": 789299263889739,
+							"parameters": {
+								"instance-variable": "GridX",
+								"comparison": 0,
+								"value": "SelectedX"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Arrow",
+							"sid": 908749166734841,
+							"parameters": {
+								"instance-variable": "GridY",
+								"comparison": 0,
+								"value": "SelectedY"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Arrow",
+							"sid": 318276522339120,
+							"parameters": {
+								"instance-variable": "IsSelected",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 359056741466700
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Arrow",
+							"sid": 928079827909535,
+							"parameters": {
+								"instance-variable": "GridX",
+								"comparison": 0,
+								"value": "SelectedX"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Arrow",
+							"sid": 924417831578911,
+							"parameters": {
+								"instance-variable": "GridY",
+								"comparison": 0,
+								"value": "SelectedY"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Arrow",
+							"sid": 413894008336465,
+							"parameters": {
+								"instance-variable": "IsSelected",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 821451627832647,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Arrow2",
+							"sid": 878852262084876,
+							"parameters": {
+								"instance-variable": "GridX",
+								"comparison": 0,
+								"value": "SelectedX"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Arrow2",
+							"sid": 472057892243112,
+							"parameters": {
+								"instance-variable": "GridY",
+								"comparison": 0,
+								"value": "SelectedY"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Arrow2",
+							"sid": 284161426587381,
+							"parameters": {
+								"instance-variable": "IsSelected",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 694226249254401
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Arrow2",
+							"sid": 469842221942419,
+							"parameters": {
+								"instance-variable": "GridX",
+								"comparison": 0,
+								"value": "SelectedX"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Arrow2",
+							"sid": 939213623839913,
+							"parameters": {
+								"instance-variable": "GridY",
+								"comparison": 0,
+								"value": "SelectedY"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Arrow2",
+							"sid": 737780917996660,
+							"parameters": {
+								"instance-variable": "IsSelected",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 289268189473960,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Menu",
+							"sid": 482850226590112,
+							"parameters": {
+								"instance-variable": "IsSelected"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "Menu",
+							"sid": 208631126662282,
+							"parameters": {
+								"color": "rgbEx(50, 0, 0)"
+							}
+						}
+					],
+					"sid": 787584640921164
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Menu",
+							"sid": 233231923016720,
+							"parameters": {
+								"instance-variable": "IsSelected"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "Menu",
+							"sid": 859474953495422,
+							"parameters": {
+								"color": "rgbEx(75, 75, 75)"
+							}
+						}
+					],
+					"sid": 412266759766239
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 716764836276095,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-down"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 409795426686972,
+							"parameters": {
+								"variable": "SelectedY",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 332401723647997
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 367663220230153,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-up"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 115260873093975,
+							"parameters": {
+								"variable": "SelectedY",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 231197616655091
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 563466544375551,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-right"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 719670515842420,
+							"parameters": {
+								"variable": "SelectedX",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 194579391946177
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 115604909164569,
+							"parameters": {
+								"gamepad": "0",
+								"button": "d-pad-left"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 578674291294790,
+							"parameters": {
+								"variable": "SelectedX",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 802866461016792
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 582252749698676,
+							"parameters": {
+								"layer": "\"Main_Menu\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 222864718420472,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 828772388804731,
+									"parameters": {
+										"variable": "SelectedX",
+										"comparison": 2,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 961834955789868,
+									"parameters": {
+										"variable": "SelectedX",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 691980426262236
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 310164750796606,
+									"parameters": {
+										"variable": "SelectedX",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 240863373308253,
+									"parameters": {
+										"variable": "SelectedX",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 847870983884024
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 574800539913191,
+									"parameters": {
+										"variable": "SelectedY",
+										"comparison": 2,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 126236716927038,
+									"parameters": {
+										"variable": "SelectedY",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 319160168338173
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 253422437647924,
+									"parameters": {
+										"variable": "SelectedY",
+										"comparison": 4,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 387680717990348,
+									"parameters": {
+										"variable": "SelectedY",
+										"value": "4"
+									}
+								}
+							],
+							"sid": 915209939421104
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 636454391083661,
+									"parameters": {
+										"variable": "SelectedX",
+										"comparison": 4,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 682216761700976,
+									"parameters": {
+										"variable": "SelectedY",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 430310652887133,
+									"parameters": {
+										"variable": "SelectedY",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 126589378165518
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 894020526121603,
+							"parameters": {
+								"layer": "\"Setting\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 448022949581604,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 415962637419788,
+									"parameters": {
+										"variable": "SelectedX",
+										"comparison": 2,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 683184217738564,
+									"parameters": {
+										"variable": "SelectedX",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 364903101504284
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 186834906443822,
+									"parameters": {
+										"variable": "SelectedX",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 328239177224256,
+									"parameters": {
+										"variable": "SelectedX",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 271892968039393
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 336003893657732,
+									"parameters": {
+										"variable": "SelectedY",
+										"comparison": 2,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 871916851498928,
+									"parameters": {
+										"variable": "SelectedY",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 592708598301815
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 886989103592954,
+									"parameters": {
+										"variable": "SelectedY",
+										"comparison": 4,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 665297283280153,
+									"parameters": {
+										"variable": "SelectedY",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 570975395704571
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 259190990739867,
+									"parameters": {
+										"variable": "SelectedX",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 330825842297936,
+									"parameters": {
+										"variable": "SelectedY",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 550656247265595,
+									"parameters": {
+										"variable": "SelectedX",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 523922323678322
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 741059766797564
+				}
+			],
+			"actions": [
+				{
+					"id": "request-pointer-lock",
+					"objectClass": "Mouse",
+					"sid": 757556251941193,
+					"parameters": {
+						"unadjusted-movement": false
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Cursor_Mouse",
+					"sid": 360662714139203,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 710113517221588,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 710272212613627,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "release-pointer-lock",
+					"objectClass": "Mouse",
+					"sid": 357250045016977
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Cursor_Mouse",
+					"sid": 985363264606818,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 815745388252265,
+			"disabled": true
 		}
 	],
 	"sid": 658662795798694
