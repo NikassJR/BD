@@ -374,7 +374,30 @@
 					}
 				}
 			],
-			"sid": 998490785357716
+			"sid": 998490785357716,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-gamepads",
+							"objectClass": "Gamepad",
+							"sid": 665896545287985
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Press_Space",
+							"sid": 499415970279249,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 185535475096426
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -388,116 +411,135 @@
 					}
 				},
 				{
-					"id": "is-visible",
-					"objectClass": "Press_Space",
-					"sid": 152059161609761
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_Cutscene",
-					"sid": 172916450412836,
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 412558335277419,
 					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 2,
-						"value": "2"
+						"gamepad": "0",
+						"button": "button-a"
 					}
 				}
 			],
-			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 722150012155413,
-					"parameters": {
-						"variable": "ZoomCamera",
-						"value": "true"
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Press_Space",
-					"sid": 345660154350917
-				},
-				{
-					"id": "add-to-instvar",
-					"objectClass": "Player_Cutscene",
-					"sid": 395769532940584,
-					"parameters": {
-						"instance-variable": "textframe",
-						"value": "1"
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 762396459153409,
-					"parameters": {
-						"group-name": "\"Enemy_Maniac\"",
-						"state": "activated"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 498408081666959,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_Cutscene",
-							"sid": 160104627417167,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "2"
-							}
+							"id": "is-visible",
+							"objectClass": "Press_Space",
+							"sid": 360859898077410
 						},
 						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 483099853080128
+							"id": "compare-instance-variable",
+							"objectClass": "Player_Cutscene",
+							"sid": 518095874161135,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 2,
+								"value": "2"
+							}
 						}
 					],
 					"actions": [
 						{
-							"callFunction": "Create_Dealogue",
-							"sid": 772422237160253,
-							"parameters": [
-								"Player_Cutscene.x",
-								"Player_Cutscene.Y",
-								"29",
-								"1",
-								false,
-								false
-							]
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 538450615698049,
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 822185580351377,
 							"parameters": {
-								"audio-file": {
-									"path": "Player_Run"
-								},
-								"loop": "looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"Vibe\""
+								"variable": "ZoomCamera",
+								"value": "true"
 							}
 						},
 						{
-							"id": "set-playback-rate",
-							"objectClass": "Audio",
-							"sid": 654333045756789,
+							"id": "destroy",
+							"objectClass": "Press_Space",
+							"sid": 945825449491928
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_Cutscene",
+							"sid": 876041850366199,
 							"parameters": {
-								"tag": "\"Vibe\"",
-								"playback-rate": "0.6"
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 624305595534281,
+							"parameters": {
+								"group-name": "\"Enemy_Maniac\"",
+								"state": "activated"
 							}
 						}
 					],
-					"sid": 317789705549813
+					"sid": 532684836380177,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_Cutscene",
+									"sid": 488751445540208,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 0,
+										"value": "2"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 223684101306810
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Create_Dealogue",
+									"sid": 777432249426002,
+									"parameters": [
+										"Player_Cutscene.x",
+										"Player_Cutscene.Y",
+										"29",
+										"1",
+										false,
+										false
+									]
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 489546970093123,
+									"parameters": {
+										"audio-file": {
+											"path": "Player_Run"
+										},
+										"loop": "looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"Vibe\""
+									}
+								},
+								{
+									"id": "set-playback-rate",
+									"objectClass": "Audio",
+									"sid": 424891651877754,
+									"parameters": {
+										"tag": "\"Vibe\"",
+										"playback-rate": "0.6"
+									}
+								}
+							],
+							"sid": 702607132775545
+						}
+					]
 				}
-			]
+			],
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -662,7 +704,30 @@
 					}
 				}
 			],
-			"sid": 748096778458171
+			"sid": 748096778458171,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-gamepads",
+							"objectClass": "Gamepad",
+							"sid": 598251711733349
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Press_Ctrl",
+							"sid": 555168880300222,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 117062729422152
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -676,72 +741,91 @@
 					}
 				},
 				{
-					"id": "is-visible",
-					"objectClass": "Press_Ctrl",
-					"sid": 979631652989500
-				},
-				{
-					"id": "compare-x",
-					"objectClass": "Player_Cutscene",
-					"sid": 692296753253527,
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 345577274401076,
 					"parameters": {
-						"comparison": 5,
-						"x-co-ordinate": "600"
+						"gamepad": "0",
+						"button": "left-shoulder-trigger"
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 672252382103724,
+			"children": [
 				{
-					"id": "destroy",
-					"objectClass": "Press_Ctrl",
-					"sid": 474212081088788
-				},
-				{
-					"id": "start-animation",
-					"objectClass": "EnemyManiac",
-					"sid": 415776364232491,
-					"parameters": {
-						"from": "current-frame"
-					}
-				},
-				{
-					"id": "set-speed",
-					"objectClass": "Player_Cutscene",
-					"sid": 624798653538171,
-					"behaviorType": "НастраиваемоеДвижение",
-					"parameters": {
-						"which": "horizontal",
-						"speed": "-100"
-					}
-				},
-				{
-					"id": "set-animation",
-					"objectClass": "Player_Cutscene",
-					"sid": 484721454882939,
-					"parameters": {
-						"animation": "\"noWeaponDash\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-animation-speed",
-					"objectClass": "Player_Cutscene",
-					"sid": 927802238644548,
-					"parameters": {
-						"speed": "5"
-					}
-				},
-				{
-					"callFunction": "Audio_Play_Sound",
-					"sid": 837153616595267,
-					"parameters": [
-						"\"Player_Ride_Back\"",
-						"0",
-						"\"Player_Ride_Back\""
-					]
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "Press_Ctrl",
+							"sid": 429249760760378
+						},
+						{
+							"id": "compare-x",
+							"objectClass": "Player_Cutscene",
+							"sid": 348076458196994,
+							"parameters": {
+								"comparison": 5,
+								"x-co-ordinate": "600"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Press_Ctrl",
+							"sid": 404434299654754
+						},
+						{
+							"id": "start-animation",
+							"objectClass": "EnemyManiac",
+							"sid": 576483135312354,
+							"parameters": {
+								"from": "current-frame"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Player_Cutscene",
+							"sid": 747234847047516,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "-100"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_Cutscene",
+							"sid": 908068314196433,
+							"parameters": {
+								"animation": "\"noWeaponDash\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation-speed",
+							"objectClass": "Player_Cutscene",
+							"sid": 140739030414645,
+							"parameters": {
+								"speed": "5"
+							}
+						},
+						{
+							"callFunction": "Audio_Play_Sound",
+							"sid": 727012885981870,
+							"parameters": [
+								"\"Player_Ride_Back\"",
+								"0",
+								"\"Player_Ride_Back\""
+							]
+						}
+					],
+					"sid": 896996791042408
 				}
 			],
-			"sid": 672252382103724
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -1004,7 +1088,30 @@
 					]
 				}
 			],
-			"sid": 291016926071917
+			"sid": 291016926071917,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-gamepads",
+							"objectClass": "Gamepad",
+							"sid": 672233307589621
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Press_Shift",
+							"sid": 451913796404397,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 182096050604720
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -1018,86 +1125,105 @@
 					}
 				},
 				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_Cutscene",
-					"sid": 831240451138014,
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 495182538098729,
 					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 0,
-						"value": "4"
-					}
-				},
-				{
-					"id": "is-visible",
-					"objectClass": "Press_Shift",
-					"sid": 385832734390849
-				}
-			],
-			"actions": [
-				{
-					"id": "start-animation",
-					"objectClass": "EnemyManiac",
-					"sid": 916270485500105,
-					"parameters": {
-						"from": "current-frame"
-					}
-				},
-				{
-					"id": "set-animation",
-					"objectClass": "Player_Cutscene",
-					"sid": 839583028390526,
-					"parameters": {
-						"animation": "\"noWeaponTackle\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Press_Shift",
-					"sid": 266823785313673
-				},
-				{
-					"callFunction": "Audio_Play_Sound",
-					"sid": 707145998371275,
-					"parameters": [
-						"\"Player_Ride\"",
-						"0",
-						"\"Player_Ride\""
-					]
-				},
-				{
-					"callFunction": "Destroy_Dialoge",
-					"sid": 358996243393651
-				},
-				{
-					"id": "set-animation-speed",
-					"objectClass": "Player_Cutscene",
-					"sid": 235924202613076,
-					"parameters": {
-						"speed": "2"
-					}
-				},
-				{
-					"id": "set-speed",
-					"objectClass": "Player_Cutscene",
-					"sid": 524747634278610,
-					"behaviorType": "НастраиваемоеДвижение",
-					"parameters": {
-						"which": "horizontal",
-						"speed": "100"
-					}
-				},
-				{
-					"id": "add-to-instvar",
-					"objectClass": "Player_Cutscene",
-					"sid": 431842129611414,
-					"parameters": {
-						"instance-variable": "textframe",
-						"value": "1"
+						"gamepad": "0",
+						"button": "left-shoulder-button"
 					}
 				}
 			],
-			"sid": 371541133230181
+			"actions": [],
+			"sid": 371541133230181,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_Cutscene",
+							"sid": 830127395392318,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "4"
+							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "Press_Shift",
+							"sid": 585475906874721
+						}
+					],
+					"actions": [
+						{
+							"id": "start-animation",
+							"objectClass": "EnemyManiac",
+							"sid": 535041372123061,
+							"parameters": {
+								"from": "current-frame"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_Cutscene",
+							"sid": 522608264050959,
+							"parameters": {
+								"animation": "\"noWeaponTackle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Press_Shift",
+							"sid": 830014093718190
+						},
+						{
+							"callFunction": "Audio_Play_Sound",
+							"sid": 106589812247552,
+							"parameters": [
+								"\"Player_Ride\"",
+								"0",
+								"\"Player_Ride\""
+							]
+						},
+						{
+							"callFunction": "Destroy_Dialoge",
+							"sid": 583504147946499
+						},
+						{
+							"id": "set-animation-speed",
+							"objectClass": "Player_Cutscene",
+							"sid": 959870217720181,
+							"parameters": {
+								"speed": "2"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Player_Cutscene",
+							"sid": 454070454005832,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "100"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_Cutscene",
+							"sid": 981256563249080,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 304716387271767
+				}
+			],
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -1283,7 +1409,30 @@
 					}
 				}
 			],
-			"sid": 374486233309005
+			"sid": 374486233309005,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-gamepads",
+							"objectClass": "Gamepad",
+							"sid": 442091169520403
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Press_Mouse",
+							"sid": 800048868709597,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 150428549386483
+				}
+			]
 		},
 		{
 			"eventType": "comment",
@@ -2760,25 +2909,44 @@
 					}
 				},
 				{
-					"id": "is-pinned",
-					"objectClass": "Press_Mouse",
-					"sid": 577152955535897,
-					"behaviorType": "Прикрепить"
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 363115998117375,
+					"parameters": {
+						"gamepad": "0",
+						"button": "right-shoulder-trigger"
+					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 685177091945758,
+			"children": [
 				{
-					"id": "destroy",
-					"objectClass": "Press_Mouse",
-					"sid": 475693017354996
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Press_Arrow",
-					"sid": 646784748377558
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-pinned",
+							"objectClass": "Press_Mouse",
+							"sid": 710379326638419,
+							"behaviorType": "Прикрепить"
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Press_Mouse",
+							"sid": 289549815530916
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Press_Arrow",
+							"sid": 663824717747797
+						}
+					],
+					"sid": 722818294794521
 				}
 			],
-			"sid": 685177091945758
+			"isOrBlock": true
 		},
 		{
 			"eventType": "comment",

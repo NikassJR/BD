@@ -200,353 +200,372 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 946101384070022,
+							"sid": 498680958416290,
 							"parameters": {
 								"key": 69
 							}
 						},
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Cutscene",
-							"sid": 326836804719937,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 869523637775426,
 							"parameters": {
-								"object": "Trigger_CutScene"
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 612554082181725,
-							"parameters": {
-								"variable": "onDial"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "press_E",
-							"sid": 602939110131528,
-							"parameters": {
-								"visibility": "toggle"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_All",
-							"sid": 384125145809170,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "press_E",
-							"sid": 355625549653659,
-							"disabled": true,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 171710669615488,
-							"parameters": {
-								"variable": "onDial",
-								"value": "true"
+								"gamepad": "0",
+								"button": "button-y"
 							}
 						}
 					],
-					"sid": 762336673704345,
+					"actions": [],
+					"sid": 382691178709185,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "has-tags",
-									"objectClass": "Trigger_CutScene",
-									"sid": 885509437245346,
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Cutscene",
+									"sid": 791082546324288,
 									"parameters": {
-										"tags": "\"TV\""
+										"object": "Trigger_CutScene"
 									}
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player_All",
-									"sid": 900252048482113,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 903506922317219,
-									"parameters": [
-										"0",
-										"0",
-										"381",
-										"1",
-										true,
-										false
-									]
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player_All",
-									"sid": 462504397066942,
-									"parameters": {
-										"instance-variable": "textframe",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 576986046116991
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "has-tags",
-									"objectClass": "Trigger_CutScene",
-									"sid": 860348497970735,
-									"parameters": {
-										"tags": "\"Computer\""
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player_All",
-									"sid": 303996334601923,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 715970938744467,
-									"parameters": [
-										"0",
-										"0",
-										"382",
-										"1",
-										true,
-										false
-									]
-								}
-							],
-							"sid": 236669230426056
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "has-tags",
-									"objectClass": "Trigger_CutScene",
-									"sid": 666495329642540,
-									"parameters": {
-										"tags": "\"Computer\""
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player_All",
-									"sid": 931488350268060,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 661981217385666,
-									"parameters": [
-										"0",
-										"0",
-										"383",
-										"1",
-										true,
-										false
-									]
-								}
-							],
-							"sid": 498454250669031
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "has-tags",
-									"objectClass": "Trigger_CutScene",
-									"sid": 807276648069498,
-									"parameters": {
-										"tags": "\"Computer\""
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player_All",
-									"sid": 490159196616707,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 843481107197321,
-									"parameters": [
-										"0",
-										"0",
-										"384",
-										"1",
-										true,
-										false
-									]
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player_All",
-									"sid": 405446317766857,
-									"parameters": {
-										"instance-variable": "textframe",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 931021027802830
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "has-tags",
-									"objectClass": "Trigger_CutScene",
-									"sid": 104556189482773,
-									"parameters": {
-										"tags": "\"Bad\""
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player_All",
-									"sid": 872950356653472,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 893745047457809,
-									"parameters": [
-										"0",
-										"0",
-										"386",
-										"1",
-										true,
-										false
-									]
-								},
-								{
-									"id": "set-group-active",
+									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 601253007784881,
+									"sid": 816975829288975,
 									"parameters": {
-										"group-name": "\"Player\"",
-										"state": "deactivated"
+										"variable": "onDial"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "press_E",
+									"sid": 873102085236616,
+									"parameters": {
+										"visibility": "toggle"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Player_All",
+									"sid": 520037989755690,
+									"parameters": {
+										"instance-variable": "textframe",
+										"value": "1"
 									}
 								},
 								{
 									"id": "set-visible",
 									"objectClass": "press_E",
-									"sid": 806041831781410,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Player_All",
-									"sid": 610753787169987,
-									"parameters": {
-										"animation": "\"noWeaponIdle\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 798809170375112,
-									"parameters": {
-										"seconds": "2",
-										"use-timescale": true
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 929558800493410,
-									"parameters": {
-										"seconds": "3",
-										"use-timescale": true
-									}
-								},
-								{
-									"callFunction": "Destroy_Dialoge",
-									"sid": 819975257047925
-								},
-								{
-									"id": "set-enabled",
-									"objectClass": "Player_Cutscene",
-									"sid": 867530484813983,
-									"behaviorType": "Платформер",
-									"parameters": {
-										"state": "disabled"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "Player_All",
-									"sid": 596325232787805,
+									"sid": 335521483030642,
 									"disabled": true,
 									"parameters": {
-										"x": "480",
-										"y": "230"
+										"visibility": "visible"
 									}
 								},
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 200900409113055,
+									"sid": 519345070833709,
 									"parameters": {
-										"variable": "Start_Game",
+										"variable": "onDial",
 										"value": "true"
 									}
 								}
 							],
-							"sid": 886003336111166
+							"sid": 168269735994030,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-tags",
+											"objectClass": "Trigger_CutScene",
+											"sid": 558722732120799,
+											"parameters": {
+												"tags": "\"TV\""
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player_All",
+											"sid": 868781427263086,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 562596996019664,
+											"parameters": [
+												"0",
+												"0",
+												"381",
+												"1",
+												true,
+												false
+											]
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player_All",
+											"sid": 800266890968478,
+											"parameters": {
+												"instance-variable": "textframe",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 944534499184649
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-tags",
+											"objectClass": "Trigger_CutScene",
+											"sid": 683700345770165,
+											"parameters": {
+												"tags": "\"Computer\""
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player_All",
+											"sid": 646645132910650,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 309776992019425,
+											"parameters": [
+												"0",
+												"0",
+												"382",
+												"1",
+												true,
+												false
+											]
+										}
+									],
+									"sid": 348702724003392
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-tags",
+											"objectClass": "Trigger_CutScene",
+											"sid": 488512977995176,
+											"parameters": {
+												"tags": "\"Computer\""
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player_All",
+											"sid": 475435394229562,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 460114593494977,
+											"parameters": [
+												"0",
+												"0",
+												"383",
+												"1",
+												true,
+												false
+											]
+										}
+									],
+									"sid": 246742116070650
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-tags",
+											"objectClass": "Trigger_CutScene",
+											"sid": 574471820260745,
+											"parameters": {
+												"tags": "\"Computer\""
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player_All",
+											"sid": 150521047453004,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 537655864099045,
+											"parameters": [
+												"0",
+												"0",
+												"384",
+												"1",
+												true,
+												false
+											]
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player_All",
+											"sid": 857801199288935,
+											"parameters": {
+												"instance-variable": "textframe",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 742763439189013
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-tags",
+											"objectClass": "Trigger_CutScene",
+											"sid": 136200035695098,
+											"parameters": {
+												"tags": "\"Bad\""
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player_All",
+											"sid": 843769710158809,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 466274302806671,
+											"parameters": [
+												"0",
+												"0",
+												"386",
+												"1",
+												true,
+												false
+											]
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 860615347694836,
+											"parameters": {
+												"group-name": "\"Player\"",
+												"state": "deactivated"
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "press_E",
+											"sid": 913139473939814,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Player_All",
+											"sid": 445340007127661,
+											"parameters": {
+												"animation": "\"noWeaponIdle\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 390959078510713,
+											"parameters": {
+												"seconds": "2",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 453730837903850,
+											"parameters": {
+												"seconds": "3",
+												"use-timescale": true
+											}
+										},
+										{
+											"callFunction": "Destroy_Dialoge",
+											"sid": 613174562868230
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Player_Cutscene",
+											"sid": 471312471121324,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "Player_All",
+											"sid": 296096381516506,
+											"disabled": true,
+											"parameters": {
+												"x": "480",
+												"y": "230"
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 546646551635103,
+											"parameters": {
+												"variable": "Start_Game",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 147406657389606
+								}
+							]
 						}
-					]
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",

@@ -1147,99 +1147,118 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 177202194110375,
+					"sid": 740872235658676,
 					"parameters": {
 						"key": 69
 					}
 				},
 				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Player_Wolf",
-					"sid": 727471890523437,
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 168957960183987,
 					"parameters": {
-						"object": "Elektro_Shield"
-					}
-				},
-				{
-					"id": "is-visible",
-					"objectClass": "press_E",
-					"sid": 631174137827538
-				},
-				{
-					"id": "has-tags",
-					"objectClass": "Elevator_Door",
-					"sid": 901389221680746,
-					"parameters": {
-						"tags": "\"Active\""
-					}
-				},
-				{
-					"id": "has-tags",
-					"objectClass": "Elektro_Shield",
-					"sid": 233582686221094,
-					"parameters": {
-						"tags": "\"Active\""
-					}
-				},
-				{
-					"id": "has-tags",
-					"objectClass": "Door_Metal",
-					"sid": 392762543588436,
-					"parameters": {
-						"tags": "\"Closed\""
+						"gamepad": "0",
+						"button": "button-y"
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 863808351375394,
+			"children": [
 				{
-					"callFunction": "Audio_Play_Sound",
-					"sid": 431570167301905,
-					"parameters": [
-						"\"Open_Grid\"",
-						"0",
-						"\"Open_Grid\""
-					]
-				},
-				{
-					"id": "destroy",
-					"objectClass": "press_E",
-					"sid": 430192893916748
-				},
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Elevator_Door",
-					"sid": 295942601105517,
-					"parameters": {
-						"frame-number": "2"
-					}
-				},
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Elektro_Shield",
-					"sid": 524970800279690,
-					"parameters": {
-						"frame-number": "3"
-					}
-				},
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Door_Metal",
-					"sid": 897149897241483,
-					"parameters": {
-						"frame-number": "1"
-					}
-				},
-				{
-					"id": "set-enabled",
-					"objectClass": "Door_Metal",
-					"sid": 542754501014790,
-					"behaviorType": "Твёрдый",
-					"parameters": {
-						"state": "disabled"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_Wolf",
+							"sid": 286695029756666,
+							"parameters": {
+								"object": "Elektro_Shield"
+							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "press_E",
+							"sid": 547958870529842
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Elevator_Door",
+							"sid": 915123137082447,
+							"parameters": {
+								"tags": "\"Active\""
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Elektro_Shield",
+							"sid": 900083213473391,
+							"parameters": {
+								"tags": "\"Active\""
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Door_Metal",
+							"sid": 339770226300857,
+							"parameters": {
+								"tags": "\"Closed\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Audio_Play_Sound",
+							"sid": 855349712306765,
+							"parameters": [
+								"\"Open_Grid\"",
+								"0",
+								"\"Open_Grid\""
+							]
+						},
+						{
+							"id": "destroy",
+							"objectClass": "press_E",
+							"sid": 833614906048388
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Elevator_Door",
+							"sid": 162740289487111,
+							"parameters": {
+								"frame-number": "2"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Elektro_Shield",
+							"sid": 825281834129466,
+							"parameters": {
+								"frame-number": "3"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Door_Metal",
+							"sid": 736307811264089,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Door_Metal",
+							"sid": 261310410402580,
+							"behaviorType": "Твёрдый",
+							"parameters": {
+								"state": "disabled"
+							}
+						}
+					],
+					"sid": 855312103744666
 				}
 			],
-			"sid": 420741021275237
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -1322,231 +1341,250 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 562592234460310,
+					"sid": 485933470048244,
 					"parameters": {
 						"key": 69
 					}
 				},
 				{
-					"id": "has-tags",
-					"objectClass": "Elevator_Door",
-					"sid": 516864218691751,
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 604811001550381,
 					"parameters": {
-						"tags": "\"Active\""
-					}
-				},
-				{
-					"id": "compare-animation-frame",
-					"objectClass": "Elevator_Door",
-					"sid": 239449621898552,
-					"parameters": {
-						"comparison": 0,
-						"number": "2"
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Player_Wolf",
-					"sid": 363804287074242,
-					"parameters": {
-						"object": "Elevator_Door"
+						"gamepad": "0",
+						"button": "button-y"
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 810154530873438,
+			"children": [
 				{
-					"id": "destroy",
-					"objectClass": "press_E",
-					"sid": 210044985735826,
-					"disabled": true
-				},
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Elevator_Door",
-					"sid": 941906449888258,
-					"parameters": {
-						"frame-number": "3"
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 322468620595548,
-					"parameters": {
-						"group-name": "\"Player\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 862396756550889,
-					"parameters": {
-						"group-name": "\"Setup\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Player_Wolf",
-					"sid": 634156040146410,
-					"parameters": {
-						"x": "1715",
-						"y": "1719"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Camera",
-					"sid": 922899703914617,
-					"parameters": {
-						"x": "Player_Wolf.X",
-						"y": "Player_Wolf.Y -50"
-					}
-				},
-				{
-					"id": "move-layer",
-					"objectClass": "System",
-					"sid": 765403966272495,
-					"parameters": {
-						"layer": "\"Player\"",
-						"insert-by": "\"CutScene\"",
-						"where": "above"
-					}
-				},
-				{
-					"id": "move-to-layer",
-					"objectClass": "Perila_Hotel",
-					"sid": 612554346019476,
-					"parameters": {
-						"layer": "8"
-					}
-				},
-				{
-					"id": "move-to-layer",
-					"objectClass": "Large_Hotel",
-					"sid": 681645744081602,
-					"parameters": {
-						"layer": "8"
-					}
-				},
-				{
-					"id": "move-to-layer",
-					"objectClass": "Weapon",
-					"sid": 424604757792459,
-					"parameters": {
-						"layer": "8"
-					}
-				},
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 165786675940518,
-					"parameters": {
-						"object-to-create": "Shadow3",
-						"layer": "10",
-						"x": "Player_Wolf.X",
-						"y": "Player_Wolf.Y",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-animation",
-					"objectClass": "Player_Wolf",
-					"sid": 895217609942987,
-					"parameters": {
-						"animation": "\"Wolf_Idle\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-opacity",
-					"objectClass": "Shadow3",
-					"sid": 848219817412415,
-					"parameters": {
-						"opacity": "0"
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "Shadow3",
-					"sid": 159152469006778,
-					"parameters": {
-						"scale": "3"
-					}
-				},
-				{
-					"id": "tween-one-property",
-					"objectClass": "Shadow3",
-					"sid": 844925809315014,
-					"behaviorType": "Твинанимация",
-					"parameters": {
-						"tags": "\"\"",
-						"property": "offsetOpacity",
-						"end-value": "100",
-						"time": "0.5",
-						"ease": "default",
-						"destroy-on-complete": "no",
-						"loop": "no",
-						"ping-pong": "no",
-						"repeat-count": "1"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "Enemy_Mili",
-					"sid": 111956727543392,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "Head",
-					"sid": 122203378773811,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 750419784147584,
-					"parameters": {
-						"seconds": "3",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "set-animation",
-					"objectClass": "Player_Wolf",
-					"sid": 582076350239736,
-					"parameters": {
-						"animation": "\"Wolf_Kness2\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 667553601053343,
-					"parameters": {
-						"variable": "onDialMain",
-						"value": "true"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Player_Wolf",
-					"sid": 375964275812294,
-					"parameters": {
-						"instance-variable": "textframe",
-						"value": "7"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-tags",
+							"objectClass": "Elevator_Door",
+							"sid": 667153125388763,
+							"parameters": {
+								"tags": "\"Active\""
+							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "Elevator_Door",
+							"sid": 787496914029564,
+							"parameters": {
+								"comparison": 0,
+								"number": "2"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_Wolf",
+							"sid": 672056760985236,
+							"parameters": {
+								"object": "Elevator_Door"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "press_E",
+							"sid": 502580811257693,
+							"disabled": true
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Elevator_Door",
+							"sid": 498843300839257,
+							"parameters": {
+								"frame-number": "3"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 274725539090322,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 744846406251150,
+							"parameters": {
+								"group-name": "\"Setup\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Player_Wolf",
+							"sid": 389574734278178,
+							"parameters": {
+								"x": "1715",
+								"y": "1719"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Camera",
+							"sid": 415239052654857,
+							"parameters": {
+								"x": "Player_Wolf.X",
+								"y": "Player_Wolf.Y -50"
+							}
+						},
+						{
+							"id": "move-layer",
+							"objectClass": "System",
+							"sid": 191647114526782,
+							"parameters": {
+								"layer": "\"Player\"",
+								"insert-by": "\"CutScene\"",
+								"where": "above"
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "Perila_Hotel",
+							"sid": 591147875231966,
+							"parameters": {
+								"layer": "8"
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "Large_Hotel",
+							"sid": 992459838619156,
+							"parameters": {
+								"layer": "8"
+							}
+						},
+						{
+							"id": "move-to-layer",
+							"objectClass": "Weapon",
+							"sid": 533214682480532,
+							"parameters": {
+								"layer": "8"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 783908039622465,
+							"parameters": {
+								"object-to-create": "Shadow3",
+								"layer": "10",
+								"x": "Player_Wolf.X",
+								"y": "Player_Wolf.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_Wolf",
+							"sid": 581646238399961,
+							"parameters": {
+								"animation": "\"Wolf_Idle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "Shadow3",
+							"sid": 892457073352540,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Shadow3",
+							"sid": 249451382793715,
+							"parameters": {
+								"scale": "3"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Shadow3",
+							"sid": 636822253548273,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "0.5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Enemy_Mili",
+							"sid": 796490136597395,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Head",
+							"sid": 304816743865393,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 209101739782461,
+							"parameters": {
+								"seconds": "3",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_Wolf",
+							"sid": 987089897005047,
+							"parameters": {
+								"animation": "\"Wolf_Kness2\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 611501294183610,
+							"parameters": {
+								"variable": "onDialMain",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_Wolf",
+							"sid": 670858739655549,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "7"
+							}
+						}
+					],
+					"sid": 262210065607874
 				}
 			],
-			"sid": 469419995603721
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -1985,103 +2023,122 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 939317782157834,
+					"sid": 339652243279492,
 					"parameters": {
 						"key": 69
 					}
 				},
 				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Player_Wolf",
-					"sid": 320546848912124,
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 111962311272227,
 					"parameters": {
-						"object": "Boss"
-					}
-				},
-				{
-					"id": "is-animation-playing",
-					"objectClass": "Boss",
-					"sid": 280143144279544,
-					"parameters": {
-						"animation": "\"Dead\""
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 583636554692583,
-					"parameters": {
-						"variable": "onDialMain",
-						"value": "true"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Enemy_Mili",
-					"sid": 226642132870984,
-					"parameters": {
-						"instance-variable": "Fear",
-						"value": "0"
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "press_E",
-					"sid": 284917740733713
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 428049207875142,
-					"parameters": {
-						"group-name": "\"Player\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-animation",
-					"objectClass": "Boss",
-					"sid": 830200765499897,
-					"parameters": {
-						"animation": "\"Dead\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "set-animation-frame",
-					"objectClass": "Boss",
-					"sid": 975478921953086,
-					"parameters": {
-						"frame-number": "0"
-					}
-				},
-				{
-					"id": "stop-animation",
-					"objectClass": "Boss",
-					"sid": 558306451633502
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "Player_Wolf",
-					"sid": 817158917740793,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "add-to-instvar",
-					"objectClass": "Player_Wolf",
-					"sid": 165446248976383,
-					"parameters": {
-						"instance-variable": "textframe",
-						"value": "1"
+						"gamepad": "0",
+						"button": "button-y"
 					}
 				}
 			],
-			"sid": 841768890418731
+			"actions": [],
+			"sid": 855358999404810,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_Wolf",
+							"sid": 480292556877404,
+							"parameters": {
+								"object": "Boss"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Boss",
+							"sid": 331715010249093,
+							"parameters": {
+								"animation": "\"Dead\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 431110631587704,
+							"parameters": {
+								"variable": "onDialMain",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Enemy_Mili",
+							"sid": 439526429419153,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "press_E",
+							"sid": 928303091094930
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 344211692365808,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Boss",
+							"sid": 710663764973866,
+							"parameters": {
+								"animation": "\"Dead\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Boss",
+							"sid": 512938600943358,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "stop-animation",
+							"objectClass": "Boss",
+							"sid": 260884893356583
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Player_Wolf",
+							"sid": 571215126594713,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_Wolf",
+							"sid": 782780298146883,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 508077149002465
+				}
+			],
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",

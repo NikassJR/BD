@@ -234,160 +234,179 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 240204425265620,
+							"sid": 397359624738884,
 							"parameters": {
 								"key": 69
 							}
 						},
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Cutscene",
-							"sid": 405611155376032,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 147459659616457,
 							"parameters": {
-								"object": "HookahMan"
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 848804424835063,
-							"parameters": {
-								"variable": "onDial"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Table_Beer",
-							"sid": 476979006091944,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "press_E",
-							"sid": 807771873282220,
-							"disabled": true,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 622949902866929,
-							"parameters": {
-								"variable": "onDial",
-								"value": "true"
+								"gamepad": "0",
+								"button": "button-y"
 							}
 						}
 					],
-					"sid": 233155275290165,
+					"actions": [],
+					"sid": 292981742356475,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Table_Beer",
-									"sid": 832926979872869,
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Cutscene",
+									"sid": 807823176501786,
 									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "1"
+										"object": "HookahMan"
 									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 677109100394232,
-									"parameters": [
-										"HookahMan.X",
-										"HookahMan.Y -50",
-										"510",
-										"2",
-										false,
-										false
-									]
-								}
-							],
-							"sid": 541257061292429
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Table_Beer",
-									"sid": 561637620487244,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 403404868814094,
-									"parameters": [
-										"HookahMan.X",
-										"HookahMan.Y -50",
-										"511",
-										"2",
-										false,
-										false
-									]
-								}
-							],
-							"sid": 836718713319376
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Table_Beer",
-									"sid": 645702039504558,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 855692716446221,
-									"parameters": [
-										"HookahMan.X",
-										"HookahMan.Y -50",
-										"512",
-										"2",
-										false,
-										false
-									]
 								},
 								{
-									"id": "set-instvar-value",
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 337935314716959,
+									"parameters": {
+										"variable": "onDial"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
 									"objectClass": "Table_Beer",
-									"sid": 995550800474698,
+									"sid": 541720776690310,
 									"parameters": {
 										"instance-variable": "textframe",
-										"value": "0"
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "press_E",
+									"sid": 688475515923118,
+									"disabled": true,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 680692223294527,
+									"parameters": {
+										"variable": "onDial",
+										"value": "true"
 									}
 								}
 							],
-							"sid": 402910214172666
+							"sid": 320532203506850,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Table_Beer",
+											"sid": 629623643393606,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 144527107246156,
+											"parameters": [
+												"HookahMan.X",
+												"HookahMan.Y -50",
+												"510",
+												"2",
+												false,
+												false
+											]
+										}
+									],
+									"sid": 430572006610179
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Table_Beer",
+											"sid": 594154218188779,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 108542927968398,
+											"parameters": [
+												"HookahMan.X",
+												"HookahMan.Y -50",
+												"511",
+												"2",
+												false,
+												false
+											]
+										}
+									],
+									"sid": 114748249084076
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Table_Beer",
+											"sid": 569317036702268,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 823005861832415,
+											"parameters": [
+												"HookahMan.X",
+												"HookahMan.Y -50",
+												"512",
+												"2",
+												false,
+												false
+											]
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Table_Beer",
+											"sid": 698449899625691,
+											"parameters": {
+												"instance-variable": "textframe",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 679891516996809
+								}
+							]
 						}
-					]
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -395,60 +414,79 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 377598951066048,
+							"sid": 826822207099579,
 							"parameters": {
 								"key": 69
 							}
 						},
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Cutscene",
-							"sid": 773760961339715,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 468793258084681,
 							"parameters": {
-								"object": "Chair_Bar"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 708508542011408,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 2,
-								"value": "19"
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 405530282656143,
-							"parameters": {
-								"variable": "onDialMain"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 398333085400382,
-							"parameters": {
-								"variable": "onDialMain",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player_Cutscene",
-							"sid": 987164695740677,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
+								"gamepad": "0",
+								"button": "button-y"
 							}
 						}
 					],
-					"sid": 781372219910277
+					"actions": [],
+					"sid": 215851189151787,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Cutscene",
+									"sid": 299667282764335,
+									"parameters": {
+										"object": "Chair_Bar"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 797762271429277,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 2,
+										"value": "19"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 435852771239705,
+									"parameters": {
+										"variable": "onDialMain"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 246148471425210,
+									"parameters": {
+										"variable": "onDialMain",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player_Cutscene",
+									"sid": 423009911822159,
+									"parameters": {
+										"instance-variable": "textframe",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 241066489699365
+						}
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -456,615 +494,634 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 224173085006344,
+							"sid": 126491118765922,
 							"parameters": {
 								"key": 69
 							}
 						},
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Cutscene",
-							"sid": 352831865515497,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 799149018390180,
 							"parameters": {
-								"object": "Investigator"
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 443729838430227,
-							"parameters": {
-								"variable": "onDial"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Investigator",
-							"sid": 440233728658330,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "press_E",
-							"sid": 975539221265863,
-							"disabled": true,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 782380161627106,
-							"parameters": {
-								"variable": "onDial",
-								"value": "true"
+								"gamepad": "0",
+								"button": "button-y"
 							}
 						}
 					],
-					"sid": 336702652065403,
+					"actions": [],
+					"sid": 479061585485797,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Cutscene",
+									"sid": 569473859776416,
+									"parameters": {
+										"object": "Investigator"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 865940146822567,
+									"parameters": {
+										"variable": "onDial"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
 									"objectClass": "Investigator",
-									"sid": 707232075594755,
+									"sid": 604212659318735,
 									"parameters": {
 										"instance-variable": "textframe",
-										"comparison": 0,
 										"value": "1"
 									}
 								},
 								{
-									"id": "has-tags",
-									"objectClass": "Nikita_Club",
-									"sid": 230889210028714,
+									"id": "set-visible",
+									"objectClass": "press_E",
+									"sid": 106282414217522,
+									"disabled": true,
 									"parameters": {
-										"tags": "\"Chel\""
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 231305038897672,
+									"parameters": {
+										"variable": "onDial",
+										"value": "true"
 									}
 								}
 							],
-							"actions": [
+							"sid": 962639202816434,
+							"children": [
 								{
-									"callFunction": "Create_Dealogue",
-									"sid": 982775205812295,
-									"parameters": [
-										"Nikita_Club.X -20",
-										"Nikita_Club.Y -50",
-										"142",
-										"1",
-										false,
-										false
-									]
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Investigator",
+											"sid": 155140525751249,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Nikita_Club",
+											"sid": 905048729684438,
+											"parameters": {
+												"tags": "\"Chel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 800994785862016,
+											"parameters": [
+												"Nikita_Club.X -20",
+												"Nikita_Club.Y -50",
+												"142",
+												"1",
+												false,
+												false
+											]
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Nikita_Club",
+											"sid": 547575769747747,
+											"parameters": {
+												"animation": "\"Animation 1\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 120597032522912
 								},
 								{
-									"id": "set-animation",
-									"objectClass": "Nikita_Club",
-									"sid": 333078452165594,
-									"parameters": {
-										"animation": "\"Animation 1\"",
-										"from": "beginning"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Investigator",
+											"sid": 689065723267332,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "2"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Nikita_Club",
+											"sid": 754666435826041,
+											"parameters": {
+												"tags": "\"Chel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 638750648069312,
+											"parameters": [
+												"Investigator.X +20",
+												"Investigator.Y -50",
+												"143",
+												"1",
+												false,
+												false
+											]
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Investigator",
+											"sid": 608717892198549,
+											"parameters": {
+												"animation": "\"inv_sit1\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Nikita_Club",
+											"sid": 709510816028249,
+											"parameters": {
+												"animation": "\"anim1\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 833720608593276
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Investigator",
+											"sid": 410226890140352,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 395401734906947,
+											"parameters": [
+												"Investigator.X +20",
+												"Investigator.Y -50",
+												"144",
+												"1",
+												false,
+												false
+											]
+										}
+									],
+									"sid": 383567627825746
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Investigator",
+											"sid": 319511832324809,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "4"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Nikita_Club",
+											"sid": 961515337308171,
+											"parameters": {
+												"tags": "\"Chel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 112722363724089,
+											"parameters": [
+												"Nikita_Club.X -20",
+												"Nikita_Club.Y -50",
+												"145",
+												"1",
+												false,
+												false
+											]
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Nikita_Club",
+											"sid": 398983030994103,
+											"parameters": {
+												"animation": "\"Animation 1\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Investigator",
+											"sid": 424177738612371,
+											"parameters": {
+												"animation": "\"inv_sit\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 136304638761409
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Investigator",
+											"sid": 940286529841363,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "5"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Nikita_Club",
+											"sid": 718345196551009,
+											"parameters": {
+												"tags": "\"Chel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 224888280088070,
+											"parameters": [
+												"Investigator.X +20",
+												"Investigator.Y -50",
+												"146",
+												"1",
+												false,
+												false
+											]
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Investigator",
+											"sid": 172941245192650,
+											"parameters": {
+												"animation": "\"inv_sit1\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Nikita_Club",
+											"sid": 796537157909879,
+											"parameters": {
+												"animation": "\"anim1\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 212026860486752
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Investigator",
+											"sid": 342199939667763,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "6"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Nikita_Club",
+											"sid": 669988682817376,
+											"parameters": {
+												"tags": "\"Chel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 995052544106590,
+											"parameters": [
+												"Nikita_Club.X -20",
+												"Nikita_Club.Y -50",
+												"147",
+												"1",
+												false,
+												false
+											]
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Nikita_Club",
+											"sid": 448948961357320,
+											"parameters": {
+												"animation": "\"Animation 1\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Investigator",
+											"sid": 902738521268088,
+											"parameters": {
+												"animation": "\"inv_sit\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 831279213977710
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Investigator",
+											"sid": 693635077873593,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "7"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Nikita_Club",
+											"sid": 103295164139071,
+											"parameters": {
+												"tags": "\"Chel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 460296399135315,
+											"parameters": [
+												"Investigator.X +20",
+												"Investigator.Y -50",
+												"148",
+												"1",
+												false,
+												false
+											]
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Investigator",
+											"sid": 322289827295886,
+											"parameters": {
+												"animation": "\"inv_sit1\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Nikita_Club",
+											"sid": 748448569681362,
+											"parameters": {
+												"animation": "\"anim1\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 471483670307077
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Investigator",
+											"sid": 901727438892761,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "8"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Nikita_Club",
+											"sid": 180758273440904,
+											"parameters": {
+												"tags": "\"Chel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 787597013654086,
+											"parameters": [
+												"Investigator.X +20",
+												"Investigator.Y -50",
+												"149",
+												"1",
+												false,
+												false
+											]
+										}
+									],
+									"sid": 618675180492820
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Investigator",
+											"sid": 622569852287867,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "9"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Nikita_Club",
+											"sid": 431566654651190,
+											"parameters": {
+												"tags": "\"Chel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 562717465169473,
+											"parameters": [
+												"Nikita_Club.X -20",
+												"Nikita_Club.Y -50",
+												"150",
+												"1",
+												false,
+												false
+											]
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Nikita_Club",
+											"sid": 926455371600744,
+											"parameters": {
+												"animation": "\"Animation 1\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Investigator",
+											"sid": 523552210855107,
+											"parameters": {
+												"animation": "\"inv_sit\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 601944069872969
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Investigator",
+											"sid": 903865286256689,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "10"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Nikita_Club",
+											"sid": 219598912710095,
+											"parameters": {
+												"tags": "\"Chel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 389968533182509,
+											"parameters": [
+												"Nikita_Club.X -20",
+												"Nikita_Club.Y -50",
+												"151",
+												"1",
+												false,
+												false
+											]
+										}
+									],
+									"sid": 321183415457985
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Investigator",
+											"sid": 302999299760425,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "11"
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Nikita_Club",
+											"sid": 389460033115468,
+											"parameters": {
+												"tags": "\"Chel\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 340431019885381,
+											"parameters": [
+												"Investigator.X +20",
+												"Investigator.Y -50",
+												"152",
+												"1",
+												false,
+												false
+											]
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Investigator",
+											"sid": 270090124366185,
+											"parameters": {
+												"animation": "\"inv_sit1\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Nikita_Club",
+											"sid": 340765376315184,
+											"parameters": {
+												"animation": "\"anim1\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Investigator",
+											"sid": 194309221320940,
+											"parameters": {
+												"instance-variable": "textframe",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 522281451356251
 								}
-							],
-							"sid": 305968048544928
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Investigator",
-									"sid": 296517388707237,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "2"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Nikita_Club",
-									"sid": 425742662902368,
-									"parameters": {
-										"tags": "\"Chel\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 893186029239137,
-									"parameters": [
-										"Investigator.X +20",
-										"Investigator.Y -50",
-										"143",
-										"1",
-										false,
-										false
-									]
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Investigator",
-									"sid": 111291985130344,
-									"parameters": {
-										"animation": "\"inv_sit1\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Nikita_Club",
-									"sid": 862217612298491,
-									"parameters": {
-										"animation": "\"anim1\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 944783925875539
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Investigator",
-									"sid": 664660473061576,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 360502378292416,
-									"parameters": [
-										"Investigator.X +20",
-										"Investigator.Y -50",
-										"144",
-										"1",
-										false,
-										false
-									]
-								}
-							],
-							"sid": 114158384607917
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Investigator",
-									"sid": 534682086855367,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "4"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Nikita_Club",
-									"sid": 563618768804405,
-									"parameters": {
-										"tags": "\"Chel\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 721700317732932,
-									"parameters": [
-										"Nikita_Club.X -20",
-										"Nikita_Club.Y -50",
-										"145",
-										"1",
-										false,
-										false
-									]
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Nikita_Club",
-									"sid": 350265993290397,
-									"parameters": {
-										"animation": "\"Animation 1\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Investigator",
-									"sid": 788410823172597,
-									"parameters": {
-										"animation": "\"inv_sit\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 728693093213284
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Investigator",
-									"sid": 414341861865745,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "5"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Nikita_Club",
-									"sid": 396531808164675,
-									"parameters": {
-										"tags": "\"Chel\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 637425889888697,
-									"parameters": [
-										"Investigator.X +20",
-										"Investigator.Y -50",
-										"146",
-										"1",
-										false,
-										false
-									]
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Investigator",
-									"sid": 325231976681889,
-									"parameters": {
-										"animation": "\"inv_sit1\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Nikita_Club",
-									"sid": 833283516488280,
-									"parameters": {
-										"animation": "\"anim1\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 145572363103099
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Investigator",
-									"sid": 872133390325819,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "6"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Nikita_Club",
-									"sid": 419584741989657,
-									"parameters": {
-										"tags": "\"Chel\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 378389852585231,
-									"parameters": [
-										"Nikita_Club.X -20",
-										"Nikita_Club.Y -50",
-										"147",
-										"1",
-										false,
-										false
-									]
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Nikita_Club",
-									"sid": 912925652925208,
-									"parameters": {
-										"animation": "\"Animation 1\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Investigator",
-									"sid": 453763346761639,
-									"parameters": {
-										"animation": "\"inv_sit\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 455207194926923
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Investigator",
-									"sid": 516449343625426,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "7"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Nikita_Club",
-									"sid": 332478371168204,
-									"parameters": {
-										"tags": "\"Chel\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 962153100132387,
-									"parameters": [
-										"Investigator.X +20",
-										"Investigator.Y -50",
-										"148",
-										"1",
-										false,
-										false
-									]
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Investigator",
-									"sid": 793082614436905,
-									"parameters": {
-										"animation": "\"inv_sit1\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Nikita_Club",
-									"sid": 342889446351067,
-									"parameters": {
-										"animation": "\"anim1\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 525373787290394
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Investigator",
-									"sid": 239871588756226,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "8"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Nikita_Club",
-									"sid": 284120697812605,
-									"parameters": {
-										"tags": "\"Chel\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 225994145777965,
-									"parameters": [
-										"Investigator.X +20",
-										"Investigator.Y -50",
-										"149",
-										"1",
-										false,
-										false
-									]
-								}
-							],
-							"sid": 356779192565142
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Investigator",
-									"sid": 550007697514039,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "9"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Nikita_Club",
-									"sid": 233703938222595,
-									"parameters": {
-										"tags": "\"Chel\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 764100928348456,
-									"parameters": [
-										"Nikita_Club.X -20",
-										"Nikita_Club.Y -50",
-										"150",
-										"1",
-										false,
-										false
-									]
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Nikita_Club",
-									"sid": 752102794818303,
-									"parameters": {
-										"animation": "\"Animation 1\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Investigator",
-									"sid": 244809304783960,
-									"parameters": {
-										"animation": "\"inv_sit\"",
-										"from": "beginning"
-									}
-								}
-							],
-							"sid": 659827062082131
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Investigator",
-									"sid": 217695752466521,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "10"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Nikita_Club",
-									"sid": 467670288394049,
-									"parameters": {
-										"tags": "\"Chel\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 346751507444691,
-									"parameters": [
-										"Nikita_Club.X -20",
-										"Nikita_Club.Y -50",
-										"151",
-										"1",
-										false,
-										false
-									]
-								}
-							],
-							"sid": 363852746231298
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Investigator",
-									"sid": 916716044855601,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "11"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Nikita_Club",
-									"sid": 309789947484039,
-									"parameters": {
-										"tags": "\"Chel\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 550445848294556,
-									"parameters": [
-										"Investigator.X +20",
-										"Investigator.Y -50",
-										"152",
-										"1",
-										false,
-										false
-									]
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Investigator",
-									"sid": 963103882030604,
-									"parameters": {
-										"animation": "\"inv_sit1\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "Nikita_Club",
-									"sid": 214419198640571,
-									"parameters": {
-										"animation": "\"anim1\"",
-										"from": "beginning"
-									}
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Investigator",
-									"sid": 670473683824180,
-									"parameters": {
-										"instance-variable": "textframe",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 561224818881208
+							]
 						}
-					]
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",

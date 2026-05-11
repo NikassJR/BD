@@ -418,87 +418,106 @@
 							}
 						},
 						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 864961806149981,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 260955217803216,
 							"parameters": {
-								"variable": "onDial"
-							},
-							"isInverted": true
-						},
-						{
-							"id": "is-on-screen",
-							"objectClass": "Scientist",
-							"sid": 347981007615913
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "dialogText",
-							"sid": 707138827010991,
-							"parameters": {
-								"instance-variable": "Lang",
-								"value": "18"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Scientist",
-							"sid": 363041492521439,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 570067389741753,
-							"parameters": {
-								"variable": "onDial",
-								"value": "true"
+								"gamepad": "0",
+								"button": "button-a"
 							}
 						}
 					],
+					"actions": [],
 					"sid": 259320494742444,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Scientist",
-									"sid": 611615138081714,
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 914374239398989,
 									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "2"
-									}
+										"variable": "onDial"
+									},
+									"isInverted": true
 								},
 								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 484138603445134
+									"id": "is-on-screen",
+									"objectClass": "Scientist",
+									"sid": 618218956551526
 								}
 							],
 							"actions": [
 								{
-									"callFunction": "Create_Dealogue",
-									"sid": 534040452977192,
-									"parameters": [
-										"4810",
-										"840",
-										"231",
-										"1",
-										false,
-										false
-									]
+									"id": "set-instvar-value",
+									"objectClass": "dialogText",
+									"sid": 218672043722257,
+									"parameters": {
+										"instance-variable": "Lang",
+										"value": "18"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Scientist",
+									"sid": 212858583268566,
+									"parameters": {
+										"instance-variable": "textframe",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 387297527813582,
+									"parameters": {
+										"variable": "onDial",
+										"value": "true"
+									}
 								}
 							],
-							"sid": 201403787579064
+							"sid": 785774845259908,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Scientist",
+											"sid": 568991317549097,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "2"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 904345704924562
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 279085157375489,
+											"parameters": [
+												"4810",
+												"840",
+												"231",
+												"1",
+												false,
+												false
+											]
+										}
+									],
+									"sid": 502806268539862
+								}
+							]
 						}
-					]
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -1474,124 +1493,143 @@
 							}
 						},
 						{
-							"id": "has-tags",
-							"objectClass": "Door_Old",
-							"sid": 244268935530946,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 951385761228792,
 							"parameters": {
-								"tags": "\"Closed\""
-							}
-						},
-						{
-							"id": "is-animation-playing",
-							"objectClass": "Door_Old",
-							"sid": 681044752025952,
-							"parameters": {
-								"animation": "\"Animation 1\""
-							}
-						},
-						{
-							"id": "compare-animation-frame",
-							"objectClass": "Door_Old",
-							"sid": 846615689843928,
-							"parameters": {
-								"comparison": 0,
-								"number": "0"
-							}
-						},
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_All",
-							"sid": 877855157615270,
-							"parameters": {
-								"object": "Trigger_CutScene"
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 119503149811809,
-							"parameters": {
-								"variable": "onDial"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player_All",
-							"sid": 516738840954418,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 356142290464979,
-							"parameters": {
-								"variable": "onDial",
-								"value": "true"
+								"gamepad": "0",
+								"button": "button-y"
 							}
 						}
 					],
+					"actions": [],
 					"sid": 114744137050110,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player_All",
-									"sid": 927211710728064,
+									"id": "has-tags",
+									"objectClass": "Door_Old",
+									"sid": 577678851679282,
 									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "1"
+										"tags": "\"Closed\""
 									}
 								},
 								{
-									"id": "trigger-once-while-true",
+									"id": "is-animation-playing",
+									"objectClass": "Door_Old",
+									"sid": 935487082878207,
+									"parameters": {
+										"animation": "\"Animation 1\""
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "Door_Old",
+									"sid": 571738453595215,
+									"parameters": {
+										"comparison": 0,
+										"number": "0"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_All",
+									"sid": 107011722738766,
+									"parameters": {
+										"object": "Trigger_CutScene"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 765665606625886
+									"sid": 225817780843991,
+									"parameters": {
+										"variable": "onDial"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
 								{
-									"callFunction": "Create_Dealogue",
-									"sid": 976584700761430,
-									"parameters": [
-										"0",
-										"0",
-										"796",
-										"1",
-										true,
-										false
-									]
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 548144237324883,
+									"id": "set-instvar-value",
+									"objectClass": "Player_All",
+									"sid": 326617642594605,
 									"parameters": {
-										"seconds": "1.0",
-										"use-timescale": true
+										"instance-variable": "textframe",
+										"value": "1"
 									}
 								},
 								{
-									"id": "set-instvar-value",
-									"objectClass": "Player_All",
-									"sid": 434668203107208,
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 860474860179536,
 									"parameters": {
-										"instance-variable": "textframe",
-										"value": "0"
+										"variable": "onDial",
+										"value": "true"
 									}
 								}
 							],
-							"sid": 605483045611067
+							"sid": 548177757657206,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Player_All",
+											"sid": 642040472486407,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 738324766583048
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 714130372262921,
+											"parameters": [
+												"0",
+												"0",
+												"796",
+												"1",
+												true,
+												false
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 219008345913804,
+											"parameters": {
+												"seconds": "1.0",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Player_All",
+											"sid": 971065926589667,
+											"parameters": {
+												"instance-variable": "textframe",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 640080170280081
+								}
+							]
 						}
-					]
+					],
+					"isOrBlock": true
 				}
 			],
 			"sid": 150674779937279
@@ -2141,155 +2179,174 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 418594907709487,
+							"sid": 251429397952558,
 							"parameters": {
 								"key": 69
 							}
 						},
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Button_Red",
-							"sid": 381910619276439,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 180174680396376,
 							"parameters": {
-								"object": "Player_All"
+								"gamepad": "0",
+								"button": "button-y"
 							}
 						}
 					],
-					"actions": [
-						{
-							"callFunction": "Audio_Play_Sound",
-							"sid": 928876711526533,
-							"parameters": [
-								"\"Open_Grid\"",
-								"0",
-								"\"Open_Grid\""
-							]
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "door_closed",
-							"sid": 485580077302191,
-							"behaviorType": "Твёрдый",
-							"parameters": {
-								"state": "disabled"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "door_closed",
-							"sid": 582566110288314,
-							"parameters": {
-								"frame-number": "1"
-							}
-						},
-						{
-							"id": "destroy",
-							"objectClass": "press_E",
-							"sid": 353099779231242
-						}
-					],
-					"sid": 212691003295301,
+					"actions": [],
+					"sid": 332840503532547,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-animation-playing",
-									"objectClass": "Stair",
-									"sid": 386418320106891,
+									"id": "is-overlapping-another-object",
+									"objectClass": "Button_Red",
+									"sid": 966650181057416,
 									"parameters": {
-										"animation": "\"Ladder\""
+										"object": "Player_All"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Audio_Play_Sound",
+									"sid": 934933590428780,
+									"parameters": [
+										"\"Open_Grid\"",
+										"0",
+										"\"Open_Grid\""
+									]
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "door_closed",
+									"sid": 514931672948548,
+									"behaviorType": "Твёрдый",
+									"parameters": {
+										"state": "disabled"
 									}
 								},
 								{
-									"id": "has-tags",
-									"objectClass": "Stair",
-									"sid": 927014690543674,
+									"id": "set-animation-frame",
+									"objectClass": "door_closed",
+									"sid": 235100938571301,
 									"parameters": {
-										"tags": "\"Cut\""
+										"frame-number": "1"
 									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-angle",
-									"objectClass": "Stair",
-									"sid": 268460244479831,
-									"parameters": {
-										"angle": "20"
-									}
-								}
-							],
-							"sid": 375663821414985
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "has-tags",
-									"objectClass": "Shadow5",
-									"sid": 800517217281622,
-									"parameters": {
-										"tags": "\"Cut\""
-									}
-								}
-							],
-							"actions": [
+								},
 								{
 									"id": "destroy",
-									"objectClass": "Shadow5",
-									"sid": 245643173048658
+									"objectClass": "press_E",
+									"sid": 990138659552817
 								}
 							],
-							"sid": 752949446837488
-						},
-						{
-							"eventType": "block",
-							"conditions": [
+							"sid": 228084258350613,
+							"children": [
 								{
-									"id": "has-tags",
-									"objectClass": "Pandus",
-									"sid": 400159571467725,
-									"parameters": {
-										"tags": "\"Cut\""
-									}
-								}
-							],
-							"actions": [
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Stair",
+											"sid": 940834866941223,
+											"parameters": {
+												"animation": "\"Ladder\""
+											}
+										},
+										{
+											"id": "has-tags",
+											"objectClass": "Stair",
+											"sid": 314484164391048,
+											"parameters": {
+												"tags": "\"Cut\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-angle",
+											"objectClass": "Stair",
+											"sid": 603122590543572,
+											"parameters": {
+												"angle": "20"
+											}
+										}
+									],
+									"sid": 217852504952598
+								},
 								{
-									"id": "destroy",
-									"objectClass": "Pandus",
-									"sid": 540491008356791
-								}
-							],
-							"sid": 746408127714114
-						},
-						{
-							"eventType": "block",
-							"conditions": [
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-tags",
+											"objectClass": "Shadow5",
+											"sid": 262463649207355,
+											"parameters": {
+												"tags": "\"Cut\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Shadow5",
+											"sid": 428165712584844
+										}
+									],
+									"sid": 158364804492267
+								},
 								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 174666969931239
-								}
-							],
-							"actions": [
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "has-tags",
+											"objectClass": "Pandus",
+											"sid": 898203968467533,
+											"parameters": {
+												"tags": "\"Cut\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "Pandus",
+											"sid": 674904896095905
+										}
+									],
+									"sid": 632188515384786
+								},
 								{
-									"callFunction": "Create_Dealogue",
-									"sid": 238028839315436,
-									"parameters": [
-										"0",
-										"0",
-										"797",
-										"1",
-										true,
-										false
-									]
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 295940289835697
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 562571041726048,
+											"parameters": [
+												"0",
+												"0",
+												"797",
+												"1",
+												true,
+												false
+											]
+										}
+									],
+									"sid": 345332012234246
 								}
-							],
-							"sid": 758175277471202
+							]
 						}
-					]
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -2313,7 +2370,30 @@
 							}
 						}
 					],
-					"sid": 469767772935814
+					"sid": 469767772935814,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-gamepads",
+									"objectClass": "Gamepad",
+									"sid": 931031155149014
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "press_E",
+									"sid": 144149788031502,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 860566251987031
+						}
+					]
 				},
 				{
 					"eventType": "block",

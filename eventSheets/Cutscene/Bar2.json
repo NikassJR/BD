@@ -1114,160 +1114,179 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 802030247436492,
+							"sid": 537283686019151,
 							"parameters": {
 								"key": 69
 							}
 						},
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Cutscene",
-							"sid": 192821017771965,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 891201848597716,
 							"parameters": {
-								"object": "Road"
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 417921802548075,
-							"parameters": {
-								"variable": "onDial"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Table_Beer",
-							"sid": 960235066319842,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "press_E",
-							"sid": 786167945293257,
-							"disabled": true,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 376238728187021,
-							"parameters": {
-								"variable": "onDial",
-								"value": "true"
+								"gamepad": "0",
+								"button": "button-y"
 							}
 						}
 					],
-					"sid": 419073896088737,
+					"actions": [],
+					"sid": 836653018894378,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Table_Beer",
-									"sid": 968402627283547,
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Cutscene",
+									"sid": 418002338013357,
 									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "1"
+										"object": "Road"
 									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 596220086690401,
-									"parameters": [
-										"Flashko.X ",
-										"Flashko.Y -50",
-										"139",
-										"1",
-										false,
-										false
-									]
-								}
-							],
-							"sid": 856493575622555
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Table_Beer",
-									"sid": 486404470852580,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 710981507300066,
-									"parameters": [
-										"Road.X",
-										"Road.Y -50",
-										"140",
-										"1",
-										false,
-										false
-									]
-								}
-							],
-							"sid": 677818116587388
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Table_Beer",
-									"sid": 769049846915453,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 773706350720059,
-									"parameters": [
-										"Flashko.X",
-										"Flashko.Y -50",
-										"141",
-										"1",
-										false,
-										false
-									]
 								},
 								{
-									"id": "set-instvar-value",
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 229269671952703,
+									"parameters": {
+										"variable": "onDial"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
 									"objectClass": "Table_Beer",
-									"sid": 260627240598192,
+									"sid": 504875146870481,
 									"parameters": {
 										"instance-variable": "textframe",
-										"value": "0"
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "press_E",
+									"sid": 489735127339893,
+									"disabled": true,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 552295626607095,
+									"parameters": {
+										"variable": "onDial",
+										"value": "true"
 									}
 								}
 							],
-							"sid": 768366948126869
+							"sid": 618020238912715,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Table_Beer",
+											"sid": 196426930093685,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 597869379103765,
+											"parameters": [
+												"Flashko.X ",
+												"Flashko.Y -50",
+												"139",
+												"1",
+												false,
+												false
+											]
+										}
+									],
+									"sid": 890645768424407
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Table_Beer",
+											"sid": 784661491455513,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 766326720202044,
+											"parameters": [
+												"Road.X",
+												"Road.Y -50",
+												"140",
+												"1",
+												false,
+												false
+											]
+										}
+									],
+									"sid": 534726239661974
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Table_Beer",
+											"sid": 554573650501858,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 139505195158871,
+											"parameters": [
+												"Flashko.X",
+												"Flashko.Y -50",
+												"141",
+												"1",
+												false,
+												false
+											]
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Table_Beer",
+											"sid": 341569983238658,
+											"parameters": {
+												"instance-variable": "textframe",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 946576802228242
+								}
+							]
 						}
-					]
+					],
+					"isOrBlock": true
 				}
 			],
 			"sid": 298877414981875
@@ -1432,31 +1451,6 @@
 				}
 			],
 			"sid": 855663807946659
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 974105071433044,
-					"parameters": {
-						"key": 81
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Player_Cutscene",
-					"sid": 953195141291774,
-					"parameters": {
-						"instance-variable": "cast_text",
-						"value": "56"
-					}
-				}
-			],
-			"sid": 552988510436833
 		},
 		{
 			"eventType": "block",

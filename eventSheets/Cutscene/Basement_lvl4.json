@@ -2128,32 +2128,6 @@
 							}
 						},
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 240929257047257,
-							"parameters": {
-								"object-to-create": "Press_Mouse2",
-								"layer": "\"Front\"",
-								"x": "Player_All.X -100",
-								"y": "Player_All.Y -100",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 529633758619290,
-							"parameters": {
-								"object-to-create": "Press_Mouse",
-								"layer": "\"Front\"",
-								"x": "Player_All.X ",
-								"y": "Player_All.Y -100",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						},
-						{
 							"id": "set-opacity",
 							"objectClass": "Ekran",
 							"sid": 712534884768053,
@@ -2223,6 +2197,32 @@
 							"sid": 743745945399385
 						},
 						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 588561977367783,
+							"parameters": {
+								"object-to-create": "Press_Mouse2",
+								"layer": "\"Front\"",
+								"x": "Player_All.X -100",
+								"y": "Player_All.Y -100",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 680012799628093,
+							"parameters": {
+								"object-to-create": "Press_Mouse",
+								"layer": "\"Front\"",
+								"x": "Player_All.X ",
+								"y": "Player_All.Y -100",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
 							"id": "set-scale",
 							"objectClass": "Press_Mouse",
 							"sid": 554554876394972,
@@ -2256,7 +2256,38 @@
 							}
 						}
 					],
-					"sid": 339187146545710
+					"sid": 339187146545710,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-gamepads",
+									"objectClass": "Gamepad",
+									"sid": 277753382164910
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Press_Mouse",
+									"sid": 289851452901551,
+									"parameters": {
+										"frame-number": "2"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Press_Mouse2",
+									"sid": 771703635495611,
+									"parameters": {
+										"frame-number": "2"
+									}
+								}
+							],
+							"sid": 666606136945167
+						}
+					]
 				},
 				{
 					"eventType": "block",

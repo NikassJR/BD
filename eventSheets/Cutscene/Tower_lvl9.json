@@ -2460,69 +2460,88 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 624558395954780,
+					"sid": 686710875180393,
 					"parameters": {
 						"key": 69
 					}
 				},
 				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Player_All",
-					"sid": 862353960587835,
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 904841431721692,
 					"parameters": {
-						"object": "Paper"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 264742227459461,
-					"parameters": {
-						"variable": "onDial"
-					},
-					"isInverted": true
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Player_All",
-					"sid": 123412918846895,
-					"parameters": {
-						"instance-variable": "textframe",
-						"comparison": 2,
-						"value": "6"
+						"gamepad": "0",
+						"button": "button-y"
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 577129756422668,
+			"children": [
 				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 867735930972853,
-					"parameters": {
-						"group-name": "\"Player\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "add-to-instvar",
-					"objectClass": "Player_All",
-					"sid": 303360872744474,
-					"parameters": {
-						"instance-variable": "textframe",
-						"value": "1"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 575560902039085,
-					"parameters": {
-						"variable": "onDial",
-						"value": "true"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_All",
+							"sid": 113796918496498,
+							"parameters": {
+								"object": "Paper"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 903167585827217,
+							"parameters": {
+								"variable": "onDial"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 456236749039207,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 2,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 146887946538023,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_All",
+							"sid": 958235512927177,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 266303898298073,
+							"parameters": {
+								"variable": "onDial",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 232691827491949
 				}
 			],
-			"sid": 805985909352189
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",

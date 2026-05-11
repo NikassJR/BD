@@ -251,220 +251,239 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 460618900604107,
+							"sid": 259998477364743,
 							"parameters": {
 								"key": 69
 							}
 						},
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Cutscene",
-							"sid": 325676101779078,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 788795561795619,
 							"parameters": {
-								"object": "Table_Beer"
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 118678971952306,
-							"parameters": {
-								"variable": "onDial"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Table_Beer",
-							"sid": 327286693070574,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "press_E",
-							"sid": 622214883264091,
-							"disabled": true,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 784767932633867,
-							"parameters": {
-								"variable": "onDial",
-								"value": "true"
+								"gamepad": "0",
+								"button": "button-y"
 							}
 						}
 					],
-					"sid": 114177942784057,
+					"actions": [],
+					"sid": 165084848526777,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Table_Beer",
-									"sid": 761818917039755,
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Cutscene",
+									"sid": 376068524918021,
 									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "1"
+										"object": "Table_Beer"
 									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 684440986046678,
-									"parameters": [
-										"428",
-										"380",
-										"45",
-										"1",
-										false,
-										false
-									]
-								}
-							],
-							"sid": 215080350096324
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Table_Beer",
-									"sid": 957513878357995,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 130257016557910,
-									"parameters": [
-										"484",
-										"369",
-										"46",
-										"1",
-										false,
-										false
-									]
-								}
-							],
-							"sid": 595875579606102
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Table_Beer",
-									"sid": 693007117086761,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 165964062166838,
-									"parameters": [
-										"428",
-										"380",
-										"47",
-										"1",
-										false,
-										false
-									]
-								}
-							],
-							"sid": 525695318541340
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Table_Beer",
-									"sid": 822004502353595,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "4"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 552672667160101,
-									"parameters": [
-										"444",
-										"374",
-										"48",
-										"1",
-										false,
-										false
-									]
-								}
-							],
-							"sid": 351087685001477
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Table_Beer",
-									"sid": 772147193079093,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "5"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 852946027625095,
-									"parameters": [
-										"494",
-										"376",
-										"49",
-										"1",
-										false,
-										false
-									]
 								},
 								{
-									"id": "set-instvar-value",
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 397373421215966,
+									"parameters": {
+										"variable": "onDial"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-instvar",
 									"objectClass": "Table_Beer",
-									"sid": 339438044832309,
+									"sid": 763802500512922,
 									"parameters": {
 										"instance-variable": "textframe",
-										"value": "0"
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "press_E",
+									"sid": 631236912110178,
+									"disabled": true,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 898737757379345,
+									"parameters": {
+										"variable": "onDial",
+										"value": "true"
 									}
 								}
 							],
-							"sid": 556847962984899
+							"sid": 828764185047284,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Table_Beer",
+											"sid": 786235106766799,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 382042381523137,
+											"parameters": [
+												"428",
+												"380",
+												"45",
+												"1",
+												false,
+												false
+											]
+										}
+									],
+									"sid": 444247356657512
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Table_Beer",
+											"sid": 742241761254799,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 212065323007560,
+											"parameters": [
+												"484",
+												"369",
+												"46",
+												"1",
+												false,
+												false
+											]
+										}
+									],
+									"sid": 789182103803244
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Table_Beer",
+											"sid": 816273588047903,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 590551800931286,
+											"parameters": [
+												"428",
+												"380",
+												"47",
+												"1",
+												false,
+												false
+											]
+										}
+									],
+									"sid": 291328870450825
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Table_Beer",
+											"sid": 498567152037345,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 508037177137662,
+											"parameters": [
+												"444",
+												"374",
+												"48",
+												"1",
+												false,
+												false
+											]
+										}
+									],
+									"sid": 748022570314895
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Table_Beer",
+											"sid": 251522209671529,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 576206963455879,
+											"parameters": [
+												"494",
+												"376",
+												"49",
+												"1",
+												false,
+												false
+											]
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Table_Beer",
+											"sid": 162218271674326,
+											"parameters": {
+												"instance-variable": "textframe",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 488764356455518
+								}
+							]
 						}
-					]
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -472,110 +491,129 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 806666608432191,
+							"sid": 354153002853053,
 							"parameters": {
 								"key": 69
 							}
 						},
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Cutscene",
-							"sid": 239663888632807,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 580252010234084,
 							"parameters": {
-								"object": "Any"
-							}
-						},
-						{
-							"id": "is-visible",
-							"objectClass": "Any",
-							"sid": 144909142190767
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 959011860883629,
-							"parameters": {
-								"variable": "onDial"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Any",
-							"sid": 161045902602299,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "press_E",
-							"sid": 206145284350916,
-							"disabled": true,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 247160463564039,
-							"parameters": {
-								"variable": "onDial",
-								"value": "true"
+								"gamepad": "0",
+								"button": "button-y"
 							}
 						}
 					],
-					"sid": 112186406953680,
+					"actions": [],
+					"sid": 159587816649928,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Any",
-									"sid": 616237820073000,
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Cutscene",
+									"sid": 712207199280209,
 									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "1"
+										"object": "Any"
 									}
 								},
 								{
 									"id": "is-visible",
 									"objectClass": "Any",
-									"sid": 959310716227956
+									"sid": 872140921626476
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 656472717829364,
+									"parameters": {
+										"variable": "onDial"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
 								{
-									"callFunction": "Create_Dealogue",
-									"sid": 596562125488440,
-									"parameters": [
-										"Any.X",
-										"Any.Y -50",
-										"76",
-										"1",
-										false,
-										false
-									]
-								},
-								{
-									"id": "set-instvar-value",
+									"id": "add-to-instvar",
 									"objectClass": "Any",
-									"sid": 803547827384700,
+									"sid": 293283657840860,
 									"parameters": {
 										"instance-variable": "textframe",
-										"value": "0"
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "press_E",
+									"sid": 836585813427027,
+									"disabled": true,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 929572421094811,
+									"parameters": {
+										"variable": "onDial",
+										"value": "true"
 									}
 								}
 							],
-							"sid": 764877623050740
+							"sid": 936536748057098,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Any",
+											"sid": 598018639270550,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "is-visible",
+											"objectClass": "Any",
+											"sid": 233280705643169
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 729993256364893,
+											"parameters": [
+												"Any.X",
+												"Any.Y -50",
+												"76",
+												"1",
+												false,
+												false
+											]
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Any",
+											"sid": 152759298832322,
+											"parameters": {
+												"instance-variable": "textframe",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 269584460191118
+								}
+							]
 						}
-					]
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -583,130 +621,149 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 232742287137785,
+							"sid": 695641365887178,
 							"parameters": {
 								"key": 69
 							}
 						},
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Cutscene",
-							"sid": 128456194833965,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 335693660721817,
 							"parameters": {
-								"object": "Girl"
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 650870172157287,
-							"parameters": {
-								"variable": "onDial"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Girl",
-							"sid": 668776242274573,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "0"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Girl",
-							"sid": 245651905928002,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 923413929492636,
-							"parameters": {
-								"variable": "onDial",
-								"value": "true"
+								"gamepad": "0",
+								"button": "button-y"
 							}
 						}
 					],
-					"sid": 286956707195729,
+					"actions": [],
+					"sid": 313113971714553,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Girl",
-									"sid": 778017153274753,
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Cutscene",
+									"sid": 171152301521480,
 									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "1"
+										"object": "Girl"
 									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 346524258156321,
-									"parameters": [
-										"Player_Cutscene.X ",
-										"Player_Cutscene.Y -50",
-										"50",
-										"1",
-										false,
-										false
-									]
-								}
-							],
-							"sid": 650542499364583
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Girl",
-									"sid": 811439015633405,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 0,
-										"value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Create_Dealogue",
-									"sid": 628485611999089,
-									"parameters": [
-										"Player_Cutscene.X ",
-										"Player_Cutscene.Y -50",
-										"51",
-										"3",
-										false,
-										false
-									]
 								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 190537030429152,
+									"parameters": {
+										"variable": "onDial"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Girl",
-									"sid": 712620445832289,
+									"sid": 978839652850862,
 									"parameters": {
 										"instance-variable": "textframe",
 										"value": "0"
 									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Girl",
+									"sid": 599415138829068,
+									"parameters": {
+										"instance-variable": "textframe",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 952336955825541,
+									"parameters": {
+										"variable": "onDial",
+										"value": "true"
+									}
 								}
 							],
-							"sid": 367010364708354
+							"sid": 185318150491376,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Girl",
+											"sid": 960271829301824,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 372875787974585,
+											"parameters": [
+												"Player_Cutscene.X ",
+												"Player_Cutscene.Y -50",
+												"50",
+												"1",
+												false,
+												false
+											]
+										}
+									],
+									"sid": 679285387097376
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Girl",
+											"sid": 366243377579109,
+											"parameters": {
+												"instance-variable": "textframe",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Create_Dealogue",
+											"sid": 574403319175470,
+											"parameters": [
+												"Player_Cutscene.X ",
+												"Player_Cutscene.Y -50",
+												"51",
+												"3",
+												false,
+												false
+											]
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "Girl",
+											"sid": 738688978705564,
+											"parameters": {
+												"instance-variable": "textframe",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 698262805413870
+								}
+							]
 						}
-					]
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
@@ -862,60 +919,79 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 381866258918723,
+							"sid": 594810409121211,
 							"parameters": {
 								"key": 69
 							}
 						},
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Cutscene",
-							"sid": 415551972108307,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 143722168889898,
 							"parameters": {
-								"object": "Chair_Bar"
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 117319085197810,
-							"parameters": {
-								"variable": "onDialMain"
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_Cutscene",
-							"sid": 127212371569470,
-							"parameters": {
-								"instance-variable": "cast_text",
-								"comparison": 2,
-								"value": "25"
+								"gamepad": "0",
+								"button": "button-y"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 861606311677732,
+					"children": [
 						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 647238720562326,
-							"parameters": {
-								"variable": "onDialMain",
-								"value": "true"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_Cutscene",
-							"sid": 252808484441686,
-							"parameters": {
-								"instance-variable": "cast_text",
-								"value": "1"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Cutscene",
+									"sid": 794818324018979,
+									"parameters": {
+										"object": "Chair_Bar"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 634854475249231,
+									"parameters": {
+										"variable": "onDialMain"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_Cutscene",
+									"sid": 632532402006182,
+									"parameters": {
+										"instance-variable": "cast_text",
+										"comparison": 2,
+										"value": "25"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 752885021523005,
+									"parameters": {
+										"variable": "onDialMain",
+										"value": "true"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Player_Cutscene",
+									"sid": 638233370394693,
+									"parameters": {
+										"instance-variable": "cast_text",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 657624537242263
 						}
 					],
-					"sid": 481514361021005
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",

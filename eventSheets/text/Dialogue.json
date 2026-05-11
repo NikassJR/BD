@@ -641,28 +641,47 @@
 					}
 				},
 				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 358975290651855,
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 786830276552540,
 					"parameters": {
-						"variable": "StopSkip"
-					},
-					"isInverted": true
-				},
-				{
-					"id": "is-running-typewriter-text",
-					"objectClass": "dialogText",
-					"sid": 543982781676035,
-					"isInverted": true
+						"gamepad": "0",
+						"button": "button-a"
+					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 826991540783581,
+			"children": [
 				{
-					"callFunction": "Destroy_Dialoge",
-					"sid": 678588954688582
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 135938855762059,
+							"parameters": {
+								"variable": "StopSkip"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-running-typewriter-text",
+							"objectClass": "dialogText",
+							"sid": 998146931125720,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Destroy_Dialoge",
+							"sid": 875583199969270
+						}
+					],
+					"sid": 339425748945132
 				}
 			],
-			"sid": 826991540783581
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -676,19 +695,38 @@
 					}
 				},
 				{
-					"id": "is-running-typewriter-text",
-					"objectClass": "dialogText",
-					"sid": 606669275121578
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 893039375407764,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 541702482624719,
+			"children": [
 				{
-					"id": "typewriter-finish",
-					"objectClass": "dialogText",
-					"sid": 945379057468685
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-running-typewriter-text",
+							"objectClass": "dialogText",
+							"sid": 208230261386122
+						}
+					],
+					"actions": [
+						{
+							"id": "typewriter-finish",
+							"objectClass": "dialogText",
+							"sid": 826019731252200
+						}
+					],
+					"sid": 120753422612225
 				}
 			],
-			"sid": 541702482624719
+			"isOrBlock": true
 		},
 		{
 			"functionName": "Destroy_Dialoge",
@@ -989,6 +1027,27 @@
 			],
 			"sid": 576675142271970,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-gamepads",
+							"objectClass": "Gamepad",
+							"sid": 604802179302512
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Press_Space",
+							"sid": 816911824221661,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 490347979875903
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -1428,37 +1487,56 @@
 					}
 				},
 				{
-					"id": "is-running-typewriter-text",
-					"objectClass": "dialogMainText",
-					"sid": 897050933516440,
-					"isInverted": true
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 275634484947433,
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 956550225929617,
 					"parameters": {
-						"variable": "StopSkip"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "Destroy_DialogeMain",
-					"sid": 407573027604600
-				},
-				{
-					"id": "add-to-instvar",
-					"objectClass": "Player_All",
-					"sid": 978849746834239,
-					"parameters": {
-						"instance-variable": "textframe",
-						"value": "1"
+						"gamepad": "0",
+						"button": "button-a"
 					}
 				}
 			],
-			"sid": 654749420758866
+			"actions": [],
+			"sid": 654749420758866,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-running-typewriter-text",
+							"objectClass": "dialogMainText",
+							"sid": 396926016494044,
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 861516188782136,
+							"parameters": {
+								"variable": "StopSkip"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Destroy_DialogeMain",
+							"sid": 432547885739774
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_All",
+							"sid": 175637556110616,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 417106787040301
+				}
+			],
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -1472,19 +1550,38 @@
 					}
 				},
 				{
-					"id": "is-running-typewriter-text",
-					"objectClass": "dialogMainText",
-					"sid": 275338843170314
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 811272300355742,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 278020554819236,
+			"children": [
 				{
-					"id": "typewriter-finish",
-					"objectClass": "dialogMainText",
-					"sid": 566378679480435
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-running-typewriter-text",
+							"objectClass": "dialogMainText",
+							"sid": 525529523805249
+						}
+					],
+					"actions": [
+						{
+							"id": "typewriter-finish",
+							"objectClass": "dialogMainText",
+							"sid": 771469842732810
+						}
+					],
+					"sid": 619435249539858
 				}
 			],
-			"sid": 278020554819236
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",

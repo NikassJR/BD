@@ -225,60 +225,79 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 808043131649969,
+							"sid": 899732384143309,
 							"parameters": {
 								"key": 69
 							}
 						},
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Cutscene",
-							"sid": 935071463601663,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 436457740054704,
 							"parameters": {
-								"object": "Chair_Bar"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 382283359134649,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 2,
-								"value": "27"
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 942737287906093,
-							"parameters": {
-								"variable": "onDialMain"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 840005837596532,
-							"parameters": {
-								"variable": "onDialMain",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player_Cutscene",
-							"sid": 798520402023913,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
+								"gamepad": "0",
+								"button": "button-y"
 							}
 						}
 					],
-					"sid": 315768957810495
+					"actions": [],
+					"sid": 549778084474106,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Cutscene",
+									"sid": 839938455033852,
+									"parameters": {
+										"object": "Chair_Bar"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 325225464873044,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 2,
+										"value": "27"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 708383066147400,
+									"parameters": {
+										"variable": "onDialMain"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 697156869610994,
+									"parameters": {
+										"variable": "onDialMain",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Player_Cutscene",
+									"sid": 111701046039873,
+									"parameters": {
+										"instance-variable": "textframe",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 439513487595532
+						}
+					],
+					"isOrBlock": true
 				},
 				{
 					"eventType": "block",

@@ -963,85 +963,104 @@
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 229918258658041,
+					"sid": 399875486882036,
 					"parameters": {
 						"key": 69
 					}
 				},
 				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Door_Card",
-					"sid": 494299745244981,
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 950904883824205,
 					"parameters": {
-						"object": "Player_Police"
+						"gamepad": "0",
+						"button": "button-y"
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 491028346242041,
+			"children": [
 				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 712371259536692,
-					"parameters": {
-						"group-name": "\"Player\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-animation",
-					"objectClass": "Player_All",
-					"sid": 181857679229838,
-					"parameters": {
-						"animation": "weapon & \"Idle\"",
-						"from": "beginning"
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "press_E",
-					"sid": 787683216628557
-				},
-				{
-					"callFunction": "End_Scene2",
-					"sid": 386097132113469,
-					"parameters": [
-						"100",
-						"1",
-						"0",
-						false,
-						false,
-						true
-					]
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 649522783625631,
-					"parameters": {
-						"variable": "Start_Game",
-						"value": "true"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 166408325021049,
-					"parameters": {
-						"variable": "onDialMain",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 299414357139660,
-					"parameters": {
-						"variable": "Safe_Zone",
-						"value": "false"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Door_Card",
+							"sid": 677527629962960,
+							"parameters": {
+								"object": "Player_Police"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 386678315990098,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_All",
+							"sid": 739616200354646,
+							"parameters": {
+								"animation": "weapon & \"Idle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "press_E",
+							"sid": 450686844282837
+						},
+						{
+							"callFunction": "End_Scene2",
+							"sid": 161231620333907,
+							"parameters": [
+								"100",
+								"1",
+								"0",
+								false,
+								false,
+								true
+							]
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 410728666174620,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 141263172786225,
+							"parameters": {
+								"variable": "onDialMain",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 951254989788059,
+							"parameters": {
+								"variable": "Safe_Zone",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 962366147204554
 				}
 			],
-			"sid": 180579043352288
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
