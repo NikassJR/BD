@@ -807,12 +807,15 @@
 							]
 						},
 						{
-							"callFunction": "shakeScreen",
-							"sid": 867528549525946
-						},
-						{
-							"callFunction": "shakeScreen2",
-							"sid": 248276725976176
+							"id": "shake",
+							"objectClass": "Camera",
+							"sid": 232826484845896,
+							"behaviorType": "СледитьЗа",
+							"parameters": {
+								"magnitude": "10",
+								"duration": "0.1",
+								"mode": "reducing-magnitude"
+							}
 						}
 					],
 					"sid": 750754177149476
@@ -2075,12 +2078,15 @@
 							]
 						},
 						{
-							"callFunction": "shakeScreen",
-							"sid": 316518792624234
-						},
-						{
-							"callFunction": "shakeScreen2",
-							"sid": 375488842060140
+							"id": "shake",
+							"objectClass": "Camera",
+							"sid": 981108105991373,
+							"behaviorType": "СледитьЗа",
+							"parameters": {
+								"magnitude": "10",
+								"duration": "0.1",
+								"mode": "reducing-magnitude"
+							}
 						}
 					],
 					"sid": 973538220712653
@@ -4077,8 +4083,15 @@
 							]
 						},
 						{
-							"callFunction": "shakeScreen",
-							"sid": 477937868418912
+							"id": "shake",
+							"objectClass": "Camera",
+							"sid": 812182542278630,
+							"behaviorType": "СледитьЗа",
+							"parameters": {
+								"magnitude": "10",
+								"duration": "0.1",
+								"mode": "reducing-magnitude"
+							}
 						},
 						{
 							"id": "spawn-another-object",
@@ -5292,6 +5305,50 @@
 					]
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 959982791683544
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "AD",
+					"sid": 862713672814587,
+					"parameters": {
+						"animation": "\"Gamepad\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 293917342815271
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 531596624990627
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "AD",
+					"sid": 530480982456953,
+					"parameters": {
+						"animation": "\"Animation 1\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 265025764645794
 		}
 	],
 	"sid": 276946524812111

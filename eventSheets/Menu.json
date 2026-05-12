@@ -732,6 +732,21 @@
 					}
 				},
 				{
+					"id": "pin-to-object-properties",
+					"objectClass": "LangY",
+					"sid": 257565136347484,
+					"behaviorType": "Прикрепить",
+					"parameters": {
+						"pin-to": "borders",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				},
+				{
 					"id": "set-enabled",
 					"objectClass": "borders",
 					"sid": 412485335046706,
@@ -1296,6 +1311,107 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 476315298974230,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
+				},
+				{
+					"id": "is-fullscreen",
+					"objectClass": "Browser",
+					"sid": 858182161404879,
+					"isInverted": true
+				},
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 154757310415160
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Text_Menu",
+					"sid": 495410100957788,
+					"parameters": {
+						"instance-variable": "IsSelected"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Text_Menu",
+					"sid": 785908666616983,
+					"parameters": {
+						"tags": "\"FullScreen\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 596188743737731,
+					"parameters": {
+						"mode": "stretch-letterbox-scale",
+						"navigation-ui": "hide"
+					}
+				}
+			],
+			"sid": 334525123235278
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 735275211376294,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
+				},
+				{
+					"id": "is-fullscreen",
+					"objectClass": "Browser",
+					"sid": 222083084102346
+				},
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 741023024868655
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Text_Menu",
+					"sid": 327638665265038,
+					"parameters": {
+						"instance-variable": "IsSelected"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Text_Menu",
+					"sid": 332330561182630,
+					"parameters": {
+						"tags": "\"FullScreen\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "cancel-fullscreen",
+					"objectClass": "Browser",
+					"sid": 844853222779703
+				}
+			],
+			"sid": 379112279140472
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "is-fullscreen",
 					"objectClass": "Browser",
 					"sid": 355205844368379
@@ -1855,6 +1971,74 @@
 				}
 			],
 			"sid": 389830958720793
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 594662942581012,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-y"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 326188381993540,
+					"parameters": {
+						"layer": "\"HUD\""
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 497531228511136,
+					"parameters": {
+						"variable": "Pause"
+					}
+				},
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 397606911628538
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 434193866163725,
+					"parameters": {
+						"variable": "Language",
+						"value": "Language=0?1:0"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "Game_Save",
+					"sid": 864910574821351,
+					"parameters": {
+						"key": "\"Language\"",
+						"value": "Language"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Flag",
+					"sid": 433102523832360,
+					"parameters": {
+						"frame-number": "Language"
+					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 641667809481232
+				}
+			],
+			"sid": 774425424440481
 		},
 		{
 			"eventType": "group",
@@ -4496,17 +4680,91 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 498595782596503,
+									"sid": 899826227029686,
 									"parameters": {
 										"variable": "SelectedX",
 										"comparison": 4,
-										"value": "0"
+										"value": "4"
 									}
 								},
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 897145757807827,
+									"sid": 369882130005683,
+									"parameters": {
+										"variable": "SelectedY",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 571925608807515,
+									"parameters": {
+										"variable": "SelectedX",
+										"value": "4"
+									}
+								}
+							],
+							"sid": 723708239540075
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 129480611103593,
+									"parameters": {
+										"variable": "SelectedX",
+										"comparison": 4,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 724773305580051,
+									"parameters": {
+										"variable": "SelectedY",
+										"comparison": 4,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 895511160746999,
+									"parameters": {
+										"variable": "SelectedX",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 835017505267663
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 714448097144866,
+									"parameters": {
+										"variable": "SelectedX",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 616859056096997,
 									"parameters": {
 										"variable": "SelectedY",
 										"comparison": 4,
@@ -4518,18 +4776,95 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 470495810387804,
+									"sid": 727303699038091,
 									"parameters": {
 										"variable": "SelectedY",
 										"value": "1"
 									}
 								}
 							],
-							"sid": 122045810191047
+							"sid": 126663656483271
 						}
 					]
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 998514063263357
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 260717643702503,
+					"parameters": {
+						"variable": "Pause"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "LangY",
+					"sid": 906930281449250,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 402276715547299
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 576591528648904
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "LangY",
+					"sid": 394977082750993,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 653371346935045
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 335956953535118,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "shake",
+					"objectClass": "Camera",
+					"sid": 361263123624062,
+					"behaviorType": "СледитьЗа",
+					"parameters": {
+						"magnitude": "20",
+						"duration": "0.5",
+						"mode": "reducing-magnitude"
+					}
+				}
+			],
+			"sid": 594860310501165
 		}
 	],
 	"sid": 511565052530936

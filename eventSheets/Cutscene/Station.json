@@ -1762,6 +1762,12 @@
 					"parameters": {
 						"interval-seconds": "2"
 					}
+				},
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 227263055579284,
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -1836,6 +1842,12 @@
 					"parameters": {
 						"interval-seconds": "2"
 					}
+				},
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 733344405395880,
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -1879,6 +1891,164 @@
 				}
 			],
 			"sid": 535731771255296
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_Cutscene",
+					"sid": 758225304200837,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 0,
+						"value": "5"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Text_logo",
+					"sid": 699586370750737,
+					"parameters": {
+						"instance-variable": "Lang",
+						"comparison": 0,
+						"value": "787"
+					}
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 855427200069544,
+					"parameters": {
+						"interval-seconds": "2"
+					}
+				},
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 706220001423725
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Text_logo",
+					"sid": 453712298840156,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 537228838314692,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Text_logo",
+					"sid": 641929601049590,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 693779735078965
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Text_logo",
+					"sid": 880495096734089,
+					"parameters": {
+						"instance-variable": "Lang",
+						"value": "793"
+					}
+				}
+			],
+			"sid": 905427279192456
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_Cutscene",
+					"sid": 153490767475202,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 0,
+						"value": "5"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Text_logo",
+					"sid": 349680822261275,
+					"parameters": {
+						"instance-variable": "Lang",
+						"comparison": 0,
+						"value": "793"
+					}
+				},
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 233526432834843,
+					"parameters": {
+						"interval-seconds": "2"
+					}
+				},
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 573637872204380
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Text_logo",
+					"sid": 805023266442844,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 141773634458365,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "Text_logo",
+					"sid": 374157035967892,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 910658792503726
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Text_logo",
+					"sid": 725482163300703,
+					"parameters": {
+						"instance-variable": "Lang",
+						"value": "787"
+					}
+				}
+			],
+			"sid": 511042147130406
 		},
 		{
 			"eventType": "comment",

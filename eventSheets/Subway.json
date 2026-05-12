@@ -905,16 +905,23 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 885903607011360,
+							"sid": 573842696802639,
 							"parameters": {
-								"interval-seconds": "0.25"
+								"interval-seconds": "0.5"
 							}
 						}
 					],
 					"actions": [
 						{
-							"callFunction": "shakeScreen2",
-							"sid": 238855662493364
+							"id": "shake",
+							"objectClass": "Camera",
+							"sid": 363750109278952,
+							"behaviorType": "СледитьЗа",
+							"parameters": {
+								"magnitude": "2",
+								"duration": "0.1",
+								"mode": "reducing-magnitude"
+							}
 						}
 					],
 					"sid": 137431428683571

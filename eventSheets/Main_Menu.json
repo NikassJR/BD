@@ -12493,20 +12493,19 @@
 								{
 									"id": "on-button-pressed",
 									"objectClass": "Gamepad",
-									"sid": 641957006754980,
+									"sid": 810391071391783,
 									"parameters": {
 										"gamepad": "0",
-										"button": "button-a"
+										"button": "button-y"
 									}
 								},
 								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 538072354442541,
+									"id": "compare-opacity",
+									"objectClass": "Menu",
+									"sid": 122138948485468,
 									"parameters": {
-										"variable": "SelectedX",
-										"comparison": 0,
-										"value": "1"
+										"comparison": 4,
+										"opacity": "90"
 									}
 								}
 							],
@@ -12514,7 +12513,7 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 454832665983660,
+									"sid": 889034572059357,
 									"parameters": {
 										"variable": "Language",
 										"value": "Language=0?1:0"
@@ -12523,7 +12522,7 @@
 								{
 									"id": "set-item",
 									"objectClass": "Game_Save",
-									"sid": 486319738980768,
+									"sid": 287359903134416,
 									"parameters": {
 										"key": "\"Language\"",
 										"value": "Language"
@@ -12532,17 +12531,17 @@
 								{
 									"id": "set-animation-frame",
 									"objectClass": "Flag",
-									"sid": 899896407627353,
+									"sid": 185057796308586,
 									"parameters": {
 										"frame-number": "Language"
 									}
 								},
 								{
 									"callFunction": "Text",
-									"sid": 785198372618783
+									"sid": 111688906326977
 								}
 							],
-							"sid": 826896246191663
+							"sid": 579783142272429
 						}
 					]
 				},
@@ -13091,6 +13090,48 @@
 			],
 			"sid": 815745388252265,
 			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 192710598697617
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "LangY",
+					"sid": 202501367007450,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 730192365748573
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 906778720245185
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "LangY",
+					"sid": 477392541325890,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 939908417464723
 		}
 	],
 	"sid": 658662795798694
