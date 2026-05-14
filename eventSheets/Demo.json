@@ -1,0 +1,692 @@
+{
+	"name": "Demo",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "actual"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Menu"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Music"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 512124978577224,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Steam"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "open-url-in-new-window",
+					"objectClass": "Browser",
+					"sid": 591802850372384,
+					"parameters": {
+						"url": "\"https://store.steampowered.com/app/4576430/Breakdown_Silent_Riot/\"",
+						"tag": "\"NewWindow\""
+					}
+				}
+			],
+			"sid": 600489616965400
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 232400659321049,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
+				},
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 950251861489762
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 483264886748625,
+					"parameters": {
+						"variable": "SelectedY",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "open-url-in-new-window",
+					"objectClass": "Browser",
+					"sid": 701830940065864,
+					"parameters": {
+						"url": "\"https://store.steampowered.com/app/4576430/Breakdown_Silent_Riot/\"",
+						"tag": "\"NewWindow\""
+					}
+				}
+			],
+			"sid": 145151551652535
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 836288273907028,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Text_Menu"
+					}
+				},
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 191913718901863,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 673497401924941,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 895896921097958,
+							"parameters": {
+								"tags": "\"Main_Menu\""
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Text_Menu",
+							"sid": 530937756986662,
+							"parameters": {
+								"instance-variable": "IsSelected"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 484774861611808,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 533475362335159
+				}
+			],
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 647430420611203
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "End_Scene2",
+					"sid": 712587171965575,
+					"parameters": [
+						"0",
+						"1",
+						"100",
+						true,
+						false,
+						true
+					]
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Camera",
+					"sid": 861146879943238,
+					"parameters": {
+						"instance-variable": "onPlayer",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Camera",
+					"sid": 971088935291441,
+					"parameters": {
+						"width": "150",
+						"height": "95"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 877366521404969,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 765901440048949,
+					"parameters": {
+						"variable": "Continue_Game",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 184579745455279,
+					"parameters": {
+						"variable": "Safe_Zone",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 129687442400469
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 285326365954111,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Text_Menu"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 575276648281198
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 373897598374645,
+					"parameters": {
+						"object": "Steam"
+					}
+				},
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 328785619093403,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Steam",
+					"sid": 928634003708967,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 848232211303857
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 507011984888248,
+					"parameters": {
+						"object": "Steam"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 365412652630561,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Steam",
+					"sid": 614769800835309,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 960195214833849
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 446084188229901
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 214045225602776,
+					"parameters": {
+						"variable": "SelectedY",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Steam",
+					"sid": 181813465938617,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 201897126655023
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 660625455204305
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 478450964822479,
+					"parameters": {
+						"variable": "SelectedY",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Steam",
+					"sid": 817654809478221,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 398144623749854
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 427525468294067,
+					"isInverted": true
+				}
+			],
+			"actions": [],
+			"sid": 711537851399918,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 493257980469257,
+							"parameters": {
+								"object": "Text_Menu"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 745599297284972,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Menu",
+									"sid": 482584698351982,
+									"parameters": {
+										"tags": "\"Main_Menu\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Text_Menu",
+									"sid": 877353932711016,
+									"parameters": {
+										"instance-variable": "IsSelected",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 537304877806400
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 418884800606780,
+							"parameters": {
+								"object": "Text_Menu"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Text_Menu",
+							"sid": 402439173064188,
+							"parameters": {
+								"instance-variable": "IsSelected",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 276656758077896
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 626391928662114,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "End_Scene2",
+					"sid": 579724341520730,
+					"parameters": [
+						"100",
+						"1",
+						"0",
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 374211951797925,
+					"parameters": {
+						"seconds": "3",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 508746763440341,
+					"parameters": {
+						"tag": "\"Suspense\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 379069735999157
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 376678403173833,
+					"parameters": {
+						"layout": "Main_Menu"
+					}
+				}
+			],
+			"sid": 909746747800381
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 203278906121661,
+					"parameters": {
+						"gamepad": "0",
+						"button": "d-pad-down"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 714679638116031,
+					"parameters": {
+						"variable": "SelectedY",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 261806076005035
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 758702888204353,
+					"parameters": {
+						"gamepad": "0",
+						"button": "d-pad-up"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 667720215988393,
+					"parameters": {
+						"variable": "SelectedY",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 304637885139642
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Menu",
+					"sid": 200990686448433,
+					"parameters": {
+						"instance-variable": "IsSelected"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-font-color",
+					"objectClass": "Menu",
+					"sid": 925404514134276,
+					"parameters": {
+						"color": "rgbEx(50, 0, 0)"
+					}
+				}
+			],
+			"sid": 993271558890994
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Menu",
+					"sid": 748338083089260,
+					"parameters": {
+						"instance-variable": "IsSelected"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-font-color",
+					"objectClass": "Text_Menu",
+					"sid": 299841197252427,
+					"parameters": {
+						"color": "rgbEx(75, 75, 75)"
+					}
+				}
+			],
+			"sid": 819462032959854
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 363570264934468
+				}
+			],
+			"actions": [],
+			"sid": 368016045359844,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Text_Menu",
+							"sid": 548527402244993,
+							"parameters": {
+								"instance-variable": "GridX",
+								"comparison": 0,
+								"value": "SelectedX"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Text_Menu",
+							"sid": 859362064823812,
+							"parameters": {
+								"instance-variable": "GridY",
+								"comparison": 0,
+								"value": "SelectedY"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Text_Menu",
+							"sid": 698692750417250,
+							"parameters": {
+								"instance-variable": "IsSelected",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 699837322742580
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Text_Menu",
+							"sid": 323034244981376,
+							"parameters": {
+								"instance-variable": "GridX",
+								"comparison": 0,
+								"value": "SelectedX"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Text_Menu",
+							"sid": 160425758458721,
+							"parameters": {
+								"instance-variable": "GridY",
+								"comparison": 0,
+								"value": "SelectedY"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Text_Menu",
+							"sid": 518011717555852,
+							"parameters": {
+								"instance-variable": "IsSelected",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 993253629204502,
+					"isOrBlock": true
+				}
+			]
+		}
+	],
+	"sid": 778464521102941
+}

@@ -15582,6 +15582,22 @@
 														"variable": "StickY",
 														"value": "Gamepad.Axis(0, 3)"
 													}
+												},
+												{
+													"id": "set-x",
+													"objectClass": "Cursor_Gamepad",
+													"sid": 212220287339893,
+													"parameters": {
+														"x": "Player_All.X + OrbitRadius * cos(AimAngle)"
+													}
+												},
+												{
+													"id": "set-y",
+													"objectClass": "Cursor_Gamepad",
+													"sid": 744087333783293,
+													"parameters": {
+														"y": "Player_All.Y + OrbitRadius * cos(AimAngle)"
+													}
 												}
 											],
 											"sid": 315724245137732
@@ -15617,43 +15633,9 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "every-tick",
-													"objectClass": "System",
-													"sid": 465395985417898
-												}
-											],
-											"actions": [
-												{
-													"id": "set-x",
-													"objectClass": "Cursor_Gamepad",
-													"sid": 849052804293059,
-													"parameters": {
-														"x": "Player_All.X + OrbitRadius * cos(AimAngle)"
-													}
-												},
-												{
-													"id": "set-y",
-													"objectClass": "Cursor_Gamepad",
-													"sid": 695461544009998,
-													"parameters": {
-														"y": "Player_All.Y + OrbitRadius * cos(AimAngle)"
-													}
-												}
-											],
-											"sid": 252656202605275
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
 													"id": "has-gamepads",
 													"objectClass": "Gamepad",
 													"sid": 301960129187001
-												},
-												{
-													"id": "every-tick",
-													"objectClass": "System",
-													"sid": 604960638927858
 												}
 											],
 											"actions": [
@@ -17506,6 +17488,15 @@
 																"variable": "weapon",
 																"comparison": 0,
 																"value": "\"Mounting\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Player_All",
+															"sid": 277119220882116,
+															"parameters": {
+																"animation": "weapon & \"Run\""
 															},
 															"isInverted": true
 														}
@@ -20051,6 +20042,14 @@
 														"instance-variable": "Death"
 													},
 													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 650743317834602,
+													"parameters": {
+														"instance-variable": "triger"
+													}
 												}
 											],
 											"actions": [

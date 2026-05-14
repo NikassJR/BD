@@ -210,26 +210,35 @@
 							}
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 316413352985614,
-							"parameters": {
-								"audio-file": {
-									"path": "Music/Bar_embient"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"music\""
-							}
-						},
-						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 372931375892439,
 							"parameters": {
 								"variable": "Safe_Zone",
 								"value": "true"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 315002114078346,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 127112738918592,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/Bar_embient"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
 							}
 						}
 					],
@@ -2475,19 +2484,14 @@
 						"comparison": 3,
 						"x-co-ordinate": "140"
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 671426363508807
 				}
 			],
 			"actions": [
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 673480491364625,
-					"disabled": true,
-					"parameters": {
-						"group-name": "\"Player\"",
-						"state": "deactivated"
-					}
-				},
 				{
 					"id": "create-object",
 					"objectClass": "System",
@@ -2520,13 +2524,13 @@
 				{
 					"id": "tween-one-property",
 					"objectClass": "Shadow3",
-					"sid": 416760891925725,
+					"sid": 315417459335602,
 					"behaviorType": "Твинанимация",
 					"parameters": {
 						"tags": "\"\"",
 						"property": "offsetOpacity",
 						"end-value": "100",
-						"time": "3",
+						"time": "1",
 						"ease": "default",
 						"destroy-on-complete": "no",
 						"loop": "no",
@@ -2538,6 +2542,15 @@
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 340290208608298
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 445448648692456,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
 				},
 				{
 					"id": "set-boolean-eventvar",
@@ -2556,6 +2569,35 @@
 						"animation": "\"noWeaponIdle\"",
 						"from": "beginning"
 					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "borders",
+					"sid": 741371345360601,
+					"parameters": {
+						"object": "Text_logo",
+						"layer": "\"UI\"",
+						"image-point": "3",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "Text_logo",
+					"sid": 833992201526924,
+					"parameters": {
+						"width": "250"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Text_logo",
+					"sid": 592788402315116,
+					"parameters": {
+						"instance-variable": "Lang",
+						"value": "78"
+					}
 				}
 			],
 			"sid": 856078708643975
@@ -2570,9 +2612,75 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 310531403525327
 				}
 			],
 			"actions": [
+				{
+					"callFunction": "Text",
+					"sid": 174489881133326
+				},
+				{
+					"id": "stop-flashing",
+					"objectClass": "Text_logo",
+					"sid": 718554814893859,
+					"behaviorType": "Мигание"
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "Text_logo",
+					"sid": 180578347481685,
+					"parameters": {
+						"color": "rgbEx(255, 255, 255)"
+					}
+				},
+				{
+					"id": "set-font-size",
+					"objectClass": "Text_logo",
+					"sid": 527460027977404,
+					"parameters": {
+						"size-pt": "12"
+					}
+				},
+				{
+					"id": "set-height",
+					"objectClass": "Text_logo",
+					"sid": 261932884960058,
+					"parameters": {
+						"height": "25"
+					}
+				},
+				{
+					"id": "set-font-face",
+					"objectClass": "Text_logo",
+					"sid": 725985355117369,
+					"parameters": {
+						"font-face": "\"Pixel\"",
+						"style": "normal"
+					}
+				},
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Text_logo",
+					"sid": 693236142648860,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"СвечениеВертикальное\""
+					}
+				},
+				{
+					"id": "set-effect-enabled",
+					"objectClass": "Text_logo",
+					"sid": 767826443222455,
+					"parameters": {
+						"mode": "disable",
+						"effect": "\"СвечениеГоризонтальное\""
+					}
+				},
 				{
 					"id": "wait",
 					"objectClass": "System",
@@ -2658,6 +2766,27 @@
 				}
 			],
 			"sid": 434307692609012
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_All",
+					"sid": 480526879465058,
+					"parameters": {
+						"object": "onDial"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Destroy_Dialoge",
+					"sid": 671182796271513
+				}
+			],
+			"sid": 320085061271549
 		}
 	],
 	"sid": 194809940947679

@@ -1380,6 +1380,23 @@
 					}
 				},
 				{
+					"id": "tween-one-property",
+					"objectClass": "Graffiti",
+					"sid": 914187813452852,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "80",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
 					"id": "set-range",
 					"objectClass": "Enemy_Mili",
 					"sid": 681950715375679,
@@ -1799,6 +1816,36 @@
 						}
 					],
 					"sid": 178036440785756
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 663671612700520,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "17"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_Dealogue",
+							"sid": 435696725816824,
+							"parameters": [
+								"Player_All.X",
+								"Player_All.Y -50",
+								"105",
+								"2",
+								false,
+								false
+							]
+						}
+					],
+					"sid": 319662801354769
 				}
 			]
 		},
@@ -1808,11 +1855,11 @@
 				{
 					"id": "compare-instance-variable",
 					"objectClass": "Player_All",
-					"sid": 243713932782589,
+					"sid": 943719606437210,
 					"parameters": {
 						"instance-variable": "textframe",
 						"comparison": 0,
-						"value": "17"
+						"value": "18"
 					}
 				},
 				{

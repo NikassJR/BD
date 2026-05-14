@@ -332,7 +332,7 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 574561732319440,
+							"sid": 399870154821624,
 							"parameters": {
 								"audio-file": {
 									"path": "Text/TextTyping"
@@ -340,13 +340,54 @@
 								"loop": "looping",
 								"volume": "0",
 								"stereo-pan": "0",
-								"tag-optional": "\"Text\""
+								"tag-optional": "\"CloudText\""
 							}
 						}
 					],
 					"sid": 348809320996697
 				}
 			]
+		},
+		{
+			"functionName": "Destroy_Dialoge",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Cloud_Dialogue",
+					"sid": 722948216407843
+				},
+				{
+					"id": "destroy",
+					"objectClass": "dialogText",
+					"sid": 880823130474653
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 560861314660743,
+					"parameters": {
+						"tag": "\"CloudText\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 728618274718462,
+					"parameters": {
+						"variable": "onDial",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 615057193670929
 		},
 		{
 			"functionName": "Create_DealogueEnemy",
@@ -727,47 +768,6 @@
 				}
 			],
 			"isOrBlock": true
-		},
-		{
-			"functionName": "Destroy_Dialoge",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "Cloud_Dialogue",
-					"sid": 264064165267999
-				},
-				{
-					"id": "destroy",
-					"objectClass": "dialogText",
-					"sid": 301690900803267
-				},
-				{
-					"id": "stop",
-					"objectClass": "Audio",
-					"sid": 880475839230919,
-					"parameters": {
-						"tag": "\"Text\""
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 523352115604146,
-					"parameters": {
-						"variable": "onDial",
-						"value": "false"
-					}
-				}
-			],
-			"sid": 356410634110533
 		},
 		{
 			"functionName": "Destroy_DialogeEnemy",
@@ -1270,9 +1270,9 @@
 				{
 					"id": "stop",
 					"objectClass": "Audio",
-					"sid": 636600470807178,
+					"sid": 272547356892624,
 					"parameters": {
-						"tag": "\"Text\""
+						"tag": "\"CloudText\""
 					}
 				}
 			],

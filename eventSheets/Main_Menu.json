@@ -211,6 +211,11 @@
 					"sid": 240686711649836
 				},
 				{
+					"id": "release-pointer-lock",
+					"objectClass": "Mouse",
+					"sid": 653143317744875
+				},
+				{
 					"id": "set-size",
 					"objectClass": "Camera",
 					"sid": 366734942534266,
@@ -923,6 +928,14 @@
 						"loop": "no",
 						"ping-pong": "no",
 						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "LangY",
+					"sid": 831935255041282,
+					"parameters": {
+						"visibility": "visible"
 					}
 				},
 				{
@@ -11306,17 +11319,18 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 425914529750372,
+					"isInverted": true
+				},
+				{
 					"id": "cursor-is-over-object",
 					"objectClass": "Mouse",
 					"sid": 936044506247692,
 					"parameters": {
 						"object": "Steam"
 					}
-				},
-				{
-					"id": "is-visible",
-					"objectClass": "Steam",
-					"sid": 130000227755734
 				}
 			],
 			"actions": [
@@ -11335,9 +11349,19 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 554520644899487
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 545241368031776,
+					"isInverted": true
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 715776151133200,
+					"parameters": {
+						"object": "Steam"
+					},
+					"isInverted": true
 				},
 				{
 					"id": "is-visible",
@@ -11361,6 +11385,130 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 171580135253268
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 442692788393807,
+					"parameters": {
+						"layer": "\"Main_Menu\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 522132393555369,
+					"parameters": {
+						"variable": "SelectedX",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Steam",
+					"sid": 116088183430837,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 955655462459854
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 328245113420120
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 738603664108117,
+					"parameters": {
+						"variable": "SelectedX",
+						"comparison": 2,
+						"value": "1"
+					}
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "Steam",
+					"sid": 579511204030837
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Steam",
+					"sid": 807814449857359,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 506373506723084
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 146293214331707,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-a"
+					}
+				},
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 280522254756579
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 904771170651412,
+					"parameters": {
+						"variable": "SelectedX",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 558128293276735,
+					"parameters": {
+						"layer": "\"Main_Menu\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "open-url-in-new-window",
+					"objectClass": "Browser",
+					"sid": 389511931463188,
+					"parameters": {
+						"url": "\"https://store.steampowered.com/app/4576430/Breakdown_Silent_Riot/\"",
+						"tag": "\"NewWindow\""
+					}
+				}
+			],
+			"sid": 989636364532899
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "on-object-clicked",
 					"objectClass": "Mouse",
 					"sid": 259932127635353,
@@ -11377,6 +11525,14 @@
 					"parameters": {
 						"comparison": 4,
 						"opacity": "90"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 503886974436918,
+					"parameters": {
+						"layer": "\"Main_Menu\""
 					}
 				}
 			],
@@ -12395,6 +12551,43 @@
 								}
 							],
 							"sid": 847870983884024
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 933140900412761,
+									"parameters": {
+										"variable": "SelectedX",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 366269384388373,
+									"parameters": {
+										"variable": "SelectedY",
+										"comparison": 4,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 606942384380200,
+									"parameters": {
+										"variable": "SelectedY",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 573400330351005
 						},
 						{
 							"eventType": "block",

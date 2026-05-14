@@ -699,6 +699,15 @@
 							}
 						},
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 430753807404443,
+							"parameters": {
+								"seconds": "0.5",
+								"use-timescale": true
+							}
+						},
+						{
 							"callFunction": "Create_mainDialoge",
 							"sid": 234068694514367,
 							"parameters": [
@@ -856,6 +865,42 @@
 					],
 					"actions": [
 						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 841783575518120,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 794500313658781,
+							"parameters": {
+								"seconds": "0.5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Player_Police",
+							"sid": 559852467439221,
+							"parameters": {
+								"x": "1115",
+								"y": "242"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_Police",
+							"sid": 325750329649243,
+							"parameters": {
+								"animation": "\"sitOnBarChair\"",
+								"from": "beginning"
+							}
+						},
+						{
 							"callFunction": "Create_mainDialoge",
 							"sid": 356189526732054,
 							"parameters": [
@@ -866,33 +911,6 @@
 								false,
 								false
 							]
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 219001400842384,
-							"parameters": {
-								"group-name": "\"Player\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "Player_Police",
-							"sid": 819316631179877,
-							"parameters": {
-								"x": "1115",
-								"y": "242"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "Player_Police",
-							"sid": 792044655363563,
-							"parameters": {
-								"animation": "\"sitOnBarChair\"",
-								"from": "beginning"
-							}
 						}
 					],
 					"sid": 195928577823958
@@ -1346,9 +1364,9 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 658046261999184,
+					"sid": 566053041019576,
 					"parameters": {
-						"layout": "Main_Menu"
+						"layout": "Demo"
 					}
 				}
 			],
