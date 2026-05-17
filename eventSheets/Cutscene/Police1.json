@@ -692,7 +692,7 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Player_Police",
-							"sid": 662085575031581,
+							"sid": 647836977738882,
 							"parameters": {
 								"animation": "\"noWeaponIdle\"",
 								"from": "beginning"
@@ -874,18 +874,9 @@
 							}
 						},
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 794500313658781,
-							"parameters": {
-								"seconds": "0.5",
-								"use-timescale": true
-							}
-						},
-						{
 							"id": "set-position",
 							"objectClass": "Player_Police",
-							"sid": 559852467439221,
+							"sid": 488843037831609,
 							"parameters": {
 								"x": "1115",
 								"y": "242"
@@ -894,10 +885,19 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Player_Police",
-							"sid": 325750329649243,
+							"sid": 572993172339993,
 							"parameters": {
 								"animation": "\"sitOnBarChair\"",
 								"from": "beginning"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 794500313658781,
+							"parameters": {
+								"seconds": "0.5",
+								"use-timescale": true
 							}
 						},
 						{
@@ -1364,13 +1364,34 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 566053041019576,
+					"sid": 237130050370932,
 					"parameters": {
-						"layout": "Demo"
+						"layout": "Bar3"
 					}
 				}
 			],
 			"sid": 669040652025893
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_All",
+					"sid": 480526879465058,
+					"parameters": {
+						"object": "onDial"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Destroy_Dialoge",
+					"sid": 671182796271513
+				}
+			],
+			"sid": 320085061271549
 		}
 	],
 	"sid": 384850987985439
