@@ -31504,93 +31504,111 @@
 															"eventType": "block",
 															"conditions": [
 																{
-																	"id": "compare-instance-variable",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 411764981846855,
-																	"parameters": {
-																		"instance-variable": "Roll",
-																		"comparison": 4,
-																		"value": "50"
-																	}
-																},
-																{
 																	"id": "is-boolean-instance-variable-set",
 																	"objectClass": "Enemy_Mili",
-																	"sid": 872771893590513,
+																	"sid": 420574055006075,
 																	"parameters": {
-																		"instance-variable": "Knife"
+																		"instance-variable": "Dodge"
 																	},
 																	"isInverted": true
 																}
 															],
-															"actions": [
+															"actions": [],
+															"sid": 187841609392277,
+															"children": [
 																{
-																	"id": "set-enabled",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 517960982438875,
-																	"behaviorType": "Физика",
-																	"parameters": {
-																		"mode": "enabled"
-																	}
-																},
-																{
-																	"id": "enabledisable-collisions",
-																	"objectClass": "Axe",
-																	"sid": 595573269959979,
-																	"behaviorType": "Физика",
-																	"parameters": {
-																		"object": "Enemy_Mili",
-																		"state": "enable"
-																	}
-																},
-																{
-																	"id": "spawn-another-object",
-																	"objectClass": "HandleAxe",
-																	"sid": 142814137618789,
-																	"parameters": {
-																		"object": "HitBox",
-																		"layer": "Player_All.LayerName",
-																		"image-point": "0",
-																		"create-hierarchy": false,
-																		"template-name": "\"\""
-																	}
-																},
-																{
-																	"id": "wait",
-																	"objectClass": "System",
-																	"sid": 671782331400093,
-																	"parameters": {
-																		"seconds": "0.1",
-																		"use-timescale": true
-																	}
-																},
-																{
-																	"id": "enabledisable-collisions",
-																	"objectClass": "Axe",
-																	"sid": 748788639593741,
-																	"behaviorType": "Физика",
-																	"parameters": {
-																		"object": "Enemy_Mili",
-																		"state": "disable"
-																	}
-																},
-																{
-																	"id": "set-enabled",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 461818874153162,
-																	"behaviorType": "Физика",
-																	"parameters": {
-																		"mode": "disabled"
-																	}
-																},
-																{
-																	"id": "destroy",
-																	"objectClass": "HitBox",
-																	"sid": 893893520174283
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "compare-instance-variable",
+																			"objectClass": "Enemy_Mili",
+																			"sid": 589374771553649,
+																			"parameters": {
+																				"instance-variable": "Roll",
+																				"comparison": 4,
+																				"value": "50"
+																			}
+																		},
+																		{
+																			"id": "is-boolean-instance-variable-set",
+																			"objectClass": "Enemy_Mili",
+																			"sid": 456611844567056,
+																			"parameters": {
+																				"instance-variable": "Knife"
+																			},
+																			"isInverted": true
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-enabled",
+																			"objectClass": "Enemy_Mili",
+																			"sid": 497918762780211,
+																			"behaviorType": "Физика",
+																			"parameters": {
+																				"mode": "enabled"
+																			}
+																		},
+																		{
+																			"id": "enabledisable-collisions",
+																			"objectClass": "Axe",
+																			"sid": 236082360789077,
+																			"behaviorType": "Физика",
+																			"parameters": {
+																				"object": "Enemy_Mili",
+																				"state": "enable"
+																			}
+																		},
+																		{
+																			"id": "spawn-another-object",
+																			"objectClass": "HandleAxe",
+																			"sid": 261333191280509,
+																			"parameters": {
+																				"object": "HitBox",
+																				"layer": "Player_All.LayerName",
+																				"image-point": "0",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "wait",
+																			"objectClass": "System",
+																			"sid": 753028498143705,
+																			"parameters": {
+																				"seconds": "0.1",
+																				"use-timescale": true
+																			}
+																		},
+																		{
+																			"id": "enabledisable-collisions",
+																			"objectClass": "Axe",
+																			"sid": 440667322954622,
+																			"behaviorType": "Физика",
+																			"parameters": {
+																				"object": "Enemy_Mili",
+																				"state": "disable"
+																			}
+																		},
+																		{
+																			"id": "set-enabled",
+																			"objectClass": "Enemy_Mili",
+																			"sid": 821808644260634,
+																			"behaviorType": "Физика",
+																			"parameters": {
+																				"mode": "disabled"
+																			}
+																		},
+																		{
+																			"id": "destroy",
+																			"objectClass": "HitBox",
+																			"sid": 877467276523956
+																		}
+																	],
+																	"sid": 771267386386916,
+																	"isOrBlock": true
 																}
-															],
-															"sid": 212952660585231,
-															"isOrBlock": true
+															]
 														}
 													]
 												},

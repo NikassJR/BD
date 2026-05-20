@@ -102,7 +102,7 @@
 						},
 						{
 							"id": "set-visible",
-							"objectClass": "Enemys",
+							"objectClass": "Enemy_Mili",
 							"sid": 284479701487216,
 							"parameters": {
 								"visibility": "invisible"
@@ -532,6 +532,14 @@
 							}
 						},
 						{
+							"id": "set-visible",
+							"objectClass": "Enemy_Mili",
+							"sid": 507414441638267,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "stop",
 							"objectClass": "Audio",
 							"sid": 886490936766991,
@@ -542,10 +550,10 @@
 						{
 							"id": "set-position",
 							"objectClass": "security",
-							"sid": 208776104438242,
+							"sid": 750109723971389,
 							"parameters": {
 								"x": "1053",
-								"y": "1910"
+								"y": "1907"
 							}
 						},
 						{
@@ -575,6 +583,57 @@
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
+							"objectClass": "Car_Cat",
+							"sid": 673365624611251,
+							"parameters": {
+								"object": "Trigger_CutScene"
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "EnemyPchel",
+							"sid": 109948862110652,
+							"parameters": {
+								"tags": "\"Cut\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "EnemyPchel",
+							"sid": 701428715467242,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "-200"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "EnemyPchel",
+							"sid": 195351940024126,
+							"parameters": {
+								"animation": "\"Run\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "EnemyPchel",
+							"sid": 633285970685193,
+							"parameters": {
+								"state": "mirrored"
+							}
+						}
+					],
+					"sid": 444149404543687
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
 							"objectClass": "security",
 							"sid": 800018073088217,
 							"parameters": {
@@ -583,6 +642,33 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-speed",
+							"objectClass": "EnemyPchel",
+							"sid": 362136398567470,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "0"
+							}
+						},
+						{
+							"id": "set-mirrored",
+							"objectClass": "EnemyPchel",
+							"sid": 937612434310407,
+							"parameters": {
+								"state": "not-mirrored"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "EnemyPchel",
+							"sid": 899682790159178,
+							"parameters": {
+								"animation": "\"IdleWOW!\"",
+								"from": "beginning"
+							}
+						},
 						{
 							"id": "stop",
 							"objectClass": "security",
@@ -729,29 +815,12 @@
 							}
 						},
 						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 207564254577646,
-							"parameters": {
-								"group-name": "\"Enemy & Fear\"",
-								"state": "activated"
-							}
-						},
-						{
 							"id": "set-size",
 							"objectClass": "Camera",
 							"sid": 183263429371950,
 							"parameters": {
 								"width": "80",
 								"height": "45"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Enemys",
-							"sid": 211410985789519,
-							"parameters": {
-								"visibility": "visible"
 							}
 						},
 						{
@@ -778,6 +847,15 @@
 							"sid": 369424310251041,
 							"parameters": {
 								"slot": "\"mysave\""
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 630730803926188,
+							"parameters": {
+								"group-name": "\"Enemy & Fear\"",
+								"state": "activated"
 							}
 						}
 					],
