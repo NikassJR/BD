@@ -13801,76 +13801,6 @@
 						"z": 0,
 						"angle": 0
 					}
-				},
-				{
-					"type": "Wall",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 1190,
-					"sid": 193467461633803,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Твёрдый": {
-							"properties": {
-								"enabled": true,
-								"use-instance-tags": false,
-								"tags": "Wall"
-							}
-						},
-						"Физика": {
-							"properties": {
-								"immovable": false,
-								"collision-mask": "use-collision-polygon",
-								"collision-filter-tags": "",
-								"collision-filter-mode": "exclusive",
-								"prevent-rotation": false,
-								"density": 1,
-								"friction": 0.5,
-								"elasticity": 0.2,
-								"linear-damping": 0,
-								"angular-damping": 0.01,
-								"bullet": false,
-								"enabled": true
-							}
-						}
-					},
-					"effects": {
-						"РадиальноеРазмытие": {
-							"isEnabled": false,
-							"parameters": {
-								"radius": 0.4,
-								"intensity": 1
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 193467461633803,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 17,
-						"y": 759,
-						"width": 53,
-						"height": 100,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
 				}
 			],
 			"sid": 728943443364993,
@@ -17861,8 +17791,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 2655,
-						"y": 289,
+						"x": 2200,
+						"y": 308,
 						"width": -86,
 						"height": 86,
 						"originX": 0.5,
@@ -18004,8 +17934,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1598,
-						"y": 306,
+						"x": 1479,
+						"y": 308,
 						"width": 86,
 						"height": 86,
 						"originX": 0.5,
@@ -18719,8 +18649,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 2970,
-						"y": 295,
+						"x": 2805,
+						"y": 487,
 						"width": 86,
 						"height": 86,
 						"originX": 0.5,
@@ -19005,8 +18935,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 2173,
-						"y": 304,
+						"x": 2168,
+						"y": 489,
 						"width": 86,
 						"height": 86,
 						"originX": 0.5,
@@ -19025,7 +18955,7 @@
 					"type": "EnemyBaseball",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Blondin_sit",
+						"initial-animation": "Idle",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -19148,8 +19078,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1081,
-						"y": 752,
+						"x": 866,
+						"y": 759,
 						"width": -86,
 						"height": 86,
 						"originX": 0.5,
@@ -20138,7 +20068,7 @@
 					"type": "EnemyKnife",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "Idle_Sik",
+						"initial-animation": "Idle",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -20261,7 +20191,7 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 998,
+						"x": 1125,
 						"y": 759,
 						"width": -86,
 						"height": 86,
@@ -20682,8 +20612,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 2836,
-						"y": 493,
+						"x": 2237,
+						"y": 490,
 						"width": -86,
 						"height": 86,
 						"originX": 0.5,
@@ -20825,8 +20755,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 3035,
-						"y": 297,
+						"x": 2870,
+						"y": 489,
 						"width": -86,
 						"height": 86,
 						"originX": 0.5,
@@ -22155,8 +22085,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 126,
-						"y": 788,
+						"x": 46,
+						"y": 789,
 						"width": 49,
 						"height": 6,
 						"originX": 1,
@@ -22169,6 +22099,113 @@
 						],
 						"z": 0,
 						"angle": 1.5707963267948966
+					}
+				},
+				{
+					"type": "Extinguisher",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Extinguisher",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 1203,
+					"sid": 368903091674836,
+					"tags": "",
+					"instanceVariables": {
+						"Pistol": 9,
+						"Got": 0,
+						"Bubble": 0,
+						"CrashGless": false,
+						"DifWeaponX": 0,
+						"rotate": 0,
+						"ID": 0,
+						"Vision": false
+					},
+					"behaviors": {
+						"Физика": {
+							"properties": {
+								"immovable": false,
+								"collision-mask": "use-collision-polygon",
+								"collision-filter-tags": "",
+								"collision-filter-mode": "exclusive",
+								"prevent-rotation": false,
+								"density": 1,
+								"friction": 0.5,
+								"elasticity": 0.2,
+								"linear-damping": 0,
+								"angular-damping": 0.01,
+								"bullet": false,
+								"enabled": false
+							}
+						},
+						"Прикрепить2": {
+							"properties": {
+								"destroy": false
+							}
+						},
+						"Твинанимация": {
+							"properties": {
+								"enabled": true
+							}
+						},
+						"ОграничитьСценой": {
+							"properties": {
+								"bound-by": "edge",
+								"region": "layout"
+							}
+						},
+						"НастраиваемоеДвижение": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						},
+						"ПолеЗрения": {
+							"properties": {
+								"obstacles": "solids",
+								"range": 300,
+								"cone-of-view": 360,
+								"use-collision-cells": true
+							}
+						}
+					},
+					"effects": {
+						"Пульс": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 0.1,
+								"lighting": 1,
+								"speed": 5,
+								"frequency": 80,
+								"center-x": 0.5,
+								"center-y": 0.5
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 368903091674836,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 129,
+						"y": 770,
+						"width": 18,
+						"height": 30,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
 					}
 				}
 			],
