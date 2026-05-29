@@ -17634,6 +17634,15 @@
 															],
 															"actions": [
 																{
+																	"id": "wait",
+																	"objectClass": "System",
+																	"sid": 265415253233812,
+																	"parameters": {
+																		"seconds": "0.2",
+																		"use-timescale": true
+																	}
+																},
+																{
 																	"id": "shake",
 																	"objectClass": "Camera",
 																	"sid": 250577468703155,
@@ -20480,6 +20489,12 @@
 												}
 											],
 											"sid": 410022156045368
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [],
+											"sid": 232406119394706
 										}
 									],
 									"isOrBlock": true
@@ -20551,6 +20566,15 @@
 													}
 												},
 												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 804605079981502,
+													"parameters": {
+														"seconds": "0.2",
+														"use-timescale": true
+													}
+												},
+												{
 													"id": "spawn-another-object",
 													"objectClass": "Player_All",
 													"sid": 689097707540999,
@@ -20611,7 +20635,7 @@
 												{
 													"id": "start-timer",
 													"objectClass": "Player_All",
-													"sid": 155375546513048,
+													"sid": 760150289896285,
 													"behaviorType": "Таймер",
 													"parameters": {
 														"duration": "0.3",
@@ -20827,6 +20851,14 @@
 											"eventType": "block",
 											"conditions": [
 												{
+													"id": "on-animation-finished",
+													"objectClass": "Player_All",
+													"sid": 608021495777619,
+													"parameters": {
+														"animation": "weapon & \"Attack1\""
+													}
+												},
+												{
 													"id": "compare-instance-variable",
 													"objectClass": "Player_All",
 													"sid": 764169035055163,
@@ -20835,11 +20867,6 @@
 														"comparison": 5,
 														"value": "2"
 													}
-												},
-												{
-													"id": "trigger-once-while-true",
-													"objectClass": "System",
-													"sid": 667861193076608
 												}
 											],
 											"actions": [
@@ -20853,12 +20880,21 @@
 													}
 												},
 												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 393232674577719,
+													"parameters": {
+														"seconds": "0.2",
+														"use-timescale": true
+													}
+												},
+												{
 													"id": "start-timer",
 													"objectClass": "Player_All",
-													"sid": 876881561679978,
+													"sid": 637654301086412,
 													"behaviorType": "Таймер",
 													"parameters": {
-														"duration": "0.3",
+														"duration": "0.4",
 														"type": "once",
 														"tag": "\"Combo\""
 													}
@@ -20901,7 +20937,7 @@
 												{
 													"id": "wait",
 													"objectClass": "System",
-													"sid": 353818642715727,
+													"sid": 587896061174449,
 													"parameters": {
 														"seconds": "0.1",
 														"use-timescale": true
@@ -22823,7 +22859,7 @@
 														{
 															"id": "set-max-speed",
 															"objectClass": "Player_All",
-															"sid": 938735494920640,
+															"sid": 605741624409859,
 															"behaviorType": "Платформер",
 															"parameters": {
 																"max-speed": "350"
@@ -22832,9 +22868,45 @@
 														{
 															"id": "wait",
 															"objectClass": "System",
-															"sid": 389891236439929,
+															"sid": 220490196253696,
 															"parameters": {
-																"seconds": "0.3",
+																"seconds": "0.4",
+																"use-timescale": true
+															}
+														},
+														{
+															"id": "set-max-speed",
+															"objectClass": "Player_All",
+															"sid": 279051363741653,
+															"behaviorType": "Платформер",
+															"parameters": {
+																"max-speed": "50"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 214171903945618,
+															"parameters": {
+																"seconds": "0.1",
+																"use-timescale": true
+															}
+														},
+														{
+															"id": "set-max-speed",
+															"objectClass": "Player_All",
+															"sid": 204981084543432,
+															"behaviorType": "Платформер",
+															"parameters": {
+																"max-speed": "25"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 396580171391846,
+															"parameters": {
+																"seconds": "0.1",
 																"use-timescale": true
 															}
 														},
@@ -22866,9 +22938,9 @@
 																{
 																	"id": "wait",
 																	"objectClass": "System",
-																	"sid": 707937212318137,
+																	"sid": 951765338257567,
 																	"parameters": {
-																		"seconds": "0.2",
+																		"seconds": "0.1",
 																		"use-timescale": true
 																	}
 																},
@@ -22923,6 +22995,15 @@
 													"parameters": {
 														"animation": "weapon & \"RunKick\"",
 														"from": "beginning"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 234703654446501,
+													"parameters": {
+														"seconds": "0.1",
+														"use-timescale": true
 													}
 												},
 												{
@@ -23327,6 +23408,14 @@
 														"magnitude": "5",
 														"duration": "0.2",
 														"mode": "reducing-magnitude"
+													}
+												},
+												{
+													"id": "set-repeat-to-frame",
+													"objectClass": "Player_All",
+													"sid": 382254366980689,
+													"parameters": {
+														"frame-number": "2"
 													}
 												}
 											],
@@ -32230,6 +32319,15 @@
 															}
 														},
 														{
+															"id": "compare-animation-frame",
+															"objectClass": "Player_All",
+															"sid": 265779855056134,
+															"parameters": {
+																"comparison": 4,
+																"number": "1"
+															}
+														},
+														{
 															"id": "is-animation-playing",
 															"objectClass": "Enemy_Mili",
 															"sid": 293085632322210,
@@ -33045,6 +33143,38 @@
 																			"parameters": {
 																				"which": "overall",
 																				"speed": "Random(50,-50)"
+																			}
+																		},
+																		{
+																			"id": "set-angle",
+																			"objectClass": "BloodAll",
+																			"sid": 426165771142442,
+																			"parameters": {
+																				"angle": "Player_All.rotate * random(0,45)"
+																			}
+																		},
+																		{
+																			"id": "set-opacity",
+																			"objectClass": "BloodAll",
+																			"sid": 421263790754299,
+																			"parameters": {
+																				"opacity": "80"
+																			}
+																		},
+																		{
+																			"id": "set-scale",
+																			"objectClass": "BloodAll",
+																			"sid": 478835505471495,
+																			"parameters": {
+																				"scale": "random(0.5, 1)"
+																			}
+																		},
+																		{
+																			"id": "set-default-color",
+																			"objectClass": "BloodAll",
+																			"sid": 569244246137430,
+																			"parameters": {
+																				"color": "rgbEx(80, 0, 0)"
 																			}
 																		},
 																		{
@@ -37833,10 +37963,10 @@
 														{
 															"id": "start-timer",
 															"objectClass": "Enemy_Mili",
-															"sid": 952083729044853,
+															"sid": 869059750624310,
 															"behaviorType": "Таймер",
 															"parameters": {
-																"duration": "0.5",
+																"duration": "0.8",
 																"type": "once",
 																"tag": "\"Damage\""
 															}
@@ -46251,9 +46381,9 @@
 																{
 																	"id": "compare-animation-frame",
 																	"objectClass": "Enemy_Mili",
-																	"sid": 305847951458275,
+																	"sid": 493986783248006,
 																	"parameters": {
-																		"comparison": 0,
+																		"comparison": 4,
 																		"number": "1"
 																	}
 																},
