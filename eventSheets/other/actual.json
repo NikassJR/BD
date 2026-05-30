@@ -828,10 +828,10 @@
 						{
 							"id": "set-position",
 							"objectClass": "Camera",
-							"sid": 474098057652804,
+							"sid": 220556077865602,
 							"parameters": {
-								"x": "lerp(Self.X,Player_All.X,0.075)",
-								"y": "lerp(Self.Y,Player_All.Y-50,0.075)"
+								"x": "lerp(Self.X,Player_All.X,0.1)",
+								"y": "lerp(Self.Y,Player_All.Y-50,0.1)"
 							}
 						},
 						{
@@ -17492,9 +17492,9 @@
 														{
 															"id": "wait",
 															"objectClass": "System",
-															"sid": 535148237967099,
+															"sid": 666065824762174,
 															"parameters": {
-																"seconds": "0.2",
+																"seconds": "0.3",
 																"use-timescale": true
 															}
 														},
@@ -20463,9 +20463,10 @@
 												{
 													"id": "wait",
 													"objectClass": "System",
-													"sid": 853553219744842,
+													"sid": 168909648251888,
+													"disabled": true,
 													"parameters": {
-														"seconds": "0.01",
+														"seconds": "0.1",
 														"use-timescale": true
 													}
 												},
@@ -20489,12 +20490,6 @@
 												}
 											],
 											"sid": 410022156045368
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [],
-											"sid": 232406119394706
 										}
 									],
 									"isOrBlock": true
@@ -20566,6 +20561,17 @@
 													}
 												},
 												{
+													"id": "start-timer",
+													"objectClass": "Player_All",
+													"sid": 513307442769420,
+													"behaviorType": "Таймер",
+													"parameters": {
+														"duration": "0.6",
+														"type": "once",
+														"tag": "\"Combo\""
+													}
+												},
+												{
 													"id": "wait",
 													"objectClass": "System",
 													"sid": 804605079981502,
@@ -20630,17 +20636,6 @@
 													"parameters": {
 														"seconds": "0.1",
 														"use-timescale": true
-													}
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "Player_All",
-													"sid": 760150289896285,
-													"behaviorType": "Таймер",
-													"parameters": {
-														"duration": "0.3",
-														"type": "once",
-														"tag": "\"Combo\""
 													}
 												}
 											],
@@ -20880,23 +20875,23 @@
 													}
 												},
 												{
+													"id": "start-timer",
+													"objectClass": "Player_All",
+													"sid": 982385795595889,
+													"behaviorType": "Таймер",
+													"parameters": {
+														"duration": "0.6",
+														"type": "once",
+														"tag": "\"Combo\""
+													}
+												},
+												{
 													"id": "wait",
 													"objectClass": "System",
 													"sid": 393232674577719,
 													"parameters": {
 														"seconds": "0.2",
 														"use-timescale": true
-													}
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "Player_All",
-													"sid": 637654301086412,
-													"behaviorType": "Таймер",
-													"parameters": {
-														"duration": "0.4",
-														"type": "once",
-														"tag": "\"Combo\""
 													}
 												},
 												{
@@ -46418,9 +46413,9 @@
 																{
 																	"id": "wait",
 																	"objectClass": "System",
-																	"sid": 269271916473071,
+																	"sid": 861746726492164,
 																	"parameters": {
-																		"seconds": "0.01",
+																		"seconds": "0.1",
 																		"use-timescale": true
 																	}
 																},
