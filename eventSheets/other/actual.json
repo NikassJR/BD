@@ -500,15 +500,6 @@
 									}
 								},
 								{
-									"id": "set-boolean-instvar",
-									"objectClass": "EnemyKnife",
-									"sid": 507586333466574,
-									"parameters": {
-										"instance-variable": "Knife",
-										"value": "true"
-									}
-								},
-								{
 									"id": "set-instvar-value",
 									"objectClass": "EnemyPchel",
 									"sid": 107655819449929,
@@ -600,6 +591,59 @@
 								}
 							],
 							"sid": 999398458772101,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 255154669244362,
+											"parameters": {
+												"variable": "Hardcore"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "EnemyKnife",
+											"sid": 883638137706211,
+											"parameters": {
+												"instance-variable": "Knife",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 189189562829088
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 863418727276999,
+											"parameters": {
+												"variable": "Hardcore"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "EnemyKnife",
+											"sid": 333985418154317,
+											"parameters": {
+												"instance-variable": "Knife",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 402410340879232
+								}
+							],
 							"isOrBlock": true
 						},
 						{
@@ -15078,10 +15122,10 @@
 										{
 											"id": "compare-animation-frame",
 											"objectClass": "Player_All",
-											"sid": 749299120823095,
+											"sid": 324412443475004,
 											"parameters": {
 												"comparison": 0,
-												"number": "1"
+												"number": "2"
 											}
 										}
 									],
@@ -15376,10 +15420,10 @@
 										{
 											"id": "compare-animation-frame",
 											"objectClass": "Player_All",
-											"sid": 565996586170146,
+											"sid": 946638850337158,
 											"parameters": {
 												"comparison": 0,
-												"number": "1"
+												"number": "3"
 											}
 										}
 									],
@@ -20409,6 +20453,7 @@
 													"id": "compare-eventvar",
 													"objectClass": "System",
 													"sid": 365168679416339,
+													"disabled": true,
 													"parameters": {
 														"variable": "weapon",
 														"comparison": 0,
@@ -21026,11 +21071,22 @@
 													}
 												},
 												{
+													"id": "start-timer",
+													"objectClass": "Player_All",
+													"sid": 290599558723423,
+													"behaviorType": "Таймер",
+													"parameters": {
+														"duration": "0.8",
+														"type": "once",
+														"tag": "\"Combo\""
+													}
+												},
+												{
 													"id": "wait",
 													"objectClass": "System",
-													"sid": 464677520742327,
+													"sid": 259267405376432,
 													"parameters": {
-														"seconds": "0.1",
+														"seconds": "0.2",
 														"use-timescale": true
 													}
 												},
@@ -21090,17 +21146,6 @@
 													"parameters": {
 														"seconds": "0.2",
 														"use-timescale": true
-													}
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "Player_All",
-													"sid": 570308064149690,
-													"behaviorType": "Таймер",
-													"parameters": {
-														"duration": "0.1",
-														"type": "once",
-														"tag": "\"Combo\""
 													}
 												}
 											],
@@ -21169,6 +21214,23 @@
 													}
 												},
 												{
+													"id": "is-animation-playing",
+													"objectClass": "Player_All",
+													"sid": 832791831805079,
+													"parameters": {
+														"animation": "weapon & \"Attack1\""
+													}
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "Player_All",
+													"sid": 612060624948340,
+													"parameters": {
+														"comparison": 0,
+														"number": "5"
+													}
+												},
+												{
 													"id": "compare-instance-variable",
 													"objectClass": "Player_All",
 													"sid": 779908352108410,
@@ -21203,6 +21265,15 @@
 														"duration": "0.5",
 														"type": "once",
 														"tag": "\"Combo\""
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 544423079746839,
+													"parameters": {
+														"seconds": "0.2",
+														"use-timescale": true
 													}
 												},
 												{
@@ -21271,142 +21342,6 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "on-click",
-													"objectClass": "Mouse",
-													"sid": 311733095470134,
-													"parameters": {
-														"mouse-button": "left",
-														"click-type": "clicked"
-													}
-												},
-												{
-													"id": "on-button-pressed",
-													"objectClass": "Gamepad",
-													"sid": 899435845582663,
-													"parameters": {
-														"gamepad": "0",
-														"button": "right-shoulder-button"
-													}
-												}
-											],
-											"actions": [],
-											"sid": 735690233965049,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-on-floor",
-															"objectClass": "Player_All",
-															"sid": 527718259473183,
-															"behaviorType": "Платформер"
-														},
-														{
-															"id": "compare-speed",
-															"objectClass": "Player_All",
-															"sid": 453346104074220,
-															"behaviorType": "Платформер",
-															"parameters": {
-																"comparison": 0,
-																"speed": "0"
-															}
-														},
-														{
-															"id": "compare-boolean-eventvar",
-															"objectClass": "System",
-															"sid": 303309082202456,
-															"parameters": {
-																"variable": "iFrame"
-															},
-															"isInverted": true
-														},
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Player_All",
-															"sid": 182528789678971,
-															"parameters": {
-																"instance-variable": "CastWeapon",
-																"comparison": 0,
-																"value": "\"\""
-															}
-														},
-														{
-															"id": "compare-boolean-eventvar",
-															"objectClass": "System",
-															"sid": 978409696938722,
-															"parameters": {
-																"variable": "Safe_Zone"
-															},
-															"isInverted": true
-														},
-														{
-															"id": "compare-eventvar",
-															"objectClass": "System",
-															"sid": 162727077901001,
-															"parameters": {
-																"variable": "weapon",
-																"comparison": 0,
-																"value": "\"noWeapon\""
-															}
-														},
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "Player_All",
-															"sid": 661979977107024,
-															"parameters": {
-																"instance-variable": "kickrun"
-															},
-															"isInverted": true
-														},
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Player_All",
-															"sid": 156241639586535,
-															"parameters": {
-																"instance-variable": "Combo",
-																"comparison": 0,
-																"value": "0"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "wait",
-															"objectClass": "System",
-															"sid": 969804225015223,
-															"parameters": {
-																"seconds": "0.01",
-																"use-timescale": true
-															}
-														},
-														{
-															"id": "set-boolean-instvar",
-															"objectClass": "Player_All",
-															"sid": 325298076117413,
-															"parameters": {
-																"instance-variable": "kick",
-																"value": "true"
-															}
-														},
-														{
-															"id": "add-to-instvar",
-															"objectClass": "Player_All",
-															"sid": 565843681999049,
-															"parameters": {
-																"instance-variable": "Combo",
-																"value": "1"
-															}
-														}
-													],
-													"sid": 958154836938247
-												}
-											],
-											"isOrBlock": true
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
 													"id": "compare-instance-variable",
 													"objectClass": "Player_All",
 													"sid": 443778216732463,
@@ -21448,6 +21383,26 @@
 													"parameters": {
 														"animation": "weapon & \"Attack1\"",
 														"from": "beginning"
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "Player_All",
+													"sid": 259036476920354,
+													"behaviorType": "Таймер",
+													"parameters": {
+														"duration": "1",
+														"type": "once",
+														"tag": "\"Combo\""
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 699029292089722,
+													"parameters": {
+														"seconds": "0.2",
+														"use-timescale": true
 													}
 												},
 												{
@@ -21498,26 +21453,6 @@
 													"id": "destroy",
 													"objectClass": "HitBox",
 													"sid": 383754162609615
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 793237955024312,
-													"parameters": {
-														"seconds": "0.1",
-														"use-timescale": true
-													}
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "Player_All",
-													"sid": 451757416782202,
-													"behaviorType": "Таймер",
-													"parameters": {
-														"duration": "1",
-														"type": "once",
-														"tag": "\"Combo\""
-													}
 												}
 											],
 											"sid": 627518589530208
@@ -21526,289 +21461,26 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "on-click",
-													"objectClass": "Mouse",
-													"sid": 838314532075492,
-													"parameters": {
-														"mouse-button": "left",
-														"click-type": "clicked"
-													}
-												},
-												{
-													"id": "on-button-pressed",
-													"objectClass": "Gamepad",
-													"sid": 853114218372516,
-													"parameters": {
-														"gamepad": "0",
-														"button": "right-shoulder-button"
-													}
-												}
-											],
-											"actions": [],
-											"sid": 319168174180186,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-animation-playing",
-															"objectClass": "Player_All",
-															"sid": 621779124888130,
-															"parameters": {
-																"animation": "\"noWeaponAttack1\""
-															}
-														},
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Player_All",
-															"sid": 614777171705775,
-															"parameters": {
-																"instance-variable": "Combo",
-																"comparison": 0,
-																"value": "1"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "add-to-instvar",
-															"objectClass": "Player_All",
-															"sid": 485662855969986,
-															"parameters": {
-																"instance-variable": "Combo",
-																"value": "1"
-															}
-														}
-													],
-													"sid": 822294082506837
-												}
-											],
-											"isOrBlock": true
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "on-animation-finished",
-													"objectClass": "Player_All",
-													"sid": 108274310601291,
-													"parameters": {
-														"animation": "weapon & \"Attack1\""
-													}
-												},
-												{
-													"id": "is-timer-running",
-													"objectClass": "Player_All",
-													"sid": 221899241591806,
-													"behaviorType": "Таймер",
-													"parameters": {
-														"tag": "\"Combo\""
-													}
-												}
-											],
-											"actions": [],
-											"sid": 225709973376743,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Player_All",
-															"sid": 694108817387857,
-															"parameters": {
-																"instance-variable": "Combo",
-																"comparison": 0,
-																"value": "2"
-															}
-														},
-														{
-															"id": "compare-eventvar",
-															"objectClass": "System",
-															"sid": 158933604014170,
-															"parameters": {
-																"variable": "weapon",
-																"comparison": 0,
-																"value": "\"noWeapon\""
-															}
-														},
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "Player_All",
-															"sid": 903571603726045,
-															"parameters": {
-																"instance-variable": "kick"
-															}
-														},
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 314484947197430
-														}
-													],
-													"actions": [
-														{
-															"id": "set-animation",
-															"objectClass": "Player_All",
-															"sid": 428567440074166,
-															"parameters": {
-																"animation": "weapon & \"Attack2\"",
-																"from": "beginning"
-															}
-														},
-														{
-															"id": "spawn-another-object",
-															"objectClass": "Player_All",
-															"sid": 685761074737309,
-															"parameters": {
-																"object": "HitBox",
-																"layer": "Player_All.LayerName",
-																"image-point": "1",
-																"create-hierarchy": false,
-																"template-name": "\"\""
-															}
-														},
-														{
-															"id": "pin-to-object-imagepoint",
-															"objectClass": "HitBox",
-															"sid": 480880133285156,
-															"behaviorType": "Прикрепить",
-															"parameters": {
-																"pin-to": "Player_All",
-																"image-point": "1",
-																"angle": true,
-																"width-type": "no",
-																"height-type": "no",
-																"z": false
-															}
-														},
-														{
-															"id": "set-animation",
-															"objectClass": "HitBox",
-															"sid": 454239879893817,
-															"parameters": {
-																"animation": "weapon & \"Box\"",
-																"from": "beginning"
-															}
-														},
-														{
-															"id": "wait",
-															"objectClass": "System",
-															"sid": 455275489648775,
-															"parameters": {
-																"seconds": "0.1",
-																"use-timescale": true
-															}
-														},
-														{
-															"id": "destroy",
-															"objectClass": "HitBox",
-															"sid": 470930319876681
-														},
-														{
-															"id": "start-timer",
-															"objectClass": "Player_All",
-															"sid": 922464466321465,
-															"behaviorType": "Таймер",
-															"parameters": {
-																"duration": "1",
-																"type": "once",
-																"tag": "\"Combo\""
-															}
-														}
-													],
-													"sid": 595579164154397
-												}
-											],
-											"isOrBlock": true
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "on-click",
-													"objectClass": "Mouse",
-													"sid": 230001516227760,
-													"parameters": {
-														"mouse-button": "left",
-														"click-type": "clicked"
-													}
-												},
-												{
-													"id": "on-button-pressed",
-													"objectClass": "Gamepad",
-													"sid": 463355944768438,
-													"parameters": {
-														"gamepad": "0",
-														"button": "right-shoulder-button"
-													}
-												}
-											],
-											"actions": [],
-											"sid": 814489738103549,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-animation-playing",
-															"objectClass": "Player_All",
-															"sid": 851593314339944,
-															"parameters": {
-																"animation": "\"noWeaponAttack2\""
-															}
-														},
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Player_All",
-															"sid": 184988634147905,
-															"parameters": {
-																"instance-variable": "Combo",
-																"comparison": 0,
-																"value": "2"
-															}
-														},
-														{
-															"id": "compare-animation-frame",
-															"objectClass": "Player_All",
-															"sid": 475937501680749,
-															"parameters": {
-																"comparison": 0,
-																"number": "2"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "add-to-instvar",
-															"objectClass": "Player_All",
-															"sid": 758963668967812,
-															"parameters": {
-																"instance-variable": "Combo",
-																"value": "1"
-															}
-														}
-													],
-													"sid": 680707065288388
-												}
-											],
-											"isOrBlock": true
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
 													"id": "is-animation-playing",
 													"objectClass": "Player_All",
-													"sid": 311176908176782,
+													"sid": 878657723553055,
 													"parameters": {
-														"animation": "weapon & \"Attack2\""
+														"animation": "\"noWeaponAttack1\""
+													}
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "Player_All",
+													"sid": 566656429209071,
+													"parameters": {
+														"comparison": 0,
+														"number": "4"
 													}
 												},
 												{
 													"id": "compare-eventvar",
 													"objectClass": "System",
-													"sid": 921947247586585,
+													"sid": 718291839416036,
 													"parameters": {
 														"variable": "weapon",
 														"comparison": 0,
@@ -21818,19 +21490,11 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "Player_All",
-													"sid": 328877422925451,
+													"sid": 233362561906953,
 													"parameters": {
 														"instance-variable": "Combo",
-														"comparison": 0,
-														"value": "3"
-													}
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Player_All",
-													"sid": 344069743689626,
-													"parameters": {
-														"instance-variable": "kick"
+														"comparison": 5,
+														"value": "2"
 													}
 												}
 											],
@@ -21838,19 +21502,19 @@
 												{
 													"id": "set-animation",
 													"objectClass": "Player_All",
-													"sid": 511979006200371,
+													"sid": 291153385542240,
 													"parameters": {
-														"animation": "weapon & \"Attack3\"",
+														"animation": "weapon & \"Attack2\"",
 														"from": "beginning"
 													}
 												},
 												{
 													"id": "start-timer",
 													"objectClass": "Player_All",
-													"sid": 922470800337977,
+													"sid": 325029724946024,
 													"behaviorType": "Таймер",
 													"parameters": {
-														"duration": "0.5",
+														"duration": "1",
 														"type": "once",
 														"tag": "\"Combo\""
 													}
@@ -21858,16 +21522,16 @@
 												{
 													"id": "wait",
 													"objectClass": "System",
-													"sid": 950222650664837,
+													"sid": 201516670578707,
 													"parameters": {
-														"seconds": "0.3",
+														"seconds": "0.2",
 														"use-timescale": true
 													}
 												},
 												{
 													"id": "spawn-another-object",
 													"objectClass": "Player_All",
-													"sid": 610093194136402,
+													"sid": 669558252420495,
 													"parameters": {
 														"object": "HitBox",
 														"layer": "Player_All.LayerName",
@@ -21879,7 +21543,7 @@
 												{
 													"id": "pin-to-object-imagepoint",
 													"objectClass": "HitBox",
-													"sid": 146330573865911,
+													"sid": 644892522129917,
 													"behaviorType": "Прикрепить",
 													"parameters": {
 														"pin-to": "Player_All",
@@ -21893,7 +21557,7 @@
 												{
 													"id": "set-animation",
 													"objectClass": "HitBox",
-													"sid": 517587933904390,
+													"sid": 695094929131315,
 													"parameters": {
 														"animation": "weapon & \"Box\"",
 														"from": "beginning"
@@ -21902,7 +21566,7 @@
 												{
 													"id": "wait",
 													"objectClass": "System",
-													"sid": 685453658498253,
+													"sid": 416967636964402,
 													"parameters": {
 														"seconds": "0.1",
 														"use-timescale": true
@@ -21911,10 +21575,141 @@
 												{
 													"id": "destroy",
 													"objectClass": "HitBox",
-													"sid": 487148044694479
+													"sid": 768704494007942
 												}
 											],
-											"sid": 900421480339600
+											"sid": 295875816754100
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Player_All",
+													"sid": 902591579108086,
+													"parameters": {
+														"animation": "\"noWeaponAttack2\""
+													}
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "Player_All",
+													"sid": 368358310001421,
+													"parameters": {
+														"comparison": 0,
+														"number": "5"
+													}
+												},
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 728607670268086,
+													"parameters": {
+														"variable": "weapon",
+														"comparison": 0,
+														"value": "\"noWeapon\""
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Player_All",
+													"sid": 910851135059007,
+													"parameters": {
+														"instance-variable": "Combo",
+														"comparison": 5,
+														"value": "3"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player_All",
+													"sid": 631369376942206,
+													"parameters": {
+														"instance-variable": "kick"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "Player_All",
+													"sid": 763428905584213,
+													"parameters": {
+														"animation": "weapon & \"Attack3\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "Player_All",
+													"sid": 583086854599295,
+													"behaviorType": "Таймер",
+													"parameters": {
+														"duration": "0.6",
+														"type": "once",
+														"tag": "\"Combo\""
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 966885348563358,
+													"parameters": {
+														"seconds": "0.2",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "Player_All",
+													"sid": 737249219985579,
+													"parameters": {
+														"object": "HitBox",
+														"layer": "Player_All.LayerName",
+														"image-point": "1",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "pin-to-object-imagepoint",
+													"objectClass": "HitBox",
+													"sid": 150626759222733,
+													"behaviorType": "Прикрепить",
+													"parameters": {
+														"pin-to": "Player_All",
+														"image-point": "1",
+														"angle": true,
+														"width-type": "no",
+														"height-type": "no",
+														"z": false
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "HitBox",
+													"sid": 124223886315002,
+													"parameters": {
+														"animation": "weapon & \"Box\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 706980730109302,
+													"parameters": {
+														"seconds": "0.1",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "destroy",
+													"objectClass": "HitBox",
+													"sid": 780866345246767
+												}
+											],
+											"sid": 317563305265641
 										},
 										{
 											"eventType": "block",
@@ -26166,9 +25961,9 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "Enemy_Mili",
-													"sid": 811210480828273,
+													"sid": 559899242768914,
 													"parameters": {
-														"frame-number": "3"
+														"frame-number": "2"
 													}
 												},
 												{
@@ -26233,10 +26028,10 @@
 														{
 															"id": "compare-animation-frame",
 															"objectClass": "Enemy_Mili",
-															"sid": 151427029178631,
+															"sid": 804727682831736,
 															"parameters": {
 																"comparison": 0,
-																"number": "3"
+																"number": "2"
 															}
 														}
 													],
@@ -31966,10 +31761,10 @@
 														{
 															"id": "compare-animation-frame",
 															"objectClass": "Enemy_Mili",
-															"sid": 153437724379188,
+															"sid": 756118188754013,
 															"parameters": {
 																"comparison": 0,
-																"number": "15"
+																"number": "10"
 															}
 														},
 														{
@@ -31996,9 +31791,9 @@
 														{
 															"id": "set-animation-frame",
 															"objectClass": "Enemy_Mili",
-															"sid": 784739710194264,
+															"sid": 445059379639822,
 															"parameters": {
-																"frame-number": "11"
+																"frame-number": "8"
 															}
 														}
 													],
@@ -32018,10 +31813,10 @@
 														{
 															"id": "compare-animation-frame",
 															"objectClass": "Enemy_Mili",
-															"sid": 418185211483251,
+															"sid": 293299583216040,
 															"parameters": {
 																"comparison": 0,
-																"number": "3"
+																"number": "2"
 															}
 														},
 														{
@@ -32093,10 +31888,10 @@
 														{
 															"id": "compare-animation-frame",
 															"objectClass": "Enemy_Mili",
-															"sid": 189322719717616,
+															"sid": 869390553081672,
 															"parameters": {
 																"comparison": 0,
-																"number": "7"
+																"number": "5"
 															}
 														},
 														{
@@ -32180,10 +31975,10 @@
 														{
 															"id": "compare-animation-frame",
 															"objectClass": "Enemy_Mili",
-															"sid": 655005937916944,
+															"sid": 646520898022379,
 															"parameters": {
 																"comparison": 0,
-																"number": "11"
+																"number": "8"
 															}
 														},
 														{
@@ -36791,7 +36586,7 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "Enemy_Mili",
-													"sid": 143189488781174,
+													"sid": 695037232606825,
 													"parameters": {
 														"frame-number": "3"
 													}
