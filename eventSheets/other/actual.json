@@ -256,10 +256,10 @@
 								{
 									"id": "set-range",
 									"objectClass": "Enemy_Mili",
-									"sid": 919290148339756,
+									"sid": 523983010761879,
 									"behaviorType": "ПолеЗрения",
 									"parameters": {
-										"range": "100"
+										"range": "400"
 									}
 								},
 								{
@@ -14844,6 +14844,15 @@
 									],
 									"actions": [
 										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 131289215115332,
+											"parameters": {
+												"seconds": "0.1",
+												"use-timescale": true
+											}
+										},
+										{
 											"id": "spawn-another-object",
 											"objectClass": "Player_All",
 											"sid": 678433599659016,
@@ -23204,9 +23213,15 @@
 													"id": "set-repeat-to-frame",
 													"objectClass": "Player_All",
 													"sid": 382254366980689,
+													"disabled": true,
 													"parameters": {
 														"frame-number": "2"
 													}
+												},
+												{
+													"id": "stop-animation",
+													"objectClass": "Player_All",
+													"sid": 533054260391746
 												}
 											],
 											"sid": 742805674041382
@@ -31587,12 +31602,61 @@
 													],
 													"actions": [
 														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 445608991465531,
+															"parameters": {
+																"variable": "weapon",
+																"value": "\"noWeapon\""
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Player_All",
+															"sid": 641047734170401,
+															"parameters": {
+																"instance-variable": "kick",
+																"value": "false"
+															}
+														},
+														{
 															"id": "wait",
 															"objectClass": "System",
 															"sid": 649942328553143,
 															"parameters": {
 																"seconds": "0.1",
 																"use-timescale": true
+															}
+														},
+														{
+															"id": "spawn-another-object",
+															"objectClass": "Player_All",
+															"sid": 555746486267093,
+															"parameters": {
+																"object": "Chair",
+																"layer": "Player_All.LayerName",
+																"image-point": "1",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "Chair",
+															"sid": 577627372665829,
+															"parameters": {
+																"animation": "\"Break\"",
+																"from": "beginning"
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "Player_All",
+															"sid": 279954925848120,
+															"disabled": true,
+															"parameters": {
+																"animation": "\"ChairPopal\"",
+																"from": "beginning"
 															}
 														},
 														{
@@ -31605,15 +31669,6 @@
 																"image-point": "1",
 																"create-hierarchy": false,
 																"template-name": "\"\""
-															}
-														},
-														{
-															"id": "set-animation",
-															"objectClass": "Player_All",
-															"sid": 291453199790337,
-															"parameters": {
-																"animation": "\"ChairPopal\"",
-																"from": "beginning"
 															}
 														},
 														{
@@ -31638,40 +31693,6 @@
 														}
 													],
 													"sid": 595268107546537
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "on-animation-finished",
-															"objectClass": "Player_All",
-															"sid": 435238941499326,
-															"parameters": {
-																"animation": "\"ChairPopal\""
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "set-boolean-instvar",
-															"objectClass": "Player_All",
-															"sid": 976627251056660,
-															"parameters": {
-																"instance-variable": "kick",
-																"value": "false"
-															}
-														},
-														{
-															"id": "set-eventvar-value",
-															"objectClass": "System",
-															"sid": 255545463065664,
-															"parameters": {
-																"variable": "weapon",
-																"value": "\"noWeapon\""
-															}
-														}
-													],
-													"sid": 354800236715060
 												},
 												{
 													"eventType": "block",
@@ -31729,6 +31750,27 @@
 													"isOrBlock": true
 												}
 											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-animation-finished",
+													"objectClass": "Chair",
+													"sid": 815524554413768,
+													"parameters": {
+														"animation": "\"Break\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Chair",
+													"sid": 702771184378611
+												}
+											],
+											"sid": 853148761454380
 										},
 										{
 											"eventType": "block",
@@ -62514,9 +62556,9 @@
 														{
 															"id": "wait",
 															"objectClass": "System",
-															"sid": 279483128337964,
+															"sid": 302404112334192,
 															"parameters": {
-																"seconds": "0.01",
+																"seconds": "0.1",
 																"use-timescale": true
 															}
 														},
@@ -68712,9 +68754,9 @@
 														{
 															"id": "wait",
 															"objectClass": "System",
-															"sid": 421793872344031,
+															"sid": 126998892129557,
 															"parameters": {
-																"seconds": "0.01",
+																"seconds": "0.1",
 																"use-timescale": true
 															}
 														},

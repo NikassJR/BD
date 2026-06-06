@@ -1034,20 +1034,11 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-animation-playing",
+							"id": "on-animation-finished",
 							"objectClass": "security",
-							"sid": 630970784805442,
+							"sid": 645489813755349,
 							"parameters": {
 								"animation": "\"Mark_Suffocating\""
-							}
-						},
-						{
-							"id": "compare-animation-frame",
-							"objectClass": "security",
-							"sid": 286300421062360,
-							"parameters": {
-								"comparison": 0,
-								"number": "16"
 							}
 						},
 						{
@@ -1059,14 +1050,18 @@
 								"comparison": 0,
 								"value": "21"
 							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 567076677243381
 						}
 					],
 					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "security",
+							"sid": 581581703095455,
+							"parameters": {
+								"animation": "\"Mark_Suffocating1\"",
+								"from": "beginning"
+							}
+						},
 						{
 							"callFunction": "Audio_Play_Sound",
 							"sid": 125174037731623,
@@ -1094,20 +1089,11 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-animation-playing",
+							"id": "on-animation-finished",
 							"objectClass": "security",
-							"sid": 584553119824903,
+							"sid": 382432349636333,
 							"parameters": {
-								"animation": "\"Mark_Suffocating\""
-							}
-						},
-						{
-							"id": "compare-animation-frame",
-							"objectClass": "security",
-							"sid": 412599344690433,
-							"parameters": {
-								"comparison": 0,
-								"number": "32"
+								"animation": "\"Mark_Suffocating1\""
 							}
 						},
 						{
@@ -1119,14 +1105,18 @@
 								"comparison": 0,
 								"value": "21"
 							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 577512089062050
 						}
 					],
 					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "security",
+							"sid": 663073198095672,
+							"parameters": {
+								"animation": "\"Mark_Suffocating2\"",
+								"from": "beginning"
+							}
+						},
 						{
 							"callFunction": "Audio_Play_Sound",
 							"sid": 460716819493909,
@@ -1156,9 +1146,9 @@
 						{
 							"id": "on-animation-finished",
 							"objectClass": "security",
-							"sid": 822017571924889,
+							"sid": 453054324339771,
 							"parameters": {
-								"animation": "\"Mark_Suffocating\""
+								"animation": "\"Mark_Suffocating2\""
 							}
 						},
 						{
@@ -1174,25 +1164,63 @@
 					],
 					"actions": [
 						{
+							"id": "set-animation",
+							"objectClass": "security",
+							"sid": 360265899308464,
+							"parameters": {
+								"animation": "\"Mark_Suffocating3\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 813721363850620
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "security",
+							"sid": 823100489742860,
+							"parameters": {
+								"animation": "\"Mark_Suffocating3\""
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 709582904649790,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "21"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "security",
+							"sid": 663438977277564,
+							"disabled": true,
+							"parameters": {
+								"animation": "\"Mark_Suffocating4\"",
+								"from": "beginning"
+							}
+						},
+						{
 							"id": "set-visible",
 							"objectClass": "Player_All",
-							"sid": 232272108531674,
+							"sid": 428091724696280,
+							"disabled": true,
 							"parameters": {
 								"visibility": "visible"
 							}
 						},
 						{
-							"id": "set-animation",
-							"objectClass": "security",
-							"sid": 491606346575894,
-							"parameters": {
-								"animation": "\"Mark_Suffocating1\"",
-								"from": "beginning"
-							}
-						},
-						{
 							"callFunction": "Audio_Play_Sound",
-							"sid": 496844850776493,
+							"sid": 850513652558110,
+							"disabled": true,
 							"parameters": [
 								"\"Security_Suffering2\"",
 								"0",
@@ -1202,7 +1230,8 @@
 						{
 							"id": "set-animation",
 							"objectClass": "Player_All",
-							"sid": 532148230106911,
+							"sid": 377700339522361,
+							"disabled": true,
 							"parameters": {
 								"animation": "\"Knees\"",
 								"from": "beginning"
@@ -1211,14 +1240,14 @@
 						{
 							"id": "add-to-instvar",
 							"objectClass": "Player_All",
-							"sid": 433709668395613,
+							"sid": 506679845467416,
 							"parameters": {
 								"instance-variable": "textframe",
 								"value": "1"
 							}
 						}
 					],
-					"sid": 813721363850620
+					"sid": 600408753401232
 				},
 				{
 					"eventType": "block",
@@ -1302,6 +1331,41 @@
 								true,
 								false
 							]
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "security",
+							"sid": 384880861483853,
+							"parameters": {
+								"animation": "\"Mark_Suffocating4\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Player_All",
+							"sid": 179561378184333,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"callFunction": "Audio_Play_Sound",
+							"sid": 697080388472768,
+							"parameters": [
+								"\"Security_Suffering2\"",
+								"0",
+								"\"Security_Suffering2\""
+							]
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_All",
+							"sid": 449217448888560,
+							"parameters": {
+								"animation": "\"Knees\"",
+								"from": "beginning"
+							}
 						}
 					],
 					"sid": 809750121652152
@@ -1494,9 +1558,9 @@
 				{
 					"id": "set-animation",
 					"objectClass": "security",
-					"sid": 350759387191215,
+					"sid": 632170729439775,
 					"parameters": {
-						"animation": "\"security_dead_molotok\"",
+						"animation": "\"Ground\"",
 						"from": "beginning"
 					}
 				},
@@ -1548,9 +1612,9 @@
 				{
 					"id": "is-animation-playing",
 					"objectClass": "security",
-					"sid": 439562460447177,
+					"sid": 735095027110141,
 					"parameters": {
-						"animation": "\"security_dead_molotok\""
+						"animation": "\"Ground\""
 					}
 				},
 				{
