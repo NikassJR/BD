@@ -438,12 +438,14 @@
 								{
 									"id": "on-start-of-layout",
 									"objectClass": "System",
-									"sid": 663872040110957
+									"sid": 663872040110957,
+									"disabled": true
 								},
 								{
 									"id": "on-loader-layout-complete",
 									"objectClass": "System",
-									"sid": 797687197403626
+									"sid": 797687197403626,
+									"disabled": true
 								}
 							],
 							"actions": [
@@ -22667,9 +22669,9 @@
 														{
 															"id": "wait",
 															"objectClass": "System",
-															"sid": 220490196253696,
+															"sid": 300974964728410,
 															"parameters": {
-																"seconds": "0.4",
+																"seconds": "0.2",
 																"use-timescale": true
 															}
 														},
@@ -23217,11 +23219,6 @@
 													"parameters": {
 														"frame-number": "2"
 													}
-												},
-												{
-													"id": "stop-animation",
-													"objectClass": "Player_All",
-													"sid": 533054260391746
 												}
 											],
 											"sid": 742805674041382
@@ -25177,39 +25174,6 @@
 														}
 													],
 													"sid": 686898925296487
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "Enemy_Mili",
-															"sid": 763353501431353,
-															"parameters": {
-																"instance-variable": "Death"
-															}
-														},
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 877426281563089
-														},
-														{
-															"id": "for-each",
-															"objectClass": "System",
-															"sid": 210368460145413,
-															"parameters": {
-																"object": "Enemy_Mili"
-															}
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "Destroy_DialogeEnemy",
-															"sid": 293770761932559
-														}
-													],
-													"sid": 609935118129348
 												}
 											]
 										},
@@ -37325,10 +37289,10 @@
 														{
 															"id": "compare-animation-frame",
 															"objectClass": "Player_All",
-															"sid": 601860282696750,
+															"sid": 137801413900867,
 															"parameters": {
 																"comparison": 5,
-																"number": "4"
+																"number": "1"
 															}
 														},
 														{
