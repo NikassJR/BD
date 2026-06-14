@@ -3189,28 +3189,38 @@
 						{
 							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 135711952094836,
+							"sid": 309580475031198,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked",
 								"object-clicked": "Flag"
 							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 459353918547961,
+							"parameters": {
+								"variable": "Language",
+								"comparison": 3,
+								"value": "7"
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
+							"id": "add-to-eventvar",
 							"objectClass": "System",
-							"sid": 229685601255839,
+							"sid": 232289636179262,
 							"parameters": {
 								"variable": "Language",
-								"value": "Language=0?1:0"
+								"value": "1"
 							}
 						},
 						{
 							"id": "set-item",
 							"objectClass": "Game_Save",
-							"sid": 419589328050961,
+							"sid": 903518314667739,
 							"parameters": {
 								"key": "\"Language\"",
 								"value": "Language"
@@ -3219,17 +3229,199 @@
 						{
 							"id": "set-animation-frame",
 							"objectClass": "Flag",
-							"sid": 243382910803118,
+							"sid": 591051805834602,
 							"parameters": {
 								"frame-number": "Language"
 							}
 						},
 						{
 							"callFunction": "Text",
-							"sid": 806740897618242
+							"sid": 856454050632894
 						}
 					],
-					"sid": 512263312729993
+					"sid": 531629169247482
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 880700324734261,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-y"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 170534624559111,
+							"parameters": {
+								"variable": "Language",
+								"comparison": 3,
+								"value": "7"
+							}
+						},
+						{
+							"id": "has-gamepads",
+							"objectClass": "Gamepad",
+							"sid": 186200286767780
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 943643983099211,
+							"parameters": {
+								"variable": "Language",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Game_Save",
+							"sid": 360329799532620,
+							"parameters": {
+								"key": "\"Language\"",
+								"value": "Language"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Flag",
+							"sid": 305737165223183,
+							"parameters": {
+								"frame-number": "Language"
+							}
+						},
+						{
+							"callFunction": "Text",
+							"sid": 675285264125293
+						}
+					],
+					"sid": 849186929217696
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 691193224387950,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Flag"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 793302241511772,
+							"parameters": {
+								"variable": "Language",
+								"comparison": 4,
+								"value": "7"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 128320452250501,
+							"parameters": {
+								"variable": "Language",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Game_Save",
+							"sid": 701978162686819,
+							"parameters": {
+								"key": "\"Language\"",
+								"value": "Language"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Flag",
+							"sid": 357104541240196,
+							"parameters": {
+								"frame-number": "Language"
+							}
+						},
+						{
+							"callFunction": "Text",
+							"sid": 602646110583667
+						}
+					],
+					"sid": 173071035152159
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 520498602117556,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-y"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 595058425388395,
+							"parameters": {
+								"variable": "Language",
+								"comparison": 4,
+								"value": "7"
+							}
+						},
+						{
+							"id": "has-gamepads",
+							"objectClass": "Gamepad",
+							"sid": 293785106196072
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 682864104251444,
+							"parameters": {
+								"variable": "Language",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-item",
+							"objectClass": "Game_Save",
+							"sid": 975628830622461,
+							"parameters": {
+								"key": "\"Language\"",
+								"value": "Language"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Flag",
+							"sid": 272988498810741,
+							"parameters": {
+								"frame-number": "Language"
+							}
+						},
+						{
+							"callFunction": "Text",
+							"sid": 635243814316103
+						}
+					],
+					"sid": 865674217399403
 				},
 				{
 					"eventType": "comment",

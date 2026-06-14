@@ -1956,16 +1956,26 @@
 					"parameters": {
 						"layer": "\"HUD\""
 					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 215737948471071,
+					"parameters": {
+						"variable": "Language",
+						"comparison": 3,
+						"value": "7"
+					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-eventvar-value",
+					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 225420306061666,
+					"sid": 578487398028935,
 					"parameters": {
 						"variable": "Language",
-						"value": "Language=0?1:0"
+						"value": "1"
 					}
 				},
 				{
@@ -2021,6 +2031,16 @@
 					}
 				},
 				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 516195743794645,
+					"parameters": {
+						"variable": "Language",
+						"comparison": 3,
+						"value": "7"
+					}
+				},
+				{
 					"id": "has-gamepads",
 					"objectClass": "Gamepad",
 					"sid": 397606911628538
@@ -2028,12 +2048,12 @@
 			],
 			"actions": [
 				{
-					"id": "set-eventvar-value",
+					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 434193866163725,
+					"sid": 241159060616506,
 					"parameters": {
 						"variable": "Language",
-						"value": "Language=0?1:0"
+						"value": "1"
 					}
 				},
 				{
@@ -2059,6 +2079,248 @@
 				}
 			],
 			"sid": 774425424440481
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 681250635538441,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Flag"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 926616953309713,
+					"parameters": {
+						"layer": "\"HUD\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 436495614801235,
+					"parameters": {
+						"variable": "Language",
+						"comparison": 4,
+						"value": "7"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 656076493781324,
+					"parameters": {
+						"variable": "Language",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "Game_Save",
+					"sid": 830753547522274,
+					"parameters": {
+						"key": "\"Language\"",
+						"value": "Language"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Flag",
+					"sid": 853970623940575,
+					"parameters": {
+						"frame-number": "Language"
+					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 787500426118928
+				}
+			],
+			"sid": 199139774386923
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 600405522090720,
+					"parameters": {
+						"gamepad": "0",
+						"button": "button-y"
+					}
+				},
+				{
+					"id": "layer-is-visible",
+					"objectClass": "System",
+					"sid": 844687688668491,
+					"parameters": {
+						"layer": "\"HUD\""
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 225249905778707,
+					"parameters": {
+						"variable": "Pause"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 906175228122078,
+					"parameters": {
+						"variable": "Language",
+						"comparison": 4,
+						"value": "7"
+					}
+				},
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 534024121374943
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 203097317352425,
+					"parameters": {
+						"variable": "Language",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-item",
+					"objectClass": "Game_Save",
+					"sid": 548556044436486,
+					"parameters": {
+						"key": "\"Language\"",
+						"value": "Language"
+					}
+				},
+				{
+					"id": "set-animation-frame",
+					"objectClass": "Flag",
+					"sid": 135620152001410,
+					"parameters": {
+						"frame-number": "Language"
+					}
+				},
+				{
+					"callFunction": "Text",
+					"sid": 275769471163379
+				}
+			],
+			"sid": 627499531889963
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 786795977423805,
+					"parameters": {
+						"variable": "Language",
+						"comparison": 4,
+						"value": "0"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 564518275417683,
+					"parameters": {
+						"variable": "Language",
+						"comparison": 1,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-font-face",
+					"objectClass": "Text_Menu",
+					"sid": 885664640017575,
+					"parameters": {
+						"font-face": "\"ofont.ru_Downcome\"",
+						"style": "normal"
+					}
+				},
+				{
+					"id": "set-font-face",
+					"objectClass": "Text_Tutorial",
+					"sid": 524192489197844,
+					"parameters": {
+						"font-face": "\"ofont.ru_Downcome\"",
+						"style": "normal"
+					}
+				}
+			],
+			"sid": 625333686566492
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 841085030379969,
+					"parameters": {
+						"variable": "Language",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-font-face",
+					"objectClass": "Text_Menu",
+					"sid": 830279902376762,
+					"parameters": {
+						"font-face": "\"bronn-rust-fill-g\"",
+						"style": "normal"
+					}
+				},
+				{
+					"id": "set-font-face",
+					"objectClass": "Text_Tutorial",
+					"sid": 416368988429867,
+					"parameters": {
+						"font-face": "\"bronn-rust-fill-g\"",
+						"style": "normal"
+					}
+				},
+				{
+					"id": "set-font-size",
+					"objectClass": "Text_Menu",
+					"sid": 387440192877606,
+					"parameters": {
+						"size-pt": "16"
+					}
+				},
+				{
+					"id": "set-font-size",
+					"objectClass": "Text_Tutorial",
+					"sid": 575485406554853,
+					"parameters": {
+						"size-pt": "16"
+					}
+				}
+			],
+			"sid": 954053424798759
 		},
 		{
 			"eventType": "group",
