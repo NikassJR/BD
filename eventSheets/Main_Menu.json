@@ -206,6 +206,15 @@
 					}
 				},
 				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 144023049463516,
+					"parameters": {
+						"variable": "Safe_Zone",
+						"value": "false"
+					}
+				},
+				{
 					"id": "wait-for-previous-actions",
 					"objectClass": "System",
 					"sid": 240686711649836
@@ -1179,6 +1188,15 @@
 													"parameters": {
 														"layer": "\"Start_Menu\""
 													}
+												},
+												{
+													"id": "layer-is-visible",
+													"objectClass": "System",
+													"sid": 396003557651988,
+													"parameters": {
+														"layer": "\"Warning\""
+													},
+													"isInverted": true
 												}
 											],
 											"actions": [],
@@ -1232,6 +1250,70 @@
 														}
 													],
 													"sid": 549404845725456,
+													"isOrBlock": true
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-visible",
+													"objectClass": "Text_Menu",
+													"sid": 364714532275025
+												},
+												{
+													"id": "layer-is-visible",
+													"objectClass": "System",
+													"sid": 475991032754110,
+													"parameters": {
+														"layer": "\"Warning\""
+													}
+												}
+											],
+											"actions": [],
+											"sid": 267786561135018,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "has-tags",
+															"objectClass": "Text_Menu",
+															"sid": 404417231778017,
+															"parameters": {
+																"tags": "\"Yes\""
+															}
+														},
+														{
+															"id": "has-tags",
+															"objectClass": "Text_Menu",
+															"sid": 839408236290700,
+															"parameters": {
+																"tags": "\"No\""
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Text_Menu",
+															"sid": 923941770178450,
+															"parameters": {
+																"instance-variable": "IsSelected",
+																"value": "true"
+															}
+														},
+														{
+															"id": "set-font-color",
+															"objectClass": "Text_Menu",
+															"sid": 555627749845959,
+															"parameters": {
+																"color": "rgbEx(50, 0, 0)"
+															}
+														}
+													],
+													"sid": 550744291672911,
 													"isOrBlock": true
 												}
 											]
@@ -1952,6 +2034,23 @@
 										"layer": "\"Start_Menu\"",
 										"visibility": "visible"
 									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 328487776549975,
+									"parameters": {
+										"layer": "\"Warning\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "check-item-exists",
+									"objectClass": "Game_Save",
+									"sid": 111979286357307,
+									"parameters": {
+										"key": "\"Level\""
+									}
 								}
 							],
 							"sid": 739543233194374
@@ -2013,6 +2112,15 @@
 									}
 								},
 								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 707809572150757,
+									"parameters": {
+										"layer": "\"Warning\""
+									},
+									"isInverted": true
+								},
+								{
 									"id": "compare-opacity",
 									"objectClass": "Menu",
 									"sid": 827944067606244,
@@ -2020,13 +2128,22 @@
 										"comparison": 5,
 										"opacity": "90"
 									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Game_Save",
+									"sid": 944848931375562,
+									"parameters": {
+										"comparison": 2,
+										"value": "1"
+									}
 								}
 							],
 							"actions": [
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 852890852612091,
+									"sid": 586073183390622,
 									"parameters": {
 										"seconds": "0.1",
 										"use-timescale": true
@@ -2034,7 +2151,7 @@
 								},
 								{
 									"callFunction": "End_Scene2",
-									"sid": 555872910498453,
+									"sid": 767826304276999,
 									"parameters": [
 										"100",
 										"1",
@@ -2047,7 +2164,7 @@
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 539515703394515,
+									"sid": 805516601782522,
 									"parameters": {
 										"variable": "Hardcore",
 										"value": "false"
@@ -2056,7 +2173,7 @@
 								{
 									"id": "set-item",
 									"objectClass": "Game_Save",
-									"sid": 375815698103178,
+									"sid": 998045601016908,
 									"parameters": {
 										"key": "\"Hardcore\"",
 										"value": "Hardcore"
@@ -2065,7 +2182,7 @@
 								{
 									"id": "set-item",
 									"objectClass": "Game_Save",
-									"sid": 215406946303985,
+									"sid": 511401354849849,
 									"parameters": {
 										"key": "\"TimerMin\"",
 										"value": "0"
@@ -2074,7 +2191,7 @@
 								{
 									"id": "set-item",
 									"objectClass": "Game_Save",
-									"sid": 240093803907667,
+									"sid": 864068308068692,
 									"parameters": {
 										"key": "\"TimerSec\"",
 										"value": "0"
@@ -2083,7 +2200,7 @@
 								{
 									"id": "set-item",
 									"objectClass": "Game_Save",
-									"sid": 593482168593476,
+									"sid": 588523506755692,
 									"parameters": {
 										"key": "\"TimerHour\"",
 										"value": "0"
@@ -2092,7 +2209,7 @@
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 828268765143543,
+									"sid": 295107693122148,
 									"parameters": {
 										"variable": "Start_Game",
 										"value": "true"
@@ -2100,6 +2217,438 @@
 								}
 							],
 							"sid": 744976302287687
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Menu",
+									"sid": 282187050534322,
+									"parameters": {
+										"tags": "\"New_Game\""
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Text_Menu",
+									"sid": 131554476883708,
+									"parameters": {
+										"instance-variable": "IsSelected"
+									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 896356976832495,
+									"parameters": {
+										"layer": "\"Warning\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 103851098147776,
+									"parameters": {
+										"layer": "\"Start_Menu\""
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "Menu",
+									"sid": 248809185513703,
+									"parameters": {
+										"comparison": 5,
+										"opacity": "90"
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Game_Save",
+									"sid": 599086922738020,
+									"parameters": {
+										"comparison": 4,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 475745957213717,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 625697586068192,
+									"parameters": {
+										"layer": "\"Warning\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 755704576421127,
+									"parameters": {
+										"variable": "Hardcore",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 960664812403561
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 837312545083906,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Text_Menu"
+							}
+						},
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 956151412582443,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 575451063827574,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 427863951363028,
+									"parameters": {
+										"layer": "\"Warning\""
+									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Menu",
+									"sid": 278864812814495,
+									"parameters": {
+										"tags": "\"Yes\""
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Text_Menu",
+									"sid": 178412768275620,
+									"parameters": {
+										"instance-variable": "IsSelected"
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "Menu",
+									"sid": 855057822228156,
+									"parameters": {
+										"comparison": 5,
+										"opacity": "90"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 462696964041593,
+									"parameters": {
+										"variable": "Hardcore"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 391232070260587,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 186251101955814,
+									"parameters": {
+										"layer": "\"Warning\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"callFunction": "End_Scene2",
+									"sid": 720492787769097,
+									"parameters": [
+										"100",
+										"1",
+										"0",
+										false,
+										false,
+										false
+									]
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 340754174044966,
+									"parameters": {
+										"key": "\"Hardcore\"",
+										"value": "Hardcore"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 932079983555969,
+									"parameters": {
+										"key": "\"TimerMin\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 892084095230822,
+									"parameters": {
+										"key": "\"TimerSec\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 775274944055452,
+									"parameters": {
+										"key": "\"TimerHour\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 474677182898307,
+									"parameters": {
+										"key": "\"Level\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 155509343517787,
+									"parameters": {
+										"variable": "Start_Game",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 116813372437205
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 455445474046984,
+									"parameters": {
+										"layer": "\"Warning\""
+									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Menu",
+									"sid": 970872463607040,
+									"parameters": {
+										"tags": "\"Yes\""
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Text_Menu",
+									"sid": 196619484612173,
+									"parameters": {
+										"instance-variable": "IsSelected"
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "Menu",
+									"sid": 258175077585838,
+									"parameters": {
+										"comparison": 5,
+										"opacity": "90"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 884038762730977,
+									"parameters": {
+										"variable": "Hardcore"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 696622673233116,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 304877649688820,
+									"parameters": {
+										"layer": "\"Warning\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"callFunction": "End_Scene2",
+									"sid": 258922583759213,
+									"parameters": [
+										"100",
+										"1",
+										"0",
+										false,
+										false,
+										false
+									]
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 854838796566921,
+									"parameters": {
+										"key": "\"Hardcore\"",
+										"value": "Hardcore"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 765240439082962,
+									"parameters": {
+										"key": "\"TimerMin\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 662619435007130,
+									"parameters": {
+										"key": "\"TimerSec\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 326742687440855,
+									"parameters": {
+										"key": "\"TimerHour\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 588834580355981,
+									"parameters": {
+										"key": "\"HardcoreLevel\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 595044926201068,
+									"parameters": {
+										"variable": "Start_Game",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 242041704588909
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 984946219787348,
+									"parameters": {
+										"layer": "\"Warning\""
+									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Menu",
+									"sid": 661631914491845,
+									"parameters": {
+										"tags": "\"No\""
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Text_Menu",
+									"sid": 320014220928948,
+									"parameters": {
+										"instance-variable": "IsSelected"
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "Menu",
+									"sid": 130644187086208,
+									"parameters": {
+										"comparison": 5,
+										"opacity": "90"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 622460762776325,
+									"parameters": {
+										"layer": "\"Warning\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 567588693953384
 						}
 					],
 					"isOrBlock": true
@@ -2147,6 +2696,24 @@
 									"sid": 891170482539583,
 									"parameters": {
 										"instance-variable": "IsSelected"
+									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 683646360120580,
+									"parameters": {
+										"layer": "\"Warning\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Game_Save",
+									"sid": 594457279185952,
+									"parameters": {
+										"comparison": 2,
+										"value": "1"
 									}
 								},
 								{
@@ -2245,6 +2812,92 @@
 								}
 							],
 							"sid": 510081683043486
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Menu",
+									"sid": 206126148992182,
+									"parameters": {
+										"tags": "\"Hardcore\""
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Text_Menu",
+									"sid": 403634574279230,
+									"parameters": {
+										"instance-variable": "IsSelected"
+									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 130195795918112,
+									"parameters": {
+										"layer": "\"Warning\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 159312648125008,
+									"parameters": {
+										"layer": "\"Start_Menu\""
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "Menu",
+									"sid": 504848570975327,
+									"parameters": {
+										"comparison": 5,
+										"opacity": "90"
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Game_Save",
+									"sid": 757803364728567,
+									"parameters": {
+										"comparison": 4,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 108623963814459,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 563741276179592,
+									"parameters": {
+										"layer": "\"Warning\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 191176656298129,
+									"parameters": {
+										"variable": "Hardcore",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 896594717988856
 						}
 					],
 					"isOrBlock": true
@@ -2321,6 +2974,15 @@
 							"parameters": {
 								"layer": "\"Start_Menu\""
 							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 389390358662801,
+							"parameters": {
+								"layer": "\"Warning\""
+							},
+							"isInverted": true
 						},
 						{
 							"id": "compare-opacity",
@@ -13736,6 +14398,169 @@
 								}
 							],
 							"sid": 945885829172817
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 156825862106877,
+							"parameters": {
+								"layer": "\"Warning\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 198036107038299,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 162835807928938,
+									"parameters": {
+										"variable": "SelectedX",
+										"comparison": 2,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 183237448089344,
+									"parameters": {
+										"variable": "SelectedX",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 803686899411752
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 227600894755143,
+									"parameters": {
+										"variable": "SelectedX",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 782613367659918,
+									"parameters": {
+										"variable": "SelectedX",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 822210963428463
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 196901384091652,
+									"parameters": {
+										"variable": "SelectedY",
+										"comparison": 2,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 617900319550070,
+									"parameters": {
+										"variable": "SelectedY",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 556247045992675
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 313950944871206,
+									"parameters": {
+										"variable": "SelectedY",
+										"comparison": 4,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 167449753987465,
+									"parameters": {
+										"variable": "SelectedY",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 335392397310449
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 900311169723476,
+									"parameters": {
+										"variable": "SelectedX",
+										"comparison": 4,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 757410958572446,
+									"parameters": {
+										"variable": "SelectedY",
+										"comparison": 4,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 886527150201553,
+									"parameters": {
+										"variable": "SelectedY",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 344005084373743,
+							"disabled": true
 						}
 					]
 				},

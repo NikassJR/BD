@@ -995,6 +995,15 @@
 									}
 								},
 								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 810015538317739,
+									"parameters": {
+										"key": "\"Number_Deaths\"",
+										"value": "Player_All.Number_Deaths"
+									}
+								},
+								{
 									"id": "spawn-another-object",
 									"objectClass": "Player_All",
 									"sid": 764709967757571,
@@ -5964,6 +5973,14 @@
 									}
 								},
 								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 789622728104826,
+									"parameters": {
+										"object": "EnemyBaseball"
+									}
+								},
+								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
 									"sid": 763553048402784
@@ -6035,6 +6052,14 @@
 										"instance-variable": "Drop",
 										"comparison": 0,
 										"value": "1"
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 682870165585208,
+									"parameters": {
+										"object": "EnemyPchel"
 									}
 								},
 								{
@@ -6112,6 +6137,14 @@
 									}
 								},
 								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 858780960075736,
+									"parameters": {
+										"object": "EnemyKnife"
+									}
+								},
+								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
 									"sid": 983543386456269
@@ -6183,6 +6216,14 @@
 										"instance-variable": "Drop",
 										"comparison": 0,
 										"value": "1"
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 841211126001366,
+									"parameters": {
+										"object": "EnemyJunkieKnife"
 									}
 								},
 								{
@@ -6260,6 +6301,14 @@
 									}
 								},
 								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 869516304208633,
+									"parameters": {
+										"object": "EnemyFurious"
+									}
+								},
+								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
 									"sid": 273771429724670
@@ -6319,6 +6368,14 @@
 										"instance-variable": "Drop",
 										"comparison": 0,
 										"value": "1"
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 415145819929112,
+									"parameters": {
+										"object": "EnemySecurity"
 									}
 								},
 								{
@@ -6402,6 +6459,14 @@
 										"instance-variable": "Drop",
 										"comparison": 0,
 										"value": "1"
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 999186032857516,
+									"parameters": {
+										"object": "EnemyJunkie"
 									}
 								},
 								{
@@ -20021,6 +20086,15 @@
 											"sid": 936296686080416
 										},
 										{
+											"id": "add-to-instvar",
+											"objectClass": "Player_All",
+											"sid": 977461536325752,
+											"parameters": {
+												"instance-variable": "Number_Deaths",
+												"value": "1"
+											}
+										},
+										{
 											"id": "spawn-another-object",
 											"objectClass": "Player_All",
 											"sid": 768537627747721,
@@ -20065,15 +20139,6 @@
 											"parameters": {
 												"frame-number": "2"
 											}
-										},
-										{
-											"id": "add-to-instvar",
-											"objectClass": "Player_All",
-											"sid": 103051467888751,
-											"parameters": {
-												"instance-variable": "Number_Deaths",
-												"value": "1"
-											}
 										}
 									],
 									"sid": 814749193913476,
@@ -20098,85 +20163,6 @@
 												}
 											],
 											"sid": 577274007598262
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "has-key",
-													"objectClass": "Enemys_Number",
-													"sid": 998197671750684,
-													"parameters": {
-														"key": "\"Number_Deaths\""
-													}
-												},
-												{
-													"id": "trigger-once-while-true",
-													"objectClass": "System",
-													"sid": 794960360027426
-												}
-											],
-											"actions": [
-												{
-													"id": "set-key",
-													"objectClass": "Enemys_Number",
-													"sid": 986895785371266,
-													"parameters": {
-														"key": "\"Number_Deaths\"",
-														"value": "Game_Save.ItemValue+Player_All.Number_Deaths"
-													}
-												},
-												{
-													"id": "set-item",
-													"objectClass": "Game_Save",
-													"sid": 985231650626782,
-													"parameters": {
-														"key": "\"Number_Deaths\"",
-														"value": "Enemys_Number.Get(\"Number_Deaths\")"
-													}
-												}
-											],
-											"sid": 297219770794637
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "has-key",
-													"objectClass": "Enemys_Number",
-													"sid": 168692564145240,
-													"parameters": {
-														"key": "\"Number_Deaths\""
-													},
-													"isInverted": true
-												},
-												{
-													"id": "trigger-once-while-true",
-													"objectClass": "System",
-													"sid": 494944745697305
-												}
-											],
-											"actions": [
-												{
-													"id": "add-key",
-													"objectClass": "Enemys_Number",
-													"sid": 259540762539578,
-													"parameters": {
-														"key": "\"Number_Deaths\"",
-														"value": "Player_All.Number_Deaths"
-													}
-												},
-												{
-													"id": "set-item",
-													"objectClass": "Game_Save",
-													"sid": 938614717787461,
-													"parameters": {
-														"key": "\"Number_Deaths\"",
-														"value": "Enemys_Number.Get(\"Number_Deaths\")"
-													}
-												}
-											],
-											"sid": 226001997492476
 										},
 										{
 											"eventType": "block",

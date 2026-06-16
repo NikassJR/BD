@@ -4317,22 +4317,6 @@
 						"variable": "HPplayer",
 						"value": "15"
 					}
-				},
-				{
-					"id": "get-item",
-					"objectClass": "Game_Save",
-					"sid": 221058694759386,
-					"parameters": {
-						"key": "\"Number_Deaths\""
-					}
-				},
-				{
-					"id": "check-item-exists",
-					"objectClass": "Game_Save",
-					"sid": 211006942635695,
-					"parameters": {
-						"key": "\"Number_Deaths\""
-					}
 				}
 			],
 			"sid": 508431232946632
@@ -4363,22 +4347,6 @@
 						"variable": "HPplayer",
 						"value": "10"
 					}
-				},
-				{
-					"id": "get-item",
-					"objectClass": "Game_Save",
-					"sid": 417366511695598,
-					"parameters": {
-						"key": "\"Number_Deaths\""
-					}
-				},
-				{
-					"id": "check-item-exists",
-					"objectClass": "Game_Save",
-					"sid": 887917772133942,
-					"parameters": {
-						"key": "\"Number_Deaths\""
-					}
 				}
 			],
 			"sid": 700004796887474
@@ -4387,32 +4355,66 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "compare-key",
-					"objectClass": "Game_Save",
-					"sid": 391060083312114,
-					"parameters": {
-						"comparison": 0,
-						"string": "\"Number_Deaths\""
-					}
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 994179593297719
 				},
 				{
-					"id": "trigger-once-while-true",
+					"id": "on-load-complete",
 					"objectClass": "System",
-					"sid": 169866583923088
+					"sid": 846848839224852
+				},
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 319994476444720
 				}
 			],
 			"actions": [
 				{
-					"id": "set-key",
-					"objectClass": "Enemys_Number",
-					"sid": 758785662614964,
+					"id": "get-item",
+					"objectClass": "Game_Save",
+					"sid": 251537666001972,
 					"parameters": {
-						"key": "\"Number_Deaths\"",
+						"key": "\"Number_Deaths\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 925816364876054,
+					"parameters": {
+						"key": "\"Number_Deaths\""
+					}
+				}
+			],
+			"sid": 136761419384515,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 354452262206393,
+					"parameters": {
+						"key": "\"Number_Deaths\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player_All",
+					"sid": 925605725236551,
+					"parameters": {
+						"instance-variable": "Number_Deaths",
 						"value": "Game_Save.ItemValue"
 					}
 				}
 			],
-			"sid": 509719194941927
+			"sid": 189833373286578
 		},
 		{
 			"eventType": "comment",
