@@ -738,6 +738,109 @@
 								}
 							],
 							"sid": 626559535409428
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-visible",
+									"objectClass": "Press_Mouse2",
+									"sid": 249470912451049
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Player_All",
+									"sid": 883921979653580,
+									"parameters": {
+										"instance-variable": "textframe",
+										"comparison": 0,
+										"value": "5"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 403787611543220,
+									"parameters": {
+										"variable": "Wolf"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 176387435724997,
+									"parameters": {
+										"audio-file": {
+											"path": "Music/Apartament"
+										},
+										"loop": "looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"music\""
+									}
+								},
+								{
+									"callFunction": "Destroy_Dialoge",
+									"sid": 581821123327105
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Player_All",
+									"sid": 415002242171606,
+									"parameters": {
+										"animation": "\"MountingAttack2\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "move-forward",
+									"objectClass": "Player_All",
+									"sid": 471041248409164,
+									"parameters": {
+										"distance": "7"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Press_Mouse2",
+									"sid": 622996158448956
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 379333200403338
+								},
+								{
+									"callFunction": "Audio_Play_Sound",
+									"sid": 722511800848021,
+									"parameters": [
+										"\"KickBaseball\"",
+										"0",
+										"\"KickBaseball\""
+									]
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Player_All",
+									"sid": 589331901372368,
+									"parameters": {
+										"instance-variable": "textframe",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 417513090009651,
+									"parameters": {
+										"variable": "onDial",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 864643208490904
 						}
 					],
 					"isOrBlock": true
@@ -1800,6 +1903,44 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
+							"sid": 931143030304911,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "15"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 253704790147522,
+							"parameters": {
+								"variable": "WolfMode"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_Dealogue",
+							"sid": 485410299710482,
+							"parameters": [
+								"Player_All.X",
+								"Player_All.Y -50",
+								"812",
+								"2",
+								false,
+								false
+							]
+						}
+					],
+					"sid": 922032383989859
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
 							"sid": 847574993623492,
 							"parameters": {
 								"instance-variable": "textframe",
@@ -1861,6 +2002,44 @@
 						}
 					],
 					"sid": 319662801354769
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 479625660289600,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "17"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 707016513536975,
+							"parameters": {
+								"variable": "WolfMode"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Create_Dealogue",
+							"sid": 502074010294050,
+							"parameters": [
+								"Player_All.X",
+								"Player_All.Y -50",
+								"812",
+								"2",
+								false,
+								false
+							]
+						}
+					],
+					"sid": 312266351599174
 				}
 			]
 		},
@@ -2131,6 +2310,15 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 145094398382989,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -2141,15 +2329,6 @@
 					"parameters": {
 						"seconds": "5",
 						"use-timescale": true
-					}
-				},
-				{
-					"id": "set-item",
-					"objectClass": "Game_Save",
-					"sid": 286717134663088,
-					"parameters": {
-						"key": "\"Apartament\"",
-						"value": "Audio.PlaybackTime(\"Quiet\")"
 					}
 				},
 				{
@@ -2167,6 +2346,70 @@
 				}
 			],
 			"sid": 963082055231010
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 629065774142478,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 788569023935237,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 653321096280562,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 862828577333754
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 515389725411803,
+					"parameters": {
+						"variable": "Wolf",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 547458379955845,
+					"parameters": {
+						"variable": "WolfMode",
+						"value": "true"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 878137638525578,
+					"parameters": {
+						"layout": "Abandonment_lvl2"
+					}
+				}
+			],
+			"sid": 384490631677701
 		},
 		{
 			"eventType": "block",
@@ -2336,6 +2579,92 @@
 								}
 							],
 							"sid": 676909147072085
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 673135590379200,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 930242205961898,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 904580896151677,
+					"parameters": {
+						"key": "\"WolfLevel\""
+					}
+				}
+			],
+			"sid": 416081151209032,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 796756076450305,
+							"parameters": {
+								"key": "\"WolfLevel\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 697952718062307,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-key",
+									"objectClass": "Game_Save",
+									"sid": 813157388084508,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"WolfLevel\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Game_Save",
+									"sid": 469058311561372,
+									"parameters": {
+										"comparison": 2,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 941210380522753,
+									"parameters": {
+										"key": "\"WolfLevel\"",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 305508206550675
 						}
 					]
 				}

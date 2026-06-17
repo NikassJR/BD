@@ -62,6 +62,16 @@
 			"sid": 261078943644951
 		},
 		{
+			"eventType": "variable",
+			"name": "WolfMode",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 165894299080010
+		},
+		{
 			"eventType": "comment",
 			"text": "Gamepad"
 		},
@@ -1224,6 +1234,14 @@
 														{
 															"id": "has-tags",
 															"objectClass": "Text_Menu",
+															"sid": 454527097257107,
+															"parameters": {
+																"tags": "\"Wolf\""
+															}
+														},
+														{
+															"id": "has-tags",
+															"objectClass": "Text_Menu",
 															"sid": 212743789991167,
 															"parameters": {
 																"tags": "\"StartBack\""
@@ -2045,15 +2063,334 @@
 									}
 								},
 								{
+									"id": "get-item",
+									"objectClass": "Game_Save",
+									"sid": 498084917773618,
+									"parameters": {
+										"key": "\"HardcoreLevel\""
+									}
+								},
+								{
 									"id": "check-item-exists",
 									"objectClass": "Game_Save",
-									"sid": 111979286357307,
+									"sid": 805502056043762,
 									"parameters": {
-										"key": "\"Level\""
+										"key": "\"HardcoreLevel\""
 									}
 								}
 							],
 							"sid": 739543233194374
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 582564837701223,
+							"parameters": {
+								"key": "\"HardcoreLevel\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 845300213562826,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Menu",
+									"sid": 779230634446204,
+									"parameters": {
+										"tags": "\"Wolf\""
+									}
+								},
+								{
+									"id": "compare-key",
+									"objectClass": "Game_Save",
+									"sid": 298305157983284,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"HardcoreLevel\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Game_Save",
+									"sid": 506702589150061,
+									"parameters": {
+										"comparison": 2,
+										"value": "14"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Menu",
+									"sid": 257839071355415,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "811"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "Text_Menu",
+									"sid": 938782841257548,
+									"parameters": {
+										"opacity": "0"
+									}
+								}
+							],
+							"sid": 991523908536077
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Menu",
+									"sid": 888725466323620,
+									"parameters": {
+										"tags": "\"Wolf\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Menu",
+									"sid": 559160813562796,
+									"parameters": {
+										"instance-variable": "Lang",
+										"comparison": 0,
+										"value": "811"
+									}
+								},
+								{
+									"id": "compare-key",
+									"objectClass": "Game_Save",
+									"sid": 243830634085023,
+									"parameters": {
+										"comparison": 0,
+										"string": "\"HardcoreLevel\""
+									}
+								},
+								{
+									"id": "compare-value",
+									"objectClass": "Game_Save",
+									"sid": 915707902521383,
+									"parameters": {
+										"comparison": 5,
+										"value": "14"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "Text_Menu",
+									"sid": 481472039045717,
+									"parameters": {
+										"opacity": "100"
+									}
+								}
+							],
+							"sid": 445350360880147
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 487616496858396,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "Text_Menu"
+							}
+						},
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 177462862904533,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-a"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 596456284630905,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Menu",
+									"sid": 825003258990001,
+									"parameters": {
+										"tags": "\"Wolf\""
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "Text_Menu",
+									"sid": 718020031034993,
+									"parameters": {
+										"comparison": 4,
+										"opacity": "90"
+									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 753605550757493,
+									"parameters": {
+										"layer": "\"Start_Menu\""
+									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 629648753459751,
+									"parameters": {
+										"layer": "\"Level\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Text_Menu",
+									"sid": 932230999131894,
+									"parameters": {
+										"instance-variable": "IsSelected"
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "Menu",
+									"sid": 805076055553313,
+									"parameters": {
+										"comparison": 5,
+										"opacity": "90"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 954174184672314,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 400791647286311,
+									"parameters": {
+										"variable": "Hardcore",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 262042327947598,
+									"parameters": {
+										"variable": "WolfMode",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 651588026219488,
+									"parameters": {
+										"variable": "Wolf",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 672394285570355,
+									"parameters": {
+										"key": "\"WolfMode\"",
+										"value": "WolfMode"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 939116788773758,
+									"parameters": {
+										"key": "\"Hardcore\"",
+										"value": "Hardcore"
+									}
+								},
+								{
+									"callFunction": "End_Scene2",
+									"sid": 848856875356283,
+									"parameters": [
+										"100",
+										"1",
+										"0",
+										false,
+										false,
+										false
+									]
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 481443838636024,
+									"parameters": {
+										"key": "\"TimerMin\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 553746026629142,
+									"parameters": {
+										"key": "\"TimerSec\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 733782354228651,
+									"parameters": {
+										"key": "\"TimerHour\"",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 138702644399978,
+									"parameters": {
+										"variable": "Start_Game",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 990111937641780
 						}
 					],
 					"isOrBlock": true
@@ -2081,7 +2418,16 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "check-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 658069597888628,
+							"parameters": {
+								"key": "\"Level\""
+							}
+						}
+					],
 					"sid": 281470746798940,
 					"children": [
 						{
@@ -2164,6 +2510,24 @@
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
+									"sid": 660105577328105,
+									"parameters": {
+										"variable": "Wolf",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 698294104404812,
+									"parameters": {
+										"variable": "WolfMode",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
 									"sid": 805516601782522,
 									"parameters": {
 										"variable": "Hardcore",
@@ -2177,6 +2541,15 @@
 									"parameters": {
 										"key": "\"Hardcore\"",
 										"value": "Hardcore"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 808908583816578,
+									"parameters": {
+										"key": "\"WolfMode\"",
+										"value": "WolfMode"
 									}
 								},
 								{
@@ -2676,7 +3049,16 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "check-item-exists",
+							"objectClass": "Game_Save",
+							"sid": 582618896450338,
+							"parameters": {
+								"key": "\"HardcoreLevel\""
+							}
+						}
+					],
 					"sid": 955370638804107,
 					"children": [
 						{
@@ -2759,10 +3141,37 @@
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
+									"sid": 936581240692050,
+									"parameters": {
+										"variable": "Wolf",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 404136816991510,
+									"parameters": {
+										"variable": "WolfMode",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
 									"sid": 865558505374300,
 									"parameters": {
 										"variable": "Hardcore",
 										"value": "true"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 839751700202805,
+									"parameters": {
+										"key": "\"WolfMode\"",
+										"value": "WolfMode"
 									}
 								},
 								{
@@ -2912,6 +3321,15 @@
 							"parameters": {
 								"variable": "Start_Game"
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 734388223770300,
+							"parameters": {
+								"variable": "WolfMode"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -2947,6 +3365,60 @@
 						}
 					],
 					"sid": 564722983573844
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 689122155696205,
+							"parameters": {
+								"variable": "Start_Game"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 630779245698231,
+							"parameters": {
+								"variable": "WolfMode"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 352841644691520,
+							"parameters": {
+								"seconds": "3",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 682895430615276,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 942982416287459
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 841054929837252,
+							"parameters": {
+								"layout": "Abandonment_lvl2"
+							}
+						}
+					],
+					"sid": 142019827011735
 				},
 				{
 					"eventType": "block",

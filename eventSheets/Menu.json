@@ -1247,6 +1247,145 @@
 			"sid": 786102290599653
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 195601288139240
+				},
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 613526197764444
+				}
+			],
+			"actions": [
+				{
+					"id": "get-item",
+					"objectClass": "Game_Save",
+					"sid": 588596441344565,
+					"parameters": {
+						"key": "\"WolfMode\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 501803789304083,
+					"parameters": {
+						"key": "\"WolfMode\""
+					}
+				}
+			],
+			"sid": 150489269303515,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "Game_Save",
+					"sid": 113987240096839,
+					"parameters": {
+						"key": "\"WolfMode\""
+					}
+				},
+				{
+					"id": "compare-key",
+					"objectClass": "Game_Save",
+					"sid": 786915482243356,
+					"parameters": {
+						"comparison": 0,
+						"string": "\"WolfMode\""
+					}
+				},
+				{
+					"id": "compare-value",
+					"objectClass": "Game_Save",
+					"sid": 911500526864516,
+					"parameters": {
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 207892110519152,
+					"parameters": {
+						"variable": "WolfMode",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 917008305632233
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "Game_Save",
+					"sid": 941751608204765,
+					"parameters": {
+						"key": "\"WolfMode\""
+					}
+				},
+				{
+					"id": "compare-key",
+					"objectClass": "Game_Save",
+					"sid": 665719950080003,
+					"parameters": {
+						"comparison": 0,
+						"string": "\"WolfMode\""
+					}
+				},
+				{
+					"id": "compare-value",
+					"objectClass": "Game_Save",
+					"sid": 362792982522787,
+					"parameters": {
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 599467400058582,
+					"parameters": {
+						"variable": "WolfMode",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 509444774582586,
+					"parameters": {
+						"variable": "Wolf",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 888864720474879,
+					"parameters": {
+						"variable": "weapon",
+						"value": "\"Mounting\""
+					}
+				}
+			],
+			"sid": 493790591436994
+		},
+		{
 			"eventType": "comment",
 			"text": "Resolution"
 		},
@@ -4415,6 +4554,102 @@
 				}
 			],
 			"sid": 189833373286578
+		},
+		{
+			"eventType": "comment",
+			"text": "Wolf"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 883619683887867
+				},
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 231717122261085
+				},
+				{
+					"id": "on-load-complete",
+					"objectClass": "System",
+					"sid": 701911862463702
+				}
+			],
+			"actions": [],
+			"sid": 792472233098099,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 127893980409624,
+							"parameters": {
+								"variable": "WolfMode"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 900534758909823,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-visible",
+									"objectClass": "Player_Mask",
+									"sid": 861978034353476
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "Player_Cutscene",
+									"sid": 839706832847020
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "Player_All",
+									"sid": 749738976455946,
+									"parameters": {
+										"object": "Player_Wolf",
+										"layer": "\"Player\"",
+										"image-point": "0",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 584881864282386,
+									"parameters": {
+										"variable": "weapon",
+										"value": "\"Mounting\""
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Player_Mask",
+									"sid": 762844532523857
+								},
+								{
+									"id": "destroy",
+									"objectClass": "Player_Cutscene",
+									"sid": 751235599307559
+								}
+							],
+							"sid": 767325292290573,
+							"isOrBlock": true
+						}
+					]
+				}
+			],
+			"isOrBlock": true
 		},
 		{
 			"eventType": "comment",
