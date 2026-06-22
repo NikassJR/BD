@@ -2176,176 +2176,266 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 251429397952558,
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_All",
+							"sid": 133011740065856,
 							"parameters": {
-								"key": 69
-							}
-						},
-						{
-							"id": "on-button-pressed",
-							"objectClass": "Gamepad",
-							"sid": 180174680396376,
-							"parameters": {
-								"gamepad": "0",
-								"button": "button-y"
-							}
+								"instance-variable": "VisionEnemy"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
-					"sid": 332840503532547,
+					"sid": 184007678245486,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Button_Red",
-									"sid": 966650181057416,
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 152664545227096,
 									"parameters": {
-										"object": "Player_All"
+										"key": 69
+									}
+								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 513743485441206,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-y"
 									}
 								}
 							],
-							"actions": [
-								{
-									"callFunction": "Audio_Play_Sound",
-									"sid": 934933590428780,
-									"parameters": [
-										"\"Open_Grid\"",
-										"0",
-										"\"Open_Grid\""
-									]
-								},
-								{
-									"id": "set-enabled",
-									"objectClass": "door_closed",
-									"sid": 514931672948548,
-									"behaviorType": "Твёрдый",
-									"parameters": {
-										"state": "disabled"
-									}
-								},
-								{
-									"id": "set-animation-frame",
-									"objectClass": "door_closed",
-									"sid": 235100938571301,
-									"parameters": {
-										"frame-number": "1"
-									}
-								},
-								{
-									"id": "destroy",
-									"objectClass": "press_E",
-									"sid": 990138659552817
-								}
-							],
-							"sid": 228084258350613,
+							"actions": [],
+							"sid": 167190192764208,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-animation-playing",
-											"objectClass": "Stair",
-											"sid": 940834866941223,
+											"id": "is-overlapping-another-object",
+											"objectClass": "Button_Red",
+											"sid": 453384299508987,
 											"parameters": {
-												"animation": "\"Ladder\""
+												"object": "Player_All"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Audio_Play_Sound",
+											"sid": 682443835462380,
+											"parameters": [
+												"\"Open_Grid\"",
+												"0",
+												"\"Open_Grid\""
+											]
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "door_closed",
+											"sid": 684268979245858,
+											"behaviorType": "Твёрдый",
+											"parameters": {
+												"state": "disabled"
 											}
 										},
 										{
-											"id": "has-tags",
-											"objectClass": "Stair",
-											"sid": 314484164391048,
+											"id": "set-animation-frame",
+											"objectClass": "door_closed",
+											"sid": 185530165542946,
 											"parameters": {
-												"tags": "\"Cut\""
+												"frame-number": "1"
 											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-angle",
-											"objectClass": "Stair",
-											"sid": 603122590543572,
-											"parameters": {
-												"angle": "20"
-											}
-										}
-									],
-									"sid": 217852504952598
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "has-tags",
-											"objectClass": "Shadow5",
-											"sid": 262463649207355,
-											"parameters": {
-												"tags": "\"Cut\""
-											}
-										}
-									],
-									"actions": [
+										},
 										{
 											"id": "destroy",
-											"objectClass": "Shadow5",
-											"sid": 428165712584844
+											"objectClass": "press_E",
+											"sid": 296056915967032
 										}
 									],
-									"sid": 158364804492267
+									"sid": 577743824330390,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Stair",
+													"sid": 868915560426698,
+													"parameters": {
+														"animation": "\"Ladder\""
+													}
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Stair",
+													"sid": 924672370974164,
+													"parameters": {
+														"tags": "\"Cut\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-angle",
+													"objectClass": "Stair",
+													"sid": 865765507895147,
+													"parameters": {
+														"angle": "20"
+													}
+												}
+											],
+											"sid": 548813240922457
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-tags",
+													"objectClass": "Shadow5",
+													"sid": 417563621716367,
+													"parameters": {
+														"tags": "\"Cut\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Shadow5",
+													"sid": 957506475475965
+												}
+											],
+											"sid": 249891023289800
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "has-tags",
+													"objectClass": "Pandus",
+													"sid": 707791626042210,
+													"parameters": {
+														"tags": "\"Cut\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Pandus",
+													"sid": 554596855125319
+												}
+											],
+											"sid": 694755841997380
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 851061568342471
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "Create_Dealogue",
+													"sid": 430601473023195,
+													"parameters": [
+														"0",
+														"0",
+														"797",
+														"1",
+														true,
+														false
+													]
+												}
+											],
+											"sid": 209221316016889
+										}
+									]
+								}
+							],
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Player_All",
+							"sid": 142465503501080,
+							"parameters": {
+								"instance-variable": "VisionEnemy"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 687010721083388,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 400433487285235,
+									"parameters": {
+										"key": 69
+									}
 								},
+								{
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 900496005510147,
+									"parameters": {
+										"gamepad": "0",
+										"button": "button-y"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 373671198659666,
+							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "has-tags",
-											"objectClass": "Pandus",
-											"sid": 898203968467533,
+											"id": "is-overlapping-another-object",
+											"objectClass": "Button_Red",
+											"sid": 284263978700538,
 											"parameters": {
-												"tags": "\"Cut\""
+												"object": "Player_All"
 											}
-										}
-									],
-									"actions": [
-										{
-											"id": "destroy",
-											"objectClass": "Pandus",
-											"sid": 674904896095905
-										}
-									],
-									"sid": 632188515384786
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 295940289835697
 										}
 									],
 									"actions": [
 										{
 											"callFunction": "Create_Dealogue",
-											"sid": 562571041726048,
+											"sid": 774896608699444,
 											"parameters": [
 												"0",
 												"0",
-												"797",
+												"758",
 												"1",
 												true,
 												false
 											]
 										}
 									],
-									"sid": 345332012234246
+									"sid": 462558535264488
 								}
-							]
+							],
+							"isOrBlock": true
 						}
-					],
-					"isOrBlock": true
+					]
 				},
 				{
 					"eventType": "block",

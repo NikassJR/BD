@@ -2156,6 +2156,47 @@
 			]
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player_All",
+					"sid": 987371268578833,
+					"parameters": {
+						"object": "Trigger_CutScene"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Trigger_CutScene",
+					"sid": 108169982344644,
+					"parameters": {
+						"tags": "\"Door\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Create_Dealogue",
+					"sid": 485524739766760,
+					"parameters": [
+						"0",
+						"0",
+						"187",
+						"1",
+						true,
+						false
+					]
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Trigger_CutScene",
+					"sid": 115700106181796
+				}
+			],
+			"sid": 391447803560468
+		},
+		{
 			"eventType": "comment",
 			"text": "Music_Load"
 		},
@@ -2187,43 +2228,6 @@
 				}
 			],
 			"sid": 841817863472221
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "Player_All",
-					"sid": 792879056026955,
-					"parameters": {
-						"object": "Trigger_CutScene"
-					}
-				},
-				{
-					"id": "has-tags",
-					"objectClass": "Trigger_CutScene",
-					"sid": 522526752273604,
-					"parameters": {
-						"tags": "\"Save\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 509395734067208,
-					"parameters": {
-						"slot": "\"mysave\""
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "Trigger_CutScene",
-					"sid": 996022705621857
-				}
-			],
-			"sid": 782709438352104
 		}
 	],
 	"sid": 982125383963349

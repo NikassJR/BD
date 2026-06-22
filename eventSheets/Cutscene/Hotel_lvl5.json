@@ -35,6 +35,38 @@
 							}
 						},
 						{
+							"id": "set-position",
+							"objectClass": "press_E",
+							"sid": 840043627500446,
+							"parameters": {
+								"x": "Player_Wolf.X ",
+								"y": "Player_Wolf.Y -60"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "press_E",
+							"sid": 257061666069806,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "press_E",
+							"sid": 440488730048105,
+							"behaviorType": "Прикрепить",
+							"parameters": {
+								"pin-to": "Player_Wolf",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
 							"callFunction": "End_Scene2",
 							"sid": 653527370818830,
 							"parameters": [
@@ -124,6 +156,20 @@
 							"parameters": {
 								"seconds": "3",
 								"use-timescale": true
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 685485134572682,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/Soul to soul"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
 							}
 						},
 						{
@@ -228,6 +274,14 @@
 							}
 						},
 						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 980474673867582,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						},
+						{
 							"id": "wait",
 							"objectClass": "System",
 							"sid": 378011244447369,
@@ -248,11 +302,25 @@
 						{
 							"id": "set-speed",
 							"objectClass": "Car_Cat",
-							"sid": 510212733208395,
+							"sid": 119156533083300,
 							"behaviorType": "НастраиваемоеДвижение",
 							"parameters": {
 								"which": "horizontal",
-								"speed": "-1500"
+								"speed": "-1000"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 260422589068315,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/DEADGRUNGE,_CHAIN$AWSQUAD_From_Dusk_Till_Dawn_Interlude_HotelStart"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
 							}
 						},
 						{
@@ -383,11 +451,11 @@
 						{
 							"id": "shake",
 							"objectClass": "Camera",
-							"sid": 716072888859168,
+							"sid": 653421369271570,
 							"behaviorType": "СледитьЗа",
 							"parameters": {
-								"magnitude": "20",
-								"duration": "0.15",
+								"magnitude": "5",
+								"duration": "5",
 								"mode": "reducing-magnitude"
 							}
 						}
@@ -407,6 +475,38 @@
 						}
 					],
 					"actions": [
+						{
+							"callFunction": "Audio_Play_Sound",
+							"sid": 530846187303697,
+							"disabled": true,
+							"parameters": [
+								"\"Column_Crash\"",
+								"0",
+								"\"Column_Crash\""
+							]
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 873967959448481,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 845939989792076,
+							"parameters": {
+								"audio-file": {
+									"path": "Column_Crash"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
+							}
+						},
 						{
 							"id": "set-speed",
 							"objectClass": "Car_Cat",
@@ -574,6 +674,20 @@
 								"which": "horizontal",
 								"speed": "-285"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 601400839909119,
+							"parameters": {
+								"audio-file": {
+									"path": "Player_Run"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"audio\""
+							}
 						}
 					],
 					"sid": 762422241911643
@@ -639,6 +753,14 @@
 							"parameters": {
 								"object": "Car_Cat"
 							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "EnemyPchel",
+							"sid": 638813711490095,
+							"parameters": {
+								"tags": "\"Cut\""
+							}
 						}
 					],
 					"actions": [
@@ -682,6 +804,14 @@
 							"parameters": {
 								"animation": "\"security_shoot\"",
 								"from": "beginning"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 767152210161170,
+							"parameters": {
+								"tag": "\"audio\""
 							}
 						},
 						{
@@ -842,6 +972,20 @@
 							}
 						},
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 283874738743619,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/DEADGRUNGE,_CHAIN$AWSQUAD_From_Dusk_Till_Dawn_Interlude_HotelEnd"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
+							}
+						},
+						{
 							"id": "save",
 							"objectClass": "System",
 							"sid": 369424310251041,
@@ -856,6 +1000,15 @@
 							"parameters": {
 								"group-name": "\"Enemy & Fear\"",
 								"state": "activated"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "EnemyPchel",
+							"sid": 788697677185202,
+							"parameters": {
+								"instance-variable": "Fear",
+								"value": "0"
 							}
 						}
 					],
@@ -1210,6 +1363,7 @@
 					"id": "set-position",
 					"objectClass": "press_E",
 					"sid": 633528608096034,
+					"disabled": true,
 					"parameters": {
 						"x": "Player_Wolf.X ",
 						"y": "Player_Wolf.Y -60"
@@ -1219,6 +1373,7 @@
 					"id": "pin-to-object-properties",
 					"objectClass": "press_E",
 					"sid": 906915888737818,
+					"disabled": true,
 					"behaviorType": "Прикрепить",
 					"parameters": {
 						"pin-to": "Player_Wolf",
@@ -1237,124 +1392,254 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 740872235658676,
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 649515446512339,
 					"parameters": {
-						"key": 69
-					}
-				},
-				{
-					"id": "on-button-pressed",
-					"objectClass": "Gamepad",
-					"sid": 168957960183987,
-					"parameters": {
-						"gamepad": "0",
-						"button": "button-y"
+						"variable": "Enemys",
+						"comparison": 5,
+						"value": "28"
 					}
 				}
 			],
 			"actions": [],
-			"sid": 863808351375394,
+			"sid": 429378867296368,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Wolf",
-							"sid": 286695029756666,
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 453455683509118,
 							"parameters": {
-								"object": "Elektro_Shield"
+								"key": 69
 							}
 						},
 						{
-							"id": "is-visible",
-							"objectClass": "press_E",
-							"sid": 547958870529842
-						},
-						{
-							"id": "has-tags",
-							"objectClass": "Elevator_Door",
-							"sid": 915123137082447,
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 874569586065729,
 							"parameters": {
-								"tags": "\"Active\""
-							}
-						},
-						{
-							"id": "has-tags",
-							"objectClass": "Elektro_Shield",
-							"sid": 900083213473391,
-							"parameters": {
-								"tags": "\"Active\""
-							}
-						},
-						{
-							"id": "has-tags",
-							"objectClass": "Door_Metal",
-							"sid": 339770226300857,
-							"parameters": {
-								"tags": "\"Closed\""
+								"gamepad": "0",
+								"button": "button-y"
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 765387262054289,
+					"children": [
 						{
-							"callFunction": "Audio_Play_Sound",
-							"sid": 855349712306765,
-							"parameters": [
-								"\"Open_Grid\"",
-								"0",
-								"\"Open_Grid\""
-							]
-						},
-						{
-							"id": "destroy",
-							"objectClass": "press_E",
-							"sid": 833614906048388
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Elevator_Door",
-							"sid": 162740289487111,
-							"parameters": {
-								"frame-number": "2"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Elektro_Shield",
-							"sid": 825281834129466,
-							"parameters": {
-								"frame-number": "3"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "Door_Metal",
-							"sid": 736307811264089,
-							"parameters": {
-								"frame-number": "1"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "Door_Metal",
-							"sid": 261310410402580,
-							"behaviorType": "Твёрдый",
-							"parameters": {
-								"state": "disabled"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Wolf",
+									"sid": 202147769516929,
+									"parameters": {
+										"object": "Elektro_Shield"
+									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "press_E",
+									"sid": 461870719943769
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Elevator_Door",
+									"sid": 471152946965758,
+									"parameters": {
+										"tags": "\"Active\""
+									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Elektro_Shield",
+									"sid": 690892110233214,
+									"parameters": {
+										"tags": "\"Active\""
+									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Door_Metal",
+									"sid": 535948660694354,
+									"parameters": {
+										"tags": "\"Closed\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Audio_Play_Sound",
+									"sid": 964194303405393,
+									"parameters": [
+										"\"Open_Grid\"",
+										"0",
+										"\"Open_Grid\""
+									]
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Elevator_Door",
+									"sid": 191430428057086,
+									"parameters": {
+										"frame-number": "2"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Elektro_Shield",
+									"sid": 588942405875987,
+									"parameters": {
+										"frame-number": "3"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Door_Metal",
+									"sid": 995720435646076,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "Door_Metal",
+									"sid": 670031884679167,
+									"behaviorType": "Твёрдый",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "press_E",
+									"sid": 438441767017808
+								}
+							],
+							"sid": 427054023199234
 						}
 					],
-					"sid": 855312103744666
+					"isOrBlock": true
 				}
-			],
-			"isOrBlock": true
+			]
 		},
 		{
 			"eventType": "block",
 			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 774618227192093,
+					"parameters": {
+						"variable": "Enemys",
+						"comparison": 2,
+						"value": "28"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 374361714865529,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 282340483434398,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "on-button-pressed",
+							"objectClass": "Gamepad",
+							"sid": 787864816575692,
+							"parameters": {
+								"gamepad": "0",
+								"button": "button-y"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 910993383599950,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Player_Wolf",
+									"sid": 625852050267201,
+									"parameters": {
+										"object": "Elektro_Shield"
+									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "press_E",
+									"sid": 421183043193068
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Elevator_Door",
+									"sid": 814534002234577,
+									"parameters": {
+										"tags": "\"Active\""
+									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Elektro_Shield",
+									"sid": 141304149267020,
+									"parameters": {
+										"tags": "\"Active\""
+									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Door_Metal",
+									"sid": 224191040336326,
+									"parameters": {
+										"tags": "\"Closed\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Create_Dealogue",
+									"sid": 486211454871711,
+									"parameters": [
+										"0",
+										"0",
+										"269",
+										"1",
+										true,
+										false
+									]
+								}
+							],
+							"sid": 933756098101538
+						}
+					],
+					"isOrBlock": true
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_Wolf",
+					"sid": 918443409462243,
+					"parameters": {
+						"object": "Elevator_Door"
+					}
+				},
 				{
 					"id": "has-tags",
 					"objectClass": "Elevator_Door",
@@ -1371,39 +1656,22 @@
 						"comparison": 0,
 						"number": "2"
 					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Player_Wolf",
-					"sid": 231664686297482,
-					"parameters": {
-						"object": "Elevator_Door"
-					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 471006160887123
 				}
 			],
 			"actions": [
 				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 783307439361906,
+					"id": "set-visible",
+					"objectClass": "press_E",
+					"sid": 897821453348566,
 					"parameters": {
-						"object-to-create": "press_E",
-						"layer": "\"Player\"",
-						"x": "Player_Wolf.X",
-						"y": "Player_Wolf.Y",
-						"create-hierarchy": false,
-						"template-name": "\"\""
+						"visibility": "toggle"
 					}
 				},
 				{
 					"id": "set-position",
 					"objectClass": "press_E",
 					"sid": 375885733982011,
+					"disabled": true,
 					"parameters": {
 						"x": "Player_Wolf.X ",
 						"y": "Player_Wolf.Y -60"
@@ -1413,6 +1681,7 @@
 					"id": "pin-to-object-properties",
 					"objectClass": "press_E",
 					"sid": 173453241346858,
+					"disabled": true,
 					"behaviorType": "Прикрепить",
 					"parameters": {
 						"pin-to": "Player_Wolf",
@@ -1900,6 +2169,14 @@
 					}
 				},
 				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 489497532286590,
+					"parameters": {
+						"slot": "\"mysave\""
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 254204931615854,
@@ -1934,14 +2211,6 @@
 					"parameters": {
 						"variable": "onDialMain",
 						"value": "false"
-					}
-				},
-				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 686418002193508,
-					"parameters": {
-						"slot": "\"mysave\""
 					}
 				}
 			],
@@ -2077,7 +2346,8 @@
 					}
 				}
 			],
-			"sid": 491086458557063
+			"sid": 491086458557063,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -2107,26 +2377,26 @@
 					}
 				}
 			],
-			"sid": 807763251767766
+			"sid": 807763251767766,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 339652243279492,
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player_All",
+					"sid": 910984897853893,
 					"parameters": {
-						"key": 69
+						"object": "Trigger_CutScene"
 					}
 				},
 				{
-					"id": "on-button-pressed",
-					"objectClass": "Gamepad",
-					"sid": 111962311272227,
+					"id": "has-tags",
+					"objectClass": "Trigger_CutScene",
+					"sid": 643592843363295,
 					"parameters": {
-						"gamepad": "0",
-						"button": "button-y"
+						"tags": "\"Cut\""
 					}
 				}
 			],
@@ -2136,14 +2406,6 @@
 				{
 					"eventType": "block",
 					"conditions": [
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Wolf",
-							"sid": 480292556877404,
-							"parameters": {
-								"object": "Boss"
-							}
-						},
 						{
 							"id": "is-animation-playing",
 							"objectClass": "Boss",
@@ -2162,6 +2424,14 @@
 							"parameters": {
 								"variable": "onDialMain",
 								"value": "true"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 240980823706769,
+							"parameters": {
+								"tag": "\"music\""
 							}
 						},
 						{
@@ -2225,12 +2495,25 @@
 								"instance-variable": "textframe",
 								"value": "1"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 692354844493647,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/It couldn't be shittier_Hotel"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
+							}
 						}
 					],
 					"sid": 508077149002465
 				}
-			],
-			"isOrBlock": true
+			]
 		},
 		{
 			"eventType": "block",
@@ -2409,6 +2692,37 @@
 					"parameters": {
 						"animation": "\"Death\"",
 						"from": "beginning"
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 124602570067117,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 346338556522896,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/It couldn't be shittier_Hotel"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
+				},
+				{
+					"id": "seek-to",
+					"objectClass": "Audio",
+					"sid": 483238681280560,
+					"parameters": {
+						"tag": "\"music\"",
+						"position": "38"
 					}
 				},
 				{
@@ -2664,11 +2978,11 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 896306438199426,
+					"sid": 623596113092637,
 					"parameters": {
 						"variable": "Enemys",
 						"comparison": 5,
-						"value": "24"
+						"value": "33"
 					}
 				},
 				{
