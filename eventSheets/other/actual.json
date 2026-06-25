@@ -764,6 +764,14 @@
 								"x": "Player_All.X",
 								"y": "Player_All.Y"
 							}
+						},
+						{
+							"id": "request-pointer-lock",
+							"objectClass": "Mouse",
+							"sid": 954901290554356,
+							"parameters": {
+								"unadjusted-movement": false
+							}
 						}
 					],
 					"sid": 635904136599841
@@ -778,6 +786,11 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "release-pointer-lock",
+							"objectClass": "Mouse",
+							"sid": 293068849213831
+						},
 						{
 							"id": "set-visible",
 							"objectClass": "Cursor_Gamepad",
@@ -16466,7 +16479,8 @@
 													}
 												}
 											],
-											"sid": 159329958303691
+											"sid": 159329958303691,
+											"disabled": true
 										},
 										{
 											"eventType": "block",
@@ -16779,7 +16793,8 @@
 													}
 												}
 											],
-											"sid": 936102785089315
+											"sid": 936102785089315,
+											"disabled": true
 										},
 										{
 											"eventType": "block",
@@ -17175,6 +17190,37 @@
 												}
 											],
 											"sid": 323022065121023
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-collision-with-another-object",
+													"objectClass": "Player_All",
+													"sid": 898363442233985,
+													"parameters": {
+														"object": "LadderStair"
+													}
+												},
+												{
+													"id": "is-jumping",
+													"objectClass": "Player_All",
+													"sid": 702055598380307,
+													"behaviorType": "Платформер"
+												}
+											],
+											"actions": [
+												{
+													"id": "set-vector-y",
+													"objectClass": "Player_All",
+													"sid": 145489889654255,
+													"behaviorType": "Платформер",
+													"parameters": {
+														"vector-y": "0"
+													}
+												}
+											],
+											"sid": 732830373518960
 										}
 									],
 									"sid": 233218090815509
@@ -44035,6 +44081,32 @@
 												"comparison": 4,
 												"value": "10"
 											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Enemy_Mili",
+											"sid": 595006520600606,
+											"parameters": {
+												"instance-variable": "patrul"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Enemy_Mili",
+											"sid": 721561371219832,
+											"parameters": {
+												"instance-variable": "triger"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Enemy_Mili",
+											"sid": 388918496581514,
+											"parameters": {
+												"instance-variable": "Damage"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [

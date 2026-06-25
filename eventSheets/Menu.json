@@ -1007,12 +1007,9 @@
 							}
 						},
 						{
-							"id": "load",
+							"id": "restart-layout",
 							"objectClass": "System",
-							"sid": 806900558310083,
-							"parameters": {
-								"slot": "\"start\""
-							}
+							"sid": 218477070579891
 						}
 					],
 					"sid": 965335618885165
@@ -4565,17 +4562,26 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 883619683887867
+					"sid": 883619683887867,
+					"disabled": true
 				},
 				{
 					"id": "on-loader-layout-complete",
 					"objectClass": "System",
-					"sid": 231717122261085
+					"sid": 231717122261085,
+					"disabled": true
 				},
 				{
 					"id": "on-load-complete",
 					"objectClass": "System",
-					"sid": 701911862463702
+					"sid": 701911862463702,
+					"disabled": true
+				},
+				{
+					"id": "on-created",
+					"objectClass": "Player_All",
+					"sid": 696922306636195,
+					"disabled": true
 				}
 			],
 			"actions": [],
@@ -4602,12 +4608,19 @@
 								{
 									"id": "is-visible",
 									"objectClass": "Player_Mask",
-									"sid": 861978034353476
+									"sid": 861978034353476,
+									"disabled": true
 								},
 								{
 									"id": "is-visible",
 									"objectClass": "Player_Cutscene",
-									"sid": 839706832847020
+									"sid": 839706832847020,
+									"disabled": true
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 528222942470239
 								}
 							],
 							"actions": [
@@ -4641,6 +4654,60 @@
 									"id": "destroy",
 									"objectClass": "Player_Cutscene",
 									"sid": 751235599307559
+								},
+								{
+									"id": "set-max-speed",
+									"objectClass": "Player_All",
+									"sid": 397436194603859,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"max-speed": "285"
+									}
+								},
+								{
+									"id": "set-acceleration",
+									"objectClass": "Player_All",
+									"sid": 865246141045997,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"acceleration": "10000"
+									}
+								},
+								{
+									"id": "set-deceleration",
+									"objectClass": "Player_All",
+									"sid": 337170534137685,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"deceleration": "10000"
+									}
+								},
+								{
+									"id": "set-jump-strength",
+									"objectClass": "Player_All",
+									"sid": 387438233189608,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"jump-strength": "400"
+									}
+								},
+								{
+									"id": "set-gravity",
+									"objectClass": "Player_All",
+									"sid": 972896327973730,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"gravity": "1000"
+									}
+								},
+								{
+									"id": "set-max-fall-speed",
+									"objectClass": "Player_All",
+									"sid": 954454627544434,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"max-fall-speed": "1000"
+									}
 								}
 							],
 							"sid": 767325292290573,
@@ -4650,6 +4717,73 @@
 				}
 			],
 			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Player_All",
+					"sid": 746860949559023
+				}
+			],
+			"actions": [
+				{
+					"id": "set-max-speed",
+					"objectClass": "Player_All",
+					"sid": 614939087411633,
+					"behaviorType": "Платформер",
+					"parameters": {
+						"max-speed": "285"
+					}
+				},
+				{
+					"id": "set-acceleration",
+					"objectClass": "Player_All",
+					"sid": 428304987274528,
+					"behaviorType": "Платформер",
+					"parameters": {
+						"acceleration": "10000"
+					}
+				},
+				{
+					"id": "set-deceleration",
+					"objectClass": "Player_All",
+					"sid": 488684257702679,
+					"behaviorType": "Платформер",
+					"parameters": {
+						"deceleration": "10000"
+					}
+				},
+				{
+					"id": "set-jump-strength",
+					"objectClass": "Player_All",
+					"sid": 136651864196337,
+					"behaviorType": "Платформер",
+					"parameters": {
+						"jump-strength": "400"
+					}
+				},
+				{
+					"id": "set-gravity",
+					"objectClass": "Player_All",
+					"sid": 635660375043944,
+					"behaviorType": "Платформер",
+					"parameters": {
+						"gravity": "1000"
+					}
+				},
+				{
+					"id": "set-max-fall-speed",
+					"objectClass": "Player_All",
+					"sid": 696008003086576,
+					"behaviorType": "Платформер",
+					"parameters": {
+						"max-fall-speed": "1000"
+					}
+				}
+			],
+			"sid": 680858875106707
 		},
 		{
 			"eventType": "comment",

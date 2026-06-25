@@ -152,6 +152,15 @@
 							"parameters": {
 								"tags": "\"End\""
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 527674803991988,
+							"parameters": {
+								"variable": "Wolf"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -245,6 +254,56 @@
 						}
 					],
 					"sid": 927397144645750
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_All",
+							"sid": 370669250960897,
+							"parameters": {
+								"object": "Trigger_CutScene"
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Trigger_CutScene",
+							"sid": 709146309926626,
+							"parameters": {
+								"tags": "\"End\""
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 745369064604588,
+							"parameters": {
+								"variable": "Wolf"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 432112045952075,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 589725442879232,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 631170993480953
 				},
 				{
 					"eventType": "block",
@@ -1444,6 +1503,15 @@
 							"parameters": {
 								"variable": "Start_Game"
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 996292295200415,
+							"parameters": {
+								"variable": "Wolf"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -1479,6 +1547,60 @@
 						}
 					],
 					"sid": 763884565042878
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 237089044680269,
+							"parameters": {
+								"variable": "Start_Game"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 351035779773379,
+							"parameters": {
+								"variable": "Wolf"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 413787464830380,
+							"parameters": {
+								"tag": "\"Suspense\""
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 182901777853039
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 770431076028290,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 753236885760345,
+							"parameters": {
+								"layout": "Basement_lvl4"
+							}
+						}
+					],
+					"sid": 975234971615533
 				},
 				{
 					"eventType": "block",

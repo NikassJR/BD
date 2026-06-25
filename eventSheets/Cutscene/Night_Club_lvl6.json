@@ -23,14 +23,14 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 953192708384304
+					"sid": 708678666776804
 				}
 			],
 			"actions": [
 				{
 					"id": "save",
 					"objectClass": "System",
-					"sid": 737683075673686,
+					"sid": 396396622338725,
 					"parameters": {
 						"slot": "\"mysave\""
 					}
@@ -38,7 +38,7 @@
 				{
 					"id": "save",
 					"objectClass": "System",
-					"sid": 115374151929698,
+					"sid": 420587135003690,
 					"parameters": {
 						"slot": "\"start\""
 					}
@@ -46,7 +46,7 @@
 				{
 					"id": "stop",
 					"objectClass": "Audio",
-					"sid": 606609654181264,
+					"sid": 535560235806177,
 					"parameters": {
 						"tag": "\"Suspense\""
 					}
@@ -54,7 +54,7 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 866928461341854,
+					"sid": 152987694755771,
 					"parameters": {
 						"variable": "Start_Game",
 						"value": "false"
@@ -63,25 +63,16 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 820931319098975,
+					"sid": 345224293815935,
 					"parameters": {
 						"variable": "Continue_Game",
 						"value": "false"
 					}
 				},
 				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 830582446271194,
-					"parameters": {
-						"variable": "Safe_Zone",
-						"value": "true"
-					}
-				},
-				{
 					"id": "spawn-another-object",
 					"objectClass": "Player_All",
-					"sid": 736142898654159,
+					"sid": 512945289947678,
 					"parameters": {
 						"object": "Shadow3",
 						"layer": "\"Dialog\"",
@@ -93,7 +84,7 @@
 				{
 					"id": "set-scale",
 					"objectClass": "Shadow3",
-					"sid": 981756788912885,
+					"sid": 904059286482518,
 					"parameters": {
 						"scale": "5"
 					}
@@ -101,7 +92,7 @@
 				{
 					"id": "tween-one-property",
 					"objectClass": "Shadow3",
-					"sid": 524215412739408,
+					"sid": 408975601424826,
 					"behaviorType": "Твинанимация",
 					"parameters": {
 						"tags": "\"\"",
@@ -118,7 +109,7 @@
 				{
 					"id": "set-group-active",
 					"objectClass": "System",
-					"sid": 294719011442525,
+					"sid": 609399608745987,
 					"parameters": {
 						"group-name": "\"Player\"",
 						"state": "activated"
@@ -127,7 +118,7 @@
 				{
 					"id": "set-size",
 					"objectClass": "Camera",
-					"sid": 119492771930414,
+					"sid": 319422301915832,
 					"parameters": {
 						"width": "80",
 						"height": "45"
@@ -136,25 +127,16 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 180860606948058,
+					"sid": 281322954649205,
 					"parameters": {
 						"seconds": "2",
 						"use-timescale": true
 					}
 				},
 				{
-					"id": "add-to-instvar",
-					"objectClass": "Player_All",
-					"sid": 349503634220107,
-					"parameters": {
-						"instance-variable": "textframe",
-						"value": "1"
-					}
-				},
-				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 732150255364550,
+					"sid": 476162396611890,
 					"parameters": {
 						"audio-file": {
 							"path": "Music/Night_Club (Remaster)"
@@ -163,6 +145,138 @@
 						"volume": "0",
 						"stereo-pan": "0",
 						"tag-optional": "\"music\""
+					}
+				}
+			],
+			"sid": 323943838433631
+		},
+		{
+			"eventType": "comment",
+			"text": "Wolf"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "Game_Save",
+					"sid": 414098913177950,
+					"parameters": {
+						"key": "\"WolfMode\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 369371978071524,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 830482880599662,
+							"parameters": {
+								"variable": "WolfMode"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 871089304051678
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_All",
+							"sid": 931870819882908,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "3"
+							}
+						}
+					],
+					"sid": 856346948351796
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 897389388480308,
+							"parameters": {
+								"variable": "WolfMode"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 227862601600838
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 927941511067339,
+							"parameters": {
+								"seconds": "2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_All",
+							"sid": 545221910865582,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 335533621361709
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_All",
+					"sid": 492160792926329,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 405531447872507,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 619360783378939
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 668861610163422,
+					"parameters": {
+						"variable": "Safe_Zone",
+						"value": "true"
 					}
 				}
 			],
@@ -479,6 +593,15 @@
 					"parameters": {
 						"object": "Trigger_CutScene"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 400837925634796,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
 				},
 				{
 					"id": "has-tags",
@@ -1055,6 +1178,15 @@
 					}
 				},
 				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 340671272712041,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
+				},
+				{
 					"id": "has-tags",
 					"objectClass": "Door_HotelAktiv",
 					"sid": 463716879069837,
@@ -1225,6 +1357,99 @@
 				}
 			],
 			"sid": 322521673166752
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player_All",
+					"sid": 519754531142291,
+					"parameters": {
+						"object": "Kray"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 824737102567685,
+					"disabled": true,
+					"parameters": {
+						"variable": "Enemys",
+						"comparison": 5,
+						"value": "40"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_All",
+					"sid": 198364203853853,
+					"disabled": true,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 0,
+						"value": "3"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 224468866576948,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Door_HotelAktiv",
+					"sid": 293736244217440,
+					"parameters": {
+						"tags": "\"Closed\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Enemy_Mili",
+					"sid": 350708651773982,
+					"parameters": {
+						"instance-variable": "Fear",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 530913266187621,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 406050415984611,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "End_Scene2",
+					"sid": 776187454227506,
+					"parameters": [
+						"100",
+						"1",
+						"0",
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"sid": 198235802771408
 		},
 		{
 			"eventType": "block",
@@ -2212,6 +2437,15 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 509042118896013,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -2247,6 +2481,60 @@
 				}
 			],
 			"sid": 866914714464857
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 618652054616187,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 889497352557374,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 293814488635255,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 751913359207248,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 837653411563666
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 883883792634585,
+					"parameters": {
+						"layout": "Garage_lvl7"
+					}
+				}
+			],
+			"sid": 789741767993561
 		},
 		{
 			"eventType": "block",

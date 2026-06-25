@@ -10,6 +10,124 @@
 			"includeSheet": "Effect"
 		},
 		{
+			"eventType": "comment",
+			"text": "Wolf"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "Game_Save",
+					"sid": 893017616666537,
+					"parameters": {
+						"key": "\"WolfMode\""
+					}
+				}
+			],
+			"actions": [],
+			"sid": 564680215374159,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 894007234806533,
+							"parameters": {
+								"variable": "WolfMode"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 864233537252962
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_All",
+							"sid": 282126217621713,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "6"
+							}
+						}
+					],
+					"sid": 888925638861710
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 484831497208348,
+							"parameters": {
+								"variable": "WolfMode"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 633776523915853
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_All",
+							"sid": 124099214934859,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 136319472786001
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Player_Wolf",
+					"sid": 688279788057636
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Player_Wolf",
+					"sid": 276846160300326,
+					"parameters": {
+						"tags": "\"Main\""
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_All",
+					"sid": 612016225808340,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 0,
+						"value": "6"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "Player_Wolf",
+					"sid": 230794532797603
+				}
+			],
+			"sid": 869196254118836
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Car",
@@ -22,17 +140,38 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 309748117830120
+							"sid": 140848713017918
 						}
 					],
 					"actions": [
 						{
 							"id": "save",
 							"objectClass": "System",
-							"sid": 753308002972351,
+							"sid": 184415174094756,
 							"parameters": {
 								"slot": "\"start\""
 							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Camera",
+							"sid": 498486350549234,
+							"parameters": {
+								"instance-variable": "onPlayer",
+								"value": "false"
+							}
+						},
+						{
+							"callFunction": "End_Scene2",
+							"sid": 930337251130182,
+							"parameters": [
+								"0",
+								"1.5",
+								"100",
+								true,
+								false,
+								false
+							]
 						},
 						{
 							"id": "set-position",
@@ -67,8 +206,103 @@
 							}
 						},
 						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 558514805887061,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 773934701909992,
+							"parameters": {
+								"variable": "Continue_Game",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Enemy_Mili",
+							"sid": 306178937932510,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Boss",
+							"sid": 162691081725130,
+							"parameters": {
+								"animation": "\"Animation 1\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 848094913511570,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 920470717874791,
+							"parameters": {
+								"group-name": "\"Enemy & Fear\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 290477483038280
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 137180051416560,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 774079183016277,
+							"parameters": {
+								"variable": "WolfMode"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 818421712699869,
+							"parameters": {
+								"variable": "onDialMain"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 894291978357747
+						}
+					],
+					"actions": [
+						{
 							"callFunction": "End_Scene2",
 							"sid": 653527370818830,
+							"disabled": true,
 							"parameters": [
 								"0",
 								"3",
@@ -94,24 +328,6 @@
 							"parameters": {
 								"x": "Boss.X",
 								"y": "Boss.Y"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 434254256828434,
-							"parameters": {
-								"group-name": "\"Player\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 354363426093913,
-							"parameters": {
-								"group-name": "\"Enemy & Fear\"",
-								"state": "deactivated"
 							}
 						},
 						{
@@ -179,15 +395,6 @@
 							"parameters": {
 								"variable": "onDialMain",
 								"value": "true"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_Wolf",
-							"sid": 630431445521001,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
 							}
 						},
 						{
@@ -678,7 +885,7 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 601400839909119,
+							"sid": 569579506834638,
 							"parameters": {
 								"audio-file": {
 									"path": "Player_Run"
@@ -686,7 +893,7 @@
 								"loop": "not-looping",
 								"volume": "0",
 								"stereo-pan": "0",
-								"tag-optional": "\"audio\""
+								"tag-optional": "\"Run\""
 							}
 						}
 					],
@@ -1163,6 +1370,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 655328639680032,
+							"parameters": {
+								"seconds": "3",
+								"use-timescale": true
+							}
+						},
 						{
 							"callFunction": "Create_mainDialoge",
 							"sid": 327016375236901,
@@ -1765,6 +1981,15 @@
 							}
 						},
 						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 844233764565705,
+							"parameters": {
+								"variable": "Music_Stop",
+								"value": "true"
+							}
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 274725539090322,
@@ -1915,6 +2140,14 @@
 							}
 						},
 						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 291210110261176,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						},
+						{
 							"id": "set-animation",
 							"objectClass": "Player_Wolf",
 							"sid": 987089897005047,
@@ -1961,6 +2194,15 @@
 					}
 				},
 				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 518677127947789,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
+				},
+				{
 					"id": "trigger-once-while-true",
 					"objectClass": "System",
 					"sid": 819677761650501
@@ -1996,6 +2238,15 @@
 					}
 				},
 				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 280352435334627,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
+				},
+				{
 					"id": "trigger-once-while-true",
 					"objectClass": "System",
 					"sid": 733707398670751
@@ -2016,6 +2267,92 @@
 				}
 			],
 			"sid": 361039301331298
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_Wolf",
+					"sid": 626404907675620,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 0,
+						"value": "7"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 347619625808616,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 748312243793176
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Create_mainDialoge",
+					"sid": 532808994616663,
+					"parameters": [
+						"\"Mark4\"",
+						"812",
+						"2",
+						true,
+						true,
+						false
+					]
+				}
+			],
+			"sid": 301875520713842
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_Wolf",
+					"sid": 610568779919210,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 0,
+						"value": "8"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 366902743191284,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 764382848369613
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Create_mainDialoge",
+					"sid": 276339819068710,
+					"parameters": [
+						"\"Mark4\"",
+						"812",
+						"2",
+						true,
+						true,
+						false
+					]
+				}
+			],
+			"sid": 704963378182489
 		},
 		{
 			"eventType": "block",
@@ -2186,6 +2523,29 @@
 					}
 				},
 				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 749513091695386,
+					"parameters": {
+						"variable": "Music_Stop",
+						"value": "false"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 632065934714369,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/It couldn't be shittier"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
+				},
+				{
 					"id": "destroy",
 					"objectClass": "Shadow3",
 					"sid": 759147352360490
@@ -2215,6 +2575,23 @@
 				}
 			],
 			"sid": 517963872867626
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_Wolf",
+					"sid": 632145344471675,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 0,
+						"value": "9"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 350833908310048
 		},
 		{
 			"eventType": "block",
@@ -2430,6 +2807,7 @@
 							"id": "stop",
 							"objectClass": "Audio",
 							"sid": 240980823706769,
+							"disabled": true,
 							"parameters": {
 								"tag": "\"music\""
 							}
@@ -2500,6 +2878,7 @@
 							"id": "play",
 							"objectClass": "Audio",
 							"sid": 692354844493647,
+							"disabled": true,
 							"parameters": {
 								"audio-file": {
 									"path": "Music/It couldn't be shittier_Hotel"
@@ -2698,6 +3077,7 @@
 					"id": "stop",
 					"objectClass": "Audio",
 					"sid": 124602570067117,
+					"disabled": true,
 					"parameters": {
 						"tag": "\"music\""
 					}
@@ -2706,6 +3086,7 @@
 					"id": "play",
 					"objectClass": "Audio",
 					"sid": 346338556522896,
+					"disabled": true,
 					"parameters": {
 						"audio-file": {
 							"path": "Music/It couldn't be shittier_Hotel"
@@ -2719,7 +3100,17 @@
 				{
 					"id": "seek-to",
 					"objectClass": "Audio",
+					"sid": 208262162993010,
+					"parameters": {
+						"tag": "\"music\"",
+						"position": "213"
+					}
+				},
+				{
+					"id": "seek-to",
+					"objectClass": "Audio",
 					"sid": 483238681280560,
+					"disabled": true,
 					"parameters": {
 						"tag": "\"music\"",
 						"position": "38"
@@ -2936,6 +3327,15 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 853284714578334,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -2971,6 +3371,60 @@
 				}
 			],
 			"sid": 968273831918758
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 580904118552827,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 548779216150122,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 932289467966004,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 595732234087163,
+					"parameters": {
+						"tag": "\"Suspense\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 573061838067997
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 144429707795161,
+					"parameters": {
+						"layout": "Night_Club_lvl6"
+					}
+				}
+			],
+			"sid": 705270135681815
 		},
 		{
 			"eventType": "block",

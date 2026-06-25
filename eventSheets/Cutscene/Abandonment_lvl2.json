@@ -1488,6 +1488,51 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player_All",
+					"sid": 838192689809814,
+					"parameters": {
+						"object": "Trigger_CutScene"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 850029093132574,
+					"parameters": {
+						"variable": "Wolf"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 908644595408041,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "End_Scene2",
+					"sid": 539959231658337,
+					"parameters": [
+						"100",
+						"1",
+						"0",
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"sid": 353758578336447
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "is-overlapping-another-object",
 					"objectClass": "Bariga",
 					"sid": 972211691595502,
@@ -1742,6 +1787,69 @@
 				}
 			],
 			"sid": 389503521535985
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 774820109615597,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 135729973356175,
+					"parameters": {
+						"variable": "Wolf"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 165441849181169,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 911806825532170,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 737074052726074,
+					"parameters": {
+						"tag": "\"Suspense\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 537767434688278
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 580963310881334,
+					"parameters": {
+						"layout": "Bakery_lvl3"
+					}
+				}
+			],
+			"sid": 889551371444623
 		},
 		{
 			"eventType": "block",
