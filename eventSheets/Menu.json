@@ -4560,163 +4560,151 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-start-of-layout",
+					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 883619683887867,
-					"disabled": true
-				},
-				{
-					"id": "on-loader-layout-complete",
-					"objectClass": "System",
-					"sid": 231717122261085,
-					"disabled": true
-				},
-				{
-					"id": "on-load-complete",
-					"objectClass": "System",
-					"sid": 701911862463702,
-					"disabled": true
-				},
-				{
-					"id": "on-created",
-					"objectClass": "Player_All",
-					"sid": 696922306636195,
-					"disabled": true
+					"sid": 296306315303943,
+					"parameters": {
+						"variable": "WolfMode"
+					}
 				}
 			],
 			"actions": [],
-			"sid": 792472233098099,
+			"sid": 675088422924201,
 			"children": [
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-boolean-eventvar",
+							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 127893980409624,
+							"sid": 100765799810687
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Player_All",
+							"sid": 192116935937953,
 							"parameters": {
-								"variable": "WolfMode"
+								"object": "Player_Wolf",
+								"layer": "\"Player\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"Wolf\""
+							}
+						},
+						{
+							"id": "change-tags",
+							"objectClass": "Player_Wolf",
+							"sid": 690640416105903,
+							"parameters": {
+								"action": "remove",
+								"tags": "\"Main\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 291444522719980,
+							"parameters": {
+								"variable": "weapon",
+								"value": "\"Mounting\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player_Mask",
+							"sid": 929415347445102
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player_Cutscene",
+							"sid": 117439980197217
+						},
+						{
+							"id": "set-max-speed",
+							"objectClass": "Player_All",
+							"sid": 984657149280479,
+							"behaviorType": "Платформер",
+							"parameters": {
+								"max-speed": "285"
+							}
+						},
+						{
+							"id": "set-acceleration",
+							"objectClass": "Player_All",
+							"sid": 513553845522674,
+							"behaviorType": "Платформер",
+							"parameters": {
+								"acceleration": "10000"
+							}
+						},
+						{
+							"id": "set-deceleration",
+							"objectClass": "Player_All",
+							"sid": 205389218024286,
+							"behaviorType": "Платформер",
+							"parameters": {
+								"deceleration": "10000"
+							}
+						},
+						{
+							"id": "set-jump-strength",
+							"objectClass": "Player_All",
+							"sid": 435953511773126,
+							"behaviorType": "Платформер",
+							"parameters": {
+								"jump-strength": "400"
+							}
+						},
+						{
+							"id": "set-gravity",
+							"objectClass": "Player_All",
+							"sid": 984346773213127,
+							"behaviorType": "Платформер",
+							"parameters": {
+								"gravity": "1000"
+							}
+						},
+						{
+							"id": "set-max-fall-speed",
+							"objectClass": "Player_All",
+							"sid": 160496503616080,
+							"behaviorType": "Платформер",
+							"parameters": {
+								"max-fall-speed": "1000"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 900534758909823,
-					"children": [
+					"sid": 458746731050210
+				},
+				{
+					"eventType": "block",
+					"conditions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-visible",
-									"objectClass": "Player_Mask",
-									"sid": 861978034353476,
-									"disabled": true
-								},
-								{
-									"id": "is-visible",
-									"objectClass": "Player_Cutscene",
-									"sid": 839706832847020,
-									"disabled": true
-								},
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 528222942470239
-								}
-							],
-							"actions": [
-								{
-									"id": "spawn-another-object",
-									"objectClass": "Player_All",
-									"sid": 749738976455946,
-									"parameters": {
-										"object": "Player_Wolf",
-										"layer": "\"Player\"",
-										"image-point": "0",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 584881864282386,
-									"parameters": {
-										"variable": "weapon",
-										"value": "\"Mounting\""
-									}
-								},
-								{
-									"id": "destroy",
-									"objectClass": "Player_Mask",
-									"sid": 762844532523857
-								},
-								{
-									"id": "destroy",
-									"objectClass": "Player_Cutscene",
-									"sid": 751235599307559
-								},
-								{
-									"id": "set-max-speed",
-									"objectClass": "Player_All",
-									"sid": 397436194603859,
-									"behaviorType": "Платформер",
-									"parameters": {
-										"max-speed": "285"
-									}
-								},
-								{
-									"id": "set-acceleration",
-									"objectClass": "Player_All",
-									"sid": 865246141045997,
-									"behaviorType": "Платформер",
-									"parameters": {
-										"acceleration": "10000"
-									}
-								},
-								{
-									"id": "set-deceleration",
-									"objectClass": "Player_All",
-									"sid": 337170534137685,
-									"behaviorType": "Платформер",
-									"parameters": {
-										"deceleration": "10000"
-									}
-								},
-								{
-									"id": "set-jump-strength",
-									"objectClass": "Player_All",
-									"sid": 387438233189608,
-									"behaviorType": "Платформер",
-									"parameters": {
-										"jump-strength": "400"
-									}
-								},
-								{
-									"id": "set-gravity",
-									"objectClass": "Player_All",
-									"sid": 972896327973730,
-									"behaviorType": "Платформер",
-									"parameters": {
-										"gravity": "1000"
-									}
-								},
-								{
-									"id": "set-max-fall-speed",
-									"objectClass": "Player_All",
-									"sid": 954454627544434,
-									"behaviorType": "Платформер",
-									"parameters": {
-										"max-fall-speed": "1000"
-									}
-								}
-							],
-							"sid": 767325292290573,
-							"isOrBlock": true
+							"id": "has-tags",
+							"objectClass": "Player_Wolf",
+							"sid": 166537990237314,
+							"parameters": {
+								"tags": "\"Main\""
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 709926736269132
 						}
-					]
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Player_Wolf",
+							"sid": 961801641067905
+						}
+					],
+					"sid": 915482788821791
 				}
-			],
-			"isOrBlock": true
+			]
 		},
 		{
 			"eventType": "block",

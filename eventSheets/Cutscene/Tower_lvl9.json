@@ -15,14 +15,14 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 865043628886733
+					"sid": 312826023777758
 				}
 			],
 			"actions": [
 				{
 					"id": "save",
 					"objectClass": "System",
-					"sid": 665924234253198,
+					"sid": 240158418889951,
 					"parameters": {
 						"slot": "\"mysave\""
 					}
@@ -30,14 +30,14 @@
 				{
 					"id": "save",
 					"objectClass": "System",
-					"sid": 248008447561670,
+					"sid": 501002170887196,
 					"parameters": {
 						"slot": "\"start\""
 					}
 				},
 				{
 					"callFunction": "End_Scene",
-					"sid": 824634209590144,
+					"sid": 899214915065962,
 					"parameters": [
 						"100",
 						false,
@@ -48,7 +48,7 @@
 				{
 					"id": "set-group-active",
 					"objectClass": "System",
-					"sid": 992701249565757,
+					"sid": 947527283781280,
 					"parameters": {
 						"group-name": "\"Enemy & Fear\"",
 						"state": "deactivated"
@@ -57,7 +57,7 @@
 				{
 					"id": "stop",
 					"objectClass": "Audio",
-					"sid": 247266170252550,
+					"sid": 646150075588082,
 					"parameters": {
 						"tag": "\"Suspense\""
 					}
@@ -65,7 +65,7 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 893722812497730,
+					"sid": 659060920529026,
 					"parameters": {
 						"variable": "Start_Game",
 						"value": "false"
@@ -74,7 +74,7 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 215510021340909,
+					"sid": 554244699755430,
 					"parameters": {
 						"variable": "Continue_Game",
 						"value": "false"
@@ -83,25 +83,16 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 905747689984742,
+					"sid": 402031955387134,
 					"parameters": {
 						"variable": "Safe_Zone",
 						"value": "false"
 					}
 				},
 				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 391475068864559,
-					"parameters": {
-						"variable": "weapon",
-						"value": "\"Axe\""
-					}
-				},
-				{
 					"id": "set-group-active",
 					"objectClass": "System",
-					"sid": 968358922433984,
+					"sid": 556298566267817,
 					"parameters": {
 						"group-name": "\"Player\"",
 						"state": "deactivated"
@@ -110,66 +101,205 @@
 				{
 					"id": "set-size",
 					"objectClass": "Camera",
-					"sid": 191220545796033,
+					"sid": 183802202269361,
 					"parameters": {
 						"width": "80",
 						"height": "45"
 					}
-				},
+				}
+			],
+			"sid": 462521475926658
+		},
+		{
+			"eventType": "block",
+			"conditions": [
 				{
-					"id": "add-to-instvar",
-					"objectClass": "Player_All",
-					"sid": 252637189125229,
-					"disabled": true,
+					"id": "on-item-get",
+					"objectClass": "Game_Save",
+					"sid": 646304207097024,
 					"parameters": {
-						"instance-variable": "textframe",
-						"value": "1"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 645345412570733,
-					"parameters": {
-						"seconds": "1",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 388400217584731,
-					"parameters": {
-						"audio-file": {
-							"path": "Music/Tower/Tower_start"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"music\""
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 905099927992078,
-					"parameters": {
-						"seconds": "4",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "set-speed",
-					"objectClass": "Player",
-					"sid": 854513055379406,
-					"behaviorType": "НастраиваемоеДвижение",
-					"parameters": {
-						"which": "horizontal",
-						"speed": "70"
+						"key": "\"WolfMode\""
 					}
 				}
 			],
-			"sid": 793771780304789
+			"actions": [],
+			"sid": 793771780304789,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 784956902821782,
+							"parameters": {
+								"variable": "WolfMode"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 588858568931309,
+							"parameters": {
+								"variable": "weapon",
+								"value": "\"Axe\""
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Player_All",
+							"sid": 365480957415646,
+							"disabled": true,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 341527554541730,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 217286989314701,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/Tower/Tower_start"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 457122287305298,
+							"parameters": {
+								"seconds": "4",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Player",
+							"sid": 659325476574886,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "70"
+							}
+						}
+					],
+					"sid": 642464407764343
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 218509609052426,
+							"parameters": {
+								"variable": "WolfMode"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 952481646748430,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 231933978409027,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/Tower/Tower_start"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 530747261663141,
+							"parameters": {
+								"seconds": "4",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player",
+							"sid": 747989514863550,
+							"parameters": {
+								"animation": "\"MountingRun\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-speed",
+							"objectClass": "Player",
+							"sid": 399523043355524,
+							"behaviorType": "НастраиваемоеДвижение",
+							"parameters": {
+								"which": "horizontal",
+								"speed": "200"
+							}
+						}
+					],
+					"sid": 621312158247214
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Player_All",
+					"sid": 886266397627020
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 289761665598006,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "Player_All",
+					"sid": 380689712958725,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 868774626288371
 		},
 		{
 			"eventType": "block",
@@ -282,6 +412,15 @@
 					"parameters": {
 						"tags": "\"Cut\""
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 978781552798792,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -391,6 +530,142 @@
 				}
 			],
 			"sid": 278321886283045
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 797817161537217,
+					"parameters": {
+						"object": "Column_Big"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Column_Big",
+					"sid": 428129498770640,
+					"parameters": {
+						"tags": "\"Cut\""
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 950229715438155,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Audio_Play_Sound",
+					"sid": 494252319402003,
+					"parameters": [
+						"\"Column_Crash\"",
+						"0",
+						"\"Column_Crash\""
+					]
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Player",
+					"sid": 214759629607114,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "0"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player",
+					"sid": 784287759482319,
+					"parameters": {
+						"animation": "\"AxeFinishing\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Column_Big",
+					"sid": 520355434525597,
+					"parameters": {
+						"object": "Elektro",
+						"layer": "\"Tower\"",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "spawn-another-object",
+					"objectClass": "Column_Big",
+					"sid": 674608783246551,
+					"parameters": {
+						"object": "Smoke_Boom",
+						"layer": "\"Tower\"",
+						"image-point": "0",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "Smoke_Boom",
+					"sid": 636617086465491,
+					"parameters": {
+						"angle": "40"
+					}
+				},
+				{
+					"id": "set-scale",
+					"objectClass": "Smoke_Boom",
+					"sid": 844742945796770,
+					"parameters": {
+						"scale": "0.5"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Column_Big",
+					"sid": 133397217861179,
+					"parameters": {
+						"animation": "\"Crash\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"callFunction": "Audio_Play_Sound",
+					"sid": 863600699479802,
+					"parameters": [
+						"\"Crash_Car\"",
+						"0",
+						"\"Crash_Car\""
+					]
+				},
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Player_All",
+					"sid": 701950104102182,
+					"parameters": {
+						"instance-variable": "textframe",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 557238034133959,
+					"parameters": {
+						"variable": "onDialMain",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 402857164165487
 		},
 		{
 			"eventType": "block",

@@ -47,6 +47,32 @@
 								false,
 								false
 							]
+						},
+						{
+							"id": "save",
+							"objectClass": "System",
+							"sid": 490673692608551,
+							"parameters": {
+								"slot": "\"start\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 451141482718296,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 458053557768923,
+							"parameters": {
+								"variable": "Continue_Game",
+								"value": "false"
+							}
 						}
 					],
 					"sid": 613282302833253
@@ -78,12 +104,25 @@
 									}
 								},
 								{
+									"id": "has-tags",
+									"objectClass": "Player_Wolf",
+									"sid": 317972212987537,
+									"parameters": {
+										"tags": "\"Main\""
+									}
+								},
+								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
 									"sid": 503857853507486
 								}
 							],
 							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "Player_Wolf",
+									"sid": 846862022015553
+								},
 								{
 									"id": "set-instvar-value",
 									"objectClass": "Player_All",
@@ -94,13 +133,8 @@
 									}
 								}
 							],
-							"sid": 596393639556671
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 350148951926211
+							"sid": 596393639556671,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -522,14 +556,6 @@
 					],
 					"actions": [
 						{
-							"id": "save",
-							"objectClass": "System",
-							"sid": 169495444106764,
-							"parameters": {
-								"slot": "\"start\""
-							}
-						},
-						{
 							"callFunction": "End_Scene2",
 							"sid": 983906666546159,
 							"parameters": [
@@ -622,24 +648,6 @@
 							"parameters": {
 								"group-name": "\"Enemy & Fear\"",
 								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 920496643652906,
-							"parameters": {
-								"variable": "Start_Game",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 901848444430842,
-							"parameters": {
-								"variable": "Continue_Game",
-								"value": "false"
 							}
 						},
 						{
