@@ -2129,6 +2129,15 @@
 					}
 				},
 				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 407453132511308,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
+				},
+				{
 					"id": "compare-instance-variable",
 					"objectClass": "Enemy_Mili",
 					"sid": 545654837607337,
@@ -2311,6 +2320,70 @@
 				}
 			],
 			"sid": 708222547927415
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player_All",
+					"sid": 311534199681480,
+					"parameters": {
+						"object": "Trigger_CutScene"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Trigger_CutScene",
+					"sid": 954040712580225,
+					"parameters": {
+						"tags": "\"Final\""
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 239471324955469,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Enemy_Mili",
+					"sid": 775951769512162,
+					"disabled": true,
+					"parameters": {
+						"instance-variable": "HP",
+						"comparison": 4,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 618701629171331,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "End_Scene2",
+					"sid": 791613101798219,
+					"parameters": [
+						"100",
+						"1",
+						"0",
+						false,
+						false,
+						false
+					]
+				}
+			],
+			"sid": 321950148750214
 		},
 		{
 			"eventType": "block",

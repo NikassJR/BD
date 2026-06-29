@@ -32,14 +32,6 @@
 					}
 				},
 				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 166927446754651,
-					"parameters": {
-						"slot": "\"mysave\""
-					}
-				},
-				{
 					"id": "set-group-active",
 					"objectClass": "System",
 					"sid": 154704129701891,
@@ -110,29 +102,33 @@
 						"width": "80",
 						"height": "45"
 					}
-				},
-				{
-					"id": "add-to-instvar",
-					"objectClass": "Player_All",
-					"sid": 298464127649343,
-					"disabled": true,
-					"parameters": {
-						"instance-variable": "textframe",
-						"value": "1"
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 604426233582057,
-					"disabled": true,
-					"parameters": {
-						"seconds": "1",
-						"use-timescale": true
-					}
 				}
 			],
 			"sid": 880122669046116
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "Game_Save",
+					"sid": 570427716576082,
+					"parameters": {
+						"key": "\"WolfMode\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 427554728999385,
+					"parameters": {
+						"slot": "\"mysave\""
+					}
+				}
+			],
+			"sid": 657629239561128
 		},
 		{
 			"eventType": "block",
@@ -182,6 +178,16 @@
 					"parameters": {
 						"tags": "\"Action\""
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 270383226043779,
+					"disabled": true,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -223,6 +229,78 @@
 				}
 			],
 			"sid": 899097837192729
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player_All",
+					"sid": 606020600376181,
+					"parameters": {
+						"object": "Trigger_CutScene"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Trigger_CutScene",
+					"sid": 372345582009358,
+					"parameters": {
+						"tags": "\"Action\""
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 318853621949196,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 640063814058702,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"callFunction": "End_Scene2",
+					"sid": 419961051834780,
+					"parameters": [
+						"100",
+						"1",
+						"0",
+						false,
+						false,
+						false
+					]
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player_All",
+					"sid": 261390451131086,
+					"parameters": {
+						"animation": "weapon & \"Idle\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 444042009411798,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 483277687822663,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -454,6 +532,15 @@
 							"parameters": {
 								"object": "Glass"
 							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 672409099572517,
+							"parameters": {
+								"variable": "WolfMode"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -613,6 +700,191 @@
 						}
 					],
 					"sid": 960803849762336
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "EnemyBaseball",
+							"sid": 249732068358107,
+							"parameters": {
+								"object": "Glass"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 767864073529796,
+							"parameters": {
+								"variable": "WolfMode"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Glass",
+							"sid": 623635503227111,
+							"parameters": {
+								"animation": "\"Glass_Destroy\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"callFunction": "Audio_Play_Sound",
+							"sid": 899018578802049,
+							"parameters": [
+								"\"Gless_Door_Destroy\"",
+								"0",
+								"\"Gless_Door_Destroy\""
+							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 419786782168793,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "EnemyBaseball",
+							"sid": 278416095815157,
+							"parameters": {
+								"animation": "\"Jump\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 298717052640704,
+							"parameters": {
+								"seconds": "3",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "Camera",
+							"sid": 464950884491173,
+							"parameters": {
+								"object": "Shadow3",
+								"layer": "\"Dialog\"",
+								"image-point": "0",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Shadow3",
+							"sid": 818669444305080,
+							"parameters": {
+								"scale": "8"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 420987497131513,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						},
+						{
+							"callFunction": "Audio_Play_Sound",
+							"sid": 550297883242603,
+							"parameters": [
+								"\"End_Scene\"",
+								"0",
+								"\"End_Scene\""
+							]
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 256816867977368,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "true"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Player_All",
+							"sid": 204992698617085,
+							"disabled": true
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 173641763488311,
+							"disabled": true,
+							"parameters": {
+								"variable": "weapon",
+								"value": "\"noweapon\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 855284244128036,
+							"disabled": true,
+							"parameters": {
+								"variable": "Safe_Zone",
+								"value": "true"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 672541481116902,
+							"disabled": true,
+							"parameters": {
+								"object-to-create": "Player_Fear",
+								"layer": "\"Player\"",
+								"x": "3814",
+								"y": "860",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 759059651090261,
+							"disabled": true,
+							"parameters": {
+								"seconds": "3",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Player_Fear",
+							"sid": 111614046053710,
+							"disabled": true,
+							"parameters": {
+								"animation": "\"onGround\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_All",
+							"sid": 180794448405469,
+							"disabled": true,
+							"parameters": {
+								"instance-variable": "speedWalk",
+								"value": "150"
+							}
+						}
+					],
+					"sid": 206562342781360
 				},
 				{
 					"eventType": "block",
@@ -3021,6 +3293,15 @@
 					}
 				},
 				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 915924744926915,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
+				},
+				{
 					"id": "trigger-once-while-true",
 					"objectClass": "System",
 					"sid": 263467495405446
@@ -3080,6 +3361,65 @@
 				}
 			],
 			"sid": 166796253984978
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 351712906274022,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 593944751973106,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 582573293525317
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 156076349090461,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 538371265201496,
+					"parameters": {
+						"tag": "\"Suspense\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 494963643670606
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 923646211855995,
+					"parameters": {
+						"layout": "Garage_Mark_lvl13"
+					}
+				}
+			],
+			"sid": 807100799807428
 		},
 		{
 			"eventType": "block",

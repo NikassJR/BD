@@ -19,29 +19,21 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 124145958742915
+					"sid": 481846487919066
 				}
 			],
 			"actions": [
 				{
 					"id": "save",
 					"objectClass": "System",
-					"sid": 138582229628654,
+					"sid": 502013633328302,
 					"parameters": {
 						"slot": "\"start\""
 					}
 				},
 				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 731075736694627,
-					"parameters": {
-						"slot": "\"mysave\""
-					}
-				},
-				{
 					"callFunction": "End_Scene2",
-					"sid": 859011836641749,
+					"sid": 555618165677066,
 					"parameters": [
 						"0",
 						"1",
@@ -54,7 +46,7 @@
 				{
 					"id": "set-size",
 					"objectClass": "Camera",
-					"sid": 428461779050717,
+					"sid": 577915082726392,
 					"parameters": {
 						"width": "80",
 						"height": "45"
@@ -63,7 +55,7 @@
 				{
 					"id": "stop",
 					"objectClass": "Audio",
-					"sid": 914273978144917,
+					"sid": 635382838322916,
 					"parameters": {
 						"tag": "\"Suspense\""
 					}
@@ -71,7 +63,7 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 362289613730916,
+					"sid": 732375920185318,
 					"parameters": {
 						"variable": "Start_Game",
 						"value": "false"
@@ -80,7 +72,7 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 697101523711586,
+					"sid": 460626820483951,
 					"parameters": {
 						"variable": "Continue_Game",
 						"value": "false"
@@ -89,16 +81,32 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 833589077318998,
+					"sid": 737233172441676,
 					"parameters": {
 						"variable": "Safe_Zone",
 						"value": "false"
 					}
-				},
+				}
+			],
+			"sid": 667402152568932
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "Game_Save",
+					"sid": 600205378892450,
+					"parameters": {
+						"key": "\"WolfMode\""
+					}
+				}
+			],
+			"actions": [
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 214595268396286,
+					"sid": 784744769604394,
 					"parameters": {
 						"seconds": "1",
 						"use-timescale": true
@@ -107,7 +115,7 @@
 				{
 					"id": "set-group-active",
 					"objectClass": "System",
-					"sid": 299600037347893,
+					"sid": 671629643442787,
 					"parameters": {
 						"group-name": "\"Player\"",
 						"state": "activated"
@@ -116,14 +124,22 @@
 				{
 					"id": "set-group-active",
 					"objectClass": "System",
-					"sid": 714847884313288,
+					"sid": 495986859073329,
 					"parameters": {
 						"group-name": "\"Enemy & Fear\"",
 						"state": "activated"
 					}
+				},
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 247231171873256,
+					"parameters": {
+						"slot": "\"mysave\""
+					}
 				}
 			],
-			"sid": 498657318994139
+			"sid": 590511621745736
 		},
 		{
 			"eventType": "block",
@@ -491,6 +507,15 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 668688680770271,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -526,6 +551,60 @@
 				}
 			],
 			"sid": 103693727981475
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 336037169266638,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 833515887257611,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 294933057100530,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 576505159737104,
+					"parameters": {
+						"tag": "\"Suspense\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 267654547910043
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 421018211599472,
+					"parameters": {
+						"layout": "Underground_lvl11"
+					}
+				}
+			],
+			"sid": 449578869045810
 		},
 		{
 			"eventType": "block",

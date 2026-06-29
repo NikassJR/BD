@@ -28,14 +28,6 @@
 					}
 				},
 				{
-					"id": "save",
-					"objectClass": "System",
-					"sid": 729197738588250,
-					"parameters": {
-						"slot": "\"mysave\""
-					}
-				},
-				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 538593612403122,
@@ -113,6 +105,30 @@
 				}
 			],
 			"sid": 988813849888938
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-item-get",
+					"objectClass": "Game_Save",
+					"sid": 827006126420853,
+					"parameters": {
+						"key": "\"WolfMode\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "save",
+					"objectClass": "System",
+					"sid": 958057943312645,
+					"parameters": {
+						"slot": "\"mysave\""
+					}
+				}
+			],
+			"sid": 951086989575353
 		},
 		{
 			"eventType": "block",
