@@ -358,6 +358,14 @@
 				},
 				{
 					"id": "set-opacity",
+					"objectClass": "MenuBG",
+					"sid": 419814578766927,
+					"parameters": {
+						"opacity": "0"
+					}
+				},
+				{
+					"id": "set-opacity",
 					"objectClass": "Flag",
 					"sid": 953566914140281,
 					"parameters": {
@@ -864,6 +872,23 @@
 						"tags": "\"\"",
 						"property": "offsetOpacity",
 						"end-value": "100",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "MenuBG",
+					"sid": 199141777030223,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "50",
 						"time": "1",
 						"ease": "default",
 						"destroy-on-complete": "no",
@@ -4263,6 +4288,15 @@
 							"parameters": {
 								"key": "\"Language\""
 							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "Text_Menu",
+							"sid": 143417046940192,
+							"disabled": true,
+							"parameters": {
+								"width": "Text_Menu.TextWidth +10"
+							}
 						}
 					],
 					"sid": 509293858598576
@@ -4407,6 +4441,15 @@
 						{
 							"callFunction": "Text",
 							"sid": 856454050632894
+						},
+						{
+							"id": "set-width",
+							"objectClass": "Text_Menu",
+							"sid": 238481371203470,
+							"disabled": true,
+							"parameters": {
+								"width": "Text_Menu.TextWidth +10"
+							}
 						}
 					],
 					"sid": 531629169247482
@@ -4469,6 +4512,15 @@
 						{
 							"callFunction": "Text",
 							"sid": 675285264125293
+						},
+						{
+							"id": "set-width",
+							"objectClass": "Text_Menu",
+							"sid": 228509830224463,
+							"disabled": true,
+							"parameters": {
+								"width": "Text_Menu.TextWidth +10"
+							}
 						}
 					],
 					"sid": 849186929217696
@@ -4527,6 +4579,15 @@
 						{
 							"callFunction": "Text",
 							"sid": 602646110583667
+						},
+						{
+							"id": "set-width",
+							"objectClass": "Text_Menu",
+							"sid": 828258320111397,
+							"disabled": true,
+							"parameters": {
+								"width": "Text_Menu.TextWidth +10"
+							}
 						}
 					],
 					"sid": 173071035152159
@@ -4589,6 +4650,15 @@
 						{
 							"callFunction": "Text",
 							"sid": 635243814316103
+						},
+						{
+							"id": "set-width",
+							"objectClass": "Text_Menu",
+							"sid": 598324871666537,
+							"disabled": true,
+							"parameters": {
+								"width": "Text_Menu.TextWidth +10"
+							}
 						}
 					],
 					"sid": 865674217399403
@@ -16961,6 +17031,37 @@
 				}
 			],
 			"sid": 939908417464723
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Text_Menu",
+					"sid": 713044251396407,
+					"disabled": true
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 149285362716758,
+					"parameters": {
+						"variable": "Go"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-horizontal-alignment",
+					"objectClass": "Text_Menu",
+					"sid": 666695171243657,
+					"parameters": {
+						"horizontal-alignment": "center"
+					}
+				}
+			],
+			"sid": 146624379506277,
+			"disabled": true
 		}
 	],
 	"sid": 658662795798694

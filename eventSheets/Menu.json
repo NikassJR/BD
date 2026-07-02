@@ -2040,9 +2040,9 @@
 				{
 					"id": "set-text",
 					"objectClass": "Text_Menu",
-					"sid": 665318380185663,
+					"sid": 804604645942496,
 					"parameters": {
-						"text": "Lang.At(Language,Self.Lang)"
+						"text": "Lang.At(Language, Self.Lang)"
 					}
 				},
 				{
@@ -2068,9 +2068,54 @@
 					"parameters": {
 						"text": "Lang.At(Language,Self.Lang)"
 					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 664996863524913,
+					"parameters": {
+						"seconds": "0.1",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "Text_Menu",
+					"sid": 840505479058675,
+					"disabled": true,
+					"parameters": {
+						"width": "Text_Menu.TextWidth +25"
+					}
 				}
 			],
 			"sid": 972606361071679
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-text",
+					"objectClass": "Text_Menu",
+					"sid": 763234546476456,
+					"parameters": {
+						"text-to-compare": "Lang.At(Language,Self.Lang)",
+						"case-sensitivity": "ignore-case"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-width",
+					"objectClass": "Text_Menu",
+					"sid": 975329337808059,
+					"parameters": {
+						"width": "Text_Menu.TextWidth"
+					}
+				}
+			],
+			"sid": 820441025472163,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
