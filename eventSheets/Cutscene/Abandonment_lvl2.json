@@ -15,21 +15,21 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 742144128008230
+					"sid": 385873217346197
 				}
 			],
 			"actions": [
 				{
 					"id": "save",
 					"objectClass": "System",
-					"sid": 594220508267700,
+					"sid": 320834681261419,
 					"parameters": {
 						"slot": "\"start\""
 					}
 				},
 				{
 					"callFunction": "End_Scene2",
-					"sid": 972779023775913,
+					"sid": 732248515291570,
 					"parameters": [
 						"0",
 						"2",
@@ -42,7 +42,7 @@
 				{
 					"id": "set-boolean-instvar",
 					"objectClass": "Camera",
-					"sid": 820334774667709,
+					"sid": 891791621147472,
 					"parameters": {
 						"instance-variable": "onPlayer",
 						"value": "false"
@@ -51,7 +51,7 @@
 				{
 					"id": "set-size",
 					"objectClass": "Camera",
-					"sid": 984676137245707,
+					"sid": 742061711540672,
 					"parameters": {
 						"width": "80",
 						"height": "45"
@@ -60,7 +60,7 @@
 				{
 					"id": "set-group-active",
 					"objectClass": "System",
-					"sid": 404373372880934,
+					"sid": 230636870337770,
 					"parameters": {
 						"group-name": "\"Player\"",
 						"state": "deactivated"
@@ -69,7 +69,7 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 192449237093977,
+					"sid": 393213108054577,
 					"parameters": {
 						"variable": "Start_Game",
 						"value": "false"
@@ -78,7 +78,7 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 273490995805184,
+					"sid": 618272462494825,
 					"parameters": {
 						"variable": "Continue_Game",
 						"value": "false"
@@ -87,7 +87,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 727999170995534,
+					"sid": 774863376983491,
 					"parameters": {
 						"seconds": "1",
 						"use-timescale": true
@@ -96,7 +96,7 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 148597359798603,
+					"sid": 793852888686491,
 					"parameters": {
 						"audio-file": {
 							"path": "Music/Soul to soul"
@@ -110,7 +110,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 378192267748332,
+					"sid": 544032885469782,
 					"parameters": {
 						"seconds": "3",
 						"use-timescale": true
@@ -119,23 +119,92 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 355411263744861,
+					"sid": 606613054144121,
 					"parameters": {
 						"variable": "onDialMain",
 						"value": "true"
 					}
-				},
+				}
+			],
+			"sid": 507917244161063
+		},
+		{
+			"eventType": "block",
+			"conditions": [
 				{
-					"id": "add-to-instvar",
-					"objectClass": "Player_All",
-					"sid": 817975766076979,
+					"id": "on-item-get",
+					"objectClass": "Game_Save",
+					"sid": 214670606712188,
 					"parameters": {
-						"instance-variable": "textframe",
-						"value": "1"
+						"key": "\"WolfMode\""
 					}
 				}
 			],
-			"sid": 706424860713048
+			"actions": [],
+			"sid": 843285578542673,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 835219485208604,
+							"parameters": {
+								"variable": "WolfMode"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 273442013997442
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_All",
+							"sid": 849287897301430,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 152819553135074
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-created",
+					"objectClass": "Player_Wolf",
+					"sid": 176477114942858
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 240380189216316,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player_Wolf",
+					"sid": 436908369558276,
+					"parameters": {
+						"instance-variable": "textframe",
+						"value": "10"
+					}
+				}
+			],
+			"sid": 763575337405522
 		},
 		{
 			"eventType": "block",

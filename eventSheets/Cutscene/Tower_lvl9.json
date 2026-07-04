@@ -3166,6 +3166,15 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 352474960860775,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -3201,6 +3210,60 @@
 				}
 			],
 			"sid": 205068647690236
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 967585081380501,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 527755048023287,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 534625360075467,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 449160728976667,
+					"parameters": {
+						"tag": "\"Suspense\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 951768669343851
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 725215646705406,
+					"parameters": {
+						"layout": "Office_lvl10"
+					}
+				}
+			],
+			"sid": 726923758304019
 		},
 		{
 			"eventType": "block",

@@ -423,6 +423,15 @@
 					}
 				},
 				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 961873372144168,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
+				},
+				{
 					"id": "trigger-once-while-true",
 					"objectClass": "System",
 					"sid": 699764871307599
@@ -443,6 +452,49 @@
 				}
 			],
 			"sid": 147221082200554
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_All",
+					"sid": 740487627166013,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 0,
+						"value": "2"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 273333189901142,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 448684798120412
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Create_mainDialoge",
+					"sid": 419055004326977,
+					"parameters": [
+						"\"Mark4\"",
+						"812",
+						"1",
+						false,
+						true,
+						false
+					]
+				}
+			],
+			"sid": 697787341669593
 		},
 		{
 			"eventType": "block",

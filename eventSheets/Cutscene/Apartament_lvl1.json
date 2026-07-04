@@ -1699,6 +1699,15 @@
 					"isInverted": true
 				},
 				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 894780623958827,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
+				},
+				{
 					"id": "trigger-once-while-true",
 					"objectClass": "System",
 					"sid": 219554695308589
@@ -2042,6 +2051,115 @@
 					"sid": 312266351599174
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_All",
+					"sid": 419853154007062,
+					"parameters": {
+						"object": "Trigger_CutScene"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Trigger_CutScene",
+					"sid": 363336575911235,
+					"parameters": {
+						"tags": "\"End\""
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Player_All",
+					"sid": 964363730304272,
+					"parameters": {
+						"instance-variable": "textframe",
+						"comparison": 2,
+						"value": "18"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 824123235887010,
+					"parameters": {
+						"variable": "onDial"
+					},
+					"isInverted": true
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 265210869383817,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 546930547990358
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 301426549972681,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Shadow5",
+					"sid": 784220737478566,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "Player_All",
+					"sid": 788045397901469,
+					"parameters": {
+						"animation": "weapon & \"Idle\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 661181532322787,
+					"parameters": {
+						"variable": "onDial",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player_All",
+					"sid": 979141108655172,
+					"parameters": {
+						"instance-variable": "textframe",
+						"value": "18"
+					}
+				}
+			],
+			"sid": 757090071632041
 		},
 		{
 			"eventType": "block",

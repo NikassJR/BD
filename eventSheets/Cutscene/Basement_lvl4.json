@@ -122,15 +122,6 @@
 									"id": "destroy",
 									"objectClass": "Player_Wolf",
 									"sid": 846862022015553
-								},
-								{
-									"id": "set-instvar-value",
-									"objectClass": "Player_All",
-									"sid": 322275749000913,
-									"parameters": {
-										"instance-variable": "textframe",
-										"value": "32"
-									}
 								}
 							],
 							"sid": 596393639556671,
@@ -203,7 +194,52 @@
 							"sid": 503038060027646
 						}
 					],
-					"sid": 171111229059784
+					"sid": 171111229059784,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Player_Wolf",
+							"sid": 945023342070353
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Player_Wolf",
+							"sid": 917097679029737,
+							"parameters": {
+								"instance-variable": "textframe",
+								"value": "32"
+							}
+						}
+					],
+					"sid": 841830943785043
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "Player_Wolf",
+							"sid": 170200950959327
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Player_Wolf",
+							"sid": 316788311011720,
+							"parameters": {
+								"tags": "\"Main\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 816839881305052,
+					"disabled": true
 				},
 				{
 					"eventType": "block",

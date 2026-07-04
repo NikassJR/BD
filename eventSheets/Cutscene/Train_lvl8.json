@@ -1881,6 +1881,15 @@
 					"parameters": {
 						"variable": "Start_Game"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 558876965176378,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -1916,6 +1925,60 @@
 				}
 			],
 			"sid": 609103478379465
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 351453845051546,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 361786823794509,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 715235789615052,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 657732130955393,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 976702072824649
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 457627249676887,
+					"parameters": {
+						"layout": "Tower_lvl9"
+					}
+				}
+			],
+			"sid": 170988761432378
 		},
 		{
 			"eventType": "block",
