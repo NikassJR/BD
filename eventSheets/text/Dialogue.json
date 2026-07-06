@@ -955,6 +955,13 @@
 					"initialValue": "false",
 					"comment": "",
 					"sid": 493977121158345
+				},
+				{
+					"name": "CamerDown",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"sid": 147991612250051
 				}
 			],
 			"eventType": "function-block",
@@ -1349,6 +1356,123 @@
 						}
 					],
 					"sid": 684261354182256
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 853289474908849,
+							"parameters": {
+								"variable": "CamerDown"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "main_dialogue",
+							"sid": 421055570481534,
+							"parameters": {
+								"x": "Camera.X -225",
+								"y": "ViewportBottom(0) - 90"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "dialogMainText",
+							"sid": 923463411968430,
+							"parameters": {
+								"x": "main_dialogue.x + 80",
+								"y": "main_dialogue.Y + 15"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "icon1",
+							"sid": 279244735735437,
+							"parameters": {
+								"x": "main_dialogue.X + 20",
+								"y": "main_dialogue.Y + 15"
+							}
+						}
+					],
+					"sid": 753719842315346,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-width",
+							"objectClass": "Camera",
+							"sid": 431586500041413,
+							"disabled": true,
+							"parameters": {
+								"comparison": 0,
+								"width": "80"
+							}
+						},
+						{
+							"id": "compare-height",
+							"objectClass": "Camera",
+							"sid": 849834144515966,
+							"disabled": true,
+							"parameters": {
+								"comparison": 0,
+								"height": "45"
+							}
+						},
+						{
+							"id": "compare-width",
+							"objectClass": "Camera",
+							"sid": 541160624348426,
+							"parameters": {
+								"comparison": 0,
+								"width": "70"
+							}
+						},
+						{
+							"id": "compare-height",
+							"objectClass": "Camera",
+							"sid": 488457770839530,
+							"parameters": {
+								"comparison": 0,
+								"height": "35"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "main_dialogue",
+							"sid": 346007604397381,
+							"parameters": {
+								"x": "Camera.X -225",
+								"y": "ViewportBottom(0) - 90"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "dialogMainText",
+							"sid": 537371502258175,
+							"parameters": {
+								"x": "main_dialogue.x + 80",
+								"y": "main_dialogue.Y + 15"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "icon1",
+							"sid": 524398041946979,
+							"parameters": {
+								"x": "main_dialogue.X + 20",
+								"y": "main_dialogue.Y + 15"
+							}
+						}
+					],
+					"sid": 759092207188544
 				}
 			]
 		},
@@ -1739,7 +1863,8 @@
 					}
 				}
 			],
-			"sid": 690697161414314
+			"sid": 690697161414314,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -1789,7 +1914,8 @@
 					}
 				}
 			],
-			"sid": 772459091841706
+			"sid": 772459091841706,
+			"disabled": true
 		},
 		{
 			"eventType": "block",

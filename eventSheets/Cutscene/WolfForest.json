@@ -313,11 +313,12 @@
 						},
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 555253905684458,
+							"sid": 278935138936858,
 							"parameters": [
-								"\"Mark6\"",
-								"36",
-								"1",
+								"\"Clear\"",
+								"829",
+								"3",
+								false,
 								false,
 								false,
 								false
@@ -348,11 +349,12 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 739796128284271,
+							"sid": 894610830824567,
 							"parameters": [
-								"\"Mark6\"",
-								"37",
-								"1",
+								"\"Clear\"",
+								"830",
+								"3",
+								false,
 								false,
 								false,
 								false
@@ -383,13 +385,14 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 777461208207137,
+							"sid": 255255013270240,
 							"parameters": [
-								"\"Mark4\"",
-								"38",
-								"3",
-								true,
-								true,
+								"\"Clear\"",
+								"831",
+								"1",
+								false,
+								false,
+								false,
 								false
 							]
 						}
@@ -402,163 +405,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "Player_All",
-							"sid": 201616302389455,
+							"sid": 748247766510540,
 							"parameters": {
 								"instance-variable": "textframe",
 								"comparison": 0,
 								"value": "5"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 565106700618822
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "Create_mainDialoge",
-							"sid": 747341126370752,
-							"parameters": [
-								"\"Mark4\"",
-								"39",
-								"3",
-								true,
-								true,
-								false
-							]
-						}
-					],
-					"sid": 948669847936049
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 717617705067231,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "6"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 718212859938320
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "Create_mainDialoge",
-							"sid": 988408081092909,
-							"parameters": [
-								"\"Mark4\"",
-								"40",
-								"3",
-								true,
-								true,
-								false
-							]
-						}
-					],
-					"sid": 336097056788651
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 933170271818320,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "7"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 416942554976598
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "Create_mainDialoge",
-							"sid": 418903681373574,
-							"parameters": [
-								"\"Mark4\"",
-								"41",
-								"3",
-								true,
-								true,
-								false
-							]
-						}
-					],
-					"sid": 380889778795033
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 876115850865451,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "8"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 424130734864066
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "End_Scene2",
-							"sid": 670557977950264,
-							"parameters": [
-								"100",
-								"1",
-								"0",
-								false,
-								true,
-								false
-							]
-						},
-						{
-							"callFunction": "Create_mainDialoge",
-							"sid": 394419410417342,
-							"parameters": [
-								"\"Mark4\"",
-								"42",
-								"1",
-								true,
-								true,
-								false
-							]
-						}
-					],
-					"sid": 547027525576027
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 742731211293493,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "9"
 							}
 						},
 						{
@@ -569,21 +420,33 @@
 					],
 					"actions": [
 						{
+							"callFunction": "End_Scene2",
+							"sid": 459612615259725,
+							"parameters": [
+								"100",
+								"1",
+								"0",
+								false,
+								true,
+								false
+							]
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 692406176473132,
+							"parameters": {
+								"variable": "Start_Game",
+								"value": "true"
+							}
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 521286534692715,
 							"parameters": {
 								"variable": "onDialMain",
 								"value": "false"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 408882359578074,
-							"parameters": {
-								"variable": "Start_Game",
-								"value": "true"
 							}
 						},
 						{
@@ -633,9 +496,9 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 591362507836143,
+					"sid": 405699896805181,
 					"parameters": {
-						"layout": "Subway"
+						"layout": "BarWolfEnd"
 					}
 				}
 			],

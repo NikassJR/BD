@@ -17238,6 +17238,80 @@
 												}
 											],
 											"sid": 732830373518960
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-fall",
+													"objectClass": "Player_All",
+													"sid": 997022837270542,
+													"behaviorType": "Платформер"
+												}
+											],
+											"actions": [
+												{
+													"id": "start-timer",
+													"objectClass": "Player_All",
+													"sid": 433038282909029,
+													"behaviorType": "Таймер",
+													"parameters": {
+														"duration": "1",
+														"type": "once",
+														"tag": "\"Jump\""
+													}
+												}
+											],
+											"sid": 850280692273989
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-landed",
+													"objectClass": "Player_All",
+													"sid": 208201674202570,
+													"behaviorType": "Платформер"
+												}
+											],
+											"actions": [
+												{
+													"id": "stop-timer",
+													"objectClass": "Player_All",
+													"sid": 488698768775119,
+													"behaviorType": "Таймер",
+													"parameters": {
+														"tag": "\"Jump\""
+													}
+												}
+											],
+											"sid": 814120210758503
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-timer",
+													"objectClass": "Player_All",
+													"sid": 909057392528842,
+													"behaviorType": "Таймер",
+													"parameters": {
+														"tag": "\"Jump\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 358923266555645,
+													"parameters": {
+														"variable": "HPplayer",
+														"value": "0"
+													}
+												}
+											],
+											"sid": 372672479860519
 										}
 									],
 									"sid": 233218090815509
@@ -26567,10 +26641,10 @@
 														{
 															"id": "add-to-instvar",
 															"objectClass": "Enemy_Mili",
-															"sid": 831051262273681,
+															"sid": 300082131300539,
 															"parameters": {
 																"instance-variable": "Rough",
-																"value": "4"
+																"value": "3"
 															}
 														},
 														{
@@ -26620,10 +26694,10 @@
 														{
 															"id": "add-to-instvar",
 															"objectClass": "Enemy_Mili",
-															"sid": 813794601672155,
+															"sid": 491170549596974,
 															"parameters": {
 																"instance-variable": "Rough",
-																"value": "4"
+																"value": "3"
 															}
 														},
 														{

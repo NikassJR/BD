@@ -98,41 +98,6 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 398303269112101,
-									"parameters": {
-										"variable": "WolfMode"
-									}
-								},
-								{
-									"id": "has-tags",
-									"objectClass": "Player_Wolf",
-									"sid": 317972212987537,
-									"parameters": {
-										"tags": "\"Main\""
-									}
-								},
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 503857853507486
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "Player_Wolf",
-									"sid": 846862022015553
-								}
-							],
-							"sid": 596393639556671,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
 									"sid": 336521474092685,
 									"parameters": {
 										"variable": "WolfMode"
@@ -166,43 +131,6 @@
 						{
 							"id": "on-created",
 							"objectClass": "Player_Wolf",
-							"sid": 277582622394470
-						},
-						{
-							"id": "has-tags",
-							"objectClass": "Player_Wolf",
-							"sid": 179715206179284,
-							"parameters": {
-								"tags": "\"Main\""
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 180958040512084,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "32"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "Player_Wolf",
-							"sid": 503038060027646
-						}
-					],
-					"sid": 171111229059784,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-created",
-							"objectClass": "Player_Wolf",
 							"sid": 945023342070353
 						}
 					],
@@ -218,197 +146,6 @@
 						}
 					],
 					"sid": 841830943785043
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-destroyed",
-							"objectClass": "Player_Wolf",
-							"sid": 170200950959327
-						},
-						{
-							"id": "has-tags",
-							"objectClass": "Player_Wolf",
-							"sid": 316788311011720,
-							"parameters": {
-								"tags": "\"Main\""
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [],
-					"sid": 816839881305052,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 222090676815538,
-							"parameters": {
-								"variable": "onDialMain"
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 582740230528102,
-							"parameters": {
-								"variable": "WolfMode"
-							}
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 637562066725335,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "32"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 810572294023490
-						}
-					],
-					"actions": [
-						{
-							"id": "save",
-							"objectClass": "System",
-							"sid": 783084326601610,
-							"parameters": {
-								"slot": "\"start\""
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Player_All",
-							"sid": 927650697462077,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "32"
-							}
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Camera",
-							"sid": 135777960675010,
-							"parameters": {
-								"instance-variable": "onPlayer",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-x",
-							"objectClass": "Camera",
-							"sid": 951692767387847,
-							"parameters": {
-								"x": "400"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 105433390522514,
-							"parameters": {
-								"group-name": "\"Player\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 713542457707415,
-							"parameters": {
-								"group-name": "\"Enemy & Fear\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 781128154431077,
-							"parameters": {
-								"variable": "Start_Game",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 581025505819421,
-							"parameters": {
-								"variable": "Continue_Game",
-								"value": "false"
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 896311779130576,
-							"parameters": {
-								"audio-file": {
-									"path": "Music/It couldn't be shittier"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"Suspense\""
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "Player_All",
-							"sid": 632909894462953,
-							"parameters": {
-								"animation": "\"Sit\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 176270068155121
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 447705130141182,
-							"parameters": {
-								"seconds": "2",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 753872737516791,
-							"parameters": {
-								"variable": "weapon",
-								"value": "\"Mounting\""
-							}
-						},
-						{
-							"callFunction": "End_Scene2",
-							"sid": 582509363790525,
-							"parameters": [
-								"0",
-								"1.5",
-								"100",
-								true,
-								false,
-								false
-							]
-						}
-					],
-					"sid": 792510060979293,
-					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -971,13 +708,14 @@
 						},
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 829094035552394,
+							"sid": 492575188120616,
 							"parameters": [
 								"\"Boss\"",
 								"234",
 								"1",
 								false,
 								false,
+								true,
 								true
 							]
 						}
@@ -1006,13 +744,14 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 393860866024327,
+							"sid": 741917175102303,
 							"parameters": [
 								"\"Boss\"",
 								"235",
 								"1",
 								false,
 								false,
+								true,
 								true
 							]
 						}
@@ -1041,13 +780,14 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 339961438363676,
+							"sid": 403581413752159,
 							"parameters": [
 								"\"Boss\"",
 								"236",
 								"1",
 								false,
 								false,
+								true,
 								true
 							]
 						}
@@ -1076,14 +816,15 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 534717524105135,
+							"sid": 950944458606225,
 							"parameters": [
 								"\"Mark5\"",
 								"237",
 								"1",
 								false,
 								true,
-								false
+								false,
+								true
 							]
 						}
 					],
@@ -1111,14 +852,15 @@
 					"actions": [
 						{
 							"callFunction": "Create_mainDialoge",
-							"sid": 206925623207854,
+							"sid": 856160943982096,
 							"parameters": [
 								"\"Mark5\"",
 								"238",
 								"2",
 								false,
 								true,
-								false
+								false,
+								true
 							]
 						}
 					],
@@ -1153,7 +895,8 @@
 								"1",
 								false,
 								false,
-								true
+								true,
+								false
 							]
 						}
 					],
@@ -1188,7 +931,8 @@
 								"3",
 								false,
 								false,
-								true
+								true,
+								false
 							]
 						}
 					],
@@ -1289,6 +1033,7 @@
 								"1",
 								true,
 								true,
+								false,
 								false
 							]
 						}
@@ -1324,6 +1069,7 @@
 								"2",
 								true,
 								true,
+								false,
 								false
 							]
 						},
@@ -1379,6 +1125,7 @@
 								"2",
 								true,
 								true,
+								false,
 								false
 							]
 						}
@@ -1573,6 +1320,7 @@
 								"2",
 								true,
 								true,
+								false,
 								false
 							]
 						}
@@ -1617,7 +1365,8 @@
 								"1",
 								false,
 								false,
-								true
+								true,
+								false
 							]
 						},
 						{
@@ -1680,6 +1429,7 @@
 								"1",
 								true,
 								true,
+								false,
 								false
 							]
 						}
@@ -1741,6 +1491,7 @@
 								"2",
 								true,
 								true,
+								false,
 								false
 							]
 						},
@@ -1785,6 +1536,7 @@
 								"1",
 								true,
 								true,
+								false,
 								false
 							]
 						}
@@ -1820,7 +1572,8 @@
 								"0.5",
 								false,
 								false,
-								true
+								true,
+								false
 							]
 						},
 						{
@@ -1893,6 +1646,7 @@
 								"1",
 								true,
 								true,
+								false,
 								false
 							]
 						}
@@ -1928,6 +1682,7 @@
 								"1",
 								true,
 								true,
+								false,
 								false
 							]
 						}
@@ -1989,7 +1744,8 @@
 								"1",
 								false,
 								false,
-								true
+								true,
+								false
 							]
 						},
 						{
@@ -2054,7 +1810,8 @@
 								"1",
 								false,
 								false,
-								true
+								true,
+								false
 							]
 						}
 					],
@@ -2114,7 +1871,8 @@
 								"1",
 								false,
 								false,
-								true
+								true,
+								false
 							]
 						}
 					],
@@ -2174,7 +1932,8 @@
 								"1",
 								false,
 								false,
-								true
+								true,
+								false
 							]
 						},
 						{
@@ -2218,7 +1977,8 @@
 								"1",
 								false,
 								false,
-								true
+								true,
+								false
 							]
 						}
 					],
@@ -2253,7 +2013,8 @@
 								"2",
 								false,
 								false,
-								true
+								true,
+								false
 							]
 						}
 					],
@@ -2288,7 +2049,8 @@
 								"1",
 								false,
 								false,
-								true
+								true,
+								false
 							]
 						},
 						{
@@ -2463,6 +2225,7 @@
 								"4",
 								false,
 								true,
+								false,
 								false
 							]
 						},
@@ -2506,6 +2269,7 @@
 								"3",
 								false,
 								true,
+								false,
 								false
 							]
 						}
@@ -2541,6 +2305,7 @@
 								"2",
 								false,
 								true,
+								false,
 								false
 							]
 						},
@@ -2595,6 +2360,7 @@
 								"2",
 								false,
 								true,
+								false,
 								false
 							]
 						},
@@ -4583,6 +4349,7 @@
 								"2",
 								true,
 								true,
+								false,
 								false
 							]
 						}
@@ -4731,6 +4498,7 @@
 								"1",
 								true,
 								true,
+								false,
 								false
 							]
 						},
