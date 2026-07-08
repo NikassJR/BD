@@ -118,10 +118,10 @@
 				{
 					"id": "set-size",
 					"objectClass": "Camera",
-					"sid": 319422301915832,
+					"sid": 166432981642672,
 					"parameters": {
-						"width": "80",
-						"height": "45"
+						"width": "70",
+						"height": "35"
 					}
 				},
 				{
@@ -221,9 +221,9 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 927941511067339,
+							"sid": 381422875272612,
 							"parameters": {
-								"seconds": "2",
+								"seconds": "0.1",
 								"use-timescale": true
 							}
 						},
@@ -347,6 +347,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 775097766955975,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
 						{
 							"callFunction": "Create_Dealogue",
 							"sid": 548729868940178,
@@ -604,6 +613,14 @@
 					"isInverted": true
 				},
 				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 999983863259058,
+					"parameters": {
+						"variable": "Safe_Zone"
+					}
+				},
+				{
 					"id": "has-tags",
 					"objectClass": "Trigger_CutScene",
 					"sid": 968995979415839,
@@ -717,6 +734,20 @@
 					}
 				},
 				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 617917087251456
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Player_All",
+					"sid": 297863220048233,
+					"parameters": {
+						"instance-variable": "textframe",
+						"value": "4"
+					}
+				},
+				{
 					"id": "set-boolean-instvar",
 					"objectClass": "Camera",
 					"sid": 448279799999475,
@@ -749,6 +780,56 @@
 				}
 			],
 			"sid": 152145379925816
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player_All",
+					"sid": 499419297475034,
+					"parameters": {
+						"object": "Crowd"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-one-property",
+					"objectClass": "Camera",
+					"sid": 218634728212725,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetWidth",
+						"end-value": "90",
+						"time": "2",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Camera",
+					"sid": 386508786683582,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetHeight",
+						"end-value": "55",
+						"time": "2",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				}
+			],
+			"sid": 164416186479786
 		},
 		{
 			"eventType": "block",
@@ -847,6 +928,15 @@
 					"parameters": {
 						"tags": "\"Stealth\""
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 862970777430374,
+					"parameters": {
+						"variable": "Safe_Zone"
+					},
+					"isInverted": true
 				},
 				{
 					"id": "is-boolean-instance-variable-set",
@@ -969,10 +1059,10 @@
 				{
 					"id": "set-layer-opacity",
 					"objectClass": "System",
-					"sid": 550976771340000,
+					"sid": 996448479568329,
 					"parameters": {
 						"layer": "\"People\"",
-						"opacity": "100"
+						"opacity": "80"
 					}
 				}
 			],
@@ -1008,10 +1098,10 @@
 				{
 					"id": "set-layer-opacity",
 					"objectClass": "System",
-					"sid": 572471605965765,
+					"sid": 524966483782402,
 					"parameters": {
 						"layer": "\"People\"",
-						"opacity": "80"
+						"opacity": "100"
 					}
 				}
 			],
@@ -1140,6 +1230,11 @@
 						"instance-variable": "textframe",
 						"value": "1"
 					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Trigger_CutScene",
+					"sid": 245426697117649
 				}
 			],
 			"sid": 948766227921645
@@ -1178,6 +1273,15 @@
 					}
 				},
 				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Player_All",
+					"sid": 947477309662440,
+					"parameters": {
+						"instance-variable": "VisionEnemy"
+					},
+					"isInverted": true
+				},
+				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 340671272712041,
@@ -1199,7 +1303,7 @@
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Enemy_Mili",
-					"sid": 438869191884605,
+					"sid": 747907805484543,
 					"parameters": {
 						"instance-variable": "Fear",
 						"value": "0"
@@ -1259,15 +1363,6 @@
 						"magnitude": "10",
 						"duration": "0.25",
 						"mode": "reducing-magnitude"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 731485352243879,
-					"parameters": {
-						"variable": "Cut_Scene",
-						"value": "true"
 					}
 				},
 				{
@@ -1398,6 +1493,15 @@
 					"parameters": {
 						"variable": "WolfMode"
 					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Player_All",
+					"sid": 447566658524876,
+					"parameters": {
+						"instance-variable": "VisionEnemy"
+					},
+					"isInverted": true
 				},
 				{
 					"id": "has-tags",
@@ -1722,6 +1826,15 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 190976553784424,
+					"parameters": {
+						"variable": "Cut_Scene",
+						"value": "true"
+					}
+				},
 				{
 					"id": "set-speed",
 					"objectClass": "Player_All",
@@ -2983,6 +3096,69 @@
 					"conditions": [
 						{
 							"id": "is-overlapping-another-object",
+							"objectClass": "ChairWolf",
+							"sid": 206917773441817,
+							"parameters": {
+								"object": "Screen_Black"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "ChairWolf",
+							"sid": 570526279915251,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(0, 0, 0)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 478204325649410
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 510030112464680
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "ChairWolf",
+							"sid": 401712852897570,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(255, 255, 255)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 332904348499786
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
 							"objectClass": "Head",
 							"sid": 758020355882963,
 							"parameters": {
@@ -3103,6 +3279,69 @@
 						}
 					],
 					"sid": 918031303251556
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Pistol",
+							"sid": 277699053848113,
+							"parameters": {
+								"object": "Screen_Black"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "Pistol",
+							"sid": 353864926948196,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(0, 0, 0)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 475806529228343
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 464244052580868
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "Pistol",
+							"sid": 493515186482770,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetColor",
+								"end-value": "rgbEx(255, 255, 255)",
+								"time": "0.1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 571859998668613
 				},
 				{
 					"eventType": "block",

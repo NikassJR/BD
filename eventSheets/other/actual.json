@@ -16279,44 +16279,62 @@
 															"eventType": "block",
 															"conditions": [
 																{
-																	"id": "key-is-down",
-																	"objectClass": "Keyboard",
-																	"sid": 860125396535834,
+																	"id": "is-boolean-instance-variable-set",
+																	"objectClass": "Player_All",
+																	"sid": 323057849901024,
 																	"parameters": {
-																		"key": 20
-																	}
-																},
-																{
-																	"id": "compare-boolean-eventvar",
-																	"objectClass": "System",
-																	"sid": 927784446933296,
-																	"parameters": {
-																		"variable": "Safe_Zone"
-																	}
+																		"instance-variable": "kick"
+																	},
+																	"isInverted": true
 																}
 															],
-															"actions": [
+															"actions": [],
+															"sid": 155695851626120,
+															"children": [
 																{
-																	"id": "set-max-speed",
-																	"objectClass": "Player_All",
-																	"sid": 669448294499086,
-																	"behaviorType": "Платформер",
-																	"parameters": {
-																		"max-speed": "Player_All.speedWalk "
-																	}
-																},
-																{
-																	"id": "set-animation",
-																	"objectClass": "Player_All",
-																	"sid": 931496694745639,
-																	"parameters": {
-																		"animation": "weapon & \"Walk\"",
-																		"from": "beginning"
-																	}
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 144379568450069,
+																			"parameters": {
+																				"key": 20
+																			}
+																		},
+																		{
+																			"id": "compare-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 269566494693902,
+																			"parameters": {
+																				"variable": "Safe_Zone"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-max-speed",
+																			"objectClass": "Player_All",
+																			"sid": 228937830783048,
+																			"behaviorType": "Платформер",
+																			"parameters": {
+																				"max-speed": "Player_All.speedWalk "
+																			}
+																		},
+																		{
+																			"id": "set-animation",
+																			"objectClass": "Player_All",
+																			"sid": 313326272151104,
+																			"parameters": {
+																				"animation": "weapon & \"Walk\"",
+																				"from": "beginning"
+																			}
+																		}
+																	],
+																	"sid": 514037116372017,
+																	"isOrBlock": true
 																}
-															],
-															"sid": 716032516398245,
-															"isOrBlock": true
+															]
 														},
 														{
 															"eventType": "block",
@@ -16593,44 +16611,62 @@
 															"eventType": "block",
 															"conditions": [
 																{
-																	"id": "key-is-down",
-																	"objectClass": "Keyboard",
-																	"sid": 533110824545708,
+																	"id": "is-boolean-instance-variable-set",
+																	"objectClass": "Player_All",
+																	"sid": 129691485039680,
 																	"parameters": {
-																		"key": 20
-																	}
-																},
-																{
-																	"id": "compare-boolean-eventvar",
-																	"objectClass": "System",
-																	"sid": 288308523732094,
-																	"parameters": {
-																		"variable": "Safe_Zone"
-																	}
+																		"instance-variable": "kick"
+																	},
+																	"isInverted": true
 																}
 															],
-															"actions": [
+															"actions": [],
+															"sid": 777922440994750,
+															"children": [
 																{
-																	"id": "set-max-speed",
-																	"objectClass": "Player_All",
-																	"sid": 447461290978357,
-																	"behaviorType": "Платформер",
-																	"parameters": {
-																		"max-speed": "Player_All.speedWalk "
-																	}
-																},
-																{
-																	"id": "set-animation",
-																	"objectClass": "Player_All",
-																	"sid": 165379241740228,
-																	"parameters": {
-																		"animation": "weapon & \"Walk\"",
-																		"from": "beginning"
-																	}
+																	"eventType": "block",
+																	"conditions": [
+																		{
+																			"id": "key-is-down",
+																			"objectClass": "Keyboard",
+																			"sid": 317915041116913,
+																			"parameters": {
+																				"key": 20
+																			}
+																		},
+																		{
+																			"id": "compare-boolean-eventvar",
+																			"objectClass": "System",
+																			"sid": 791541899177108,
+																			"parameters": {
+																				"variable": "Safe_Zone"
+																			}
+																		}
+																	],
+																	"actions": [
+																		{
+																			"id": "set-max-speed",
+																			"objectClass": "Player_All",
+																			"sid": 315634287498353,
+																			"behaviorType": "Платформер",
+																			"parameters": {
+																				"max-speed": "Player_All.speedWalk "
+																			}
+																		},
+																		{
+																			"id": "set-animation",
+																			"objectClass": "Player_All",
+																			"sid": 320743421547579,
+																			"parameters": {
+																				"animation": "weapon & \"Walk\"",
+																				"from": "beginning"
+																			}
+																		}
+																	],
+																	"sid": 918077503317868,
+																	"isOrBlock": true
 																}
-															],
-															"sid": 334567269164221,
-															"isOrBlock": true
+															]
 														},
 														{
 															"eventType": "block",
@@ -23015,6 +23051,33 @@
 											"actions": [],
 											"sid": 480232409597458,
 											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-speed",
+															"objectClass": "Player_All",
+															"sid": 342347291245665,
+															"behaviorType": "Платформер",
+															"parameters": {
+																"comparison": 0,
+																"speed": "Player_All.speedWalk"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-vector-x",
+															"objectClass": "Player_All",
+															"sid": 803772438439277,
+															"behaviorType": "Платформер",
+															"parameters": {
+																"vector-x": "0"
+															}
+														}
+													],
+													"sid": 507416623447881
+												},
 												{
 													"eventType": "block",
 													"conditions": [
