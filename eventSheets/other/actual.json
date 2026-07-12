@@ -903,6 +903,16 @@
 							}
 						},
 						{
+							"id": "set-position",
+							"objectClass": "borders",
+							"sid": 149455744102364,
+							"disabled": true,
+							"parameters": {
+								"x": "lerp(Self.X,OriginalViewportWidth,0.075)",
+								"y": "lerp(Self.Y,OriginalViewportHeight,0.075)"
+							}
+						},
+						{
 							"id": "set-canvas-size",
 							"objectClass": "System",
 							"sid": 654649374478529,
@@ -44274,6 +44284,15 @@
 											}
 										},
 										{
+											"id": "set-jump-strength",
+											"objectClass": "Enemy_Mili",
+											"sid": 264383095330147,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"jump-strength": "500"
+											}
+										},
+										{
 											"id": "simulate-control",
 											"objectClass": "Enemy_Mili",
 											"sid": 308063410059809,
@@ -45039,14 +45058,12 @@
 									"sid": 996332103656147,
 									"children": [
 										{
-											"bookmark": true,
 											"eventType": "block",
 											"conditions": [
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "Enemy_Mili",
 													"sid": 542912934395229,
-													"disabled": true,
 													"parameters": {
 														"instance-variable": "DifY",
 														"comparison": 3,

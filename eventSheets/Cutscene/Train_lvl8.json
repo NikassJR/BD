@@ -19,386 +19,389 @@
 				{
 					"id": "on-item-get",
 					"objectClass": "Game_Save",
-					"sid": 493129204537460,
+					"sid": 933050561949197,
 					"parameters": {
 						"key": "\"WolfMode\""
 					}
+				}
+			],
+			"actions": [],
+			"sid": 384663142845534
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 160762586844945
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 347380580783095,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
 				},
 				{
 					"id": "has-tags",
 					"objectClass": "Shadow2",
-					"sid": 404070140092391,
+					"sid": 176657530594700,
 					"parameters": {
 						"tags": "\"Go\""
 					}
 				}
 			],
-			"actions": [],
-			"sid": 384663142845534,
-			"children": [
+			"actions": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 360138588090753,
-							"parameters": {
-								"variable": "WolfMode"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "save",
-							"objectClass": "System",
-							"sid": 248742608800305,
-							"parameters": {
-								"slot": "\"start\""
-							}
+					"id": "save",
+					"objectClass": "System",
+					"sid": 854300833001884,
+					"parameters": {
+						"slot": "\"start\""
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "Camera",
+					"sid": 923927013275729,
+					"parameters": {
+						"width": "70",
+						"height": "35"
+					}
+				},
+				{
+					"id": "stop-animation",
+					"objectClass": "Smoke_Boom",
+					"sid": 212397568749175
+				},
+				{
+					"id": "stop-animation",
+					"objectClass": "Crash",
+					"sid": 251956846952689
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 554981855122725,
+					"parameters": {
+						"tag": "\"Suspense\""
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 468934611672943,
+					"parameters": {
+						"variable": "Start_Game",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 473976732466306,
+					"parameters": {
+						"variable": "Continue_Game",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 125998038521032,
+					"parameters": {
+						"variable": "Cut_Scene",
+						"value": "true"
+					}
+				},
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Player_All",
+					"sid": 557456435448749,
+					"parameters": {
+						"instance-variable": "textframe",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 748954997742380,
+					"parameters": {
+						"group-name": "\"Player\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 577641633998624,
+					"parameters": {
+						"group-name": "\"Enemy & Fear\"",
+						"state": "deactivated"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "Player_All",
+					"sid": 859414829969402,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "250"
+					}
+				},
+				{
+					"id": "set-speed",
+					"objectClass": "High_Brother",
+					"sid": 334776443316943,
+					"behaviorType": "НастраиваемоеДвижение",
+					"parameters": {
+						"which": "horizontal",
+						"speed": "250"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 596079166944559,
+					"parameters": {
+						"seconds": "1",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 508597552150820,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/DEADGRUNGE,_CHAIN$AWSQUAD_From_Dusk_Till_Dawn_Interlude"
 						},
-						{
-							"id": "set-size",
-							"objectClass": "Camera",
-							"sid": 614562453361188,
-							"parameters": {
-								"width": "70",
-								"height": "35"
-							}
-						},
-						{
-							"id": "stop-animation",
-							"objectClass": "Smoke_Boom",
-							"sid": 918175346209698
-						},
-						{
-							"id": "stop-animation",
-							"objectClass": "Crash",
-							"sid": 485211469036942
-						},
-						{
-							"id": "stop",
-							"objectClass": "Audio",
-							"sid": 214817697651377,
-							"parameters": {
-								"tag": "\"Suspense\""
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 760772018632213,
-							"parameters": {
-								"variable": "Start_Game",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 498595953680719,
-							"parameters": {
-								"variable": "Continue_Game",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 771191725669432,
-							"parameters": {
-								"variable": "Cut_Scene",
-								"value": "true"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_All",
-							"sid": 295476158202738,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 702348657696598,
-							"parameters": {
-								"group-name": "\"Player\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 246870300895701,
-							"parameters": {
-								"group-name": "\"Enemy & Fear\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-speed",
-							"objectClass": "Player_All",
-							"sid": 632649152086105,
-							"behaviorType": "НастраиваемоеДвижение",
-							"parameters": {
-								"which": "horizontal",
-								"speed": "250"
-							}
-						},
-						{
-							"id": "set-speed",
-							"objectClass": "High_Brother",
-							"sid": 988220530802632,
-							"behaviorType": "НастраиваемоеДвижение",
-							"parameters": {
-								"which": "horizontal",
-								"speed": "250"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 635917307145608,
-							"parameters": {
-								"seconds": "1",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 167540002829183,
-							"parameters": {
-								"audio-file": {
-									"path": "Music/DEADGRUNGE,_CHAIN$AWSQUAD_From_Dusk_Till_Dawn_Interlude"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"music\""
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 573080320980424,
-							"parameters": {
-								"seconds": "1",
-								"use-timescale": true
-							}
-						},
-						{
-							"callFunction": "Audio_Play_Sound",
-							"sid": 938329432139803,
-							"parameters": [
-								"\"Train\"",
-								"0",
-								"\"Train\""
-							]
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 963592549998654,
-							"parameters": {
-								"seconds": "2.5",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "High_Brother",
-							"sid": 637455874354691,
-							"parameters": {
-								"animation": "\"Jump\"",
-								"from": "beginning"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 201409947140861,
-							"parameters": {
-								"seconds": "1",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "TrainClosed",
-							"sid": 459621870790282,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetX",
-								"end-value": "1766",
-								"time": "0.5",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 650979855054975,
-							"parameters": {
-								"seconds": "1.0",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "SubWay_Scene",
-							"sid": 808832826755727,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetX",
-								"end-value": "7000",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Tailes_BG",
-							"sid": 112104003413295,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetX",
-								"end-value": "7000",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Town_BG",
-							"sid": 336281405145052,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetX",
-								"end-value": "7000",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Perila",
-							"sid": 532960939905294,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetX",
-								"end-value": "7000",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Asphalt",
-							"sid": 441537472126392,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetX",
-								"end-value": "7000",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Shadow2",
-							"sid": 371266280188138,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetX",
-								"end-value": "7000",
-								"time": "1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "tween-one-property",
-							"objectClass": "Wall_Dark",
-							"sid": 922907853171750,
-							"behaviorType": "Твинанимация",
-							"parameters": {
-								"tags": "\"\"",
-								"property": "offsetX",
-								"end-value": "0",
-								"time": "0.1",
-								"ease": "default",
-								"destroy-on-complete": "no",
-								"loop": "no",
-								"ping-pong": "no",
-								"repeat-count": "1"
-							}
-						},
-						{
-							"id": "wait-for-previous-actions",
-							"objectClass": "System",
-							"sid": 963127862129345
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "Enemy_Mili",
-							"sid": 236598219170404,
-							"parameters": {
-								"instance-variable": "Fear",
-								"value": "20"
-							}
-						},
-						{
-							"id": "add-to-instvar",
-							"objectClass": "Player_All",
-							"sid": 993438674116855,
-							"parameters": {
-								"instance-variable": "textframe",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 721551531261129
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 509327291513916,
+					"parameters": {
+						"seconds": "1",
+						"use-timescale": true
+					}
+				},
+				{
+					"callFunction": "Audio_Play_Sound",
+					"sid": 451736798339935,
+					"parameters": [
+						"\"Train\"",
+						"0",
+						"\"Train\""
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 519694144850626,
+					"parameters": {
+						"seconds": "2.5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "High_Brother",
+					"sid": 120822801036282,
+					"parameters": {
+						"animation": "\"Jump\"",
+						"from": "beginning"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 130531480372469,
+					"parameters": {
+						"seconds": "1",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "TrainClosed",
+					"sid": 954265419413143,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "1766",
+						"time": "0.5",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 937358643870635,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "SubWay_Scene",
+					"sid": 818697706211173,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "7000",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Tailes_BG",
+					"sid": 233392314176122,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "7000",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Town_BG",
+					"sid": 770931750290069,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "7000",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Perila",
+					"sid": 779761405187980,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "7000",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Asphalt",
+					"sid": 157651997879714,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "7000",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Shadow2",
+					"sid": 904538655038683,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "7000",
+						"time": "1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "Wall_Dark",
+					"sid": 945184816729041,
+					"behaviorType": "Твинанимация",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetX",
+						"end-value": "0",
+						"time": "0.1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 240130013070606
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Enemy_Mili",
+					"sid": 731422589079110,
+					"parameters": {
+						"instance-variable": "Fear",
+						"value": "20"
+					}
+				},
+				{
+					"id": "add-to-instvar",
+					"objectClass": "Player_All",
+					"sid": 686918693893096,
+					"parameters": {
+						"instance-variable": "textframe",
+						"value": "1"
+					}
 				}
-			]
+			],
+			"sid": 215498559672827
 		},
 		{
 			"eventType": "block",
@@ -414,6 +417,14 @@
 					"sid": 430411728623824,
 					"parameters": {
 						"variable": "WolfMode"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Shadow2",
+					"sid": 332775529647963,
+					"parameters": {
+						"tags": "\"Go\""
 					}
 				}
 			],
@@ -1684,7 +1695,6 @@
 								"1",
 								false,
 								false,
-								false,
 								false
 							]
 						}
@@ -1720,7 +1730,6 @@
 								"1",
 								false,
 								true,
-								false,
 								false
 							]
 						}

@@ -955,13 +955,6 @@
 					"initialValue": "false",
 					"comment": "",
 					"sid": 493977121158345
-				},
-				{
-					"name": "CamerDown",
-					"type": "boolean",
-					"initialValue": "false",
-					"comment": "",
-					"sid": 147991612250051
 				}
 			],
 			"eventType": "function-block",
@@ -1038,14 +1031,6 @@
 						"y": "main_dialogue.ImagePointY(\"Press\")",
 						"create-hierarchy": false,
 						"template-name": "\"\""
-					}
-				},
-				{
-					"id": "set-scale",
-					"objectClass": "Press_Space",
-					"sid": 183705595149946,
-					"parameters": {
-						"scale": "0.5"
 					}
 				},
 				{
@@ -1359,16 +1344,7 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 853289474908849,
-							"parameters": {
-								"variable": "CamerDown"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"id": "set-position",
@@ -1448,22 +1424,36 @@
 							"id": "set-position",
 							"objectClass": "main_dialogue",
 							"sid": 346007604397381,
+							"disabled": true,
 							"parameters": {
 								"x": "Camera.X -225",
 								"y": "ViewportBottom(0) - 90"
 							}
 						},
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 119167390739735,
+							"id": "set-position",
+							"objectClass": "main_dialogue",
+							"sid": 219029766029418,
 							"parameters": {
-								"object-to-create": "Press_Space",
-								"layer": "\"Dialog\"",
+								"x": "ViewportLeft(0) + ViewportWidth(0) / 5",
+								"y": "ViewportTop(0) + ViewportHeight(0) / 1.35"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Press_Space",
+							"sid": 512055459871818,
+							"parameters": {
+								"scale": "0.5"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Press_Space",
+							"sid": 787746038012397,
+							"parameters": {
 								"x": "main_dialogue.ImagePointX(\"Press\")",
-								"y": "main_dialogue.ImagePointY(\"Press\")",
-								"create-hierarchy": false,
-								"template-name": "\"\""
+								"y": "main_dialogue.ImagePointY(\"Press\")"
 							}
 						},
 						{
@@ -1478,14 +1468,336 @@
 						{
 							"id": "set-position",
 							"objectClass": "icon1",
-							"sid": 524398041946979,
+							"sid": 569455358737035,
 							"parameters": {
-								"x": "main_dialogue.X + 20",
-								"y": "main_dialogue.Y + 15"
+								"x": "main_dialogue.ImagePointX(\"icon\")",
+								"y": "main_dialogue.ImagePointY(\"icon\")"
 							}
 						}
 					],
 					"sid": 759092207188544
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-width",
+							"objectClass": "Camera",
+							"sid": 295313096686071,
+							"parameters": {
+								"comparison": 0,
+								"width": "80"
+							}
+						},
+						{
+							"id": "compare-height",
+							"objectClass": "Camera",
+							"sid": 751841095961375,
+							"parameters": {
+								"comparison": 0,
+								"height": "45"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "main_dialogue",
+							"sid": 917310499881228,
+							"disabled": true,
+							"parameters": {
+								"x": "Camera.X -225",
+								"y": "ViewportBottom(0) - 90"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 276020945260525,
+							"disabled": true,
+							"parameters": {
+								"object-to-create": "Press_Space",
+								"layer": "\"Dialog\"",
+								"x": "main_dialogue.ImagePointX(\"Press\")",
+								"y": "main_dialogue.ImagePointY(\"Press\")",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Press_Space",
+							"sid": 795863880100099,
+							"disabled": true,
+							"parameters": {
+								"scale": "1"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Press_Space",
+							"sid": 684287413634778,
+							"disabled": true,
+							"parameters": {
+								"x": "main_dialogue.ImagePointX(\"Press\")",
+								"y": "main_dialogue.ImagePointY(\"Press\")"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "dialogMainText",
+							"sid": 483552317612679,
+							"disabled": true,
+							"parameters": {
+								"x": "main_dialogue.x + 80",
+								"y": "main_dialogue.Y + 15"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "icon1",
+							"sid": 784595963244799,
+							"disabled": true,
+							"parameters": {
+								"x": "main_dialogue.X + 20",
+								"y": "main_dialogue.Y + 15"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "main_dialogue",
+							"sid": 709157887617504,
+							"parameters": {
+								"x": "ViewportLeft(0) + ViewportWidth(0) / 4.5",
+								"y": "ViewportTop(0) + ViewportHeight(0) / 1.425"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Press_Space",
+							"sid": 449324589027568,
+							"parameters": {
+								"scale": "0.5"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Press_Space",
+							"sid": 934810579675942,
+							"parameters": {
+								"x": "main_dialogue.ImagePointX(\"Press\")",
+								"y": "main_dialogue.ImagePointY(\"Press\")"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "dialogMainText",
+							"sid": 808825219681306,
+							"parameters": {
+								"x": "main_dialogue.x + 80",
+								"y": "main_dialogue.Y + 15"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "icon1",
+							"sid": 406670846624105,
+							"parameters": {
+								"x": "main_dialogue.ImagePointX(\"icon\")",
+								"y": "main_dialogue.ImagePointY(\"icon\")"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 865957310566943,
+							"parameters": {
+								"layer": "\"Dialog\"",
+								"scale": "1.25"
+							}
+						}
+					],
+					"sid": 647950113500109
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-width",
+							"objectClass": "Camera",
+							"sid": 551821151047264,
+							"parameters": {
+								"comparison": 0,
+								"width": "90"
+							}
+						},
+						{
+							"id": "compare-height",
+							"objectClass": "Camera",
+							"sid": 679429970446986,
+							"parameters": {
+								"comparison": 0,
+								"height": "55"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "main_dialogue",
+							"sid": 452935229128334,
+							"disabled": true,
+							"parameters": {
+								"x": "Camera.X -350",
+								"y": "ViewportBottom(0) - 130"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 212618639285893,
+							"disabled": true,
+							"parameters": {
+								"object-to-create": "Press_Space",
+								"layer": "\"Dialog\"",
+								"x": "main_dialogue.ImagePointX(\"Press\")",
+								"y": "main_dialogue.ImagePointY(\"Press\")",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "main_dialogue",
+							"sid": 923171615936856,
+							"disabled": true,
+							"parameters": {
+								"x": "ViewportLeft(0) + ViewportWidth(0) / 7",
+								"y": "ViewportTop(0) + ViewportHeight(0) / 1.32"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "main_dialogue",
+							"sid": 562442029695620,
+							"disabled": true,
+							"parameters": {
+								"scale": "1.5"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "icon1",
+							"sid": 231151199212428,
+							"disabled": true,
+							"parameters": {
+								"scale": "1.5"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "dialogMainText",
+							"sid": 717442105816458,
+							"disabled": true,
+							"parameters": {
+								"width": "535",
+								"height": "100"
+							}
+						},
+						{
+							"id": "set-font-size",
+							"objectClass": "dialogMainText",
+							"sid": 327846940633036,
+							"disabled": true,
+							"parameters": {
+								"size-pt": "12"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Press_Space",
+							"sid": 550894857200862,
+							"disabled": true,
+							"parameters": {
+								"x": "main_dialogue.ImagePointX(\"Press\")",
+								"y": "main_dialogue.ImagePointY(\"Press\")"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "dialogMainText",
+							"sid": 644435854114903,
+							"disabled": true,
+							"parameters": {
+								"x": "main_dialogue.x + 120",
+								"y": "main_dialogue.Y + 15"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "icon1",
+							"sid": 593669128467883,
+							"disabled": true,
+							"parameters": {
+								"x": "main_dialogue.ImagePointX(\"icon\")",
+								"y": "main_dialogue.ImagePointY(\"icon\")"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "main_dialogue",
+							"sid": 491055701277639,
+							"parameters": {
+								"x": "ViewportLeft(0) + ViewportWidth(0) / 4",
+								"y": "ViewportTop(0) + ViewportHeight(0) / 1.485"
+							}
+						},
+						{
+							"id": "set-scale",
+							"objectClass": "Press_Space",
+							"sid": 168022759245370,
+							"parameters": {
+								"scale": "0.5"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Press_Space",
+							"sid": 230677433327237,
+							"parameters": {
+								"x": "main_dialogue.ImagePointX(\"Press\")",
+								"y": "main_dialogue.ImagePointY(\"Press\")"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "dialogMainText",
+							"sid": 570709241523150,
+							"parameters": {
+								"x": "main_dialogue.x + 80",
+								"y": "main_dialogue.Y + 15"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "icon1",
+							"sid": 343574074537404,
+							"parameters": {
+								"x": "main_dialogue.ImagePointX(\"icon\")",
+								"y": "main_dialogue.ImagePointY(\"icon\")"
+							}
+						},
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 375062866887694,
+							"parameters": {
+								"layer": "\"Dialog\"",
+								"scale": "1.5"
+							}
+						}
+					],
+					"sid": 832335040715507
 				}
 			]
 		},

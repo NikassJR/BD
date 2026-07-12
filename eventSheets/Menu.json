@@ -756,15 +756,6 @@
 					}
 				},
 				{
-					"id": "set-position",
-					"objectClass": "borders",
-					"sid": 189215264862855,
-					"parameters": {
-						"x": "lerp(Self.X,Camera.X,0.075)",
-						"y": "lerp(Self.Y,Camera.Y,0.075)"
-					}
-				},
-				{
 					"id": "set-cursor-from-sprite",
 					"objectClass": "Mouse",
 					"sid": 778139857609289,
@@ -797,20 +788,6 @@
 					}
 				},
 				{
-					"id": "pin-to-object-imagepoint",
-					"objectClass": "borders",
-					"sid": 748009996126507,
-					"behaviorType": "Прикрепить",
-					"parameters": {
-						"pin-to": "Camera",
-						"image-point": "0",
-						"angle": true,
-						"width-type": "no",
-						"height-type": "no",
-						"z": false
-					}
-				},
-				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
 					"sid": 290001524883054,
@@ -821,6 +798,135 @@
 				}
 			],
 			"sid": 687519329073019
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 866139432436519
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "borders",
+					"sid": 514943236597893,
+					"parameters": {
+						"x": "ViewportLeft(\"HUD\") + ViewportWidth(\"HUD\") / 2",
+						"y": "ViewportTop(\"HUD\") + ViewportHeight(\"HUD\") / 2"
+					}
+				}
+			],
+			"sid": 415461715537341,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-width",
+							"objectClass": "Camera",
+							"sid": 778468137565511,
+							"parameters": {
+								"comparison": 0,
+								"width": "70"
+							}
+						},
+						{
+							"id": "compare-height",
+							"objectClass": "Camera",
+							"sid": 152238345154056,
+							"parameters": {
+								"comparison": 0,
+								"height": "35"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 325654042181291,
+							"parameters": {
+								"layer": "\"HUD\"",
+								"scale": "1"
+							}
+						}
+					],
+					"sid": 686168812552193
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-width",
+							"objectClass": "Camera",
+							"sid": 252955339332700,
+							"parameters": {
+								"comparison": 0,
+								"width": "80"
+							}
+						},
+						{
+							"id": "compare-height",
+							"objectClass": "Camera",
+							"sid": 939054237306940,
+							"parameters": {
+								"comparison": 0,
+								"height": "45"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 771824910704819,
+							"parameters": {
+								"layer": "\"HUD\"",
+								"scale": "1.25"
+							}
+						}
+					],
+					"sid": 238716050600917
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-width",
+							"objectClass": "Camera",
+							"sid": 774896742266336,
+							"parameters": {
+								"comparison": 0,
+								"width": "90"
+							}
+						},
+						{
+							"id": "compare-height",
+							"objectClass": "Camera",
+							"sid": 349188234651035,
+							"parameters": {
+								"comparison": 0,
+								"height": "55"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-scale",
+							"objectClass": "System",
+							"sid": 671765033799901,
+							"parameters": {
+								"layer": "\"HUD\"",
+								"scale": "1.40"
+							}
+						}
+					],
+					"sid": 588044501537623
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -1004,6 +1110,15 @@
 							"sid": 336961331452433,
 							"parameters": {
 								"tag": "\"Suspense\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 837893253757332,
+							"parameters": {
+								"variable": "weapon",
+								"value": "\"noWeapon\""
 							}
 						},
 						{

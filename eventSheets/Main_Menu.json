@@ -1977,6 +1977,15 @@
 								"layer": "\"Start_Menu\""
 							},
 							"isInverted": true
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 363072518822090,
+							"parameters": {
+								"layer": "\"Warning\""
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -2720,6 +2729,15 @@
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
+									"sid": 624480055184817,
+									"parameters": {
+										"layer": "\"Start_Menu\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
 									"sid": 625697586068192,
 									"parameters": {
 										"layer": "\"Warning\"",
@@ -3075,6 +3093,15 @@
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
+									"sid": 418676076111544,
+									"parameters": {
+										"layer": "\"Start_Menu\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
 									"sid": 622460762776325,
 									"parameters": {
 										"layer": "\"Warning\"",
@@ -3342,16 +3369,52 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 108623963814459,
+									"sid": 471242941587848,
 									"parameters": {
 										"seconds": "0.1",
 										"use-timescale": true
 									}
 								},
 								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 434932345930320,
+									"parameters": {
+										"variable": "Wolf",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 949897002765183,
+									"parameters": {
+										"variable": "WolfMode",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 473755294705184,
+									"parameters": {
+										"key": "\"WolfMode\"",
+										"value": "WolfMode"
+									}
+								},
+								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 563741276179592,
+									"sid": 720775582356796,
+									"parameters": {
+										"layer": "\"Start_Menu\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 365880485610473,
 									"parameters": {
 										"layer": "\"Warning\"",
 										"visibility": "visible"
@@ -3360,10 +3423,10 @@
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 191176656298129,
+									"sid": 984222115893142,
 									"parameters": {
 										"variable": "Hardcore",
-										"value": "true"
+										"value": "false"
 									}
 								}
 							],
@@ -3394,6 +3457,33 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 206841846293086,
+							"parameters": {
+								"layer": "\"Start_Menu\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 718851403308280,
+							"parameters": {
+								"layer": "\"Warning\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 521819853966214,
+							"parameters": {
+								"layer": "\"Main_Menu\"",
+								"visibility": "invisible"
+							}
+						},
 						{
 							"id": "wait",
 							"objectClass": "System",
