@@ -51,10 +51,10 @@
 				{
 					"id": "set-size",
 					"objectClass": "Camera",
-					"sid": 477418338964008,
+					"sid": 663134805273973,
 					"parameters": {
-						"width": "80",
-						"height": "45"
+						"width": "90",
+						"height": "55"
 					}
 				},
 				{
@@ -127,6 +127,59 @@
 				}
 			],
 			"sid": 507917244161063
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 505241992076574,
+					"parameters": {
+						"variable": "Enemys",
+						"comparison": 0,
+						"value": "21"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Door_Old",
+					"sid": 606470586177767,
+					"parameters": {
+						"tags": "\"Closed\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Door_Old",
+					"sid": 151336071156233,
+					"parameters": {
+						"instance-variable": "open",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Door_Old",
+					"sid": 394847416982578,
+					"parameters": {
+						"instance-variable": "HP",
+						"value": "0"
+					}
+				},
+				{
+					"id": "change-tags",
+					"objectClass": "Door_Old",
+					"sid": 507908243103166,
+					"parameters": {
+						"action": "remove",
+						"tags": "\"Closed\""
+					}
+				}
+			],
+			"sid": 303606713252484
 		},
 		{
 			"eventType": "block",
@@ -1935,119 +1988,6 @@
 				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 756684510647619,
-					"parameters": {
-						"variable": "Start_Game"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "check-item-exists",
-					"objectClass": "Game_Save",
-					"sid": 293106940392350,
-					"parameters": {
-						"key": "\"Level\""
-					}
-				}
-			],
-			"sid": 773348459389095,
-			"disabled": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-item-exists",
-							"objectClass": "Game_Save",
-							"sid": 850824515404602,
-							"parameters": {
-								"key": "\"Level\""
-							}
-						}
-					],
-					"actions": [],
-					"sid": 366414149566643,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-key",
-									"objectClass": "Game_Save",
-									"sid": 422560612827026,
-									"parameters": {
-										"comparison": 0,
-										"string": "\"Level\""
-									}
-								},
-								{
-									"id": "compare-value",
-									"objectClass": "Game_Save",
-									"sid": 791868575352367,
-									"parameters": {
-										"comparison": 2,
-										"value": "4"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-item",
-									"objectClass": "Game_Save",
-									"sid": 708914038162767,
-									"parameters": {
-										"key": "\"Level\"",
-										"value": "4"
-									}
-								}
-							],
-							"sid": 535535792226119,
-							"disabled": true
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 918445991217794
-						}
-					],
-					"actions": [
-						{
-							"id": "add-key",
-							"objectClass": "Enemys_Number",
-							"sid": 753741379913771,
-							"parameters": {
-								"key": "LayoutName",
-								"value": "Enemys"
-							}
-						},
-						{
-							"id": "set-item",
-							"objectClass": "Game_Save",
-							"sid": 802384772034801,
-							"parameters": {
-								"key": "\"HC_Enemys\"",
-								"value": "Enemys_Number.AsJSON"
-							}
-						}
-					],
-					"sid": 325940681698630,
-					"disabled": true
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
 					"sid": 128542266337798,
 					"parameters": {
 						"variable": "Start_Game"
@@ -2358,6 +2298,16 @@
 					"sid": 108169982344644,
 					"parameters": {
 						"tags": "\"Door\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 565489842423135,
+					"parameters": {
+						"variable": "Enemys",
+						"comparison": 2,
+						"value": "21"
 					}
 				}
 			],

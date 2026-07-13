@@ -705,23 +705,6 @@
 					}
 				},
 				{
-					"id": "set-animation-frame",
-					"objectClass": "Tualet_Club",
-					"sid": 487793579294918,
-					"parameters": {
-						"frame-number": "0"
-					}
-				},
-				{
-					"callFunction": "Audio_Play_Sound",
-					"sid": 700056793413933,
-					"parameters": [
-						"\"ClosedDoor\"",
-						"0",
-						"\"ClosedDoor\""
-					]
-				},
-				{
 					"id": "spawn-another-object",
 					"objectClass": "Trigger_CutScene",
 					"sid": 688132058786517,
@@ -732,6 +715,11 @@
 						"create-hierarchy": false,
 						"template-name": "\"\""
 					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Trigger_CutScene",
+					"sid": 760082505854305
 				},
 				{
 					"id": "wait-for-previous-actions",
@@ -757,9 +745,21 @@
 					}
 				},
 				{
-					"id": "destroy",
-					"objectClass": "Trigger_CutScene",
-					"sid": 897513021746475
+					"id": "set-animation-frame",
+					"objectClass": "Tualet_Club",
+					"sid": 646838198821493,
+					"parameters": {
+						"frame-number": "0"
+					}
+				},
+				{
+					"callFunction": "Audio_Play_Sound",
+					"sid": 242151159824496,
+					"parameters": [
+						"\"ClosedDoor\"",
+						"0",
+						"\"ClosedDoor\""
+					]
 				},
 				{
 					"id": "set-boolean-eventvar",
@@ -855,6 +855,13 @@
 					"objectClass": "Wall",
 					"sid": 113229851173506,
 					"behaviorType": "Твёрдый"
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "Cloud_Dialogue",
+					"sid": 566925567463213,
+					"disabled": true,
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -869,6 +876,15 @@
 						true,
 						false
 					]
+				},
+				{
+					"id": "change-tags",
+					"objectClass": "Wall",
+					"sid": 947259731349692,
+					"parameters": {
+						"action": "remove",
+						"tags": "\"Cut\""
+					}
 				}
 			],
 			"sid": 750450105805078
