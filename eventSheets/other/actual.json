@@ -549,10 +549,10 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "EnemyJunkie",
-									"sid": 143288795686671,
+									"sid": 245296124824386,
 									"parameters": {
 										"instance-variable": "Ammo",
-										"value": "2"
+										"value": "10"
 									}
 								},
 								{
@@ -10301,6 +10301,38 @@
 														}
 													],
 													"sid": 247798105701274
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-pinned",
+															"objectClass": "Weapon",
+															"sid": 377563097489520,
+															"behaviorType": "Прикрепить2"
+														},
+														{
+															"id": "compare-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 806001812258220,
+															"parameters": {
+																"variable": "Safe_Zone"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "destroy",
+															"objectClass": "Pistol",
+															"sid": 466698883751483
+														},
+														{
+															"id": "destroy",
+															"objectClass": "Shotgun",
+															"sid": 891254889743219
+														}
+													],
+													"sid": 227495034193138
 												}
 											],
 											"sid": 230261216192577
@@ -45078,17 +45110,6 @@
 														"comparison": 3,
 														"value": "100"
 													}
-												},
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Enemy_Mili",
-													"sid": 927610421646517,
-													"disabled": true,
-													"parameters": {
-														"instance-variable": "DifY",
-														"comparison": 5,
-														"value": "-100"
-													}
 												}
 											],
 											"actions": [],
@@ -48664,10 +48685,10 @@
 																{
 																	"id": "subtract-from-instvar",
 																	"objectClass": "EnemyJunkie",
-																	"sid": 394206482891689,
+																	"sid": 903116248571018,
 																	"parameters": {
 																		"instance-variable": "Ammo",
-																		"value": "1"
+																		"value": "5"
 																	}
 																}
 															],
@@ -48797,6 +48818,24 @@
 											"parameters": {
 												"instance-variable": "Pistol",
 												"value": "0"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Shotgun",
+											"sid": 244675255036542,
+											"behaviorType": "Физика",
+											"parameters": {
+												"mode": "enabled"
+											}
+										},
+										{
+											"id": "set-immovable",
+											"objectClass": "Shotgun",
+											"sid": 333882463887471,
+											"behaviorType": "Физика",
+											"parameters": {
+												"setting": "movable"
 											}
 										},
 										{
