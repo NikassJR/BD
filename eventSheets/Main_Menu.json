@@ -1873,34 +1873,52 @@
 							}
 						}
 					],
-					"actions": [],
-					"sid": 574342161092261,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "has-tags",
-									"objectClass": "Text_Menu",
-									"sid": 982840456322374,
-									"parameters": {
-										"tags": "\"Continue\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "Text_Menu",
-									"sid": 725444596814939,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 294493514506723
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 570395455817111,
+							"parameters": {
+								"variable": "Continue_Maket",
+								"value": "\"None\""
+							}
 						}
-					]
+					],
+					"sid": 574342161092261
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 155364346861901,
+							"parameters": {
+								"tags": "\"Continue\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 879378828600753,
+							"parameters": {
+								"variable": "Continue_Maket",
+								"comparison": 0,
+								"value": "\"None\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Text_Menu",
+							"sid": 880672402008225,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 570708639057682
 				},
 				{
 					"eventType": "block",
@@ -14918,14 +14936,6 @@
 							"id": "set-visible",
 							"objectClass": "Logo",
 							"sid": 286828657574967,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Text_Menu",
-							"sid": 274884087262933,
 							"parameters": {
 								"visibility": "visible"
 							}

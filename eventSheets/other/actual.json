@@ -602,60 +602,58 @@
 								}
 							],
 							"sid": 999398458772101,
-							"children": [
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 255154669244362,
-											"parameters": {
-												"variable": "Hardcore"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "EnemyKnife",
-											"sid": 883638137706211,
-											"parameters": {
-												"instance-variable": "Knife",
-												"value": "true"
-											}
-										}
-									],
-									"sid": 189189562829088
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 863418727276999,
-											"parameters": {
-												"variable": "Hardcore"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "EnemyKnife",
-											"sid": 333985418154317,
-											"parameters": {
-												"instance-variable": "Knife",
-												"value": "false"
-											}
-										}
-									],
-									"sid": 402410340879232
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 982429493430667,
+									"parameters": {
+										"variable": "Hardcore"
+									}
 								}
 							],
-							"isOrBlock": true
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "EnemyKnife",
+									"sid": 582530369642999,
+									"parameters": {
+										"instance-variable": "Knife",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 267013133660896
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 751986073659502,
+									"parameters": {
+										"variable": "Hardcore"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "EnemyKnife",
+									"sid": 215717282049889,
+									"parameters": {
+										"instance-variable": "Knife",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 593338120376275
 						},
 						{
 							"eventType": "block",
@@ -722,17 +720,17 @@
 						{
 							"id": "has-gamepads",
 							"objectClass": "Gamepad",
-							"sid": 733038424887893
+							"sid": 657737032355302
 						},
 						{
 							"id": "is-on-screen",
 							"objectClass": "Player_All",
-							"sid": 473787233854579
+							"sid": 521087823800430
 						},
 						{
 							"id": "is-group-active",
 							"objectClass": "System",
-							"sid": 346719447560912,
+							"sid": 788683455589021,
 							"parameters": {
 								"group-name": "\"Player\""
 							}
@@ -740,7 +738,7 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 210500707117376,
+							"sid": 151026884425525,
 							"parameters": {
 								"variable": "Safe_Zone"
 							},
@@ -780,9 +778,32 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "else",
+							"id": "has-gamepads",
+							"objectClass": "Gamepad",
+							"sid": 341651249197476,
+							"isInverted": true
+						},
+						{
+							"id": "is-on-screen",
+							"objectClass": "Player_All",
+							"sid": 727684686862828
+						},
+						{
+							"id": "is-group-active",
 							"objectClass": "System",
-							"sid": 766396034952623
+							"sid": 966384854099013,
+							"parameters": {
+								"group-name": "\"Player\""
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 649036928614630,
+							"parameters": {
+								"variable": "Safe_Zone"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -2120,26 +2141,6 @@
 											"sid": 556630334973961
 										},
 										{
-											"id": "spawn-another-object",
-											"objectClass": "Player_All",
-											"sid": 415629159572114,
-											"parameters": {
-												"object": "Press_Mouse2",
-												"layer": "Player_All.LayerName",
-												"image-point": "\"Dialog\"",
-												"create-hierarchy": false,
-												"template-name": "\"\""
-											}
-										},
-										{
-											"id": "set-scale",
-											"objectClass": "Press_Mouse2",
-											"sid": 155290739542232,
-											"parameters": {
-												"scale": "0.25"
-											}
-										},
-										{
 											"id": "set-animation-frame",
 											"objectClass": "Player_All",
 											"sid": 405057635684685,
@@ -2158,6 +2159,39 @@
 									],
 									"sid": 478219546432756,
 									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 153413924802109
+												}
+											],
+											"actions": [
+												{
+													"id": "spawn-another-object",
+													"objectClass": "Player_All",
+													"sid": 331978101140069,
+													"parameters": {
+														"object": "Press_Mouse2",
+														"layer": "Player_All.LayerName",
+														"image-point": "\"Dialog\"",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "set-scale",
+													"objectClass": "Press_Mouse2",
+													"sid": 162315530552442,
+													"parameters": {
+														"scale": "0.25"
+													}
+												}
+											],
+											"sid": 380083870062535
+										},
 										{
 											"eventType": "block",
 											"conditions": [
@@ -2723,6 +2757,56 @@
 									],
 									"sid": 436628757102568,
 									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "EnemyBaseball",
+													"sid": 751318685434962,
+													"parameters": {
+														"animation": "\"MountingFinishing\""
+													}
+												},
+												{
+													"id": "compare-animation-frame",
+													"objectClass": "EnemyBaseball",
+													"sid": 194636846856327,
+													"parameters": {
+														"comparison": 0,
+														"number": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 788018849067151,
+													"parameters": {
+														"object-to-create": "BloodCup",
+														"layer": "Player_All.LayerName",
+														"x": "EnemyBaseball.X + random(-10, 30)",
+														"y": "EnemyBaseball.ImagePointY(2) + random(-10, 30)",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "apply-force-towards-position",
+													"objectClass": "BloodCup",
+													"sid": 794942696202389,
+													"behaviorType": "Физика",
+													"parameters": {
+														"force": "5",
+														"x": "Mouse.X",
+														"y": "Mouse.Y",
+														"image-point": "0"
+													}
+												}
+											],
+											"sid": 667714917691143
+										},
 										{
 											"eventType": "block",
 											"conditions": [
@@ -10306,33 +10390,71 @@
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "is-pinned",
-															"objectClass": "Weapon",
-															"sid": 377563097489520,
-															"behaviorType": "Прикрепить2"
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 641946607194890,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"Pistol\""
+															},
+															"isInverted": true
 														},
 														{
-															"id": "compare-boolean-eventvar",
-															"objectClass": "System",
-															"sid": 806001812258220,
-															"parameters": {
-																"variable": "Safe_Zone"
-															}
+															"id": "is-pinned",
+															"objectClass": "Pistol",
+															"sid": 666214963194474,
+															"behaviorType": "Прикрепить2"
 														}
 													],
 													"actions": [
 														{
 															"id": "destroy",
 															"objectClass": "Pistol",
-															"sid": 466698883751483
+															"sid": 820527223856510
 														},
 														{
 															"id": "destroy",
-															"objectClass": "Shotgun",
-															"sid": 891254889743219
+															"objectClass": "HeadPlayer",
+															"sid": 264932494875564
 														}
 													],
 													"sid": 227495034193138
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 159661936908883,
+															"parameters": {
+																"variable": "weapon",
+																"comparison": 0,
+																"value": "\"Shotgun\""
+															},
+															"isInverted": true
+														},
+														{
+															"id": "is-pinned",
+															"objectClass": "Shotgun",
+															"sid": 460953865948694,
+															"behaviorType": "Прикрепить2"
+														}
+													],
+													"actions": [
+														{
+															"id": "destroy",
+															"objectClass": "Shotgun",
+															"sid": 992078695132273
+														},
+														{
+															"id": "destroy",
+															"objectClass": "HeadPlayer",
+															"sid": 167045273129513
+														}
+													],
+													"sid": 837264204619754
 												}
 											],
 											"sid": 230261216192577
@@ -20450,6 +20572,58 @@
 											"eventType": "block",
 											"conditions": [
 												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 564194822606153,
+													"parameters": {
+														"instance-variable": "Death"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 143208071411299,
+													"parameters": {
+														"instance-variable": "triger"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-group-active",
+													"objectClass": "System",
+													"sid": 795662299095689,
+													"parameters": {
+														"group-name": "\"Enemy & Fear\"",
+														"state": "deactivated"
+													}
+												},
+												{
+													"id": "set-enabled",
+													"objectClass": "Enemy_Mili",
+													"sid": 124261258830280,
+													"behaviorType": "НастраиваемоеДвижение",
+													"parameters": {
+														"state": "disabled"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Enemy_Mili",
+													"sid": 541573439667927,
+													"parameters": {
+														"animation": "\"Idle\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 672509658189690
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
 													"id": "has-gamepads",
 													"objectClass": "Gamepad",
 													"sid": 809406955137219
@@ -20497,44 +20671,27 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 298918376315391,
+													"id": "is-animation-playing",
+													"objectClass": "Shotgun",
+													"sid": 933528515322445,
 													"parameters": {
-														"instance-variable": "Death"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 650743317834602,
-													"parameters": {
-														"instance-variable": "triger"
+														"animation": "\"Shotgun1\""
 													}
 												}
 											],
 											"actions": [
 												{
-													"id": "set-enabled",
-													"objectClass": "Enemy_Mili",
-													"sid": 188896845689014,
-													"behaviorType": "НастраиваемоеДвижение",
-													"parameters": {
-														"state": "disabled"
-													}
+													"id": "destroy",
+													"objectClass": "Shotgun",
+													"sid": 472491849179678
 												},
 												{
-													"id": "set-animation",
-													"objectClass": "Enemy_Mili",
-													"sid": 342319929512064,
-													"parameters": {
-														"animation": "\"Idle\"",
-														"from": "beginning"
-													}
+													"id": "destroy",
+													"objectClass": "HeadPlayer",
+													"sid": 886999233303652
 												}
 											],
-											"sid": 369496224781061
+											"sid": 388032689184046
 										},
 										{
 											"eventType": "block",
@@ -23848,6 +24005,75 @@
 												}
 											],
 											"sid": 742805674041382
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player_All",
+													"sid": 732120302229208,
+													"parameters": {
+														"instance-variable": "kickrun"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Player_All",
+													"sid": 888800686661197,
+													"parameters": {
+														"instance-variable": "kick"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 983742530419361,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "on-collision-with-another-object",
+															"objectClass": "Player_All",
+															"sid": 958278019969976,
+															"parameters": {
+																"object": "Wall"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Player_All",
+															"sid": 481146296013280,
+															"parameters": {
+																"instance-variable": "kick",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Player_All",
+															"sid": 584090782548286,
+															"parameters": {
+																"instance-variable": "kickrun",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "Enemy_Mili",
+															"sid": 700989454543851,
+															"parameters": {
+																"animation": "weapon & \"Idle\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 190915267358648
+												}
+											],
+											"isOrBlock": true
 										}
 									],
 									"sid": 856415149520828
@@ -45104,11 +45330,11 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "Enemy_Mili",
-													"sid": 542912934395229,
+													"sid": 589390746610334,
 													"parameters": {
 														"instance-variable": "DifY",
 														"comparison": 3,
-														"value": "100"
+														"value": "200"
 													}
 												}
 											],
@@ -45236,6 +45462,15 @@
 													"sid": 291458010887507,
 													"parameters": {
 														"instance-variable": "Damage"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 672665388809411,
+													"parameters": {
+														"instance-variable": "Security"
 													},
 													"isInverted": true
 												},
@@ -45565,6 +45800,15 @@
 													"sid": 355836840635805,
 													"parameters": {
 														"instance-variable": "Rolling"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 522986269393279,
+													"parameters": {
+														"instance-variable": "Security"
 													},
 													"isInverted": true
 												},
@@ -47418,19 +47662,19 @@
 											],
 											"actions": [
 												{
-													"id": "stop-all-timers",
-													"objectClass": "EnemySecurity",
-													"sid": 679100157170119,
-													"behaviorType": "Таймер"
-												},
-												{
 													"id": "set-boolean-instvar",
 													"objectClass": "EnemySecurity",
-													"sid": 456770837811332,
+													"sid": 979387929586991,
 													"parameters": {
 														"instance-variable": "onRamp",
 														"value": "false"
 													}
+												},
+												{
+													"id": "stop-all-timers",
+													"objectClass": "EnemySecurity",
+													"sid": 679100157170119,
+													"behaviorType": "Таймер"
 												},
 												{
 													"id": "set-boolean-instvar",
@@ -48200,6 +48444,14 @@
 											}
 										},
 										{
+											"id": "set-angle",
+											"objectClass": "Shot_Shotgun",
+											"sid": 495658533752181,
+											"parameters": {
+												"angle": "angle(EnemySecurity.X, EnemySecurity.Y, Player_All.X, Player_All.Y)+random(5,-5)"
+											}
+										},
+										{
 											"id": "set-boolean-instvar",
 											"objectClass": "Shot_Shotgun",
 											"sid": 437459722934185,
@@ -48320,6 +48572,70 @@
 									],
 									"sid": 424921380086046,
 									"disabled": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "EnemySecurity",
+											"sid": 977545790995372,
+											"parameters": {
+												"instance-variable": "vision"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [],
+									"sid": 928972371792634,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-animation-playing",
+													"objectClass": "EnemySecurity",
+													"sid": 974204089898395,
+													"parameters": {
+														"animation": "\"Kick\""
+													}
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "EnemySecurity",
+													"sid": 946234960436196,
+													"parameters": {
+														"animation": "\"Kick2\""
+													}
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "EnemySecurity",
+													"sid": 292962141936902,
+													"parameters": {
+														"animation": "\"Kick3\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "EnemySecurity",
+													"sid": 926769961038582,
+													"parameters": {
+														"frame-number": "0"
+													}
+												},
+												{
+													"id": "stop-animation",
+													"objectClass": "EnemySecurity",
+													"sid": 848990447434115
+												}
+											],
+											"sid": 281392294682929,
+											"isOrBlock": true
+										}
+									]
 								}
 							],
 							"sid": 860400540933391
@@ -49156,6 +49472,937 @@
 						}
 					],
 					"sid": 940630509000230
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "Blood",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "BloodAll2",
+									"sid": 469218866220239
+								}
+							],
+							"actions": [
+								{
+									"id": "enabledisable-collisions",
+									"objectClass": "BloodAll2",
+									"sid": 336540494553395,
+									"behaviorType": "Физика",
+									"parameters": {
+										"object": "BloodAll2",
+										"state": "disable"
+									}
+								},
+								{
+									"id": "enabledisable-collisions",
+									"objectClass": "BloodAll2",
+									"sid": 237597467334763,
+									"behaviorType": "Физика",
+									"parameters": {
+										"object": "Weapon",
+										"state": "disable"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "BloodAll2",
+									"sid": 233746234216697,
+									"parameters": {
+										"scale": "0.5"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "BloodAll2",
+									"sid": 770260917545319,
+									"behaviorType": "Твинанимация",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetScaleX",
+										"end-value": "1",
+										"time": "0.5",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-ignoring-input",
+									"objectClass": "BloodAll2",
+									"sid": 865037645321109,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"input": "start-ignoring"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "BloodAll2",
+									"sid": 234304399916757,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-prevent-rotation",
+									"objectClass": "BloodAll2",
+									"sid": 572019867468960,
+									"behaviorType": "Физика",
+									"parameters": {
+										"setting": "prevent-rotations"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "BloodAll2",
+									"sid": 597928759306284,
+									"parameters": {
+										"animation": "choose(\"BloodSmall\", \"BloodMid1\")",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 502196569242686,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "BloodAll2",
+											"sid": 290461310992992,
+											"parameters": {
+												"animation": "\"BloodSmall\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "apply-impulse-at-angle",
+											"objectClass": "BloodAll2",
+											"sid": 821913253792111,
+											"behaviorType": "Физика",
+											"parameters": {
+												"impulse": "0.05 * Player_All.rotate",
+												"angle": "BloodAll2.Angle",
+												"image-point": "0"
+											}
+										},
+										{
+											"id": "set-density",
+											"objectClass": "BloodAll2",
+											"sid": 213464631819321,
+											"behaviorType": "Физика",
+											"parameters": {
+												"density": "5"
+											}
+										}
+									],
+									"sid": 883388269514147
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "BloodAll2",
+											"sid": 325714543582406,
+											"parameters": {
+												"animation": "\"BloodMid1\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "apply-impulse-at-angle",
+											"objectClass": "BloodAll2",
+											"sid": 401331067871376,
+											"behaviorType": "Физика",
+											"parameters": {
+												"impulse": "0.15 * Player_All.rotate",
+												"angle": "330 * Player_All.rotate",
+												"image-point": "0"
+											}
+										},
+										{
+											"id": "set-density",
+											"objectClass": "BloodAll2",
+											"sid": 642984184865382,
+											"behaviorType": "Физика",
+											"parameters": {
+												"density": "3"
+											}
+										},
+										{
+											"id": "set-animation-speed",
+											"objectClass": "BloodAll2",
+											"sid": 821250834543229,
+											"parameters": {
+												"speed": "20"
+											}
+										}
+									],
+									"sid": 639341116774412
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "HitBox",
+									"sid": 945528259344874,
+									"parameters": {
+										"animation": "\"BaseballBox\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "HitBox",
+									"sid": 756658778382665,
+									"parameters": {
+										"animation": "\"AxeBox\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "HitBox",
+									"sid": 533329502291591,
+									"parameters": {
+										"animation": "\"ChairBox\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "HitBox",
+									"sid": 719442879447253,
+									"parameters": {
+										"animation": "\"KnifeBox\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "HitBox",
+									"sid": 112053351798811,
+									"parameters": {
+										"animation": "\"MountingBox\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "HitBox",
+									"sid": 505430765544673,
+									"parameters": {
+										"animation": "\"WolfBox\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 477408086788265,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "Enemy_Mili",
+											"sid": 482366882122004,
+											"parameters": {
+												"object": "HitBox"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Enemy_Mili",
+											"sid": 566866750093103,
+											"parameters": {
+												"instance-variable": "Damage"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 812778536101001,
+											"parameters": {
+												"object-to-create": "BloodAll2",
+												"layer": "\"Blood\"",
+												"x": " random(Enemy_Mili.X-10, Enemy_Mili.X +10)",
+												"y": " random(Enemy_Mili.Y, Enemy_Mili.Y -30)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "start-timer",
+											"objectClass": "BloodAll2",
+											"sid": 319561984859315,
+											"behaviorType": "Таймер",
+											"parameters": {
+												"duration": "1.0",
+												"type": "once",
+												"tag": "\"Blood\""
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "BloodMap",
+											"sid": 727204208356920,
+											"disabled": true,
+											"parameters": {
+												"instance-variable": "BloodX",
+												"value": "floor((Enemy_Mili.X - BloodMap.X) / BloodMap.TileWidth)"
+											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "BloodMap",
+											"sid": 536557851735837,
+											"disabled": true,
+											"parameters": {
+												"instance-variable": "BloodY",
+												"value": "floor((Enemy_Mili.Y - BloodMap.Y) / BloodMap.TileHeight)"
+											}
+										},
+										{
+											"id": "set-tile",
+											"objectClass": "BloodMap",
+											"sid": 308348939805132,
+											"disabled": true,
+											"parameters": {
+												"tile-x": "BloodMap.BloodX",
+												"tile-y": "BloodMap.BloodY",
+												"tile": "floor(random(1, 5))",
+												"state": "normal"
+											}
+										}
+									],
+									"sid": 412597986836541,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "repeat",
+													"objectClass": "System",
+													"sid": 662168858951235,
+													"parameters": {
+														"count": "10"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "create-object",
+													"objectClass": "System",
+													"sid": 382901253591235,
+													"parameters": {
+														"object-to-create": "BloodCup",
+														"layer": "\"Blood\"",
+														"x": " random(Enemy_Mili.X-10, Enemy_Mili.X +10)",
+														"y": " random(Enemy_Mili.Y, Enemy_Mili.Y -30)",
+														"create-hierarchy": false,
+														"template-name": "\"\""
+													}
+												},
+												{
+													"id": "apply-impulse-at-angle",
+													"objectClass": "BloodCup",
+													"sid": 691539628664132,
+													"behaviorType": "Физика",
+													"parameters": {
+														"impulse": "0.025 * Player_All.rotate",
+														"angle": "BloodCup.Angle",
+														"image-point": "0"
+													}
+												}
+											],
+											"sid": 169594108000998
+										}
+									]
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "HitBox",
+									"sid": 911670950905397,
+									"parameters": {
+										"animation": "\"noWeaponBox\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "HitBox",
+									"sid": 215621158216408,
+									"parameters": {
+										"animation": "\"PistolBox\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "HitBox",
+									"sid": 628423061261221,
+									"parameters": {
+										"animation": "\"ShotgunBox\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "HitBox",
+									"sid": 189808165914524,
+									"parameters": {
+										"animation": "\"RoseBox\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "HitBox",
+									"sid": 694417720700571,
+									"parameters": {
+										"animation": "\"BrickBox\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 978409831224369,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "Enemy_Mili",
+											"sid": 147616102198160,
+											"parameters": {
+												"object": "HitBox"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Enemy_Mili",
+											"sid": 404293048059419,
+											"parameters": {
+												"instance-variable": "Damage"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 515389781711620,
+											"parameters": {
+												"object-to-create": "BloodAll2",
+												"layer": "\"Blood\"",
+												"x": " random(Enemy_Mili.X-10, Enemy_Mili.X +10)",
+												"y": " random(Enemy_Mili.Y, Enemy_Mili.Y -30)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 909315183984525
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-velocity",
+									"objectClass": "BloodAll2",
+									"sid": 613873765920956,
+									"behaviorType": "Физика",
+									"parameters": {
+										"which": "overall-velocity",
+										"comparison": 0,
+										"value": "0"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-timer-running",
+									"objectClass": "BloodAll2",
+									"sid": 198323948484755,
+									"behaviorType": "Таймер",
+									"parameters": {
+										"tag": "\"Blood\""
+									}
+								},
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 425020763654354,
+									"parameters": {
+										"interval-seconds": "0.25"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "BloodAll2",
+									"sid": 848166618859931,
+									"parameters": {
+										"object": "BloodAll2",
+										"layer": "\"Blood\"",
+										"image-point": "1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 788193397034059
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "BloodAll2",
+									"sid": 940245699117210,
+									"parameters": {
+										"animation": "\"BloodMid1\""
+									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "BloodAll2",
+									"sid": 712327512459288,
+									"parameters": {
+										"animation": "\"BloodMid1\""
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "BloodAll2",
+									"sid": 138857091321732,
+									"parameters": {
+										"object": "Wall_Blood"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "BloodAll2",
+									"sid": 768194918718271,
+									"behaviorType": "Физика",
+									"parameters": {
+										"mode": "disabled"
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "BloodAll2",
+									"sid": 733076300114615,
+									"behaviorType": "Таймер",
+									"parameters": {
+										"tag": "\"Blood\""
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "BloodAll2",
+									"sid": 245138854206933,
+									"parameters": {
+										"animation": "choose(\"BloodMid2\", \"BloodMid3\", \"BloodMid4\", \"BloodMid5\")",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-scale",
+									"objectClass": "BloodAll2",
+									"sid": 683783752326287,
+									"parameters": {
+										"scale": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "BloodAll2",
+									"sid": 514615589806331,
+									"parameters": {
+										"frame-number": "random(0,5)"
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "BloodAll2",
+									"sid": 453763777349265,
+									"parameters": {
+										"opacity": "75"
+									}
+								}
+							],
+							"sid": 888549325270239
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "BloodAll2",
+									"sid": 954565585339488,
+									"parameters": {
+										"object": "Wall"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "BloodAll2",
+									"sid": 965470564389955,
+									"parameters": {
+										"object": "Skvoz"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "BloodAll2",
+									"sid": 180956292382924,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"state": "enabled"
+									}
+								},
+								{
+									"id": "stop-timer",
+									"objectClass": "BloodAll2",
+									"sid": 113064238551461,
+									"behaviorType": "Таймер",
+									"parameters": {
+										"tag": "\"Blood\""
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "BloodAll2",
+									"sid": 375344815254544,
+									"behaviorType": "Физика",
+									"parameters": {
+										"mode": "disabled"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "BloodAll2",
+									"sid": 271284681974003,
+									"parameters": {
+										"animation": "\"BloodSmall2\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "BloodAll2",
+									"sid": 208449908380682,
+									"parameters": {
+										"frame-number": "random(0,3)"
+									}
+								}
+							],
+							"sid": 415421852107335,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-on-floor",
+											"objectClass": "BloodAll2",
+											"sid": 154957143574204,
+											"behaviorType": "Платформер"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-enabled",
+											"objectClass": "BloodAll2",
+											"sid": 510747140396078,
+											"behaviorType": "Платформер",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "BloodAll2",
+											"sid": 385329147329864,
+											"parameters": {
+												"angle": "0"
+											}
+										}
+									],
+									"sid": 190804539898720
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "BloodAll2",
+									"sid": 793495053648991,
+									"parameters": {
+										"object": "LadderStair"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "BloodAll2",
+									"sid": 106554168211801
+								}
+							],
+							"sid": 312944561636801
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "BloodAll2",
+									"sid": 181365984719872,
+									"parameters": {
+										"animation": "\"BloodMid2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "BloodAll2",
+									"sid": 302540332019466,
+									"parameters": {
+										"object": "BloodCup",
+										"layer": "\"Blood\"",
+										"image-point": "1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "start-animation",
+									"objectClass": "BloodAll2",
+									"sid": 228932152860579,
+									"disabled": true,
+									"parameters": {
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 284548768514190
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "BloodCup",
+									"sid": 906154352232219
+								}
+							],
+							"actions": [
+								{
+									"id": "set-density",
+									"objectClass": "BloodCup",
+									"sid": 597951389534201,
+									"behaviorType": "Физика",
+									"parameters": {
+										"density": "5"
+									}
+								},
+								{
+									"id": "enabledisable-collisions",
+									"objectClass": "BloodCup",
+									"sid": 186283249757615,
+									"behaviorType": "Физика",
+									"parameters": {
+										"object": "Weapon",
+										"state": "disable"
+									}
+								}
+							],
+							"sid": 378897719496270
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "BloodCup",
+									"sid": 656488838290745,
+									"parameters": {
+										"object": "Wall"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "BloodCup",
+									"sid": 287276862257225,
+									"parameters": {
+										"object": "Skvoz"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "BloodCup",
+									"sid": 537691914013460,
+									"parameters": {
+										"object": "LadderStair"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "BloodCup",
+									"sid": 232198276587574,
+									"behaviorType": "Физика",
+									"parameters": {
+										"mode": "disabled"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "BloodCup",
+									"sid": 459087084195064,
+									"parameters": {
+										"animation": "\"End\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 324241009273074,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "BloodCup",
+									"sid": 144598353576787,
+									"parameters": {
+										"animation": "\"End\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "BloodCup",
+									"sid": 813294416136411
+								}
+							],
+							"sid": 639726928521701
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-animation-finished",
+									"objectClass": "BloodAll",
+									"sid": 569614855763318
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "BloodAll",
+									"sid": 803018074066033,
+									"parameters": {
+										"opacity": "75"
+									}
+								},
+								{
+									"id": "set-default-color",
+									"objectClass": "BloodAll",
+									"sid": 241213243848628,
+									"parameters": {
+										"color": "rgb(255, 100, 100) "
+									}
+								}
+							],
+							"sid": 233550676532681
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "BloodAll",
+									"sid": 290154878563990,
+									"parameters": {
+										"animation": "\"BloodSmall\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "BloodAll",
+									"sid": 966783884242372
+								}
+							],
+							"sid": 746858390561654
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 481204664303140,
+									"parameters": {
+										"first-value": "BloodAll2.Count",
+										"comparison": 4,
+										"second-value": "200"
+									}
+								},
+								{
+									"id": "pick-nth-instance",
+									"objectClass": "System",
+									"sid": 173653508271463,
+									"parameters": {
+										"object": "BloodAll2",
+										"instance": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "BloodAll2",
+									"sid": 573848946865572
+								}
+							],
+							"sid": 542859732759262
+						}
+					],
+					"sid": 498201486029928
 				}
 			],
 			"sid": 491459220865322

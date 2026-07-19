@@ -2977,9 +2977,9 @@
 								{
 									"id": "on-collision-with-another-object",
 									"objectClass": "EnemyJunkieKnife",
-									"sid": 772757839768852,
+									"sid": 387978137099999,
 									"parameters": {
-										"object": "Trigger_CutScene"
+										"object": "Player_Wolf"
 									}
 								},
 								{
@@ -4302,21 +4302,30 @@
 							}
 						},
 						{
+							"id": "set-animation",
+							"objectClass": "Player_Wolf",
+							"sid": 301464650823260,
+							"parameters": {
+								"animation": "\"Wolf_Kness2\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 847235084498761,
+							"parameters": {
+								"seconds": "1.0",
+								"use-timescale": true
+							}
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 259337865793861,
 							"parameters": {
 								"variable": "onDialMain",
 								"value": "true"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "Player_Wolf",
-							"sid": 790229071850052,
-							"parameters": {
-								"animation": "\"Wolf_Kness2\"",
-								"from": "beginning"
 							}
 						},
 						{
