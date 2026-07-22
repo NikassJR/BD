@@ -176,6 +176,16 @@
 			"sid": 671795569587936
 		},
 		{
+			"eventType": "variable",
+			"name": "FearGlobal",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 146752975867614
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "Setup",
@@ -265,10 +275,10 @@
 								{
 									"id": "set-range",
 									"objectClass": "EnemySecurity",
-									"sid": 868970591266582,
+									"sid": 264688335692228,
 									"behaviorType": "ПолеЗрения",
 									"parameters": {
-										"range": "250"
+										"range": "400"
 									}
 								},
 								{
@@ -1452,6 +1462,7 @@
 								"which": "nearest",
 								"x": "Skvoz.X",
 								"y": "Skvoz.Y",
+								"z": "0",
 								"pick-all-tied": false
 							}
 						},
@@ -1516,6 +1527,7 @@
 								"which": "nearest",
 								"x": "Skvoz.X",
 								"y": "Skvoz.Y",
+								"z": "0",
 								"pick-all-tied": false
 							}
 						},
@@ -1775,6 +1787,7 @@
 																		"which": "nearest",
 																		"x": "EnemyBaseball.X",
 																		"y": "EnemyBaseball.Y",
+																		"z": "0",
 																		"pick-all-tied": false
 																	}
 																},
@@ -2125,6 +2138,7 @@
 												"which": "nearest",
 												"x": "Enemy_Mili.X",
 												"y": "Enemy_Mili.Y",
+												"z": "0",
 												"pick-all-tied": false
 											}
 										}
@@ -11179,6 +11193,7 @@
 														"which": "nearest",
 														"x": "Player_All.X",
 														"y": "Player_All.Y",
+														"z": "0",
 														"pick-all-tied": false
 													}
 												},
@@ -11269,6 +11284,7 @@
 																"which": "nearest",
 																"x": "Player_All.X",
 																"y": "Player_All.Y",
+																"z": "0",
 																"pick-all-tied": false
 															}
 														}
@@ -11476,6 +11492,7 @@
 																"which": "nearest",
 																"x": "Player_All.X",
 																"y": "Player_All.Y",
+																"z": "0",
 																"pick-all-tied": false
 															}
 														}
@@ -11665,6 +11682,7 @@
 																"which": "nearest",
 																"x": "Player_All.X",
 																"y": "Player_All.Y",
+																"z": "0",
 																"pick-all-tied": false
 															}
 														},
@@ -18321,6 +18339,7 @@
 												"which": "nearest",
 												"x": "Player_All.X",
 												"y": "Player_All.Y",
+												"z": "0",
 												"pick-all-tied": false
 											}
 										},
@@ -18332,6 +18351,7 @@
 												"which": "nearest",
 												"x": "Player_All.X",
 												"y": "Player_All.Y",
+												"z": "0",
 												"pick-all-tied": false
 											}
 										}
@@ -20293,6 +20313,7 @@
 												"which": "nearest",
 												"x": "Enemy_Mili.X",
 												"y": "Enemy_Mili.Y",
+												"z": "0",
 												"pick-all-tied": false
 											}
 										}
@@ -20399,6 +20420,7 @@
 												"which": "nearest",
 												"x": "Enemys.X",
 												"y": "Enemys.Y",
+												"z": "0",
 												"pick-all-tied": false
 											}
 										}
@@ -25166,6 +25188,7 @@
 										"which": "nearest",
 										"x": "Skvoz.X",
 										"y": "Skvoz.Y",
+										"z": "0",
 										"pick-all-tied": false
 									}
 								}
@@ -26037,9 +26060,39 @@
 											"eventType": "block",
 											"conditions": [
 												{
+													"id": "every-tick",
+													"objectClass": "System",
+													"sid": 420489875614965
+												},
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 286510966334474,
+													"parameters": {
+														"object": "Enemy_Mili"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 501621278223129,
+													"parameters": {
+														"instance-variable": "Death"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 493858081626162,
+													"parameters": {
+														"object": "Fear"
+													}
+												},
+												{
 													"id": "has-los-to-object",
 													"objectClass": "Fear",
-													"sid": 181576752289546,
+													"sid": 626600849650934,
 													"behaviorType": "ПолеЗрения",
 													"parameters": {
 														"object": "Enemy_Mili",
@@ -26047,43 +26100,37 @@
 													}
 												},
 												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 618238719417181,
-													"parameters": {
-														"instance-variable": "Death"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "trigger-once-while-true",
+													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 101680760161055
+													"sid": 445670606445100,
+													"parameters": {
+														"first-value": "find(Enemy_Mili.FearList, Fear.UID & \",\")",
+														"comparison": 0,
+														"second-value": "-1"
+													}
 												}
 											],
 											"actions": [
 												{
 													"id": "subtract-from-instvar",
 													"objectClass": "Enemy_Mili",
-													"sid": 505136049552714,
+													"sid": 956472099416331,
 													"parameters": {
 														"instance-variable": "Fear",
-														"value": "Fear.PickedCount"
+														"value": "1"
 													}
 												},
 												{
-													"id": "start-timer",
-													"objectClass": "Fear",
-													"sid": 588257884316841,
-													"behaviorType": "Таймер",
+													"id": "set-instvar-value",
+													"objectClass": "Enemy_Mili",
+													"sid": 709560744134084,
 													"parameters": {
-														"duration": "5",
-														"type": "once",
-														"tag": "\"Fear\""
+														"instance-variable": "FearList",
+														"value": "Enemy_Mili.FearList & Fear.UID & \",\""
 													}
 												}
 											],
-											"sid": 679628593755643
+											"sid": 554521900028842
 										},
 										{
 											"eventType": "block",
@@ -26091,7 +26138,55 @@
 												{
 													"id": "on-created",
 													"objectClass": "Fear",
-													"sid": 152633772896023
+													"sid": 747585585357768
+												}
+											],
+											"actions": [
+												{
+													"id": "start-timer",
+													"objectClass": "Fear",
+													"sid": 372238540634755,
+													"behaviorType": "Таймер",
+													"parameters": {
+														"duration": "5",
+														"type": "once",
+														"tag": "\"Destroy\""
+													}
+												}
+											],
+											"sid": 580976906814507,
+											"disabled": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-timer",
+													"objectClass": "Fear",
+													"sid": 915044496396783,
+													"behaviorType": "Таймер",
+													"parameters": {
+														"tag": "\"Destroy\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "Fear",
+													"sid": 211131145576387
+												}
+											],
+											"sid": 892652116094785,
+											"disabled": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-created",
+													"objectClass": "Fear",
+													"sid": 636674348656695
 												}
 											],
 											"actions": [
@@ -26103,83 +26198,18 @@
 													"parameters": {
 														"range": "300"
 													}
+												},
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 768194498236402,
+													"parameters": {
+														"variable": "FearGlobal",
+														"value": "1"
+													}
 												}
 											],
 											"sid": 914035129887307
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "on-created",
-													"objectClass": "Fear",
-													"sid": 649719771391054
-												},
-												{
-													"id": "has-los-to-object",
-													"objectClass": "Fear",
-													"sid": 459489328151462,
-													"behaviorType": "ПолеЗрения",
-													"parameters": {
-														"object": "Enemy_Mili",
-														"image-point": "0"
-													}
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 462312980267066,
-													"parameters": {
-														"instance-variable": "Death"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [
-												{
-													"id": "subtract-from-instvar",
-													"objectClass": "Enemy_Mili",
-													"sid": 977876123004878,
-													"parameters": {
-														"instance-variable": "Fear",
-														"value": "1"
-													}
-												},
-												{
-													"id": "start-timer",
-													"objectClass": "Fear",
-													"sid": 744929708499511,
-													"behaviorType": "Таймер",
-													"parameters": {
-														"duration": "5",
-														"type": "once",
-														"tag": "\"Fear\""
-													}
-												}
-											],
-											"sid": 928018539301294
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "on-timer",
-													"objectClass": "Fear",
-													"sid": 696336646371784,
-													"behaviorType": "Таймер",
-													"parameters": {
-														"tag": "\"Fear\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "destroy",
-													"objectClass": "Fear",
-													"sid": 218602962642477
-												}
-											],
-											"sid": 220568942584207
 										},
 										{
 											"eventType": "block",
@@ -32655,11 +32685,11 @@
 														{
 															"id": "compare-instance-variable",
 															"objectClass": "Enemy_Mili",
-															"sid": 335380882316504,
+															"sid": 475003342616025,
 															"parameters": {
 																"instance-variable": "Rough",
 																"comparison": 0,
-																"value": "4"
+																"value": "5"
 															}
 														}
 													],
@@ -32667,10 +32697,10 @@
 														{
 															"id": "set-instvar-value",
 															"objectClass": "Enemy_Mili",
-															"sid": 185790729010525,
+															"sid": 947050154212978,
 															"parameters": {
 																"instance-variable": "Rough",
-																"value": "3"
+																"value": "4"
 															}
 														},
 														{
@@ -32741,20 +32771,7 @@
 																	}
 																}
 															],
-															"actions": [
-																{
-																	"id": "spawn-another-object",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 313425787647434,
-																	"parameters": {
-																		"object": "Fear",
-																		"layer": "Enemy_Mili.LayerName",
-																		"image-point": "0",
-																		"create-hierarchy": false,
-																		"template-name": "\"\""
-																	}
-																}
-															],
+															"actions": [],
 															"sid": 411152327734935
 														}
 													]
@@ -32821,18 +32838,6 @@
 																	"id": "spawn-another-object",
 																	"objectClass": "Enemy_Mili",
 																	"sid": 431681974187891,
-																	"parameters": {
-																		"object": "Fear",
-																		"layer": "Enemy_Mili.LayerName",
-																		"image-point": "0",
-																		"create-hierarchy": false,
-																		"template-name": "\"\""
-																	}
-																},
-																{
-																	"id": "spawn-another-object",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 207925639355190,
 																	"parameters": {
 																		"object": "Fear",
 																		"layer": "Enemy_Mili.LayerName",
@@ -32907,6 +32912,18 @@
 																{
 																	"id": "spawn-another-object",
 																	"objectClass": "Enemy_Mili",
+																	"sid": 500679454918933,
+																	"parameters": {
+																		"object": "Fear",
+																		"layer": "Enemy_Mili.LayerName",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "Enemy_Mili",
 																	"sid": 239416958942353,
 																	"disabled": true,
 																	"parameters": {
@@ -32934,6 +32951,59 @@
 															"sid": 941125777265131
 														}
 													]
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-animation-playing",
+															"objectClass": "Enemy_Mili",
+															"sid": 275769148075089,
+															"parameters": {
+																"animation": "Enemy_Mili.Finishing & \"Finishing\""
+															}
+														},
+														{
+															"id": "compare-animation-frame",
+															"objectClass": "Enemy_Mili",
+															"sid": 914333516511674,
+															"parameters": {
+																"comparison": 0,
+																"number": "8"
+															}
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Enemy_Mili",
+															"sid": 706595627208679,
+															"parameters": {
+																"instance-variable": "Rough",
+																"comparison": 0,
+																"value": "4"
+															}
+														},
+														{
+															"id": "trigger-once-while-true",
+															"objectClass": "System",
+															"sid": 931087708528849
+														},
+														{
+															"id": "for-each",
+															"objectClass": "System",
+															"sid": 920274007724933,
+															"parameters": {
+																"object": "Enemy_Mili"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "stop-animation",
+															"objectClass": "Enemy_Mili",
+															"sid": 428674425263605
+														}
+													],
+													"sid": 880607659395333
 												}
 											],
 											"isOrBlock": true
@@ -45585,6 +45655,7 @@
 																				"which": "nearest",
 																				"x": "Enemy_Mili.X",
 																				"y": "Enemy_Mili.Y ",
+																				"z": "0",
 																				"pick-all-tied": false
 																			}
 																		}
@@ -46139,6 +46210,15 @@
 													"sid": 717154302168939,
 													"parameters": {
 														"instance-variable": "vision"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 883919382696294,
+													"parameters": {
+														"instance-variable": "Idle"
 													},
 													"isInverted": true
 												},
@@ -47259,21 +47339,21 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "EnemySecurity",
-											"sid": 331402552241492,
+											"sid": 610636538067244,
 											"parameters": {
 												"instance-variable": "DifX",
 												"comparison": 3,
-												"value": "250"
+												"value": "400"
 											}
 										},
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "EnemySecurity",
-											"sid": 844254352069241,
+											"sid": 676169053597612,
 											"parameters": {
 												"instance-variable": "DifX",
 												"comparison": 5,
-												"value": "-250"
+												"value": "-400"
 											}
 										},
 										{
@@ -62967,6 +63047,7 @@
 																		"which": "nearest",
 																		"x": "EnemyFurious2.X",
 																		"y": "EnemyFurious2.Y ",
+																		"z": "0",
 																		"pick-all-tied": false
 																	}
 																}
