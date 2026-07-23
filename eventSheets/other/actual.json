@@ -25247,200 +25247,54 @@
 									"isActiveOnStart": true,
 									"children": [
 										{
-											"eventType": "comment",
-											"text": "RunFear"
-										},
-										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-instance-variable",
-													"objectClass": "Enemy_Mili",
-													"sid": 877453463274647,
+													"id": "on-key-pressed",
+													"objectClass": "Keyboard",
+													"sid": 507663070001032,
 													"parameters": {
-														"instance-variable": "Fear",
-														"comparison": 3,
-														"value": "0"
+														"key": 70
 													}
 												},
 												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 829762212707207,
+													"id": "pick-all",
+													"objectClass": "System",
+													"sid": 844890619845074,
 													"parameters": {
-														"instance-variable": "Death"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 727960395001584,
-													"parameters": {
-														"instance-variable": "Damage"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 756254306140216,
-													"parameters": {
-														"instance-variable": "Rolling"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 199529932874046,
-													"parameters": {
-														"instance-variable": "Down"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Enemy_Mili",
-													"sid": 595258056480907,
-													"parameters": {
-														"instance-variable": "HP",
-														"comparison": 4,
-														"value": "0"
+														"object": "Enemy_Mili"
 													}
 												}
 											],
 											"actions": [
 												{
-													"id": "set-speed",
-													"objectClass": "Enemy_Mili",
-													"sid": 461150681067848,
-													"behaviorType": "НастраиваемоеДвижение",
-													"parameters": {
-														"which": "horizontal",
-														"speed": "sign(Enemy_Mili.X - Player_All.X) * Enemy_Mili.speed * 1.25"
-													}
-												},
-												{
 													"id": "set-instvar-value",
 													"objectClass": "Enemy_Mili",
-													"sid": 364422916430106,
+													"sid": 698380801735220,
 													"parameters": {
-														"instance-variable": "HP",
-														"value": "1"
-													}
-												},
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "Enemy_Mili",
-													"sid": 385435860728189,
-													"parameters": {
-														"instance-variable": "triger",
-														"value": "false"
-													}
-												},
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "Enemy_Mili",
-													"sid": 352078153892244,
-													"parameters": {
-														"instance-variable": "vision",
-														"value": "false"
-													}
-												},
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "Enemy_Mili",
-													"sid": 502002810697389,
-													"parameters": {
-														"instance-variable": "search",
-														"value": "false"
-													}
-												},
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "Enemy_Mili",
-													"sid": 284547962087840,
-													"parameters": {
-														"instance-variable": "Kick",
-														"value": "false"
-													}
-												},
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "Enemy_Mili",
-													"sid": 744607003122199,
-													"parameters": {
-														"instance-variable": "onRamp",
-														"value": "false"
-													}
-												},
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "Enemy_Mili",
-													"sid": 955670934210674,
-													"parameters": {
-														"instance-variable": "Damage",
-														"value": "false"
-													}
-												},
-												{
-													"id": "set-animation",
-													"objectClass": "Enemy_Mili",
-													"sid": 381765620311804,
-													"parameters": {
-														"animation": "\"RunFear\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "Enemy_Mili",
-													"sid": 916254616464832,
-													"parameters": {
-														"instance-variable": "Dialog",
-														"value": "true"
+														"instance-variable": "Fear",
+														"value": "0"
 													}
 												}
 											],
-											"sid": 304736774964896
+											"sid": 137050222230517
+										},
+										{
+											"eventType": "comment",
+											"text": "=== СБРОС OnLadder (по умолчанию все НЕ на лестнице) ==="
 										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "compare-instance-variable",
-													"objectClass": "Enemy_Mili",
-													"sid": 975513838430234,
-													"parameters": {
-														"instance-variable": "Fear",
-														"comparison": 3,
-														"value": "0"
-													}
-												},
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Enemy_Mili",
-													"sid": 284811939348165,
-													"parameters": {
-														"instance-variable": "HP",
-														"comparison": 4,
-														"value": "0"
-													}
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 504585392029811,
-													"parameters": {
-														"instance-variable": "Rolling"
-													},
-													"isInverted": true
+													"id": "every-tick",
+													"objectClass": "System",
+													"sid": 374674004228676
 												},
 												{
 													"id": "for-each",
 													"objectClass": "System",
-													"sid": 188494453568329,
+													"sid": 929171200278958,
 													"parameters": {
 														"object": "Enemy_Mili"
 													}
@@ -25450,204 +25304,94 @@
 												{
 													"id": "set-boolean-instvar",
 													"objectClass": "Enemy_Mili",
-													"sid": 350819664400841,
+													"sid": 797379628189520,
 													"parameters": {
-														"instance-variable": "FearSwitch",
+														"instance-variable": "OnLadder",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 191071119891351
+										},
+										{
+											"eventType": "comment",
+											"text": "=== УСТАНОВКА OnLadder = True (если враг на лестнице) ==="
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "every-tick",
+													"objectClass": "System",
+													"sid": 390481293715188
+												},
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 564378740618916,
+													"parameters": {
+														"object": "Enemy_Mili"
+													}
+												},
+												{
+													"id": "is-on-floor",
+													"objectClass": "Enemy_Mili",
+													"sid": 434126678689100,
+													"behaviorType": "Платформер"
+												},
+												{
+													"id": "for-each",
+													"objectClass": "System",
+													"sid": 572011097963551,
+													"parameters": {
+														"object": "LadderStair"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 311848550940080,
+													"parameters": {
+														"first-value": "abs(Enemy_Mili.X - LadderStair.X)",
+														"comparison": 3,
+														"second-value": "LadderStair.Width / 2 + Enemy_Mili.Width / 2"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 447946422335237,
+													"parameters": {
+														"first-value": "abs(Enemy_Mili.Y - LadderStair.Y)",
+														"comparison": 3,
+														"second-value": "LadderStair.Height / 2 + Enemy_Mili.Height / 2 + 5"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Enemy_Mili",
+													"sid": 232494176393908,
+													"parameters": {
+														"instance-variable": "OnLadder",
 														"value": "true"
 													}
 												}
 											],
-											"sid": 856027222821145
+											"sid": 707108895070418
+										},
+										{
+											"eventType": "comment",
+											"text": "=== ЕСЛИ СТРАХ <= 0 И ВРАГ НА ПОЛУ — НАЧИНАЕТ ПАНИКУ ==="
 										},
 										{
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 841243415635845,
-													"parameters": {
-														"instance-variable": "FearSwitch"
-													}
-												},
-												{
-													"id": "is-overlapping-another-object",
-													"objectClass": "Enemy_Mili",
-													"sid": 950337640653141,
-													"parameters": {
-														"object": "LadderStair"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 979243979380456,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Enemy_Mili",
-															"sid": 622986260736766,
-															"parameters": {
-																"instance-variable": "HP",
-																"comparison": 4,
-																"value": "0"
-															}
-														},
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Enemy_Mili",
-															"sid": 543857274205708,
-															"parameters": {
-																"instance-variable": "Fear",
-																"comparison": 3,
-																"value": "0"
-															}
-														},
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "Enemy_Mili",
-															"sid": 660361208729017,
-															"parameters": {
-																"instance-variable": "Rolling"
-															},
-															"isInverted": true
-														},
-														{
-															"id": "is-moving",
-															"objectClass": "Enemy_Mili",
-															"sid": 861192494518410,
-															"behaviorType": "НастраиваемоеДвижение"
-														},
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 736472810435842
-														}
-													],
-													"actions": [
-														{
-															"id": "wait",
-															"objectClass": "System",
-															"sid": 572075627756055,
-															"parameters": {
-																"seconds": "random(1,4)",
-																"use-timescale": false
-															}
-														},
-														{
-															"id": "stop",
-															"objectClass": "Enemy_Mili",
-															"sid": 489134262556042,
-															"behaviorType": "НастраиваемоеДвижение"
-														},
-														{
-															"id": "set-boolean-instvar",
-															"objectClass": "Enemy_Mili",
-															"sid": 767134227206084,
-															"parameters": {
-																"instance-variable": "Down",
-																"value": "true"
-															}
-														}
-													],
-													"sid": 157117173232970,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [
-																{
-																	"id": "is-animation-playing",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 852610399536961,
-																	"parameters": {
-																		"animation": "\"Rollin\""
-																	}
-																},
-																{
-																	"id": "is-moving",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 350988450191652,
-																	"behaviorType": "НастраиваемоеДвижение",
-																	"isInverted": true
-																},
-																{
-																	"id": "trigger-once-while-true",
-																	"objectClass": "System",
-																	"sid": 634024467617442
-																}
-															],
-															"actions": [
-																{
-																	"id": "set-enabled",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 761016269935300,
-																	"behaviorType": "Платформер",
-																	"parameters": {
-																		"state": "disabled"
-																	}
-																},
-																{
-																	"id": "set-speed",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 815608753819426,
-																	"behaviorType": "НастраиваемоеДвижение",
-																	"parameters": {
-																		"which": "vertical",
-																		"speed": "Enemy_Mili.speedDamage"
-																	}
-																},
-																{
-																	"id": "set-angle-of-motion",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 976345526064200,
-																	"behaviorType": "НастраиваемоеДвижение",
-																	"parameters": {
-																		"angle": "LadderStair.Angle"
-																	}
-																}
-															],
-															"sid": 292119491826660
-														}
-													]
-												}
-											]
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "on-collision-with-another-object",
-													"objectClass": "Enemy_Mili",
-													"sid": 698481471391709,
-													"parameters": {
-														"object": "Wall"
-													}
-												},
-												{
 													"id": "compare-instance-variable",
 													"objectClass": "Enemy_Mili",
-													"sid": 945639712036508,
-													"parameters": {
-														"instance-variable": "HP",
-														"comparison": 4,
-														"value": "0"
-													}
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 830550055936895,
-													"parameters": {
-														"instance-variable": "FearSwitch"
-													}
-												},
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "Enemy_Mili",
-													"sid": 354255777771159,
+													"sid": 722523811479277,
 													"parameters": {
 														"instance-variable": "Fear",
 														"comparison": 3,
@@ -25657,158 +25401,93 @@
 												{
 													"id": "is-boolean-instance-variable-set",
 													"objectClass": "Enemy_Mili",
-													"sid": 185104636227138,
+													"sid": 526733701702911,
 													"parameters": {
-														"instance-variable": "Rolling"
+														"instance-variable": "Death"
 													},
 													"isInverted": true
 												},
 												{
-													"id": "is-moving",
+													"id": "is-boolean-instance-variable-set",
 													"objectClass": "Enemy_Mili",
-													"sid": 697731334967113,
-													"behaviorType": "НастраиваемоеДвижение"
+													"sid": 766245187331232,
+													"parameters": {
+														"instance-variable": "IsPanicking"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 763917240397915,
+													"parameters": {
+														"instance-variable": "Down"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-on-floor",
+													"objectClass": "Enemy_Mili",
+													"sid": 801920948775444,
+													"behaviorType": "Платформер"
 												}
 											],
 											"actions": [
 												{
-													"id": "stop",
-													"objectClass": "Enemy_Mili",
-													"sid": 692957744750688,
-													"behaviorType": "НастраиваемоеДвижение"
-												},
-												{
 													"id": "set-boolean-instvar",
 													"objectClass": "Enemy_Mili",
-													"sid": 573510877081565,
+													"sid": 598570503749338,
 													"parameters": {
-														"instance-variable": "Down",
+														"instance-variable": "IsPanicking",
 														"value": "true"
 													}
-												}
-											],
-											"sid": 432058547249653
-										},
-										{
-											"eventType": "block",
-											"conditions": [
+												},
 												{
-													"id": "is-overlapping-another-object",
+													"id": "set-instvar-value",
 													"objectClass": "Enemy_Mili",
-													"sid": 335710490104566,
+													"sid": 766522958025077,
 													"parameters": {
-														"object": "LadderStair"
-													},
-													"isInverted": true
-												}
-											],
-											"actions": [],
-											"sid": 430320733538087
-										},
-										{
-											"eventType": "block",
-											"conditions": [
+														"instance-variable": "PanicTimer",
+														"value": "random(2, 4)"
+													}
+												},
 												{
-													"id": "is-overlapping-another-object",
+													"id": "set-speed",
 													"objectClass": "Enemy_Mili",
-													"sid": 403743660067709,
+													"sid": 399454186570814,
+													"behaviorType": "НастраиваемоеДвижение",
 													"parameters": {
-														"object": "LadderStair"
+														"which": "horizontal",
+														"speed": "sign(Enemy_Mili.X - Player_All.X) * Enemy_Mili.speed * 1.25"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Enemy_Mili",
+													"sid": 527070728281990,
+													"parameters": {
+														"animation": "\"RunFear\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "spawn-another-object",
+													"objectClass": "Enemy_Mili",
+													"sid": 528872656666801,
+													"parameters": {
+														"object": "Shot_Triger",
+														"layer": "\"Player\"",
+														"image-point": "0",
+														"create-hierarchy": false,
+														"template-name": "\"\""
 													}
 												}
 											],
-											"actions": [
-												{
-													"id": "set-boolean-instvar",
-													"objectClass": "Enemy_Mili",
-													"sid": 608658651068297,
-													"parameters": {
-														"instance-variable": "FearSwitch",
-														"value": "false"
-													}
-												}
-											],
-											"sid": 133855522695460,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Enemy_Mili",
-															"sid": 455844956610695,
-															"parameters": {
-																"instance-variable": "HP",
-																"comparison": 4,
-																"value": "0"
-															}
-														},
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Enemy_Mili",
-															"sid": 570557841476537,
-															"parameters": {
-																"instance-variable": "Fear",
-																"comparison": 3,
-																"value": "0"
-															}
-														},
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "Enemy_Mili",
-															"sid": 673789670889401,
-															"parameters": {
-																"instance-variable": "Rolling"
-															},
-															"isInverted": true
-														},
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "Enemy_Mili",
-															"sid": 698498509911944,
-															"parameters": {
-																"instance-variable": "FearSwitch"
-															},
-															"isInverted": true
-														},
-														{
-															"id": "is-moving",
-															"objectClass": "Enemy_Mili",
-															"sid": 690528275306558,
-															"behaviorType": "НастраиваемоеДвижение",
-															"isInverted": true
-														},
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 264914121323322,
-															"disabled": true
-														}
-													],
-													"actions": [
-														{
-															"id": "set-boolean-instvar",
-															"objectClass": "Enemy_Mili",
-															"sid": 507386186018529,
-															"parameters": {
-																"instance-variable": "Down",
-																"value": "false"
-															}
-														},
-														{
-															"id": "set-speed",
-															"objectClass": "Enemy_Mili",
-															"sid": 912310920667760,
-															"behaviorType": "НастраиваемоеДвижение",
-															"parameters": {
-																"which": "horizontal",
-																"speed": "sign(Enemy_Mili.X - Player_All.X) * Enemy_Mili.speed * 1.25"
-															}
-														}
-													],
-													"sid": 137637685907815
-												}
-											]
+											"sid": 539083807716339
+										},
+										{
+											"eventType": "comment",
+											"text": "=== ПАНИКА: ОБНОВЛЕНИЕ ТАЙМЕРА (ТОЛЬКО НА ПОЛУ) ==="
 										},
 										{
 											"eventType": "block",
@@ -25816,7 +25495,185 @@
 												{
 													"id": "is-boolean-instance-variable-set",
 													"objectClass": "Enemy_Mili",
-													"sid": 842559798677176,
+													"sid": 503626247734946,
+													"parameters": {
+														"instance-variable": "IsPanicking"
+													}
+												},
+												{
+													"id": "is-on-floor",
+													"objectClass": "Enemy_Mili",
+													"sid": 623695209825755,
+													"behaviorType": "Платформер"
+												}
+											],
+											"actions": [
+												{
+													"id": "subtract-from-instvar",
+													"objectClass": "Enemy_Mili",
+													"sid": 489740096528493,
+													"parameters": {
+														"instance-variable": "PanicTimer",
+														"value": "dt"
+													}
+												}
+											],
+											"sid": 824350130079124
+										},
+										{
+											"eventType": "comment",
+											"text": "=== ПАНИКА ЗАКОНЧИЛАСЬ (ТОЛЬКО НА ПОЛУ) ==="
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 109636310222491,
+													"parameters": {
+														"instance-variable": "IsPanicking"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 510965256829677,
+													"parameters": {
+														"instance-variable": "OnLadder"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Enemy_Mili",
+													"sid": 391148765364282,
+													"parameters": {
+														"instance-variable": "PanicTimer",
+														"comparison": 3,
+														"value": "0"
+													}
+												},
+												{
+													"id": "is-on-floor",
+													"objectClass": "Enemy_Mili",
+													"sid": 674994437387211,
+													"behaviorType": "Платформер"
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 825950518884508,
+													"parameters": {
+														"instance-variable": "Death"
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Enemy_Mili",
+													"sid": 371611336516077,
+													"parameters": {
+														"instance-variable": "IsPanicking",
+														"value": "false"
+													}
+												},
+												{
+													"id": "stop",
+													"objectClass": "Enemy_Mili",
+													"sid": 921647439452475,
+													"behaviorType": "НастраиваемоеДвижение"
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Enemy_Mili",
+													"sid": 423210231401851,
+													"parameters": {
+														"instance-variable": "Down",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Enemy_Mili",
+													"sid": 908229001736722,
+													"parameters": {
+														"animation": "\"Fear\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 117231539185900
+										},
+										{
+											"eventType": "comment",
+											"text": "=== ПАНИКА ПРЕРЫВАЕТСЯ, ЕСЛИ ВРАГ ОТОРВАЛСЯ ОТ ПОЛА ==="
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 330524295967298,
+													"parameters": {
+														"instance-variable": "IsPanicking"
+													}
+												},
+												{
+													"id": "is-on-floor",
+													"objectClass": "Enemy_Mili",
+													"sid": 170183565841192,
+													"behaviorType": "Платформер",
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Enemy_Mili",
+													"sid": 614457005119431,
+													"parameters": {
+														"instance-variable": "IsPanicking",
+														"value": "false"
+													}
+												},
+												{
+													"id": "stop",
+													"objectClass": "Enemy_Mili",
+													"sid": 551284894840802,
+													"behaviorType": "НастраиваемоеДвижение"
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Enemy_Mili",
+													"sid": 538055969262066,
+													"parameters": {
+														"instance-variable": "Down",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Enemy_Mili",
+													"sid": 704256461156024,
+													"parameters": {
+														"animation": "\"Run\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 222348123190603
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 442051391410393,
 													"parameters": {
 														"instance-variable": "Down"
 													}
@@ -25824,7 +25681,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "Enemy_Mili",
-													"sid": 677968220244056,
+													"sid": 736885758652020,
 													"parameters": {
 														"instance-variable": "HP",
 														"comparison": 4,
@@ -25834,7 +25691,7 @@
 												{
 													"id": "is-boolean-instance-variable-set",
 													"objectClass": "Enemy_Mili",
-													"sid": 805345549681813,
+													"sid": 719287537347219,
 													"parameters": {
 														"instance-variable": "Death"
 													},
@@ -25843,7 +25700,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "Enemy_Mili",
-													"sid": 655520680548760,
+													"sid": 952396424884901,
 													"parameters": {
 														"instance-variable": "Fear",
 														"comparison": 3,
@@ -25855,14 +25712,14 @@
 												{
 													"id": "set-animation",
 													"objectClass": "Enemy_Mili",
-													"sid": 890094426537681,
+													"sid": 101658183860999,
 													"parameters": {
 														"animation": "\"Fear\"",
 														"from": "beginning"
 													}
 												}
 											],
-											"sid": 779127029951184,
+											"sid": 965536792597463,
 											"children": [
 												{
 													"eventType": "block",
@@ -25870,7 +25727,7 @@
 														{
 															"id": "has-los-to-object",
 															"objectClass": "Enemy_Mili",
-															"sid": 107256922647817,
+															"sid": 865748476963370,
 															"behaviorType": "ПолеЗрения",
 															"parameters": {
 																"object": "Player_All",
@@ -25879,7 +25736,7 @@
 														}
 													],
 													"actions": [],
-													"sid": 217096074955914,
+													"sid": 300745515911220,
 													"children": [
 														{
 															"eventType": "block",
@@ -25887,7 +25744,7 @@
 																{
 																	"id": "compare-instance-variable",
 																	"objectClass": "Enemy_Mili",
-																	"sid": 196889151291781,
+																	"sid": 366451248781333,
 																	"parameters": {
 																		"instance-variable": "DifX",
 																		"comparison": 2,
@@ -25899,13 +25756,13 @@
 																{
 																	"id": "set-mirrored",
 																	"objectClass": "Enemy_Mili",
-																	"sid": 481354788682827,
+																	"sid": 872448862370660,
 																	"parameters": {
 																		"state": "not-mirrored"
 																	}
 																}
 															],
-															"sid": 514087447239200
+															"sid": 669510393433585
 														},
 														{
 															"eventType": "block",
@@ -25913,7 +25770,7 @@
 																{
 																	"id": "compare-instance-variable",
 																	"objectClass": "Enemy_Mili",
-																	"sid": 428829563252072,
+																	"sid": 890320206378776,
 																	"parameters": {
 																		"instance-variable": "DifX",
 																		"comparison": 4,
@@ -25925,130 +25782,15 @@
 																{
 																	"id": "set-mirrored",
 																	"objectClass": "Enemy_Mili",
-																	"sid": 647688404883779,
+																	"sid": 436223058630739,
 																	"parameters": {
 																		"state": "mirrored"
 																	}
 																}
 															],
-															"sid": 585463416058327
+															"sid": 290626483719812
 														}
 													]
-												}
-											]
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "for-each",
-													"objectClass": "System",
-													"sid": 569400026079019,
-													"parameters": {
-														"object": "Enemy_Mili"
-													}
-												},
-												{
-													"id": "has-los-to-object",
-													"objectClass": "Enemy_Mili",
-													"sid": 947750052504176,
-													"behaviorType": "ПолеЗрения",
-													"parameters": {
-														"object": "Player_All",
-														"image-point": "0"
-													}
-												}
-											],
-											"actions": [],
-											"sid": 457327395236998,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "Enemy_Mili",
-															"sid": 808785252703883,
-															"parameters": {
-																"instance-variable": "Rolling"
-															},
-															"isInverted": true
-														},
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Enemy_Mili",
-															"sid": 632750604965001,
-															"parameters": {
-																"instance-variable": "HP",
-																"comparison": 4,
-																"value": "0"
-															}
-														},
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "Enemy_Mili",
-															"sid": 359874595698225,
-															"parameters": {
-																"instance-variable": "Fear",
-																"comparison": 3,
-																"value": "0"
-															}
-														},
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "Enemy_Mili",
-															"sid": 480393762509605,
-															"parameters": {
-																"instance-variable": "Down"
-															}
-														},
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "Enemy_Mili",
-															"sid": 445362773865450,
-															"parameters": {
-																"instance-variable": "Dialog"
-															}
-														},
-														{
-															"id": "is-boolean-instance-variable-set",
-															"objectClass": "Enemy_Mili",
-															"sid": 644236296842846,
-															"parameters": {
-																"instance-variable": "HasDialog"
-															},
-															"isInverted": true
-														},
-														{
-															"id": "trigger-once-while-true",
-															"objectClass": "System",
-															"sid": 601813639002905
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "Create_DealogueEnemy",
-															"sid": 119332254677085,
-															"parameters": [
-																"Enemy_Mili.ImagePointX(\"Dialog\")",
-																"Enemy_Mili.ImagePointY(\"Dialog\")",
-																"755",
-																"1",
-																true,
-																false
-															]
-														},
-														{
-															"id": "set-boolean-instvar",
-															"objectClass": "Enemy_Mili",
-															"sid": 720295337608451,
-															"parameters": {
-																"instance-variable": "HasDialog",
-																"value": "true"
-															}
-														}
-													],
-													"sid": 686898925296487
 												}
 											]
 										},
@@ -26062,12 +25804,12 @@
 												{
 													"id": "every-tick",
 													"objectClass": "System",
-													"sid": 420489875614965
+													"sid": 335958929600848
 												},
 												{
 													"id": "for-each",
 													"objectClass": "System",
-													"sid": 286510966334474,
+													"sid": 405894777360757,
 													"parameters": {
 														"object": "Enemy_Mili"
 													}
@@ -26075,7 +25817,7 @@
 												{
 													"id": "is-boolean-instance-variable-set",
 													"objectClass": "Enemy_Mili",
-													"sid": 501621278223129,
+													"sid": 153741032171483,
 													"parameters": {
 														"instance-variable": "Death"
 													},
@@ -26084,7 +25826,7 @@
 												{
 													"id": "for-each",
 													"objectClass": "System",
-													"sid": 493858081626162,
+													"sid": 643708574465969,
 													"parameters": {
 														"object": "Fear"
 													}
@@ -26092,7 +25834,7 @@
 												{
 													"id": "has-los-to-object",
 													"objectClass": "Fear",
-													"sid": 626600849650934,
+													"sid": 595316966534020,
 													"behaviorType": "ПолеЗрения",
 													"parameters": {
 														"object": "Enemy_Mili",
@@ -26102,7 +25844,7 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 445670606445100,
+													"sid": 635149874876379,
 													"parameters": {
 														"first-value": "find(Enemy_Mili.FearList, Fear.UID & \",\")",
 														"comparison": 0,
@@ -26114,7 +25856,7 @@
 												{
 													"id": "subtract-from-instvar",
 													"objectClass": "Enemy_Mili",
-													"sid": 956472099416331,
+													"sid": 750250509700802,
 													"parameters": {
 														"instance-variable": "Fear",
 														"value": "1"
@@ -26123,14 +25865,115 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "Enemy_Mili",
-													"sid": 709560744134084,
+													"sid": 310645995573065,
 													"parameters": {
 														"instance-variable": "FearList",
 														"value": "Enemy_Mili.FearList & Fear.UID & \",\""
 													}
 												}
 											],
-											"sid": 554521900028842
+											"sid": 353101429079308,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Enemy_Mili",
+															"sid": 994221189871497,
+															"parameters": {
+																"instance-variable": "Fear",
+																"comparison": 0,
+																"value": "9"
+															}
+														},
+														{
+															"id": "compare-instance-variable",
+															"objectClass": "Enemy_Mili",
+															"sid": 150200433494565,
+															"parameters": {
+																"instance-variable": "Fear",
+																"comparison": 0,
+																"value": "4"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "stop",
+															"objectClass": "Enemy_Mili",
+															"sid": 296565889066752,
+															"behaviorType": "НастраиваемоеДвижение"
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Enemy_Mili",
+															"sid": 683874340020659,
+															"parameters": {
+																"instance-variable": "Damage",
+																"value": "true"
+															}
+														},
+														{
+															"id": "start-timer",
+															"objectClass": "Enemy_Mili",
+															"sid": 793758670040315,
+															"behaviorType": "Таймер",
+															"parameters": {
+																"duration": "1",
+																"type": "once",
+																"tag": "\"Damage\""
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "Enemy_Mili",
+															"sid": 301267654398327,
+															"parameters": {
+																"animation": "\"FearIdle\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 620529144230537,
+													"isOrBlock": true
+												}
+											]
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "on-timer",
+													"objectClass": "Enemy_Mili",
+													"sid": 105457028238649,
+													"behaviorType": "Таймер",
+													"parameters": {
+														"tag": "\"Damage\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Enemy_Mili",
+													"sid": 618194278059787,
+													"parameters": {
+														"instance-variable": "Damage",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "Enemy_Mili",
+													"sid": 465467349197023,
+													"parameters": {
+														"animation": "\"Run\"",
+														"from": "beginning"
+													}
+												}
+											],
+											"sid": 237879596661688
 										},
 										{
 											"eventType": "block",
@@ -26138,14 +25981,23 @@
 												{
 													"id": "on-created",
 													"objectClass": "Fear",
-													"sid": 747585585357768
+													"sid": 759170399980716
 												}
 											],
 											"actions": [
 												{
+													"id": "set-range",
+													"objectClass": "Fear",
+													"sid": 107941625199943,
+													"behaviorType": "ПолеЗрения",
+													"parameters": {
+														"range": "300"
+													}
+												},
+												{
 													"id": "start-timer",
 													"objectClass": "Fear",
-													"sid": 372238540634755,
+													"sid": 300439246872817,
 													"behaviorType": "Таймер",
 													"parameters": {
 														"duration": "5",
@@ -26154,8 +26006,36 @@
 													}
 												}
 											],
-											"sid": 580976906814507,
-											"disabled": true
+											"sid": 753950094943201,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-all",
+															"objectClass": "System",
+															"sid": 496673394196556,
+															"parameters": {
+																"object": "Fear"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "start-timer",
+															"objectClass": "Fear",
+															"sid": 906757137065660,
+															"behaviorType": "Таймер",
+															"parameters": {
+																"duration": "5",
+																"type": "once",
+																"tag": "\"Destroy\""
+															}
+														}
+													],
+													"sid": 912773879943921
+												}
+											]
 										},
 										{
 											"eventType": "block",
@@ -26163,7 +26043,7 @@
 												{
 													"id": "on-timer",
 													"objectClass": "Fear",
-													"sid": 915044496396783,
+													"sid": 378366073654663,
 													"behaviorType": "Таймер",
 													"parameters": {
 														"tag": "\"Destroy\""
@@ -26174,42 +26054,10 @@
 												{
 													"id": "destroy",
 													"objectClass": "Fear",
-													"sid": 211131145576387
+													"sid": 901756849020756
 												}
 											],
-											"sid": 892652116094785,
-											"disabled": true
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "on-created",
-													"objectClass": "Fear",
-													"sid": 636674348656695
-												}
-											],
-											"actions": [
-												{
-													"id": "set-range",
-													"objectClass": "Fear",
-													"sid": 744971916241925,
-													"behaviorType": "ПолеЗрения",
-													"parameters": {
-														"range": "300"
-													}
-												},
-												{
-													"id": "add-to-eventvar",
-													"objectClass": "System",
-													"sid": 768194498236402,
-													"parameters": {
-														"variable": "FearGlobal",
-														"value": "1"
-													}
-												}
-											],
-											"sid": 914035129887307
+											"sid": 920386711480125
 										},
 										{
 											"eventType": "block",
@@ -29572,6 +29420,18 @@
 																		"instance-variable": "Got",
 																		"value": "true"
 																	}
+																},
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 453936403868086,
+																	"parameters": {
+																		"object": "Fear",
+																		"layer": "Enemy_Mili.LayerName",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
 																}
 															],
 															"sid": 827822402343013,
@@ -30143,6 +30003,18 @@
 																		"instance-variable": "Got",
 																		"value": "true"
 																	}
+																},
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 961582183284612,
+																	"parameters": {
+																		"object": "Fear",
+																		"layer": "Enemy_Mili.LayerName",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
 																}
 															],
 															"sid": 901958848861898,
@@ -30669,6 +30541,18 @@
 																	"parameters": {
 																		"instance-variable": "Got",
 																		"value": "true"
+																	}
+																},
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 387489639040255,
+																	"parameters": {
+																		"object": "Fear",
+																		"layer": "Enemy_Mili.LayerName",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
 																	}
 																}
 															],
@@ -31217,6 +31101,18 @@
 																	"parameters": {
 																		"instance-variable": "Got",
 																		"value": "true"
+																	}
+																},
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 769028375178413,
+																	"parameters": {
+																		"object": "Fear",
+																		"layer": "Enemy_Mili.LayerName",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
 																	}
 																}
 															],
@@ -31780,6 +31676,42 @@
 																				"0",
 																				"\"Damage\""
 																			]
+																		},
+																		{
+																			"id": "spawn-another-object",
+																			"objectClass": "Enemy_Mili",
+																			"sid": 360429736680419,
+																			"parameters": {
+																				"object": "Fear",
+																				"layer": "Enemy_Mili.LayerName",
+																				"image-point": "0",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "spawn-another-object",
+																			"objectClass": "Enemy_Mili",
+																			"sid": 665723777154012,
+																			"parameters": {
+																				"object": "Fear",
+																				"layer": "Enemy_Mili.LayerName",
+																				"image-point": "0",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
+																		},
+																		{
+																			"id": "spawn-another-object",
+																			"objectClass": "Enemy_Mili",
+																			"sid": 819157167510307,
+																			"parameters": {
+																				"object": "Fear",
+																				"layer": "Enemy_Mili.LayerName",
+																				"image-point": "0",
+																				"create-hierarchy": false,
+																				"template-name": "\"\""
+																			}
 																		}
 																	],
 																	"sid": 389778841350740
@@ -32771,7 +32703,20 @@
 																	}
 																}
 															],
-															"actions": [],
+															"actions": [
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 224968402880633,
+																	"parameters": {
+																		"object": "Fear",
+																		"layer": "Enemy_Mili.LayerName",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																}
+															],
 															"sid": 411152327734935
 														}
 													]
@@ -32838,6 +32783,18 @@
 																	"id": "spawn-another-object",
 																	"objectClass": "Enemy_Mili",
 																	"sid": 431681974187891,
+																	"parameters": {
+																		"object": "Fear",
+																		"layer": "Enemy_Mili.LayerName",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 703987191247429,
 																	"parameters": {
 																		"object": "Fear",
 																		"layer": "Enemy_Mili.LayerName",
@@ -32913,6 +32870,18 @@
 																	"id": "spawn-another-object",
 																	"objectClass": "Enemy_Mili",
 																	"sid": 500679454918933,
+																	"parameters": {
+																		"object": "Fear",
+																		"layer": "Enemy_Mili.LayerName",
+																		"image-point": "0",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "spawn-another-object",
+																	"objectClass": "Enemy_Mili",
+																	"sid": 144587113374578,
 																	"parameters": {
 																		"object": "Fear",
 																		"layer": "Enemy_Mili.LayerName",
