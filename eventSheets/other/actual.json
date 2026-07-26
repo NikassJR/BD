@@ -504,6 +504,15 @@
 								},
 								{
 									"id": "set-instvar-value",
+									"objectClass": "Enemy_Mili",
+									"sid": 408658344031749,
+									"parameters": {
+										"instance-variable": "Fear",
+										"value": "random(3,10)"
+									}
+								},
+								{
+									"id": "set-instvar-value",
 									"objectClass": "EnemyBaseball",
 									"sid": 971901905317244,
 									"parameters": {
@@ -896,6 +905,41 @@
 					],
 					"sid": 384650705195702,
 					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "Shot_Triger",
+							"sid": 128432879238648
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Shot_Triger",
+							"sid": 327468938856247,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 851568967659721,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Shot_Triger",
+							"sid": 230932369944980
+						}
+					],
+					"sid": 264655061893208
 				},
 				{
 					"eventType": "comment",
@@ -11121,41 +11165,6 @@
 									],
 									"sid": 600611337485664,
 									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-created",
-											"objectClass": "Shot_Triger",
-											"sid": 128432879238648
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "Shot_Triger",
-											"sid": 327468938856247,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 851568967659721,
-											"parameters": {
-												"seconds": "1",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "Shot_Triger",
-											"sid": 230932369944980
-										}
-									],
-									"sid": 264655061893208
 								},
 								{
 									"eventType": "block",
@@ -25252,17 +25261,27 @@
 												{
 													"id": "on-key-pressed",
 													"objectClass": "Keyboard",
-													"sid": 507663070001032,
+													"sid": 148978354294063,
 													"parameters": {
 														"key": 70
 													}
 												},
 												{
-													"id": "pick-all",
+													"id": "for-each",
 													"objectClass": "System",
-													"sid": 844890619845074,
+													"sid": 400541801336365,
 													"parameters": {
 														"object": "Enemy_Mili"
+													}
+												},
+												{
+													"id": "has-los-to-object",
+													"objectClass": "Player_All",
+													"sid": 937003367512193,
+													"behaviorType": "ПолеЗрения",
+													"parameters": {
+														"object": "Enemy_Mili",
+														"image-point": "0"
 													}
 												}
 											],
@@ -25270,18 +25289,18 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "Enemy_Mili",
-													"sid": 698380801735220,
+													"sid": 318651470198068,
 													"parameters": {
 														"instance-variable": "Fear",
 														"value": "0"
 													}
 												}
 											],
-											"sid": 137050222230517
+											"sid": 725117588108300
 										},
 										{
 											"eventType": "comment",
-											"text": "=== СБРОС OnLadder (по умолчанию все НЕ на лестнице) ==="
+											"text": "СБРОС OnLadder (по умолчанию все НЕ на лестнице)"
 										},
 										{
 											"eventType": "block",
@@ -25315,7 +25334,7 @@
 										},
 										{
 											"eventType": "comment",
-											"text": "=== УСТАНОВКА OnLadder = True (если враг на лестнице) ==="
+											"text": "УСТАНОВКА OnLadder = True (если враг на лестнице)"
 										},
 										{
 											"eventType": "block",
@@ -25383,7 +25402,7 @@
 										},
 										{
 											"eventType": "comment",
-											"text": "=== ЕСЛИ СТРАХ <= 0 И ВРАГ НА ПОЛУ — НАЧИНАЕТ ПАНИКУ ==="
+											"text": "ЕСЛИ СТРАХ <= 0 И ВРАГ НА ПОЛУ - НАЧИНАЕТ ПАНИКУ"
 										},
 										{
 											"eventType": "block",
@@ -25483,11 +25502,55 @@
 													}
 												}
 											],
-											"sid": 539083807716339
+											"sid": 539083807716339,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "for-each",
+															"objectClass": "System",
+															"sid": 495464757730526,
+															"parameters": {
+																"object": "Enemy_Mili"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "spawn-another-object",
+															"objectClass": "Enemy_Mili",
+															"sid": 293005544446320,
+															"parameters": {
+																"object": "RunFear",
+																"layer": "\"Player\"",
+																"image-point": "\"RunFear\"",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "pin-to-object-imagepoint",
+															"objectClass": "RunFear",
+															"sid": 709037939874737,
+															"behaviorType": "Прикрепить",
+															"parameters": {
+																"pin-to": "Enemy_Mili",
+																"image-point": "\"RunFear\"",
+																"angle": true,
+																"width-type": "no",
+																"height-type": "no",
+																"z": false
+															}
+														}
+													],
+													"sid": 744959938748538
+												}
+											]
 										},
 										{
 											"eventType": "comment",
-											"text": "=== ПАНИКА: ОБНОВЛЕНИЕ ТАЙМЕРА (ТОЛЬКО НА ПОЛУ) ==="
+											"text": "ПАНИКА: ОБНОВЛЕНИЕ ТАЙМЕРА (ТОЛЬКО НА ПОЛУ)"
 										},
 										{
 											"eventType": "block",
@@ -25522,7 +25585,7 @@
 										},
 										{
 											"eventType": "comment",
-											"text": "=== ПАНИКА ЗАКОНЧИЛАСЬ (ТОЛЬКО НА ПОЛУ) ==="
+											"text": "ПАНИКА ЗАКОНЧИЛАСЬ (ТОЛЬКО НА ПОЛУ)"
 										},
 										{
 											"eventType": "block",
@@ -25608,8 +25671,38 @@
 											"sid": 117231539185900
 										},
 										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "RunFear",
+													"sid": 749405244011881,
+													"parameters": {
+														"object": "Enemy_Mili"
+													}
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "Enemy_Mili",
+													"sid": 208166819629599,
+													"parameters": {
+														"animation": "\"RunFear\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "destroy",
+													"objectClass": "RunFear",
+													"sid": 682800918660063
+												}
+											],
+											"sid": 891586255645816
+										},
+										{
 											"eventType": "comment",
-											"text": "=== ПАНИКА ПРЕРЫВАЕТСЯ, ЕСЛИ ВРАГ ОТОРВАЛСЯ ОТ ПОЛА ==="
+											"text": "ПАНИКА ПРЕРЫВАЕТСЯ, ЕСЛИ ВРАГ ОТОРВАЛСЯ ОТ ПОЛА"
 										},
 										{
 											"eventType": "block",
@@ -25878,19 +25971,19 @@
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "compare-instance-variable",
+															"id": "is-boolean-instance-variable-set",
 															"objectClass": "Enemy_Mili",
-															"sid": 994221189871497,
+															"sid": 109598169519633,
 															"parameters": {
-																"instance-variable": "Fear",
-																"comparison": 0,
-																"value": "9"
-															}
+																"instance-variable": "FearIdle"
+															},
+															"isInverted": true
 														},
 														{
 															"id": "compare-instance-variable",
 															"objectClass": "Enemy_Mili",
 															"sid": 150200433494565,
+															"disabled": true,
 															"parameters": {
 																"instance-variable": "Fear",
 																"comparison": 0,
@@ -25932,6 +26025,15 @@
 															"parameters": {
 																"animation": "\"FearIdle\"",
 																"from": "beginning"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Enemy_Mili",
+															"sid": 614196900068604,
+															"parameters": {
+																"instance-variable": "FearIdle",
+																"value": "true"
 															}
 														}
 													],
@@ -25997,10 +26099,10 @@
 												{
 													"id": "start-timer",
 													"objectClass": "Fear",
-													"sid": 300439246872817,
+													"sid": 746030545277243,
 													"behaviorType": "Таймер",
 													"parameters": {
-														"duration": "5",
+														"duration": "10",
 														"type": "once",
 														"tag": "\"Destroy\""
 													}
@@ -26024,10 +26126,10 @@
 														{
 															"id": "start-timer",
 															"objectClass": "Fear",
-															"sid": 906757137065660,
+															"sid": 332930877452594,
 															"behaviorType": "Таймер",
 															"parameters": {
-																"duration": "5",
+																"duration": "10",
 																"type": "once",
 																"tag": "\"Destroy\""
 															}
@@ -27370,6 +27472,14 @@
 																	}
 																},
 																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 318888504097587,
+																	"parameters": {
+																		"animation": "\"Run\""
+																	}
+																},
+																{
 																	"id": "trigger-once-while-true",
 																	"objectClass": "System",
 																	"sid": 319175579890784
@@ -27677,6 +27787,14 @@
 																	}
 																},
 																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 948761862968592,
+																	"parameters": {
+																		"animation": "\"Run\""
+																	}
+																},
+																{
 																	"id": "trigger-once-while-true",
 																	"objectClass": "System",
 																	"sid": 843227507430424
@@ -27874,6 +27992,14 @@
 																	}
 																},
 																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 479970977413322,
+																	"parameters": {
+																		"animation": "\"Run\""
+																	}
+																},
+																{
 																	"id": "trigger-once-while-true",
 																	"objectClass": "System",
 																	"sid": 211125678888736
@@ -28068,6 +28194,14 @@
 																	"sid": 113760490118620,
 																	"parameters": {
 																		"instance-variable": "Knife"
+																	}
+																},
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 929313363484599,
+																	"parameters": {
+																		"animation": "\"Run\""
 																	}
 																},
 																{
@@ -28277,6 +28411,14 @@
 																	}
 																},
 																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 349509028106962,
+																	"parameters": {
+																		"animation": "\"Run\""
+																	}
+																},
+																{
 																	"id": "trigger-once-while-true",
 																	"objectClass": "System",
 																	"sid": 615364284233291
@@ -28480,6 +28622,14 @@
 																	"sid": 850073632102474,
 																	"parameters": {
 																		"instance-variable": "Knife"
+																	}
+																},
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 492313861789309,
+																	"parameters": {
+																		"animation": "\"Run\""
 																	}
 																},
 																{
@@ -28856,6 +29006,14 @@
 																	}
 																},
 																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 126435201908570,
+																	"parameters": {
+																		"animation": "\"Run\""
+																	}
+																},
+																{
 																	"id": "trigger-once-while-true",
 																	"objectClass": "System",
 																	"sid": 103441883932996
@@ -29122,6 +29280,14 @@
 																	}
 																},
 																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 768500113057654,
+																	"parameters": {
+																		"animation": "\"Run\""
+																	}
+																},
+																{
 																	"id": "is-boolean-instance-variable-set",
 																	"objectClass": "Enemy_Mili",
 																	"sid": 909884371448654,
@@ -29341,6 +29507,14 @@
 																	"sid": 558785937498436,
 																	"parameters": {
 																		"instance-variable": "Knife"
+																	}
+																},
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 736486998121202,
+																	"parameters": {
+																		"animation": "\"Run\""
 																	}
 																},
 																{
@@ -29927,6 +30101,14 @@
 																	}
 																},
 																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 695080833028443,
+																	"parameters": {
+																		"animation": "\"Run\""
+																	}
+																},
+																{
 																	"id": "trigger-once-while-true",
 																	"objectClass": "System",
 																	"sid": 510982828560675
@@ -30463,6 +30645,14 @@
 																	"sid": 332746719855990,
 																	"parameters": {
 																		"instance-variable": "Knife"
+																	}
+																},
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 560078426080898,
+																	"parameters": {
+																		"animation": "\"Run\""
 																	}
 																},
 																{
@@ -31026,6 +31216,14 @@
 																	}
 																},
 																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 696399031242847,
+																	"parameters": {
+																		"animation": "\"Run\""
+																	}
+																},
+																{
 																	"id": "trigger-once-while-true",
 																	"objectClass": "System",
 																	"sid": 318621687684820
@@ -31567,6 +31765,14 @@
 																	"sid": 620278687120816,
 																	"parameters": {
 																		"instance-variable": "Knife"
+																	}
+																},
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 172799132994979,
+																	"parameters": {
+																		"animation": "\"Run\""
 																	}
 																},
 																{
@@ -32216,6 +32422,14 @@
 																	"sid": 935011316677015,
 																	"parameters": {
 																		"instance-variable": "Knife"
+																	}
+																},
+																{
+																	"id": "is-animation-playing",
+																	"objectClass": "EnemyKnife",
+																	"sid": 751758055573328,
+																	"parameters": {
+																		"animation": "\"Run\""
 																	}
 																},
 																{
@@ -35459,7 +35673,7 @@
 																{
 																	"id": "set-animation",
 																	"objectClass": "Enemy_Mili",
-																	"sid": 415857421733794,
+																	"sid": 992073886425493,
 																	"parameters": {
 																		"animation": "\"AxeFinishing\"",
 																		"from": "current-frame"
@@ -40673,6 +40887,137 @@
 													],
 													"sid": 855968095933301
 												}
+											],
+											"isOrBlock": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "Enemy_Mili",
+													"sid": 642017823377387,
+													"parameters": {
+														"object": "RunFear"
+													}
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Enemy_Mili",
+													"sid": 890274157061582,
+													"parameters": {
+														"instance-variable": "Fear",
+														"comparison": 4,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "stop",
+													"objectClass": "Enemy_Mili",
+													"sid": 929947331732859,
+													"behaviorType": "НастраиваемоеДвижение"
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "Enemy_Mili",
+													"sid": 900835202051577,
+													"parameters": {
+														"instance-variable": "Damage",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 843721994056122,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-boolean-instance-variable-set",
+															"objectClass": "Enemy_Mili",
+															"sid": 981347157391488,
+															"parameters": {
+																"instance-variable": "Damage"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "start-timer",
+															"objectClass": "Enemy_Mili",
+															"sid": 832521129757517,
+															"behaviorType": "Таймер",
+															"parameters": {
+																"duration": "1",
+																"type": "once",
+																"tag": "\"Damage\""
+															}
+														},
+														{
+															"id": "destroy",
+															"objectClass": "RunFear",
+															"sid": 975993032395948,
+															"disabled": true
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Enemy_Mili",
+															"sid": 233410413362540,
+															"parameters": {
+																"instance-variable": "triger",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Enemy_Mili",
+															"sid": 235934434205924,
+															"parameters": {
+																"instance-variable": "vision",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Enemy_Mili",
+															"sid": 266472398999820,
+															"parameters": {
+																"instance-variable": "search",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Enemy_Mili",
+															"sid": 268446965569161,
+															"parameters": {
+																"instance-variable": "Kick",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-boolean-instvar",
+															"objectClass": "Enemy_Mili",
+															"sid": 472283038396444,
+															"parameters": {
+																"instance-variable": "onRamp",
+																"value": "false"
+															}
+														},
+														{
+															"id": "set-animation",
+															"objectClass": "Enemy_Mili",
+															"sid": 703286003329850,
+															"parameters": {
+																"animation": "\"Damage\"",
+																"from": "beginning"
+															}
+														}
+													],
+													"sid": 123115531286207
+												}
 											]
 										},
 										{
@@ -41113,18 +41458,65 @@
 												"instance-variable": "Damage",
 												"value": "false"
 											}
+										}
+									],
+									"sid": 296068098186534
+								},
+								{
+									"bookmark": true,
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "Enemy_Mili",
+											"sid": 870853329722901,
+											"behaviorType": "Таймер",
+											"parameters": {
+												"tag": "\"Damage\""
+											}
 										},
+										{
+											"id": "has-los-to-object",
+											"objectClass": "Enemy_Mili",
+											"sid": 604562489959326,
+											"behaviorType": "ПолеЗрения",
+											"parameters": {
+												"object": "Player_All",
+												"image-point": "0"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
 										{
 											"id": "set-boolean-instvar",
 											"objectClass": "Enemy_Mili",
-											"sid": 379164099366715,
+											"sid": 410314047529611,
 											"parameters": {
 												"instance-variable": "triger",
 												"value": "true"
 											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Enemy_Mili",
+											"sid": 818311928356675,
+											"parameters": {
+												"instance-variable": "patrul",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Enemy_Mili",
+											"sid": 112712948901387,
+											"parameters": {
+												"instance-variable": "patrulTimerID",
+												"value": "true"
+											}
 										}
 									],
-									"sid": 296068098186534
+									"sid": 657833125610446
 								},
 								{
 									"eventType": "block",
