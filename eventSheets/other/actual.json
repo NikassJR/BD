@@ -644,6 +644,15 @@
 										"instance-variable": "Knife",
 										"value": "true"
 									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "EnemyPchel",
+									"sid": 770545478096115,
+									"parameters": {
+										"instance-variable": "Pchel",
+										"value": "true"
+									}
 								}
 							],
 							"sid": 267013133660896
@@ -20622,30 +20631,30 @@
 											],
 											"actions": [
 												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 795662299095689,
+													"id": "set-animation",
+													"objectClass": "Enemy_Mili",
+													"sid": 281999316365175,
 													"parameters": {
-														"group-name": "\"Enemy & Fear\"",
-														"state": "deactivated"
+														"animation": "\"Idle\"",
+														"from": "beginning"
 													}
 												},
 												{
 													"id": "set-enabled",
 													"objectClass": "Enemy_Mili",
-													"sid": 124261258830280,
+													"sid": 670568095181981,
 													"behaviorType": "НастраиваемоеДвижение",
 													"parameters": {
 														"state": "disabled"
 													}
 												},
 												{
-													"id": "set-animation",
-													"objectClass": "Enemy_Mili",
-													"sid": 541573439667927,
+													"id": "set-group-active",
+													"objectClass": "System",
+													"sid": 795662299095689,
 													"parameters": {
-														"animation": "\"Idle\"",
-														"from": "beginning"
+														"group-name": "\"Enemy & Fear\"",
+														"state": "deactivated"
 													}
 												}
 											],
@@ -38010,6 +38019,321 @@
 							"isActiveOnStart": true,
 							"children": [
 								{
+									"eventType": "comment",
+									"text": "=== ЕСЛИ ВРАГ ВИДИТ, ЧТО ЕГО АТАКУЮТ (ХИТБОКС РЯДОМ) ==="
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player_All",
+											"sid": 974454371157319,
+											"parameters": {
+												"animation": "weapon & \"Attack1\""
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player_All",
+											"sid": 594810502063367,
+											"parameters": {
+												"animation": "weapon & \"Attack2\""
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player_All",
+											"sid": 342502981182340,
+											"parameters": {
+												"animation": "weapon & \"Attack3\""
+											}
+										},
+										{
+											"id": "is-animation-playing",
+											"objectClass": "Player_All",
+											"sid": 446561965118197,
+											"parameters": {
+												"animation": "weapon & \"RunKick\""
+											}
+										}
+									],
+									"actions": [],
+									"sid": 741614514329066,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "is-overlapping-another-object",
+													"objectClass": "EnemyPchel",
+													"sid": 790753212860715,
+													"parameters": {
+														"object": "HitBox"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "EnemyPchel",
+													"sid": 487566079489386,
+													"parameters": {
+														"instance-variable": "IsDodging"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "EnemyPchel",
+													"sid": 501223679374490,
+													"parameters": {
+														"instance-variable": "Damage"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "EnemyPchel",
+													"sid": 670317672869112,
+													"parameters": {
+														"instance-variable": "Death"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 549172020687334
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "EnemyPchel",
+													"sid": 899932657737691,
+													"parameters": {
+														"instance-variable": "IsDodging",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-animation",
+													"objectClass": "EnemyPchel",
+													"sid": 443570733916590,
+													"parameters": {
+														"animation": "\"Roll\"",
+														"from": "beginning"
+													}
+												},
+												{
+													"id": "start-timer",
+													"objectClass": "EnemyPchel",
+													"sid": 566851764590987,
+													"behaviorType": "Таймер",
+													"parameters": {
+														"duration": "0.5",
+														"type": "once",
+														"tag": "\"DodgeEnd\""
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 407404284001453,
+													"disabled": true,
+													"parameters": {
+														"seconds": "0.1",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "EnemyPchel",
+													"sid": 875920759724535,
+													"behaviorType": "НастраиваемоеДвижение",
+													"parameters": {
+														"which": "horizontal",
+														"speed": "EnemyPchel.rotate * EnemyPchel.speed"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 146114975489157,
+													"parameters": {
+														"seconds": "0.1",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "EnemyPchel",
+													"sid": 693052075448774,
+													"disabled": true,
+													"behaviorType": "НастраиваемоеДвижение",
+													"parameters": {
+														"which": "horizontal",
+														"speed": "EnemyPchel.rotate * EnemyPchel.speed * 1.5"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 314357132112269,
+													"parameters": {
+														"seconds": "0.1",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-speed",
+													"objectClass": "EnemyPchel",
+													"sid": 194269142553277,
+													"behaviorType": "НастраиваемоеДвижение",
+													"parameters": {
+														"which": "horizontal",
+														"speed": "EnemyPchel.rotate * EnemyPchel.speed * 0.5"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 802428039278012,
+													"parameters": {
+														"seconds": "0.3",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "stop",
+													"objectClass": "EnemyPchel",
+													"sid": 228543663548779,
+													"behaviorType": "НастраиваемоеДвижение"
+												}
+											],
+											"sid": 709786514613146
+										}
+									],
+									"isOrBlock": true
+								},
+								{
+									"eventType": "comment",
+									"text": "=== ВРЕМЕННАЯ НЕУЯЗВИМОСТЬ (ОТКЛЮЧАЕМ ХИТБОКС) ==="
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "EnemyPchel",
+											"sid": 258172762565024,
+											"parameters": {
+												"instance-variable": "IsDodging"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 183499193803479
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "EnemyPchel",
+											"sid": 959797430436250,
+											"parameters": {
+												"instance-variable": "Damage",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "EnemyPchel",
+											"sid": 714539799549133,
+											"parameters": {
+												"instance-variable": "vision",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "EnemyPchel",
+											"sid": 132318749719169,
+											"parameters": {
+												"instance-variable": "triger",
+												"value": "false"
+											}
+										},
+										{
+											"id": "enabledisable-collisions",
+											"objectClass": "EnemyPchel",
+											"sid": 738298835928919,
+											"behaviorType": "Физика",
+											"parameters": {
+												"object": "HitBox",
+												"state": "disable"
+											}
+										}
+									],
+									"sid": 219562753876477
+								},
+								{
+									"eventType": "comment",
+									"text": "=== ЗАВЕРШЕНИЕ ПОДКАТА ==="
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-timer",
+											"objectClass": "EnemyPchel",
+											"sid": 920565113754626,
+											"behaviorType": "Таймер",
+											"parameters": {
+												"tag": "\"DodgeEnd\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "EnemyPchel",
+											"sid": 104941613011974,
+											"parameters": {
+												"instance-variable": "IsDodging",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "EnemyPchel",
+											"sid": 419350876856786,
+											"disabled": true,
+											"parameters": {
+												"animation": "\"Idle\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "stop",
+											"objectClass": "EnemyPchel",
+											"sid": 272382640463984,
+											"behaviorType": "НастраиваемоеДвижение"
+										},
+										{
+											"id": "enabledisable-collisions",
+											"objectClass": "EnemyPchel",
+											"sid": 867227051048628,
+											"behaviorType": "Физика",
+											"parameters": {
+												"object": "HitBox",
+												"state": "enable"
+											}
+										}
+									],
+									"sid": 159731901844126
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
@@ -38054,6 +38378,15 @@
 											"sid": 802779274167956,
 											"parameters": {
 												"instance-variable": "Down"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Enemy_Mili",
+											"sid": 963005045042198,
+											"parameters": {
+												"instance-variable": "IsDodging"
 											},
 											"isInverted": true
 										},
@@ -45311,6 +45644,15 @@
 										{
 											"id": "is-boolean-instance-variable-set",
 											"objectClass": "Enemy_Mili",
+											"sid": 489136761626839,
+											"parameters": {
+												"instance-variable": "IsDodging"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Enemy_Mili",
 											"sid": 578363890769536,
 											"disabled": true,
 											"parameters": {
@@ -45563,6 +45905,15 @@
 													"sid": 706594411174556,
 													"parameters": {
 														"instance-variable": "Dodge"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 944098749255061,
+													"parameters": {
+														"instance-variable": "IsDodging"
 													},
 													"isInverted": true
 												},
@@ -46487,6 +46838,15 @@
 												},
 												{
 													"id": "is-boolean-instance-variable-set",
+													"objectClass": "EnemyPchel",
+													"sid": 984974279180298,
+													"parameters": {
+														"instance-variable": "IsDodging"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
 													"objectClass": "Enemy_Mili",
 													"sid": 633178375811573,
 													"parameters": {
@@ -47362,6 +47722,15 @@
 											"sid": 391847921709567,
 											"parameters": {
 												"instance-variable": "Damage"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Enemy_Mili",
+											"sid": 932159335501456,
+											"parameters": {
+												"instance-variable": "IsDodging"
 											},
 											"isInverted": true
 										},
