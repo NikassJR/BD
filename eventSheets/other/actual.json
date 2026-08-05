@@ -679,6 +679,15 @@
 										"instance-variable": "Knife",
 										"value": "false"
 									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "EnemyPchel",
+									"sid": 161995232584194,
+									"parameters": {
+										"instance-variable": "Pchel",
+										"value": "false"
+									}
 								}
 							],
 							"sid": 593338120376275
@@ -20612,58 +20621,6 @@
 											"eventType": "block",
 											"conditions": [
 												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 564194822606153,
-													"parameters": {
-														"instance-variable": "Death"
-													},
-													"isInverted": true
-												},
-												{
-													"id": "is-boolean-instance-variable-set",
-													"objectClass": "Enemy_Mili",
-													"sid": 143208071411299,
-													"parameters": {
-														"instance-variable": "triger"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-animation",
-													"objectClass": "Enemy_Mili",
-													"sid": 281999316365175,
-													"parameters": {
-														"animation": "\"Idle\"",
-														"from": "beginning"
-													}
-												},
-												{
-													"id": "set-enabled",
-													"objectClass": "Enemy_Mili",
-													"sid": 670568095181981,
-													"behaviorType": "НастраиваемоеДвижение",
-													"parameters": {
-														"state": "disabled"
-													}
-												},
-												{
-													"id": "set-group-active",
-													"objectClass": "System",
-													"sid": 795662299095689,
-													"parameters": {
-														"group-name": "\"Enemy & Fear\"",
-														"state": "deactivated"
-													}
-												}
-											],
-											"sid": 672509658189690
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
 													"id": "has-gamepads",
 													"objectClass": "Gamepad",
 													"sid": 809406955137219
@@ -20820,6 +20777,96 @@
 											"sid": 362543200454721
 										}
 									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 485372556574092,
+											"parameters": {
+												"variable": "HPplayer",
+												"comparison": 3,
+												"value": "0"
+											}
+										},
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 201317330848483,
+											"parameters": {
+												"object": "Enemy_Mili"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Enemy_Mili",
+											"sid": 749320206392058,
+											"parameters": {
+												"instance-variable": "HP",
+												"comparison": 4,
+												"value": "0"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Enemy_Mili",
+											"sid": 197376874494184,
+											"parameters": {
+												"instance-variable": "Death"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 114201029523186,
+											"parameters": {
+												"group-name": "\"Enemy & Fear\"",
+												"state": "deactivated"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Enemy_Mili",
+											"sid": 633936572731467,
+											"parameters": {
+												"animation": "\"Idle\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "Enemy_Mili",
+											"sid": 537459217555161,
+											"behaviorType": "НастраиваемоеДвижение",
+											"parameters": {
+												"state": "disabled"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Enemy_Mili",
+											"sid": 109486344046355,
+											"parameters": {
+												"instance-variable": "Damage",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Enemy_Mili",
+											"sid": 461442837753398,
+											"parameters": {
+												"instance-variable": "Kick",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 415353516076071
 								},
 								{
 									"eventType": "block",
@@ -26444,6 +26491,24 @@
 												"comparison": 4,
 												"value": "0"
 											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Enemy_Mili",
+											"sid": 898522929073874,
+											"parameters": {
+												"instance-variable": "Down"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Enemy_Mili",
+											"sid": 481790331811173,
+											"parameters": {
+												"instance-variable": "Damage"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [],
