@@ -164,6 +164,44 @@
 						"y": "5",
 						"value": "Leaderboard.mrk"
 					}
+				},
+				{
+					"id": "get-item",
+					"objectClass": "Game_Save",
+					"sid": 551031497395867,
+					"parameters": {
+						"key": "\"SQ_Score\""
+					}
+				},
+				{
+					"id": "check-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 112557656498966,
+					"parameters": {
+						"key": "\"SQ_Score\""
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 673519610496628,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 537302329550747,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/SQ_Menu_techno_chiptale"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
 				}
 			],
 			"sid": 955541103538034
@@ -172,9 +210,52 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-item-exists",
+					"objectClass": "Game_Save",
+					"sid": 119962399090235,
+					"parameters": {
+						"key": "\"SQ_Score\""
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "Leaderboard",
+					"sid": 121105694214496,
+					"parameters": {
+						"instance-variable": "mrk",
+						"comparison": 2,
+						"value": "Game_Save.ItemValue"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Leaderboard",
+					"sid": 226386207185873,
+					"parameters": {
+						"instance-variable": "mrk",
+						"value": "Game_Save.ItemValue"
+					}
+				}
+			],
+			"sid": 944862483401674
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "every-tick",
 					"objectClass": "System",
 					"sid": 384968785982554
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Text_Signboard",
+					"sid": 749524059633731,
+					"parameters": {
+						"tags": "\"Score\""
+					}
 				}
 			],
 			"actions": [
@@ -219,6 +300,14 @@
 					"behaviorType": "Платформер",
 					"parameters": {
 						"input": "start-ignoring"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text_Signboard",
+					"sid": 950945910024785,
+					"parameters": {
+						"text": "Lang.At(Language,854) & \":  \" & Text_Leaderboard.Score"
 					}
 				}
 			],
@@ -413,7 +502,7 @@
 						},
 						{
 							"id": "set-visible",
-							"objectClass": "Text_Menu",
+							"objectClass": "Text_Signboard",
 							"sid": 520930167109885,
 							"parameters": {
 								"visibility": "visible"
@@ -451,13 +540,31 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Text_Menu",
+									"objectClass": "Text_Signboard",
 									"sid": 606299861280920,
 									"parameters": {
 										"instance-variable": "SQ_Y",
 										"comparison": 0,
 										"value": "0"
 									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Signboard",
+									"sid": 598500504855278,
+									"parameters": {
+										"tags": "\"Score\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "SQ_Ladder",
+									"sid": 845391524854326,
+									"parameters": {
+										"instance-variable": "Ladder"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
@@ -472,7 +579,7 @@
 								},
 								{
 									"id": "set-visible",
-									"objectClass": "Text_Menu",
+									"objectClass": "Text_Signboard",
 									"sid": 106657264028844,
 									"parameters": {
 										"visibility": "invisible"
@@ -523,9 +630,9 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 202519973309367,
+									"sid": 308068714058881,
 									"parameters": {
-										"seconds": "1.0",
+										"seconds": "2",
 										"use-timescale": true
 									}
 								},
@@ -538,32 +645,11 @@
 									}
 								},
 								{
-									"id": "set-speed",
-									"objectClass": "SQ_Build",
-									"sid": 458041870642598,
-									"behaviorType": "НастраиваемоеДвижение",
-									"parameters": {
-										"which": "overall",
-										"speed": "-SQ_Speed"
-									}
-								},
-								{
-									"id": "wait",
+									"id": "signal",
 									"objectClass": "System",
-									"sid": 474193588070863,
+									"sid": 197582341160973,
 									"parameters": {
-										"seconds": "0.5",
-										"use-timescale": true
-									}
-								},
-								{
-									"id": "set-speed",
-									"objectClass": "SQ_Enemy_Runner",
-									"sid": 329595803469195,
-									"behaviorType": "НастраиваемоеДвижение",
-									"parameters": {
-										"which": "overall",
-										"speed": "-SQ_Speed"
+										"tag": "\"Go\""
 									}
 								}
 							],
@@ -574,7 +660,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Text_Menu",
+									"objectClass": "Text_Signboard",
 									"sid": 842705264435625,
 									"parameters": {
 										"instance-variable": "SQ_Y",
@@ -601,7 +687,7 @@
 								},
 								{
 									"id": "set-visible",
-									"objectClass": "Text_Menu",
+									"objectClass": "Text_Signboard",
 									"sid": 624372148070820,
 									"parameters": {
 										"visibility": "invisible"
@@ -640,7 +726,7 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Text_Menu",
+									"objectClass": "Text_Signboard",
 									"sid": 445373211888610,
 									"parameters": {
 										"instance-variable": "SQ_Y",
@@ -666,7 +752,7 @@
 								},
 								{
 									"id": "set-visible",
-									"objectClass": "Text_Menu",
+									"objectClass": "Text_Signboard",
 									"sid": 351857649884758,
 									"parameters": {
 										"visibility": "visible"
@@ -715,7 +801,7 @@
 						},
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Text_Menu",
+							"objectClass": "Text_Signboard",
 							"sid": 601501489470706,
 							"parameters": {
 								"instance-variable": "SQ_Y",
@@ -723,12 +809,30 @@
 								"value": "2"
 							},
 							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "SQ_Ladder",
+							"sid": 727707322546260,
+							"parameters": {
+								"instance-variable": "Ladder"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 970861209010597,
+							"parameters": {
+								"variable": "SQ_Start"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
 						{
 							"id": "add-to-instvar",
-							"objectClass": "Text_Menu",
+							"objectClass": "Text_Signboard",
 							"sid": 159441110546805,
 							"parameters": {
 								"instance-variable": "SQ_Y",
@@ -751,7 +855,7 @@
 						},
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Text_Menu",
+							"objectClass": "Text_Signboard",
 							"sid": 810855140239296,
 							"parameters": {
 								"instance-variable": "SQ_Y",
@@ -759,12 +863,30 @@
 								"value": "0"
 							},
 							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "SQ_Ladder",
+							"sid": 457376288782054,
+							"parameters": {
+								"instance-variable": "Ladder"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 107501033713635,
+							"parameters": {
+								"variable": "SQ_Start"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
 						{
 							"id": "subtract-from-instvar",
-							"objectClass": "Text_Menu",
+							"objectClass": "Text_Signboard",
 							"sid": 637892986474463,
 							"parameters": {
 								"instance-variable": "SQ_Y",
@@ -778,8 +900,29 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 110352829418765
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "Text_Signboard",
+							"sid": 445241415992527,
+							"parameters": {
+								"color": "rgbEx(75, 75, 75)"
+							}
+						}
+					],
+					"sid": 206853776636692
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "compare-instance-variable",
-							"objectClass": "Text_Menu",
+							"objectClass": "Text_Signboard",
 							"sid": 331378627553746,
 							"parameters": {
 								"instance-variable": "SQ_Y",
@@ -789,7 +932,7 @@
 						},
 						{
 							"id": "has-tags",
-							"objectClass": "Text_Menu",
+							"objectClass": "Text_Signboard",
 							"sid": 132476722919098,
 							"parameters": {
 								"tags": "\"SQ_Start\""
@@ -799,7 +942,7 @@
 					"actions": [
 						{
 							"id": "set-font-color",
-							"objectClass": "Text_Menu",
+							"objectClass": "Text_Signboard",
 							"sid": 809431095986878,
 							"parameters": {
 								"color": "rgbEx(50, 0, 0)"
@@ -813,7 +956,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Text_Menu",
+							"objectClass": "Text_Signboard",
 							"sid": 944681120621849,
 							"parameters": {
 								"instance-variable": "SQ_Y",
@@ -823,7 +966,7 @@
 						},
 						{
 							"id": "has-tags",
-							"objectClass": "Text_Menu",
+							"objectClass": "Text_Signboard",
 							"sid": 117979003896466,
 							"parameters": {
 								"tags": "\"SQ_Ladder\""
@@ -833,7 +976,7 @@
 					"actions": [
 						{
 							"id": "set-font-color",
-							"objectClass": "Text_Menu",
+							"objectClass": "Text_Signboard",
 							"sid": 122002777757921,
 							"parameters": {
 								"color": "rgbEx(50, 0, 0)"
@@ -847,7 +990,7 @@
 					"conditions": [
 						{
 							"id": "compare-instance-variable",
-							"objectClass": "Text_Menu",
+							"objectClass": "Text_Signboard",
 							"sid": 684230552711759,
 							"parameters": {
 								"instance-variable": "SQ_Y",
@@ -857,8 +1000,8 @@
 						},
 						{
 							"id": "has-tags",
-							"objectClass": "Text_Menu",
-							"sid": 197526804229674,
+							"objectClass": "Text_Signboard",
+							"sid": 985751098402966,
 							"parameters": {
 								"tags": "\"SQ_Exit\""
 							}
@@ -867,7 +1010,7 @@
 					"actions": [
 						{
 							"id": "set-font-color",
-							"objectClass": "Text_Menu",
+							"objectClass": "Text_Signboard",
 							"sid": 613828210188781,
 							"parameters": {
 								"color": "rgbEx(50, 0, 0)"
@@ -1199,9 +1342,147 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-double-jump",
+							"objectClass": "SQ_Player_Runner",
+							"sid": 169211072688206,
+							"behaviorType": "Платформер",
+							"parameters": {
+								"state": "enabled"
+							}
+						}
+					],
 					"sid": 135321718252027,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-signal",
+									"objectClass": "System",
+									"sid": 761290005970596,
+									"parameters": {
+										"tag": "\"Go\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 839096551893115,
+									"parameters": {
+										"tag": "\"music\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 847466313634443,
+									"parameters": {
+										"audio-file": {
+											"path": "Music/SQ_techno_stargazev"
+										},
+										"loop": "looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"music\""
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "SQ_Retro",
+									"sid": 665974103407846,
+									"parameters": {
+										"object": "SQ_Player_Runner",
+										"layer": "1",
+										"image-point": "3",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 688635002248685,
+									"parameters": {
+										"seconds": "2",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "SQ_Retro",
+									"sid": 716359864717875,
+									"parameters": {
+										"object": "SQ_Build",
+										"layer": "1",
+										"image-point": "1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 294922094602749
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 970986893026173,
+									"parameters": {
+										"interval-seconds": "5"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "SQ_Retro",
+									"sid": 767827932065376,
+									"parameters": {
+										"instance-variable": "Hp_Player",
+										"comparison": 5,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "SQ_Retro",
+									"sid": 718591331793445,
+									"parameters": {
+										"object": "SQ_Boom",
+										"layer": "1",
+										"image-point": "choose(4, 5, 6)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "SQ_Boom",
+									"sid": 153181131959716,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "-SQ_Speed * 0.25"
+									}
+								},
+								{
+									"id": "move-to-object",
+									"objectClass": "SQ_Boom",
+									"sid": 705276711276622,
+									"parameters": {
+										"where": "behind",
+										"object": "SQ_City"
+									}
+								}
+							],
+							"sid": 386368715021797
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -1215,41 +1496,41 @@
 								{
 									"id": "set-image-offset-x",
 									"objectClass": "SQ_GroundEarth",
-									"sid": 652238212316005,
+									"sid": 366479609801754,
 									"parameters": {
-										"offset-x": "Self.ImageOffsetX - SQ_Speed * 0.003"
+										"offset-x": "Self.ImageOffsetX - SQ_Speed * dt"
 									}
 								},
 								{
 									"id": "set-image-offset-x",
 									"objectClass": "SQ_City",
-									"sid": 718221009645142,
+									"sid": 532274317666860,
 									"parameters": {
-										"offset-x": "Self.ImageOffsetX - SQ_Speed * 0.0015"
+										"offset-x": "Self.ImageOffsetX - SQ_Speed * dt * 0.25"
 									}
 								},
 								{
 									"id": "set-image-offset-x",
 									"objectClass": "SQ_Sky",
-									"sid": 952821713804068,
+									"sid": 374483157906874,
 									"parameters": {
-										"offset-x": "Self.ImageOffsetX - SQ_Speed * 0.001"
+										"offset-x": "Self.ImageOffsetX - SQ_Speed * dt * 0.25"
 									}
 								},
 								{
 									"id": "set-image-offset-x",
 									"objectClass": "SQ_Square",
-									"sid": 839631066688120,
+									"sid": 781932932497612,
 									"parameters": {
-										"offset-x": "Self.ImageOffsetX - SQ_Speed * 0.001"
+										"offset-x": "Self.ImageOffsetX - SQ_Speed * dt * 0.25"
 									}
 								},
 								{
 									"id": "set-image-offset-y",
 									"objectClass": "SQ_Square",
-									"sid": 241911117001250,
+									"sid": 768748723625616,
 									"parameters": {
-										"offset-y": "Self.ImageOffsetY - SQ_Speed * -0.001"
+										"offset-y": "Self.ImageOffsetY - -SQ_Speed * dt * 0.25"
 									}
 								}
 							],
@@ -1276,6 +1557,24 @@
 									"parameters": {
 										"control": "jump"
 									}
+								},
+								{
+									"id": "set-jump-strength",
+									"objectClass": "SQ_Player_Runner",
+									"sid": 131495205715444,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"jump-strength": "400"
+									}
+								},
+								{
+									"id": "set-jump-sustain",
+									"objectClass": "SQ_Player_Runner",
+									"sid": 325678345603801,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"jump-sustain": "50"
+									}
 								}
 							],
 							"sid": 835891403981245
@@ -1287,34 +1586,329 @@
 									"id": "on-created",
 									"objectClass": "SQ_Build",
 									"sid": 240743695865751
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 612704276055520,
+									"parameters": {
+										"instance-variable": "Score",
+										"comparison": 2,
+										"value": "200"
+									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-speed",
 									"objectClass": "SQ_Build",
-									"sid": 481963577746576,
+									"sid": 768441486019139,
 									"behaviorType": "НастраиваемоеДвижение",
 									"parameters": {
 										"which": "overall",
-										"speed": "-SQ_Speed"
+										"speed": "-SQ_Speed "
 									}
 								},
 								{
 									"id": "set-animation-frame",
 									"objectClass": "SQ_Build",
-									"sid": 411919222518372,
+									"sid": 952328130202378,
 									"parameters": {
-										"frame-number": "random(0,4)"
+										"frame-number": "choose(0, 1, 2, 3, 4)"
 									}
 								},
 								{
-									"id": "wait-for-previous-actions",
+									"id": "wait",
 									"objectClass": "System",
-									"sid": 659035780494666
+									"sid": 681567693259632,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "SQ_Retro",
+									"sid": 935081006310272,
+									"parameters": {
+										"object": "SQ_Enemy_Runner",
+										"layer": "1",
+										"image-point": "1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
 								}
 							],
 							"sid": 821381695456758
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "SQ_Build",
+									"sid": 538361679655981
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 289363154808852,
+									"parameters": {
+										"instance-variable": "Score",
+										"comparison": 5,
+										"value": "200"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 994710527715334,
+									"parameters": {
+										"instance-variable": "Score",
+										"comparison": 2,
+										"value": "400"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-speed",
+									"objectClass": "SQ_Build",
+									"sid": 344284917735443,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "-SQ_Speed "
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "SQ_Build",
+									"sid": 273629446117010,
+									"parameters": {
+										"frame-number": "choose(0, 1, 2, 3, 4)"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "SQ_Retro",
+									"sid": 848217330736476,
+									"parameters": {
+										"object": "SQ_Enemy_Runner",
+										"layer": "1",
+										"image-point": "1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 933956135913703,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "SQ_Build",
+											"sid": 385697167093609,
+											"parameters": {
+												"comparison": 0,
+												"number": "2"
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "SQ_Build",
+											"sid": 389336254358847,
+											"parameters": {
+												"comparison": 0,
+												"number": "4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "SQ_Retro",
+											"sid": 908604317968455,
+											"parameters": {
+												"object": "SQ_Roket",
+												"layer": "1",
+												"image-point": "choose(1,2)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 861200853013487,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "SQ_Build",
+									"sid": 386478844498815
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 883903437146909,
+									"parameters": {
+										"instance-variable": "Score",
+										"comparison": 5,
+										"value": "400"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-speed",
+									"objectClass": "SQ_Build",
+									"sid": 525162757043263,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "-SQ_Speed "
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "SQ_Build",
+									"sid": 199224652217329,
+									"parameters": {
+										"frame-number": "choose(0, 1, 2, 3, 4)"
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "SQ_Retro",
+									"sid": 725769686717999,
+									"parameters": {
+										"object": "SQ_Enemy_Runner",
+										"layer": "1",
+										"image-point": "1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 825677106347172,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "SQ_Build",
+											"sid": 647576618454970,
+											"parameters": {
+												"comparison": 0,
+												"number": "2"
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "SQ_Build",
+											"sid": 364448180776406,
+											"parameters": {
+												"comparison": 0,
+												"number": "4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "SQ_Retro",
+											"sid": 730202293759698,
+											"parameters": {
+												"object": "SQ_Roket",
+												"layer": "1",
+												"image-point": "choose(1,2)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 406353851277713,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "SQ_Build",
+											"sid": 974832210013848,
+											"parameters": {
+												"comparison": 0,
+												"number": "1"
+											}
+										},
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "SQ_Build",
+											"sid": 827928698851497,
+											"parameters": {
+												"comparison": 0,
+												"number": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "spawn-another-object",
+											"objectClass": "SQ_Retro",
+											"sid": 694082446787143,
+											"parameters": {
+												"object": "SQ_Roket",
+												"layer": "1",
+												"image-point": "1",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										}
+									],
+									"sid": 974707347442796,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "SQ_Enemy_Runner",
+									"sid": 178803986797152
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 654505364763985,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "SQ_Enemy_Runner",
+									"sid": 406271206193364,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "-SQ_Build.НастраиваемоеДвижение.Speed"
+									}
+								}
+							],
+							"sid": 511624308899517
 						},
 						{
 							"eventType": "block",
@@ -1342,9 +1936,63 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "compare-x",
+									"objectClass": "SQ_Enemy_Runner",
+									"sid": 448993415332536,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "SQ_Retro.X -150"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "SQ_Enemy_Runner",
+									"sid": 527862949088303
+								}
+							],
+							"sid": 919032836355025
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "SQ_Roket",
+									"sid": 706902886953642,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "SQ_Retro.X -150"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "SQ_Roket",
+									"sid": 156850612489728
+								}
+							],
+							"sid": 315493096401923
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "on-destroyed",
 									"objectClass": "SQ_Build",
 									"sid": 544355919436382
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 140437417249463,
+									"parameters": {
+										"variable": "SQ_Speed",
+										"comparison": 2,
+										"value": "300"
+									}
 								}
 							],
 							"actions": [
@@ -1367,18 +2015,37 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-created",
+									"id": "on-destroyed",
 									"objectClass": "SQ_Build",
-									"sid": 373471345352798
+									"sid": 985900878650723
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 481643742963851,
+									"parameters": {
+										"variable": "SQ_Speed",
+										"comparison": 5,
+										"value": "300"
+									}
 								}
 							],
 							"actions": [
 								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 764966797050364,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
 									"id": "spawn-another-object",
 									"objectClass": "SQ_Retro",
-									"sid": 523034093180103,
+									"sid": 963058321928922,
 									"parameters": {
-										"object": "SQ_Enemy_Runner",
+										"object": "SQ_Build",
 										"layer": "1",
 										"image-point": "1",
 										"create-hierarchy": false,
@@ -1386,61 +2053,91 @@
 									}
 								}
 							],
-							"sid": 239984884185024
+							"sid": 778228785747369
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
 									"id": "on-created",
-									"objectClass": "SQ_Enemy_Runner",
-									"sid": 804021225846603
+									"objectClass": "SQ_Roket",
+									"sid": 583598899907732
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 348486995797844,
+									"parameters": {
+										"instance-variable": "Score",
+										"comparison": 2,
+										"value": "400"
+									}
 								}
 							],
 							"actions": [
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 353339728715350,
+									"sid": 828701760564941,
 									"parameters": {
-										"seconds": "0.5",
+										"seconds": "random(0.3, 0.9)",
 										"use-timescale": true
 									}
 								},
 								{
 									"id": "set-speed",
-									"objectClass": "SQ_Enemy_Runner",
-									"sid": 787590997490160,
+									"objectClass": "SQ_Roket",
+									"sid": 902268507211280,
 									"behaviorType": "НастраиваемоеДвижение",
 									"parameters": {
 										"which": "overall",
-										"speed": "-SQ_Speed"
+										"speed": "-SQ_Build.НастраиваемоеДвижение.Speed -50"
 									}
 								}
 							],
-							"sid": 585641260560697
+							"sid": 785746275878165
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-x",
-									"objectClass": "SQ_Enemy_Runner",
-									"sid": 220330387654728,
+									"id": "on-created",
+									"objectClass": "SQ_Roket",
+									"sid": 358681076114548
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 302926298121160,
 									"parameters": {
-										"comparison": 2,
-										"x-co-ordinate": "SQ_Retro.X -150"
+										"instance-variable": "Score",
+										"comparison": 5,
+										"value": "400"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "destroy",
-									"objectClass": "SQ_Enemy_Runner",
-									"sid": 766280405288865
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 304006609246965,
+									"parameters": {
+										"seconds": "random(0.2, 0.5)",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "SQ_Roket",
+									"sid": 869064507763071,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "-SQ_Build.НастраиваемоеДвижение.Speed -50"
+									}
 								}
 							],
-							"sid": 726890252115228
+							"sid": 756372090020674
 						},
 						{
 							"eventType": "block",
@@ -1462,11 +2159,31 @@
 								},
 								{
 									"id": "add-to-instvar",
-									"objectClass": "Leaderboard",
-									"sid": 100733847875515,
+									"objectClass": "Text_Leaderboard",
+									"sid": 665053840594846,
 									"parameters": {
-										"instance-variable": "mrk",
+										"instance-variable": "Score",
 										"value": "10"
+									}
+								},
+								{
+									"callFunction": "Audio_Play_Sound",
+									"sid": 580917331040363,
+									"parameters": [
+										"\"SQ_Hit\"",
+										"0",
+										"\"SQ_Hit\""
+									]
+								},
+								{
+									"id": "shake",
+									"objectClass": "Camera",
+									"sid": 504643238516863,
+									"behaviorType": "СледитьЗа",
+									"parameters": {
+										"magnitude": "2",
+										"duration": "0.4",
+										"mode": "reducing-magnitude"
 									}
 								}
 							],
@@ -1478,27 +2195,112 @@
 										{
 											"id": "repeat",
 											"objectClass": "System",
-											"sid": 892787795216646,
+											"sid": 489990091159191,
 											"parameters": {
 												"count": "2"
 											}
 										},
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "Leaderboard",
-											"sid": 154462211511140,
+											"objectClass": "Text_Leaderboard",
+											"sid": 670029876124108,
 											"parameters": {
-												"instance-variable": "mrk",
+												"instance-variable": "Score",
+												"comparison": 5,
+												"value": "0"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Text_Leaderboard",
+											"sid": 425182729484279,
+											"parameters": {
+												"instance-variable": "Score",
+												"comparison": 2,
+												"value": "100"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 118481074240488,
+											"parameters": {
+												"object-to-create": "BloodCup",
+												"layer": "1",
+												"x": " random(SQ_Enemy_Runner.X-10, SQ_Enemy_Runner.X +10)",
+												"y": " random(SQ_Enemy_Runner.Y, SQ_Enemy_Runner.Y -10)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "move-to-object",
+											"objectClass": "BloodCup",
+											"sid": 863401315175830,
+											"parameters": {
+												"where": "behind",
+												"object": "SQ_Retro"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "BloodCup",
+											"sid": 401838614125198,
+											"parameters": {
+												"scale": "1"
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "BloodCup",
+											"sid": 355375820851676,
+											"parameters": {
+												"color": "rgbEx(255, 0, 0)"
+											}
+										},
+										{
+											"id": "apply-impulse-at-angle",
+											"objectClass": "BloodCup",
+											"sid": 135255817182071,
+											"behaviorType": "Физика",
+											"parameters": {
+												"impulse": "0.005",
+												"angle": "BloodCup.Angle - random(0,-10)",
+												"image-point": "0"
+											}
+										}
+									],
+									"sid": 922018994100188
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 638760232478200,
+											"parameters": {
+												"count": "4"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Text_Leaderboard",
+											"sid": 754115807591798,
+											"parameters": {
+												"instance-variable": "Score",
 												"comparison": 5,
 												"value": "100"
 											}
 										},
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "Leaderboard",
-											"sid": 765156979761412,
+											"objectClass": "Text_Leaderboard",
+											"sid": 400209273714555,
 											"parameters": {
-												"instance-variable": "mrk",
+												"instance-variable": "Score",
 												"comparison": 2,
 												"value": "200"
 											}
@@ -1563,28 +2365,27 @@
 										{
 											"id": "repeat",
 											"objectClass": "System",
-											"sid": 595344031002074,
+											"sid": 582858862110159,
 											"parameters": {
-												"count": "10"
+												"count": "6"
 											}
 										},
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "Leaderboard",
-											"sid": 948195902277093,
+											"objectClass": "Text_Leaderboard",
+											"sid": 903045243520782,
 											"parameters": {
-												"instance-variable": "mrk",
+												"instance-variable": "Score",
 												"comparison": 5,
 												"value": "200"
 											}
 										},
 										{
 											"id": "compare-instance-variable",
-											"objectClass": "Leaderboard",
-											"sid": 105088139513731,
-											"disabled": true,
+											"objectClass": "Text_Leaderboard",
+											"sid": 968383173591201,
 											"parameters": {
-												"instance-variable": "mrk",
+												"instance-variable": "Score",
 												"comparison": 2,
 												"value": "300"
 											}
@@ -1616,9 +2417,9 @@
 										{
 											"id": "set-scale",
 											"objectClass": "BloodCup",
-											"sid": 146534424872955,
+											"sid": 755547985404532,
 											"parameters": {
-												"scale": "3"
+												"scale": "2"
 											}
 										},
 										{
@@ -1642,6 +2443,177 @@
 										}
 									],
 									"sid": 764107459908436
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 695658632994843,
+											"parameters": {
+												"count": "8"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Text_Leaderboard",
+											"sid": 738638108156768,
+											"parameters": {
+												"instance-variable": "Score",
+												"comparison": 5,
+												"value": "300"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Text_Leaderboard",
+											"sid": 136151176067569,
+											"parameters": {
+												"instance-variable": "Score",
+												"comparison": 2,
+												"value": "400"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 939428502597351,
+											"parameters": {
+												"object-to-create": "BloodCup",
+												"layer": "1",
+												"x": " random(SQ_Enemy_Runner.X-10, SQ_Enemy_Runner.X +10)",
+												"y": " random(SQ_Enemy_Runner.Y, SQ_Enemy_Runner.Y -10)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "move-to-object",
+											"objectClass": "BloodCup",
+											"sid": 449810316728046,
+											"parameters": {
+												"where": "behind",
+												"object": "SQ_Retro"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "BloodCup",
+											"sid": 296428747435721,
+											"parameters": {
+												"scale": "2"
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "BloodCup",
+											"sid": 378588322358879,
+											"parameters": {
+												"color": "rgbEx(255, 0, 0)"
+											}
+										},
+										{
+											"id": "apply-impulse-at-angle",
+											"objectClass": "BloodCup",
+											"sid": 858956932763242,
+											"behaviorType": "Физика",
+											"parameters": {
+												"impulse": "0.01",
+												"angle": "BloodCup.Angle - random(0,-15)",
+												"image-point": "0"
+											}
+										}
+									],
+									"sid": 509251697106116
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 609968173579165,
+											"parameters": {
+												"count": "10"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Text_Leaderboard",
+											"sid": 694659680058897,
+											"parameters": {
+												"instance-variable": "Score",
+												"comparison": 5,
+												"value": "400"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Text_Leaderboard",
+											"sid": 461372918210974,
+											"disabled": true,
+											"parameters": {
+												"instance-variable": "Score",
+												"comparison": 2,
+												"value": "500"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 969286135525514,
+											"parameters": {
+												"object-to-create": "BloodCup",
+												"layer": "1",
+												"x": " random(SQ_Enemy_Runner.X-10, SQ_Enemy_Runner.X +10)",
+												"y": " random(SQ_Enemy_Runner.Y, SQ_Enemy_Runner.Y -10)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "move-to-object",
+											"objectClass": "BloodCup",
+											"sid": 138116962859488,
+											"parameters": {
+												"where": "behind",
+												"object": "SQ_Retro"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "BloodCup",
+											"sid": 760275426751292,
+											"parameters": {
+												"scale": "3"
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "BloodCup",
+											"sid": 936452488983188,
+											"parameters": {
+												"color": "rgbEx(255, 0, 0)"
+											}
+										},
+										{
+											"id": "apply-impulse-at-angle",
+											"objectClass": "BloodCup",
+											"sid": 968324624178245,
+											"behaviorType": "Физика",
+											"parameters": {
+												"impulse": "0.012",
+												"angle": "BloodCup.Angle - random(0,-15)",
+												"image-point": "0"
+											}
+										}
+									],
+									"sid": 876122328478824
 								}
 							]
 						},
@@ -1649,23 +2621,131 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-collision-with-another-object",
+									"id": "is-flashing",
 									"objectClass": "SQ_Player_Runner",
-									"sid": 550376201597993,
+									"sid": 993586378467933,
+									"behaviorType": "Мигание",
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 342378802037398,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "SQ_Player_Runner",
+											"sid": 519976404470680,
+											"parameters": {
+												"object": "SQ_Build"
+											}
+										},
+										{
+											"id": "on-collision-with-another-object",
+											"objectClass": "SQ_Player_Runner",
+											"sid": 339860966065152,
+											"parameters": {
+												"object": "SQ_Roket"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "destroy",
+											"objectClass": "SQ_Player_Runner",
+											"sid": 585976884273259
+										},
+										{
+											"id": "shake",
+											"objectClass": "Camera",
+											"sid": 423104844399789,
+											"behaviorType": "СледитьЗа",
+											"parameters": {
+												"magnitude": "10",
+												"duration": "0.4",
+												"mode": "reducing-magnitude"
+											}
+										},
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "SQ_Retro",
+											"sid": 761423433417485,
+											"parameters": {
+												"instance-variable": "Hp_Player",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 964926369437411,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-destroyed",
+									"objectClass": "SQ_Player_Runner",
+									"sid": 526286564369592
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "SQ_Retro",
+									"sid": 939464186148909,
 									"parameters": {
-										"object": "SQ_Build"
+										"instance-variable": "Hp_Player",
+										"comparison": 4,
+										"value": "0"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "destroy",
+									"callFunction": "Audio_Play_Sound",
+									"sid": 486369411746936,
+									"parameters": [
+										"\"SQ_Damage\"",
+										"0",
+										"\"SQ_Damage\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 400185482527309,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "spawn-another-object",
+									"objectClass": "SQ_Retro",
+									"sid": 606135816666385,
+									"parameters": {
+										"object": "SQ_Player_Runner",
+										"layer": "1",
+										"image-point": "3",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "flash",
 									"objectClass": "SQ_Player_Runner",
-									"sid": 233534345056562
+									"sid": 690723302361601,
+									"behaviorType": "Мигание",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "2"
+									}
 								}
 							],
-							"sid": 128810248485853,
-							"disabled": true
+							"sid": 704725068329544
 						},
 						{
 							"eventType": "block",
@@ -1731,14 +2811,6 @@
 									"parameters": {
 										"animation": "\"End\""
 									}
-								},
-								{
-									"id": "on-collision-with-another-object",
-									"objectClass": "BloodCup",
-									"sid": 606030787371845,
-									"parameters": {
-										"object": "SQ_Player_Runner"
-									}
 								}
 							],
 							"actions": [
@@ -1756,33 +2828,80 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Leaderboard",
-									"sid": 597508555071238,
+									"objectClass": "Text_Leaderboard",
+									"sid": 648233117319338,
 									"parameters": {
-										"instance-variable": "mrk",
+										"instance-variable": "Score",
 										"comparison": 5,
-										"value": "100"
+										"value": "0"
 									}
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Leaderboard",
-									"sid": 979258415775502,
+									"objectClass": "Text_Leaderboard",
+									"sid": 142520019526070,
 									"parameters": {
-										"instance-variable": "mrk",
+										"instance-variable": "Score",
 										"comparison": 2,
-										"value": "200"
+										"value": "100"
 									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 100368419222507
 								}
 							],
 							"actions": [
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 977778682932619,
+									"sid": 477513631413309,
 									"parameters": {
 										"variable": "SQ_Speed",
-										"value": "250"
+										"value": "150"
+									}
+								}
+							],
+							"sid": 757550937378181
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 540541946570016,
+									"parameters": {
+										"instance-variable": "Score",
+										"comparison": 5,
+										"value": "100"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 635867956251244,
+									"parameters": {
+										"instance-variable": "Score",
+										"comparison": 2,
+										"value": "200"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 641797594314615
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 560246446266088,
+									"parameters": {
+										"variable": "SQ_Speed",
+										"value": "200"
 									}
 								}
 							],
@@ -1793,37 +2912,168 @@
 							"conditions": [
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Leaderboard",
-									"sid": 227525328273606,
+									"objectClass": "Text_Leaderboard",
+									"sid": 613657326515013,
 									"parameters": {
-										"instance-variable": "mrk",
+										"instance-variable": "Score",
 										"comparison": 5,
 										"value": "200"
 									}
 								},
 								{
 									"id": "compare-instance-variable",
-									"objectClass": "Leaderboard",
-									"sid": 932308954578962,
+									"objectClass": "Text_Leaderboard",
+									"sid": 946978551874195,
 									"parameters": {
-										"instance-variable": "mrk",
+										"instance-variable": "Score",
 										"comparison": 2,
 										"value": "300"
 									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 219342497377270
 								}
 							],
 							"actions": [
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 402455761651431,
+									"sid": 968836899252175,
+									"parameters": {
+										"variable": "SQ_Speed",
+										"value": "250"
+									}
+								}
+							],
+							"sid": 398596655657051
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 709153782119456,
+									"parameters": {
+										"instance-variable": "Score",
+										"comparison": 5,
+										"value": "300"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 777862364261273,
+									"parameters": {
+										"instance-variable": "Score",
+										"comparison": 2,
+										"value": "400"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 467057014679553
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 523266235372997,
 									"parameters": {
 										"variable": "SQ_Speed",
 										"value": "300"
 									}
 								}
 							],
-							"sid": 398596655657051
+							"sid": 986183134876568
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 723207079606697,
+									"parameters": {
+										"instance-variable": "Score",
+										"comparison": 5,
+										"value": "400"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 772003116019175,
+									"parameters": {
+										"instance-variable": "Score",
+										"comparison": 2,
+										"value": "500"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 491404219840271
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 901905009162623,
+									"parameters": {
+										"variable": "SQ_Speed",
+										"value": "350"
+									}
+								}
+							],
+							"sid": 969283045454204
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 193358641233283,
+									"parameters": {
+										"instance-variable": "Score",
+										"comparison": 5,
+										"value": "500"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Leaderboard",
+									"sid": 225807551946005,
+									"parameters": {
+										"instance-variable": "Score",
+										"comparison": 2,
+										"value": "600"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 923204741958005
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 937884563816006,
+									"parameters": {
+										"variable": "SQ_Speed",
+										"value": "400"
+									}
+								}
+							],
+							"sid": 732291197449737
 						},
 						{
 							"eventType": "block",
@@ -1836,6 +3086,15 @@
 										"comparison": 2,
 										"x-co-ordinate": "SQ_Retro.X -150"
 									}
+								},
+								{
+									"id": "compare-x",
+									"objectClass": "BloodCup",
+									"sid": 731143151255935,
+									"parameters": {
+										"comparison": 4,
+										"x-co-ordinate": "SQ_Retro.X +150"
+									}
 								}
 							],
 							"actions": [
@@ -1845,7 +3104,356 @@
 									"sid": 566019093562089
 								}
 							],
-							"sid": 391949918992735
+							"sid": 391949918992735,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "SQ_Retro",
+									"sid": 802523489735557,
+									"parameters": {
+										"instance-variable": "Hp_Player",
+										"comparison": 2,
+										"value": "0"
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "SQ_Ladder",
+									"sid": 755085568106271,
+									"parameters": {
+										"instance-variable": "Ladder"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 512722573217226,
+									"parameters": {
+										"variable": "SQ_Speed",
+										"value": "0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 699225212952197,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 707099022552983,
+									"parameters": {
+										"tag": "\"music\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SQ_Ladder",
+									"sid": 880797829786654,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_Leaderboard",
+									"sid": 548179892507614,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "SQ_Ladder",
+									"sid": 117234060658759,
+									"parameters": {
+										"instance-variable": "Ladder",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 934485298291258
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "SQ_Retro",
+									"sid": 509618569961451,
+									"parameters": {
+										"instance-variable": "Hp_Player",
+										"comparison": 2,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Leaderboard",
+									"sid": 792389615188664,
+									"parameters": {
+										"instance-variable": "mrk",
+										"comparison": 2,
+										"value": "Text_Leaderboard.Score"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Leaderboard",
+									"sid": 207701150087702,
+									"parameters": {
+										"instance-variable": "mrk",
+										"value": "Text_Leaderboard.Score"
+									}
+								},
+								{
+									"id": "set-item",
+									"objectClass": "Game_Save",
+									"sid": 292870439405794,
+									"parameters": {
+										"key": "\"SQ_Score\"",
+										"value": "Leaderboard.mrk"
+									}
+								}
+							],
+							"sid": 862491660036265
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 420488753219818,
+									"parameters": {
+										"key": 32
+									}
+								},
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "SQ_Ladder",
+									"sid": 696981497459476,
+									"parameters": {
+										"instance-variable": "Ladder"
+									}
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 534729557491881,
+									"parameters": {
+										"object": "SQ_Build"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 500632350923597,
+									"parameters": {
+										"variable": "SQ_Start",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_Signboard",
+									"sid": 516091174207305,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "SQ_Tile",
+									"sid": 441073175191993,
+									"behaviorType": "Твинанимация",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetColor",
+										"end-value": "rgba255(255, 255, 255, 100)",
+										"time": "1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SQ_Ladder",
+									"sid": 643650491965248,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_Leaderboard",
+									"sid": 362848894833944,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SQ_Tile",
+									"sid": 539424352971240,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "Text_Leaderboard",
+									"sid": 459364469702349,
+									"parameters": {
+										"instance-variable": "Score",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "SQ_Retro",
+									"sid": 824605309162030,
+									"parameters": {
+										"instance-variable": "Hp_Player",
+										"value": "2"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "SQ_Build",
+									"sid": 829884382335120
+								},
+								{
+									"id": "destroy",
+									"objectClass": "SQ_Enemy_Runner",
+									"sid": 229932263807181
+								},
+								{
+									"id": "destroy",
+									"objectClass": "SQ_Roket",
+									"sid": 497114972780002
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "SQ_Ladder",
+									"sid": 491295855488171,
+									"parameters": {
+										"instance-variable": "Ladder",
+										"value": "false"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 211402962224760,
+									"parameters": {
+										"audio-file": {
+											"path": "Music/SQ_Menu_techno_chiptale"
+										},
+										"loop": "looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"music\""
+									}
+								}
+							],
+							"sid": 296544106372892
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "SQ_Retro",
+									"sid": 639844495520779,
+									"parameters": {
+										"instance-variable": "Hp_Player",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "SQ_HP",
+									"sid": 827178167670367,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 268114372069069
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "SQ_Retro",
+									"sid": 470855770068124,
+									"parameters": {
+										"instance-variable": "Hp_Player",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "SQ_HP",
+									"sid": 984557102205874,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 922557605285613
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "SQ_Retro",
+									"sid": 990434508490427,
+									"parameters": {
+										"instance-variable": "Hp_Player",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "SQ_HP",
+									"sid": 677140881696931,
+									"parameters": {
+										"frame-number": "2"
+									}
+								}
+							],
+							"sid": 353688443771955
 						}
 					]
 				},

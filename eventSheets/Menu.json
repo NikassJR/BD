@@ -626,6 +626,33 @@
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 210513615905062
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Text_Menu",
+					"sid": 650527962766189,
+					"parameters": {
+						"tags": "\"SQ_Start\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Text_Menu",
+					"sid": 545317383125770,
+					"parameters": {
+						"tags": "\"SQ_Ladder\""
+					},
+					"isInverted": true
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Text_Menu",
+					"sid": 388218477470379,
+					"parameters": {
+						"tags": "\"SQ_Exit\""
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -1533,9 +1560,9 @@
 				{
 					"id": "request-fullscreen",
 					"objectClass": "Browser",
-					"sid": 722658682610628,
+					"sid": 149671435945674,
 					"parameters": {
-						"mode": "stretch-scale-outer",
+						"mode": "stretch-letterbox-scale",
 						"navigation-ui": "hide"
 					}
 				}
@@ -1622,9 +1649,9 @@
 				{
 					"id": "request-fullscreen",
 					"objectClass": "Browser",
-					"sid": 285997554083675,
+					"sid": 889379215880899,
 					"parameters": {
-						"mode": "stretch-scale-outer",
+						"mode": "stretch-letterbox-scale",
 						"navigation-ui": "hide"
 					}
 				}
@@ -2180,6 +2207,14 @@
 					"id": "set-text",
 					"objectClass": "Text_logo",
 					"sid": 436687020538562,
+					"parameters": {
+						"text": "Lang.At(Language,Self.Lang)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text_Signboard",
+					"sid": 377405173973462,
 					"parameters": {
 						"text": "Lang.At(Language,Self.Lang)"
 					}
@@ -3695,26 +3730,128 @@
 							}
 						},
 						{
-							"id": "compare-animation-frame",
+							"id": "has-gamepads",
+							"objectClass": "Gamepad",
+							"sid": 192992004566293,
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
 							"objectClass": "Save_Stolb",
-							"sid": 222123562157818,
+							"sid": 240426052413048,
 							"parameters": {
-								"comparison": 0,
-								"number": "0"
-							}
+								"instance-variable": "Save"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "press_E",
-							"sid": 115790828063905,
+							"id": "set-animation-frame",
+							"objectClass": "Save_Stolb",
+							"sid": 148207271810024,
 							"parameters": {
-								"visibility": "visible"
+								"frame-number": "1"
 							}
 						}
 					],
-					"sid": 404894829304628,
+					"sid": 404894829304628
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_All",
+							"sid": 433926170412622,
+							"parameters": {
+								"object": "Save_Stolb"
+							}
+						},
+						{
+							"id": "has-gamepads",
+							"objectClass": "Gamepad",
+							"sid": 944669369011076
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Save_Stolb",
+							"sid": 526425306403596,
+							"parameters": {
+								"instance-variable": "Save"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Save_Stolb",
+							"sid": 870109241755870,
+							"parameters": {
+								"frame-number": "2"
+							}
+						}
+					],
+					"sid": 623456359420127
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_All",
+							"sid": 322470986134228,
+							"parameters": {
+								"object": "Save_Stolb"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Save_Stolb",
+							"sid": 726088198175966,
+							"parameters": {
+								"instance-variable": "Save"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "Save_Stolb",
+							"sid": 100563326873010,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 353985131536474
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_All",
+							"sid": 954255546225031,
+							"parameters": {
+								"object": "Save_Stolb"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Save_Stolb",
+							"sid": 556196075346519,
+							"parameters": {
+								"instance-variable": "Save"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 358923737030082,
 					"children": [
 						{
 							"eventType": "block",
@@ -3722,7 +3859,7 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 998439728011818,
+									"sid": 329574641895147,
 									"parameters": {
 										"key": 69
 									}
@@ -3730,7 +3867,7 @@
 								{
 									"id": "on-button-pressed",
 									"objectClass": "Gamepad",
-									"sid": 336726234319312,
+									"sid": 620265184772479,
 									"parameters": {
 										"gamepad": "0",
 										"button": "button-y"
@@ -3739,60 +3876,45 @@
 							],
 							"actions": [
 								{
-									"id": "set-animation-speed",
+									"id": "set-animation",
 									"objectClass": "Save_Stolb",
-									"sid": 595074790245811,
+									"sid": 346896079829551,
 									"parameters": {
-										"speed": "50"
+										"animation": "\"Safe\"",
+										"from": "beginning"
 									}
 								},
 								{
 									"id": "save",
 									"objectClass": "System",
-									"sid": 611481287823590,
+									"sid": 660763188828716,
 									"parameters": {
 										"slot": "\"mysave\""
 									}
 								},
 								{
 									"callFunction": "Audio_Play_Sound",
-									"sid": 128488998904972,
+									"sid": 255387189083322,
 									"parameters": [
 										"\"Save_Stolb\"",
 										"0",
 										"\"Save_Stolb\""
 									]
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Save_Stolb",
+									"sid": 795810721379697,
+									"parameters": {
+										"instance-variable": "Save",
+										"value": "true"
+									}
 								}
 							],
-							"sid": 329030705395676,
+							"sid": 235761315514535,
 							"isOrBlock": true
 						}
 					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_All",
-							"sid": 640004547961409,
-							"parameters": {
-								"object": "Save_Stolb"
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "press_E",
-							"sid": 229373098612681,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 452793091441855
 				},
 				{
 					"eventType": "block",
