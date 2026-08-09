@@ -1,0 +1,1882 @@
+{
+	"name": "ScuareKills",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "SQ_Speed",
+			"type": "number",
+			"initialValue": "200",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 994889568287243
+		},
+		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "150",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 201934447187197
+		},
+		{
+			"eventType": "variable",
+			"name": "SQ_Start",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 192472118884991
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "Menu"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 675574594429255
+				}
+			],
+			"actions": [
+				{
+					"id": "set-at-xy",
+					"objectClass": "Leaderboard",
+					"sid": 935612766779179,
+					"parameters": {
+						"x": "0",
+						"y": "0",
+						"value": "\"Tig\""
+					}
+				},
+				{
+					"id": "set-at-xy",
+					"objectClass": "Leaderboard",
+					"sid": 814099963890303,
+					"parameters": {
+						"x": "1",
+						"y": "0",
+						"value": "100"
+					}
+				},
+				{
+					"id": "set-at-xy",
+					"objectClass": "Leaderboard",
+					"sid": 825724144708419,
+					"parameters": {
+						"x": "0",
+						"y": "1",
+						"value": "\"flh\""
+					}
+				},
+				{
+					"id": "set-at-xy",
+					"objectClass": "Leaderboard",
+					"sid": 821884188788144,
+					"parameters": {
+						"x": "1",
+						"y": "1",
+						"value": "90"
+					}
+				},
+				{
+					"id": "set-at-xy",
+					"objectClass": "Leaderboard",
+					"sid": 272471781908445,
+					"parameters": {
+						"x": "0",
+						"y": "2",
+						"value": "\"rdh\""
+					}
+				},
+				{
+					"id": "set-at-xy",
+					"objectClass": "Leaderboard",
+					"sid": 948108681619527,
+					"parameters": {
+						"x": "1",
+						"y": "2",
+						"value": "80"
+					}
+				},
+				{
+					"id": "set-at-xy",
+					"objectClass": "Leaderboard",
+					"sid": 678081749649516,
+					"parameters": {
+						"x": "0",
+						"y": "3",
+						"value": "\"lem\""
+					}
+				},
+				{
+					"id": "set-at-xy",
+					"objectClass": "Leaderboard",
+					"sid": 186873898794266,
+					"parameters": {
+						"x": "1",
+						"y": "3",
+						"value": "70"
+					}
+				},
+				{
+					"id": "set-at-xy",
+					"objectClass": "Leaderboard",
+					"sid": 287416212849722,
+					"parameters": {
+						"x": "0",
+						"y": "4",
+						"value": "\"dam\""
+					}
+				},
+				{
+					"id": "set-at-xy",
+					"objectClass": "Leaderboard",
+					"sid": 653064973434275,
+					"parameters": {
+						"x": "1",
+						"y": "4",
+						"value": "60"
+					}
+				},
+				{
+					"id": "set-at-xy",
+					"objectClass": "Leaderboard",
+					"sid": 467930722855519,
+					"parameters": {
+						"x": "0",
+						"y": "5",
+						"value": "\"mrk\""
+					}
+				},
+				{
+					"id": "set-at-xy",
+					"objectClass": "Leaderboard",
+					"sid": 769072449684679,
+					"parameters": {
+						"x": "1",
+						"y": "5",
+						"value": "Leaderboard.mrk"
+					}
+				}
+			],
+			"sid": 955541103538034
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 384968785982554
+				}
+			],
+			"actions": [
+				{
+					"id": "move-to-top",
+					"objectClass": "SQ_Retro",
+					"sid": 586955221190404
+				},
+				{
+					"id": "set-effect-parameter",
+					"objectClass": "SQ_Tile",
+					"sid": 214774667598115,
+					"parameters": {
+						"effect": "\"Пикселировать\"",
+						"parameter-index": "0",
+						"value": "SQ_Tile.PixelProgress"
+					}
+				},
+				{
+					"id": "set-effect-parameter",
+					"objectClass": "SQ_Tile",
+					"sid": 563494116609934,
+					"parameters": {
+						"effect": "\"Виньетка\"",
+						"parameter-index": "1",
+						"value": "SQ_Tile.PixelTile"
+					}
+				},
+				{
+					"id": "set-ignoring-input",
+					"objectClass": "SQ_Build",
+					"sid": 474615411649415,
+					"behaviorType": "Платформер",
+					"parameters": {
+						"input": "start-ignoring"
+					}
+				},
+				{
+					"id": "set-ignoring-input",
+					"objectClass": "SQ_Enemy_Runner",
+					"sid": 677671536248013,
+					"behaviorType": "Платформер",
+					"parameters": {
+						"input": "start-ignoring"
+					}
+				}
+			],
+			"sid": 900146211074880
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 396730834791855,
+					"parameters": {
+						"interval-seconds": "0.1"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "SQ_Tile",
+					"sid": 685415442544466,
+					"parameters": {
+						"instance-variable": "PixelProgress",
+						"comparison": 4,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-instvar",
+					"objectClass": "SQ_Tile",
+					"sid": 466191489041909,
+					"parameters": {
+						"instance-variable": "PixelProgress",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 836648300582982
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "SQ_Tile",
+					"sid": 529693950990767,
+					"parameters": {
+						"instance-variable": "PixelProgress",
+						"comparison": 3,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 404843825438967,
+					"parameters": {
+						"seconds": "2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "SQ_Tile",
+					"sid": 741990852508138,
+					"parameters": {
+						"instance-variable": "Go",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 266917068641239
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 339877131562519,
+					"parameters": {
+						"interval-seconds": "0.1"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "SQ_Tile",
+					"sid": 898125320144556,
+					"parameters": {
+						"instance-variable": "Go"
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "SQ_Tile",
+					"sid": 773507508354438,
+					"parameters": {
+						"instance-variable": "PixelTile",
+						"comparison": 2,
+						"value": "100"
+					}
+				},
+				{
+					"id": "compare-opacity",
+					"objectClass": "SQ_Tile",
+					"sid": 624299631443944,
+					"parameters": {
+						"comparison": 4,
+						"opacity": "50"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "add-to-instvar",
+					"objectClass": "SQ_Tile",
+					"sid": 696017401208088,
+					"parameters": {
+						"instance-variable": "PixelTile",
+						"value": "10"
+					}
+				}
+			],
+			"sid": 884224966861198
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "SQ_Tile",
+					"sid": 462895665020583,
+					"parameters": {
+						"instance-variable": "Go"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 483633439206512,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "SQ_Tile",
+							"sid": 409761211926004,
+							"parameters": {
+								"comparison": 4,
+								"number": "0"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "SQ_Ladder",
+							"sid": 806059931432435,
+							"parameters": {
+								"instance-variable": "Ladder"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 269617362438558,
+							"parameters": {
+								"variable": "SQ_Start"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "SQ_Tile",
+							"sid": 374970443173533,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Text_Menu",
+							"sid": 520930167109885,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 352710693083351
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 970813359303575,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 464917116224650,
+							"parameters": {
+								"variable": "SQ_Start"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 190425934283956,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Menu",
+									"sid": 606299861280920,
+									"parameters": {
+										"instance-variable": "SQ_Y",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 403947404609041,
+									"parameters": {
+										"variable": "SQ_Start",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_Menu",
+									"sid": 106657264028844,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SQ_Ladder",
+									"sid": 960638397063343,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_Leaderboard",
+									"sid": 467934780092741,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "SQ_Ladder",
+									"sid": 835973036312323,
+									"parameters": {
+										"instance-variable": "Ladder",
+										"value": "false"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "SQ_Tile",
+									"sid": 563817873779680,
+									"behaviorType": "Твинанимация",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetColor",
+										"end-value": "rgba255(0, 0, 0, 100)",
+										"time": "1",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 202519973309367,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SQ_Tile",
+									"sid": 794573056761286,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "SQ_Build",
+									"sid": 458041870642598,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "-SQ_Speed"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 474193588070863,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "SQ_Enemy_Runner",
+									"sid": 329595803469195,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "-SQ_Speed"
+									}
+								}
+							],
+							"sid": 492745242440727
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Menu",
+									"sid": 842705264435625,
+									"parameters": {
+										"instance-variable": "SQ_Y",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "SQ_Ladder",
+									"sid": 268493100243850,
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 282866567422919,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_Menu",
+									"sid": 624372148070820,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SQ_Ladder",
+									"sid": 217977703133464,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_Leaderboard",
+									"sid": 390652035909791,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "SQ_Ladder",
+									"sid": 603592827880353,
+									"parameters": {
+										"instance-variable": "Ladder",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 711610222641366
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Text_Menu",
+									"sid": 445373211888610,
+									"parameters": {
+										"instance-variable": "SQ_Y",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "SQ_Ladder",
+									"sid": 603441776238805
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 207283782462091,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_Menu",
+									"sid": 351857649884758,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SQ_Ladder",
+									"sid": 511504846593367,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_Leaderboard",
+									"sid": 776978343572765,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "SQ_Ladder",
+									"sid": 588763123319080,
+									"parameters": {
+										"instance-variable": "Ladder",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 152949513813998
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 525591782474931,
+							"parameters": {
+								"key": 40
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Text_Menu",
+							"sid": 601501489470706,
+							"parameters": {
+								"instance-variable": "SQ_Y",
+								"comparison": 5,
+								"value": "2"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Text_Menu",
+							"sid": 159441110546805,
+							"parameters": {
+								"instance-variable": "SQ_Y",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 690959035378875
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 687664024062713,
+							"parameters": {
+								"key": 38
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Text_Menu",
+							"sid": 810855140239296,
+							"parameters": {
+								"instance-variable": "SQ_Y",
+								"comparison": 3,
+								"value": "0"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Text_Menu",
+							"sid": 637892986474463,
+							"parameters": {
+								"instance-variable": "SQ_Y",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 217009322664530
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Text_Menu",
+							"sid": 331378627553746,
+							"parameters": {
+								"instance-variable": "SQ_Y",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 132476722919098,
+							"parameters": {
+								"tags": "\"SQ_Start\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "Text_Menu",
+							"sid": 809431095986878,
+							"parameters": {
+								"color": "rgbEx(50, 0, 0)"
+							}
+						}
+					],
+					"sid": 522341561893288
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Text_Menu",
+							"sid": 944681120621849,
+							"parameters": {
+								"instance-variable": "SQ_Y",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 117979003896466,
+							"parameters": {
+								"tags": "\"SQ_Ladder\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "Text_Menu",
+							"sid": 122002777757921,
+							"parameters": {
+								"color": "rgbEx(50, 0, 0)"
+							}
+						}
+					],
+					"sid": 324679905795662
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Text_Menu",
+							"sid": 684230552711759,
+							"parameters": {
+								"instance-variable": "SQ_Y",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Text_Menu",
+							"sid": 197526804229674,
+							"parameters": {
+								"tags": "\"SQ_Exit\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "Text_Menu",
+							"sid": 613828210188781,
+							"parameters": {
+								"color": "rgbEx(50, 0, 0)"
+							}
+						}
+					],
+					"sid": 142700123021594
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "Text_Leaderboard",
+							"sid": 444550715342308
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "Text_Leaderboard",
+							"sid": 893776859247632,
+							"parameters": {
+								"text": "Lang.At(Language,852) & \"             \" & Lang.At(Language,854) & \"\n\" &UpperCase(Leaderboard.At(0,0)) & \"                        \" & Leaderboard.At(1,0) & \"\n\" & UpperCase(Leaderboard.At(0,1)) & \"                        \" & Leaderboard.At(1,1) & \"\n\" & UpperCase(Leaderboard.At(0,2)) & \"                        \" & Leaderboard.At(1,2) & \"\n\" & UpperCase(Leaderboard.At(0,3)) & \"                        \" & Leaderboard.At(1,3) & \"\n\" & UpperCase(Leaderboard.At(0,4)) & \"                        \" & Leaderboard.At(1,4) & \"\n\" & UpperCase(Leaderboard.At(0,5)) & \"                        \" & Leaderboard.At(1,5)"
+							}
+						}
+					],
+					"sid": 786665896356101
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 698304538050963,
+							"parameters": {
+								"first-value": "Leaderboard.mrk",
+								"comparison": 4,
+								"second-value": "Leaderboard.dam"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 334250352817699,
+							"parameters": {
+								"x": "0",
+								"y": "4",
+								"value": "\"mrk\""
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 979259779380684,
+							"parameters": {
+								"x": "1",
+								"y": "4",
+								"value": "Leaderboard.mrk"
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 612697598085202,
+							"parameters": {
+								"x": "0",
+								"y": "5",
+								"value": "\"dam\""
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 761428195030482,
+							"parameters": {
+								"x": "1",
+								"y": "5",
+								"value": "60"
+							}
+						}
+					],
+					"sid": 621728251251609
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 265190854333987,
+							"parameters": {
+								"first-value": "Leaderboard.mrk",
+								"comparison": 4,
+								"second-value": "Leaderboard.lem"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 579705739589551,
+							"parameters": {
+								"x": "0",
+								"y": "3",
+								"value": "\"mrk\""
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 738904082674066,
+							"parameters": {
+								"x": "1",
+								"y": "3",
+								"value": "Leaderboard.mrk"
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 501659724425847,
+							"parameters": {
+								"x": "0",
+								"y": "4",
+								"value": "\"lem\""
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 872366762332501,
+							"parameters": {
+								"x": "1",
+								"y": "4",
+								"value": "70"
+							}
+						}
+					],
+					"sid": 386589534220867
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 625961830569180,
+							"parameters": {
+								"first-value": "Leaderboard.mrk",
+								"comparison": 4,
+								"second-value": "Leaderboard.rdh"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 152046309712610,
+							"parameters": {
+								"x": "0",
+								"y": "2",
+								"value": "\"mrk\""
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 333735368405543,
+							"parameters": {
+								"x": "1",
+								"y": "2",
+								"value": "Leaderboard.mrk"
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 902093065221214,
+							"parameters": {
+								"x": "0",
+								"y": "3",
+								"value": "\"rdh\""
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 431032311803668,
+							"parameters": {
+								"x": "1",
+								"y": "3",
+								"value": "80"
+							}
+						}
+					],
+					"sid": 503996433280231
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 104969860447512,
+							"parameters": {
+								"first-value": "Leaderboard.mrk",
+								"comparison": 4,
+								"second-value": "Leaderboard.flh"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 959622433932478,
+							"parameters": {
+								"x": "0",
+								"y": "1",
+								"value": "\"mrk\""
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 533962633104912,
+							"parameters": {
+								"x": "1",
+								"y": "1",
+								"value": "Leaderboard.mrk"
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 937325663825133,
+							"parameters": {
+								"x": "0",
+								"y": "2",
+								"value": "\"flh\""
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 733580946401450,
+							"parameters": {
+								"x": "1",
+								"y": "2",
+								"value": "90"
+							}
+						}
+					],
+					"sid": 401209280942510
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 125297668926274,
+							"parameters": {
+								"first-value": "Leaderboard.mrk",
+								"comparison": 4,
+								"second-value": "Leaderboard.Tig"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 320097737741725,
+							"parameters": {
+								"x": "0",
+								"y": "0",
+								"value": "\"mrk\""
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 991943800483316,
+							"parameters": {
+								"x": "1",
+								"y": "0",
+								"value": "Leaderboard.mrk"
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 419722759124074,
+							"parameters": {
+								"x": "0",
+								"y": "1",
+								"value": "\"Tig\""
+							}
+						},
+						{
+							"id": "set-at-xy",
+							"objectClass": "Leaderboard",
+							"sid": 427913852330522,
+							"parameters": {
+								"x": "1",
+								"y": "1",
+								"value": "100"
+							}
+						}
+					],
+					"sid": 656507380942284
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 811544265359391,
+							"parameters": {
+								"variable": "SQ_Start"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 135321718252027,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 612428061286602
+								}
+							],
+							"actions": [
+								{
+									"id": "set-image-offset-x",
+									"objectClass": "SQ_GroundEarth",
+									"sid": 652238212316005,
+									"parameters": {
+										"offset-x": "Self.ImageOffsetX - SQ_Speed * 0.003"
+									}
+								},
+								{
+									"id": "set-image-offset-x",
+									"objectClass": "SQ_City",
+									"sid": 718221009645142,
+									"parameters": {
+										"offset-x": "Self.ImageOffsetX - SQ_Speed * 0.0015"
+									}
+								},
+								{
+									"id": "set-image-offset-x",
+									"objectClass": "SQ_Sky",
+									"sid": 952821713804068,
+									"parameters": {
+										"offset-x": "Self.ImageOffsetX - SQ_Speed * 0.001"
+									}
+								},
+								{
+									"id": "set-image-offset-x",
+									"objectClass": "SQ_Square",
+									"sid": 839631066688120,
+									"parameters": {
+										"offset-x": "Self.ImageOffsetX - SQ_Speed * 0.001"
+									}
+								},
+								{
+									"id": "set-image-offset-y",
+									"objectClass": "SQ_Square",
+									"sid": 241911117001250,
+									"parameters": {
+										"offset-y": "Self.ImageOffsetY - SQ_Speed * -0.001"
+									}
+								}
+							],
+							"sid": 318152798818649
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "mouse-button-is-down",
+									"objectClass": "Mouse",
+									"sid": 918878941456659,
+									"parameters": {
+										"mouse-button": "left"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "SQ_Player_Runner",
+									"sid": 695750230244252,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"control": "jump"
+									}
+								}
+							],
+							"sid": 835891403981245
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "SQ_Build",
+									"sid": 240743695865751
+								}
+							],
+							"actions": [
+								{
+									"id": "set-speed",
+									"objectClass": "SQ_Build",
+									"sid": 481963577746576,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "-SQ_Speed"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "SQ_Build",
+									"sid": 411919222518372,
+									"parameters": {
+										"frame-number": "random(0,4)"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 659035780494666
+								}
+							],
+							"sid": 821381695456758
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "SQ_Build",
+									"sid": 390980672736294,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "SQ_Retro.X -150"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "SQ_Build",
+									"sid": 452469640099879
+								}
+							],
+							"sid": 452283134902469
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-destroyed",
+									"objectClass": "SQ_Build",
+									"sid": 544355919436382
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "SQ_Retro",
+									"sid": 489242792542242,
+									"parameters": {
+										"object": "SQ_Build",
+										"layer": "1",
+										"image-point": "1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 938754031088972
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "SQ_Build",
+									"sid": 373471345352798
+								}
+							],
+							"actions": [
+								{
+									"id": "spawn-another-object",
+									"objectClass": "SQ_Retro",
+									"sid": 523034093180103,
+									"parameters": {
+										"object": "SQ_Enemy_Runner",
+										"layer": "1",
+										"image-point": "1",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 239984884185024
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-created",
+									"objectClass": "SQ_Enemy_Runner",
+									"sid": 804021225846603
+								}
+							],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 353339728715350,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "SQ_Enemy_Runner",
+									"sid": 787590997490160,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "-SQ_Speed"
+									}
+								}
+							],
+							"sid": 585641260560697
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "SQ_Enemy_Runner",
+									"sid": 220330387654728,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "SQ_Retro.X -150"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "SQ_Enemy_Runner",
+									"sid": 766280405288865
+								}
+							],
+							"sid": 726890252115228
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "SQ_Player_Runner",
+									"sid": 894230528208722,
+									"parameters": {
+										"object": "SQ_Enemy_Runner"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "SQ_Enemy_Runner",
+									"sid": 467173086920956
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Leaderboard",
+									"sid": 100733847875515,
+									"parameters": {
+										"instance-variable": "mrk",
+										"value": "10"
+									}
+								}
+							],
+							"sid": 392056324993817,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 892787795216646,
+											"parameters": {
+												"count": "2"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Leaderboard",
+											"sid": 154462211511140,
+											"parameters": {
+												"instance-variable": "mrk",
+												"comparison": 5,
+												"value": "100"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Leaderboard",
+											"sid": 765156979761412,
+											"parameters": {
+												"instance-variable": "mrk",
+												"comparison": 2,
+												"value": "200"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 870650754038078,
+											"parameters": {
+												"object-to-create": "BloodCup",
+												"layer": "1",
+												"x": " random(SQ_Enemy_Runner.X-10, SQ_Enemy_Runner.X +10)",
+												"y": " random(SQ_Enemy_Runner.Y, SQ_Enemy_Runner.Y -10)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "move-to-object",
+											"objectClass": "BloodCup",
+											"sid": 948959150588489,
+											"parameters": {
+												"where": "behind",
+												"object": "SQ_Retro"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "BloodCup",
+											"sid": 893268494418790,
+											"parameters": {
+												"scale": "2"
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "BloodCup",
+											"sid": 819369517697791,
+											"parameters": {
+												"color": "rgbEx(255, 0, 0)"
+											}
+										},
+										{
+											"id": "apply-impulse-at-angle",
+											"objectClass": "BloodCup",
+											"sid": 665324392830515,
+											"behaviorType": "Физика",
+											"parameters": {
+												"impulse": "0.005",
+												"angle": "BloodCup.Angle - random(0,-10)",
+												"image-point": "0"
+											}
+										}
+									],
+									"sid": 591651507531536
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 595344031002074,
+											"parameters": {
+												"count": "10"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Leaderboard",
+											"sid": 948195902277093,
+											"parameters": {
+												"instance-variable": "mrk",
+												"comparison": 5,
+												"value": "200"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Leaderboard",
+											"sid": 105088139513731,
+											"disabled": true,
+											"parameters": {
+												"instance-variable": "mrk",
+												"comparison": 2,
+												"value": "300"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "create-object",
+											"objectClass": "System",
+											"sid": 230267560710028,
+											"parameters": {
+												"object-to-create": "BloodCup",
+												"layer": "1",
+												"x": " random(SQ_Enemy_Runner.X-10, SQ_Enemy_Runner.X +10)",
+												"y": " random(SQ_Enemy_Runner.Y, SQ_Enemy_Runner.Y -10)",
+												"create-hierarchy": false,
+												"template-name": "\"\""
+											}
+										},
+										{
+											"id": "move-to-object",
+											"objectClass": "BloodCup",
+											"sid": 108369701672789,
+											"parameters": {
+												"where": "behind",
+												"object": "SQ_Retro"
+											}
+										},
+										{
+											"id": "set-scale",
+											"objectClass": "BloodCup",
+											"sid": 146534424872955,
+											"parameters": {
+												"scale": "3"
+											}
+										},
+										{
+											"id": "set-default-color",
+											"objectClass": "BloodCup",
+											"sid": 608659524125063,
+											"parameters": {
+												"color": "rgbEx(255, 0, 0)"
+											}
+										},
+										{
+											"id": "apply-impulse-at-angle",
+											"objectClass": "BloodCup",
+											"sid": 931829661807159,
+											"behaviorType": "Физика",
+											"parameters": {
+												"impulse": "0.01",
+												"angle": "BloodCup.Angle - random(0,-15)",
+												"image-point": "0"
+											}
+										}
+									],
+									"sid": 764107459908436
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "SQ_Player_Runner",
+									"sid": 550376201597993,
+									"parameters": {
+										"object": "SQ_Build"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "SQ_Player_Runner",
+									"sid": 233534345056562
+								}
+							],
+							"sid": 128810248485853,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "BloodCup",
+									"sid": 757191291359061,
+									"disabled": true,
+									"parameters": {
+										"object": "SQ_Build"
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "BloodCup",
+									"sid": 578590975516972,
+									"parameters": {
+										"object": "SQ_GroundEarth"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "BloodCup",
+									"sid": 185556222559635,
+									"parameters": {
+										"animation": "\"End\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "BloodCup",
+									"sid": 454778694866640,
+									"behaviorType": "НастраиваемоеДвижение",
+									"parameters": {
+										"which": "overall",
+										"speed": "-SQ_Speed"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "BloodCup",
+									"sid": 473952407099271,
+									"behaviorType": "Физика",
+									"parameters": {
+										"mode": "disabled"
+									}
+								}
+							],
+							"sid": 440424295258035,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-animation-finished",
+									"objectClass": "BloodCup",
+									"sid": 689009904187642,
+									"parameters": {
+										"animation": "\"End\""
+									}
+								},
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "BloodCup",
+									"sid": 606030787371845,
+									"parameters": {
+										"object": "SQ_Player_Runner"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "BloodCup",
+									"sid": 645641597184191
+								}
+							],
+							"sid": 103778834031143,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Leaderboard",
+									"sid": 597508555071238,
+									"parameters": {
+										"instance-variable": "mrk",
+										"comparison": 5,
+										"value": "100"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Leaderboard",
+									"sid": 979258415775502,
+									"parameters": {
+										"instance-variable": "mrk",
+										"comparison": 2,
+										"value": "200"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 977778682932619,
+									"parameters": {
+										"variable": "SQ_Speed",
+										"value": "250"
+									}
+								}
+							],
+							"sid": 861741130540767
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Leaderboard",
+									"sid": 227525328273606,
+									"parameters": {
+										"instance-variable": "mrk",
+										"comparison": 5,
+										"value": "200"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Leaderboard",
+									"sid": 932308954578962,
+									"parameters": {
+										"instance-variable": "mrk",
+										"comparison": 2,
+										"value": "300"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 402455761651431,
+									"parameters": {
+										"variable": "SQ_Speed",
+										"value": "300"
+									}
+								}
+							],
+							"sid": 398596655657051
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "BloodCup",
+									"sid": 384604210858134,
+									"parameters": {
+										"comparison": 2,
+										"x-co-ordinate": "SQ_Retro.X -150"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "destroy",
+									"objectClass": "BloodCup",
+									"sid": 566019093562089
+								}
+							],
+							"sid": 391949918992735
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 726387142576728,
+							"parameters": {
+								"variable": "SQ_Start"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 410901103965305,
+							"parameters": {
+								"variable": "SQ_Speed",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 591353865319034
+				}
+			]
+		}
+	],
+	"sid": 807437685825596
+}
