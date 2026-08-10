@@ -202,9 +202,55 @@
 						"stereo-pan": "0",
 						"tag-optional": "\"music\""
 					}
+				},
+				{
+					"id": "set-canvas-size",
+					"objectClass": "System",
+					"sid": 214763126495441,
+					"parameters": {
+						"width": "Camera.Width*10",
+						"height": "Camera.Height*10"
+					}
 				}
 			],
 			"sid": 955541103538034
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Camera",
+					"sid": 627852920944276,
+					"disabled": true,
+					"parameters": {
+						"instance-variable": "onPlayer"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "Camera",
+					"sid": 315037190644615,
+					"disabled": true,
+					"parameters": {
+						"x": "lerp(Self.X,Player_All.X,0.1)",
+						"y": "lerp(Self.Y,Player_All.Y-50,0.1)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "borders",
+					"sid": 233444062551856,
+					"disabled": true,
+					"parameters": {
+						"x": "lerp(Self.X,OriginalViewportWidth,0.075)",
+						"y": "lerp(Self.Y,OriginalViewportHeight,0.075)"
+					}
+				}
+			],
+			"sid": 770673336369296
 		},
 		{
 			"eventType": "block",
@@ -262,7 +308,8 @@
 				{
 					"id": "move-to-top",
 					"objectClass": "SQ_Retro",
-					"sid": 586955221190404
+					"sid": 586955221190404,
+					"disabled": true
 				},
 				{
 					"id": "set-effect-parameter",
@@ -507,6 +554,14 @@
 							"parameters": {
 								"visibility": "visible"
 							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "SQ_Navig",
+							"sid": 675187389643428,
+							"parameters": {
+								"visibility": "visible"
+							}
 						}
 					],
 					"sid": 352710693083351
@@ -549,15 +604,6 @@
 									}
 								},
 								{
-									"id": "has-tags",
-									"objectClass": "Text_Signboard",
-									"sid": 598500504855278,
-									"parameters": {
-										"tags": "\"Score\""
-									},
-									"isInverted": true
-								},
-								{
 									"id": "is-boolean-instance-variable-set",
 									"objectClass": "SQ_Ladder",
 									"sid": 845391524854326,
@@ -565,6 +611,41 @@
 										"instance-variable": "Ladder"
 									},
 									"isInverted": true
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Signboard",
+									"sid": 347640612405501,
+									"parameters": {
+										"tags": "\"Score\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Signboard",
+									"sid": 544806744284437,
+									"parameters": {
+										"tags": "\"Press\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Signboard",
+									"sid": 300660473796380,
+									"parameters": {
+										"tags": "\"Navig\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "SQ_Navig",
+									"sid": 747954492227190,
+									"parameters": {
+										"animation": "\"Exit\""
+									}
 								}
 							],
 							"actions": [
@@ -608,6 +689,14 @@
 									"parameters": {
 										"instance-variable": "Ladder",
 										"value": "false"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "SQ_Navig",
+									"sid": 414476935144848,
+									"parameters": {
+										"visibility": "invisible"
 									}
 								},
 								{
@@ -672,6 +761,33 @@
 									"id": "is-visible",
 									"objectClass": "SQ_Ladder",
 									"sid": 268493100243850,
+									"isInverted": true
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Signboard",
+									"sid": 575015167806222,
+									"parameters": {
+										"tags": "\"Press\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Signboard",
+									"sid": 667166087505056,
+									"parameters": {
+										"tags": "\"Navig\""
+									},
+									"isInverted": true
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Signboard",
+									"sid": 872487606298251,
+									"parameters": {
+										"tags": "\"Exit\""
+									},
 									"isInverted": true
 								}
 							],
@@ -1365,6 +1481,14 @@
 									"parameters": {
 										"tag": "\"Go\""
 									}
+								},
+								{
+									"id": "has-tags",
+									"objectClass": "Text_Signboard",
+									"sid": 220256983058310,
+									"parameters": {
+										"tags": "\"Exit\""
+									}
 								}
 							],
 							"actions": [
@@ -1391,12 +1515,28 @@
 									}
 								},
 								{
+									"id": "set-visible",
+									"objectClass": "SQ_Navig",
+									"sid": 353009141017215,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "Text_Signboard",
+									"sid": 216076737604977,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
 									"id": "spawn-another-object",
 									"objectClass": "SQ_Retro",
-									"sid": 665974103407846,
+									"sid": 294490618109931,
 									"parameters": {
 										"object": "SQ_Player_Runner",
-										"layer": "1",
+										"layer": "\"SQ_Int\"",
 										"image-point": "3",
 										"create-hierarchy": false,
 										"template-name": "\"\""
@@ -1414,10 +1554,10 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "SQ_Retro",
-									"sid": 716359864717875,
+									"sid": 873453967206924,
 									"parameters": {
 										"object": "SQ_Build",
-										"layer": "1",
+										"layer": "\"SQ_Int\"",
 										"image-point": "1",
 										"create-hierarchy": false,
 										"template-name": "\"\""
@@ -1452,10 +1592,10 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "SQ_Retro",
-									"sid": 718591331793445,
+									"sid": 846986627823982,
 									"parameters": {
 										"object": "SQ_Boom",
-										"layer": "1",
+										"layer": "\"SQ_Int\"",
 										"image-point": "choose(4, 5, 6)",
 										"create-hierarchy": false,
 										"template-name": "\"\""
@@ -1531,6 +1671,15 @@
 									"sid": 768748723625616,
 									"parameters": {
 										"offset-y": "Self.ImageOffsetY - -SQ_Speed * dt * 0.25"
+									}
+								},
+								{
+									"id": "set-default-controls",
+									"objectClass": "SQ_Player_Runner",
+									"sid": 212268801193227,
+									"behaviorType": "Платформер",
+									"parameters": {
+										"default-controls": false
 									}
 								}
 							],
@@ -1730,10 +1879,10 @@
 										{
 											"id": "spawn-another-object",
 											"objectClass": "SQ_Retro",
-											"sid": 908604317968455,
+											"sid": 242928593201102,
 											"parameters": {
 												"object": "SQ_Roket",
-												"layer": "1",
+												"layer": "\"SQ_Int\"",
 												"image-point": "choose(1,2)",
 												"create-hierarchy": false,
 												"template-name": "\"\""
@@ -1786,10 +1935,10 @@
 								{
 									"id": "spawn-another-object",
 									"objectClass": "SQ_Retro",
-									"sid": 725769686717999,
+									"sid": 127770822726060,
 									"parameters": {
 										"object": "SQ_Enemy_Runner",
-										"layer": "1",
+										"layer": "\"SQ_Int\"",
 										"image-point": "1",
 										"create-hierarchy": false,
 										"template-name": "\"\""
@@ -1824,10 +1973,10 @@
 										{
 											"id": "spawn-another-object",
 											"objectClass": "SQ_Retro",
-											"sid": 730202293759698,
+											"sid": 331109208779516,
 											"parameters": {
 												"object": "SQ_Roket",
-												"layer": "1",
+												"layer": "\"SQ_Int\"",
 												"image-point": "choose(1,2)",
 												"create-hierarchy": false,
 												"template-name": "\"\""
@@ -1863,10 +2012,10 @@
 										{
 											"id": "spawn-another-object",
 											"objectClass": "SQ_Retro",
-											"sid": 694082446787143,
+											"sid": 915383804283647,
 											"parameters": {
 												"object": "SQ_Roket",
-												"layer": "1",
+												"layer": "\"SQ_Int\"",
 												"image-point": "1",
 												"create-hierarchy": false,
 												"template-name": "\"\""
@@ -3484,6 +3633,49 @@
 					"sid": 591353865319034
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 786691760959811,
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "SQ_Navig",
+					"sid": 446616205226987,
+					"parameters": {
+						"frame-number": "0"
+					}
+				}
+			],
+			"sid": 755854631267392
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "has-gamepads",
+					"objectClass": "Gamepad",
+					"sid": 423368426927371
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "SQ_Navig",
+					"sid": 377319936273408,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 132464818862481
 		}
 	],
 	"sid": 807437685825596
