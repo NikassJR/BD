@@ -680,13 +680,13 @@
 									}
 								},
 								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 880671565531719,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 808932788353249,
 									"parameters": {
-										"variable": "SQ_Start"
-									},
-									"isInverted": true
+										"gamepad": "0",
+										"button": "button-a"
+									}
 								}
 							],
 							"actions": [],
@@ -696,315 +696,334 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "Text_Signboard",
-											"sid": 682058872652540,
-											"parameters": {
-												"instance-variable": "SQ_Y",
-												"comparison": 0,
-												"value": "0"
-											}
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "SQ_Ladder",
-											"sid": 724786441278528,
-											"parameters": {
-												"instance-variable": "Ladder"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Signboard",
-											"sid": 676977878490265,
-											"parameters": {
-												"tags": "\"Score\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Signboard",
-											"sid": 596520582026284,
-											"parameters": {
-												"tags": "\"Press\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Signboard",
-											"sid": 608669739901964,
-											"parameters": {
-												"tags": "\"Navig\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-animation-playing",
-											"objectClass": "SQ_Navig",
-											"sid": 101770756687586,
-											"parameters": {
-												"animation": "\"Exit\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-eventvar",
+											"id": "compare-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 367092620848827,
+											"sid": 549863327739383,
 											"parameters": {
-												"variable": "SQ_Start",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "Text_Signboard",
-											"sid": 233888164929182,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "SQ_Ladder",
-											"sid": 693556880477719,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "Text_Leaderboard",
-											"sid": 732785442195465,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "SQ_Ladder",
-											"sid": 965763324040929,
-											"parameters": {
-												"instance-variable": "Ladder",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "SQ_Navig",
-											"sid": 824835391177111,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "tween-one-property",
-											"objectClass": "SQ_Tile",
-											"sid": 834073262533300,
-											"behaviorType": "Твинанимация",
-											"parameters": {
-												"tags": "\"\"",
-												"property": "offsetColor",
-												"end-value": "rgba255(0, 0, 0, 100)",
-												"time": "1",
-												"ease": "default",
-												"destroy-on-complete": "no",
-												"loop": "no",
-												"ping-pong": "no",
-												"repeat-count": "1"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 476434384667625,
-											"parameters": {
-												"seconds": "2",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "SQ_Tile",
-											"sid": 331971725375755,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "signal",
-											"objectClass": "System",
-											"sid": 477243381973306,
-											"parameters": {
-												"tag": "\"Go\""
-											}
-										}
-									],
-									"sid": 557720394134901
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Text_Signboard",
-											"sid": 258254266575160,
-											"parameters": {
-												"instance-variable": "SQ_Y",
-												"comparison": 0,
-												"value": "1"
-											}
-										},
-										{
-											"id": "is-visible",
-											"objectClass": "SQ_Ladder",
-											"sid": 959729716301346,
-											"isInverted": true
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Signboard",
-											"sid": 443871058972456,
-											"parameters": {
-												"tags": "\"Press\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Signboard",
-											"sid": 800019893338351,
-											"parameters": {
-												"tags": "\"Navig\""
-											},
-											"isInverted": true
-										},
-										{
-											"id": "has-tags",
-											"objectClass": "Text_Signboard",
-											"sid": 462704027073130,
-											"parameters": {
-												"tags": "\"Exit\""
+												"variable": "SQ_Start"
 											},
 											"isInverted": true
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 507866427219586,
+									"children": [
 										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 723629343176444,
-											"parameters": {
-												"seconds": "0.1",
-												"use-timescale": true
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Text_Signboard",
+													"sid": 634487892608217,
+													"parameters": {
+														"instance-variable": "SQ_Y",
+														"comparison": 0,
+														"value": "0"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "SQ_Ladder",
+													"sid": 895087757235322,
+													"parameters": {
+														"instance-variable": "Ladder"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Signboard",
+													"sid": 808602151093002,
+													"parameters": {
+														"tags": "\"Score\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Signboard",
+													"sid": 745723937684065,
+													"parameters": {
+														"tags": "\"Press\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Signboard",
+													"sid": 295995672521703,
+													"parameters": {
+														"tags": "\"Navig\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-animation-playing",
+													"objectClass": "SQ_Navig",
+													"sid": 366278625581906,
+													"parameters": {
+														"animation": "\"Exit\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 986661304629110,
+													"parameters": {
+														"variable": "SQ_Start",
+														"value": "true"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Text_Signboard",
+													"sid": 164162462789583,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "SQ_Ladder",
+													"sid": 645841918937758,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Text_Leaderboard",
+													"sid": 607618900054861,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "SQ_Ladder",
+													"sid": 518268133585128,
+													"parameters": {
+														"instance-variable": "Ladder",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "SQ_Navig",
+													"sid": 846398636165484,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "tween-one-property",
+													"objectClass": "SQ_Tile",
+													"sid": 671047606321581,
+													"behaviorType": "Твинанимация",
+													"parameters": {
+														"tags": "\"\"",
+														"property": "offsetColor",
+														"end-value": "rgba255(0, 0, 0, 100)",
+														"time": "1",
+														"ease": "default",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 530381721133919,
+													"parameters": {
+														"seconds": "2",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "SQ_Tile",
+													"sid": 234056245007923,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "signal",
+													"objectClass": "System",
+													"sid": 208496976442841,
+													"parameters": {
+														"tag": "\"Go\""
+													}
+												}
+											],
+											"sid": 532532920894338
 										},
 										{
-											"id": "set-visible",
-											"objectClass": "Text_Signboard",
-											"sid": 613125810174152,
-											"parameters": {
-												"visibility": "invisible"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Text_Signboard",
+													"sid": 929759853218780,
+													"parameters": {
+														"instance-variable": "SQ_Y",
+														"comparison": 0,
+														"value": "1"
+													}
+												},
+												{
+													"id": "is-visible",
+													"objectClass": "SQ_Ladder",
+													"sid": 132357571106993,
+													"isInverted": true
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Signboard",
+													"sid": 103896487118791,
+													"parameters": {
+														"tags": "\"Press\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Signboard",
+													"sid": 784186694857553,
+													"parameters": {
+														"tags": "\"Navig\""
+													},
+													"isInverted": true
+												},
+												{
+													"id": "has-tags",
+													"objectClass": "Text_Signboard",
+													"sid": 219667476558011,
+													"parameters": {
+														"tags": "\"Exit\""
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 559219596110021,
+													"parameters": {
+														"seconds": "0.1",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Text_Signboard",
+													"sid": 916778032480214,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "SQ_Ladder",
+													"sid": 369983825011726,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Text_Leaderboard",
+													"sid": 636306722215975,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "SQ_Ladder",
+													"sid": 884904763456527,
+													"parameters": {
+														"instance-variable": "Ladder",
+														"value": "true"
+													}
+												}
+											],
+											"sid": 323124089823227
 										},
 										{
-											"id": "set-visible",
-											"objectClass": "SQ_Ladder",
-											"sid": 500034686484911,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "Text_Leaderboard",
-											"sid": 748886399084884,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "SQ_Ladder",
-											"sid": 776036674119972,
-											"parameters": {
-												"instance-variable": "Ladder",
-												"value": "true"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Text_Signboard",
+													"sid": 867805228441275,
+													"parameters": {
+														"instance-variable": "SQ_Y",
+														"comparison": 0,
+														"value": "1"
+													}
+												},
+												{
+													"id": "is-visible",
+													"objectClass": "SQ_Ladder",
+													"sid": 953533066181136
+												}
+											],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 951037783453361,
+													"parameters": {
+														"seconds": "0.1",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Text_Signboard",
+													"sid": 376827440352658,
+													"parameters": {
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "SQ_Ladder",
+													"sid": 820810293099940,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-visible",
+													"objectClass": "Text_Leaderboard",
+													"sid": 707464402272234,
+													"parameters": {
+														"visibility": "invisible"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "SQ_Ladder",
+													"sid": 427947556340895,
+													"parameters": {
+														"instance-variable": "Ladder",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 176950483713524
 										}
-									],
-									"sid": 732286527564296
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Text_Signboard",
-											"sid": 332078345669489,
-											"parameters": {
-												"instance-variable": "SQ_Y",
-												"comparison": 0,
-												"value": "1"
-											}
-										},
-										{
-											"id": "is-visible",
-											"objectClass": "SQ_Ladder",
-											"sid": 627663660859308
-										}
-									],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 263598071496085,
-											"parameters": {
-												"seconds": "0.1",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "Text_Signboard",
-											"sid": 285361611754167,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "SQ_Ladder",
-											"sid": 376941312926486,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "Text_Leaderboard",
-											"sid": 655886818051922,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "SQ_Ladder",
-											"sid": 516314658918406,
-											"parameters": {
-												"instance-variable": "Ladder",
-												"value": "false"
-											}
-										}
-									],
-									"sid": 970600814745098
+									]
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -1018,47 +1037,66 @@
 									}
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Text_Signboard",
-									"sid": 822934011905868,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 324574393395099,
 									"parameters": {
-										"instance-variable": "SQ_Y",
-										"comparison": 5,
-										"value": "2"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "SQ_Ladder",
-									"sid": 498279540248702,
-									"parameters": {
-										"instance-variable": "Ladder"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 547866713369488,
-									"parameters": {
-										"variable": "SQ_Start"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-instvar",
-									"objectClass": "Text_Signboard",
-									"sid": 283449251579362,
-									"parameters": {
-										"instance-variable": "SQ_Y",
-										"value": "1"
+										"gamepad": "0",
+										"button": "d-pad-down"
 									}
 								}
 							],
-							"sid": 607416184978132
+							"actions": [],
+							"sid": 607416184978132,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Text_Signboard",
+											"sid": 856811240979779,
+											"parameters": {
+												"instance-variable": "SQ_Y",
+												"comparison": 5,
+												"value": "2"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "SQ_Ladder",
+											"sid": 627181845896508,
+											"parameters": {
+												"instance-variable": "Ladder"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 493110299446355,
+											"parameters": {
+												"variable": "SQ_Start"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-instvar",
+											"objectClass": "Text_Signboard",
+											"sid": 956779515580245,
+											"parameters": {
+												"instance-variable": "SQ_Y",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 485263011376182
+								}
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -1072,47 +1110,66 @@
 									}
 								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "Text_Signboard",
-									"sid": 588592458077115,
+									"id": "on-button-pressed",
+									"objectClass": "Gamepad",
+									"sid": 245868321308568,
 									"parameters": {
-										"instance-variable": "SQ_Y",
-										"comparison": 3,
-										"value": "0"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "is-boolean-instance-variable-set",
-									"objectClass": "SQ_Ladder",
-									"sid": 630751540266113,
-									"parameters": {
-										"instance-variable": "Ladder"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 682365020349849,
-									"parameters": {
-										"variable": "SQ_Start"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "subtract-from-instvar",
-									"objectClass": "Text_Signboard",
-									"sid": 702934610457586,
-									"parameters": {
-										"instance-variable": "SQ_Y",
-										"value": "1"
+										"gamepad": "0",
+										"button": "d-pad-up"
 									}
 								}
 							],
-							"sid": 758089745639035
+							"actions": [],
+							"sid": 758089745639035,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Text_Signboard",
+											"sid": 564988518759079,
+											"parameters": {
+												"instance-variable": "SQ_Y",
+												"comparison": 3,
+												"value": "0"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "SQ_Ladder",
+											"sid": 677488837221344,
+											"parameters": {
+												"instance-variable": "Ladder"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 414721909958378,
+											"parameters": {
+												"variable": "SQ_Start"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "subtract-from-instvar",
+											"objectClass": "Text_Signboard",
+											"sid": 463231053194600,
+											"parameters": {
+												"instance-variable": "SQ_Y",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 352781946961848
+								}
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -1806,6 +1863,23 @@
 											"parameters": {
 												"mouse-button": "left"
 											}
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 780329961484686,
+											"parameters": {
+												"key": 32
+											}
+										},
+										{
+											"id": "is-button-down",
+											"objectClass": "Gamepad",
+											"sid": 471701397152164,
+											"parameters": {
+												"gamepad": "0",
+												"button": "button-a"
+											}
 										}
 									],
 									"actions": [
@@ -1837,7 +1911,8 @@
 											}
 										}
 									],
-									"sid": 246886429223406
+									"sid": 246886429223406,
+									"isOrBlock": true
 								},
 								{
 									"eventType": "block",
@@ -3457,50 +3532,69 @@
 											}
 										},
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "SQ_Retro",
-											"sid": 619603337433176,
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 981292005703088,
 											"parameters": {
-												"instance-variable": "Hp_Player",
-												"comparison": 4,
-												"value": "0"
-											}
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "SQ_Retro",
-											"sid": 639156068920644,
-											"parameters": {
-												"instance-variable": "Closed"
+												"gamepad": "0",
+												"button": "button-y"
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 376968737639163,
+									"children": [
 										{
-											"id": "set-instvar-value",
-											"objectClass": "SQ_Retro",
-											"sid": 991114539277824,
-											"parameters": {
-												"instance-variable": "Hp_Player",
-												"value": "-1"
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "SQ_Retro",
-											"sid": 302895334040233,
-											"parameters": {
-												"instance-variable": "Closed",
-												"value": "false"
-											}
-										},
-										{
-											"id": "destroy",
-											"objectClass": "SQ_Player_Runner",
-											"sid": 251953036921277
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "SQ_Retro",
+													"sid": 912522854073154,
+													"parameters": {
+														"instance-variable": "Hp_Player",
+														"comparison": 4,
+														"value": "0"
+													}
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "SQ_Retro",
+													"sid": 785794064734599,
+													"parameters": {
+														"instance-variable": "Closed"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-instvar-value",
+													"objectClass": "SQ_Retro",
+													"sid": 960135304542553,
+													"parameters": {
+														"instance-variable": "Hp_Player",
+														"value": "-1"
+													}
+												},
+												{
+													"id": "set-boolean-instvar",
+													"objectClass": "SQ_Retro",
+													"sid": 561187945911632,
+													"parameters": {
+														"instance-variable": "Closed",
+														"value": "false"
+													}
+												},
+												{
+													"id": "destroy",
+													"objectClass": "SQ_Player_Runner",
+													"sid": 308343202871719
+												}
+											],
+											"sid": 908759927855513
 										}
 									],
-									"sid": 376968737639163
+									"isOrBlock": true
 								},
 								{
 									"eventType": "block",
@@ -3654,6 +3748,15 @@
 											"sid": 487524293350229,
 											"parameters": {
 												"key": 69
+											}
+										},
+										{
+											"id": "on-button-pressed",
+											"objectClass": "Gamepad",
+											"sid": 188265286434168,
+											"parameters": {
+												"gamepad": "0",
+												"button": "button-y"
 											}
 										}
 									],
@@ -4492,79 +4595,98 @@
 					}
 				},
 				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Player_All",
-					"sid": 531675801641617,
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 681946846638202,
 					"parameters": {
-						"object": "Arcade"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 548681636310279,
-					"parameters": {
-						"variable": "Square_Killers"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 184640600820121,
-					"parameters": {
-						"seconds": "0.1",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 708249722992800,
-					"parameters": {
-						"group-name": "\"Player\"",
-						"state": "deactivated"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 879503538638249,
-					"parameters": {
-						"variable": "Square_Killers",
-						"value": "true"
-					}
-				},
-				{
-					"id": "signal",
-					"objectClass": "System",
-					"sid": 666901714658755,
-					"parameters": {
-						"tag": "\"Start\""
-					}
-				},
-				{
-					"id": "set-boolean-instvar",
-					"objectClass": "Camera",
-					"sid": 693307745238733,
-					"parameters": {
-						"instance-variable": "onPlayer",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Camera",
-					"sid": 421958825709110,
-					"parameters": {
-						"x": "SQ_Retro.ImagePointX(\"7\")",
-						"y": "SQ_Retro.ImagePointY(\"7\")"
+						"gamepad": "0",
+						"button": "button-y"
 					}
 				}
 			],
-			"sid": 758379848174130
+			"actions": [],
+			"sid": 758379848174130,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_All",
+							"sid": 762194606403184,
+							"parameters": {
+								"object": "Arcade"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 665782673391544,
+							"parameters": {
+								"variable": "Square_Killers"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 435471469260665,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 566613343138964,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 765190550260477,
+							"parameters": {
+								"variable": "Square_Killers",
+								"value": "true"
+							}
+						},
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 763363519705451,
+							"parameters": {
+								"tag": "\"Start\""
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Camera",
+							"sid": 504843191275329,
+							"parameters": {
+								"instance-variable": "onPlayer",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "Camera",
+							"sid": 572234660567942,
+							"parameters": {
+								"x": "SQ_Retro.ImagePointX(\"7\")",
+								"y": "SQ_Retro.ImagePointY(\"7\")"
+							}
+						}
+					],
+					"sid": 942341535782124
+				}
+			],
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -4611,175 +4733,194 @@
 					}
 				},
 				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 303915412139737,
+					"id": "on-button-pressed",
+					"objectClass": "Gamepad",
+					"sid": 684937220044803,
 					"parameters": {
-						"variable": "Square_Killers"
+						"gamepad": "0",
+						"button": "button-y"
 					}
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "SQ_Tile",
-					"sid": 461567321017525,
-					"parameters": {
-						"instance-variable": "Go"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 300279226442191,
-					"parameters": {
-						"variable": "SQ_Start"
-					},
-					"isInverted": true
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 255559417679247,
+			"children": [
 				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 122576777558546,
-					"parameters": {
-						"variable": "SQ_Speed",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 760670805930876,
-					"parameters": {
-						"variable": "SQ_Start",
-						"value": "false"
-					}
-				},
-				{
-					"id": "stop",
-					"objectClass": "Audio",
-					"sid": 732817719584095,
-					"parameters": {
-						"tag": "\"music\""
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "SQ_Tile",
-					"sid": 566033867938322,
-					"parameters": {
-						"instance-variable": "PixelProgress",
-						"value": "16"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "SQ_Tile",
-					"sid": 442684194378272,
-					"parameters": {
-						"instance-variable": "PixelTile",
-						"value": "10"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "SQ_Ladder",
-					"sid": 284312279368330,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "Text_Leaderboard",
-					"sid": 803503766541433,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "SQ_Tile",
-					"sid": 469730051589311,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "Text_Leaderboard",
-					"sid": 431698589668359,
-					"parameters": {
-						"instance-variable": "Score",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "SQ_Retro",
-					"sid": 134197702515572,
-					"parameters": {
-						"instance-variable": "Hp_Player",
-						"value": "2"
-					}
-				},
-				{
-					"id": "set-boolean-instvar",
-					"objectClass": "SQ_Ladder",
-					"sid": 391106204255778,
-					"parameters": {
-						"instance-variable": "Ladder",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 152262618202709,
-					"parameters": {
-						"variable": "Square_Killers",
-						"value": "false"
-					}
-				},
-				{
-					"id": "wait-for-previous-actions",
-					"objectClass": "System",
-					"sid": 715910477698654
-				},
-				{
-					"id": "set-boolean-instvar",
-					"objectClass": "Camera",
-					"sid": 409817296552118,
-					"parameters": {
-						"instance-variable": "onPlayer",
-						"value": "true"
-					}
-				},
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 934808328275653,
-					"parameters": {
-						"group-name": "\"Player\"",
-						"state": "activated"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 317288494404295,
-					"parameters": {
-						"audio-file": {
-							"path": "Music/Bar_embient"
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 496656824035458,
+							"parameters": {
+								"variable": "Square_Killers"
+							}
 						},
-						"loop": "looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"music\""
-					}
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "SQ_Tile",
+							"sid": 407751653554068,
+							"parameters": {
+								"instance-variable": "Go"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 629994929140852,
+							"parameters": {
+								"variable": "SQ_Start"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 166198803755650,
+							"parameters": {
+								"variable": "SQ_Speed",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 581322657435276,
+							"parameters": {
+								"variable": "SQ_Start",
+								"value": "false"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 960797470713517,
+							"parameters": {
+								"tag": "\"music\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "SQ_Tile",
+							"sid": 217418452923028,
+							"parameters": {
+								"instance-variable": "PixelProgress",
+								"value": "16"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "SQ_Tile",
+							"sid": 817920444301554,
+							"parameters": {
+								"instance-variable": "PixelTile",
+								"value": "10"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "SQ_Ladder",
+							"sid": 372018225533148,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Text_Leaderboard",
+							"sid": 751462984977181,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "SQ_Tile",
+							"sid": 197968345919588,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Text_Leaderboard",
+							"sid": 112894089765713,
+							"parameters": {
+								"instance-variable": "Score",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "SQ_Retro",
+							"sid": 835531973339375,
+							"parameters": {
+								"instance-variable": "Hp_Player",
+								"value": "2"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "SQ_Ladder",
+							"sid": 361659608405628,
+							"parameters": {
+								"instance-variable": "Ladder",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 862365466541671,
+							"parameters": {
+								"variable": "Square_Killers",
+								"value": "false"
+							}
+						},
+						{
+							"id": "wait-for-previous-actions",
+							"objectClass": "System",
+							"sid": 797023944360956
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Camera",
+							"sid": 216761003131834,
+							"parameters": {
+								"instance-variable": "onPlayer",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 632120616155088,
+							"parameters": {
+								"group-name": "\"Player\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 232260310872546,
+							"parameters": {
+								"audio-file": {
+									"path": "Music/Bar_embient"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"music\""
+							}
+						}
+					],
+					"sid": 124681225788602
 				}
 			],
-			"sid": 255559417679247
+			"isOrBlock": true
 		}
 	],
 	"sid": 807437685825596
