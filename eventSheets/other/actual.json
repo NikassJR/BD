@@ -550,10 +550,19 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "EnemyJunkieKnife",
-									"sid": 421968617841898,
+									"sid": 176420662617777,
 									"parameters": {
 										"instance-variable": "Fear",
-										"value": "100"
+										"value": "1000"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "EnemyJunkieKnife",
+									"sid": 781038376397096,
+									"parameters": {
+										"instance-variable": "Junkie",
+										"value": "true"
 									}
 								},
 								{
@@ -577,10 +586,19 @@
 								{
 									"id": "set-instvar-value",
 									"objectClass": "EnemyJunkie",
-									"sid": 689657462257991,
+									"sid": 745630553908384,
 									"parameters": {
 										"instance-variable": "Fear",
-										"value": "100"
+										"value": "1000"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "EnemyJunkie",
+									"sid": 720484181643571,
+									"parameters": {
+										"instance-variable": "Junkie",
+										"value": "true"
 									}
 								},
 								{
@@ -25598,6 +25616,14 @@
 																"height-type": "no",
 																"z": false
 															}
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "RunFear",
+															"sid": 680113855193687,
+															"parameters": {
+																"visibility": "invisible"
+															}
 														}
 													],
 													"sid": 744959938748538
@@ -25973,6 +25999,46 @@
 													"isInverted": true
 												},
 												{
+													"id": "compare-instance-variable",
+													"objectClass": "Enemy_Mili",
+													"sid": 564064947571106,
+													"parameters": {
+														"instance-variable": "Fear",
+														"comparison": 3,
+														"value": "0"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "Enemy_Mili",
+													"sid": 435123129407828,
+													"parameters": {
+														"instance-variable": "HP",
+														"comparison": 3,
+														"value": "0"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 848868652732193,
+													"parameters": {
+														"instance-variable": "Fat"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "Enemy_Mili",
+													"sid": 535260561840413,
+													"parameters": {
+														"instance-variable": "Junkie"
+													},
+													"isInverted": true
+												},
+												{
 													"id": "for-each",
 													"objectClass": "System",
 													"sid": 643708574465969,
@@ -26066,7 +26132,7 @@
 														{
 															"id": "start-timer",
 															"objectClass": "Enemy_Mili",
-															"sid": 793758670040315,
+															"sid": 571446675126280,
 															"behaviorType": "Таймер",
 															"parameters": {
 																"duration": "1",

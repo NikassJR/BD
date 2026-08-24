@@ -52,6 +52,16 @@
 			"sid": 286700901316879
 		},
 		{
+			"eventType": "variable",
+			"name": "PrevScore",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 973311746041613
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "Menu"
 		},
@@ -160,11 +170,11 @@
 						{
 							"id": "set-at-xy",
 							"objectClass": "Leaderboard",
-							"sid": 295971763540599,
+							"sid": 154903093773448,
 							"parameters": {
 								"x": "1",
 								"y": "0",
-								"value": "100"
+								"value": "610"
 							}
 						},
 						{
@@ -180,11 +190,11 @@
 						{
 							"id": "set-at-xy",
 							"objectClass": "Leaderboard",
-							"sid": 410235081559603,
+							"sid": 155086224918076,
 							"parameters": {
 								"x": "1",
 								"y": "1",
-								"value": "90"
+								"value": "300"
 							}
 						},
 						{
@@ -200,11 +210,11 @@
 						{
 							"id": "set-at-xy",
 							"objectClass": "Leaderboard",
-							"sid": 484813315628605,
+							"sid": 149886507619808,
 							"parameters": {
 								"x": "1",
 								"y": "2",
-								"value": "80"
+								"value": "250"
 							}
 						},
 						{
@@ -220,11 +230,11 @@
 						{
 							"id": "set-at-xy",
 							"objectClass": "Leaderboard",
-							"sid": 603560775417452,
+							"sid": 981095962444324,
 							"parameters": {
 								"x": "1",
 								"y": "3",
-								"value": "70"
+								"value": "150"
 							}
 						},
 						{
@@ -240,11 +250,11 @@
 						{
 							"id": "set-at-xy",
 							"objectClass": "Leaderboard",
-							"sid": 909662329985184,
+							"sid": 150837240467721,
 							"parameters": {
 								"x": "1",
 								"y": "4",
-								"value": "60"
+								"value": "110"
 							}
 						},
 						{
@@ -1634,6 +1644,68 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "compare-instance-variable",
+											"objectClass": "SQ_Retro",
+											"sid": 884470599041516,
+											"parameters": {
+												"instance-variable": "Build",
+												"comparison": 0,
+												"value": "0"
+											}
+										},
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 746643089503250
+										}
+									],
+									"actions": [
+										{
+											"id": "set-image-offset-x",
+											"objectClass": "SQ_GroundEarth",
+											"sid": 752923113315138,
+											"parameters": {
+												"offset-x": "Self.ImageOffsetX - SQ_Speed * dt"
+											}
+										}
+									],
+									"sid": 609291316172299
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "SQ_Retro",
+											"sid": 622534090860031,
+											"parameters": {
+												"instance-variable": "Build",
+												"comparison": 4,
+												"value": "0"
+											}
+										},
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 590739704710124
+										}
+									],
+									"actions": [
+										{
+											"id": "set-image-offset-x",
+											"objectClass": "SQ_GroundEarth",
+											"sid": 771573614679004,
+											"parameters": {
+												"offset-x": "Self.ImageOffsetX - SQ_Build.НастраиваемоеДвижение.Speed * dt "
+											}
+										}
+									],
+									"sid": 287183527344576
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
 											"id": "on-signal",
 											"objectClass": "System",
 											"sid": 413369035500418,
@@ -1803,14 +1875,6 @@
 									"actions": [
 										{
 											"id": "set-image-offset-x",
-											"objectClass": "SQ_GroundEarth",
-											"sid": 810703386912898,
-											"parameters": {
-												"offset-x": "Self.ImageOffsetX - SQ_Build.НастраиваемоеДвижение.Speed * dt "
-											}
-										},
-										{
-											"id": "set-image-offset-x",
 											"objectClass": "SQ_City",
 											"sid": 153287735595457,
 											"parameters": {
@@ -1849,9 +1913,37 @@
 											"parameters": {
 												"default-controls": false
 											}
+										},
+										{
+											"id": "set-instvar-value",
+											"objectClass": "SQ_Retro",
+											"sid": 502828707135817,
+											"parameters": {
+												"instance-variable": "Build",
+												"value": "SQ_Build.Count"
+											}
 										}
 									],
 									"sid": 852052897896109
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-moving",
+											"objectClass": "SQ_Build",
+											"sid": 149799655227696,
+											"behaviorType": "НастраиваемоеДвижение"
+										},
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 355793604470605
+										}
+									],
+									"actions": [],
+									"sid": 471687894915722,
+									"disabled": true
 								},
 								{
 									"eventType": "block",
@@ -1976,9 +2068,9 @@
 										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 123144947145657,
+											"sid": 667094087985862,
 											"parameters": {
-												"seconds": "random(0.3, 0.5)",
+												"seconds": "random(0.3, 0.8)",
 												"use-timescale": true
 											}
 										},
@@ -2030,9 +2122,9 @@
 										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 292025323854073,
+											"sid": 989770061814344,
 											"parameters": {
-												"seconds": "random(0.2, 0.3)",
+												"seconds": "random(0.2, 0.6)",
 												"use-timescale": true
 											}
 										},
@@ -3353,10 +3445,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 250184112511095,
+											"sid": 423841883119109,
 											"parameters": {
 												"variable": "SQ_Speed",
-												"value": "250"
+												"value": "225"
 											}
 										}
 									],
@@ -3395,10 +3487,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 324970219211358,
+											"sid": 995367443376532,
 											"parameters": {
 												"variable": "SQ_Speed",
-												"value": "300"
+												"value": "250"
 											}
 										}
 									],
@@ -3437,10 +3529,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 905073125953645,
+											"sid": 581436294325235,
 											"parameters": {
 												"variable": "SQ_Speed",
-												"value": "350"
+												"value": "275"
 											}
 										}
 									],
@@ -3479,10 +3571,10 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 397776980387018,
+											"sid": 897409611114798,
 											"parameters": {
 												"variable": "SQ_Speed",
-												"value": "400"
+												"value": "300"
 											}
 										}
 									],
@@ -3791,6 +3883,15 @@
 													}
 												},
 												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 817786283339410,
+													"parameters": {
+														"variable": "PrevScore",
+														"value": "0"
+													}
+												},
+												{
 													"id": "set-boolean-instvar",
 													"objectClass": "SQ_Ladder",
 													"sid": 744616493208591,
@@ -3919,211 +4020,52 @@
 									"eventType": "block",
 									"conditions": [
 										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 654130632230131
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 527645225008077,
+											"parameters": {
+												"first-value": "floor(Text_Leaderboard.Score / 100)",
+												"comparison": 4,
+												"second-value": "floor(PrevScore / 100)"
+											}
+										},
+										{
 											"id": "compare-instance-variable",
 											"objectClass": "SQ_Retro",
-											"sid": 945644045117470,
+											"sid": 582403503972104,
 											"parameters": {
 												"instance-variable": "Hp_Player",
 												"comparison": 2,
 												"value": "2"
 											}
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Text_Leaderboard",
-											"sid": 419478019564118,
-											"parameters": {
-												"instance-variable": "Score",
-												"comparison": 0,
-												"value": "100"
-											}
-										},
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 994961581947740
 										}
 									],
 									"actions": [
 										{
 											"id": "add-to-instvar",
 											"objectClass": "SQ_Retro",
-											"sid": 745183812036278,
+											"sid": 854407286348301,
 											"parameters": {
 												"instance-variable": "Hp_Player",
 												"value": "1"
 											}
-										}
-									],
-									"sid": 381028922134733
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "SQ_Retro",
-											"sid": 571426030945781,
-											"parameters": {
-												"instance-variable": "Hp_Player",
-												"comparison": 2,
-												"value": "2"
-											}
 										},
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "Text_Leaderboard",
-											"sid": 143707108655483,
-											"parameters": {
-												"instance-variable": "Score",
-												"comparison": 0,
-												"value": "200"
-											}
-										},
-										{
-											"id": "trigger-once-while-true",
+											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 561422042584697
-										}
-									],
-									"actions": [
-										{
-											"id": "add-to-instvar",
-											"objectClass": "SQ_Retro",
-											"sid": 972090406867511,
+											"sid": 119722396996844,
 											"parameters": {
-												"instance-variable": "Hp_Player",
-												"value": "1"
+												"variable": "PrevScore",
+												"value": "Text_Leaderboard.Score"
 											}
 										}
 									],
-									"sid": 645778535572597
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "SQ_Retro",
-											"sid": 305869373431465,
-											"parameters": {
-												"instance-variable": "Hp_Player",
-												"comparison": 2,
-												"value": "2"
-											}
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Text_Leaderboard",
-											"sid": 188598027039594,
-											"parameters": {
-												"instance-variable": "Score",
-												"comparison": 0,
-												"value": "300"
-											}
-										},
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 710233352618246
-										}
-									],
-									"actions": [
-										{
-											"id": "add-to-instvar",
-											"objectClass": "SQ_Retro",
-											"sid": 894651277821155,
-											"parameters": {
-												"instance-variable": "Hp_Player",
-												"value": "1"
-											}
-										}
-									],
-									"sid": 625484665803764
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "SQ_Retro",
-											"sid": 915432595396198,
-											"parameters": {
-												"instance-variable": "Hp_Player",
-												"comparison": 2,
-												"value": "2"
-											}
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Text_Leaderboard",
-											"sid": 512696264415692,
-											"parameters": {
-												"instance-variable": "Score",
-												"comparison": 0,
-												"value": "400"
-											}
-										},
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 821328780460355
-										}
-									],
-									"actions": [
-										{
-											"id": "add-to-instvar",
-											"objectClass": "SQ_Retro",
-											"sid": 142201828229760,
-											"parameters": {
-												"instance-variable": "Hp_Player",
-												"value": "1"
-											}
-										}
-									],
-									"sid": 823391099684971
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "SQ_Retro",
-											"sid": 628738649224977,
-											"parameters": {
-												"instance-variable": "Hp_Player",
-												"comparison": 2,
-												"value": "2"
-											}
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Text_Leaderboard",
-											"sid": 764935391437523,
-											"parameters": {
-												"instance-variable": "Score",
-												"comparison": 0,
-												"value": "500"
-											}
-										},
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 149361323896780
-										}
-									],
-									"actions": [
-										{
-											"id": "add-to-instvar",
-											"objectClass": "SQ_Retro",
-											"sid": 855854913961672,
-											"parameters": {
-												"instance-variable": "Hp_Player",
-												"value": "1"
-											}
-										}
-									],
-									"sid": 754523139755553
+									"sid": 811582725153474
 								},
 								{
 									"eventType": "block",

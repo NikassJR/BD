@@ -10,6 +10,10 @@
 			"includeSheet": "Menu"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "ScuareKills"
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "SetupBar2",
@@ -1471,8 +1475,8 @@
 			"conditions": [
 				{
 					"id": "is-overlapping-another-object",
-					"objectClass": "Player_Cutscene",
-					"sid": 103833439965343,
+					"objectClass": "Player_All",
+					"sid": 281261015681244,
 					"parameters": {
 						"object": "Road"
 					}
@@ -1482,23 +1486,49 @@
 				{
 					"id": "set-visible",
 					"objectClass": "press_E",
-					"sid": 663356255145715,
+					"sid": 287934799620064,
 					"parameters": {
 						"visibility": "visible"
 					}
 				}
 			],
-			"sid": 795008942992287
+			"sid": 364874952675774,
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
 					"id": "is-overlapping-another-object",
-					"objectClass": "Player_Cutscene",
-					"sid": 295739364450060,
+					"objectClass": "Player_All",
+					"sid": 112334616319736,
 					"parameters": {
-						"object": "Road"
+						"object": "Arcade"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "press_E",
+					"sid": 698694552619148,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 983731846520176,
+			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_All",
+					"sid": 256046185595901,
+					"parameters": {
+						"object": "onDial"
 					},
 					"isInverted": true
 				}
@@ -1507,14 +1537,38 @@
 				{
 					"id": "set-visible",
 					"objectClass": "press_E",
-					"sid": 918063466075595,
+					"sid": 394331150515954,
 					"parameters": {
 						"visibility": "invisible"
 					}
 				}
 			],
-			"sid": 713342103334753,
+			"sid": 909159657426456,
 			"isOrBlock": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 206537818302274,
+					"parameters": {
+						"variable": "Square_Killers"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "press_E",
+					"sid": 863221835618220,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 973517640336511
 		}
 	],
 	"sid": 784725417114350

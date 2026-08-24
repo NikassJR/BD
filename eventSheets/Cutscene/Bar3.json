@@ -10,6 +10,10 @@
 			"includeSheet": "Menu"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "ScuareKills"
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "SetupBar4",
@@ -168,99 +172,135 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 183187263679719,
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_All",
+							"sid": 217162168856382,
 							"parameters": {
-								"variable": "onDialMain"
+								"object": "onDial"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "press_E",
+							"sid": 914296647720172,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 112929382749623,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_All",
+							"sid": 717536964788278,
+							"parameters": {
+								"object": "onDial"
 							},
 							"isInverted": true
 						}
 					],
-					"actions": [],
-					"sid": 423520521582758,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Player_Cutscene",
-									"sid": 201308291043620,
-									"parameters": {
-										"object": "Table_Beer"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "press_E",
-									"sid": 884094676836688,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 278891873896132,
-							"isOrBlock": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "Player_Cutscene",
-									"sid": 959549906367759,
-									"parameters": {
-										"object": "Chair_Bar"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Player_All",
-									"sid": 523091513957276,
-									"parameters": {
-										"instance-variable": "textframe",
-										"comparison": 2,
-										"value": "13"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "press_E",
-									"sid": 909426908042648,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 740682955308907
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 126115762502145
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "press_E",
-									"sid": 225487432487638,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 613738751255249
+							"id": "set-visible",
+							"objectClass": "press_E",
+							"sid": 385368280261881,
+							"parameters": {
+								"visibility": "invisible"
+							}
 						}
-					]
+					],
+					"sid": 257942877305595,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_All",
+							"sid": 461905525190932,
+							"parameters": {
+								"object": "Any"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "press_E",
+							"sid": 327548269963615,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 820387244512555,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 132608256616954,
+							"parameters": {
+								"variable": "Square_Killers"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "press_E",
+							"sid": 970812560901745,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 168859292807662
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_Cutscene",
+							"sid": 365483317734918,
+							"parameters": {
+								"object": "Chair_Bar"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 794649799416277,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 5,
+								"value": "13"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "press_E",
+							"sid": 624586284817914,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 583792222256525
 				},
 				{
 					"eventType": "block",
@@ -1122,47 +1162,6 @@
 						}
 					],
 					"sid": 588540769399353
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Cutscene",
-							"sid": 961369831796555,
-							"parameters": {
-								"object": "Mad"
-							}
-						},
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "Player_Cutscene",
-							"sid": 255780781329597,
-							"parameters": {
-								"object": "Investigator"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "press_E",
-							"sid": 504685052097009,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "move-to-layer",
-							"objectClass": "press_E",
-							"sid": 842245876814901,
-							"parameters": {
-								"layer": "\"Dialog\""
-							}
-						}
-					],
-					"sid": 330327963482727,
-					"isOrBlock": true
 				}
 			],
 			"sid": 664778294258771
