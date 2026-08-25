@@ -2856,7 +2856,7 @@
 											"conditions": [
 												{
 													"id": "is-animation-playing",
-													"objectClass": "EnemyBaseball",
+													"objectClass": "Enemy_Mili",
 													"sid": 751318685434962,
 													"parameters": {
 														"animation": "\"MountingFinishing\""
@@ -2864,7 +2864,7 @@
 												},
 												{
 													"id": "compare-animation-frame",
-													"objectClass": "EnemyBaseball",
+													"objectClass": "Enemy_Mili",
 													"sid": 194636846856327,
 													"parameters": {
 														"comparison": 0,
@@ -2876,12 +2876,12 @@
 												{
 													"id": "create-object",
 													"objectClass": "System",
-													"sid": 788018849067151,
+													"sid": 140732301874730,
 													"parameters": {
 														"object-to-create": "BloodCup",
 														"layer": "Player_All.LayerName",
-														"x": "EnemyBaseball.X + random(-10, 30)",
-														"y": "EnemyBaseball.ImagePointY(2) + random(-10, 30)",
+														"x": "Enemy_Mili.X + random(-10, 30)",
+														"y": "Enemy_Mili.ImagePointY(\"Blood\") + random(-10, 30)",
 														"create-hierarchy": false,
 														"template-name": "\"\""
 													}
@@ -25501,6 +25501,17 @@
 													"isInverted": true
 												},
 												{
+													"id": "compare-instance-variable",
+													"objectClass": "Enemy_Mili",
+													"sid": 337029145027299,
+													"parameters": {
+														"instance-variable": "HP",
+														"comparison": 3,
+														"value": "0"
+													},
+													"isInverted": true
+												},
+												{
 													"id": "is-boolean-instance-variable-set",
 													"objectClass": "Enemy_Mili",
 													"sid": 766245187331232,
@@ -25533,6 +25544,15 @@
 													"parameters": {
 														"instance-variable": "IsPanicking",
 														"value": "true"
+													}
+												},
+												{
+													"id": "set-instvar-value",
+													"objectClass": "Enemy_Mili",
+													"sid": 683709196646729,
+													"parameters": {
+														"instance-variable": "HP",
+														"value": "1"
 													}
 												},
 												{
@@ -26332,10 +26352,10 @@
 												{
 													"id": "set-instvar-value",
 													"objectClass": "Enemy_Mili",
-													"sid": 605970253333869,
+													"sid": 673929682979447,
 													"parameters": {
 														"instance-variable": "Finishing",
-														"value": "\"noWeapon\""
+														"value": "weapon"
 													}
 												},
 												{
@@ -33069,6 +33089,41 @@
 																		"create-hierarchy": false,
 																		"template-name": "\"\""
 																	}
+																},
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 881648074809615,
+																	"disabled": true,
+																	"parameters": {
+																		"object-to-create": "BloodCup",
+																		"layer": "\"Player\"",
+																		"x": " random(Enemy_Mili.ImagePointX(\"Blood\")-10, Enemy_Mili.ImagePointX(\"Blood\") +10) ",
+																		"y": " random(Enemy_Mili.ImagePointY(\"Blood\"), Enemy_Mili.ImagePointY(\"Blood\") -10)",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-scale",
+																	"objectClass": "BloodCup",
+																	"sid": 404175805606779,
+																	"disabled": true,
+																	"parameters": {
+																		"scale": "3"
+																	}
+																},
+																{
+																	"id": "apply-impulse-at-angle",
+																	"objectClass": "BloodCup",
+																	"sid": 917404032599068,
+																	"disabled": true,
+																	"behaviorType": "Физика",
+																	"parameters": {
+																		"impulse": "0.005",
+																		"angle": "BloodCup.Angle - random(0,-10)",
+																		"image-point": "0"
+																	}
 																}
 															],
 															"sid": 411152327734935
@@ -33155,6 +33210,41 @@
 																		"image-point": "0",
 																		"create-hierarchy": false,
 																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 533825475973783,
+																	"disabled": true,
+																	"parameters": {
+																		"object-to-create": "BloodCup",
+																		"layer": "\"Player\"",
+																		"x": " random(Enemy_Mili.ImagePointX(\"Blood\")-10, Enemy_Mili.ImagePointX(\"Blood\") +10) ",
+																		"y": " random(Enemy_Mili.ImagePointY(\"Blood\"), Enemy_Mili.ImagePointY(\"Blood\") -10)",
+																		"create-hierarchy": false,
+																		"template-name": "\"\""
+																	}
+																},
+																{
+																	"id": "set-scale",
+																	"objectClass": "BloodCup",
+																	"sid": 327994926588986,
+																	"disabled": true,
+																	"parameters": {
+																		"scale": "3"
+																	}
+																},
+																{
+																	"id": "apply-impulse-at-angle",
+																	"objectClass": "BloodCup",
+																	"sid": 521922220286375,
+																	"disabled": true,
+																	"behaviorType": "Физика",
+																	"parameters": {
+																		"impulse": "0.005",
+																		"angle": "BloodCup.Angle - random(0,-10)",
+																		"image-point": "0"
 																	}
 																}
 															],
@@ -33245,29 +33335,38 @@
 																	}
 																},
 																{
-																	"id": "spawn-another-object",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 239416958942353,
+																	"id": "create-object",
+																	"objectClass": "System",
+																	"sid": 265314219772746,
 																	"disabled": true,
 																	"parameters": {
-																		"object": "Fear",
-																		"layer": "Enemy_Mili.LayerName",
-																		"image-point": "0",
+																		"object-to-create": "BloodCup",
+																		"layer": "\"Player\"",
+																		"x": " random(Enemy_Mili.ImagePointX(\"Blood\")-10, Enemy_Mili.ImagePointX(\"Blood\") +10) ",
+																		"y": " random(Enemy_Mili.ImagePointY(\"Blood\"), Enemy_Mili.ImagePointY(\"Blood\") -10)",
 																		"create-hierarchy": false,
 																		"template-name": "\"\""
 																	}
 																},
 																{
-																	"id": "spawn-another-object",
-																	"objectClass": "Enemy_Mili",
-																	"sid": 854073271139247,
+																	"id": "set-scale",
+																	"objectClass": "BloodCup",
+																	"sid": 442387179050485,
 																	"disabled": true,
 																	"parameters": {
-																		"object": "Fear",
-																		"layer": "Enemy_Mili.LayerName",
-																		"image-point": "0",
-																		"create-hierarchy": false,
-																		"template-name": "\"\""
+																		"scale": "3"
+																	}
+																},
+																{
+																	"id": "apply-impulse-at-angle",
+																	"objectClass": "BloodCup",
+																	"sid": 396956756949763,
+																	"disabled": true,
+																	"behaviorType": "Физика",
+																	"parameters": {
+																		"impulse": "0.005",
+																		"angle": "BloodCup.Angle - random(0,-10)",
+																		"image-point": "0"
 																	}
 																}
 															],
@@ -33324,6 +33423,41 @@
 															"id": "stop-animation",
 															"objectClass": "Enemy_Mili",
 															"sid": 428674425263605
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 589994549133732,
+															"disabled": true,
+															"parameters": {
+																"object-to-create": "BloodCup",
+																"layer": "\"Player\"",
+																"x": " random(Enemy_Mili.ImagePointX(\"Blood\")-10, Enemy_Mili.ImagePointX(\"Blood\") +10) ",
+																"y": " random(Enemy_Mili.ImagePointY(\"Blood\"), Enemy_Mili.ImagePointY(\"Blood\") -10)",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-scale",
+															"objectClass": "BloodCup",
+															"sid": 594326448319741,
+															"disabled": true,
+															"parameters": {
+																"scale": "3"
+															}
+														},
+														{
+															"id": "apply-impulse-at-angle",
+															"objectClass": "BloodCup",
+															"sid": 699537799405170,
+															"disabled": true,
+															"behaviorType": "Физика",
+															"parameters": {
+																"impulse": "0.005",
+																"angle": "BloodCup.Angle - random(0,-10)",
+																"image-point": "0"
+															}
 														}
 													],
 													"sid": 880607659395333
@@ -33509,7 +33643,7 @@
 																{
 																	"id": "compare-instance-variable",
 																	"objectClass": "Enemy_Mili",
-																	"sid": 947827737691056,
+																	"sid": 186254950223556,
 																	"parameters": {
 																		"instance-variable": "Finishing",
 																		"comparison": 0,
@@ -33609,6 +33743,13 @@
 																		"animation": "\"noWeaponFinishing\"",
 																		"from": "current-frame"
 																	}
+																},
+																{
+																	"callFunction": "Blood",
+																	"sid": 110871913340927,
+																	"parameters": [
+																		"Enemy_Mili.UID"
+																	]
 																}
 															],
 															"sid": 791039474074861,
@@ -33791,6 +33932,13 @@
 																		"animation": "\"BottleFinishing\"",
 																		"from": "current-frame"
 																	}
+																},
+																{
+																	"callFunction": "Blood",
+																	"sid": 874488608764010,
+																	"parameters": [
+																		"Enemy_Mili.UID"
+																	]
 																}
 															],
 															"sid": 291244557094930,
@@ -33973,6 +34121,13 @@
 																		"animation": "\"BaseballFinishing\"",
 																		"from": "current-frame"
 																	}
+																},
+																{
+																	"callFunction": "Blood",
+																	"sid": 373093269518829,
+																	"parameters": [
+																		"Enemy_Mili.UID"
+																	]
 																}
 															],
 															"sid": 817492783446868,
@@ -34155,6 +34310,13 @@
 																		"animation": "\"KnifeFinishing\"",
 																		"from": "current-frame"
 																	}
+																},
+																{
+																	"callFunction": "Blood",
+																	"sid": 541756016729480,
+																	"parameters": [
+																		"Enemy_Mili.UID"
+																	]
 																}
 															],
 															"sid": 880492536949808,
@@ -34414,6 +34576,13 @@
 																	"parameters": {
 																		"frame-number": "6"
 																	}
+																},
+																{
+																	"callFunction": "Blood",
+																	"sid": 317796830622546,
+																	"parameters": [
+																		"Enemy_Mili.UID"
+																	]
 																}
 															],
 															"sid": 924180431424459,
@@ -34691,6 +34860,13 @@
 																		"duration": "0.25",
 																		"mode": "reducing-magnitude"
 																	}
+																},
+																{
+																	"callFunction": "Blood",
+																	"sid": 580366753626829,
+																	"parameters": [
+																		"Enemy_Mili.UID"
+																	]
 																}
 															],
 															"sid": 741404546517371,
@@ -34897,6 +35073,13 @@
 																	"parameters": {
 																		"frame-number": "6"
 																	}
+																},
+																{
+																	"callFunction": "Blood",
+																	"sid": 471732860999578,
+																	"parameters": [
+																		"Enemy_Mili.UID"
+																	]
 																}
 															],
 															"sid": 159285551844767,
@@ -35117,6 +35300,13 @@
 																		"animation": "\"StakeFinishing\"",
 																		"from": "current-frame"
 																	}
+																},
+																{
+																	"callFunction": "Blood",
+																	"sid": 825111038308916,
+																	"parameters": [
+																		"Enemy_Mili.UID"
+																	]
 																}
 															],
 															"sid": 165334202644296,
@@ -35347,6 +35537,13 @@
 																		"animation": "\"ExtinguisherFinishing\"",
 																		"from": "current-frame"
 																	}
+																},
+																{
+																	"callFunction": "Blood",
+																	"sid": 100223245312860,
+																	"parameters": [
+																		"Enemy_Mili.UID"
+																	]
 																}
 															],
 															"sid": 644853205584420,
@@ -35577,6 +35774,13 @@
 																		"animation": "\"BrickFinishing\"",
 																		"from": "current-frame"
 																	}
+																},
+																{
+																	"callFunction": "Blood",
+																	"sid": 660371523487256,
+																	"parameters": [
+																		"Enemy_Mili.UID"
+																	]
 																}
 															],
 															"sid": 123018074905994,
@@ -35818,6 +36022,13 @@
 																		"animation": "\"AxeFinishing\"",
 																		"from": "current-frame"
 																	}
+																},
+																{
+																	"callFunction": "Blood",
+																	"sid": 284789174101292,
+																	"parameters": [
+																		"Enemy_Mili.UID"
+																	]
 																}
 															],
 															"sid": 156806986315299,
@@ -36360,6 +36571,205 @@
 												}
 											],
 											"isOrBlock": true
+										},
+										{
+											"functionName": "Blood",
+											"functionDescription": "",
+											"functionCategory": "",
+											"functionReturnType": "none",
+											"functionCopyPicked": false,
+											"functionIsAsync": false,
+											"functionParameters": [
+												{
+													"name": "UID",
+													"type": "number",
+													"initialValue": "0",
+													"comment": "",
+													"sid": 456226349194212
+												}
+											],
+											"eventType": "function-block",
+											"conditions": [],
+											"actions": [],
+											"sid": 314295883185420,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-unique-id",
+															"objectClass": "Enemy_Mili",
+															"sid": 634971045047411,
+															"parameters": {
+																"unique-id": "UID"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 757305971929372,
+															"parameters": {
+																"object-to-create": "BloodCup",
+																"layer": "\"Player\"",
+																"x": "random(Enemy_Mili.ImagePointX(\"Blood\")-10, Enemy_Mili.ImagePointX(\"Blood\") +10) ",
+																"y": "random(Enemy_Mili.ImagePointY(\"Blood\"), Enemy_Mili.ImagePointY(\"Blood\") -10)",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-default-color",
+															"objectClass": "BloodCup",
+															"sid": 623616921278705,
+															"parameters": {
+																"color": "rgbEx(255, 0, 0)"
+															}
+														},
+														{
+															"id": "set-scale",
+															"objectClass": "BloodCup",
+															"sid": 141893884930310,
+															"parameters": {
+																"scale": "1.5"
+															}
+														},
+														{
+															"id": "apply-impulse-at-angle",
+															"objectClass": "BloodCup",
+															"sid": 510185225152178,
+															"behaviorType": "Физика",
+															"parameters": {
+																"impulse": "random(-0.015, 0.015)",
+																"angle": "BloodCup.Angle - random(0,-10)",
+																"image-point": "0"
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 402580963075429,
+															"parameters": {
+																"object-to-create": "BloodCup",
+																"layer": "\"Player\"",
+																"x": " random(Enemy_Mili.ImagePointX(\"Blood\")-10, Enemy_Mili.ImagePointX(\"Blood\") +10) ",
+																"y": " random(Enemy_Mili.ImagePointY(\"Blood\"), Enemy_Mili.ImagePointY(\"Blood\") -10)",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-scale",
+															"objectClass": "BloodCup",
+															"sid": 612294797090510,
+															"parameters": {
+																"scale": "1.30"
+															}
+														},
+														{
+															"id": "apply-impulse-at-angle",
+															"objectClass": "BloodCup",
+															"sid": 912451933503133,
+															"behaviorType": "Физика",
+															"parameters": {
+																"impulse": "random(-0.015, 0.015)",
+																"angle": "BloodCup.Angle - random(0,-10)",
+																"image-point": "0"
+															}
+														},
+														{
+															"id": "set-default-color",
+															"objectClass": "BloodCup",
+															"sid": 282004871580278,
+															"parameters": {
+																"color": "rgbEx(200, 0, 0)"
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 305069523380713,
+															"parameters": {
+																"object-to-create": "BloodCup",
+																"layer": "\"Player\"",
+																"x": " random(Enemy_Mili.ImagePointX(\"Blood\")-10, Enemy_Mili.ImagePointX(\"Blood\") +10) ",
+																"y": " random(Enemy_Mili.ImagePointY(\"Blood\"), Enemy_Mili.ImagePointY(\"Blood\") -10)",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-default-color",
+															"objectClass": "BloodCup",
+															"sid": 117070698983057,
+															"parameters": {
+																"color": "rgbEx(255, 0, 0)"
+															}
+														},
+														{
+															"id": "set-scale",
+															"objectClass": "BloodCup",
+															"sid": 748041435839464,
+															"parameters": {
+																"scale": "1.5"
+															}
+														},
+														{
+															"id": "apply-impulse-at-angle",
+															"objectClass": "BloodCup",
+															"sid": 274048877637305,
+															"behaviorType": "Физика",
+															"parameters": {
+																"impulse": "random(-0.015, 0.015)",
+																"angle": "BloodCup.Angle - random(0,-10)",
+																"image-point": "0"
+															}
+														},
+														{
+															"id": "create-object",
+															"objectClass": "System",
+															"sid": 248070392994929,
+															"parameters": {
+																"object-to-create": "BloodCup",
+																"layer": "\"Player\"",
+																"x": " random(Enemy_Mili.ImagePointX(\"Blood\")-10, Enemy_Mili.ImagePointX(\"Blood\") +10) ",
+																"y": " random(Enemy_Mili.ImagePointY(\"Blood\"), Enemy_Mili.ImagePointY(\"Blood\") -10)",
+																"create-hierarchy": false,
+																"template-name": "\"\""
+															}
+														},
+														{
+															"id": "set-scale",
+															"objectClass": "BloodCup",
+															"sid": 645336641657607,
+															"parameters": {
+																"scale": "1.30"
+															}
+														},
+														{
+															"id": "apply-impulse-at-angle",
+															"objectClass": "BloodCup",
+															"sid": 435667501571057,
+															"behaviorType": "Физика",
+															"parameters": {
+																"impulse": "random(-0.015, 0.015)",
+																"angle": "BloodCup.Angle - random(0,-10)",
+																"image-point": "0"
+															}
+														},
+														{
+															"id": "set-default-color",
+															"objectClass": "BloodCup",
+															"sid": 699726321417718,
+															"parameters": {
+																"color": "rgbEx(200, 0, 0)"
+															}
+														}
+													],
+													"sid": 839613564245892
+												}
+											]
 										}
 									],
 									"sid": 602370628413477
@@ -38228,6 +38638,15 @@
 													"sid": 501223679374490,
 													"parameters": {
 														"instance-variable": "Damage"
+													},
+													"isInverted": true
+												},
+												{
+													"id": "is-boolean-instance-variable-set",
+													"objectClass": "EnemyPchel",
+													"sid": 460059876936757,
+													"parameters": {
+														"instance-variable": "Down"
 													},
 													"isInverted": true
 												},
@@ -50657,6 +51076,14 @@
 									"parameters": {
 										"animation": "\"WolfBox\""
 									}
+								},
+								{
+									"id": "is-animation-playing",
+									"objectClass": "HitBox",
+									"sid": 270726070172932,
+									"parameters": {
+										"animation": "\"BrickBox\""
+									}
 								}
 							],
 							"actions": [],
@@ -50788,14 +51215,6 @@
 									"sid": 189808165914524,
 									"parameters": {
 										"animation": "\"RoseBox\""
-									}
-								},
-								{
-									"id": "is-animation-playing",
-									"objectClass": "HitBox",
-									"sid": 694417720700571,
-									"parameters": {
-										"animation": "\"BrickBox\""
 									}
 								}
 							],

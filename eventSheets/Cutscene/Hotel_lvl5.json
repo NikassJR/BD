@@ -787,7 +787,8 @@
 						{
 							"id": "stop-all",
 							"objectClass": "Audio",
-							"sid": 901445260498612
+							"sid": 901445260498612,
+							"disabled": true
 						},
 						{
 							"callFunction": "Audio_Play_Sound",
@@ -1505,73 +1506,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "Player_Wolf",
-					"sid": 588110955072134,
-					"parameters": {
-						"object": "Elektro_Shield"
-					}
-				},
-				{
-					"id": "has-tags",
-					"objectClass": "Elektro_Shield",
-					"sid": 208499214297063,
-					"parameters": {
-						"tags": "\"Active\""
-					}
-				},
-				{
-					"id": "compare-animation-frame",
-					"objectClass": "Elektro_Shield",
-					"sid": 834976305338254,
-					"parameters": {
-						"comparison": 0,
-						"number": "2"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "press_E",
-					"sid": 586901269435881,
-					"parameters": {
-						"visibility": "toggle"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "press_E",
-					"sid": 633528608096034,
-					"disabled": true,
-					"parameters": {
-						"x": "Player_Wolf.X ",
-						"y": "Player_Wolf.Y -60"
-					}
-				},
-				{
-					"id": "pin-to-object-properties",
-					"objectClass": "press_E",
-					"sid": 906915888737818,
-					"disabled": true,
-					"behaviorType": "Прикрепить",
-					"parameters": {
-						"pin-to": "Player_Wolf",
-						"x": true,
-						"y": true,
-						"angle": true,
-						"width-type": "no",
-						"height-type": "no",
-						"z": false
-					}
-				}
-			],
-			"sid": 358117655058210
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
 					"sid": 649515446512339,
@@ -1677,6 +1611,15 @@
 									}
 								},
 								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Elektro_Shield",
+									"sid": 889607078682718,
+									"parameters": {
+										"instance-variable": "On",
+										"value": "false"
+									}
+								},
+								{
 									"id": "set-animation-frame",
 									"objectClass": "Door_Metal",
 									"sid": 995720435646076,
@@ -1691,6 +1634,15 @@
 									"behaviorType": "Твёрдый",
 									"parameters": {
 										"state": "disabled"
+									}
+								},
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Elevator_Door",
+									"sid": 177092426447007,
+									"parameters": {
+										"instance-variable": "On",
+										"value": "true"
 									}
 								},
 								{
@@ -1842,9 +1794,9 @@
 				{
 					"id": "set-visible",
 					"objectClass": "press_E",
-					"sid": 897821453348566,
+					"sid": 103266221952237,
 					"parameters": {
-						"visibility": "toggle"
+						"visibility": "visible"
 					}
 				},
 				{
@@ -1874,7 +1826,166 @@
 					}
 				}
 			],
-			"sid": 932719953429648
+			"sid": 932719953429648,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_Wolf",
+					"sid": 527199326152608,
+					"parameters": {
+						"object": "Elektro_Shield"
+					}
+				},
+				{
+					"id": "has-tags",
+					"objectClass": "Elektro_Shield",
+					"sid": 781198063899749,
+					"parameters": {
+						"tags": "\"Active\""
+					}
+				},
+				{
+					"id": "compare-animation-frame",
+					"objectClass": "Elektro_Shield",
+					"sid": 405441589322625,
+					"parameters": {
+						"comparison": 0,
+						"number": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "press_E",
+					"sid": 263276411231316,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "press_E",
+					"sid": 182675547363428,
+					"disabled": true,
+					"parameters": {
+						"x": "Player_Wolf.X ",
+						"y": "Player_Wolf.Y -60"
+					}
+				},
+				{
+					"id": "pin-to-object-properties",
+					"objectClass": "press_E",
+					"sid": 916559617087462,
+					"disabled": true,
+					"behaviorType": "Прикрепить",
+					"parameters": {
+						"pin-to": "Player_Wolf",
+						"x": true,
+						"y": true,
+						"angle": true,
+						"width-type": "no",
+						"height-type": "no",
+						"z": false
+					}
+				}
+			],
+			"sid": 287109382834842,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_All",
+					"sid": 481114984435261,
+					"parameters": {
+						"object": "onDial"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "onDial",
+					"sid": 270046121525504,
+					"parameters": {
+						"instance-variable": "On"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "press_E",
+					"sid": 862998162810441,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 198326477685810
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_All",
+					"sid": 545999289243946,
+					"parameters": {
+						"object": "onDial"
+					}
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "onDial",
+					"sid": 754702342305011,
+					"parameters": {
+						"instance-variable": "On"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "press_E",
+					"sid": 315240550939058,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 118788497416463
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player_All",
+					"sid": 699801460248022,
+					"parameters": {
+						"object": "onDial"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "press_E",
+					"sid": 344881608118516,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 563885215960618
 		},
 		{
 			"eventType": "block",
@@ -1935,6 +2046,15 @@
 							"objectClass": "press_E",
 							"sid": 502580811257693,
 							"disabled": true
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Elevator_Door",
+							"sid": 111734775230071,
+							"parameters": {
+								"instance-variable": "On",
+								"value": "false"
+							}
 						},
 						{
 							"id": "set-animation-frame",
@@ -3064,10 +3184,10 @@
 				{
 					"id": "seek-to",
 					"objectClass": "Audio",
-					"sid": 208262162993010,
+					"sid": 135398564913126,
 					"parameters": {
 						"tag": "\"music\"",
-						"position": "213"
+						"position": "214"
 					}
 				},
 				{
