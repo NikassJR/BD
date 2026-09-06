@@ -1001,6 +1001,15 @@
 							"parameters": {
 								"instance-variable": "onPlayer"
 							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Camera",
+							"sid": 276146967434470,
+							"parameters": {
+								"instance-variable": "Down"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -25330,49 +25339,6 @@
 									"isActiveOnStart": true,
 									"children": [
 										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "on-key-pressed",
-													"objectClass": "Keyboard",
-													"sid": 148978354294063,
-													"parameters": {
-														"key": 70
-													}
-												},
-												{
-													"id": "for-each",
-													"objectClass": "System",
-													"sid": 400541801336365,
-													"parameters": {
-														"object": "Enemy_Mili"
-													}
-												},
-												{
-													"id": "has-los-to-object",
-													"objectClass": "Player_All",
-													"sid": 937003367512193,
-													"behaviorType": "ПолеЗрения",
-													"parameters": {
-														"object": "Enemy_Mili",
-														"image-point": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-instvar-value",
-													"objectClass": "Enemy_Mili",
-													"sid": 318651470198068,
-													"parameters": {
-														"instance-variable": "Fear",
-														"value": "0"
-													}
-												}
-											],
-											"sid": 725117588108300
-										},
-										{
 											"eventType": "comment",
 											"text": "СБРОС OnLadder (по умолчанию все НЕ на лестнице)"
 										},
@@ -26211,6 +26177,7 @@
 													"id": "set-animation",
 													"objectClass": "Enemy_Mili",
 													"sid": 465467349197023,
+													"disabled": true,
 													"parameters": {
 														"animation": "\"Run\"",
 														"from": "beginning"
@@ -38605,6 +38572,14 @@
 										{
 											"eventType": "block",
 											"conditions": [
+												{
+													"id": "compare-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 966441397276953,
+													"parameters": {
+														"variable": "Hardcore"
+													}
+												},
 												{
 													"id": "is-overlapping-another-object",
 													"objectClass": "EnemyPchel",

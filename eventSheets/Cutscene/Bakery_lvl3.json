@@ -40,7 +40,7 @@
 				{
 					"id": "set-size",
 					"objectClass": "Camera",
-					"sid": 707285096664191,
+					"sid": 182198875394913,
 					"parameters": {
 						"width": "80",
 						"height": "45"
@@ -127,6 +127,15 @@
 					"sid": 542750959305551,
 					"parameters": {
 						"slot": "\"mysave\""
+					}
+				},
+				{
+					"id": "add-obstacle",
+					"objectClass": "Enemy_Mili",
+					"sid": 946143601943223,
+					"behaviorType": "ПолеЗрения",
+					"parameters": {
+						"obstacle": "Window_roof"
 					}
 				}
 			],
@@ -309,6 +318,122 @@
 						}
 					],
 					"sid": 631170993480953
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_All",
+							"sid": 470705178299954,
+							"parameters": {
+								"object": "Trigger_CutScene"
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Trigger_CutScene",
+							"sid": 625468626563486,
+							"parameters": {
+								"tags": "\"Camera\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "Camera",
+							"sid": 682198912825092,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "90",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Camera",
+							"sid": 198312332867597,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "55",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 489897757569188
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Player_All",
+							"sid": 124652995572858,
+							"parameters": {
+								"object": "Trigger_CutScene"
+							}
+						},
+						{
+							"id": "has-tags",
+							"objectClass": "Trigger_CutScene",
+							"sid": 218108007880820,
+							"parameters": {
+								"tags": "\"Camera1\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "Camera",
+							"sid": 243087144392163,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetWidth",
+								"end-value": "80",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "Camera",
+							"sid": 911141257699309,
+							"behaviorType": "Твинанимация",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetHeight",
+								"end-value": "45",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 762958395948859
 				},
 				{
 					"eventType": "block",

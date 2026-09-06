@@ -102,6 +102,29 @@
 						"width": "80",
 						"height": "45"
 					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 286356277735416,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 707251840168211,
+					"parameters": {
+						"audio-file": {
+							"path": "Music/Warehouse/05-Platform 4 - T - 2-Balanced-Low"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"music\""
+					}
 				}
 			],
 			"sid": 880122669046116
@@ -119,6 +142,15 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 475280780460527,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
 				{
 					"id": "save",
 					"objectClass": "System",
@@ -610,6 +642,14 @@
 							}
 						},
 						{
+							"id": "set-opacity",
+							"objectClass": "Shadow3",
+							"sid": 897026359887337,
+							"parameters": {
+								"opacity": "100"
+							}
+						},
+						{
 							"id": "stop",
 							"objectClass": "Audio",
 							"sid": 579192442064543,
@@ -632,18 +672,9 @@
 							"sid": 130949152858365
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 559396693880185,
-							"parameters": {
-								"variable": "weapon",
-								"value": "\"noWeapon\""
-							}
-						},
-						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 659557199317995,
+							"sid": 341832262259455,
 							"parameters": {
 								"object-to-create": "Player_Fear",
 								"layer": "\"Player\"",
@@ -651,6 +682,15 @@
 								"y": "860",
 								"create-hierarchy": false,
 								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 559396693880185,
+							"parameters": {
+								"variable": "weapon",
+								"value": "\"noWeapon\""
 							}
 						},
 						{
@@ -1052,6 +1092,51 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "compare-instance-variable",
+							"objectClass": "Player_All",
+							"sid": 110919289521048,
+							"parameters": {
+								"instance-variable": "textframe",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 910460856331387,
+							"parameters": {
+								"object": "Enemy_Mili"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Enemy_Mili",
+							"sid": 855715910663490,
+							"parameters": {
+								"instance-variable": "Death"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 759207594118157
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Enemy_Mili",
+							"sid": 524469068879890
+						}
+					],
+					"sid": 429237397760479
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-collision-with-another-object",
 							"objectClass": "Player_Fear",
 							"sid": 597005950395073,
@@ -1137,7 +1222,7 @@
 						},
 						{
 							"id": "has-tags",
-							"objectClass": "EnemyBaseball",
+							"objectClass": "security",
 							"sid": 425044094466139,
 							"parameters": {
 								"tags": "\"Cut\""
@@ -1165,7 +1250,7 @@
 						},
 						{
 							"id": "set-animation",
-							"objectClass": "EnemyBaseball",
+							"objectClass": "security",
 							"sid": 589501460042524,
 							"parameters": {
 								"animation": "\"Down\"",
@@ -1174,7 +1259,7 @@
 						},
 						{
 							"id": "set-speed",
-							"objectClass": "EnemyBaseball",
+							"objectClass": "security",
 							"sid": 556487480346376,
 							"behaviorType": "НастраиваемоеДвижение",
 							"parameters": {
@@ -1193,13 +1278,13 @@
 						},
 						{
 							"id": "stop",
-							"objectClass": "EnemyBaseball",
+							"objectClass": "security",
 							"sid": 162099508293118,
 							"behaviorType": "НастраиваемоеДвижение"
 						},
 						{
 							"id": "set-animation",
-							"objectClass": "EnemyBaseball",
+							"objectClass": "security",
 							"sid": 440437716660066,
 							"parameters": {
 								"animation": "\"onGround\"",
@@ -1345,7 +1430,7 @@
 							"objectClass": "Player",
 							"sid": 868305978713368,
 							"parameters": {
-								"object": "EnemyBaseball"
+								"object": "security"
 							}
 						},
 						{
@@ -1360,7 +1445,7 @@
 						},
 						{
 							"id": "has-tags",
-							"objectClass": "EnemyBaseball",
+							"objectClass": "security",
 							"sid": 169344730060417,
 							"parameters": {
 								"tags": "\"Cut\""
@@ -1904,6 +1989,15 @@
 							}
 						},
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 404199397596368,
+							"parameters": {
+								"seconds": "2",
+								"use-timescale": true
+							}
+						},
+						{
 							"id": "set-animation",
 							"objectClass": "Player",
 							"sid": 201396596341552,
@@ -1915,11 +2009,11 @@
 						{
 							"id": "set-speed",
 							"objectClass": "Player",
-							"sid": 445579881304037,
+							"sid": 980490385887348,
 							"behaviorType": "НастраиваемоеДвижение",
 							"parameters": {
 								"which": "horizontal",
-								"speed": "100"
+								"speed": "150"
 							}
 						},
 						{
@@ -1976,6 +2070,15 @@
 					],
 					"actions": [
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 426900809432992,
+							"parameters": {
+								"seconds": "0.5",
+								"use-timescale": true
+							}
+						},
+						{
 							"callFunction": "Audio_Play_Sound",
 							"sid": 482415343026989,
 							"parameters": [
@@ -1983,6 +2086,17 @@
 								"0",
 								"\"Palka\""
 							]
+						},
+						{
+							"id": "shake",
+							"objectClass": "Camera",
+							"sid": 652907678114465,
+							"behaviorType": "СледитьЗа",
+							"parameters": {
+								"magnitude": "10",
+								"duration": "0.1",
+								"mode": "reducing-magnitude"
+							}
 						}
 					],
 					"sid": 355662444468488
@@ -2039,7 +2153,7 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 875749330299675,
+							"sid": 924622186803894,
 							"parameters": {
 								"seconds": "3",
 								"use-timescale": true
@@ -2061,10 +2175,10 @@
 						{
 							"id": "shake",
 							"objectClass": "Camera",
-							"sid": 597504934120100,
+							"sid": 640346480586277,
 							"behaviorType": "СледитьЗа",
 							"parameters": {
-								"magnitude": "10",
+								"magnitude": "20",
 								"duration": "0.1",
 								"mode": "reducing-magnitude"
 							}
