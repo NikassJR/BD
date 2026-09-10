@@ -10,6 +10,10 @@
 			"includeSheet": "Menu"
 		},
 		{
+			"eventType": "include",
+			"includeSheet": "ScuareKills"
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "SetupBar9",
@@ -60,10 +64,10 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 716033253478409,
+							"sid": 664074494950033,
 							"parameters": {
 								"audio-file": {
-									"path": "Music/Bonus Suicide x Mental Sorrow - from the outside "
+									"path": "Music/Bar_embient"
 								},
 								"loop": "looping",
 								"volume": "0",
@@ -163,14 +167,35 @@
 						{
 							"id": "set-visible",
 							"objectClass": "press_E",
-							"sid": 413796774211812,
+							"sid": 445506417399648,
 							"parameters": {
-								"visibility": "toggle"
+								"visibility": "visible"
 							}
 						}
 					],
 					"sid": 590977989607752,
 					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 150817516626603
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "press_E",
+							"sid": 482498378439953,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 867149015165491
 				},
 				{
 					"eventType": "block",
@@ -198,9 +223,9 @@
 						{
 							"id": "set-visible",
 							"objectClass": "press_E",
-							"sid": 699221567382933,
+							"sid": 334278542886754,
 							"parameters": {
-								"visibility": "toggle"
+								"visibility": "visible"
 							}
 						}
 					],
@@ -210,23 +235,30 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 456254230349838
+							"id": "is-overlapping-another-object",
+							"objectClass": "Player_All",
+							"sid": 567441148395838,
+							"parameters": {
+								"object": "Arcade"
+							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "onDial",
+							"sid": 275945574384937
 						}
 					],
 					"actions": [
 						{
 							"id": "set-visible",
 							"objectClass": "press_E",
-							"sid": 899378144293653,
+							"sid": 891487041036394,
 							"parameters": {
-								"visibility": "invisible"
+								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 721450575888638,
-					"disabled": true
+					"sid": 825913877135966
 				},
 				{
 					"eventType": "block",

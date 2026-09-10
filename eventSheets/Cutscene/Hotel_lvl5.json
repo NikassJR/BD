@@ -162,6 +162,15 @@
 							}
 						},
 						{
+							"id": "set-position",
+							"objectClass": "Camera",
+							"sid": 812215487186563,
+							"parameters": {
+								"x": "Boss.X",
+								"y": "Boss.Y"
+							}
+						},
+						{
 							"callFunction": "End_Scene2",
 							"sid": 930337251130182,
 							"parameters": [
@@ -243,7 +252,7 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 848094913511570,
+							"sid": 316663310369049,
 							"parameters": {
 								"group-name": "\"Player\"",
 								"state": "deactivated"
@@ -252,132 +261,52 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 920470717874791,
+							"sid": 341813021598363,
 							"parameters": {
 								"group-name": "\"Enemy & Fear\"",
 								"state": "deactivated"
 							}
-						}
-					],
-					"sid": 290477483038280
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "Player_All",
-							"sid": 137180051416560,
-							"parameters": {
-								"instance-variable": "textframe",
-								"comparison": 0,
-								"value": "1"
-							}
 						},
 						{
-							"id": "compare-boolean-eventvar",
+							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 774079183016277,
+							"sid": 127667251776967,
 							"parameters": {
-								"variable": "WolfMode"
-							},
-							"isInverted": true
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 818421712699869,
-							"parameters": {
-								"variable": "onDialMain"
-							},
-							"isInverted": true
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 894291978357747
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "End_Scene2",
-							"sid": 653527370818830,
-							"disabled": true,
-							"parameters": [
-								"0",
-								"3",
-								"100",
-								true,
-								false,
-								true
-							]
-						},
-						{
-							"id": "set-boolean-instvar",
-							"objectClass": "Camera",
-							"sid": 596929115481887,
-							"parameters": {
-								"instance-variable": "onPlayer",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "Camera",
-							"sid": 780345006057140,
-							"parameters": {
-								"x": "Boss.X",
-								"y": "Boss.Y"
+								"variable": "weapon",
+								"value": "\"Mounting\""
 							}
 						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 239221016914922,
+							"sid": 380942785279688,
 							"parameters": {
-								"variable": "Start_Game",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 768178409262310,
-							"parameters": {
-								"variable": "Continue_Game",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Enemy_Mili",
-							"sid": 284479701487216,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "Boss",
-							"sid": 601269798340799,
-							"parameters": {
-								"animation": "\"Animation 1\"",
-								"from": "beginning"
+								"variable": "Wolf",
+								"value": "true"
 							}
 						},
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 137456380368121,
+							"sid": 456061976986320,
 							"parameters": {
-								"seconds": "3",
+								"seconds": "2",
 								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 772729386010817,
+							"parameters": {
+								"variable": "onDialMain",
+								"value": "true"
 							}
 						},
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 685485134572682,
+							"sid": 524541206435272,
 							"parameters": {
 								"audio-file": {
 									"path": "Music/Soul to soul"
@@ -387,36 +316,9 @@
 								"stereo-pan": "0",
 								"tag-optional": "\"music\""
 							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 819943947389842,
-							"parameters": {
-								"variable": "onDialMain",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 923807990893447,
-							"parameters": {
-								"variable": "weapon",
-								"value": "\"Mounting\""
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 328227129515133,
-							"parameters": {
-								"variable": "Wolf",
-								"value": "true"
-							}
 						}
 					],
-					"sid": 482254646306962
+					"sid": 290477483038280
 				},
 				{
 					"eventType": "block",
@@ -3448,9 +3350,9 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 362428547421852,
+					"sid": 657871790135057,
 					"parameters": {
-						"layout": "Main_Menu"
+						"layout": "Police2"
 					}
 				}
 			],
@@ -3502,9 +3404,9 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 482901493297085,
+					"sid": 793738959484012,
 					"parameters": {
-						"layout": "Main_Menu"
+						"layout": "Police2"
 					}
 				}
 			],

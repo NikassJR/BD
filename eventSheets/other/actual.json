@@ -11347,9 +11347,9 @@
 														{
 															"id": "wait",
 															"objectClass": "System",
-															"sid": 382481148390705,
+															"sid": 664325440925375,
 															"parameters": {
-																"seconds": "0.01",
+																"seconds": "0.1",
 																"use-timescale": true
 															}
 														},
@@ -11555,9 +11555,9 @@
 														{
 															"id": "wait",
 															"objectClass": "System",
-															"sid": 882761995605794,
+															"sid": 133509007423652,
 															"parameters": {
-																"seconds": "0.01",
+																"seconds": "0.1",
 																"use-timescale": true
 															}
 														},
@@ -45777,20 +45777,11 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "on-collision-with-another-object",
+											"id": "is-overlapping-another-object",
 											"objectClass": "Enemy_Mili",
-											"sid": 134376315950670,
+											"sid": 108853292238696,
 											"parameters": {
 												"object": "Skvoz"
-											}
-										},
-										{
-											"id": "is-boolean-instance-variable-set",
-											"objectClass": "Enemy_Mili",
-											"sid": 374275391411067,
-											"disabled": true,
-											"parameters": {
-												"instance-variable": "Kick"
 											}
 										},
 										{
@@ -45807,6 +45798,7 @@
 											"id": "is-boolean-instance-variable-set",
 											"objectClass": "Enemy_Mili",
 											"sid": 595006520600606,
+											"disabled": true,
 											"parameters": {
 												"instance-variable": "patrul"
 											},
@@ -72637,6 +72629,65 @@
 				}
 			],
 			"sid": 902455434065633
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 891998539065039,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Enemy_Mili",
+					"sid": 635421919632874,
+					"parameters": {
+						"instance-variable": "patrul",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "Enemy_Mili",
+					"sid": 945924320447872,
+					"parameters": {
+						"instance-variable": "triger",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 845431002259543
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 265547970152630,
+					"parameters": {
+						"key": 81
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Enemy_Mili",
+					"sid": 950377820153609,
+					"parameters": {
+						"instance-variable": "Fear",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 815632668335210
 		}
 	],
 	"sid": 685168423764890
