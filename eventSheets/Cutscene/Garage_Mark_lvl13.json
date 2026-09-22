@@ -365,6 +365,15 @@
 					}
 				},
 				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 167039825149119,
+					"parameters": {
+						"variable": "WolfMode"
+					},
+					"isInverted": true
+				},
+				{
 					"id": "trigger-once-while-true",
 					"objectClass": "System",
 					"sid": 357551487576782
@@ -424,6 +433,158 @@
 				}
 			],
 			"sid": 755686509528126
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 203665643006252,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 857324385721792,
+					"parameters": {
+						"variable": "WolfMode"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 788348749318508
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "End_Scene2",
+					"sid": 767434568210379,
+					"parameters": [
+						"100",
+						"0",
+						"100",
+						false,
+						false,
+						true
+					]
+				},
+				{
+					"callFunction": "Audio_Play_Sound",
+					"sid": 868050195249502,
+					"parameters": [
+						"\"End_Scene\"",
+						"0",
+						"\"End_Scene\""
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 954283499452072,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 281710450907671,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 862055796573488
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 114166519999875,
+					"parameters": {
+						"layout": "Ermilov_Mansion"
+					}
+				}
+			],
+			"sid": 450864692003520
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 752319766288531,
+					"parameters": {
+						"variable": "Start_Game"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 950494810076962
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "End_Scene2",
+					"sid": 755919698048228,
+					"parameters": [
+						"100",
+						"0",
+						"100",
+						false,
+						false,
+						true
+					]
+				},
+				{
+					"callFunction": "Audio_Play_Sound",
+					"sid": 861040074879222,
+					"parameters": [
+						"\"End_Scene\"",
+						"0",
+						"\"End_Scene\""
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 940136134986280,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 828115197900867,
+					"parameters": {
+						"tag": "\"music\""
+					}
+				},
+				{
+					"id": "wait-for-previous-actions",
+					"objectClass": "System",
+					"sid": 243108661428102
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 787948546130810,
+					"parameters": {
+						"layout": "Police5"
+					}
+				}
+			],
+			"sid": 255515016466522
 		},
 		{
 			"eventType": "block",
@@ -599,7 +760,7 @@
 				{
 					"id": "on-animation-finished",
 					"objectClass": "security",
-					"sid": 145656289952898,
+					"sid": 590978123080886,
 					"parameters": {
 						"animation": "\"security_dead_molotok\""
 					}
@@ -609,14 +770,14 @@
 				{
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 218876567879991,
+					"sid": 812105674861469,
 					"parameters": {
 						"variable": "Start_Game",
 						"value": "true"
 					}
 				}
 			],
-			"sid": 694467781053599
+			"sid": 645872633080662
 		},
 		{
 			"eventType": "block",
@@ -624,28 +785,23 @@
 				{
 					"id": "compare-boolean-eventvar",
 					"objectClass": "System",
-					"sid": 460155657168683,
+					"sid": 924491918040810,
 					"parameters": {
 						"variable": "Start_Game"
 					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 861053419365868
 				}
 			],
 			"actions": [
 				{
 					"id": "check-item-exists",
 					"objectClass": "Game_Save",
-					"sid": 464930556238033,
+					"sid": 156395138014606,
 					"parameters": {
 						"key": "\"Enemys\""
 					}
 				}
 			],
-			"sid": 672625787098340,
+			"sid": 437478332666120,
 			"children": [
 				{
 					"eventType": "block",
@@ -653,7 +809,7 @@
 						{
 							"id": "on-item-exists",
 							"objectClass": "Game_Save",
-							"sid": 875755009082753,
+							"sid": 718712935981540,
 							"parameters": {
 								"key": "\"Enemys\""
 							}
@@ -663,13 +819,13 @@
 						{
 							"id": "load",
 							"objectClass": "Enemys_Number",
-							"sid": 909293394289637,
+							"sid": 998702802667644,
 							"parameters": {
 								"json": "Game_Save.ItemValue"
 							}
 						}
 					],
-					"sid": 188594042488505,
+					"sid": 234797437487680,
 					"children": [
 						{
 							"eventType": "block",
@@ -677,7 +833,7 @@
 								{
 									"id": "has-key",
 									"objectClass": "Enemys_Number",
-									"sid": 669200505579657,
+									"sid": 864641058838444,
 									"parameters": {
 										"key": "\"Garage_Mark_lvl13\""
 									}
@@ -687,7 +843,7 @@
 								{
 									"id": "set-key",
 									"objectClass": "Enemys_Number",
-									"sid": 498923030197230,
+									"sid": 805140561538460,
 									"parameters": {
 										"key": "\"Garage_Mark_lvl13\"",
 										"value": "Enemys_Stat"
@@ -696,14 +852,14 @@
 								{
 									"id": "set-item",
 									"objectClass": "Game_Save",
-									"sid": 718598207771249,
+									"sid": 418357846579968,
 									"parameters": {
 										"key": "\"Enemys\"",
 										"value": "Enemys_Number.AsJSON"
 									}
 								}
 							],
-							"sid": 221720168047727
+							"sid": 478557044492467
 						},
 						{
 							"eventType": "block",
@@ -711,7 +867,7 @@
 								{
 									"id": "has-key",
 									"objectClass": "Enemys_Number",
-									"sid": 583095142841228,
+									"sid": 833625249264320,
 									"parameters": {
 										"key": "\"Garage_Mark_lvl13\""
 									},
@@ -722,7 +878,7 @@
 								{
 									"id": "add-key",
 									"objectClass": "Enemys_Number",
-									"sid": 470143435620205,
+									"sid": 844028473200007,
 									"parameters": {
 										"key": "\"Garage_Mark_lvl13\"",
 										"value": "Enemys_Stat"
@@ -731,14 +887,14 @@
 								{
 									"id": "set-item",
 									"objectClass": "Game_Save",
-									"sid": 607518845984740,
+									"sid": 575924077164259,
 									"parameters": {
 										"key": "\"Enemys\"",
 										"value": "Enemys_Number.AsJSON"
 									}
 								}
 							],
-							"sid": 943775907183856
+							"sid": 856310490172667
 						}
 					]
 				}
